@@ -133,6 +133,14 @@ const config: Config = {
             contextualSearch: true,
             searchPagePath: 'search',
         },
+        // Remove in production
+        announcementBar: {
+            id: 'support_us',
+            content: '<b>This is the in-development version of the site and may not be fully updated. Vist the <a target="_blank" rel="noopener noreferrer" href="#">main site</a> or <a target="_blank" rel="noopener noreferrer" href="#">current wiki</a> for the most updated info.</b>',
+            backgroundColor: '#ff333d',
+            textColor: '#e3e3e3',
+            isCloseable: true,
+        },
     } satisfies Preset.ThemeConfig,
 };
 
