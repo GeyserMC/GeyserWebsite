@@ -51,7 +51,6 @@ const config: Config = {
     ],
 
     themeConfig: {
-        // Replace with your project's social card
         image: 'img/site/geyser.png',
         navbar: {
             title: 'GeyserMC',
@@ -126,6 +125,13 @@ const config: Config = {
             sidebar: {
                 hideable: true,
             }
+        },
+        algolia: {
+            appId: '0DTHI9QFCH',
+            apiKey: '3cc0567f76d2ed3ffdb4cc94f0ac9815',      
+            indexName: 'geysermc',
+            contextualSearch: true,
+            searchPagePath: 'search',
         },
     } satisfies Preset.ThemeConfig,
 };
