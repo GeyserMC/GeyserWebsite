@@ -8,7 +8,7 @@ const config: Config = {
     favicon: 'img/favicon.ico',
 
     // TODO: Change to correct domain in production! 
-    url: 'https://chew-geyserwiki.pages.dev',
+    url: 'https://dev.geysermc.org',
     // Set the /<baseUrl>/ pathname under which your site is served
     // For GitHub pages deployment, it is often '/<projectName>/'
     baseUrl: '/',

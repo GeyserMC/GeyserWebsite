@@ -80,7 +80,7 @@ public void onPostInitialize(GeyserPostInitializeEvent event) {
 }
 ```
 If you wish to register custom items, global resource packs (or soon, custom blocks and entities), you will need to subscribe to the event using the @Subscribe annotation,
-and register them in the event. You can find an example for custom items [here](/geyser/custom-items/#geyser-extensions). For other events, see [here](/geyser/events) for documentation.
+and register them in the event. You can find an example for custom items [here](/geyser/custom-items#geyser-extensions). For other events, see [here](/geyser/events) for documentation.
 
 To build your extension, run the Gradle build task, and install the extension.
 

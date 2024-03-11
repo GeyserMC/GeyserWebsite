@@ -96,7 +96,7 @@ saved-user-logins:
 - `no-emotes` - emotes will NOT be sent to other Bedrock clients and offhand will be swapped. This effectively disables all emotes from being seen.
 - `emotes-and-offhand` - emotes will be sent to Bedrock clients and offhand will be swapped
 
-**`default-locale`**: The default locale to send to players if their locale could not be found. Check [this](/geyser/faq/#what-languages-does-geyser-support) page to find the code corresponding to your language. This option is disabled by default - to enable it, remove the "#" in front of the option.
+**`default-locale`**: The default locale to send to players if their locale could not be found. This option is disabled by default - to enable it, remove the "#" in front of the option.
 
 **`cache-images`**: Specify how many days images will be cached to disk to save downloading them from the internet. A value of 0 is disabled. (Default: 0)
 

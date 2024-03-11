@@ -2,7 +2,7 @@
 title: Global API
 ---
 
-The Global API is available for every server. It currently includes: [Global Linking](/floodgate/linking/#what-is-global-linking), [skin uploading](/floodgate/features/#what-is-skin-uploading), getting a xuid by gamertag, and getting a gamertag by xuid.
+The Global API is available for every server. It currently includes: [Global Linking](/floodgate/linking#what-is-global-linking), [skin uploading](/floodgate/features#what-is-skin-uploading), getting a xuid by gamertag, and getting a gamertag by xuid.
 We don't store anything else than you can access by the Global API, except for some non-identifiable metrics. The source code of the Global API is available [here](https://github.com/GeyserMC/global_api) and the source code of the Global Linking server is available [here](https://github.com/GeyserMC/GlobalLinkServer).
 
 As a user of the API, you can get various info about Geyser (or specifically, Floodgate players) that joined any Geyser + Floodgate server before. This includes:

@@ -240,11 +240,11 @@ html[data-theme='dark'] {
     background-color: var(--ifm-background-color);
     font-size: 16px;
     color: var(--ifm-font-color-base);
+}
 
-    &:focus {
-        border-radius: var(--ifm-global-radius);
-        border: 1px solid var(--ifm-tabs-color-active);
-    }
+.host-select select:focus {
+    border-radius: var(--ifm-global-radius);
+    border: 1px solid var(--ifm-tabs-color-active);
 }
 
 .inner {

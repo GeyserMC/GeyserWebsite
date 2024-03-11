@@ -2,7 +2,7 @@
 title: Fixing 'Unable to Connect to World'
 ---
 
-# Fixing 'Unable to Connect to World' errors
+## Fixing 'Unable to Connect to World' errors {#fixing-unable-to-connect-to-world-errors}
 This is by far the most common error people get when attempting to set up Geyser. Here's some steps on how to solve it.
 Usually, this error is caused by improper configuration of Geyser, or issues with your network.
 
@@ -52,12 +52,12 @@ You should be connecting with the Java server IP and the Bedrock port (set in th
 ### I'm using a hosting provider or VPS! {#im-using-a-hosting-provider-or-vps}
 
 Please read [this page on supported hosting providers](/geyser/supported-hosting-providers/) to see if there are extra configuration steps required for your hosting or server provider.
-Some VPS/KVM providers may require further setup, such as OVH, SoYouStart, and Oracle Cloud. Please read this [note](/geyser/port-forwarding/#issues-with-specific-vpskvm-providers) for more information.
+Some VPS/KVM providers may require further setup, such as OVH, SoYouStart, and Oracle Cloud. Please read this [note](/geyser/port-forwarding#issues-with-specific-vpskvm-providers) for more information.
 
 ### Issues using Docker or Pterodactyl {#issues-using-docker-or-pterodactyl}
-Make sure you assign the port to pterodactyl, and on docker, to the docker compose file. See our [port-forwarding](/geyser/port-forwarding/#using-docker-or-pterodactyl) page for fixes.
+Make sure you assign the port to pterodactyl, and on docker, to the docker compose file. See our [port-forwarding](/geyser/port-forwarding#using-docker-or-pterodactyl) page for fixes.
 
-# Port forwarding issues
+## Port forwarding issues {#port-forwarding-issues}
 
 Your server does need to be port forwarded to allow connections from outside the local network. See [our port-forwarding guide](/geyser/port-forwarding/) for more information.
 
@@ -74,7 +74,7 @@ Historically, having a Bedrock port that is a lower number will cause issues. Se
 This is likely a firewall issue on your server. Try the following workaround:
 Attempt to connect to the Bedrock IP and port through a web browser - for example, `http://test.geysermc.org:19132`. It won't work, but then try connecting through Bedrock, and it should work.
 
-Specific host fixes for OVH/SoYouStart can be found [here](/geyser/port-forwarding/#issues-with-specific-vpskvm-providers).
+Specific host fixes for OVH/SoYouStart can be found [here](/geyser/port-forwarding#issues-with-specific-vpskvm-providers).
 
 ### Changing the `bedrock` `address` in the Geyser config. {#changing-the-bedrock-address-in-the-geyser-config}
 
@@ -82,23 +82,23 @@ Except for a few specific hosting providers, you generally do not need to change
 However, in rare instances, it does fix issues - for example, when Windows has multiple network adapters (check by running `ipconfig` in cmd), 
 it can help to set the `address` to the local IP of the adapter you want to use.
 
-# Using a hosting provider or other location
+## Using a hosting provider or other location {#using-a-hosting-provider-or-other-location}
 
 ### Pterodactyl {#pterodactyl}
 
 If you get this error while using the Pterodactyl Panel, try editing the Geyser config and changing the port to something besides `19132` (e.g. `25566`).
 
-# Hosting Geyser on another computer on the same network
+## Hosting Geyser on another computer on the same network {#hosting-geyser-on-another-computer-on-the-same-network}
 
 ### Can only connect from the same computer and not anywhere else {#can-only-connect-from-the-same-computer-and-not-anywhere-else}
 
 Your firewall is likely in the way. Try adding an exception to Java, or disable the firewall for testing purposes.
 
-# As a last resort for troubleshooting...
+## As a last resort for troubleshooting... {#as-a-last-resort-for-troubleshooting}
 
 Minecraft offers a vanilla Bedrock server [here](https://www.minecraft.net/download/server/bedrock). Downloading, running, and attempting to connect to it may help isolate if the issue is on Geyser's end, or your computer/network's end.
 
-# Using Geyser on the same computer
+## Using Geyser on the same computer {#using-geyser-on-the-same-computer}
 
 ### Windows 10/11 {#windows-1011}
 
