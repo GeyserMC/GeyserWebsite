@@ -362,7 +362,7 @@ html[data-theme='dark'] {
     .tabs:not(.tabs-host-type) {
         flex-wrap: nowrap;
         white-space: nowrap;
-        display: inline-block;
+        display: flex;
         max-width: 100%;
     }
 }
