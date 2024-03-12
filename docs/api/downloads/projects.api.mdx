@@ -1,0 +1,129 @@
+---
+id: projects
+title: "Gets a list of all available projects."
+description: "Gets a list of all available projects."
+sidebar_label: "Gets a list of all available projects."
+hide_title: true
+hide_table_of_contents: true
+api: eJyVUj1v2zAQ/SvCmxnJ9cgtQIsg6NAgaCfDw1m6SEwpkSXPagWB/7042XWTbp1I3j3e+yBXCPUZ9oCYwiu3ku/aMEkK3nPC0SBETiQuTI8d7A0Eg8Q5hilzhl2x3+106Ti3yUWFw+LLZxjoNJ5EuxSjd+02rHnNClmR24FH0p0skWERTkoAo1SRk7gLwY34L5JSogUGTnh8W8+S3NSjlGIgTrzWnq7Xn6+itav994IfWHJFlXdZqvBSkfcVzeQ8nTxXfxTUMBhZhqB59LxJJRlg0cz75k1AmdPMSbNdcU4eFoNIzLZpuvBz8oG6uuclcxrbOqQe5WjgppewWbnq/nhF5ur+6REGOvCi9UO9q3coBjFkGWkLc6KR/8fGO/e3/IR/SRM9uUnHb8rXq8UD5v3laS4mjwZDyKKNdT1R5m/Jl6LlH2dOC+zhaDBTckqtp2IwMHWctlS+8wKL+7blqDHO5M/bw/77TzSZW+QPn76ilN9O0+6q
+sidebar_class_name: "get api-method"
+info_path: api/downloads/downloads-api
+custom_edit_url: null
+---
+
+import ApiTabs from "@theme/ApiTabs";
+import DiscriminatorTabs from "@theme/DiscriminatorTabs";
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import SecuritySchemes from "@theme/ApiExplorer/SecuritySchemes";
+import MimeTabs from "@theme/MimeTabs";
+import ParamsItem from "@theme/ParamsItem";
+import ResponseSamples from "@theme/ResponseSamples";
+import SchemaItem from "@theme/SchemaItem";
+import SchemaTabs from "@theme/SchemaTabs";
+import Markdown from "@theme/Markdown";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+
+<h1
+  className={"openapi__heading"}
+>
+  Gets a list of all available projects.
+</h1>
+
+<MethodEndpoint
+  method={"get"}
+  path={"/v2/projects"}
+>
+  
+</MethodEndpoint>
+
+
+
+Gets a list of all available projects.
+
+## Request
+
+<div>
+  <div>
+    <ApiTabs
+      label={undefined}
+      id={undefined}
+    >
+      <TabItem
+        label={"200"}
+        value={"200"}
+      >
+        <div>
+          
+          
+          OK
+          
+          
+        </div><div>
+          <MimeTabs
+            className={"openapi-tabs__mime"}
+            schemaType={"response"}
+          >
+            <TabItem
+              label={"application/json"}
+              value={"application/json"}
+            >
+              <SchemaTabs
+                className={"openapi-tabs__schema"}
+              >
+                <TabItem
+                  label={"Schema"}
+                  value={"Schema"}
+                >
+                  <details
+                    style={{}}
+                    className={"openapi-markdown__details response"}
+                    data-collapsed={false}
+                    open={true}
+                  >
+                    <summary
+                      style={{}}
+                      className={"openapi-markdown__details-summary-response"}
+                    >
+                      <strong>
+                        Schema
+                      </strong>
+                    </summary><div
+                      style={{"textAlign":"left","marginLeft":"1rem"}}
+                    >
+                      
+                    </div><ul
+                      style={{"marginLeft":"1rem"}}
+                    >
+                      <SchemaItem
+                        collapsible={false}
+                        name={"projects"}
+                        required={false}
+                        schemaName={"string[]"}
+                        qualifierMessage={undefined}
+                        schema={{"type":"array","items":{"type":"string"}}}
+                      >
+                        
+                      </SchemaItem>
+                    </ul>
+                  </details>
+                </TabItem><TabItem
+                  label={"Example (from schema)"}
+                  value={"Example (from schema)"}
+                >
+                  <ResponseSamples
+                    responseExample={"{\n  \"projects\": [\n    \"string\"\n  ]\n}"}
+                    language={"json"}
+                  >
+                    
+                  </ResponseSamples>
+                </TabItem>
+              </SchemaTabs>
+            </TabItem>
+          </MimeTabs>
+        </div>
+      </TabItem>
+    </ApiTabs>
+  </div>
+</div>
+      

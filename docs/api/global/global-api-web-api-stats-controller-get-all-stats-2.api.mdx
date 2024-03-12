@@ -1,0 +1,207 @@
+---
+id: global-api-web-api-stats-controller-get-all-stats-2
+title: "Get all publicly available Global Api statistics"
+description: "Get all publicly available Global Api statistics"
+sidebar_label: "Get all publicly available Global Api statistics"
+hide_title: true
+hide_table_of_contents: true
+api: eJydU8Fu2zAM/RWBl26A52Q5+hYMRbBzO+xQBAEtM7YaWVIlOlhg+N8H2nGbJsWA9WT5mdbje3zsQaO1JepDgqIfMvCBIrLx7mcFBWysL9Gug/lNZb4OJn9g5PTDO47eWop5TbxDa3dJcPVl9RUyCBixJaaYoHjaZhApBe8SCQOslkt5aO+YHMsRQ7BGj5yL5+SdYEk31KKcKko6miBfoYC1tSp0pTXanhQe0VgsLSlhN4mNTkIfRQObiS9E2nXBeqx2Lx11NGGXFZZczc0t12NDClvfOVZ+r9LBuKSMU9yQCpG+TZeq6dIM+BQICjCOqaYIw/AK+fKZNMOQwb/7oMSmRaZqV3XTCG57up9r1Fyj2KtzK3eTkrvrriGDvY8tMhRQkTYt2reGXdeW0m/2GR/+2wNBDFuBHi5ndl02ZFdNXFSPl2At4YIxdrC9rt4QK/w4KlOi1TqY96lpiRsvka+JxwyLFbA4rhYTRwaJ4nHKdA9dtFBAwxxSsVhgMHlNp0Sx1bmPNWRwxGiEb9yqYSt/6y4aPk0rYdzei9OzGW9dyb8U06Tje77MVzKb4BO3OAbCYUufk/jOo372nOkPL4JF48aIirD+LP8JjisRPpvc+MSC9n2JiX5FOwwCv3QUz7pm2fI2ZNAQVhRHxw50kv3VmgKP/ljZgdvlF69eZ7G5f4Rh+AsJ0582
+sidebar_class_name: "get api-method"
+info_path: api/global/global-api
+custom_edit_url: null
+---
+
+import ApiTabs from "@theme/ApiTabs";
+import DiscriminatorTabs from "@theme/DiscriminatorTabs";
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import SecuritySchemes from "@theme/ApiExplorer/SecuritySchemes";
+import MimeTabs from "@theme/MimeTabs";
+import ParamsItem from "@theme/ParamsItem";
+import ResponseSamples from "@theme/ResponseSamples";
+import SchemaItem from "@theme/SchemaItem";
+import SchemaTabs from "@theme/SchemaTabs";
+import Markdown from "@theme/Markdown";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+
+<h1
+  className={"openapi__heading"}
+>
+  Get all publicly available Global Api statistics
+</h1>
+
+<MethodEndpoint
+  method={"get"}
+  path={"/v2/stats"}
+>
+  
+</MethodEndpoint>
+
+
+
+Get all publicly available Global Api statistics
+
+## Request
+
+<div>
+  <div>
+    <ApiTabs
+      label={undefined}
+      id={undefined}
+    >
+      <TabItem
+        label={"200"}
+        value={"200"}
+      >
+        <div>
+          
+          
+          Statistics
+          
+          
+        </div><div>
+          <MimeTabs
+            className={"openapi-tabs__mime"}
+            schemaType={"response"}
+          >
+            <TabItem
+              label={"application/json"}
+              value={"application/json"}
+            >
+              <SchemaTabs
+                className={"openapi-tabs__schema"}
+              >
+                <TabItem
+                  label={"Schema"}
+                  value={"Schema"}
+                >
+                  <details
+                    style={{}}
+                    className={"openapi-markdown__details response"}
+                    data-collapsed={false}
+                    open={true}
+                  >
+                    <summary
+                      style={{}}
+                      className={"openapi-markdown__details-summary-response"}
+                    >
+                      <strong>
+                        Schema
+                      </strong>
+                    </summary><div
+                      style={{"textAlign":"left","marginLeft":"1rem"}}
+                    >
+                      
+                    </div><ul
+                      style={{"marginLeft":"1rem"}}
+                    >
+                      <SchemaItem
+                        collapsible={true}
+                        className={"schemaItem"}
+                      >
+                        <details
+                          style={{}}
+                          className={"openapi-markdown__details"}
+                        >
+                          <summary
+                            style={{}}
+                          >
+                            <span
+                              className={"openapi-schema__container"}
+                            >
+                              <strong
+                                className={"openapi-schema__property"}
+                              >
+                                pre_upload_queue
+                              </strong><span
+                                className={"openapi-schema__name"}
+                              >
+                                 object
+                              </span>
+                            </span>
+                          </summary><div
+                            style={{"marginLeft":"1rem"}}
+                          >
+                            <SchemaItem
+                              collapsible={false}
+                              name={"length"}
+                              required={false}
+                              schemaName={"integer"}
+                              qualifierMessage={undefined}
+                              schema={{"description":"The amount of skins in the pre-upload queue","type":"integer"}}
+                            >
+                              
+                            </SchemaItem>
+                          </div>
+                        </details>
+                      </SchemaItem><SchemaItem
+                        collapsible={true}
+                        className={"schemaItem"}
+                      >
+                        <details
+                          style={{}}
+                          className={"openapi-markdown__details"}
+                        >
+                          <summary
+                            style={{}}
+                          >
+                            <span
+                              className={"openapi-schema__container"}
+                            >
+                              <strong
+                                className={"openapi-schema__property"}
+                              >
+                                upload_queue
+                              </strong><span
+                                className={"openapi-schema__name"}
+                              >
+                                 object
+                              </span>
+                            </span>
+                          </summary><div
+                            style={{"marginLeft":"1rem"}}
+                          >
+                            <SchemaItem
+                              collapsible={false}
+                              name={"estimated_duration"}
+                              required={false}
+                              schemaName={"decimal"}
+                              qualifierMessage={undefined}
+                              schema={{"description":"Estimated duration to upload 'length' amount of skins","format":"decimal","type":"number"}}
+                            >
+                              
+                            </SchemaItem><SchemaItem
+                              collapsible={false}
+                              name={"length"}
+                              required={false}
+                              schemaName={"integer"}
+                              qualifierMessage={undefined}
+                              schema={{"description":"The amount of skins in the upload queue","type":"integer"}}
+                            >
+                              
+                            </SchemaItem>
+                          </div>
+                        </details>
+                      </SchemaItem>
+                    </ul>
+                  </details>
+                </TabItem><TabItem
+                  label={"Example (from schema)"}
+                  value={"Example (from schema)"}
+                >
+                  <ResponseSamples
+                    responseExample={"{\n  \"pre_upload_queue\": {\n    \"length\": 0\n  },\n  \"upload_queue\": {\n    \"estimated_duration\": 0,\n    \"length\": 0\n  }\n}"}
+                    language={"json"}
+                  >
+                    
+                  </ResponseSamples>
+                </TabItem>
+              </SchemaTabs>
+            </TabItem>
+          </MimeTabs>
+        </div>
+      </TabItem>
+    </ApiTabs>
+  </div>
+</div>
+      

@@ -39,6 +39,7 @@ const config: Config = {
                         'https://github.com/GeyserMC/Geyser/tree/main/',
 
                     routeBasePath: '/', // Serve the docs at the site's root
+                    docItemComponent: "@theme/ApiItem",
                 },
                 blog: {},
                 theme: {
@@ -47,6 +48,27 @@ const config: Config = {
             } satisfies Preset.Options,
         ],
     ],
+
+    plugins: [
+        [
+            'docusaurus-plugin-openapi-docs',
+            {
+                id: "api",
+                docsPluginId: "classic",
+                config: {
+                    downloads: {
+                        specPath: "openapi/downloads.yaml",
+                        outputDir: "docs/api/downloads",
+                    },
+                    global: {
+                        specPath: "openapi/global.yaml",
+                        outputDir: "docs/api/global",
+                    }
+                }
+            },
+        ]
+    ],
+    themes: ["docusaurus-theme-openapi-docs"],
 
     themeConfig: {
         image: 'img/site/geyser.png',
@@ -76,14 +98,19 @@ const config: Config = {
                         },
                         {
                             type: 'doc',
+                            docId: 'api/downloads/downloads-api',
+                            label: 'REST APIs',
+                        },
+                        {
+                            type: 'doc',
                             docId: 'other/geyseroptionalpack',
                             label: 'Other',
                         },
                     ]
                 },
                 {
-                    to: 'blog', 
-                    label: 'Blog', 
+                    to: 'blog',
+                    label: 'Blog',
                     position: 'left',
                     className: 'header-blog-link'
                 },
@@ -130,7 +157,7 @@ const config: Config = {
         },
         algolia: {
             appId: '0DTHI9QFCH',
-            apiKey: '3cc0567f76d2ed3ffdb4cc94f0ac9815',      
+            apiKey: '3cc0567f76d2ed3ffdb4cc94f0ac9815',
             indexName: 'geysermc',
             contextualSearch: true,
             searchPagePath: 'search',

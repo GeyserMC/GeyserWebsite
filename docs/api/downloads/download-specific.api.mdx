@@ -1,0 +1,310 @@
+---
+id: download-specific
+title: "Downloads the given file from a build's data."
+description: "Downloads the given file from a build's data."
+sidebar_label: "Downloads the given file from a build's data."
+hide_title: true
+hide_table_of_contents: true
+api: eJylVd1z2zYM/1dweFnSylaWPU0vOd/a23L7aG/JXubz7WARsthRpErCTl1V//uOlOQk5yRd0idRID5++AEEOhTaBCyWqNyNNY7UrHRWvDOGPa4ydC17Eu3spcLioHTVcqkrXWKGLXlqWNhHLx1aahgLbL37wKVghtrGX5IaM1QcSq/b6A4LvK4ZRj3Qiq3oSrOfY4aeP261Z4WF+C1nGMqaG8Kii46EfbRe0uzz6jVmKPs2Rgzitd1gnyF/oqY1UbbhfWCPfXbAtWMfYvSncC1g1AJXgdyC/L/ITi4KQ8JBvizPZj/OV69nFycXRev5y9Ufi/dXv7y7Po2C8fL04vTiOIs7kNdbbdRXACedCe6I/mm4YzxthTfsMcPK+YZkEP1wfg/BVPWvgJjUJhwJ1HPKuZj9HTn5Z/ZQXftVdBRaZwOHaHt+dhY/91G8+xUzrJlU6scO317T5lhrYe80HFTOA0EYW/pu8Qk8B7f1Jc/hUsCwBCiprDnAmqFxnoGrSpearQBZBYF2DGuy6kYrqTOgAAQ3vIbAfscelOMA1glYZgXion+2CgiqrTEw5Qd6YDA+xei6psGqrMluOHEaZJ9aPOjU6w+U9raV8KfBz+yNDq0LemDhiBQYeANtlS5JtN2A1CT3kOgA/KnlUgb4awalQ2tozyola4FEqKwbtpIN5jocOiMqjSwpMK4kY/bPTuY3CjL73alYPHWcRpwqioRTJNENAwnc1LqsUyLO6422Uz3WbDTvOKSrqdZwQwEMBYFmjPJMjH2GI1/xltrWJD6dzT+EgfkjW7dO4zKavspfPa2SAtxP+s1I8JDIRu/YQqUNQ+VdAzQ8xe9CJIZiMg1L7VSakJJmuNRYYL47z8dZF/JuPPX5+CBC3o2nPk/+Qt6lb59P9Q15Nx37yFAiedgLW2+wwFqkDUV+MJgPE7op585vMD5xbSuXktaS6L7NbPH+ErPDAC/w+/nZ/CzO+9YFaSjxOg6s59Jxj8wD4cKfJG8NaRujpAS6kaol7s4jbyNZmGFxu/EmvqL0dt8MlEXZNNAPrEXhYcauMqxdkBij69YU+C9v+j6KP27Z77FYrjLckde0jgQtO1Q6xLPCoiIT+CidQy/iyZ/jJD6Fx5fvg9mPQrL7mCCZbfzDDP/l/Z1tH3fGi9A8tXJfgGdi/RvwPLZRX4BmqPc3YHl0sb4AzKHP+lU/bcrURcP1oiy5lTuGR9MrPtLD+Pj57TX2/X/djILC
+sidebar_class_name: "get api-method"
+info_path: api/downloads/downloads-api
+custom_edit_url: null
+---
+
+import ApiTabs from "@theme/ApiTabs";
+import DiscriminatorTabs from "@theme/DiscriminatorTabs";
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import SecuritySchemes from "@theme/ApiExplorer/SecuritySchemes";
+import MimeTabs from "@theme/MimeTabs";
+import ParamsItem from "@theme/ParamsItem";
+import ResponseSamples from "@theme/ResponseSamples";
+import SchemaItem from "@theme/SchemaItem";
+import SchemaTabs from "@theme/SchemaTabs";
+import Markdown from "@theme/Markdown";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+
+<h1
+  className={"openapi__heading"}
+>
+  Downloads the given file from a build's data.
+</h1>
+
+<MethodEndpoint
+  method={"get"}
+  path={"/v2/projects/{project}/versions/{version}/builds/{build}/downloads/{download}"}
+>
+  
+</MethodEndpoint>
+
+
+
+Downloads the given file from a build's data.
+
+## Request
+
+<details
+  style={{"marginBottom":"1rem"}}
+  className={"openapi-markdown__details"}
+  data-collapsed={false}
+  open={true}
+>
+  <summary
+    style={{}}
+  >
+    <h3
+      className={"openapi-markdown__details-summary-header-params"}
+    >
+      Path Parameters
+    </h3>
+  </summary><div>
+    <ul>
+      <ParamsItem
+        className={"paramsItem"}
+        param={{"name":"project","in":"path","description":"The project identifier.","required":true,"schema":{"pattern":"[a-z]+","type":"string"},"example":"geyser"}}
+      >
+        
+      </ParamsItem><ParamsItem
+        className={"paramsItem"}
+        param={{"name":"version","in":"path","description":"A version of the project.","required":true,"schema":{"pattern":"(?:latest|[0-9.]+-?(?:pre|SNAPSHOT)?(?:[0-9.]+)?)?","type":"string"}}}
+      >
+        
+      </ParamsItem><ParamsItem
+        className={"paramsItem"}
+        param={{"name":"build","in":"path","description":"A build of the version.","required":true,"schema":{"type":"integer","format":"int32"}}}
+      >
+        
+      </ParamsItem><ParamsItem
+        className={"paramsItem"}
+        param={{"name":"download","in":"path","description":"A download of the build.","required":true,"schema":{"pattern":"[a-zA-Z0-9._-]+","type":"string"}}}
+      >
+        
+      </ParamsItem>
+    </ul>
+  </div>
+</details><div>
+  <div>
+    <ApiTabs
+      label={undefined}
+      id={undefined}
+    >
+      <TabItem
+        label={"200"}
+        value={"200"}
+      >
+        <div>
+          
+          
+          OK
+          
+          
+        </div><details
+          style={{"textAlign":"left","marginBottom":"1rem"}}
+          className={"openapi-markdown__details"}
+          data-collaposed={true}
+          open={false}
+        >
+          <summary
+            style={{}}
+          >
+            <strong>
+              Response Headers
+            </strong>
+          </summary><ul
+            style={{"marginLeft":"1rem"}}
+          >
+            <li
+              className={"schemaItem"}
+            >
+              <summary
+                style={{}}
+              >
+                <strong>
+                  ETag
+                </strong><span
+                  style={{"opacity":"0.6"}}
+                >
+                   string
+                </span>
+              </summary><div>
+                <div
+                  style={{"marginTop":".5rem","marginBottom":".5rem"}}
+                >
+                  
+                  
+                  An identifier for a specific version of a resource. It lets caches be more efficient and save bandwidth, as a web server does not need to resend a full response if the content has not changed.
+                  
+                  
+                </div>
+              </div>
+            </li><li
+              className={"schemaItem"}
+            >
+              <summary
+                style={{}}
+              >
+                <strong>
+                  Content-Disposition
+                </strong><span
+                  style={{"opacity":"0.6"}}
+                >
+                   string
+                </span>
+              </summary><div>
+                <div
+                  style={{"marginTop":".5rem","marginBottom":".5rem"}}
+                >
+                  
+                  
+                  A header indicating that the content is expected to be displayed as an attachment, that is downloaded and saved locally.
+                  
+                  
+                </div>
+              </div>
+            </li><li
+              className={"schemaItem"}
+            >
+              <summary
+                style={{}}
+              >
+                <strong>
+                  Last-Modified
+                </strong><span
+                  style={{"opacity":"0.6"}}
+                >
+                   string
+                </span>
+              </summary><div>
+                <div
+                  style={{"marginTop":".5rem","marginBottom":".5rem"}}
+                >
+                  
+                  
+                  The date and time at which the origin server believes the resource was last modified.
+                  
+                  
+                </div>
+              </div>
+            </li>
+          </ul>
+        </details><div>
+          <MimeTabs
+            className={"openapi-tabs__mime"}
+            schemaType={"response"}
+          >
+            <TabItem
+              label={"application/json"}
+              value={"application/json"}
+            >
+              <SchemaTabs
+                className={"openapi-tabs__schema"}
+              >
+                <TabItem
+                  label={"Schema"}
+                  value={"Schema"}
+                >
+                  <details
+                    style={{}}
+                    className={"openapi-markdown__details response"}
+                    data-collapsed={false}
+                    open={true}
+                  >
+                    <summary
+                      style={{}}
+                      className={"openapi-markdown__details-summary-response"}
+                    >
+                      <strong>
+                        Schema
+                      </strong>
+                    </summary><div
+                      style={{"textAlign":"left","marginLeft":"1rem"}}
+                    >
+                      
+                    </div><ul
+                      style={{"marginLeft":"1rem"}}
+                    >
+                      <div
+                        style={{"marginTop":".5rem","marginBottom":".5rem","marginLeft":"1rem"}}
+                      >
+                        
+                        
+                        object
+                        
+                        
+                      </div>
+                    </ul>
+                  </details>
+                </TabItem><TabItem
+                  label={"Example (from schema)"}
+                  value={"Example (from schema)"}
+                >
+                  <ResponseSamples
+                    responseExample={"{}"}
+                    language={"json"}
+                  >
+                    
+                  </ResponseSamples>
+                </TabItem>
+              </SchemaTabs>
+            </TabItem><TabItem
+              label={"*/*"}
+              value={"*/*"}
+            >
+              <SchemaTabs
+                className={"openapi-tabs__schema"}
+              >
+                <TabItem
+                  label={"Schema"}
+                  value={"Schema"}
+                >
+                  <details
+                    style={{}}
+                    className={"openapi-markdown__details response"}
+                    data-collapsed={false}
+                    open={true}
+                  >
+                    <summary
+                      style={{}}
+                      className={"openapi-markdown__details-summary-response"}
+                    >
+                      <strong>
+                        Schema
+                      </strong>
+                    </summary><div
+                      style={{"textAlign":"left","marginLeft":"1rem"}}
+                    >
+                      
+                    </div><ul
+                      style={{"marginLeft":"1rem"}}
+                    >
+                      <div
+                        style={{"marginTop":".5rem","marginBottom":".5rem","marginLeft":"1rem"}}
+                      >
+                        
+                        
+                        object
+                        
+                        
+                      </div>
+                    </ul>
+                  </details>
+                </TabItem><TabItem
+                  label={"Example (from schema)"}
+                  value={"Example (from schema)"}
+                >
+                  <ResponseSamples
+                    responseExample={"{}"}
+                    language={"json"}
+                  >
+                    
+                  </ResponseSamples>
+                </TabItem>
+              </SchemaTabs>
+            </TabItem>
+          </MimeTabs>
+        </div>
+      </TabItem>
+    </ApiTabs>
+  </div>
+</div>
+      

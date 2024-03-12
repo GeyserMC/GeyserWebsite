@@ -1,0 +1,572 @@
+components:
+  responses: {}
+  schemas:
+    ConvertedSkin:
+      description: Data representing a skin that has been converted and uploaded to Java Edition
+      properties:
+        hash:
+          description: The hash of the skin bytes
+          type: string
+        is_steve:
+          description: If the skin is a Steve or an Alex
+          type: boolean
+        signature:
+          description: The signature of the skin data used by Minecraft
+          type: string
+        texture_id:
+          description: The texture id used by Minecraft
+          type: string
+        value:
+          description: The value of the skin data used by Minecraft
+          type: string
+      required:
+        - hash
+        - texture_id
+        - value
+        - singature
+        - is_steve
+      title: ConvertedSkin
+      type: object
+    Error:
+      description: Generic format for pretty much every error
+      required:
+        - message
+      properties:
+        message:
+          description: The error message
+          type: string
+      title: Error
+      type: object
+    Link:
+      description: A link between a Java and a Bedrock account
+      properties:
+        bedrock_id:
+          description: xuid of the Bedrock player
+          example: 2535432196048835
+          format: int64
+          type: integer
+        java_id:
+          description: UUID of the Java player
+          example: d34eb447-6e90-4c78-9281-600df88aef1d
+          format: uuid
+          type: string
+        java_name:
+          description: Username of the Java player
+          example: Tim203
+          type: string
+        last_name_update:
+          description: Unix millis of the last Java name update check
+          format: int64
+          type: integer
+      required:
+        - bedrock_id
+        - java_id
+        - java_name
+        - last_name_update
+      title: Link
+      type: object
+    LinkList:
+      description: Response schema for a list of links
+      items:
+        $ref: '#/components/schemas/Link'
+      title: LinkList
+      type: array
+    RecentConvertedSkinList:
+      description: List of most recently converted skins. Ordered by most recently converted
+      properties:
+        data:
+          items:
+            $ref: '#/components/schemas/RecentConvertedSkinReference'
+          type: array
+        total_pages:
+          description: The amount of pages available
+          type: integer
+      title: RecentConvertedSkinList
+      type: object
+    RecentConvertedSkinReference:
+      description: The most basic info required to show a Java skin on the site
+      properties:
+        id:
+          description: The converted skin id
+          type: integer
+        texture_id:
+          description: The texture id used by Minecraft
+          type: string
+      required:
+        - id
+        - texture_id
+      title: RecentConvertedSkinReference
+      type: object
+    Statistics:
+      description: All publicly available statistics
+      properties:
+        pre_upload_queue:
+          properties:
+            length:
+              description: The amount of skins in the pre-upload queue
+              type: integer
+          type: object
+        upload_queue:
+          properties:
+            estimated_duration:
+              description: Estimated duration to upload 'length' amount of skins
+              format: decimal
+              type: number
+            length:
+              description: The amount of skins in the upload queue
+              type: integer
+          type: object
+      title: Statistics
+      type: object
+    UsernameProfile:
+      description: Username to Floodgate UUID in Mojang Minecraft profile format
+      properties:
+        id:
+          description: The Floodgate UUID of the Bedrock player
+          example: 0000000000000000000901f64f65c7c3
+          format: uuid
+          type: string
+        name:
+          description: The Floodgate username
+          example: .Tim203
+          type: string
+      required:
+        - id
+        - name
+      title: UsernameProfile
+      type: object
+    XboxGamertagResult:
+      description: Get gamertag from xuid result
+      required:
+        - gamertag
+      properties:
+        gamertag:
+          description: The gamertag
+          example: Tim203
+          type: string
+      title: XboxGamertagResult
+      type: object
+    XboxXuidResult:
+      description: Get xuid from gamertag result
+      required:
+        - xuid
+      properties:
+        xuid:
+          description: The xuid
+          example: 2535432196048835
+          format: int64
+          type: integer
+      title: XboxXuidResult
+      type: object
+info:
+  title: Global Api
+  version: 1.0.2
+openapi: 3.0.0
+paths:
+  /health:
+    get:
+      callbacks: {}
+      operationId: GlobalApiWeb.Api.HealthController.health
+      parameters: []
+      responses:
+        '204':
+          description: The server is online
+      summary: Simple server online check
+      tags:
+        - health
+  /render/front/{texture_id}:
+    get: 
+      operationId: GlobalApiWeb.Api.RenderController.get_front_texture
+      parameters:
+        - description: Java texture id
+          example: 'a90790c57e181ed13aded14c47ee2f7c8de3533e017ba957af7bdf9df1bde94f'
+          in: path
+          name: texture_id
+          required: true
+          schema:
+            type: string
+      responses: {
+        '200': {
+          description: ok
+        }
+      }
+  /render/raw/{texture_id}:
+    get:
+      operationId: GlobalApiWeb.Api.RenderController.get_raw_texture
+      parameters:
+        - description: Java texture id
+          example: 'a90790c57e181ed13aded14c47ee2f7c8de3533e017ba957af7bdf9df1bde94f'
+          in: path
+          name: texture_id
+          required: true
+          schema:
+            type: string
+      responses: {
+        '200': {
+          description: ok
+        }
+      }
+  /v1/link/bedrock/{xuid}:
+    get:
+      callbacks: {}
+      deprecated: true
+      operationId: GlobalApiWeb.Api.LinkController.get_bedrock_link_v1
+      parameters:
+        - description: Bedrock xuid
+          example: '2535432196048835'
+          in: path
+          name: xuid
+          required: true
+          schema:
+            type: string
+      responses: {
+        '400': {
+          description: Deprecated
+        }
+      }
+      tags:
+        - link
+  /v1/link/java/{uuid}:
+    get:
+      callbacks: {}
+      deprecated: true
+      operationId: GlobalApiWeb.Api.LinkController.get_java_link_v1
+      parameters:
+        - description: Java UUID
+          example: d34eb447-6e90-4c78-9281-600df88aef1d
+          in: path
+          name: uuid
+          required: true
+          schema:
+            type: string
+      responses: {
+        '400': {
+          description: Deprecated
+        }
+      }
+      tags:
+        - link
+  /v1/stats:
+    get:
+      callbacks: {}
+      operationId: GlobalApiWeb.Api.StatsController.get_all_stats
+      parameters: []
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Statistics'
+          description: Statistics
+      summary: Get all publicly available Global Api statistics
+      tags:
+        - stats
+  /v1/xbox/gamertag/{xuid}:
+    get:
+      callbacks: {}
+      deprecated: true
+      operationId: GlobalApiWeb.Api.XboxController.get_gamertag_v1
+      parameters:
+        - description: Bedrock xuid
+          example: '2535432196048835'
+          in: path
+          name: xuid
+          required: true
+          schema:
+            type: string
+      responses: {
+        '400': {
+          description: Deprecated
+        }
+      }
+      tags:
+        - xbox
+  /v1/xbox/xuid/{gamertag}:
+    get:
+      callbacks: {}
+      deprecated: true
+      operationId: GlobalApiWeb.Api.XboxController.get_xuid_v1
+      parameters:
+        - description: The gamertag of the Bedrock player
+          in: path
+          name: gamertag
+          required: true
+          schema:
+            type: string
+      responses: {
+        '400': {
+          description: Deprecated
+        }
+      }
+      tags:
+        - xbox
+  /v2/admin/xbox/token: {}
+  /v2/link/bedrock/{xuid}:
+    get:
+      callbacks: {}
+      operationId: GlobalApiWeb.Api.LinkController.get_bedrock_link_v2
+      parameters:
+        - description: Bedrock xuid
+          example: '2535432196048835'
+          in: path
+          name: xuid
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Link'
+          description: Linked accounts or an empty object if there is no account linked
+        '400':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+          description: No xuid provided or invalid
+      summary: Get linked Java account from Bedrock xuid
+      tags:
+        - link
+  /v2/link/java/{uuid}:
+    get:
+      callbacks: {}
+      operationId: GlobalApiWeb.Api.LinkController.get_java_link_v2
+      parameters:
+        - description: Java UUID
+          example: d34eb447-6e90-4c78-9281-600df88aef1d
+          in: path
+          name: uuid
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/LinkList'
+          description: Linked account or an empty object if there is no account linked
+        '400':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+          description: No UUID provided or invalid
+      summary: Get linked Bedrock account from Java UUID
+      tags:
+        - link
+  /v2/link/online: {}
+  /v2/skin/bedrock/recent/{page}:
+    get:
+      callbacks: {}
+      operationId: GlobalApiWeb.Api.SkinController.get_recent_uploads.page
+      parameters:
+        - description: Number between 1 - page limit. Defaults to 1
+          example: 1
+          in: path
+          name: page
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RecentConvertedSkinList'
+          description: The most recently uploaded skins. First element has been uploaded most recently etc.
+        '400':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+          description: Invalid page number (e.g. negative, decimal, too large)
+      summary: Get a list of the most recently uploaded skins
+      tags:
+        - skin
+  /v2/skin/bedrock/recent:
+    get:
+      callbacks: {}
+      operationId: GlobalApiWeb.Api.SkinController.get_recent_uploads
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RecentConvertedSkinList'
+          description: The most recently uploaded skins. First element has been uploaded most recently etc.
+        '400':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+          description: Invalid page number (e.g. negative, decimal, too large)
+      summary: Get a list of the most recently uploaded skins
+      tags:
+        - skin
+  /v2/skin/{xuid}:
+    get:
+      callbacks: {}
+      operationId: GlobalApiWeb.Api.SkinController.get_skin
+      parameters:
+        - description: Bedrock xuid
+          example: '2535432196048835'
+          in: path
+          name: xuid
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ConvertedSkin'
+          description: Converted skin or an empty object if there is no skin stored for that player
+        '400':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+          description: Invalid xuid (not an int)
+      summary: Get the most recently converted skin of a Bedrock player
+      tags:
+        - skin
+  /v2/stats:
+    get:
+      callbacks: {}
+      operationId: GlobalApiWeb.Api.StatsController.get_all_stats (2)
+      parameters: []
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Statistics'
+          description: Statistics
+      summary: Get all publicly available Global Api statistics
+      tags:
+        - stats
+  /v2/utils/uuid/bedrock_or_java/{username}:
+    get:
+      callbacks: {}
+      operationId: GlobalApiWeb.Api.UtilsController.get_bedrock_or_java_uuid
+      parameters:
+        - description: The username of the Minecraft player
+          examples:
+            bedrock:
+              value: .Tim203
+            java:
+              value: Tim203
+          in: path
+          name: username
+          required: true
+          schema:
+            type: string
+        - description: The prefix used in your Floodgate config
+          example: .
+          in: query
+          name: prefix
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/UsernameProfile'
+          description: The Bedrock xuid in Floodgate UUID format and username. Response made to be identical to the Mojang endpoint
+        '204':
+          description: Either the gamertag is too long or too short once the prefix was removed or there is no Xbox account registered to the gamertag
+        '302':
+          description: The player is a Java player and we'll redirect you to the Mojang endpoint for that username
+        '400':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+          description: Invalid prefix (no prefix, empty or too long)
+        '503':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+          description: The requested account was not cached and we were not able to call the Xbox Live API (rate limited / not setup)
+      summary: Utility endpoint to get either a Java UUID or a Bedrock xuid
+      tags:
+        - utils
+  /v2/xbox/batch/gamertag: {}
+  /v2/xbox/gamertag/{xuid}:
+    get:
+      callbacks: {}
+      operationId: GlobalApiWeb.Api.XboxController.get_gamertag_v2
+      parameters:
+        - description: The xuid of the Bedrock player
+          in: path
+          name: xuid
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/XboxGamertagResult'
+          description: The gamertag associated with the xuid or an empty object if there is account with the given xuid
+        '400':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+          description: The xuid is invalid (not an int)
+        '503':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+          description: The requested account was not cached and we were not able to call the Xbox Live API (rate limited / not setup)
+      summary: Get the gamertag from a xuid
+      tags:
+        - xbox
+  /v2/xbox/xuid/{gamertag}:
+    get:
+      callbacks: {}
+      operationId: GlobalApiWeb.Api.XboxController.get_xuid_v2
+      parameters:
+        - description: The gamertag of the Bedrock player
+          in: path
+          name: gamertag
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/XboxXuidResult'
+          description: The xuid associated with the gamertag or an empty object if there is account with the given gamertag
+        '400':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+          description: The gamertag is invalid (empty or longer than 16 chars)
+        '503':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+          description: The requested account was not cached and we were not able to call the Xbox Live API (rate limited / not setup)
+      summary: Get the xuid from a gamertag
+      tags:
+        - xbox
+security: []
+servers:
+  - url: https://api.geysermc.org
+    variables: {}
+tags: []

@@ -1,0 +1,265 @@
+---
+id: global-api-web-api-link-controller-get-java-link-v-2
+title: "Get linked Bedrock account from Java UUID"
+description: "Get linked Bedrock account from Java UUID"
+sidebar_label: "Get linked Bedrock account from Java UUID"
+hide_title: true
+hide_table_of_contents: true
+api: eJylVd9v4kYQ/ldW89RKDhAgOeI32p6iq059OCXqQ4TQsB7whvXu3u6axkL+30+zxgQCUq/qE8bz65tvZj7vQaLWK5TbAPm+zcA68hiVNV8KyOFR2xXquVN/02owd2rwVZnt79ZEb7UmP9hQXL7iDpdame1yN4YMHHqsKJIPkL/soaAgvXKcEXL4E3conp+//AEZ0BtWThPkUEymtJpOP93c08PoZio/zW4exrPbm/vRqFjPZkjr2wIyUJzBYSwhA4MVR9a1Youn77XyVEAefU0ZBFlShZDvITaO/UL0ymygbRfsHJw1gbhhGI9G/COtiWQiP6JzWslEwfA1MOr9Sb7zdr4dUonOQaytFyi0ClHYtWBOAuOOVIXL4HlyECuK/xAZgSKRg6YQKH6jwlu5FSilrU1kWj1PJqoO9qqzL1VxmfetVgWXjyUd8ziNDflT0sd3k7vpZHz7cD+azmaTuwzW1lcYIQdl4v0Usp47ZSJtyEObQRr1tZo80r5mauOy4M9O+QjjMNsPEzyA6OZ/ASOQZ8u/QXlS1Xg0uZZcY4gp+bJ2BcZrNYx6E5XSWoW+DAd1tVLxLlLIkuQWfoLX9nSBX05n+874adtXUC4yiCqm3vhC34vY1SvJyJ2d2r+qEN990HtsoGUc562yKxX9EgpebiOocrERXV6hEgGehArC2KOnToFcdfq/7uuRDHklRUdhOi/nKcZGVLUsBe3IN4K8tx7OOawoBNwkXs4PpzdclHoqqcskepeL7Tgh8fOh5geWLyn8yya5E87bnSqoYBKV2aFWRZcQN6yTwIwx2o/991x+VASx9rYSp3JaUSwta/aGkl6wTuYw3I2HnGHI6zPc8021kEEgv+sVuvYacihjdCEfDtGpwYaaQL6SA+s3kMEOvcKVTgQmBQ0ka69iA/nLgmV5bZPUHrjpvhli7hTHkg9dL7eD0WDMK+FsiBWmuR9U/L+0eUbQUd8jvcWh06gMV0gd7Q8UvED6LOnuLJgGyCBP4rLIoLQhss9+v8JAz163Lb/+XpM/tNd3333NVODnAvI16kAXcI57Dr98O6zjr2fwr+Lt79A0iW1d8z/IYEtNr4Ptos2gJCzIJyCdaS4luXgSdHFcPK7jZjx+foK2/QF30a7G
+sidebar_class_name: "get api-method"
+info_path: api/global/global-api
+custom_edit_url: null
+---
+
+import ApiTabs from "@theme/ApiTabs";
+import DiscriminatorTabs from "@theme/DiscriminatorTabs";
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import SecuritySchemes from "@theme/ApiExplorer/SecuritySchemes";
+import MimeTabs from "@theme/MimeTabs";
+import ParamsItem from "@theme/ParamsItem";
+import ResponseSamples from "@theme/ResponseSamples";
+import SchemaItem from "@theme/SchemaItem";
+import SchemaTabs from "@theme/SchemaTabs";
+import Markdown from "@theme/Markdown";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+
+<h1
+  className={"openapi__heading"}
+>
+  Get linked Bedrock account from Java UUID
+</h1>
+
+<MethodEndpoint
+  method={"get"}
+  path={"/v2/link/java/{uuid}"}
+>
+  
+</MethodEndpoint>
+
+
+
+Get linked Bedrock account from Java UUID
+
+## Request
+
+<details
+  style={{"marginBottom":"1rem"}}
+  className={"openapi-markdown__details"}
+  data-collapsed={false}
+  open={true}
+>
+  <summary
+    style={{}}
+  >
+    <h3
+      className={"openapi-markdown__details-summary-header-params"}
+    >
+      Path Parameters
+    </h3>
+  </summary><div>
+    <ul>
+      <ParamsItem
+        className={"paramsItem"}
+        param={{"description":"Java UUID","example":"d34eb447-6e90-4c78-9281-600df88aef1d","in":"path","name":"uuid","required":true,"schema":{"type":"string"}}}
+      >
+        
+      </ParamsItem>
+    </ul>
+  </div>
+</details><div>
+  <div>
+    <ApiTabs
+      label={undefined}
+      id={undefined}
+    >
+      <TabItem
+        label={"200"}
+        value={"200"}
+      >
+        <div>
+          
+          
+          Linked account or an empty object if there is no account linked
+          
+          
+        </div><div>
+          <MimeTabs
+            className={"openapi-tabs__mime"}
+            schemaType={"response"}
+          >
+            <TabItem
+              label={"application/json"}
+              value={"application/json"}
+            >
+              <SchemaTabs
+                className={"openapi-tabs__schema"}
+              >
+                <TabItem
+                  label={"Schema"}
+                  value={"Schema"}
+                >
+                  <details
+                    style={{}}
+                    className={"openapi-markdown__details response"}
+                    data-collapsed={false}
+                    open={true}
+                  >
+                    <summary
+                      style={{}}
+                      className={"openapi-markdown__details-summary-response"}
+                    >
+                      <strong>
+                        Schema
+                      </strong>
+                    </summary><div
+                      style={{"textAlign":"left","marginLeft":"1rem"}}
+                    >
+                      
+                    </div><ul
+                      style={{"marginLeft":"1rem"}}
+                    >
+                      <li>
+                        <div
+                          style={{"fontSize":"var(--ifm-code-font-size)","opacity":"0.6","marginLeft":"-.5rem","paddingBottom":".5rem"}}
+                        >
+                          Array [
+                        </div>
+                      </li><SchemaItem
+                        collapsible={false}
+                        name={"bedrock_id"}
+                        required={true}
+                        schemaName={"int64"}
+                        qualifierMessage={undefined}
+                        schema={{"description":"xuid of the Bedrock player","example":2535432196048835,"format":"int64","type":"integer"}}
+                      >
+                        
+                      </SchemaItem><SchemaItem
+                        collapsible={false}
+                        name={"java_id"}
+                        required={true}
+                        schemaName={"uuid"}
+                        qualifierMessage={undefined}
+                        schema={{"description":"UUID of the Java player","example":"d34eb447-6e90-4c78-9281-600df88aef1d","format":"uuid","type":"string"}}
+                      >
+                        
+                      </SchemaItem><SchemaItem
+                        collapsible={false}
+                        name={"java_name"}
+                        required={true}
+                        schemaName={"string"}
+                        qualifierMessage={undefined}
+                        schema={{"description":"Username of the Java player","example":"Tim203","type":"string"}}
+                      >
+                        
+                      </SchemaItem><SchemaItem
+                        collapsible={false}
+                        name={"last_name_update"}
+                        required={true}
+                        schemaName={"int64"}
+                        qualifierMessage={undefined}
+                        schema={{"description":"Unix millis of the last Java name update check","format":"int64","type":"integer"}}
+                      >
+                        
+                      </SchemaItem><li>
+                        <div
+                          style={{"fontSize":"var(--ifm-code-font-size)","opacity":"0.6","marginLeft":"-.5rem"}}
+                        >
+                          ]
+                        </div>
+                      </li>
+                    </ul>
+                  </details>
+                </TabItem><TabItem
+                  label={"Example (from schema)"}
+                  value={"Example (from schema)"}
+                >
+                  <ResponseSamples
+                    responseExample={"[\n  {\n    \"bedrock_id\": 2535432196048835,\n    \"java_id\": \"d34eb447-6e90-4c78-9281-600df88aef1d\",\n    \"java_name\": \"Tim203\",\n    \"last_name_update\": 0\n  }\n]"}
+                    language={"json"}
+                  >
+                    
+                  </ResponseSamples>
+                </TabItem>
+              </SchemaTabs>
+            </TabItem>
+          </MimeTabs>
+        </div>
+      </TabItem><TabItem
+        label={"400"}
+        value={"400"}
+      >
+        <div>
+          
+          
+          No UUID provided or invalid
+          
+          
+        </div><div>
+          <MimeTabs
+            className={"openapi-tabs__mime"}
+            schemaType={"response"}
+          >
+            <TabItem
+              label={"application/json"}
+              value={"application/json"}
+            >
+              <SchemaTabs
+                className={"openapi-tabs__schema"}
+              >
+                <TabItem
+                  label={"Schema"}
+                  value={"Schema"}
+                >
+                  <details
+                    style={{}}
+                    className={"openapi-markdown__details response"}
+                    data-collapsed={false}
+                    open={true}
+                  >
+                    <summary
+                      style={{}}
+                      className={"openapi-markdown__details-summary-response"}
+                    >
+                      <strong>
+                        Schema
+                      </strong>
+                    </summary><div
+                      style={{"textAlign":"left","marginLeft":"1rem"}}
+                    >
+                      
+                    </div><ul
+                      style={{"marginLeft":"1rem"}}
+                    >
+                      <SchemaItem
+                        collapsible={false}
+                        name={"message"}
+                        required={true}
+                        schemaName={"string"}
+                        qualifierMessage={undefined}
+                        schema={{"description":"The error message","type":"string"}}
+                      >
+                        
+                      </SchemaItem>
+                    </ul>
+                  </details>
+                </TabItem><TabItem
+                  label={"Example (from schema)"}
+                  value={"Example (from schema)"}
+                >
+                  <ResponseSamples
+                    responseExample={"{\n  \"message\": \"string\"\n}"}
+                    language={"json"}
+                  >
+                    
+                  </ResponseSamples>
+                </TabItem>
+              </SchemaTabs>
+            </TabItem>
+          </MimeTabs>
+        </div>
+      </TabItem>
+    </ApiTabs>
+  </div>
+</div>
+      

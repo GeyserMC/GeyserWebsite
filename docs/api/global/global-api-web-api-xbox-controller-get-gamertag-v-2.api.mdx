@@ -1,0 +1,299 @@
+---
+id: global-api-web-api-xbox-controller-get-gamertag-v-2
+title: "Get the gamertag from a xuid"
+description: "Get the gamertag from a xuid"
+sidebar_label: "Get the gamertag from a xuid"
+hide_title: true
+hide_table_of_contents: true
+api: eJzlVcGK5DYQ/RVRpxkw7U5vcvGtE5ZhIYewTEhgaBa1XG1rR5a0pXJPG+N/DyXbnZn0JhvIMSfb0qtyvaeqpxGMdu6ozXOCapwKCBFJsw3+Qw0VPLhw1G4f7W943Oyj3fx+DJefgmcKziFtGuRPje6QWDefzjsoIGrSHTJSgupphBqTIRslIVTw2KK69LZW4aS4RfUj1hTMs4pOD0hQgBVU1NxCAV53CBUIHgog/NJbwhoqph4LSKbFTkM1Ag9RcInJ+gam6SDgFINPKJxgt93KwwTP6FledYzOmsyy/JyksvFVvrclPyCrlaE6UehmAoSpd/ymridYcXAoIJIoyXau4bpzk18kue4WgBfdRSd8Hm23276D4oZfAWw5Q+QwHpbYj2tBCzwcP6NhmAT/939UOqVgrGas1YvlNp/KfEKktFfYRR7UnEvZfGiEyialjQm95z+DGntGn0NhKuD7/6i5R7JGnQJ1muWhIiHzoLretArPSINCokB/OYAOU9IN3uq/bnxV/pxJrZB/Evz98s9/pXGW0SZl/Vk7W6s7H1g0tZ7vRaMftu/+9xpJYZik+64NpZMSoYw2rSz7Wr2gepG2y/odHSoOSlwr953MgPrZnlHtf/mg7kgzKmc7KznLHJKQ+3g/16gbsSW4HMNFBLgddX49HHnctVocqENug5hig5yNjluooDzvSklXrlHlKPgJCkhI59UHe3JQQcscU1WWOtpNg0NC6swmkAz+WZMVctmGxcMSmp4sD1A9HcQYTyGb3aLybMxqH63EIqWZwneb7WYnzRVD4k7nDlp89Bvs3khxNVXGC5fRaeslaSYxLsyfIPt9lrKAVxZW5YyHAtqQWHDjeNQJfyU3TbL8pUdaWK2k56vCJnmvoTppl/CmpOugwN3HpZ/v1TdvlK8SWRa1H7LyrpcvKOAZh/XGmQ5TAS3qGilXN2/tjcHIr4JuRlaO7topD+8fYZr+AMbXjqk=
+sidebar_class_name: "get api-method"
+info_path: api/global/global-api
+custom_edit_url: null
+---
+
+import ApiTabs from "@theme/ApiTabs";
+import DiscriminatorTabs from "@theme/DiscriminatorTabs";
+import MethodEndpoint from "@theme/ApiExplorer/MethodEndpoint";
+import SecuritySchemes from "@theme/ApiExplorer/SecuritySchemes";
+import MimeTabs from "@theme/MimeTabs";
+import ParamsItem from "@theme/ParamsItem";
+import ResponseSamples from "@theme/ResponseSamples";
+import SchemaItem from "@theme/SchemaItem";
+import SchemaTabs from "@theme/SchemaTabs";
+import Markdown from "@theme/Markdown";
+import OperationTabs from "@theme/OperationTabs";
+import TabItem from "@theme/TabItem";
+
+<h1
+  className={"openapi__heading"}
+>
+  Get the gamertag from a xuid
+</h1>
+
+<MethodEndpoint
+  method={"get"}
+  path={"/v2/xbox/gamertag/{xuid}"}
+>
+  
+</MethodEndpoint>
+
+
+
+Get the gamertag from a xuid
+
+## Request
+
+<details
+  style={{"marginBottom":"1rem"}}
+  className={"openapi-markdown__details"}
+  data-collapsed={false}
+  open={true}
+>
+  <summary
+    style={{}}
+  >
+    <h3
+      className={"openapi-markdown__details-summary-header-params"}
+    >
+      Path Parameters
+    </h3>
+  </summary><div>
+    <ul>
+      <ParamsItem
+        className={"paramsItem"}
+        param={{"description":"The xuid of the Bedrock player","in":"path","name":"xuid","required":true,"schema":{"type":"string"}}}
+      >
+        
+      </ParamsItem>
+    </ul>
+  </div>
+</details><div>
+  <div>
+    <ApiTabs
+      label={undefined}
+      id={undefined}
+    >
+      <TabItem
+        label={"200"}
+        value={"200"}
+      >
+        <div>
+          
+          
+          The gamertag associated with the xuid or an empty object if there is account with the given xuid
+          
+          
+        </div><div>
+          <MimeTabs
+            className={"openapi-tabs__mime"}
+            schemaType={"response"}
+          >
+            <TabItem
+              label={"application/json"}
+              value={"application/json"}
+            >
+              <SchemaTabs
+                className={"openapi-tabs__schema"}
+              >
+                <TabItem
+                  label={"Schema"}
+                  value={"Schema"}
+                >
+                  <details
+                    style={{}}
+                    className={"openapi-markdown__details response"}
+                    data-collapsed={false}
+                    open={true}
+                  >
+                    <summary
+                      style={{}}
+                      className={"openapi-markdown__details-summary-response"}
+                    >
+                      <strong>
+                        Schema
+                      </strong>
+                    </summary><div
+                      style={{"textAlign":"left","marginLeft":"1rem"}}
+                    >
+                      
+                    </div><ul
+                      style={{"marginLeft":"1rem"}}
+                    >
+                      <SchemaItem
+                        collapsible={false}
+                        name={"gamertag"}
+                        required={true}
+                        schemaName={"string"}
+                        qualifierMessage={undefined}
+                        schema={{"description":"The gamertag","example":"Tim203","type":"string"}}
+                      >
+                        
+                      </SchemaItem>
+                    </ul>
+                  </details>
+                </TabItem><TabItem
+                  label={"Example (from schema)"}
+                  value={"Example (from schema)"}
+                >
+                  <ResponseSamples
+                    responseExample={"{\n  \"gamertag\": \"Tim203\"\n}"}
+                    language={"json"}
+                  >
+                    
+                  </ResponseSamples>
+                </TabItem>
+              </SchemaTabs>
+            </TabItem>
+          </MimeTabs>
+        </div>
+      </TabItem><TabItem
+        label={"400"}
+        value={"400"}
+      >
+        <div>
+          
+          
+          The xuid is invalid (not an int)
+          
+          
+        </div><div>
+          <MimeTabs
+            className={"openapi-tabs__mime"}
+            schemaType={"response"}
+          >
+            <TabItem
+              label={"application/json"}
+              value={"application/json"}
+            >
+              <SchemaTabs
+                className={"openapi-tabs__schema"}
+              >
+                <TabItem
+                  label={"Schema"}
+                  value={"Schema"}
+                >
+                  <details
+                    style={{}}
+                    className={"openapi-markdown__details response"}
+                    data-collapsed={false}
+                    open={true}
+                  >
+                    <summary
+                      style={{}}
+                      className={"openapi-markdown__details-summary-response"}
+                    >
+                      <strong>
+                        Schema
+                      </strong>
+                    </summary><div
+                      style={{"textAlign":"left","marginLeft":"1rem"}}
+                    >
+                      
+                    </div><ul
+                      style={{"marginLeft":"1rem"}}
+                    >
+                      <SchemaItem
+                        collapsible={false}
+                        name={"message"}
+                        required={true}
+                        schemaName={"string"}
+                        qualifierMessage={undefined}
+                        schema={{"description":"The error message","type":"string"}}
+                      >
+                        
+                      </SchemaItem>
+                    </ul>
+                  </details>
+                </TabItem><TabItem
+                  label={"Example (from schema)"}
+                  value={"Example (from schema)"}
+                >
+                  <ResponseSamples
+                    responseExample={"{\n  \"message\": \"string\"\n}"}
+                    language={"json"}
+                  >
+                    
+                  </ResponseSamples>
+                </TabItem>
+              </SchemaTabs>
+            </TabItem>
+          </MimeTabs>
+        </div>
+      </TabItem><TabItem
+        label={"503"}
+        value={"503"}
+      >
+        <div>
+          
+          
+          The requested account was not cached and we were not able to call the Xbox Live API (rate limited / not setup)
+          
+          
+        </div><div>
+          <MimeTabs
+            className={"openapi-tabs__mime"}
+            schemaType={"response"}
+          >
+            <TabItem
+              label={"application/json"}
+              value={"application/json"}
+            >
+              <SchemaTabs
+                className={"openapi-tabs__schema"}
+              >
+                <TabItem
+                  label={"Schema"}
+                  value={"Schema"}
+                >
+                  <details
+                    style={{}}
+                    className={"openapi-markdown__details response"}
+                    data-collapsed={false}
+                    open={true}
+                  >
+                    <summary
+                      style={{}}
+                      className={"openapi-markdown__details-summary-response"}
+                    >
+                      <strong>
+                        Schema
+                      </strong>
+                    </summary><div
+                      style={{"textAlign":"left","marginLeft":"1rem"}}
+                    >
+                      
+                    </div><ul
+                      style={{"marginLeft":"1rem"}}
+                    >
+                      <SchemaItem
+                        collapsible={false}
+                        name={"message"}
+                        required={true}
+                        schemaName={"string"}
+                        qualifierMessage={undefined}
+                        schema={{"description":"The error message","type":"string"}}
+                      >
+                        
+                      </SchemaItem>
+                    </ul>
+                  </details>
+                </TabItem><TabItem
+                  label={"Example (from schema)"}
+                  value={"Example (from schema)"}
+                >
+                  <ResponseSamples
+                    responseExample={"{\n  \"message\": \"string\"\n}"}
+                    language={"json"}
+                  >
+                    
+                  </ResponseSamples>
+                </TabItem>
+              </SchemaTabs>
+            </TabItem>
+          </MimeTabs>
+        </div>
+      </TabItem>
+    </ApiTabs>
+  </div>
+</div>
+      
