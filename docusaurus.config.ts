@@ -35,14 +35,12 @@ const config: Config = {
             {
                 docs: {
                     sidebarPath: './sidebars.ts',
-                    // Please change this to your repo.
-                    // Remove this to remove the "edit this page" links.
                     editUrl:
                         'https://github.com/GeyserMC/Geyser/tree/main/',
 
                     routeBasePath: '/', // Serve the docs at the site's root
                 },
-                blog: false,
+                blog: {},
                 theme: {
                     customCss: './src/css/custom.css',
                 },
@@ -63,7 +61,7 @@ const config: Config = {
                     type: 'dropdown',
                     label: 'Wiki',
                     className: 'header-wiki-link',
-                    position: 'right',
+                    position: 'left',
                     to: 'geyser/setup',
                     items: [
                         {
@@ -84,20 +82,24 @@ const config: Config = {
                     ]
                 },
                 {
+                    to: 'blog', 
+                    label: 'Blog', 
+                    position: 'left',
+                    className: 'header-blog-link'
+                },
+                {
                     to: 'download',
                     label: 'Download',
-                    position: 'right',
+                    position: 'left',
                     className: 'header-download-link'
                 },
                 {
                     href: 'https://github.com/GeyserMC/Geyser',
-                    label: 'GitHub',
                     position: 'right',
                     className: 'header-github-link'
                 },
                 {
                     href: 'https://discord.gg/geysermc',
-                    label: 'Discord',
                     position: 'right',
                     className: 'header-discord-link'
                 },
