@@ -1,13 +1,13 @@
 ---
-id: global-api-web-api-render-controller-get-front-texture
-title: "GlobalApiWeb.Api.RenderController.get_front_texture"
-description: "GlobalApiWeb.Api.RenderController.get_front_texture"
-sidebar_label: "GlobalApiWeb.Api.RenderController.get_front_texture"
+id: global-api-web-api-link-controller-get-java-link-v-1
+title: "GlobalApiWeb.Api.LinkController.get_java_link_v1"
+description: "GlobalApiWeb.Api.LinkController.get_java_link_v1"
+sidebar_label: "GlobalApiWeb.Api.LinkController.get_java_link_v1"
 hide_title: true
 hide_table_of_contents: true
-api: eJydkk2L2zAQhv+KmVMLwrHzgTe6hVKW9ri09BBCkK1xLNaWtCM5bDD670WKt9l0e+rJ8uidGT3vzATGIgmvjP4mgcNjb2rR76z6hXW+syp/Qi2RvhjtyfQ9Un5Cf2zJaH/0+OpHQmBgBYkBPZIDvp9AomtI2VgUOHwXZ5HN2kxJYICvYrA9AgexLapt0WwqLB9KlOVKSJTlullXiMu2ah4krjarFRZlVYvtphJtVct2K9uylrhdt8BAxR5W+A4YaDHEqnOzY2pG+DIqQgnc04gMXNPhIIBP4C82qp0npU8QwiGKnTXaoYv3y6KIn3sa8wwhsL+C/+fagL4z0fQT+mSi74DDglLuIqkX040lAAOHdH5zeaQeOHTeW8cXC2FVfsKLQxqa3NAJGJwFKVH3CSbROWxGUv4CfH+IxrUm2aB8msUVIttZFXOR3JWtzIt8CYGBNc4PQseU2edbRnYPnt2TZ4klu5HfufdnEPF+YXuhdGyX8KbZlT1cXQEGqRYw4O+mfGDQGeejbppq4fAn9SHE8MuINPO+2XFdUeXiWQJvRe/ww5Maoz1qDxw+Pc0L9Dn7uMn/fPkcFPqShtCP8Q8YPOPlfjnDIbzbgsevPyCE38S8OIg=
+api: eJydksFu2zAMhl/F+E8boNhJF7SpbsU6FB12GlbsEAQBYzOJFtlWJTloYOjdBzpJ02477WRbJil+H9mjJGtXVO4CdJ8UKnaeS4pcQUffsULr2FM0bfNYQePBtiuyd8785FV+50z+zTS7z20TfWst+3zDcfmL9rS0ptkt9xMoOPJUc2QfoOc9Kg6lN04qQuMr7Sl7enq8hwK/UO0sQ6P6NOXVdHozuubb8Wha3sxGt1ezyeh6PK7WsxnxelJBwUgFR3ELhYZqyew6I388P3fGXyBCueWaoHvEg5O4EL1pNkhpIcHBtU1gUYDpeCyP913eX6ykpBBpIywQRizUH8H/oajmuG1F74bjYCxuoVHsJ4XEFBJd9IKWoBDY788yO2+hsY3RBV0U5Ey+4UNgX5d56zdQ2JM3tLID2wAbuOy8iQfo+UIMrtvBiomD+GPv2Z0zkss+HJEm+Ti/QlJwbYg1NZJyEn7JyN7yZu+BM0HIBCYbgN8Zex1K5JdYOEumkbsGtv4kY44hbzCuINWgoIdpLxS2bYgS0/crCvzkbUpy/NyxP4GePRxX0AR5r6DXZAP/1U7ZNpGbCI0P30+L9DF7u6n/7Pd0SM1h8G47+YLCjg/nxUyL9GbYD19+IKXfOi4tNw==
 sidebar_class_name: "get api-method"
-info_path: api/global/global-api
+info_path: api/api.geysermc.org/global-api
 custom_edit_url: null
 ---
 
@@ -27,19 +27,23 @@ import TabItem from "@theme/TabItem";
 <h1
   className={"openapi__heading"}
 >
-  GlobalApiWeb.Api.RenderController.get_front_texture
+  GlobalApiWeb.Api.LinkController.get_java_link_v1
 </h1>
 
 <MethodEndpoint
   method={"get"}
-  path={"/render/front/{texture_id}"}
+  path={"/v1/link/java/{uuid}"}
 >
   
 </MethodEndpoint>
 
+:::caution deprecated
 
 
-GlobalApiWeb.Api.RenderController.get_front_texture
+
+:::
+
+GlobalApiWeb.Api.LinkController.get_java_link_v1
 
 ## Request
 
@@ -61,7 +65,7 @@ GlobalApiWeb.Api.RenderController.get_front_texture
     <ul>
       <ParamsItem
         className={"paramsItem"}
-        param={{"description":"Java texture id","example":"a90790c57e181ed13aded14c47ee2f7c8de3533e017ba957af7bdf9df1bde94f","in":"path","name":"texture_id","required":true,"schema":{"type":"string"}}}
+        param={{"description":"Java UUID","example":"d34eb447-6e90-4c78-9281-600df88aef1d","in":"path","name":"uuid","required":true,"schema":{"type":"string"}}}
       >
         
       </ParamsItem>
@@ -74,13 +78,13 @@ GlobalApiWeb.Api.RenderController.get_front_texture
       id={undefined}
     >
       <TabItem
-        label={"200"}
-        value={"200"}
+        label={"400"}
+        value={"400"}
       >
         <div>
           
           
-          ok
+          Deprecated
           
           
         </div><div>

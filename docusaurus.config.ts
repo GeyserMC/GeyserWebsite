@@ -34,7 +34,7 @@ const config: Config = {
             'classic',
             {
                 docs: {
-                    sidebarPath: './sidebars.ts',
+                    sidebarPath: require.resolve("./sidebars.ts"),
                     editUrl:
                         'https://github.com/GeyserMC/Geyser/tree/main/',
 
@@ -56,13 +56,19 @@ const config: Config = {
                 id: "api",
                 docsPluginId: "classic",
                 config: {
-                    downloads: {
+                    'downloads.geysermc.org': {
                         specPath: "openapi/downloads.json",
-                        outputDir: "docs/api/downloads",
+                        outputDir: "docs/api/downloads.geysermc.org",
+                        sidebarOptions: {
+                            groupPathsBy: "tag",
+                        },
                     },
-                    global: {
+                    'api.geysermc.org': {
                         specPath: "openapi/global.json",
-                        outputDir: "docs/api/global",
+                        outputDir: "docs/api/api.geysermc.org",
+                        sidebarOptions: {
+                            groupPathsBy: "tag",
+                        },
                     }
                 }
             },
@@ -98,7 +104,7 @@ const config: Config = {
                         },
                         {
                             type: 'doc',
-                            docId: 'api/downloads/downloads-api',
+                            docId: 'api/api.geysermc.org/global-api',
                             label: 'REST APIs',
                         },
                         {

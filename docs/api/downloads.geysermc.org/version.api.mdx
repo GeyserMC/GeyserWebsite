@@ -1,13 +1,13 @@
 ---
-id: build-latest
-title: "Gets information related to a specific build."
-description: "Gets information related to a specific build."
-sidebar_label: "Gets information related to a specific build."
+id: version
+title: "Gets information about a version."
+description: "Gets information about a version."
+sidebar_label: "Gets information about a version."
 hide_title: true
 hide_table_of_contents: true
-api: eJydVE1v2zAM/SsGTw2qxFl3mi5BgG1dgWEr1u4U+KBYTKxOllRJzpq5/u8DFSXpx1Zs9cUSRVPvPT66hyjWAfgCNuiDsma87JSW49qa6K3W6KFiYB16EZU1FxI4pIzPImKIwMAJL1qM6KlKD0a0CByctzdY07kytBWxAQYSQ+2Vo0rA4brBIucVSqKJaqXQT4CBx9tOeZTAo++QQagbbAXwngpF9PT1Qox/VafAIG4d3RiiV2YNAwO8E63TFFvjNqCHgR1wZZYv4poXOauwqyIeQf4rspMZ10md+8V0/G5SnY5nJzPuPN5ffZlfXn36ej2iQD4czUaz5yyGiu4KzpqAgcq/nZ7R6zHSj7YzEhhQt9BEShDOaVWnZpU3gbL6ByDzLXaZmjPQ85T9OcZQKLOyvk1VCo/ERhbRFqIIDmu1UnWRTECKtBgbK5PYOzvEBjiUm7MyyxbKPq+GMgsbyj6vhjIVCqXe+ymg3+zN1HkNHJoYXeBlKe1Po62Qk11b23pi/RpIKYKb6KmY+v4+Z4ZifnkB7NB1Dm8m08mUTOJsiK1I8mRr/C/xR7IdpI14F0unhTJ0SyLQZ1EWsDkjhbIswIAfx2SvDEWPJt2JAwyyPBWDxoZItfp+KQJ+93oYKHzbod8CX1QMNsIrsSQhFj1IFWgtga+EDvgM9sE6cPIte3tU/H0y/8gyB4XZEhGhO9oBgx+4ffAroCl8FZqX5vEVePbqDtXAoEEh0SeldqfzukYXH3z3bKDIcAfTn3+4hmH4DX1kzFw=
+api: eJytVE1v2zAM/SsGTw2q2Gl2mi9BgA1dMWAt2m6XwBgUm4nV2ZYq0Vkz1/+9oC27KfqBotjJMimSj3xPbIDk1kG8gh1ap3Q1TXVFVhcFWkgEaINWktLVWQbxcAcEGGlliYSWYxuoZIkQg7H6BlMCAariX0k5CMjQpVYZzgIxXOcY+HuByrAitVFoQxBg8bZWFjOIydYowKU5lhLihhMRWo5eyem/5BgE0N5wRUdWVVtoBeCdLE3Bti3uHVpoxYjrEffruJaBvxXoTUCPIN+L7GgRF5LQ0f1qNv0cJsfTxdEiNhbvr34sL66+nV9P2OCdk8Vk8byLNuFazujKoeP089mMP0+Rnn8HAUwTVsReaUyh0o6l6MbxleYAoS+h154ZY5lTUn0B3+Rvlb1rzi+OeUzST7t5I+Z0jBko+d8zPKw2D0/CGRdb16rI3AE0aa3csxwIy0O7qgi3aEHARttSUm/6NIe2bQWQoi7vrx77pWeKnex+ytIpkgtU1edhWcm1rimQg8xYVyVSrrNulh01rMsYot088iN1UeNPbeTjXNT4UwsCHNrd8AhrW0AMOZFxcRRl+m9VaJmFPU9lGmq7BVYYg+p69u188TddsLw4gwNq4CSc9QM02lEpO7b8k3pPe08GMs6Y8I4iU0hVceYOdONbX8FuDqOeHAiIH1fK0D9bB4iJgFw74simWUuHP23Rtmy+rdHuIV4lAnbSKrnmVlcNZMrxOYN4IwuHz0CO7wqOLv2rnwSv76wXexpEVrHEdrKo+Q8E/MH9wZLk/fQhNG9tqg/gGWbZJq2AHGWGtptU712mKRo6iHu2bVhSo5BPv15D2z4AzkkjVQ==
 sidebar_class_name: "get api-method"
-info_path: api/downloads/downloads-api
+info_path: api/downloads.geysermc.org/downloads-api
 custom_edit_url: null
 ---
 
@@ -27,19 +27,19 @@ import TabItem from "@theme/TabItem";
 <h1
   className={"openapi__heading"}
 >
-  Gets information related to a specific build.
+  Gets information about a version.
 </h1>
 
 <MethodEndpoint
   method={"get"}
-  path={"/v2/projects/{project}/versions/{version}/builds/latest"}
+  path={"/v2/projects/{project}/versions/{version}"}
 >
   
 </MethodEndpoint>
 
 
 
-Gets information related to a specific build.
+Gets information about a version.
 
 ## Request
 
@@ -79,13 +79,13 @@ Gets information related to a specific build.
       id={undefined}
     >
       <TabItem
-        label={"302"}
-        value={"302"}
+        label={"200"}
+        value={"200"}
       >
         <div>
           
           
-          Found
+          OK
           
           
         </div><div>
@@ -124,15 +124,43 @@ Gets information related to a specific build.
                     </div><ul
                       style={{"marginLeft":"1rem"}}
                     >
-                      <div
-                        style={{"marginTop":".5rem","marginBottom":".5rem","marginLeft":"1rem"}}
+                      <SchemaItem
+                        collapsible={false}
+                        name={"project_id"}
+                        required={false}
+                        schemaName={"string"}
+                        qualifierMessage={"**Possible values:** Value must match regular expression `[a-z]+`"}
+                        schema={{"pattern":"[a-z]+","type":"string","example":"geyser"}}
                       >
                         
+                      </SchemaItem><SchemaItem
+                        collapsible={false}
+                        name={"project_name"}
+                        required={false}
+                        schemaName={"string"}
+                        qualifierMessage={undefined}
+                        schema={{"type":"string","example":"Geyser"}}
+                      >
                         
-                        object
+                      </SchemaItem><SchemaItem
+                        collapsible={false}
+                        name={"version"}
+                        required={false}
+                        schemaName={"string"}
+                        qualifierMessage={"**Possible values:** Value must match regular expression `(?:latest|[0-9.]+-?(?:pre|SNAPSHOT)?(?:[0-9.]+)?)?`"}
+                        schema={{"pattern":"(?:latest|[0-9.]+-?(?:pre|SNAPSHOT)?(?:[0-9.]+)?)?","type":"string","example":"2.1.0"}}
+                      >
                         
+                      </SchemaItem><SchemaItem
+                        collapsible={false}
+                        name={"builds"}
+                        required={false}
+                        schemaName={"int32[]"}
+                        qualifierMessage={undefined}
+                        schema={{"type":"array","items":{"type":"integer","format":"int32"}}}
+                      >
                         
-                      </div>
+                      </SchemaItem>
                     </ul>
                   </details>
                 </TabItem><TabItem
@@ -140,7 +168,7 @@ Gets information related to a specific build.
                   value={"Example (from schema)"}
                 >
                   <ResponseSamples
-                    responseExample={"{}"}
+                    responseExample={"{\n  \"project_id\": \"geyser\",\n  \"project_name\": \"Geyser\",\n  \"version\": \"2.1.0\",\n  \"builds\": [\n    0\n  ]\n}"}
                     language={"json"}
                   >
                     

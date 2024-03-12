@@ -1,13 +1,13 @@
 ---
-id: version
-title: "Gets information about a version."
-description: "Gets information about a version."
-sidebar_label: "Gets information about a version."
+id: download-latest
+title: "Downloads the given file from a build's data."
+description: "Downloads the given file from a build's data."
+sidebar_label: "Downloads the given file from a build's data."
 hide_title: true
 hide_table_of_contents: true
-api: eJytVE1v2zAM/SsGTw2q2Gl2mi9BgA1dMWAt2m6XwBgUm4nV2ZYq0Vkz1/+9oC27KfqBotjJMimSj3xPbIDk1kG8gh1ap3Q1TXVFVhcFWkgEaINWktLVWQbxcAcEGGlliYSWYxuoZIkQg7H6BlMCAariX0k5CMjQpVYZzgIxXOcY+HuByrAitVFoQxBg8bZWFjOIydYowKU5lhLihhMRWo5eyem/5BgE0N5wRUdWVVtoBeCdLE3Bti3uHVpoxYjrEffruJaBvxXoTUCPIN+L7GgRF5LQ0f1qNv0cJsfTxdEiNhbvr34sL66+nV9P2OCdk8Vk8byLNuFazujKoeP089mMP0+Rnn8HAUwTVsReaUyh0o6l6MbxleYAoS+h154ZY5lTUn0B3+Rvlb1rzi+OeUzST7t5I+Z0jBko+d8zPKw2D0/CGRdb16rI3AE0aa3csxwIy0O7qgi3aEHARttSUm/6NIe2bQWQoi7vrx77pWeKnex+ytIpkgtU1edhWcm1rimQg8xYVyVSrrNulh01rMsYot088iN1UeNPbeTjXNT4UwsCHNrd8AhrW0AMOZFxcRRl+m9VaJmFPU9lGmq7BVYYg+p69u188TddsLw4gwNq4CSc9QM02lEpO7b8k3pPe08GMs6Y8I4iU0hVceYOdONbX8FuDqOeHAiIH1fK0D9bB4iJgFw74simWUuHP23Rtmy+rdHuIV4lAnbSKrnmVlcNZMrxOYN4IwuHz0CO7wqOLv2rnwSv76wXexpEVrHEdrKo+Q8E/MH9wZLk/fQhNG9tqg/gGWbZJq2AHGWGtptU712mKRo6iHu2bVhSo5BPv15D2z4AzkkjVQ==
+api: eJylVMtu2zAQ/BVhL40R2nLTU3kxDPQVoGiDJr3UEApaWltMKZIhKTeuon8vVqZkp3m0SX0xtVxyZ2aH20AQaw98AYX5qZURxTg3OjijFDrIGBiLTgRp9GkBfEj6KAL6AAyscKLCgI7uaECLCoGDdeYSc9qXmj5FKIFBgT530tJlwOGixCTmJbJAHeRKopsAA4dXtXRYAA+uRgY+L7ESwBu6KKCj0wsx/pUdA4OwtVTRByf1GloGeC0qqyi2xq1HBy0bcG3Qear+GK55ErMSs0rCHuS/IjuacdWpc7OYjl9PsuPx7GjGrcOb80/zs/MPny9GFIibo9lodpfFAeRe8b9g7tN60MtaquIpYs7H3wjR9/F9qrYZXeSt0R49nX01PaG/2yjemVoTTjIQ6kAJwlol884/6aWnrOYAQaxilp1ZWvr9yexN5OU7Vmu5QZ2spMJk5UyViB3PFz4pRBBEt8JQmqJr/s6eoQQO6eYkjW30aRNXbRob7dMmrtq0u8+nuw6mvao+bfplCww8uk3v+Nop4FCGYD1PhwOTnfeqfGLcGkg+qVem4yxDZ849sfnZKbDBmhxeTqaTKTnZGh8q0WkWzfBUNW5pOegd8DqkVgmpqUpHoIlKLWBzQrJFrYAB37/lXi6K7l/STjFgoPqZMKhGiYN/Mwal8YFqNM1SePzqVNtS+KpGtwW+yBhshJNiSQItGiikp3UBfCWUxzt0Bp/B0Zfo8lHy8Fi5l30MCr0lgkLV9AUMfuD2YI7Re3wWmseGyTPw9Kr/B54HB8Uz4Ay9bbOWQYmiQNd1brc9z3O04eDgnWlAD2N4se/fXkDb/gZOgTrb
 sidebar_class_name: "get api-method"
-info_path: api/downloads/downloads-api
+info_path: api/downloads.geysermc.org/downloads-api
 custom_edit_url: null
 ---
 
@@ -27,19 +27,19 @@ import TabItem from "@theme/TabItem";
 <h1
   className={"openapi__heading"}
 >
-  Gets information about a version.
+  Downloads the given file from a build's data.
 </h1>
 
 <MethodEndpoint
   method={"get"}
-  path={"/v2/projects/{project}/versions/{version}"}
+  path={"/v2/projects/{project}/versions/{version}/builds/latest/downloads/{download}"}
 >
   
 </MethodEndpoint>
 
 
 
-Gets information about a version.
+Downloads the given file from a build's data.
 
 ## Request
 
@@ -69,6 +69,11 @@ Gets information about a version.
         param={{"name":"version","in":"path","description":"A version of the project.","required":true,"schema":{"pattern":"(?:latest|[0-9.]+-?(?:pre|SNAPSHOT)?(?:[0-9.]+)?)?","type":"string"}}}
       >
         
+      </ParamsItem><ParamsItem
+        className={"paramsItem"}
+        param={{"name":"download","in":"path","description":"A download of the build.","required":true,"schema":{"pattern":"[a-zA-Z0-9._-]+","type":"string"}}}
+      >
+        
       </ParamsItem>
     </ul>
   </div>
@@ -79,13 +84,13 @@ Gets information about a version.
       id={undefined}
     >
       <TabItem
-        label={"200"}
-        value={"200"}
+        label={"302"}
+        value={"302"}
       >
         <div>
           
           
-          OK
+          Found
           
           
         </div><div>
@@ -124,43 +129,15 @@ Gets information about a version.
                     </div><ul
                       style={{"marginLeft":"1rem"}}
                     >
-                      <SchemaItem
-                        collapsible={false}
-                        name={"project_id"}
-                        required={false}
-                        schemaName={"string"}
-                        qualifierMessage={"**Possible values:** Value must match regular expression `[a-z]+`"}
-                        schema={{"pattern":"[a-z]+","type":"string","example":"geyser"}}
+                      <div
+                        style={{"marginTop":".5rem","marginBottom":".5rem","marginLeft":"1rem"}}
                       >
                         
-                      </SchemaItem><SchemaItem
-                        collapsible={false}
-                        name={"project_name"}
-                        required={false}
-                        schemaName={"string"}
-                        qualifierMessage={undefined}
-                        schema={{"type":"string","example":"Geyser"}}
-                      >
                         
-                      </SchemaItem><SchemaItem
-                        collapsible={false}
-                        name={"version"}
-                        required={false}
-                        schemaName={"string"}
-                        qualifierMessage={"**Possible values:** Value must match regular expression `(?:latest|[0-9.]+-?(?:pre|SNAPSHOT)?(?:[0-9.]+)?)?`"}
-                        schema={{"pattern":"(?:latest|[0-9.]+-?(?:pre|SNAPSHOT)?(?:[0-9.]+)?)?","type":"string","example":"2.1.0"}}
-                      >
+                        object
                         
-                      </SchemaItem><SchemaItem
-                        collapsible={false}
-                        name={"builds"}
-                        required={false}
-                        schemaName={"int32[]"}
-                        qualifierMessage={undefined}
-                        schema={{"type":"array","items":{"type":"integer","format":"int32"}}}
-                      >
                         
-                      </SchemaItem>
+                      </div>
                     </ul>
                   </details>
                 </TabItem><TabItem
@@ -168,7 +145,7 @@ Gets information about a version.
                   value={"Example (from schema)"}
                 >
                   <ResponseSamples
-                    responseExample={"{\n  \"project_id\": \"geyser\",\n  \"project_name\": \"Geyser\",\n  \"version\": \"2.1.0\",\n  \"builds\": [\n    0\n  ]\n}"}
+                    responseExample={"{}"}
                     language={"json"}
                   >
                     

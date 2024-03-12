@@ -1,13 +1,13 @@
 ---
-id: project
-title: "Gets information about a project."
-description: "Gets information about a project."
-sidebar_label: "Gets information about a project."
+id: projects
+title: "Gets a list of all available projects."
+description: "Gets a list of all available projects."
+sidebar_label: "Gets a list of all available projects."
 hide_title: true
 hide_table_of_contents: true
-api: eJyNU8Fu2zAM/RXjnTZMjbMcfSuwISh2WFF0pyAYFJuN1dmSS9FZM8P/PtB2jATphp4si+TTe49kB7H7iGyDhsMz5XKTBy8cqooYW4PQEFtxwd8VyE45MGgs25qEWGs7eFvTRdx5/bVSwqCgmLNrFAUZHktKprzEFeTFPTniBQyYXlrHVCATbskg5iXVFlmnQEKs1Rt782f7CQZybPTFKOz8Hr0Bvdq6qfRuT8dIjH6rkLEJPlJUlNVyqZ9LOt+/wUA1kxeN2qapXD5ITp+jpnRnRKZXw+5kA6tB4sYHJlk/XfEu0m9xNjPIaGn3n5r1XHMgji74eJZvme1RGyFUx2ucvu8NxMkAdD8++TCZpUENXxq1JomJ80+B68GdxO5CK4k9NVM7WJOUoRjkjEMiJTKkh1U6JcW0m049DCLx4TRBLVfIUIo0MUvTIvz2VbDFYvSlzheB90NHlcEgZ+L+ZcqMye39HWYrkOHzYrlYDo6GKLUdOjnN6Xu0XKif7RN6lbSprPOKPJDuJp0bHFaY+xdhkJ32YWtQhiia03U7G+kHV32v1y8t8RHZZmtwsOzsTkVtOhQu6rlA9mSrSFd05onFh4dpbT4m/16tN9mfJsXrnBxs1eofDH7R8WyX+21vUJItiAdmY/Q2z6mRs7qrvdFmzfOw/vqIvv8LZxiEXw==
+api: eJyVUj1v2zAQ/SvCmxnJ9cgtQIsg6NAgaCfDw1m6SEwpkSXPagWB/7042XWTbp1I3j3e+yBXCPUZ9oCYwiu3ku/aMEkK3nPC0SBETiQuTI8d7A0Eg8Q5hilzhl2x3+106Ti3yUWFw+LLZxjoNJ5EuxSjd+02rHnNClmR24FH0p0skWERTkoAo1SRk7gLwY34L5JSogUGTnh8W8+S3NSjlGIgTrzWnq7Xn6+itav994IfWHJFlXdZqvBSkfcVzeQ8nTxXfxTUMBhZhqB59LxJJRlg0cz75k1AmdPMSbNdcU4eFoNIzLZpuvBz8oG6uuclcxrbOqQe5WjgppewWbnq/nhF5ur+6REGOvCi9UO9q3coBjFkGWkLc6KR/8fGO/e3/IR/SRM9uUnHb8rXq8UD5v3laS4mjwZDyKKNdT1R5m/Jl6LlH2dOC+zhaDBTckqtp2IwMHWctlS+8wKL+7blqDHO5M/bw/77TzSZW+QPn76ilN9O0+6q
 sidebar_class_name: "get api-method"
-info_path: api/downloads/downloads-api
+info_path: api/downloads.geysermc.org/downloads-api
 custom_edit_url: null
 ---
 
@@ -27,47 +27,23 @@ import TabItem from "@theme/TabItem";
 <h1
   className={"openapi__heading"}
 >
-  Gets information about a project.
+  Gets a list of all available projects.
 </h1>
 
 <MethodEndpoint
   method={"get"}
-  path={"/v2/projects/{project}"}
+  path={"/v2/projects"}
 >
   
 </MethodEndpoint>
 
 
 
-Gets information about a project.
+Gets a list of all available projects.
 
 ## Request
 
-<details
-  style={{"marginBottom":"1rem"}}
-  className={"openapi-markdown__details"}
-  data-collapsed={false}
-  open={true}
->
-  <summary
-    style={{}}
-  >
-    <h3
-      className={"openapi-markdown__details-summary-header-params"}
-    >
-      Path Parameters
-    </h3>
-  </summary><div>
-    <ul>
-      <ParamsItem
-        className={"paramsItem"}
-        param={{"name":"project","in":"path","description":"The project identifier.","required":true,"schema":{"pattern":"[a-z]+","type":"string"},"example":"geyser"}}
-      >
-        
-      </ParamsItem>
-    </ul>
-  </div>
-</details><div>
+<div>
   <div>
     <ApiTabs
       label={undefined}
@@ -121,25 +97,7 @@ Gets information about a project.
                     >
                       <SchemaItem
                         collapsible={false}
-                        name={"project_id"}
-                        required={false}
-                        schemaName={"string"}
-                        qualifierMessage={"**Possible values:** Value must match regular expression `[a-z]+`"}
-                        schema={{"pattern":"[a-z]+","type":"string","example":"geyser"}}
-                      >
-                        
-                      </SchemaItem><SchemaItem
-                        collapsible={false}
-                        name={"project_name"}
-                        required={false}
-                        schemaName={"string"}
-                        qualifierMessage={undefined}
-                        schema={{"type":"string","example":"Geyser"}}
-                      >
-                        
-                      </SchemaItem><SchemaItem
-                        collapsible={false}
-                        name={"versions"}
+                        name={"projects"}
                         required={false}
                         schemaName={"string[]"}
                         qualifierMessage={undefined}
@@ -154,7 +112,7 @@ Gets information about a project.
                   value={"Example (from schema)"}
                 >
                   <ResponseSamples
-                    responseExample={"{\n  \"project_id\": \"geyser\",\n  \"project_name\": \"Geyser\",\n  \"versions\": [\n    \"string\"\n  ]\n}"}
+                    responseExample={"{\n  \"projects\": [\n    \"string\"\n  ]\n}"}
                     language={"json"}
                   >
                     
