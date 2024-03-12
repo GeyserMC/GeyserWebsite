@@ -57,11 +57,11 @@ const config: Config = {
                 docsPluginId: "classic",
                 config: {
                     downloads: {
-                        specPath: "openapi/downloads.yaml",
+                        specPath: "openapi/downloads.json",
                         outputDir: "docs/api/downloads",
                     },
                     global: {
-                        specPath: "openapi/global.yaml",
+                        specPath: "openapi/global.json",
                         outputDir: "docs/api/global",
                     }
                 }
