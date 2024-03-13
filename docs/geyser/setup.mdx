@@ -25,8 +25,8 @@ import StandaloneIcon from '@site/static/img/icons/geyser.png';
 
 import { ProviderSelector } from "../../src/components/Provider";
 
-<Tabs className="tabs-host-type">
-    <TabItem value="host-provider" label="Host Provider" default>
+<Tabs queryString="host" className="tabs-host-type">
+    <TabItem queryString="platform" value="provider" label="Host Provider" default>
         <ProviderSelector/>
         <Tabs>
             <TabItem value="paper-spigot" label={<PlatformIcon img={PaperSpigotIcon} text="Paper / Spigot"/>} default>
@@ -40,15 +40,15 @@ import { ProviderSelector } from "../../src/components/Provider";
             </TabItem>
         </Tabs>
     </TabItem>
-    <TabItem value="self-host" label="Self Host">
+    <TabItem queryString="platform" value="self" label="Self Host">
         <Tabs>
-            <TabItem value="paper-spigot-self" label={<PlatformIcon img={PaperSpigotIcon} text="Paper / Spigot"/>} default>
+            <TabItem value="paper-spigot" label={<PlatformIcon img={PaperSpigotIcon} text="Paper / Spigot"/>} default>
                 <PaperSpigotSelf/>
             </TabItem>
-            <TabItem value="modded-servers-self" label={<PlatformIcon img={ModIcon} text="Modded Servers"/>}>
+            <TabItem value="modded-servers" label={<PlatformIcon img={ModIcon} text="Modded Servers"/>}>
                 <ModdedServersSelf/>
             </TabItem>
-            <TabItem value="proxy-servers-self" label={<PlatformIcon img={ProxyServersIcon} text="Proxy Servers"/>}>
+            <TabItem value="proxy-servers" label={<PlatformIcon img={ProxyServersIcon} text="Proxy Servers"/>}>
                 <ProxyServersSelf/>
             </TabItem>
             <TabItem value="viaproxy" label={<PlatformIcon img={ViaProxyIcon} text="ViaProxy"/>}>
