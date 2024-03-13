@@ -26,9 +26,9 @@ import StandaloneIcon from '@site/static/img/icons/geyser.png';
 import { ProviderSelector } from "../../src/components/Provider";
 
 <Tabs queryString="host" className="tabs-host-type">
-    <TabItem queryString="platform" value="provider" label="Host Provider" default>
+    <TabItem value="provider" label="Host Provider" default>
         <ProviderSelector/>
-        <Tabs>
+        <Tabs queryString="platform">
             <TabItem value="paper-spigot" label={<PlatformIcon img={PaperSpigotIcon} text="Paper / Spigot"/>} default>
                 <PaperSpigot/>
             </TabItem>
@@ -40,8 +40,8 @@ import { ProviderSelector } from "../../src/components/Provider";
             </TabItem>
         </Tabs>
     </TabItem>
-    <TabItem queryString="platform" value="self" label="Self Host">
-        <Tabs>
+    <TabItem value="self" label="Self Host">
+        <Tabs queryString="platform">
             <TabItem value="paper-spigot" label={<PlatformIcon img={PaperSpigotIcon} text="Paper / Spigot"/>} default>
                 <PaperSpigotSelf/>
             </TabItem>
