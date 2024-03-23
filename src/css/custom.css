@@ -359,11 +359,15 @@ html[data-theme='dark'] {
 }
 
 @media (pointer:coarse) {
-    .tabs:not(.tabs-host-type) {
+    .tabs {
         flex-wrap: nowrap;
         white-space: nowrap;
-        display: flex;
+        display: inline-block;
         max-width: 100%;
+    }
+
+    .openapi-tabs__code-list-container, .tabs-host-type {
+        display: flex !important;
     }
 }
 
