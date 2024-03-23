@@ -3,7 +3,7 @@
 }
 
 [data-theme='dark'] {
-    --ifm-background-image-url: url('/img/site/split-background.png');
+    --ifm-background-image-url: url('/img/site/split-background.png') !important;
 }
 
 .heroBanner {
