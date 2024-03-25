@@ -1,5 +1,6 @@
 ---
 title: Hurricane
+description: Hurricane is a Paper / Spigot plugin and Fabric mod that fixes some bugs that otherwise cannot be fixed without server-side modification.
 ---
 
 # Hurricane

@@ -1,5 +1,6 @@
 ---
 title: Supported Languages & Translations
+description: Geyser supports a wide variety of languages to offer the best experience for players all over the globe. Community members can help translate Geyser into more languages.
 ---
 
 Geyser supports a wide variety of languages to offer the best experience for players all over the globe.

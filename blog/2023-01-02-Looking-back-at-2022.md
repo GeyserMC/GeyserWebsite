@@ -3,6 +3,7 @@ title: "Looking back at 2022"
 slug: "looking-back-at-2022"
 authors: Camotoy
 hide_table_of_contents: false
+description: "A look back at the year of 2022 for Geyser."
 ---
 Hi.
 

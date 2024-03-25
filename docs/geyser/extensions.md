@@ -1,5 +1,6 @@
 ---
 title: Geyser Extensions
+description: Geyser Extensions are the equivalent of "plugins", but specifically for the Geyser platform. This brings the advantage of them being platform-agnostic, meaning that you won't have to worry about supporting all platforms individually.
 ---
 
 # Geyser Extensions

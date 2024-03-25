@@ -1,5 +1,6 @@
 ---
 title: Fixing 'Unable to Connect to World'
+description: Common issues and solutions for the 'Unable to Connect to World' error.
 ---
 
 ## Fixing 'Unable to Connect to World' errors {#fixing-unable-to-connect-to-world-errors}

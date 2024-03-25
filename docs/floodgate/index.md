@@ -1,6 +1,7 @@
 ---
 title: Floodgate
 permalink: /floodgate/
+description: 'Floodgate is a hybrid mode plugin that allows Minecraft: Bedrock Accounts to join Minecraft: Java Edition servers without needing a Minecraft: Java Edition account.'
 ---
 
 # Floodgate

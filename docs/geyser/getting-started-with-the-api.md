@@ -1,5 +1,6 @@
 ---
 title: Getting Started with the API
+description: 'A primer on how to use the Geyser and Floodgate APIs.'
 ---
 
 To start, add the Open Collaboration repository to your project:

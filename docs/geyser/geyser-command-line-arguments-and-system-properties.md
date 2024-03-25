@@ -1,5 +1,6 @@
 ---
 title: Geyser Command Line Arguments and System Properties
+description: Geyser offers a few command line arguments/system properties to allow you to configure Geyser without editing the config files.
 ---
 
 # Geyser Command Line Arguments and System Properties

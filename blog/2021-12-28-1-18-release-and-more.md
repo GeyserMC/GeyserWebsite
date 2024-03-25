@@ -3,6 +3,7 @@ title: "1.18 Release, MCProtocolLib, Refactors & More!"
 slug: "1-18-release-and-more"
 authors: RednedEpic
 hide_table_of_contents: false
+description: "In this post, we will be covering all the changes that led up to the 1.18 release."
 ---
 Hi everyone 👋
 

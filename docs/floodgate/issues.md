@@ -1,5 +1,6 @@
 ---
 title: Issues
+description: Troubleshoot common Floodgate issues. Get solutions for connection problems, configuration errors, and known limitations.
 ---
 
 # Known Issues & Caveats

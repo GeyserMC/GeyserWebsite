@@ -1,5 +1,6 @@
 ---
 title: Current Limitations
+description: Current known limitations of Geyser.
 ---
 
 # Current Limitations

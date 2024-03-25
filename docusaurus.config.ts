@@ -1,6 +1,7 @@
 import { themes as prismThemes } from 'prism-react-renderer';
 import type { Config } from '@docusaurus/types';
 import type * as Preset from '@docusaurus/preset-classic';
+import { docOgRenderer, blogOgRenderer, pageOgRenderer } from './src/renderer/ImageRenderers';
 
 const config: Config = {
     title: 'GeyserMC',
@@ -71,6 +72,17 @@ const config: Config = {
                         },
                     }
                 }
+            },
+        ],
+        [
+            '@kas-tle/docusaurus-og',
+            {
+                path: './preview-images',
+                imageRenderers: {
+                    'docusaurus-plugin-content-docs': docOgRenderer,
+                    'docusaurus-plugin-content-pages': pageOgRenderer,
+                    'docusaurus-plugin-content-blog': blogOgRenderer,
+                },
             },
         ]
     ],

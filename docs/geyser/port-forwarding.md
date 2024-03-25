@@ -1,5 +1,6 @@
 ---
 title: Port forwarding
+description: Information on how to set up UDP port forwarding required for Geyser.
 ---
 
 # Port forwarding

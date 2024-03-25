@@ -94,7 +94,7 @@ const DownloadPage: React.FC = () => (
 export default function Download(): JSX.Element {
     return (
         <Layout
-            title={`Geyser Downloads`}
+            title={`Download`}
             description="Download the latest versions of our various projects."
         >
             <main>

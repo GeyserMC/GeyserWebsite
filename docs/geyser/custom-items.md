@@ -1,5 +1,6 @@
 ---
 title: Custom items with Geyser
+description: Geyser allows custom Bedrock items to be added for an equivalency to Vanilla Java item predicates or modded items.
 ---
 
 # Custom items with Geyser

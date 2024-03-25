@@ -1,5 +1,6 @@
 ---
 title: Anticheat Compatibility
+description: A list of community compiled list of Anticheats and their compatibility with Geyser.
 ---
 
 :::caution

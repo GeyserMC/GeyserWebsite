@@ -1,5 +1,6 @@
 ---
 title: Developer Guide
+description: A guide for developers who want to contribute to GeyserMC projects.
 ---
 
 ## Compiling {#compiling}

@@ -3,6 +3,7 @@ title: "Four Years of Geyser"
 slug: "four-years-of-geyser"
 authors: RednedEpic
 hide_table_of_contents: false
+description: "Geyser is now four years old!"
 ---
 
 Hi everyone,

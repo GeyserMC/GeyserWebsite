@@ -1,5 +1,6 @@
 ---
 title: Custom blocks with Geyser
+description: Geysers allows custom blocks to be mapped to Vanilla Java blockstates or modded blocks to allow custom block models.
 ---
 
 # Custom blocks with Geyser

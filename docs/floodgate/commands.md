@@ -1,5 +1,6 @@
 ---
 title: Commands
+description: Commands and their associated permission nodes for Floodgate.
 ---
 
 | Command | Permission | Description |

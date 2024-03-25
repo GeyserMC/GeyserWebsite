@@ -1,5 +1,6 @@
 ---
 title: Geyser API
+description: The Geyser API allows you to interact with Geyser in your own plugins, mods, or extensions.
 ---
 
 Geyser has an API to extend what is possible with Geyser, and to allow you to interact with Geyser in your own plugins, mods, or extensions.

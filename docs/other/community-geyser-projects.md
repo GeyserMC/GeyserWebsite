@@ -1,5 +1,6 @@
 ---
 title: Community Geyser Projects
+description: A list of community-compiled plugins, extensions and tools that work with Geyser.
 ---
 
 Below is a list of community-compiled plugins, extensions and tools that work with Geyser. 

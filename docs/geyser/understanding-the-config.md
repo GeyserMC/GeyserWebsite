@@ -1,5 +1,6 @@
 ---
 title: Understanding the Config
+description: This page covers basic information about the Geyser config and the function of each option.
 ---
 
 This page covers basic information about the Geyser config and what each option does. Though they are explained in the configuration itself, this explains what each option does in more detail.

@@ -1,5 +1,6 @@
 ---
 title: Forms and Cumulus
+description: Cumulus is the Forms API used in Geyser and Floodgate, and is available for use in projects that extend Geyser or Floodgate.
 ---
 
 # What is Cumulus?

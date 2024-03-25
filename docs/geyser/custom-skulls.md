@@ -1,5 +1,6 @@
 ---
 title: Custom skulls with Geyser
+description: Geyser allows mapping of custom skulls to custom blocks for use in inventories and on entities.
 ---
 
 # Custom skulls with Geyser

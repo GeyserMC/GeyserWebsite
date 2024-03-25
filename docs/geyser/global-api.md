@@ -1,5 +1,6 @@
 ---
 title: Global API
+description: 'The Global API is a service that allows for global linking, skin uploading, and access to various info about all Bedrock players that have joined Floodgate servers before.'
 ---
 
 The Global API is available for every server. It currently includes: [Global Linking](/floodgate/linking#what-is-global-linking), [skin uploading](/floodgate/features#what-is-skin-uploading), getting a xuid by gamertag, and getting a gamertag by xuid.

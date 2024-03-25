@@ -1,5 +1,6 @@
 ---
 title: Commands and Permissions
+description: Commands and their associated permission nodes for Geyser.
 ---
 
 # Commands and Permissions

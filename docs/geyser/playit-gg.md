@@ -1,5 +1,6 @@
 ---
 title: playit.gg Setup
+description: How to set up playit.gg to use Geyser without port forwarding.
 ---
 
 ## Prerequisites {#prerequisites}

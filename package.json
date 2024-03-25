@@ -23,6 +23,7 @@
         "@fortawesome/free-regular-svg-icons": "^6.5.1",
         "@fortawesome/free-solid-svg-icons": "^6.5.1",
         "@fortawesome/react-fontawesome": "^0.2.0",
+        "@kas-tle/docusaurus-og": "https://github.com/Kas-tle/docusaurus-og",
         "@mdx-js/react": "^3.0.0",
         "clsx": "^1.2.1",
         "docusaurus-plugin-openapi-docs": "^3.0.0-beta.5",

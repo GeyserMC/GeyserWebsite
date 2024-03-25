@@ -1,5 +1,6 @@
 ---
 title: Test Server
+description: Information about joining and using the Geyser test server.
 ---
 
 ### Details {#details}

@@ -1,5 +1,6 @@
 ---
 title: Features
+description: Learn about the features of Floodgate 2.0, including the whitelist command and skin uploading.
 ---
 
 ## Whitelist command {#whitelist-command}

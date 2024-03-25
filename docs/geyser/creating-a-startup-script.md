@@ -1,5 +1,6 @@
 ---
 title: Creating a Startup Script
+description: Learn how to create a startup script for Geyser-Standalone.
 ---
 
 # Creating a Startup Script for Geyser-Standalone

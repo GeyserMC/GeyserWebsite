@@ -1,5 +1,6 @@
 ---
 title: Common Issues
+description: Common issues that people may encounter with Geyser and potential fixes for them.
 ---
 
 # Common Issues

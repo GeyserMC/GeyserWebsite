@@ -1,5 +1,6 @@
 ---
 title: GeyserOptionalPack
+description: GeyserOptionalPack is a Bedrock resource pack that fixes parity issues with Geyser to bring Bedrock Edition in line with Java Edition.
 ---
 
 # GeyserOptionalPack
