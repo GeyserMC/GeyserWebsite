@@ -1,9 +1,9 @@
 :root {
-    --ifm-background-image-url: url('/img/site/split-background-light.png');
+    --ifm-background-image-url: url('/img/site/split-background-light.jpg');
 }
 
 [data-theme='dark'] {
-    --ifm-background-image-url: url('/img/site/split-background.png') !important;
+    --ifm-background-image-url: url('/img/site/split-background.jpg') !important;
 }
 
 .heroBanner {

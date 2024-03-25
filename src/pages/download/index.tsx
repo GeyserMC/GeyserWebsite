@@ -4,7 +4,7 @@ import TabItem from "@theme/TabItem";
 import { faTowerCell, faFileZipper } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import HeroBanner from '@site/src/components/HeroBanner';
-import HeroBackground from '@site/static/img/site/split-background.png';
+import HeroBackground from '@site/static/img/site/split-background.jpg';
 import PaperSpigotIcon from '@site/static/img/icons/paper.png';
 import VelocityIcon from '@site/static/img/icons/velocity.png';
 import WaterfallBungeeCordIcon from '@site/static/img/icons/waterfall.svg';
