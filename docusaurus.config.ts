@@ -17,7 +17,7 @@ const config: Config = {
     // GitHub pages deployment config.
     // If you aren't using GitHub pages, you don't need these.
     organizationName: 'GeyserMC', // Usually your GitHub org/user name.
-    projectName: 'GeyserWiki', // Usually your repo name.
+    projectName: 'GeyserWebsite', // Usually your repo name.
 
     onBrokenLinks: 'throw',
     onBrokenMarkdownLinks: 'warn',
@@ -188,6 +188,9 @@ const config: Config = {
             textColor: '#e3e3e3',
             isCloseable: true,
         },
+        metadata: [
+            {name: 'theme-color', content: '#25c2a0'},
+        ],
     } satisfies Preset.ThemeConfig,
 };
 
