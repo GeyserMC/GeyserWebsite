@@ -37,7 +37,7 @@ const config: Config = {
                 docs: {
                     sidebarPath: require.resolve("./sidebars.ts"),
                     editUrl:
-                        'https://github.com/GeyserMC/Geyser/tree/main/',
+                        'https://github.com/GeyserMC/GeyserWebsite/tree/master/',
 
                     routeBasePath: '/', // Serve the docs at the site's root
                     docItemComponent: "@theme/ApiItem",
@@ -161,7 +161,10 @@ const config: Config = {
         prism: {
             theme: prismThemes.github,
             darkTheme: prismThemes.dracula,
-            additionalLanguages: ['bash', 'batch', 'java', 'json', 'php', 'powershell', 'csharp', 'ruby'],
+            additionalLanguages: [
+                'bash', 'batch', 'java', 'json', // Docs
+                'php', 'powershell', 'csharp', 'ruby' // API examples
+            ],
         },
         colorMode: {
             defaultMode: 'dark',
