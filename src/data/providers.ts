@@ -205,7 +205,10 @@ export const providersData: Providers = {
         {
             name: 'Bloom.Host',
             url: 'https://www.bloom.host/',
-            description: descriptionTemplates.forwardingOption
+            description: translate({
+                id: 'providers.provider.bloomhost.description',
+                message: "https://docs.bloom.host/plugins/geysermc/"
+            })
         },
         {
             name: 'Clovux',
