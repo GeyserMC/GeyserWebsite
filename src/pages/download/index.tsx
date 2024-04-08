@@ -1,7 +1,7 @@
 import React from 'react';
 import Tabs from "@theme/Tabs";
 import TabItem from "@theme/TabItem";
-import { faTowerCell, faFileZipper } from '@fortawesome/free-solid-svg-icons';
+import { faTowerCell, faFileZipper, faGear } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import HeroBanner from '@site/src/components/HeroBanner';
 import HeroBackground from '@site/static/img/site/split-background.jpg';
@@ -26,7 +26,7 @@ const DownloadPage: React.FC = () => (
             backgroundImage={HeroBackground}
         />
 
-        <Tabs>
+        <Tabs queryString="project">
             <TabItem value="geyser" label="Geyser" default>
                 <ProjectDownload
                     projectId="geyser"
@@ -80,6 +80,20 @@ const DownloadPage: React.FC = () => (
                                 setup='/other/geyseroptionalpack'
                                 downloadsInfo={{
                                     geyseroptionalpack: <><FontAwesomeIcon icon={faFileZipper} /> GeyserOptionalPack</>,
+                                }}
+                                gridColumns={1}
+                            />
+                        }
+                    />
+                    <Collapsible
+                        title='Hydraulic'
+                        subtitle={<Translate id='pages.download.description.hydraulic'>A companion mod to Geyser which allows for Bedrock players to join modded Minecraft: Java Edition servers.</Translate>}
+                        inner={
+                            <ProjectDownload
+                                projectId="hydraulic"
+                                setup='/other/hydraulic'
+                                downloadsInfo={{
+                                    hydraulic: <><FontAwesomeIcon icon={faGear} /> Hydraulic</>,
                                 }}
                                 gridColumns={1}
                             />

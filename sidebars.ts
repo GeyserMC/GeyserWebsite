@@ -125,7 +125,8 @@ const sidebars: SidebarsConfig = {
         'other/community-geyser-projects',
         'other/test-server',
         'other/developer-guide',
-        'other/discord-bot-usage'
+        'other/discord-bot-usage',
+        'other/hydraulic'
     ]
 };
 
