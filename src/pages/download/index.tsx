@@ -1,7 +1,7 @@
 import React from 'react';
 import Tabs from "@theme/Tabs";
 import TabItem from "@theme/TabItem";
-import { faTowerCell, faFileZipper, faGear } from '@fortawesome/free-solid-svg-icons';
+import { faTowerCell, faFileZipper } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import HeroBanner from '@site/src/components/HeroBanner';
 import HeroBackground from '@site/static/img/site/split-background.jpg';
@@ -93,7 +93,8 @@ const DownloadPage: React.FC = () => (
                                 projectId="hydraulic"
                                 setup='/other/hydraulic'
                                 downloadsInfo={{
-                                    hydraulic: <><FontAwesomeIcon icon={faGear} /> Hydraulic</>,
+                                    fabric: <PlatformIcon img={FabricIcon} text="Fabric" />,
+                                    neoforge: <PlatformIcon img={NeoForgeIcon} text="NeoForge" />,
                                 }}
                                 gridColumns={1}
                             />
