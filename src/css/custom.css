@@ -392,3 +392,11 @@ html[data-theme='dark'] {
     border-radius: var(--ifm-global-radius);
     color: #fff
 }
+
+.hidden {
+    display: none;
+}
+
+.font-normal {
+    font-weight: normal;
+}

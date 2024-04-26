@@ -230,6 +230,12 @@
   "pages.download.description.geyseroptionalpack": {
     "message": "An optional Bedrock resource pack to extend Geyser functionality."
   },
+  "pages.configeditor.title": {
+    "message": "Config Editor"
+  },
+  "pages.configeditor.subheading": {
+    "message": "Edit your Geyser configuration."
+  },
   "theme.ErrorPageContent.title": {
     "message": "This page crashed.",
     "description": "The title of the fallback page when the page crashed"

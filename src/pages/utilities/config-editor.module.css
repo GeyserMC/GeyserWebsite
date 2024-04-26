@@ -1,0 +1,59 @@
+:root {
+    --card-bg-color: #f7f5f5;
+    --card-header-bg-color: limegreen;
+}
+
+[data-theme='dark'] {
+    --card-bg-color: #0b1215 !important;
+    --card-header-bg-color: #2cb42c !important;
+}
+
+.button {
+    width: 150px;
+    outline: 3px solid var(--ifm-tabs-color-active);
+    outline-offset: -3px;
+    border: 0;
+    border-radius: var(--ifm-global-radius);
+    background-color: transparent;
+    text-align: center;
+    font-size: 18px;
+    transition: background-color 0.5s ease, color 0.5s ease;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.button:hover {
+    background-color: var(--ifm-color-primary);
+    color: #fff;
+}
+
+.buttonsContainer {
+    display: flex;
+    gap: 10px;
+}
+
+.card {
+    margin-bottom: 30px;
+    background-color: var(--card-bg-color);
+}
+
+.cardHeader {
+    background-color: var(--card-header-bg-color);
+    padding-left: 16px;
+    font-size: 22px;
+    text-transform: capitalize;
+}
+
+.cardBody {
+    padding: 16px;
+}
+
+.configOption {
+    padding-bottom: 20px;
+    padding-top: 20px;
+    border-bottom: 1px solid gray;
+}
+
+.configOption:last-child {
+    border-bottom: none;
+}

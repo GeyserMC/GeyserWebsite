@@ -1,0 +1,244 @@
+import Translate from "@docusaurus/Translate";
+import HeroBanner from "@site/src/components/HeroBanner";
+import HeroBackground from '@site/static/img/site/split-background.jpg';
+import Layout from "@theme/Layout";
+import styles from "./config-editor.module.css";
+import { useRef, useState } from "react";
+
+const ConfigEditorPage: React.FC = () => {
+    const [config, setConfig] = useState("");
+    const [parsedConfig, setParsedConfig] = useState<any>({});
+
+    const uploadRef = useRef<any>(null);
+
+    const loadDefault = async () => {
+        try {
+            const response = await fetch('https://raw.githubusercontent.com/GeyserMC/Geyser/master/core/src/main/resources/config.yml');
+            if (!response.ok) {
+                throw new Error('Network response was not ok');
+            }
+            const text = await response.text();
+            handleConfigLoad(text);
+        } catch (error) {
+            console.error("Failed to fetch default config:", error);
+        }
+    }
+
+    const handleUpload = async (e) => {
+        const fileName = e.target.files[0];
+
+        // Makse sure the file is a .yml file
+        if (!fileName.name.endsWith('.yml')) {
+            alert('Please select a .yml config file!');
+            return;
+        }
+
+        // Read the file
+        const fileReader = new FileReader();
+        fileReader.onload = (e) => {
+            handleConfigLoad(e.target.result as string);
+        }
+        fileReader.readAsText(fileName);
+    }
+
+    const handleConfigLoad = (config: string) => {
+        setConfig(config);
+        setParsedConfig(loadConfig(config));
+    }
+
+    const loadConfig = (config: string) => {
+        const lines = config.split('\n');
+        let currentSection = '';
+        let currentComment = '';
+
+        const newConfig = {};
+
+        // Parse each line of the config
+        lines.forEach(line => {
+            // Reset the section if we are no indented
+            if (!line.startsWith('  ')) {
+                currentSection = '';
+            }
+
+            // Ignore any empty lines
+            line = line.trim()
+            if (line === '') {
+                currentComment = '';
+                return;
+            }
+
+            // Check if we are in a comment
+            if (line.startsWith('#')) {
+                currentComment += line.replace(/^# ?/i, '') + '<br>';
+                return;
+            }
+
+            // Ignore these lines since they will fail to parse
+            if (!line.includes(':')) {
+                return;
+            }
+
+            // Get the key and value
+            const splitLine = line.split(':');
+            splitLine[0] = splitLine[0].trim();
+            splitLine[1] = splitLine[1].trim();
+
+            // Check if we are in a new section
+            if (line.endsWith(':')) {
+                currentSection = splitLine[0];
+                currentComment = '';
+                return;
+            }
+
+            // Ignore user auths section
+            if (currentSection === 'userAuths' || currentSection === 'saved-user-logins') {
+                return;
+            }
+
+            // Add the config option to the config object
+            newConfig[currentSection] = newConfig[currentSection] || {};
+            newConfig[currentSection][splitLine[0]] = {
+                desc: currentComment,
+                value: splitLine[1]
+            };
+
+            // Reset the comment
+            currentComment = '';
+        })
+
+        return newConfig;
+    }
+
+    const generateHTML = (config: any) => {
+        return Object.keys(config).map(configKey => (
+            <div className={styles.card}>
+                <div className={styles.cardHeader}>{configKey === '' ? '&nbsp;' : configKey}</div>
+                <div className={styles.cardBody}>
+                    {Object.keys(config[configKey]).map(configOption => {
+                        // Get the config option info
+                        const configOptionInfo = config[configKey][configOption];
+                        const configOptionKey = configKey === '' ? configOption : `${configKey}.${configOption}`;
+
+                        return (
+                            <div className={styles.configOption}>
+                                <h3>{configOption}</h3>
+                                <p>{configOptionInfo.desc}</p>
+                                {<div dangerouslySetInnerHTML={{ __html: getInput(configOptionKey, configOptionInfo.value) }} />}
+                            </div>
+                        )
+                    })}
+                </div>
+            </div>
+        ))
+    }
+
+    function getInput(name, value) {
+        switch (name) {
+            // Handle all the dropdowns
+            case 'remote.auth-type':
+                return `<select class="form-select" id="${name}"><option ${value === 'offline' ? 'selected' : ''}>offline</option><option ${value === 'online' ? 'selected' : ''}>online</option><option ${value === 'floodgate' ? 'selected' : ''}>floodgate</option></select>`
+            case 'show-cooldown':
+                return `<select class="form-select" id="${name}"><option ${value === 'title' ? 'selected' : ''}>title</option><option ${value === 'actionbar' ? 'selected' : ''}>actionbar</option><option ${value === 'false' ? 'selected' : ''}>false</option></select>`
+            case 'emote-offhand-workaround':
+                return `<select class="form-select" id="${name}"><option ${value === 'disabled' ? 'selected' : ''}>disabled</option><option ${value === 'no-emotes' ? 'selected' : ''}>no-emotes</option><option ${value === 'emotes-and-offhand' ? 'selected' : ''}>emotes-and-offhand</option></select>`
+            case 'config-version':
+                return `<input class="form-control" type="text" disabled value="${value.replace(/"/g, '')}">`
+            case 'metrics.uuid':
+                return `<input class="form-control" id="${name}" type="text" disabled value="${value === 'generateduuid' ? createUUID() : value}">`
+
+            default:
+                // Handle all the other inputs
+                if (value.toLowerCase() === 'true' || value.toLowerCase() === 'false') { // Boolean
+                    return `<div class="form-check form-switch form-control-lg"><input class="form-check-input" type="checkbox" role="switch" id="${name}" ${value.toLowerCase() === 'true' ? 'checked="checked"' : ''}><label for="${name}"></label></div>`
+                } else if (!isNaN(value)) { // Number
+                    return `<input class="form-control" type="number" value="${value}" id="${name}" >`
+                } else { // String
+                    return `<input class="form-control" type="text" value="${value.replace(/"/g, '')}" id="${name}" >`
+                }
+        }
+    }
+
+    function createUUID() {
+        // http://www.ietf.org/rfc/rfc4122.txt
+        const s = []
+        const hexDigits = '0123456789abcdef'
+        for (let i = 0; i < 36; i++) {
+            s[i] = hexDigits.substr(Math.floor(Math.random() * 0x10), 1)
+        }
+        s[14] = '4' // bits 12-15 of the time_hi_and_version field to 0010
+        s[19] = hexDigits.substr((s[19] & 0x3) | 0x8, 1) // bits 6-7 of the clock_seq_hi_and_reserved to 01
+        s[8] = s[13] = s[18] = s[23] = '-'
+
+        return s.join('')
+    }
+
+    const NoConfigSection = () => (
+        <>
+            <h1>No config selected.</h1>
+            <h3 className="font-normal">Upload a file or get started with the default config!</h3>
+
+            <div className={styles.buttonsContainer}>
+                <button className={styles.button} onClick={loadDefault}>
+                    Default
+                </button>
+
+                <button className={styles.button} onClick={() => uploadRef.current.click()}>
+                    <input 
+                        ref={uploadRef} 
+                        type="file" 
+                        className="hidden" 
+                        accept=".yml" 
+                        onChange={handleUpload}
+                    />
+                    Upload
+                </button>
+            </div>
+
+            {generateHTML(parsedConfig)}
+        </>
+    )
+
+    const EditorView = () => (
+        <>
+            <div className={styles.buttonsContainer} style={{ marginBottom: "30px" }}>
+                <button className={styles.button}>
+                    Export
+                </button>
+            </div>
+
+            {generateHTML(parsedConfig)}
+        </>
+    )
+
+    return (
+        <>
+            <HeroBanner
+                title={<Translate id='pages.configeditor.title'>Config Editor</Translate>}
+                subheading={<Translate id='pages.configeditor.subheading'>Edit your Geyser configuration.</Translate>}
+                backgroundImage={HeroBackground}
+            />
+
+            <div className="container" style={{ marginTop: "30px" }}>
+                {Object.keys(parsedConfig).length === 0 ? <NoConfigSection /> : <EditorView />}
+            </div>
+
+
+            <section id="config-options"></section>
+        </>
+    )
+}
+
+export default function ConfigEditor(): JSX.Element {
+    return (
+        <Layout
+            title={`Config Editor`}
+            description="Edit your Geyser configuration."
+        >
+            <main>
+                <div className="container container--fluid margin-vert--lg">
+                    <ConfigEditorPage />
+                </div>
+            </main>
+        </Layout>
+    )
+}
