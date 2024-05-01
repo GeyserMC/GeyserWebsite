@@ -64,3 +64,39 @@
 .statusMessage {
     margin-top: 20px;
 }
+
+.pluginName:hover {
+    cursor: pointer;
+}
+
+.pluginInfoPopover {
+    position: absolute;
+    background-color: white;
+    color: black;
+    padding: 16px;
+    z-index: 1000;
+}
+
+.pluginInfoPopover p {
+    margin: 0;
+}
+
+.pluginNamePopover {
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.pluginEnabled {
+    border-radius: 10px;
+    padding: 0 10px;
+    width: fit-content;
+    color: white;
+}
+
+.pluginAuthorsLabel {
+    padding-top: 15px;
+}
+
+.viewDumpSource {
+    padding-bottom: 30px !important;
+}

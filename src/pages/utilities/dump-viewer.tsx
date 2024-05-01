@@ -2,7 +2,7 @@ import Translate from '@docusaurus/Translate';
 import HeroBanner from '@site/src/components/HeroBanner';
 import HeroBackground from '@site/static/img/site/split-background.jpg';
 import Layout from '@theme/Layout';
-import { useEffect, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import styles from './utilities.module.css';
 import { Grid } from '@site/src/components/Grid';
 import CodeBlock from '@theme/CodeBlock';
@@ -11,6 +11,18 @@ const DumpViewerPage: React.FC = () => {
     const [dumpId, setDumpId] = useState('');
     const [data, setData] = useState<any>({});
     const [statusMessage, setStatusMessage] = useState('');
+    const [activePlugin, setActivePlugin] = useState<any>({});
+
+    const pluginPopoverRef = useRef<any>(null);
+
+    useEffect(() => {
+        const handleClickOutside = (event) => setActivePlugin({});
+        document.addEventListener("mousedown", handleClickOutside);
+
+        return () => {
+            document.removeEventListener("mousedown", handleClickOutside);
+        };
+    }, [pluginPopoverRef]);
 
     useEffect(() => {
         // Get the ID from the URL
@@ -61,6 +73,10 @@ const DumpViewerPage: React.FC = () => {
         return string.charAt(0).toUpperCase() + string.slice(1)
     }
 
+    const handlePluginClick = (plugin) => {
+        setActivePlugin(plugin);
+    }
+
     return (
         <>
             <HeroBanner
@@ -84,7 +100,7 @@ const DumpViewerPage: React.FC = () => {
                     </>
                 ) : (
                     <>
-                        <div className='d-none' id='dumpBreakdown'>
+                        <div>
                             <div className={styles.card}>
                                 <div className={styles.cardHeader}>
                                     Versions
@@ -157,6 +173,72 @@ const DumpViewerPage: React.FC = () => {
                                 </div>
                                 <div className={styles.card}>
                                     <div className={styles.cardHeader}>
+                                        System Info
+                                    </div>
+                                    <div className={styles.cardBody}>
+                                        <Grid elementsPerRow={3} gap='8px'>
+                                            <div>
+                                                <b>CPU Count</b><br />
+                                                <p id='cpuCount'>{data.cpuCount}</p>
+                                            </div>
+                                            <div>
+                                                <b>CPU Name</b><br />
+                                                <p id='cpuName'>{data.cpuName}</p>
+                                            </div>
+                                            <div>
+                                                <b>RAM</b><br />
+                                                <p id='ram'>{data.ramInfo.total} MB ({data.ramInfo.free} MB free)</p>
+                                            </div>
+                                            <div>
+                                                <b>Java Name</b><br />
+                                                <p id='javaName'>{data.versionInfo.javaName}</p>
+                                            </div>
+                                            <div>
+                                                <b>Java Vendor</b><br />
+                                                <p id='javaVendor'>{data.versionInfo.javaVendor}</p>
+                                            </div>
+                                            <div>
+                                                <b>Uses Docker?</b><br />
+                                                <p id='dockerCheck'>{data.versionInfo.network.dockerCheck ? "true" : "false"}</p>
+                                            </div>
+                                        </Grid>
+                                    </div>
+                                </div>
+                                <div className={styles.card}>
+                                    <div className={styles.cardHeader}>
+                                        Plugins ({data.bootstrapInfo.plugins.length})
+                                    </div>
+                                    <div className={styles.cardBody}>
+                                        {data.bootstrapInfo.plugins.length === 0 ? <p>No plugins to show.</p> : (
+                                            <>
+                                                <p>Click on a plugin to view more information.</p>
+
+                                                <Grid elementsPerRow={5}>
+                                                    {data.bootstrapInfo.plugins.map(plugin => (
+                                                        <div>
+                                                            <b onClick={() => handlePluginClick(plugin)} className={styles.pluginName}>{plugin.name}</b>
+
+                                                            {activePlugin?.main === plugin.main ? (
+                                                                <div ref={pluginPopoverRef} className={styles.pluginInfoPopover}>
+                                                                    <p className={styles.pluginNamePopover}>{plugin.name}</p>
+                                                                    <p>{plugin.version}</p>
+                                                                    <p className={styles.pluginEnabled} style={{ backgroundColor: plugin.enabled ? "green" : "red" }}>{plugin.enabled ? "Enabled" : "Disabled"}</p>
+
+                                                                    <p className={styles.pluginAuthorsLabel}>Authors:</p>
+                                                                    <ul>
+                                                                        {plugin.authors.map(author => <li>{author}</li>)}
+                                                                    </ul>
+                                                                </div>
+                                                            ) : undefined}
+                                                        </div>
+                                                    ))}
+                                                </Grid>
+                                            </>
+                                        )}
+                                    </div>
+                                </div>
+                                <div className={styles.card}>
+                                    <div className={styles.cardHeader}>
                                         Config
                                     </div>
                                     <div className={styles.cardBody}>
@@ -169,6 +251,8 @@ const DumpViewerPage: React.FC = () => {
                                     </div>
                                 </div>
                             </div>
+
+                            <a target="_blank" href={`https://dump.geysermc.org/${dumpId}`} className={styles.viewDumpSource}>View dump source {'>'}</a>
                         </div>
                     </>
                 )}
