@@ -145,8 +145,8 @@ const config: Config = {
                         },
                         {
 
-                            to: 'utilities/dump-view',
-                            label: 'Dump View',
+                            to: 'utilities/dump-viewer',
+                            label: 'Dump Viewer',
                         }
                     ]
                 },

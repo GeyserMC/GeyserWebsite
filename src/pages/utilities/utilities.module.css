@@ -38,3 +38,29 @@
 .configOption:last-child {
     border-bottom: none;
 }
+
+.loadButton {
+    width: 150px;
+    outline: 3px solid var(--ifm-tabs-color-active);
+    outline-offset: -3px;
+    border: 0;
+    border-radius: var(--ifm-global-radius);
+    background-color: transparent;
+    text-align: center;
+    font-size: 18px;
+    font-weight: normal;
+    transition: background-color 0.5s ease, color 0.5s ease;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    color: var(--ifm-tabs-color-active);
+    margin-left: 5px;
+}
+
+.loadButton:hover {
+    background-color: var(--ifm-color-primary);
+    color: #fff;
+}
+
+.statusMessage {
+    margin-top: 20px;
+}

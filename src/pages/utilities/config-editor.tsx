@@ -2,7 +2,7 @@ import Translate from "@docusaurus/Translate";
 import HeroBanner from "@site/src/components/HeroBanner";
 import HeroBackground from '@site/static/img/site/split-background.jpg';
 import Layout from "@theme/Layout";
-import styles from "./config-editor.module.css";
+import styles from "./utilities.module.css";
 import { useRef, useState } from "react";
 
 const ConfigEditorPage: React.FC = () => {

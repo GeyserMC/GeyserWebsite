@@ -236,6 +236,12 @@
   "pages.configeditor.subheading": {
     "message": "Edit your Geyser configuration."
   },
+  "pages.dumpviewer.title": {
+    "message": "Dump Viewer"
+  },
+  "pages.dumpviewer.subheading": {
+    "message": "View the breakdown of your Geyser dump."
+  },
   "theme.ErrorPageContent.title": {
     "message": "Die Seite ist abgestürzt.",
     "description": "The title of the fallback page when the page crashed"
