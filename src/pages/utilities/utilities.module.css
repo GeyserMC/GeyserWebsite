@@ -1,11 +1,9 @@
 :root {
     --card-bg-color: #f7f5f5;
-    --card-header-bg-color: limegreen;
 }
 
 [data-theme='dark'] {
     --card-bg-color: #0b1215 !important;
-    --card-header-bg-color: #2cb42c !important;
 }
 
 .buttonsContainer {
@@ -19,7 +17,8 @@
 }
 
 .cardHeader {
-    background-color: var(--card-header-bg-color);
+    background-color: var(--ifm-color-primary);
+    color: white;
     padding-left: 16px;
     font-size: 22px;
     text-transform: capitalize;
