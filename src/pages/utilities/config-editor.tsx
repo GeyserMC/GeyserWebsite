@@ -9,6 +9,7 @@ const ConfigEditorPage: React.FC = () => {
     const [config, setConfig] = useState("");
     const [parsedConfig, setParsedConfig] = useState<any>({});
 
+    const editedConfig = useRef<any>({});
     const uploadRef = useRef<any>(null);
 
     const loadDefault = async () => {
@@ -111,19 +112,18 @@ const ConfigEditorPage: React.FC = () => {
 
     const generateHTML = (config: any) => {
         return Object.keys(config).map(configKey => (
-            <div className={styles.card}>
-                <div className={styles.cardHeader}>{configKey === '' ? '&nbsp;' : configKey}</div>
+            <div key={configKey} className={styles.card}>
+                <div className={styles.cardHeader}>{configKey === '' ? '.' : configKey}</div>
                 <div className={styles.cardBody}>
                     {Object.keys(config[configKey]).map(configOption => {
-                        // Get the config option info
                         const configOptionInfo = config[configKey][configOption];
                         const configOptionKey = configKey === '' ? configOption : `${configKey}.${configOption}`;
 
                         return (
-                            <div className={styles.configOption}>
+                            <div key={configOptionKey} className={styles.configOption}>
                                 <h3>{configOption}</h3>
-                                <p>{configOptionInfo.desc}</p>
-                                {<div dangerouslySetInnerHTML={{ __html: getInput(configOptionKey, configOptionInfo.value) }} />}
+                                <p dangerouslySetInnerHTML={{ __html: configOptionInfo.desc }} />
+                                {getInput(configOptionKey, configOptionInfo.value)}
                             </div>
                         )
                     })}
@@ -132,30 +132,106 @@ const ConfigEditorPage: React.FC = () => {
         ))
     }
 
+    const handleExport = () => {
+        let newConfig = config;
+
+        Object.entries(editedConfig.current).forEach(([key, value]) => {
+            const keys = key.split('.');
+            let currentObj = parsedConfig;
+
+            keys.forEach((nestedKey, index) => {
+                if (currentObj.hasOwnProperty(nestedKey)) {
+                    if (index === keys.length - 1) {
+                        const oldValue = currentObj[nestedKey].value;
+
+                        console.log(`${nestedKey}: ${oldValue}`)
+                        newConfig = newConfig.replace(`  ${nestedKey}: ${oldValue}`, `  ${nestedKey}: ${value}`);
+                    } else {
+                        currentObj = currentObj[nestedKey];
+                    }
+                }
+            });
+        });
+
+        // Trigger a download of the final config
+        downloadString(newConfig, 'text/plain', 'config.yml');
+    }
+
     function getInput(name, value) {
+        const handleChange = (event) => {
+            const { id, value, type, checked } = event.target;
+
+            editedConfig.current = {
+                ...editedConfig.current,
+                [id]: type === 'checkbox' ? checked.toString() : value
+            };
+        }
+
         switch (name) {
             // Handle all the dropdowns
             case 'remote.auth-type':
-                return `<select class="form-select" id="${name}"><option ${value === 'offline' ? 'selected' : ''}>offline</option><option ${value === 'online' ? 'selected' : ''}>online</option><option ${value === 'floodgate' ? 'selected' : ''}>floodgate</option></select>`
+                return (
+                    <select key={name} className="form-input" id={name} defaultValue={value} onChange={handleChange}>
+                        <option value="offline">offline</option>
+                        <option value="online">online</option>
+                        <option value="floodgate">floodgate</option>
+                    </select>
+                );
             case 'show-cooldown':
-                return `<select class="form-select" id="${name}"><option ${value === 'title' ? 'selected' : ''}>title</option><option ${value === 'actionbar' ? 'selected' : ''}>actionbar</option><option ${value === 'false' ? 'selected' : ''}>false</option></select>`
+                return (
+                    <select key={name} className="form-input" id={name} defaultValue={value} onChange={handleChange}>
+                        <option value="title">title</option>
+                        <option value="actionbar">actionbar</option>
+                        <option value="false">false</option>
+                    </select>
+                );
             case 'emote-offhand-workaround':
-                return `<select class="form-select" id="${name}"><option ${value === 'disabled' ? 'selected' : ''}>disabled</option><option ${value === 'no-emotes' ? 'selected' : ''}>no-emotes</option><option ${value === 'emotes-and-offhand' ? 'selected' : ''}>emotes-and-offhand</option></select>`
+                return (
+                    <select key={name} className="form-input" id={name} defaultValue={value} onChange={handleChange}>
+                        <option value="disabled">disabled</option>
+                        <option value="no-emotes">no-emotes</option>
+                        <option value="emotes-and-offhand">emotes-and-offhand</option>
+                    </select>
+                );
             case 'config-version':
-                return `<input class="form-control" type="text" disabled value="${value.replace(/"/g, '')}">`
+                return <input key={name} className="form-input" type="text" disabled defaultValue={value.replace(/"/g, '')} />;
             case 'metrics.uuid':
-                return `<input class="form-control" id="${name}" type="text" disabled value="${value === 'generateduuid' ? createUUID() : value}">`
+                return <input key={name} className="form-input" id={name} type="text" disabled defaultValue={value === 'generateduuid' ? createUUID() : value} />;
 
             default:
                 // Handle all the other inputs
-                if (value.toLowerCase() === 'true' || value.toLowerCase() === 'false') { // Boolean
-                    return `<div class="form-check form-switch form-control-lg"><input class="form-check-input" type="checkbox" role="switch" id="${name}" ${value.toLowerCase() === 'true' ? 'checked="checked"' : ''}><label for="${name}"></label></div>`
-                } else if (!isNaN(value)) { // Number
-                    return `<input class="form-control" type="number" value="${value}" id="${name}" >`
-                } else { // String
-                    return `<input class="form-control" type="text" value="${value.replace(/"/g, '')}" id="${name}" >`
+                if (value.toLowerCase() === 'true' || value.toLowerCase() === 'false') {
+                    // Boolean
+                    return (
+                        <div key={name}>
+                            <input className="checkbox" type="checkbox" id={name} defaultChecked={value.toLowerCase() === 'true'} onChange={handleChange} />
+                            <label htmlFor={name} className="switch"></label>
+                        </div>
+                    );
+                } else if (!isNaN(value)) {
+                    // Number
+                    return <input key={name} className="form-input" type="number" defaultValue={value} id={name} onChange={handleChange} />;
+                } else {
+                    // String
+                    return <input key={name} className="form-input" type="text" defaultValue={value.replace(/"/g, '')} id={name} onChange={handleChange} />;
                 }
         }
+    }
+
+    // From https://gist.github.com/danallison/3ec9d5314788b337b682
+    function downloadString(text, fileType, fileName) {
+        const blob = new Blob([text], { type: fileType })
+
+        const a = document.createElement('a')
+        a.download = fileName
+        a.href = URL.createObjectURL(blob)
+        a.dataset.downloadurl = [fileType, a.download, a.href].join(':')
+        a.style.display = 'none'
+        document.body.appendChild(a)
+        a.click()
+        document.body.removeChild(a)
+
+        setTimeout(() => { URL.revokeObjectURL(a.href) }, 1500)
     }
 
     function createUUID() {
@@ -178,34 +254,31 @@ const ConfigEditorPage: React.FC = () => {
             <h3 className="font-normal">Upload a file or get started with the default config!</h3>
 
             <div className={styles.buttonsContainer}>
-                <button className={styles.button} onClick={loadDefault}>
+                <button className="button" onClick={loadDefault}>
                     Default
                 </button>
 
-                <button className={styles.button} onClick={() => uploadRef.current.click()}>
-                    <input 
-                        ref={uploadRef} 
-                        type="file" 
-                        className="hidden" 
-                        accept=".yml" 
+                <button className="button" onClick={() => uploadRef.current.click()}>
+                    <input
+                        ref={uploadRef}
+                        type="file"
+                        className="hidden"
+                        accept=".yml"
                         onChange={handleUpload}
                     />
                     Upload
                 </button>
             </div>
-
-            {generateHTML(parsedConfig)}
         </>
     )
 
     const EditorView = () => (
         <>
             <div className={styles.buttonsContainer} style={{ marginBottom: "30px" }}>
-                <button className={styles.button}>
+                <button className="button" onClick={handleExport}>
                     Export
                 </button>
             </div>
-
             {generateHTML(parsedConfig)}
         </>
     )

@@ -8,25 +8,6 @@
     --card-header-bg-color: #2cb42c !important;
 }
 
-.button {
-    width: 150px;
-    outline: 3px solid var(--ifm-tabs-color-active);
-    outline-offset: -3px;
-    border: 0;
-    border-radius: var(--ifm-global-radius);
-    background-color: transparent;
-    text-align: center;
-    font-size: 18px;
-    transition: background-color 0.5s ease, color 0.5s ease;
-    padding-top: 10px;
-    padding-bottom: 10px;
-}
-
-.button:hover {
-    background-color: var(--ifm-color-primary);
-    color: #fff;
-}
-
 .buttonsContainer {
     display: flex;
     gap: 10px;
