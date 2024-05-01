@@ -143,8 +143,6 @@ const ConfigEditorPage: React.FC = () => {
                 if (currentObj.hasOwnProperty(nestedKey)) {
                     if (index === keys.length - 1) {
                         const oldValue = currentObj[nestedKey].value;
-
-                        console.log(`${nestedKey}: ${oldValue}`)
                         newConfig = newConfig.replace(`  ${nestedKey}: ${oldValue}`, `  ${nestedKey}: ${value}`);
                     } else {
                         currentObj = currentObj[nestedKey];
