@@ -26,7 +26,7 @@ const DumpViewerPage: React.FC = () => {
 
     const handleLoadClick = () => {
         if (dumpId === '') {
-            setStatusMessage('You haven't entered an ID or URL!');
+            setStatusMessage('You haven\'t entered an ID or URL!');
             return;
         }
         let id = dumpId;
