@@ -75,6 +75,8 @@
     color: black;
     padding: 16px;
     z-index: 1000;
+    min-width: 300px;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
 }
 
 .pluginInfoPopover p {
@@ -98,5 +100,5 @@
 }
 
 .viewDumpSource {
-    padding-bottom: 30px !important;
+
 }
