@@ -1,12 +1,12 @@
-import Translate from "@docusaurus/Translate";
-import HeroBanner from "@site/src/components/HeroBanner";
+import Translate from '@docusaurus/Translate';
+import HeroBanner from '@site/src/components/HeroBanner';
 import HeroBackground from '@site/static/img/site/split-background.jpg';
-import Layout from "@theme/Layout";
-import styles from "./utilities.module.css";
-import { useRef, useState } from "react";
+import Layout from '@theme/Layout';
+import styles from './utilities.module.css';
+import { useRef, useState } from 'react';
 
 const ConfigEditorPage: React.FC = () => {
-    const [config, setConfig] = useState("");
+    const [config, setConfig] = useState('');
     const [parsedConfig, setParsedConfig] = useState<any>({});
 
     const editedConfig = useRef<any>({});
@@ -21,7 +21,7 @@ const ConfigEditorPage: React.FC = () => {
             const text = await response.text();
             handleConfigLoad(text);
         } catch (error) {
-            console.error("Failed to fetch default config:", error);
+            console.error('Failed to fetch default config:', error);
         }
     }
 
@@ -169,32 +169,32 @@ const ConfigEditorPage: React.FC = () => {
             // Handle all the dropdowns
             case 'remote.auth-type':
                 return (
-                    <select key={name} className="form-input" id={name} defaultValue={value} onChange={handleChange}>
-                        <option value="offline">offline</option>
-                        <option value="online">online</option>
-                        <option value="floodgate">floodgate</option>
+                    <select key={name} className='form-input' id={name} defaultValue={value} onChange={handleChange}>
+                        <option value='offline'>offline</option>
+                        <option value='online'>online</option>
+                        <option value='floodgate'>floodgate</option>
                     </select>
                 );
             case 'show-cooldown':
                 return (
-                    <select key={name} className="form-input" id={name} defaultValue={value} onChange={handleChange}>
-                        <option value="title">title</option>
-                        <option value="actionbar">actionbar</option>
-                        <option value="false">false</option>
+                    <select key={name} className='form-input' id={name} defaultValue={value} onChange={handleChange}>
+                        <option value='title'>title</option>
+                        <option value='actionbar'>actionbar</option>
+                        <option value='false'>false</option>
                     </select>
                 );
             case 'emote-offhand-workaround':
                 return (
-                    <select key={name} className="form-input" id={name} defaultValue={value} onChange={handleChange}>
-                        <option value="disabled">disabled</option>
-                        <option value="no-emotes">no-emotes</option>
-                        <option value="emotes-and-offhand">emotes-and-offhand</option>
+                    <select key={name} className='form-input' id={name} defaultValue={value} onChange={handleChange}>
+                        <option value='disabled'>disabled</option>
+                        <option value='no-emotes'>no-emotes</option>
+                        <option value='emotes-and-offhand'>emotes-and-offhand</option>
                     </select>
                 );
             case 'config-version':
-                return <input key={name} className="form-input" type="text" disabled defaultValue={value.replace(/"/g, '')} />;
+                return <input key={name} className='form-input' type='text' disabled defaultValue={value.replace(/'/g, '')} />;
             case 'metrics.uuid':
-                return <input key={name} className="form-input" id={name} type="text" disabled defaultValue={value === 'generateduuid' ? createUUID() : value} />;
+                return <input key={name} className='form-input' id={name} type='text' disabled defaultValue={value === 'generateduuid' ? createUUID() : value} />;
 
             default:
                 // Handle all the other inputs
@@ -202,16 +202,16 @@ const ConfigEditorPage: React.FC = () => {
                     // Boolean
                     return (
                         <div key={name}>
-                            <input className="checkbox" type="checkbox" id={name} defaultChecked={value.toLowerCase() === 'true'} onChange={handleChange} />
-                            <label htmlFor={name} className="switch"></label>
+                            <input className='checkbox' type='checkbox' id={name} defaultChecked={value.toLowerCase() === 'true'} onChange={handleChange} />
+                            <label htmlFor={name} className='switch'></label>
                         </div>
                     );
                 } else if (!isNaN(value)) {
                     // Number
-                    return <input key={name} className="form-input" type="number" defaultValue={value} id={name} onChange={handleChange} />;
+                    return <input key={name} className='form-input' type='number' defaultValue={value} id={name} onChange={handleChange} />;
                 } else {
                     // String
-                    return <input key={name} className="form-input" type="text" defaultValue={value.replace(/"/g, '')} id={name} onChange={handleChange} />;
+                    return <input key={name} className='form-input' type='text' defaultValue={value.replace(/'/g, '')} id={name} onChange={handleChange} />;
                 }
         }
     }
@@ -249,19 +249,19 @@ const ConfigEditorPage: React.FC = () => {
     const NoConfigSection = () => (
         <>
             <h1>No config selected.</h1>
-            <h3 className="font-normal">Upload a file or get started with the default config!</h3>
+            <h3 className='font-normal'>Upload a file or get started with the default config!</h3>
 
             <div className={styles.buttonsContainer}>
-                <button className="button" onClick={loadDefault}>
+                <button className='button' onClick={loadDefault}>
                     Default
                 </button>
 
-                <button className="button" onClick={() => uploadRef.current.click()}>
+                <button className='button' onClick={() => uploadRef.current.click()}>
                     <input
                         ref={uploadRef}
-                        type="file"
-                        className="hidden"
-                        accept=".yml"
+                        type='file'
+                        className='hidden'
+                        accept='.yml'
                         onChange={handleUpload}
                     />
                     Upload
@@ -272,8 +272,8 @@ const ConfigEditorPage: React.FC = () => {
 
     const EditorView = () => (
         <>
-            <div className={styles.buttonsContainer} style={{ marginBottom: "30px" }}>
-                <button className="button" onClick={handleExport}>
+            <div className={styles.buttonsContainer} style={{ marginBottom: '30px' }}>
+                <button className='button' onClick={handleExport}>
                     Export
                 </button>
             </div>
@@ -289,12 +289,12 @@ const ConfigEditorPage: React.FC = () => {
                 backgroundImage={HeroBackground}
             />
 
-            <div className="container" style={{ marginTop: "30px" }}>
+            <div className='container' style={{ marginTop: '30px' }}>
                 {Object.keys(parsedConfig).length === 0 ? <NoConfigSection /> : <EditorView />}
             </div>
 
 
-            <section id="config-options"></section>
+            <section id='config-options'></section>
         </>
     )
 }
@@ -303,10 +303,10 @@ export default function ConfigEditor(): JSX.Element {
     return (
         <Layout
             title={`Config Editor`}
-            description="Edit your Geyser configuration."
+            description='Edit your Geyser configuration.'
         >
             <main>
-                <div className="container container--fluid margin-vert--lg">
+                <div className='container container--fluid margin-vert--lg'>
                     <ConfigEditorPage />
                 </div>
             </main>
