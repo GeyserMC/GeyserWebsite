@@ -150,7 +150,7 @@ const DumpViewerPage: React.FC = () => {
                                             </div>
                                             <div>
                                                 <b>Online Mode</b><br />
-                                                <p id="onlineMode">{data.bootstrapInfo.onlineMode ?? 'N/A'}</p>
+                                                <p id="onlineMode">{data.bootstrapInfo.onlineMode !== null ? data.bootstrapInfo.onlineMode ? 'true' : 'false' : 'N/A'}</p>
                                             </div>
                                         </Grid>
                                     </div>
