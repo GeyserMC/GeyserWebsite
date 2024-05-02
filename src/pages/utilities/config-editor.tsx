@@ -192,7 +192,7 @@ const ConfigEditorPage: React.FC = () => {
                     </select>
                 );
             case 'config-version':
-                return <input key={name} className='form-input' type='text' disabled defaultValue={value.replace(/'/g, '')} />;
+                return <input key={name} className='form-input' type='text' disabled defaultValue={value.replace(/"/g, '')} />;
             case 'metrics.uuid':
                 return <input key={name} className='form-input' id={name} type='text' disabled defaultValue={value === 'generateduuid' ? crypto.randomUUID() : value} />;
 
@@ -211,7 +211,7 @@ const ConfigEditorPage: React.FC = () => {
                     return <input key={name} className='form-input' type='number' defaultValue={value} id={name} onChange={handleChange} />;
                 } else {
                     // String
-                    return <input key={name} className='form-input' type='text' defaultValue={value.replace(/'/g, '')} id={name} onChange={handleChange} />;
+                    return <input key={name} className='form-input' type='text' defaultValue={value.replace(/"/g, '')} id={name} onChange={handleChange} />;
                 }
         }
     }
