@@ -231,16 +231,16 @@
     "message": "An optional Bedrock resource pack to extend Geyser functionality."
   },
   "pages.configeditor.title": {
-    "message": "Config Editor"
+    "message": "Konfigurationseditor"
   },
   "pages.configeditor.subheading": {
-    "message": "Edit your Geyser configuration."
+    "message": "Bearbeite deine Geyser Konfigurationsdatei."
   },
   "pages.dumpviewer.title": {
-    "message": "Dump Viewer"
+    "message": "Dump Betrachter"
   },
   "pages.dumpviewer.subheading": {
-    "message": "View the breakdown of your Geyser dump."
+    "message": "Schau dir eine Zusammenfassung deines Geyser Dumps an."
   },
   "theme.ErrorPageContent.title": {
     "message": "Die Seite ist abgestürzt.",
