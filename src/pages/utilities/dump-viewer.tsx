@@ -218,7 +218,9 @@ const DumpViewerPage: React.FC = () => {
                                                 <Grid elementsPerRow={5}>
                                                     {data.bootstrapInfo.plugins.map(plugin => (
                                                         <div>
-                                                            <b onClick={() => handlePluginClick(plugin)} className={styles.pluginName}>{plugin.name}</b>
+                                                            <b onClick={() => handlePluginClick(plugin)} className={styles.pluginName}>
+                                                                {plugin.name} <div className={styles.pluginEnabledIndicator} style={{ backgroundColor: plugin.enabled ? "green" : "red" }} />
+                                                            </b>
 
                                                             {activePlugin?.main === plugin.main ? (
                                                                 <div ref={pluginPopoverRef} className={styles.pluginInfoPopover}>
