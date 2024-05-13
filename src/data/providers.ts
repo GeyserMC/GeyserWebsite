@@ -79,6 +79,11 @@ export const providersData: Providers = {
             })
         },
         {
+            name: 'Lilypad',
+            url: 'https://lilypad.gg',
+            description: 'Choose the "Pufferfish + Geyser" option during checkout to automatically install Geyser, or follow the guide at [lilypad.gg/bedrock](https://lilypad.gg/bedrock).'
+        },
+        {
             name: 'MCProHosting',
             url: 'https://mcprohosting.com/',
             description: translate({
@@ -360,6 +365,11 @@ export const providersData: Providers = {
             })
         },
         {
+            name: 'Host Havoc',
+            url: 'https://hosthavoc.com/minecraft',
+            description: descriptionTemplates.default
+        },
+        {
             name: 'Hosting-Minecraft',
             url: 'https://hosting-minecraft.pro/',
             description: translate({
@@ -395,6 +405,11 @@ export const providersData: Providers = {
             name: 'MC-HOST24.de',
             url: 'https://mc-host24.de/',
             description: descriptionTemplates.ipAndPort
+        },
+        {
+            name: 'MCFORFREE.DE',
+            url: 'https://mcforfree.de/',
+            description: 'Create an extra port in the game panel, then change the `port` in the `bedrock` section to the newly created port. To connect on Bedrock edition, use the Java server\'s IP and the port you\'ve created. It may take a few minutes for the port to become active.'
         },
         {
             name: 'MCPEhost.ru',
@@ -453,6 +468,11 @@ export const providersData: Providers = {
                 id: 'providers.provider.nodecraft.description',
                 message: "Use the default server port and `0.0.0.0` or your server IP as the host address."
             })
+        },
+        {
+            name: 'PaperNodes',
+            url: 'https://papernodes.com/',
+            description: 'Enable clone-remote-port (or manually set the Bedrock port to the Java port), and connect with the Java IP and port. Alternatively, you can contact the host to request an additional port or a dedicated IP.'
         },
         {
             name: 'Pebblehost',
