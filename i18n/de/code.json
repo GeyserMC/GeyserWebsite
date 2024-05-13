@@ -236,11 +236,110 @@
   "pages.configeditor.subheading": {
     "message": "Bearbeite deine Geyser Konfigurationsdatei."
   },
+  "pages.configeditor.noconfigselected.heading": {
+    "message": "No config selected."
+  },
+  "pages.configeditor.noconfigselected.subheading": {
+    "message": "Upload a file or get started with the default config!"
+  },
+  "pages.configeditor.button.defaultconfig": {
+    "message": "Default"
+  },
+  "pages.configeditor.button.upload": {
+    "message": "Upload"
+  },
+  "pages.configeditor.button.export": {
+    "message": "Export"
+  },
   "pages.dumpviewer.title": {
     "message": "Dump Betrachter"
   },
   "pages.dumpviewer.subheading": {
     "message": "Schau dir eine Zusammenfassung deines Geyser Dumps an."
+  },
+  "pages.dumpviewer.enterdumpid": {
+    "message": "Enter Dump ID or URL below and click load."
+  },
+  "pages.dumpviewer.button.load": {
+    "message": "Load"
+  },
+  "pages.dumpviewer.versions": {
+    "message": "Versions"
+  },
+  "pages.dumpviewer.versions.geyserver": {
+    "message": "Geyser Version"
+  },
+  "pages.dumpviewer.versions.javaver": {
+    "message": "Java Version"
+  },
+  "pages.dumpviewer.versions.os": {
+    "message": "Operating System"
+  },
+  "pages.dumpviewer.geyserver": {
+    "message": "Geyser Version"
+  },
+  "pages.dumpviewer.geyserver.build": {
+    "message": "Build"
+  },
+  "pages.dumpviewer.geyserver.commit": {
+    "message": "Commit Hash"
+  },
+  "pages.dumpviewer.geyserver.branch": {
+    "message": "Branch"
+  },
+  "pages.dumpviewer.platform": {
+    "message": "Platform Info"
+  },
+  "pages.dumpviewer.platform.id": {
+    "message": "Platform Identifier"
+  },
+  "pages.dumpviewer.platform.name": {
+    "message": "Platform Name"
+  },
+  "pages.dumpviewer.platform.version": {
+    "message": "Platform Version"
+  },
+  "pages.dumpviewer.platform.apiver": {
+    "message": "Platform API Version"
+  },
+  "pages.dumpviewer.platform.onlinemode": {
+    "message": "Online Mode"
+  },
+  "pages.dumpviewer.sysinfo": {
+    "message": "System Info"
+  },
+  "pages.dumpviewer.sysinfo.cpucount": {
+    "message": "CPU Count"
+  },
+  "pages.dumpviewer.sysinfo.cpuname": {
+    "message": "CPU Name"
+  },
+  "pages.dumpviewer.sysinfo.ram": {
+    "message": "RAM"
+  },
+  "pages.dumpviewer.sysinfo.javaname": {
+    "message": "Java Name"
+  },
+  "pages.dumpviewer.sysinfo.javavendor": {
+    "message": "Java Vendor"
+  },
+  "pages.dumpviewer.sysinfo.dockercheck": {
+    "message": "Uses Docker?"
+  },
+  "pages.dumpviewer.plugins": {
+    "message": "Plugins"
+  },
+  "pages.dumpviewer.plugins.helptext": {
+    "message": "Click on a plugin to view more information."
+  },
+  "pages.dumpviewer.plugins.noplugins": {
+    "message": "No plugins to show."
+  },
+  "pages.dumpviewer.config": {
+    "message": "Config"
+  },
+  "pages.dumpviewer.viewsource": {
+    "message": "View dump source"
   },
   "theme.ErrorPageContent.title": {
     "message": "Die Seite ist abgestürzt.",

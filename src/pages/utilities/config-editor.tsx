@@ -234,12 +234,12 @@ const ConfigEditorPage: React.FC = () => {
 
     const NoConfigSection = () => (
         <>
-            <h1>No config selected.</h1>
-            <h3 className='font-normal'>Upload a file or get started with the default config!</h3>
+            <h1><Translate id='pages.configeditor.noconfigselected.heading'>No config selected.</Translate></h1>
+            <h3 className='font-normal'><Translate id='pages.configeditor.noconfigselected.subheading'>Upload a file or get started with the default config!</Translate></h3>
 
             <div className={styles.buttonsContainer}>
                 <button className='button' onClick={loadDefault}>
-                    Default
+                    <Translate id='pages.configeditor.button.defaultconfig'>Default</Translate>
                 </button>
 
                 <button className='button' onClick={() => uploadRef.current.click()}>
@@ -250,7 +250,7 @@ const ConfigEditorPage: React.FC = () => {
                         accept='.yml'
                         onChange={handleUpload}
                     />
-                    Upload
+                    <Translate id='pages.configeditor.button.upload'>Upload</Translate>
                 </button>
             </div>
         </>
@@ -260,7 +260,7 @@ const ConfigEditorPage: React.FC = () => {
         <>
             <div className={styles.buttonsContainer} style={{ marginBottom: '30px' }}>
                 <button className='button' onClick={handleExport}>
-                    Export
+                    <Translate id='pages.configeditor.button.export'>Export</Translate>
                 </button>
             </div>
             {generateHTML(parsedConfig)}
