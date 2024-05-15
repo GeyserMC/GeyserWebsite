@@ -1,0 +1,110 @@
+:root {
+    --card-bg-color: #f7f5f5;
+}
+
+[data-theme='dark'] {
+    --card-bg-color: #0b1215 !important;
+}
+
+.buttonsContainer {
+    display: flex;
+    gap: 10px;
+}
+
+.card {
+    margin-bottom: 30px;
+    background-color: var(--card-bg-color);
+}
+
+.cardHeader {
+    background-color: var(--ifm-color-primary);
+    color: white;
+    padding-left: 16px;
+    font-size: 22px;
+    text-transform: capitalize;
+}
+
+.cardBody {
+    padding: 16px;
+}
+
+.configOption {
+    padding-bottom: 20px;
+    padding-top: 20px;
+    border-bottom: 1px solid gray;
+}
+
+.configOption:last-child {
+    border-bottom: none;
+}
+
+.loadButton {
+    width: 150px;
+    outline: 3px solid var(--ifm-tabs-color-active);
+    outline-offset: -3px;
+    border: 0;
+    border-radius: var(--ifm-global-radius);
+    background-color: transparent;
+    text-align: center;
+    font-size: 18px;
+    font-weight: normal;
+    transition: background-color 0.5s ease, color 0.5s ease;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    color: var(--ifm-tabs-color-active);
+    margin-left: 5px;
+}
+
+.loadButton:hover {
+    background-color: var(--ifm-color-primary);
+    color: #fff;
+}
+
+.statusMessage {
+    margin-top: 20px;
+}
+
+.pluginName:hover {
+    cursor: pointer;
+}
+
+.pluginInfoPopover {
+    position: absolute;
+    background-color: white;
+    color: black;
+    padding: 16px;
+    z-index: 1000;
+    min-width: 300px;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+}
+
+.pluginInfoPopover p {
+    margin: 0;
+}
+
+.pluginNamePopover {
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.pluginEnabled {
+    border-radius: 10px;
+    padding: 0 10px;
+    width: fit-content;
+    color: white;
+}
+
+.pluginAuthorsLabel {
+    padding-top: 15px;
+}
+
+.viewDumpSource {
+
+}
+
+.pluginEnabledIndicator {
+    display: inline-block;
+    height: 10px;
+    width: 10px;
+    border-radius: 50%;
+}

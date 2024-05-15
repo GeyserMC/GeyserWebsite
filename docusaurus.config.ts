@@ -133,6 +133,24 @@ const config: Config = {
                     className: 'header-blog-link'
                 },
                 {
+                    type: 'dropdown',
+                    label: 'Utilities',
+                    className: 'header-utilities-link',
+                    position: 'left',
+                    items: [
+                        {
+
+                            to: 'utilities/config-editor',
+                            label: 'Config Editor',
+                        },
+                        {
+
+                            to: 'utilities/dump-viewer',
+                            label: 'Dump Viewer',
+                        }
+                    ]
+                },
+                {
                     to: 'download',
                     label: 'Download',
                     position: 'left',
