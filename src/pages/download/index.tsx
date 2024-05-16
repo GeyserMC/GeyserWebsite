@@ -77,7 +77,21 @@ const DownloadPage: React.FC = () => (
                         inner={
                             <ProjectDownload
                                 projectId="geyseroptionalpack"
-                                setup='/other/geyseroptionalpack'
+                                setup='/other/thirdpartycosmetics'
+                                downloadsInfo={{
+                                    thirdpartycosmetics: <><FontAwesomeIcon icon={faFileZipper} /> ThirdPartyCosmetics</>,
+                                }}
+                                gridColumns={1}
+                            />
+                        }
+                    />
+                     <Collapsible
+                        title='ThirdPartyCosmetics'
+                        subtitle={<Translate id='pages.download.description.thirdpartycosmetics'>An extension that adds support for loading ears and other third party cosmetics on java players</Translate>}
+                        inner={
+                            <ProjectDownload
+                                projectId="thirdpartycosmetics"
+                                setup='/other/thirdpartycosmetics'
                                 downloadsInfo={{
                                     geyseroptionalpack: <><FontAwesomeIcon icon={faFileZipper} /> GeyserOptionalPack</>,
                                 }}

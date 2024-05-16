@@ -230,6 +230,9 @@
   "pages.download.description.geyseroptionalpack": {
     "message": "An optional Bedrock resource pack to extend Geyser functionality."
   },
+  "pages.download.description.thirdpartycosmetics": {
+    "message": "An extension that adds support for loading ears and other third party cosmetics on java players"
+  },
   "pages.configeditor.title": {
     "message": "Config Editor"
   },
