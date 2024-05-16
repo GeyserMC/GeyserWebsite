@@ -23,6 +23,14 @@ const descriptionTemplates = {
 export const providersData: Providers = {
     built_in: [
         {
+            name: 'Apex Hosting',
+            url: 'https://apexminecrafthosting.com/',
+            description: translate({
+                id: 'providers.provider.apex_hosting.description',
+                message: "Full auto installation. Go to the Customizations tab in the panel and select 'Enabled' under the 'Geyser Auto Installer' option. Then, restart and connect to your server with your Java IP and port. See [Apex's article](https://apexminecrafthosting.com/geysermc/) for more details."
+            })
+        },
+        {
             name: 'Aternos',
             url: 'https://aternos.org/',
             description: translate({
@@ -31,12 +39,9 @@ export const providersData: Providers = {
             })
         },
         {
-            name: 'Apex Hosting',
-            url: 'https://apexminecrafthosting.com/',
-            description: translate({
-                id: 'providers.provider.apex_hosting.description',
-                message: "Full auto installation. Go to the Customizations tab in the panel and select 'Enabled' under the 'Geyser Auto Installer' option. Then, restart and connect to your server with your Java IP and port. See [Apex's article](https://apexminecrafthosting.com/geysermc/) for more details."
-            })
+            name: 'Arth Hosting',
+            url: 'https://arthmc.xyz/',
+            description: "Geyser is installed and configured on all servers by default. You can disable it in the 'Manage Plugins' menu."
         },
         {
             name: 'Cloud Nord',

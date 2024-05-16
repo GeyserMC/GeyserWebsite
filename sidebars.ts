@@ -49,7 +49,8 @@ const sidebars: SidebarsConfig = {
                 'geyser/supported-hosting-providers',
                 'geyser/using-geyser-with-consoles',
                 'geyser/playit-gg',
-                'geyser/creating-a-startup-script'
+                'geyser/creating-a-startup-script',
+                'geyser/port-forwarding'
             ]
         },
         {
