@@ -6,6 +6,7 @@ import { useEffect, useRef, useState } from 'react';
 import styles from './utilities.module.css';
 import { Grid } from '@site/src/components/Grid';
 import CodeBlock from '@theme/CodeBlock';
+import clsx from 'clsx';
 
 const DumpViewerPage: React.FC = () => {
     const [dumpId, setDumpId] = useState('');
@@ -89,7 +90,7 @@ const DumpViewerPage: React.FC = () => {
                 {Object.keys(data).length === 0 ? (
                     <>
                         <h2><Translate id='pages.dumpviewer.enterdumpid'>Enter Dump ID or URL below and click load.</Translate></h2>
-                        <input id='dump-url' className='form-input no-outline' value={dumpId} onChange={(e) => setDumpId(e.target.value)} placeholder='Dump ID/URL' />
+                        <input id='dump-url' className={clsx(styles.formInput, styles.noOutline)} value={dumpId} onChange={(e) => setDumpId(e.target.value)} placeholder='Dump ID/URL' />
                         <button className={styles.loadButton} onClick={handleLoadClick}>
                             <Translate id='pages.dumpviewer.button.load'>Load</Translate>
                         </button>

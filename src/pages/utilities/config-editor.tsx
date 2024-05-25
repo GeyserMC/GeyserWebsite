@@ -169,7 +169,7 @@ const ConfigEditorPage: React.FC = () => {
             // Handle all the dropdowns
             case 'remote.auth-type':
                 return (
-                    <select key={name} className='form-input' id={name} defaultValue={value} onChange={handleChange}>
+                    <select key={name} className={styles.formInput} id={name} defaultValue={value} onChange={handleChange}>
                         <option value='offline'>offline</option>
                         <option value='online'>online</option>
                         <option value='floodgate'>floodgate</option>
@@ -177,7 +177,7 @@ const ConfigEditorPage: React.FC = () => {
                 );
             case 'show-cooldown':
                 return (
-                    <select key={name} className='form-input' id={name} defaultValue={value} onChange={handleChange}>
+                    <select key={name} className={styles.formInput} id={name} defaultValue={value} onChange={handleChange}>
                         <option value='title'>title</option>
                         <option value='actionbar'>actionbar</option>
                         <option value='false'>false</option>
@@ -185,16 +185,16 @@ const ConfigEditorPage: React.FC = () => {
                 );
             case 'emote-offhand-workaround':
                 return (
-                    <select key={name} className='form-input' id={name} defaultValue={value} onChange={handleChange}>
+                    <select key={name} className={styles.formInput} id={name} defaultValue={value} onChange={handleChange}>
                         <option value='disabled'>disabled</option>
                         <option value='no-emotes'>no-emotes</option>
                         <option value='emotes-and-offhand'>emotes-and-offhand</option>
                     </select>
                 );
             case 'config-version':
-                return <input key={name} className='form-input' type='text' disabled defaultValue={value.replace(/"/g, '')} />;
+                return <input key={name} className={styles.formInput} type='text' disabled defaultValue={value.replace(/"/g, '')} />;
             case 'metrics.uuid':
-                return <input key={name} className='form-input' id={name} type='text' disabled defaultValue={value === 'generateduuid' ? crypto.randomUUID() : value} />;
+                return <input key={name} className={styles.formInput} id={name} type='text' disabled defaultValue={value === 'generateduuid' ? crypto.randomUUID() : value} />;
 
             default:
                 // Handle all the other inputs
@@ -202,16 +202,16 @@ const ConfigEditorPage: React.FC = () => {
                     // Boolean
                     return (
                         <div key={name}>
-                            <input className='checkbox' type='checkbox' id={name} defaultChecked={value.toLowerCase() === 'true'} onChange={handleChange} />
+                            <input className={styles.checkbox} type='checkbox' id={name} defaultChecked={value.toLowerCase() === 'true'} onChange={handleChange} />
                             <label htmlFor={name} className='switch'></label>
                         </div>
                     );
                 } else if (!isNaN(value)) {
                     // Number
-                    return <input key={name} className='form-input' type='number' defaultValue={value} id={name} onChange={handleChange} />;
+                    return <input key={name} className={styles.formInput} type='number' defaultValue={value} id={name} onChange={handleChange} />;
                 } else {
                     // String
-                    return <input key={name} className='form-input' type='text' defaultValue={value.replace(/"/g, '')} id={name} onChange={handleChange} />;
+                    return <input key={name} className={styles.formInput} type='text' defaultValue={value.replace(/"/g, '')} id={name} onChange={handleChange} />;
                 }
         }
     }
@@ -235,18 +235,18 @@ const ConfigEditorPage: React.FC = () => {
     const NoConfigSection = () => (
         <>
             <h1><Translate id='pages.configeditor.noconfigselected.heading'>No config selected.</Translate></h1>
-            <h3 className='font-normal'><Translate id='pages.configeditor.noconfigselected.subheading'>Upload a file or get started with the default config!</Translate></h3>
+            <h3 className={styles.fontNormal}><Translate id='pages.configeditor.noconfigselected.subheading'>Upload a file or get started with the default config!</Translate></h3>
 
             <div className={styles.buttonsContainer}>
-                <button className='button' onClick={loadDefault}>
+                <button className={styles.button} onClick={loadDefault}>
                     <Translate id='pages.configeditor.button.defaultconfig'>Default</Translate>
                 </button>
 
-                <button className='button' onClick={() => uploadRef.current.click()}>
+                <button className={styles.button} onClick={() => uploadRef.current.click()}>
                     <input
                         ref={uploadRef}
                         type='file'
-                        className='hidden'
+                        className={styles.hidden}
                         accept='.yml'
                         onChange={handleUpload}
                     />
@@ -259,7 +259,7 @@ const ConfigEditorPage: React.FC = () => {
     const EditorView = () => (
         <>
             <div className={styles.buttonsContainer} style={{ marginBottom: '30px' }}>
-                <button className='button' onClick={handleExport}>
+                <button className={styles.button} onClick={handleExport}>
                     <Translate id='pages.configeditor.button.export'>Export</Translate>
                 </button>
             </div>
