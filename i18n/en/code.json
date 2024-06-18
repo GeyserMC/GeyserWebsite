@@ -66,7 +66,7 @@
     "message": "Find the plugin in the control panel under the 'VG Recommended' category and restart your server. IP and port are the same as Java."
   },
   "providers.provider.wisehosting.description": {
-    "message": "Both auto and manual installation available. Find the GeyserMC presets from the `Properties` tab in the Game Panel. There, click `Install` and restart your server. See [Crossplay FAQ](https://wisehosting.com/knowledgebase/how-to-install-geysermc-java-bedrock-crossplay-to-your-server) for additional details."
+    "message": "Both auto and manual installation available. Find the GeyserMC presets from the `Properties` tab in the Game Panel. There, click `Install` and restart your server. See [Crossplay FAQ](https://help.wisehosting.com/en/articles/13-how-to-install-geysermc-java-bedrock-crossplay-to-your-server) for additional details."
   },
   "providers.provider.zaphosting.description": {
     "message": "Find the plugin in the control panel and restart your server. IP and port are the same as Java."

@@ -170,7 +170,7 @@ export const providersData: Providers = {
             url: 'https://wisehosting.com',
             description: translate({
                 id: 'providers.provider.wisehosting.description',
-                message: "Both auto and manual installation available. Find the GeyserMC presets from the `Properties` tab in the Game Panel. There, click `Install` and restart your server. See [Crossplay FAQ](https://wisehosting.com/knowledgebase/how-to-install-geysermc-java-bedrock-crossplay-to-your-server) for additional details."
+                message: "Both auto and manual installation available. Find the GeyserMC presets from the `Properties` tab in the Game Panel. There, click `Install` and restart your server. See [Crossplay FAQ](https://help.wisehosting.com/en/articles/13-how-to-install-geysermc-java-bedrock-crossplay-to-your-server) for additional details."
             })
         },
         {
@@ -608,6 +608,11 @@ export const providersData: Providers = {
                 id: 'providers.provider.vultam.description',
                 message: "Set the `bedrock port` to the Java server's port, or request an additional port. The additional port can be `19132` if you buy a dedicated IP."
             })
+        },
+        {
+            name: "Wepwawet",
+            url: "https://wepwawet.net/",
+            description: "Add a new port in the Network tab. Use this new port as the bedrock port."
         },
         {
             name: 'WinterNode',
