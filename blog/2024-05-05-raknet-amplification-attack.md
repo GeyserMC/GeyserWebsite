@@ -8,6 +8,7 @@ description: "A look at how we dealt with an exploit in the RakNet protocol"
 
 In March, we were made aware of an exploit in the RakNet networking library used by Geyser, making Geyser instances vulnerable to use in a Distributed Denial of Service (DDoS) amplification attack. This bug was patched on all builds of Geyser numbered 478 and later. If you are still running an outdated build of Geyser, you should update immediately by downloading the latest build from [https://geysermc.org/download](https://geysermc.org/download). The original [security advisory](https://github.com/CloudburstMC/Network/security/advisories/GHSA-6h3m-c6fv-8hvh) for this vulnerability was published on the [CloudburstMC/Network](https://github.com/CloudburstMC/Network) repository. This post will detail the timeline, anatomy of the attack, our response, and additional measures we have taken to prevent similar attacks in the future.
 
+<!-- truncate -->
 
 ## Timeline (UTC)
 
