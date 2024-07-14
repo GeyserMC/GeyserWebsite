@@ -114,7 +114,7 @@ html[data-theme='dark'] {
     transition: background-color var(--ifm-transition-fast) var(--ifm-transition-timing-default);
 }
 
-.header-download-link:hover::before {
+.header-utilities-link:hover::before {
     background-color: var(--ifm-navbar-link-hover-color);
 }
 
