@@ -37,9 +37,7 @@ const FeatureList: FeatureItem[] = [
         image: Crossplatform0Img,
         description: (
             <>
-                <Translate id='components.homepage_features.features.3'>Geyser can be joined from Bedrock clients on Windows 10/11, iOS, Android, and even consoles (more info here). Geyser works with a wide array of hosting providers, but can also be used as its own standalone proxy to join any Minecraft server!</Translate>
-
-                <Translate id='components.homepage_features.features.4'>If you are a server owner, you can install our Floodgate plugin which allows Xbox Live authenticated Bedrock users to join without a Java Edition account!</Translate>
+                <Translate id='components.homepage_features.features.3'>Geyser can be joined from Bedrock clients on Windows 10/11, iOS, Android, and even consoles. Geyser works with a wide array of hosting providers, but can also be used as its own standalone proxy to join any Minecraft server! If you are a server owner, you can install our Floodgate plugin which allows Xbox Live authenticated Bedrock users to join without a Java Edition account!</Translate>
             </>
         ),
     },
