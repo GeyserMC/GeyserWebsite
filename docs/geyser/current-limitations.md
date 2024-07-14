@@ -29,7 +29,7 @@ The following things cannot be fixed without changes to Bedrock or the Java prot
 - Dolphin's Grace potion effect visuals (effects should still work correctly)
 - Invisible item frames
 - Blocks (excluding jack-o-lantern) on entity heads (E.G. armor stands, players)
-Some block state changes are controlled client side, and are not influenced by the debug stick - fences for example. (https://github.com/GeyserMC/Geyser/issues/3125)
+- Some block state changes are controlled client side, and are not influenced by the debug stick - fences for example. (https://github.com/GeyserMC/Geyser/issues/3125)
 - Custom beacon base blocks (https://github.com/GeyserMC/Geyser/issues/2301) - these are hardcoded on Bedrock edition.
 - Climbable blocks changed by datapacks (https://github.com/GeyserMC/Geyser/issues/4051)
 - Custom enchantments/sweeping edge (https://github.com/GeyserMC/Geyser/issues/3121)

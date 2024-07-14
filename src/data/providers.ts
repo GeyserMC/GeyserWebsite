@@ -31,17 +31,17 @@ export const providersData: Providers = {
             })
         },
         {
+            name: 'Arth Hosting',
+            url: 'https://arthmc.xyz/',
+            description: "Geyser is installed and configured on all servers by default. You can disable it in the 'Manage Plugins' menu."
+        },
+        {
             name: 'Aternos',
             url: 'https://aternos.org/',
             description: translate({
                 id: 'providers.provider.aternos.description',
                 message: "Install Geyser in the Aternos plugin list and connect to your server with your Java IP and port. See [Aternos's article](https://support.aternos.org/hc/en-us/articles/360051047631) for more details. Do note: Aternos automatically installs the latest version of the plugin, but does not auto update it. To update Geyser on Aternos, simply reinstall the plugin (no need to uninstall the plugin/deleting the plugin files)."
             })
-        },
-        {
-            name: 'Arth Hosting',
-            url: 'https://arthmc.xyz/',
-            description: "Geyser is installed and configured on all servers by default. You can disable it in the 'Manage Plugins' menu."
         },
         {
             name: 'Cloud Nord',
@@ -116,6 +116,14 @@ export const providersData: Providers = {
             name: 'Physgun',
             url: 'https://physgun.com/',
             description: descriptionTemplates.default
+        },
+        {
+            name: 'PiglinHost',
+            url: 'https://piglinhost.com/',
+            description: translate({
+                id: 'providers.provider.piglinhost.description',
+                message: "Order from the [cross-platform servers page](https://piglinhost.com/minecraft-java-hosting.html). Alternatively, contact their support by creating a [support ticket](https://billing.piglinhost.com/submitticket.php?step=2&deptid=5) or via discord for installation and configuration help."
+            })
         },
         {
             name: 'OMGServ',

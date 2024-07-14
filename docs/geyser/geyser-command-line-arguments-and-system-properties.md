@@ -57,8 +57,6 @@ Disabling Geyser warnings from being logged will not fix the real issue! Only di
   Setting "command-suggestions" to false in the config will also disable this.
 - `-DGeyser.RakPacketLimit=120`
   - Sets RakNet's per-ip per-tick (10ms) post-connection packet limit.
-- `-DGeyser.RakOfflinePacketLimit=10`
-  - Sets RakNet's per-ip per-second pre-connection packet limit.
 - `-DGeyser.RakGlobalPacketLimit=100000`
   - Sets RakNet's per-tick (10ms) overall packet limit.
 - `-DGeyser.RakRateLimitingDisabled=true`
