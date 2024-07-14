@@ -21,14 +21,16 @@ import ResponseSamples from "@theme/ResponseSamples";
 import SchemaItem from "@theme/SchemaItem";
 import SchemaTabs from "@theme/SchemaTabs";
 import Markdown from "@theme/Markdown";
+import Heading from "@theme/Heading";
 import OperationTabs from "@theme/OperationTabs";
 import TabItem from "@theme/TabItem";
 
-<h1
+<Heading
+  as={"h1"}
   className={"openapi__heading"}
+  children={"Get all publicly available Global Api statistics"}
 >
-  Get all publicly available Global Api statistics
-</h1>
+</Heading>
 
 <MethodEndpoint
   method={"get"}
@@ -41,7 +43,13 @@ import TabItem from "@theme/TabItem";
 
 Get all publicly available Global Api statistics
 
-## Request
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+  children={"Request"}
+>
+</Heading>
 
 <div>
   <div>
