@@ -1,6 +1,6 @@
 import Translate from '@docusaurus/Translate';
 import HeroBanner from '@site/src/components/HeroBanner';
-import HeroBackground from '@site/static/img/site/split-background.jpg';
+import HeroBackground from '@site/static/img/site/split-background.webp';
 import Layout from '@theme/Layout';
 import { useEffect, useRef, useState } from 'react';
 import styles from './utilities.module.css';
