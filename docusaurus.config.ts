@@ -10,21 +10,14 @@ const config: Config = {
 
     // TODO: Change to correct domain in production! 
     url: 'https://dev.geysermc.org',
-    // Set the /<baseUrl>/ pathname under which your site is served
-    // For GitHub pages deployment, it is often '/<projectName>/'
     baseUrl: '/',
 
-    // GitHub pages deployment config.
-    // If you aren't using GitHub pages, you don't need these.
-    organizationName: 'GeyserMC', // Usually your GitHub org/user name.
-    projectName: 'GeyserWebsite', // Usually your repo name.
+    organizationName: 'GeyserMC',
+    projectName: 'GeyserWebsite',
 
     onBrokenLinks: 'throw',
     onBrokenMarkdownLinks: 'warn',
 
-    // Even if you don't use internationalization, you can use this field to set
-    // useful metadata like html lang. For example, if your site is Chinese, you
-    // may want to replace "en" with "zh-Hans".
     i18n: {
         defaultLocale: 'en',
         locales: ['en'],
@@ -39,7 +32,7 @@ const config: Config = {
                     editUrl:
                         'https://github.com/GeyserMC/GeyserWebsite/tree/master/',
 
-                    routeBasePath: '/', // Serve the docs at the site's root
+                    routeBasePath: '/',
                     docItemComponent: "@theme/ApiItem",
                 },
                 blog: {},
@@ -166,10 +159,10 @@ const config: Config = {
                     position: 'right',
                     className: 'header-discord-link'
                 },
-                {
-                    type: 'localeDropdown',
-                    position: 'right',
-                },
+                // {
+                //     type: 'localeDropdown',
+                //     position: 'right',
+                // },
             ],
         },
         footer: {
@@ -200,14 +193,6 @@ const config: Config = {
             indexName: 'geysermc',
             contextualSearch: true,
             searchPagePath: 'search',
-        },
-        // Remove in production
-        announcementBar: {
-            id: 'support_us',
-            content: '<b>This is the in-development version of the site and may not be fully updated. Vist the <a target="_blank" rel="noopener noreferrer" href="https://geysermc.org/">main site</a> or <a target="_blank" rel="noopener noreferrer" href="https://wiki.geysermc.org/">current wiki</a> for the most updated info.</b>',
-            backgroundColor: '#ff333d',
-            textColor: '#e3e3e3',
-            isCloseable: true,
         },
         metadata: [
             {name: 'theme-color', content: '#25c2a0'},
