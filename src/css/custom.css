@@ -307,9 +307,7 @@ html[data-theme='dark'] {
 
 .download-button {
     width: 100%;
-    outline: 3px solid var(--ifm-tabs-color-active);
-    outline-offset: -3px;
-    border: 0;
+    border: 3px solid var(--ifm-tabs-color-active);
     border-radius: var(--ifm-global-radius);
     text-align: center;
     font-size: 18px;
@@ -367,9 +365,7 @@ html[data-theme='dark'] {
 
 .setup-button {
     width: 100%;
-    outline: 3px solid var(--ifm-color-secondary);
-    outline-offset: -3px;
-    border: 0;
+    border: 3px solid var(--ifm-color-secondary);
     border-radius: var(--ifm-global-radius);
     text-align: center;
     font-size: 18px;
