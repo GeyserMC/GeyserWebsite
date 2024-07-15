@@ -1,9 +1,7 @@
 ---
-title: Custom items with Geyser
+title: Custom Items
 description: Geyser allows custom Bedrock items to be added for an equivalency to Vanilla Java item predicates or modded items.
 ---
-
-# Custom items with Geyser
 
 To setup custom items in geyser, you have to choose how you are going to register your items. The easiest is [using a json file](#json-mappings) but you can also [use a Geyser extension](#geyser-extensions).
 

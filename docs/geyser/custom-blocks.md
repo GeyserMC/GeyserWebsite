@@ -1,9 +1,7 @@
 ---
-title: Custom blocks with Geyser
+title: Custom Blocks
 description: Geysers allows custom blocks to be mapped to Vanilla Java blockstates or modded blocks to allow custom block models.
 ---
-
-# Custom blocks with Geyser
 
 To setup custom blocks in geyser, you have to choose how you are going to register your blocks. The easiest is [using a json file](#json-mappings) but you can also [use a Geyser extension](#geyser-extensions).
 

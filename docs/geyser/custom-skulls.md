@@ -1,9 +1,7 @@
 ---
-title: Custom skulls with Geyser
+title: Custom Skulls
 description: Geyser allows mapping of custom skulls to custom blocks for use in inventories and on entities.
 ---
-
-# Custom skulls with Geyser
 
 Unlike Java Edition, Bedrock does not have native support for custom skull items. As a result, any method to display custom skulls with Geyser is, to some extent, a workaround. Geyser has long supported in-world custom skulls via the spawning of player entities. This, however, does not allow for the use of custom skulls in inventories, nor does it allow them to be worn by entities. To resolve this, Geyser now allows for the pre-registration of custom skulls via a config file. Geyser will then use this config file to generate a custom resource pack on start that contains the geometry and textures for the pre-registered custom skulls. To the client, these skulls are blocks. Therefore, they can be held in player inventories. In additional, attachables are defined for each skull block so that it is displayed correctly when worn and held by entities.
 

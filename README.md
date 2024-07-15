@@ -1,41 +1,42 @@
 # Website
 
-This website is built using [Docusaurus 2](https://docusaurus.io/), a modern static website generator.
+This is the Geyser website is built using [Docusaurus 3](https://docusaurus.io/).
 
-### Installation
+## Contributing
 
+See [CONTRIBUTING.md](CONTRIBUTING.md) for more information.
+
+## Project Structure
+
+- [`blog/`](/blog/): Blog markdown files
+- [`docs/`](/docs/): Wiki markdown files
+    - [`api/`](/docs/api/): Rest API documentation
+    - [`floodgate/`](/docs/floodgate/): Floodgate documentation
+    - [`geyser/`](/docs/geyser): Geyser documentation
+    - [`other/`](/docs/other/): Other projects documentation
+- [`i18n/`](/i18n/): Translations for the website
+- [`openapi/`](/openapi/): OpenAPI spec files to auto-generate REST API documentation
+- [`src/`](/src/): Source of the website
+    - [`components/`](/src/components/): React components
+    - [`css/`](/src/css/): Styles
+    - [`data/`](/src/data/): Data files, such as hosting providers and supported Minecraft versions
+    - [`pages/`](/src/pages/): Pages of the website
+    - [`renderer/`](/src/renderer/): Renderer for thumbnails
+    - [`theme/`](/src/theme/): Overrides base Docusaurus theme, such as importing fa icons
+    - [`types/`](/src/types/): TypeScript types
+- [`static/`](/static/): Static content
+    - [`img/`](/static/img/): Images
+- [`docusaurus.config.ts`](/docusaurus.config.ts): Docusaurus configuration file
+- [`package.json`](/package.json): Node.js project file
+- [`sidebar.ts`](/sidebar.ts): Site sidebar configuration
+- [`tsconfig.json`](/tsconfig.json): TypeScript configuration file
+- [`yarn.lock`](/yarn.lock): Yarn lock file for Node.js dependencies
+
+## Quick Start
+
+```sh
+git clone https://github.com/GeyserMC/GeyserWebsite
+cd GeyserWebsite
+yarn
+yarn start
 ```
-$ yarn
-```
-
-### Local Development
-
-```
-$ yarn start
-```
-
-This command starts a local development server and opens up a browser window. Most changes are reflected live without having to restart the server.
-
-### Build
-
-```
-$ yarn build
-```
-
-This command generates static content into the `build` directory and can be served using any static contents hosting service.
-
-### Deployment
-
-Using SSH:
-
-```
-$ USE_SSH=true yarn deploy
-```
-
-Not using SSH:
-
-```
-$ GIT_USER=<Your GitHub username> yarn deploy
-```
-
-If you are using GitHub pages for hosting, this command is a convenient way to build the website and push to the `gh-pages` branch.

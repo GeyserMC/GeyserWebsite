@@ -89,9 +89,19 @@ const sidebars: SidebarsConfig = {
                 'geyser/current-limitations'
             ]
         },
-        'geyser/custom-items',
-        'geyser/custom-blocks',
-        'geyser/custom-skulls',
+        {
+            type: 'category',
+            label: 'Custom Resource Packs',
+            link: {
+                type: 'doc',
+                id: 'geyser/custom-resource-packs'
+            },
+            items: [
+                'geyser/custom-items',
+                'geyser/custom-blocks',
+                'geyser/custom-skulls',
+            ]
+        },
         {
             type: 'category',
             label: 'Geyser API',
