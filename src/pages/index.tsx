@@ -4,7 +4,7 @@ import HomepageFeatures from '@site/src/components/HomepageFeatures';
 import Heading from '@theme/Heading';
 import HeroImage from '@site/static/img/site/geyser.png';
 
-import styles from './index.module.css';
+import styles from './index.module.scss';
 import Translate from '@docusaurus/Translate';
 
 function HomepageHeader() {

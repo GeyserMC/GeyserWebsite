@@ -3,7 +3,7 @@ import HeroBanner from '@site/src/components/HeroBanner';
 import HeroBackground from '@site/static/img/site/split-background.webp';
 import Layout from '@theme/Layout';
 import { useEffect, useRef, useState } from 'react';
-import styles from './utilities.module.css';
+import styles from './utilities.module.scss';
 import { Grid } from '@site/src/components/Grid';
 import CodeBlock from '@theme/CodeBlock';
 import clsx from 'clsx';

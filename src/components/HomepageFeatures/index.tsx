@@ -1,6 +1,6 @@
 import clsx from 'clsx';
 import Heading from '@theme/Heading';
-import styles from './styles.module.css';
+import styles from './styles.module.scss';
 import Crossplatform0Img from '@site/static/img/site/crossplatform_0.png';
 import Crossplatform1Img from '@site/static/img/site/crossplatform_1.png';
 import Crossplatform2Img from '@site/static/img/site/crossplatform_2.png';
