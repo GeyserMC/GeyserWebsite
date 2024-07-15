@@ -166,8 +166,94 @@ const config: Config = {
             ],
         },
         footer: {
-            style: 'dark',
-            copyright: `© ${new Date().getFullYear()} GeyserMC | Built with Docusaurus`,
+            logo: {
+                alt: 'GeyserMC logo',
+                src: 'img/site/geyser-text.svg',
+                href: '/',
+                width: 430,
+            },
+            links: [
+                {
+                    title: 'Wiki',
+                    items: [
+                        {
+                            label: 'Geyser',
+                            to: 'geyser/setup',
+                        },
+                        {
+                            label: 'Floodgate',
+                            to: 'floodgate/setup',
+                        },
+                        {
+                            label: 'REST APIs',
+                            to: 'api/api.geysermc.org/global-api',
+                        },
+                        {
+                            label: 'Other',
+                            to: 'other/geyseroptionalpack',
+                        },
+                    ],
+                },
+                {
+                    title: 'Downloads',
+                    items: [
+                        {
+                            label: 'Geyser',
+                            to: 'download?project=geyser',
+                        },
+                        {
+                            label: 'Floodgate',
+                            to: 'download?project=floodgate',
+                        },
+                        {
+                            label: 'Other',
+                            to: 'download?project=other-projects',
+                        }
+                    ],
+                },
+                {
+                    title: 'Community',
+                    items: [
+                        {
+                            label: 'Crowdin',
+                            href: 'https://translate.geysermc.org/',
+                        },
+                        {
+                            label: 'Discord',
+                            href: 'https://discord.gg/geysermc',
+                        },
+                        {
+                            label: 'GitHub',
+                            href: 'https://github.com/GeyserMC/Geyser',
+                        },
+                        {
+                            label: 'Reddit',
+                            href: 'https://www.reddit.com/r/GeyserMC/',
+                        },
+                        {
+                            label: 'Twitter',
+                            href: 'https://twitter.com/GeyserMC',
+                        },
+                    ],
+                },
+                {
+                    title: 'More',
+                    items: [
+                        {
+                            label: 'Blog',
+                            to: 'blog',
+                        },
+                        {
+                            label: 'Donate',
+                            href: 'https://opencollective.com/geysermc',
+                        },
+                        {
+                            label: 'Global Linking',
+                            to: 'https://link.geysermc.org/',
+                        },
+                    ],
+                },
+            ]
         },
         prism: {
             theme: prismThemes.github,
@@ -195,7 +281,7 @@ const config: Config = {
             searchPagePath: 'search',
         },
         metadata: [
-            {name: 'theme-color', content: '#25c2a0'},
+            { name: 'theme-color', content: '#25c2a0' },
         ],
     } satisfies Preset.ThemeConfig,
 };
