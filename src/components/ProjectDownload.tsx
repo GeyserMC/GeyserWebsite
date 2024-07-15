@@ -77,19 +77,16 @@ export const ProjectDownload: React.FC<ProjectDownloadProps> = ({ projectId, des
                     <h3>Build #{latestBuild.build} · {new Date(latestBuild.time).toLocaleDateString()}:</h3>
                     <Grid elementsPerRow={gridColumns || 2} gap="8px">
                         { setup &&
-                            <a href={setup} className='no-underline'>
-                                <div className='setup-button'>
-                                    <b>Setup Instructions</b><br/>
-                                    <FontAwesomeIcon icon={faBook}/>
-                                </div>
+                            <a href={setup} className='no-underline setup-button large-button'>
+                                <b><FontAwesomeIcon icon={faBook}/> Setup Instructions</b>
                             </a>
                         }
                         {
                             Object.keys(latestBuild.downloads).map((platformId, i) => {
                                 return (
-                                    <a href={`https://download.geysermc.org/v2/projects/${projectId}/versions/latest/builds/latest/downloads/${platformId}`} key={i} className='no-underline'>
-                                        <div className='download-button'>
-                                            <b>{downloadsInfo[platformId]}</b><br/>
+                                    <a href={`https://download.geysermc.org/v2/projects/${projectId}/versions/latest/builds/latest/downloads/${platformId}`} key={i} className='no-underline download-button large-button'>
+                                        <b>{downloadsInfo[platformId]}</b>
+                                        <div>
                                             <FontAwesomeIcon icon={faFileArrowDown}/> {latestBuild.downloads[platformId].name}
                                         </div>
                                     </a>

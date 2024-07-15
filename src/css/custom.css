@@ -298,6 +298,13 @@ html[data-theme='dark'] {
     }
 }
 
+.large-button {
+    display: flex;
+    flex-direction: column;
+    height: calc(2lh + 20px);
+    justify-content: center;
+}
+
 .download-button {
     width: 100%;
     outline: 3px solid var(--ifm-tabs-color-active);
