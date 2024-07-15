@@ -77,9 +77,9 @@ const DownloadPage: React.FC = () => (
                         inner={
                             <ProjectDownload
                                 projectId="geyseroptionalpack"
-                                setup='/other/thirdpartycosmetics'
+                                setup='/other/geyseroptionalpack'
                                 downloadsInfo={{
-                                    thirdpartycosmetics: <><FontAwesomeIcon icon={faFileZipper} /> ThirdPartyCosmetics</>,
+                                    geyseroptionalpack: <><FontAwesomeIcon icon={faFileZipper} /> GeyserOptionalPack</>,
                                 }}
                                 gridColumns={1}
                             />
@@ -93,13 +93,13 @@ const DownloadPage: React.FC = () => (
                                 projectId="thirdpartycosmetics"
                                 setup='/other/thirdpartycosmetics'
                                 downloadsInfo={{
-                                    geyseroptionalpack: <><FontAwesomeIcon icon={faFileZipper} /> GeyserOptionalPack</>,
+                                    thirdpartycosmetics: <><FontAwesomeIcon icon={faFileZipper} /> ThirdPartyCosmetics</>,
                                 }}
                                 gridColumns={1}
                             />
                         }
                     />
-                    {/* <Collapsible
+                    <Collapsible
                         title='Hydraulic'
                         subtitle={<Translate id='pages.download.description.hydraulic'>A companion mod to Geyser which allows for Bedrock players to join modded Minecraft: Java Edition servers.</Translate>}
                         inner={
@@ -113,7 +113,7 @@ const DownloadPage: React.FC = () => (
                                 gridColumns={1}
                             />
                         }
-                    /> */}
+                    />
                 </Collapsibles>
             </TabItem>
         </Tabs>
