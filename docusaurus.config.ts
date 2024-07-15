@@ -37,7 +37,7 @@ const config: Config = {
                 },
                 blog: {},
                 theme: {
-                    customCss: './src/css/custom.css',
+                    customCss: './src/css/custom.scss',
                 },
             } satisfies Preset.Options,
         ],
@@ -77,7 +77,8 @@ const config: Config = {
                     'docusaurus-plugin-content-blog': blogOgRenderer,
                 },
             },
-        ]
+        ],
+        'docusaurus-plugin-sass'
     ],
     themes: ["docusaurus-theme-openapi-docs"],
 
