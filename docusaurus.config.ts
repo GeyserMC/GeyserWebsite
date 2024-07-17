@@ -96,16 +96,16 @@ const config: Config = {
                     label: 'Wiki',
                     className: 'header-wiki-link',
                     position: 'left',
-                    to: 'geyser/setup',
+                    to: 'wiki/geyser/setup',
                     items: [
                         {
                             type: 'doc',
-                            docId: 'geyser/setup',
+                            docId: 'wiki/geyser/setup',
                             label: 'Geyser',
                         },
                         {
                             type: 'doc',
-                            docId: 'floodgate/setup',
+                            docId: 'wiki/floodgate/setup',
                             label: 'Floodgate',
                         },
                         {
@@ -115,7 +115,7 @@ const config: Config = {
                         },
                         {
                             type: 'doc',
-                            docId: 'other/geyseroptionalpack',
+                            docId: 'wiki/other/geyseroptionalpack',
                             label: 'Other',
                         },
                     ]
@@ -179,11 +179,11 @@ const config: Config = {
                     items: [
                         {
                             label: 'Geyser',
-                            to: 'geyser/setup',
+                            to: 'wiki/geyser/setup',
                         },
                         {
                             label: 'Floodgate',
-                            to: 'floodgate/setup',
+                            to: 'wiki/floodgate/setup',
                         },
                         {
                             label: 'REST APIs',
@@ -191,7 +191,7 @@ const config: Config = {
                         },
                         {
                             label: 'Other',
-                            to: 'other/geyseroptionalpack',
+                            to: 'wiki/other/geyseroptionalpack',
                         },
                     ],
                 },

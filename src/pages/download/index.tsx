@@ -31,7 +31,7 @@ const DownloadPage: React.FC = () => (
                 <ProjectDownload
                     projectId="geyser"
                     description={<Translate id='pages.download.description.geyser'>A bridge/proxy allowing you to connect to Minecraft: Java Edition servers with Minecraft: Bedrock Edition.</Translate>}
-                    setup="/geyser/setup"
+                    setup="/wiki/geyser/setup"
                     downloadsInfo={{
                         bungeecord: <PlatformIcon svg={WaterfallBungeeCordIcon} text="BungeeCord" />,
                         fabric: <PlatformIcon img={FabricIcon} text="Fabric" />,
@@ -47,7 +47,7 @@ const DownloadPage: React.FC = () => (
                 <ProjectDownload
                     projectId="floodgate"
                     description={<Translate id='pages.download.description.floodgate'>Hybrid mode plugin to allow for connections from Geyser to join online mode servers.</Translate>}
-                    setup="/floodgate/setup"
+                    setup="/wiki/floodgate/setup"
                     downloadsInfo={{
                         bungee: <PlatformIcon svg={WaterfallBungeeCordIcon} text="BungeeCord" />,
                         spigot: <PlatformIcon img={PaperSpigotIcon} text="Spigot/Paper" />,
@@ -63,7 +63,7 @@ const DownloadPage: React.FC = () => (
                         inner={
                             <ProjectDownload
                                 projectId="geyserconnect"
-                                setup='/other/geyserconnect'
+                                setup='/wiki/other/geyserconnect'
                                 downloadsInfo={{
                                     geyserconnect: <><FontAwesomeIcon icon={faTowerCell} /> GeyserConnect</>,
                                 }}
@@ -77,7 +77,7 @@ const DownloadPage: React.FC = () => (
                         inner={
                             <ProjectDownload
                                 projectId="geyseroptionalpack"
-                                setup='/other/geyseroptionalpack'
+                                setup='/wiki/other/geyseroptionalpack'
                                 downloadsInfo={{
                                     geyseroptionalpack: <><FontAwesomeIcon icon={faFileZipper} /> GeyserOptionalPack</>,
                                 }}
@@ -91,7 +91,7 @@ const DownloadPage: React.FC = () => (
                         inner={
                             <ProjectDownload
                                 projectId="thirdpartycosmetics"
-                                setup='/other/thirdpartycosmetics'
+                                setup='/wiki/other/thirdpartycosmetics'
                                 downloadsInfo={{
                                     thirdpartycosmetics: <><FontAwesomeIcon icon={faFileZipper} /> ThirdPartyCosmetics</>,
                                 }}
@@ -105,7 +105,7 @@ const DownloadPage: React.FC = () => (
                         inner={
                             <ProjectDownload
                                 projectId="hydraulic"
-                                setup='/other/hydraulic'
+                                setup='/wiki/other/hydraulic'
                                 downloadsInfo={{
                                     fabric: <PlatformIcon img={FabricIcon} text="Fabric" />,
                                     neoforge: <PlatformIcon img={NeoForgeIcon} text="NeoForge" />,

@@ -11,9 +11,10 @@ See [CONTRIBUTING.md](CONTRIBUTING.md) for more information.
 - [`blog/`](/blog/): Blog markdown files
 - [`docs/`](/docs/): Wiki markdown files
     - [`api/`](/docs/api/): Rest API documentation
-    - [`floodgate/`](/docs/floodgate/): Floodgate documentation
-    - [`geyser/`](/docs/geyser): Geyser documentation
-    - [`other/`](/docs/other/): Other projects documentation
+    - [`wiki/`](/docs/wiki/): Wiki documentation
+        - [`floodgate/`](/docs/floodgate/): Floodgate documentation
+        - [`geyser/`](/docs/geyser): Geyser documentation
+        - [`other/`](/docs/other/): Other projects documentation
 - [`i18n/`](/i18n/): Translations for the website
 - [`openapi/`](/openapi/): OpenAPI spec files to auto-generate REST API documentation
 - [`src/`](/src/): Source of the website

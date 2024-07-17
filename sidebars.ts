@@ -37,20 +37,20 @@ const sidebars: SidebarsConfig = {
         },
     ],
     geyserSidebar: [
-        'geyser/index',
+        'wiki/geyser/index',
         {
             type: 'category',
             label: 'Setup',
             link: {
                 type: 'doc',
-                id: 'geyser/setup'
+                id: 'wiki/geyser/setup'
             },
             items: [
-                'geyser/supported-hosting-providers',
-                'geyser/using-geyser-with-consoles',
-                'geyser/playit-gg',
-                'geyser/creating-a-startup-script',
-                'geyser/port-forwarding'
+                'wiki/geyser/supported-hosting-providers',
+                'wiki/geyser/using-geyser-with-consoles',
+                'wiki/geyser/playit-gg',
+                'wiki/geyser/creating-a-startup-script',
+                'wiki/geyser/port-forwarding'
             ]
         },
         {
@@ -58,10 +58,10 @@ const sidebars: SidebarsConfig = {
             label: 'Common Issues',
             link: {
                 type: 'doc',
-                id: 'geyser/common-issues'
+                id: 'wiki/geyser/common-issues'
             },
             items: [
-                'geyser/fixing-unable-to-connect-to-world'
+                'wiki/geyser/fixing-unable-to-connect-to-world'
             ]
         },
         {
@@ -69,12 +69,12 @@ const sidebars: SidebarsConfig = {
             label: 'Configuring Geyser',
             link: {
                 type: 'doc',
-                id: 'geyser/understanding-the-config',
+                id: 'wiki/geyser/understanding-the-config',
             },
             items: [
-                'geyser/commands',
-                'geyser/translations',
-                'geyser/geyser-command-line-arguments-and-system-properties'
+                'wiki/geyser/commands',
+                'wiki/geyser/translations',
+                'wiki/geyser/geyser-command-line-arguments-and-system-properties'
             ]
         },
         {
@@ -82,11 +82,11 @@ const sidebars: SidebarsConfig = {
             label: 'FAQ',
             link: {
                 type: 'doc',
-                id: 'geyser/faq'
+                id: 'wiki/geyser/faq'
             },
             items: [
-                'geyser/anticheat-compatibility',
-                'geyser/current-limitations'
+                'wiki/geyser/anticheat-compatibility',
+                'wiki/geyser/current-limitations'
             ]
         },
         {
@@ -94,12 +94,12 @@ const sidebars: SidebarsConfig = {
             label: 'Custom Resource Packs',
             link: {
                 type: 'doc',
-                id: 'geyser/custom-resource-packs'
+                id: 'wiki/geyser/custom-resource-packs'
             },
             items: [
-                'geyser/custom-items',
-                'geyser/custom-blocks',
-                'geyser/custom-skulls',
+                'wiki/geyser/custom-items',
+                'wiki/geyser/custom-blocks',
+                'wiki/geyser/custom-skulls',
             ]
         },
         {
@@ -107,37 +107,37 @@ const sidebars: SidebarsConfig = {
             label: 'Geyser API',
             link: {
                 type: 'doc',
-                id: 'geyser/api',
+                id: 'wiki/geyser/api',
             },
             items: [
-                'geyser/getting-started-with-the-api',
-                'geyser/events',
-                'geyser/forms'
+                'wiki/geyser/getting-started-with-the-api',
+                'wiki/geyser/events',
+                'wiki/geyser/forms'
             ],
         },
-        'geyser/extensions',
-        'geyser/global-api'
+        'wiki/geyser/extensions',
+        'wiki/geyser/global-api'
     ],
 
     floodgateSidebar: [
-        'floodgate/setup',
-        'floodgate/issues',
-        'floodgate/faq',
-        'floodgate/features',
-        'floodgate/commands',
-        'floodgate/api',
-        'floodgate/linking'
+        'wiki/floodgate/setup',
+        'wiki/floodgate/issues',
+        'wiki/floodgate/faq',
+        'wiki/floodgate/features',
+        'wiki/floodgate/commands',
+        'wiki/floodgate/api',
+        'wiki/floodgate/linking'
     ],
 
     otherSidebar: [
-        'other/geyseroptionalpack',
-        'other/hurricane',
-        'other/geyserconnect',
-        'other/community-geyser-projects',
-        'other/test-server',
-        'other/developer-guide',
-        'other/discord-bot-usage',
-        'other/hydraulic'
+        'wiki/other/geyseroptionalpack',
+        'wiki/other/hurricane',
+        'wiki/other/geyserconnect',
+        'wiki/other/community-geyser-projects',
+        'wiki/other/test-server',
+        'wiki/other/developer-guide',
+        'wiki/other/discord-bot-usage',
+        'wiki/other/hydraulic'
     ]
 };
 
