@@ -1,13 +1,13 @@
 ---
-id: global-api-web-api-xbox-controller-get-xuid-v-1
-title: "GlobalApiWeb.Api.XboxController.get_xuid_v1"
-description: "GlobalApiWeb.Api.XboxController.get_xuid_v1"
-sidebar_label: "GlobalApiWeb.Api.XboxController.get_xuid_v1"
+id: global-api-web-api-xbox-controller-get-gamertag-v-1
+title: "GlobalApiWeb.Api.XboxController.get_gamertag_v1"
+description: "GlobalApiWeb.Api.XboxController.get_gamertag_v1"
+sidebar_label: "GlobalApiWeb.Api.XboxController.get_gamertag_v1"
 hide_title: true
 hide_table_of_contents: true
-api: eJyVkk2L2zAQhv+KeE8tCDspPemWfrD0Wra0EMIi2xNbRLa00jjEGP33Im++tt1De7It3pHneWZm1NraSteHCDUniYZ8oFozNVAcRpJwnoJm44ZvDRQerKu03Xjzk6pi403xq3Knz27g4KylULTET6fRNE/HNSS8DronphChtjMainUwPl8GhceORKt7Cqxb4faCOxKfqAmuPghv9UQBEiYnveYOEoPuCQqXGkgEeh5NuPUa6456DTWDJ5+zkYMZWqS0y+Ho3RApk+LjapUfrzv6coNPSYJ1m/vGqXIn7OQf4f8z0RN3LgtsiRcx3EGhPK7LfHuZg+V8IUuQiBSOF29jsFDomH1UZam9KVqaIoW+LlzIHo46GF3ZBW1hjVSPwfAEtd1liXu3SDFs6dq62HiTaynEF6J1sSo+IEl4F7nXQy45O79ViHtc8ZpXZAyx8L5ydR0H04lLb7UZ8m8WrPnsYoulbnEtkS+ChLrOeifRucg5N8+VjvQj2JTy8fNI4cx50fCybCbm9wZqr22kv1qq3cA0MBTefT+v0XvxTzv5Jsz5UA/TMg875i9IHGi639m0S3fL8PD1ESn9BuA2NGk=
+api: eJyVkkuL2zAUhf+KOasWhJ1nmWqXPhi6LS0tDGGQ7TuOiGxppOuQYPTfi5x4Mpl205VlcY50zqc7oFLGlKraB8ghCtTkPFWKqYZk35OAdeQVa9t9qyFxb2ypzMbpX1TmG6fz36U9frYde2sM+bwhfmxUS55V83iYQ8Apr1pi8gHyYUBNofLapQMh8Ylqb6t9dux1DQE6qtYZgsRivVyvlov5xw+z1d3dcg0BnQxO8Q4CnWqT6mLz9Nxrf40cqh21CnIAn1zSBfa6axDjNomDs12gVBir2Sx9bkN9uTKIUYBVk6LjWNojtuKN+P+BtMQ7m1g2xCMf3kGiOMyLdEMxiYshtYsQCOQPE77eG0jsmF2QRaGczhs6BfJtlVvfQOCgvFalGeuNfQNVvdd8gnzYJohPdgSjeeR8jp9tnE5e8uHcap7P8gWigLOBW9Uly4X51ZG9rpzdds6mGtnY+YbZy7MwHblwRukuXTVWGy48HjD6RuYC02EQkOObbwV2NnDSDUOpAv30Jsa0/dyTv3SdUJznToe0riGflAn0V6TKdkwdQ+Ld98s4vc/ejOc/Y182VXca6Zs+/UFgT6dpQuM2vnr2+68/EOMfdQMtcQ==
 sidebar_class_name: "get api-method"
-info_path: api/api.geysermc.org/global-api
+info_path: wiki/api/api.geysermc.org/global-api
 custom_edit_url: null
 ---
 
@@ -28,13 +28,13 @@ import TabItem from "@theme/TabItem";
 <Heading
   as={"h1"}
   className={"openapi__heading"}
-  children={"GlobalApiWeb.Api.XboxController.get_xuid_v1"}
+  children={"GlobalApiWeb.Api.XboxController.get_gamertag_v1"}
 >
 </Heading>
 
 <MethodEndpoint
   method={"get"}
-  path={"/v1/xbox/xuid/{gamertag}"}
+  path={"/v1/xbox/gamertag/{xuid}"}
 >
   
 </MethodEndpoint>
@@ -45,7 +45,7 @@ import TabItem from "@theme/TabItem";
 
 :::
 
-GlobalApiWeb.Api.XboxController.get_xuid_v1
+GlobalApiWeb.Api.XboxController.get_gamertag_v1
 
 <Heading
   id={"request"}
@@ -73,7 +73,7 @@ GlobalApiWeb.Api.XboxController.get_xuid_v1
     <ul>
       <ParamsItem
         className={"paramsItem"}
-        param={{"description":"The gamertag of the Bedrock player","in":"path","name":"gamertag","required":true,"schema":{"type":"string"}}}
+        param={{"description":"Bedrock xuid","example":"2535432196048835","in":"path","name":"xuid","required":true,"schema":{"type":"string"}}}
       >
         
       </ParamsItem>

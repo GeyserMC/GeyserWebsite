@@ -32,8 +32,9 @@ const config: Config = {
                     editUrl:
                         'https://github.com/GeyserMC/GeyserWebsite/tree/master/',
 
-                    routeBasePath: '/',
+                    routeBasePath: '/wiki',
                     docItemComponent: "@theme/ApiItem",
+                    path: 'wiki',
                 },
                 blog: {},
                 theme: {
@@ -52,14 +53,14 @@ const config: Config = {
                 config: {
                     'downloads.geysermc.org': {
                         specPath: "openapi/downloads.json",
-                        outputDir: "docs/api/downloads.geysermc.org",
+                        outputDir: "wiki/api/downloads.geysermc.org",
                         sidebarOptions: {
                             groupPathsBy: "tag",
                         },
                     },
                     'api.geysermc.org': {
                         specPath: "openapi/global.json",
-                        outputDir: "docs/api/api.geysermc.org",
+                        outputDir: "wiki/api/api.geysermc.org",
                         sidebarOptions: {
                             groupPathsBy: "tag",
                         },
@@ -100,12 +101,12 @@ const config: Config = {
                     items: [
                         {
                             type: 'doc',
-                            docId: 'wiki/geyser/setup',
+                            docId: 'geyser/setup',
                             label: 'Geyser',
                         },
                         {
                             type: 'doc',
-                            docId: 'wiki/floodgate/setup',
+                            docId: 'floodgate/setup',
                             label: 'Floodgate',
                         },
                         {
@@ -115,7 +116,7 @@ const config: Config = {
                         },
                         {
                             type: 'doc',
-                            docId: 'wiki/other/geyseroptionalpack',
+                            docId: 'other/geyseroptionalpack',
                             label: 'Other',
                         },
                     ]
@@ -187,7 +188,7 @@ const config: Config = {
                         },
                         {
                             label: 'REST APIs',
-                            to: 'api/api.geysermc.org/global-api',
+                            to: 'wiki/api/api.geysermc.org/global-api',
                         },
                         {
                             label: 'Other',

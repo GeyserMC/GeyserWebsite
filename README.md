@@ -9,12 +9,11 @@ See [CONTRIBUTING.md](CONTRIBUTING.md) for more information.
 ## Project Structure
 
 - [`blog/`](/blog/): Blog markdown files
-- [`docs/`](/docs/): Wiki markdown files
-    - [`api/`](/docs/api/): Rest API documentation
-    - [`wiki/`](/docs/wiki/): Wiki documentation
-        - [`floodgate/`](/docs/floodgate/): Floodgate documentation
-        - [`geyser/`](/docs/geyser): Geyser documentation
-        - [`other/`](/docs/other/): Other projects documentation
+- [`wiki/`](/wiki/): Wiki markdown files
+    - [`api/`](/wiki/api/): Rest API documentation
+    - [`floodgate/`](/wiki/floodgate/): Floodgate documentation
+    - [`geyser/`](/wiki/geyser): Geyser documentation
+    - [`other/`](/wiki/other/): Other projects documentation
 - [`i18n/`](/i18n/): Translations for the website
 - [`openapi/`](/openapi/): OpenAPI spec files to auto-generate REST API documentation
 - [`src/`](/src/): Source of the website
