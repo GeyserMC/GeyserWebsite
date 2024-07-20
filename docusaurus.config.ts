@@ -234,7 +234,7 @@ const config: Config = {
                         },
                         {
                             label: 'Twitter',
-                            href: 'https://twitter.com/GeyserMC',
+                            href: 'https://twitter.com/Geyser_MC',
                         },
                     ],
                 },
