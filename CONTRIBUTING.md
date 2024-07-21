@@ -1,3 +1,17 @@
+- [Adding a Supported Hosting Provider](#adding-a-supported-hosting-provider)
+- [Creating a New Page](#creating-a-new-page)
+   * [Example Page Layout](#example-page-layout)
+   * [Adding a Page to the Sidebar](#adding-a-page-to-the-sidebar)
+- [Previewing with GitHub Pages](#previewing-with-github-pages)
+- [Running the Website Locally](#running-the-website-locally)
+   * [Dependencies](#dependencies)
+      + [Windows](#windows)
+      + [macOS](#macos)
+      + [Linux](#linux)
+   * [Running](#running)
+      + [Development](#development)
+      + [Production](#production)
+
 If you would like to contribute to the wiki, please [open a pull request](https://github.com/GeyserMC/GeyserWebsite/pulls).
 
 Small changes can be made directly in the GitHub interface, but larger changes should be made by cloning the repository and running the website locally, ideally using an IDE with TypeScript support (e.g. [Visual Studio Code](https://code.visualstudio.com/)).
@@ -85,6 +99,17 @@ Simply add the page to the items section of the appropriate category. For exampl
 },
 ```
 
+## Previewing with GitHub Pages
+
+If you would like to preview your changes before opening a pull request, you can use GitHub Pages. To do this:
+- Create a [fork](https://github.com/GeyserMC/GeyserWebsite/fork) of the repository .
+- Ensure you have enabled GitHub Actions from the `Actions` tab of your fork. 
+- Under the `Settings` tab of your fork, select the `Pages` section on the left and set the `Source` to `GitHub Actions`.
+- Create a new branch in your fork and commit your changes.
+- Under the `Actions` tab of your fork, select `Deploy to GitHub Pages` and click the `Run workflow` dropdown on the right.
+- Select the branch to which you committed changes and click the `Run workflow` button.
+- Once the workflow has completed, see the `Deployments` section at the right of the `Code` tab for `github-pages` to find the link to your preview, which will be in the format `https://<username>.github.io/GeyserWebsite` by default. 
+
 ## Running the Website Locally
 
 ### Dependencies
@@ -121,6 +146,8 @@ Install [Node.js](https://nodejs.org/en/download/package-manager/), [Yarn](https
 
 ### Running
 
+#### Development
+
 ```sh
 git clone https://github.com/GeyserMC/GeyserWebsite
 cd GeyserWebsite
@@ -129,3 +156,14 @@ yarn start
 ```
 
 This command starts a local development server and opens up a browser window. Most changes are reflected live without having to restart the server.
+
+#### Production
+
+To test the production build locally, run:
+
+```sh
+yarn build
+yarn serve
+```
+
+This command starts a local server that serves the production build of the website. Ensure the build command runs successfully, as this check is required to pass before changes to the website can be merged. Unlike the start command, changes are not reflected live, and the site must be rebuilt and the server restarted to see changes. Any errors, such as broken links, will cause the build to fail.
