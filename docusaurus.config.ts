@@ -7,9 +7,8 @@ const config: Config = {
     title: 'GeyserMC',
     tagline: 'Revolutionize Your Minecraft Server',
     favicon: 'img/favicon.ico',
-
-    // TODO: Change to correct domain in production! 
-    url: 'https://dev.geysermc.org',
+    
+    url: 'https://geysermc.org',
     baseUrl: '/',
 
     organizationName: 'GeyserMC',
