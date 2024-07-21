@@ -55,7 +55,7 @@ Geyser-ViaProxy and Geyser-Standalone feature their own basic permission handler
 open the `permissions.yml` file and add or remove permissions that Geyser players should receive when joining.
 See the file for more information.
 
-You can further customize permission handling by creating a [Geyser extension](/geyser/extensions/) that makes use of Geysers API
+You can further customize permission handling by creating a [Geyser extension](/wiki/geyser/extensions/) that makes use of Geysers API
 to deal with permission checking.
 
 ## Permissions when using Geyser on platforms without permission handlers {#permissions-platforms-no-permission-handlers}
