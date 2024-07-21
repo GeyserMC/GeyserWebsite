@@ -116,8 +116,7 @@ const sidebars: SidebarsConfig = {
                 'geyser/forms'
             ],
         },
-        'geyser/extensions',
-        'geyser/global-api'
+        'geyser/extensions'
     ],
 
     floodgateSidebar: [
