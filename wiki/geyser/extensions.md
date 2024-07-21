@@ -62,7 +62,7 @@ Explanations for the individual fields:
 ## Creating the main class {#creating-the-main-class}
 
 The main class, the entrypoint for the extension, needs to [implement the **Extension** interface provided by Geyser](https://github.com/GeyserMC/GeyserExampleExtension/blob/master/src/main/java/org/geyser/extension/exampleid/ExampleExtension.java#L12). 
-That way, Geyser recognizes the extension, and gives you access to important methods - such as `logger()`, to get your extensions logger. <br>
+That way, Geyser recognizes the extension, and gives you access to important methods - such as `logger()`, to get your extensions logger.
 To see all the methods provided by that interface, see [here](https://github.com/GeyserMC/Geyser/blob/master/api/src/main/java/org/geysermc/geyser/api/extension/Extension.java).
 
 Unlike plugins, extensions do not have a `onEnable` or `onDisable` method. Instead, most actions are done in events at different stages during Geyser's lifecycle using events.
