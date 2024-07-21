@@ -96,11 +96,11 @@ const config: Config = {
                     label: 'Wiki',
                     className: 'header-wiki-link',
                     position: 'left',
-                    to: 'wiki/geyser/setup',
+                    to: 'wiki/geyser/',
                     items: [
                         {
                             type: 'doc',
-                            docId: 'geyser/setup',
+                            docId: 'geyser/index',
                             label: 'Geyser',
                         },
                         {
