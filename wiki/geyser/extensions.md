@@ -33,7 +33,7 @@ If you have an extension you'd like to see on this list, feel free to open a PR!
 
 ## Installing Extensions {#installing-extensions}
 
-To install an extension, simply put the extension .jar file into Geyser's 'extensions' folder. 
+To install an extension, simply put the extension .jar file into Geyser's `extensions` folder. 
 Then, restart Geyser (or the server Geyser runs on).
 
 ## Creating Geyser Extensions {#creating-geyser-extensions}
@@ -61,14 +61,14 @@ Explanations for the individual fields:
 
 ## Creating the main class {#creating-the-main-class}
 
-The main class, the entrypoint for the extension, needs to [implement the 'Extension' interface provided by Geyser](https://github.com/GeyserMC/GeyserExampleExtension/blob/master/src/main/java/org/geyser/extension/exampleid/ExampleExtension.java#L12). 
-That way, Geyser recognizes the extension, and gives you access to important methods - such as 'logger()', to get your extensions logger.   
+The main class, the entrypoint for the extension, needs to [implement the **Extension** interface provided by Geyser](https://github.com/GeyserMC/GeyserExampleExtension/blob/master/src/main/java/org/geyser/extension/exampleid/ExampleExtension.java#L12). 
+That way, Geyser recognizes the extension, and gives you access to important methods - such as `logger()`, to get your extensions logger. <br>
 To see all the methods provided by that interface, see [here](https://github.com/GeyserMC/Geyser/blob/master/api/src/main/java/org/geysermc/geyser/api/extension/Extension.java).
 
 Unlike plugins, extensions do not have a `onEnable` or `onDisable` method. Instead, most actions are done in events at different stages during Geyser's lifecycle using events.
 Some important ones are:
 - `GeyserPreInitializeEvent`: This event is fired when Geyser starts to initialize. If you e.g. need to register extension commands that are configured in your config, 
-you would need to load the config here to ensure that your config is ready before the GeyserDefineCommandsEvent is fired. 
+you would need to load the config here to ensure that your config is ready before the `GeyserDefineCommandsEvent` is fired. 
 - `GeyserPostInitializeEvent`: It is called when Geyser has completed initializing. The bulk of your code should go here, as the GeyserAPI is fully available at this stage.
 - `GeyserShutdownEvent`: Called when Geyser is shutting down. You can use this to e.g. save data, or clean up resources.
 
@@ -86,7 +86,7 @@ and register them in the event. You can find an example for custom items [here](
 To build your extension, run the Gradle build task, and install the extension.
 
 ## Creating commands with Geyser Extensions {#creating-commands-with-geyser-extensions}
-To create a command, you would need to use the "Commands" package in the Geyser API. Brief rundown:
+To create a command, you would need to use the `Commands` package in the Geyser API. Brief rundown:
 - [Command.java](https://github.com/GeyserMC/Geyser/blob/master/api/src/main/java/org/geysermc/geyser/api/command/Command.java)
   This interface represents a command in Geyser - to make one, you can use the CommandBuilder. You can register it with the
   [GeyserDefineCommandsEvent](https://github.com/GeyserMC/Geyser/blob/master/api/src/main/java/org/geysermc/geyser/api/event/lifecycle/GeyserDefineCommandsEvent.java)
@@ -125,7 +125,7 @@ public void onDefineCommands(GeyserDefineCommandsEvent event) {
 If everything went right, you should be able to execute the command in-game by running `/extesionid [command]` - in our case, `/exampleid examplecommand`.
 Here, it would send "Hello World" to the source that ran the command.
 Since we also set aliases, you could also run `/exampleid example` or `/exampleid ex` for the same command.
-To provide args, simple run `/exampleid examplecommand [args]` - replacing [args] with the arguments you want to pass to the command.
+To provide args, simple run `/exampleid examplecommand [args]` - replacing `[args]` with the arguments you want to pass to the command.
 
 ## Listening to Events {#listening-to-events}
 See [here](/wiki/geyser/events) for documentation. You do not need to register the event listener, Geyser will do that for you.

@@ -19,8 +19,8 @@ Supported Versions:
 
 ## Download {#download}
 - Spigot/Paper: [GitHub releases](https://github.com/GeyserMC/Hurricane/releases)
-- Fabric: [Modrinth](https://modrinth.com/mod/hurricane)
+- Fabric/NeoForge: [Modrinth](https://modrinth.com/mod/hurricane/versions)
 
 ## Source {#source}
 - Main: [GeyserMC/Hurricane](https://github.com/GeyserMC/Hurricane)
-- Unofficial fabric fork: [onebeastchris/Hurricane-fabric](https://github.com/onebeastchris/hurricane-fabric)
+- Unofficial mod fork: [onebeastchris/Hurricane-Modded](https://github.com/onebeastchris/Hurricane-Modded)

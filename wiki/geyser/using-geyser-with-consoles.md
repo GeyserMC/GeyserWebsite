@@ -30,6 +30,17 @@ or the [Public GeyserConnect](https://www.geyserconnect.net) which allows connec
 
 [![Nintendo Switch BedrockConnect](https://img.youtube.com/vi/zalT_oR1nPM/0.jpg)](https://www.youtube.com/watch?v=zalT_oR1nPM)
 
+Text directions:
+1. Select “System Settings” from the HOME Menu of your Nintendo Switch console.
+2.  Select “Internet”, and then “Internet Settings”. Your Nintendo Switch console will automatically search for nearby Wi-Fi signals.
+3.  Select your network from the list of networks located under “Registered Networks”.
+4.  Select “Change Settings”, then scroll down and select "DNS Settings".
+5.  Select "Manual".
+6.  Select "Primary DNS" with the A Button, and then hold down the B Button to delete the DNS (it defaults to zeros).
+7.  Enter the BedrockConnect IP for the preferred Primary DNS (Multiple options depending on region can be found on the [BedrockConnect Github Page](https://github.com/Pugmatt/BedrockConnect)).
+8.  Select "Secondary DNS" with the A Button, and then hold down the B Button to delete the existing DNS.
+9.  Enter a secondary DNS. Google's or Cloudfare's IP (8.8.8.8 or 1.1.1.1) are recommended.
+
 ## PlayStation 4 {#playstation-4}
 
 1. Go to your PS4 Home screen.
