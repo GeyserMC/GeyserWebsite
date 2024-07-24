@@ -13,6 +13,7 @@ import type { SidebarsConfig } from '@docusaurus/plugin-content-docs';
 const sidebars: SidebarsConfig = {
     // By default, Docusaurus generates a sidebar from the docs folder structure
     apiSidebar: [
+        "api/index",
         {
             type: "category",
             label: "api.geysermc.org",
@@ -130,14 +131,16 @@ const sidebars: SidebarsConfig = {
     ],
 
     otherSidebar: [
-        'other/geyseroptionalpack',
-        'other/hurricane',
+        'other/index',
         'other/geyserconnect',
+        'other/thirdpartycosmetics',
+        'other/geyseroptionalpack',
         'other/community-geyser-projects',
+        'other/hurricane',
+        'other/hydraulic',
         'other/test-server',
         'other/developer-guide',
-        'other/discord-bot-usage',
-        'other/hydraulic'
+        'other/discord-bot-usage'
     ]
 };
 
