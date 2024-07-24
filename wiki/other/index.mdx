@@ -1,0 +1,30 @@
+---
+title: Overview
+permalink: /other/
+description: 'Other projects or guides not directly referring to Geyser or Floodgate.'
+---
+
+import DocCardList from '@theme/DocCardList'
+import { useDocById } from '@docusaurus/theme-common/internal'
+
+# Overview of Other projects
+
+The "other" category provides you with information about different projects that are not Geyser or Floodgate.
+This includes community projects, but also other projects by the GeyserMC team, such as Hurricane or Hydraulic.
+
+<DocCardList items={[
+    'community-geyser-projects',
+    'hurricane',
+    'geyseroptionalpack',
+    'thirdpartycosmetics',
+    'hydraulic',
+    'geyserconnect',
+].map((id) => {
+    const metadata = useDocById("other/" + id)
+    return {
+        type: 'link',
+        label: metadata.title,
+        href: id,
+        docId: 'other/' + id
+    }
+})} />

@@ -96,7 +96,7 @@ const config: Config = {
                     label: 'Wiki',
                     className: 'header-wiki-link',
                     position: 'left',
-                    to: 'wiki/geyser/',
+                    to: 'wiki/',
                     items: [
                         {
                             type: 'doc',
@@ -105,17 +105,17 @@ const config: Config = {
                         },
                         {
                             type: 'doc',
-                            docId: 'floodgate/setup',
+                            docId: 'floodgate/index',
                             label: 'Floodgate',
                         },
                         {
                             type: 'doc',
-                            docId: 'api/api.geysermc.org/global-api',
+                            docId: 'api/index',
                             label: 'REST APIs',
                         },
                         {
                             type: 'doc',
-                            docId: 'other/geyseroptionalpack',
+                            docId: 'other/index',
                             label: 'Other',
                         },
                     ]
