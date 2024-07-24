@@ -15,6 +15,7 @@ This is a community-compiled list and does not indicate any endorsement from Gey
 Full Compatibility (Checks Bedrock Players Accurately)
 
 - [AntiAura](https://www.spigotmc.org/resources/1368/) (Paid) - Last checked on 24th January 2023
+- [LightAntiCheat](https://modrinth.com/plugin/lightanticheat) - Last checked on 19rd July 2024
 - [Themis](https://www.spigotmc.org/resources/90766/) - Last checked on 1st January 2024
 - [Spartan: Bedrock Edition](https://builtbybit.com/resources/12832/) (Paid) - Last checked on 4th June 2024
 
