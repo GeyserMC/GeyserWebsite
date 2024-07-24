@@ -21,9 +21,9 @@ The Geyser API offers events to subscribe to, or information on whether a player
 It can be used easily in Geyser Extensions, see [here](/wiki/geyser/extensions) for details on those.
 
 **Quick overview:**   
-<div class="alert alert-info" role="alert">
+:::info
     Note: To see full, detailed documentation, see the <a href="https://repo.opencollab.dev/javadoc/maven-snapshots/org/geysermc/geyser/api/latest">javadocs</a>.
-</div>
+:::
 
 #### [GeyserApi](https://github.com/GeyserMC/Geyser/blob/master/api/src/main/java/org/geysermc/geyser/api/GeyserApi.java): {#geyserapi}
 The GeyserApi interface serves as a central access point to various functionalities provided by the Geyser API, providing methods to e.g. interact with player connections.
@@ -49,10 +49,10 @@ Used to check if the given UUID of an **online** player is a Bedrock player.
 Used to get the [Connection](https://github.com/GeyserMC/api/blob/master/base/src/main/java/org/geysermc/api/connection/Connection.java) of an **online** player.  
 This method will return null if the player is not a Bedrock player.
 
-<div class="alert alert-info" role="alert">
+:::info
     You don't need to wait until the Bedrock player is online to use the getPlayer and isBedrockPlayer methods.  
     You can even use them in the pre-login events.
-</div>
+:::
 
 `GeyserApi#sendForm(UUID, Form(Builder))`  
 Used to send a form to the Bedrock player with the given UUID.  

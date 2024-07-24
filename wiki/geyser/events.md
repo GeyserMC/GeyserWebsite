@@ -56,9 +56,9 @@ public class ExampleMod implements ModInitializer, EventRegistrar {
     }
 }
 ```
-<div class="alert alert-info" role="alert">
-    Do note: We cannot directly register the event bus in the mod initializer, since the Geyser API would not be loaded yet.
-</div>
+:::info
+    Note: We cannot directly register the event bus in the mod initializer, since the Geyser API would not be loaded yet.
+:::
 
 Therefore, we register it in the server starting event provided by the Fabric API.
 
