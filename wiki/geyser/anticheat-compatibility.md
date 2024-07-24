@@ -16,20 +16,20 @@ Full Compatibility (Checks Bedrock Players Accurately)
 
 - [AntiAura](https://www.spigotmc.org/resources/1368/) (Paid) - Last checked on 24th January 2023
 - [LightAntiCheat](https://modrinth.com/plugin/lightanticheat) - Last checked on 19rd July 2024
-- [Themis](https://www.spigotmc.org/resources/90766/) - Last checked on 1st January 2024
-- [Spartan: Bedrock Edition](https://builtbybit.com/resources/12832/) (Paid) - Last checked on 4th June 2024
+- [Themis](https://www.spigotmc.org/resources/90766/) - Last checked on 11th July 2024
+- [Spartan: Bedrock Edition](https://builtbybit.com/resources/12832/) (Paid) - Last checked on 18th July 2024
 
 Partially Compatible (Does not Check/Ignores Bedrock Players)
 
-- [GrimAC](https://github.com/MWHunter/Grim) - Last checked on 23rd May 2024
-- [Intave](https://intave.ac) (Paid) Requires [GeyserMC addon](https://github.com/intave/bedrock) - Last checked on 24st May 2024
-- [Matrix](https://matrix.rip/) (Paid) - Last checked on 6th June 2024
-- [Spartan: Java Edition](https://www.spigotmc.org/resources/25638/) (Paid) - Last checked on 4th June 2024
-- [Vulcan](https://www.spigotmc.org/resources/83626/) (Paid) - Last checked on 3rd June 2024
-- [Verus](https://verus.ac) (Paid) - Last checked on 10th September 2023
+- [GrimAC](https://github.com/MWHunter/Grim) - Last checked on 30th June 2024
+- [Intave](https://intave.ac) (Paid) Requires [GeyserMC addon](https://github.com/intave/bedrock) - Last checked on 02nd July 2024
+- [Matrix](https://matrix.rip/) (Paid) - Last checked on 23rd July 2024
+- [Spartan: Java Edition](https://www.spigotmc.org/resources/25638/) (Paid) - Last checked on 18th July 2024
+- [Vulcan](https://www.spigotmc.org/resources/83626/) (Paid) - Last checked on 20th July 2024
+- [Verus](https://verus.ac) (Paid) - Last checked on 4th February 2024
 
 Incompatible (False Positives on Bedrock Players, no Compatibility at All)
 
-- [NoCheatPlus](https://ci.codemc.io/job/Updated-NoCheatPlus/job/Updated-NoCheatPlus/) ([Compat NCP](https://github.com/Updated-NoCheatPlus/CompatNoCheatPlus/) is an addon that enables Partial Compatibility) - Last checked on 12th May 2024
+- [NoCheatPlus](https://ci.codemc.io/job/Updated-NoCheatPlus/job/Updated-NoCheatPlus/) ([Compat NCP](https://github.com/Updated-NoCheatPlus/CompatNoCheatPlus/) is an addon that enables Partial Compatibility) - Last checked on 14th July 2024
 - [GodsEye](https://www.spigotmc.org/resources/69595/) ([GodsEyeGeyserMC](https://github.com/TheDejavu/GodsEyeGeyserMC/releases) is an addon that enables Partial Compatibility) (Paid) - Last checked on 23rd March 2024
 - [Wraith](https://www.spigotmc.org/resources/66887/) (Paid) - Last checked on 26th January 2023
