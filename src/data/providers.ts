@@ -225,7 +225,7 @@ export const providersData: Providers = {
             url: 'https://www.bloom.host/',
             description: translate({
                 id: 'providers.provider.bloomhost.description',
-                message: "See [bloom's documentation](https://docs.bloom.host/plugins/geysermc/) for setup instructions."
+                message: "See [Bloom's documentation](https://docs.bloom.host/plugins/geysermc/) for setup instructions."
             })
         },
         {
