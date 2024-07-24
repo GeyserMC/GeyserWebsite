@@ -102,6 +102,7 @@ const DownloadPage: React.FC = () => (
                     <Collapsible
                         title='Hydraulic'
                         subtitle={<Translate id='pages.download.description.hydraulic'>A companion mod to Geyser which allows for Bedrock players to join modded Minecraft: Java Edition servers.</Translate>}
+                        tags={['Beta']}
                         inner={
                             <ProjectDownload
                                 projectId="hydraulic"

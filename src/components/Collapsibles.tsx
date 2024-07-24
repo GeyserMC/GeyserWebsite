@@ -11,10 +11,11 @@ export const Collapsibles = ({ children }) => {
 interface CollapsibleProps {
     title: React.ReactNode;
     subtitle?: React.ReactNode;
+    tags?: string[];
     inner: React.ReactNode;
 }
 
-export const Collapsible: React.FC<CollapsibleProps> = ({ title, subtitle, inner }) => {
+export const Collapsible: React.FC<CollapsibleProps> = ({ title, subtitle, inner, tags = [] }) => {
     const [isInnerVisible, setIsInnerVisible] = useState(false);
     const innerRef = useRef(null);
     const [innerHeight, setInnerHeight] = useState(0);
@@ -33,7 +34,7 @@ export const Collapsible: React.FC<CollapsibleProps> = ({ title, subtitle, inner
         <div className="collapsible">
             <div className="collapsible-header" onClick={toggleVisibility}>
                 <p>
-                    <span className="collapsible-title">{title}</span>
+                    <span className="collapsible-title">{title}{tags.map((tag) => (<span className='badge badge--primary' style={{marginLeft:"0.25rem"}}>{tag}</span>))}</span>
                     {subtitle && <span className="collapsible-subtitle"><br/>{subtitle}</span>}
                 </p>
                 <span className={isInnerVisible ? 'collapsible-arrow expanded' : 'collapsible-arrow'}></span>
