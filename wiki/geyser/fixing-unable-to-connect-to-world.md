@@ -7,17 +7,17 @@ description: Common issues and solutions for the 'Unable to Connect to World' er
 This is by far the most common error people get when attempting to set up Geyser. Here's some steps on how to solve it.
 Usually, this error is caused by improper configuration of Geyser, or issues with your network.
 
-<div class="alert alert-warning" role="alert">
+:::warning
 	If you are using a Minecraft server hosting provider (e.g. Aternos, or Apex Hosting), you should refer to the hosting provider setup instructions on 
 the <a href="/wiki/geyser/setup/">setup</a> page. Following these will most likely resolve the issue!
-</div>
+:::
 
 If you are not using a Minecraft server hosting provider, carry on.
 
-<div class="alert alert-info" role="alert">
+:::info
 	To check if your server is (theoretically) reachable on Bedrock edition, try running the following command in your server console:
     <code>geyser connectiontest &lt;ip&gt;:&lt;port&gt;</code>, and see what it suggests to try.
-</div>
+:::
 
 ### Java Edition players can't connect! {#java-edition-players-cant-connect}
 
