@@ -60,6 +60,7 @@ const DownloadPage: React.FC = () => (
                     <Collapsible
                         title='GeyserConnect'
                         subtitle={<Translate id='pages.download.description.geyserconnect'>A plugin to allow for Geyser players to connect to your server without needing to use a proxy.</Translate>}
+                        id='geyserconnect'
                         inner={
                             <ProjectDownload
                                 projectId="geyserconnect"
@@ -74,6 +75,7 @@ const DownloadPage: React.FC = () => (
                     <Collapsible
                         title='GeyserOptionalPack'
                         subtitle={<Translate id='pages.download.description.geyseroptionalpack'>An optional Bedrock resource pack to extend Geyser functionality.</Translate>}
+                        id='geyseroptionalpack'
                         inner={
                             <ProjectDownload
                                 projectId="geyseroptionalpack"
@@ -88,6 +90,7 @@ const DownloadPage: React.FC = () => (
                      <Collapsible
                         title='ThirdPartyCosmetics'
                         subtitle={<Translate id='pages.download.description.thirdpartycosmetics'>An extension that adds support for loading ears and other third party cosmetics on java players</Translate>}
+                        id='thirdpartycosmetics'
                         inner={
                             <ProjectDownload
                                 projectId="thirdpartycosmetics"
@@ -102,6 +105,7 @@ const DownloadPage: React.FC = () => (
                     <Collapsible
                         title='Hydraulic'
                         subtitle={<Translate id='pages.download.description.hydraulic'>A companion mod to Geyser which allows for Bedrock players to join modded Minecraft: Java Edition servers.</Translate>}
+                        id='hydraulic'
                         tags={['Beta']}
                         inner={
                             <ProjectDownload
