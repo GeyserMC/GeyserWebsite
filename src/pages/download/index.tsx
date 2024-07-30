@@ -52,6 +52,13 @@ const DownloadPage: React.FC = () => (
                         bungee: <PlatformIcon svg={WaterfallBungeeCordIcon} text="BungeeCord" />,
                         spigot: <PlatformIcon img={PaperSpigotIcon} text="Spigot/Paper" />,
                         velocity: <PlatformIcon img={VelocityIcon} text="Velocity" />,
+                        fabric: <PlatformIcon img={FabricIcon} text="Fabric" />,
+                    }}
+                    additionalDownloads={{
+                        fabric: {
+                            url: "https://modrinth.com/mod/floodgate",
+                            file: "floodgate-fabric.jar"
+                        }
                     }}
                 />
             </TabItem>

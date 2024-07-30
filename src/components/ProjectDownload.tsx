@@ -12,10 +12,13 @@ interface ProjectDownloadProps {
     downloadsInfo: {
         [key: string]: string | React.ReactNode;
     };
+    additionalDownloads?: {
+        [key: string]: { url: string, file: string };
+    };
     gridColumns?: number;
 }
 
-export const ProjectDownload: React.FC<ProjectDownloadProps> = ({ projectId, description, setup, downloadsInfo, gridColumns }) => {
+export const ProjectDownload: React.FC<ProjectDownloadProps> = ({ projectId, description, setup, downloadsInfo, additionalDownloads, gridColumns }) => {
     const [platformInfo, setPlatformInfo] = useState<Downloads.Builds>({
         project_id: '',
         project_name: '',
@@ -88,6 +91,18 @@ export const ProjectDownload: React.FC<ProjectDownloadProps> = ({ projectId, des
                                         <b>{downloadsInfo[platformId]}</b>
                                         <div>
                                             <FontAwesomeIcon icon={faFileArrowDown}/> {latestBuild.downloads[platformId].name}
+                                        </div>
+                                    </a>
+                                )
+                            })
+                        }
+                        {
+                            additionalDownloads && Object.keys(additionalDownloads).map((platformId, i) => {
+                                return (
+                                    <a href={additionalDownloads[platformId].url} key={i} className='no-underline download-button large-button'>
+                                        <b>{downloadsInfo[platformId]}</b>
+                                        <div>
+                                            <FontAwesomeIcon icon={faFileArrowDown}/> {additionalDownloads[platformId].file}
                                         </div>
                                     </a>
                                 )
