@@ -26,7 +26,7 @@ To fix "Unable to connect to world" with no console errors, see [here](/wiki/gey
 *If the Geyser instance is locally hosted:* try using `localhost` or `0.0.0.0` as the IP address.
 *If that doesn't work, or your Geyser instance is on another computer in the network*: use your **local** IPv4 address.
 
-:::danger
+:::warning
 
 See [here](/wiki/geyser/fixing-unable-to-connect-to-world/) for fixing "Unable to Connect to World" with no console errors
 

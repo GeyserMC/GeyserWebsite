@@ -8,15 +8,15 @@ This is by far the most common error people get when attempting to set up Geyser
 Usually, this error is caused by improper configuration of Geyser, or issues with your network.
 
 :::warning
-	If you are using a Minecraft server hosting provider (e.g. Aternos, or Apex Hosting), you should refer to the hosting provider setup instructions on 
+If you are using a Minecraft server hosting provider (e.g. Aternos, or Apex Hosting), you should refer to the hosting provider setup instructions on 
 the [setup](/wiki/geyser/setup) page. Following these will most likely resolve the issue!
 :::
 
 If you are not using a Minecraft server hosting provider, carry on.
 
 :::info
-	To check if your server is (theoretically) reachable on Bedrock edition, try running the following command in your server console:
-    <code>geyser connectiontest &lt;ip&gt; &lt;port&gt;</code>, and see what it suggests to try.
+To check if your server is (theoretically) reachable on Bedrock edition, try running the following command in your server console: 
+`geyser connectiontest <ip> <port>`, and see what it suggests to try.
 :::
 
 ### Java Edition players can't connect! {#java-edition-players-cant-connect}
