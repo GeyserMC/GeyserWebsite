@@ -47,7 +47,7 @@ Geyser recognizes extensions when they have a file called `extension.yml` in the
 id: exampleid
 name: ExampleExtension
 main: org.geyser.extension.exampleid.ExampleExtension
-api: 1.0.0
+api: 2.4.1
 version: 1.0.0
 authors: [ExampleAuthor]
 ```
@@ -56,7 +56,7 @@ Explanations for the individual fields:
 - id: The id of the extension. Every extension needs to have their unique id - all lowercase letters. If you e.g. register a command for your extension, it will have the id as a prefix: e.g. `/exampleid command`.
 - name: The name of the extension.
 - main: The main class of your extension.
-- api: The Base API version your extension targets.
+- api: The Geyser API version your extension targets.
 - authors: The author(s) of the extension. To add more than one entry, separate entries with a comma.
 
 ## Creating the main class {#creating-the-main-class}
