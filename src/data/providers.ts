@@ -251,7 +251,7 @@ export const providersData: Providers = {
             url: 'https://dedicatedmc.io/',
             description: translate({
                 id: 'providers.provider.dedicatedmc.description',
-                message: "Contact the support to open the default Bedrock port, which Geyser is configured to use by default."
+                message: "Check [DedicatedMC's documentation](https://docs.dedicatedmc.io/plugins-mods/how-to-install-geysermc/) for specific instructions."
             })
         },
         {
