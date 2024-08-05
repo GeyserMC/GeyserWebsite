@@ -29,7 +29,7 @@ The Geyser specific properties are prioritized over the plugin properties!
   - any other string will be used as-is for the bind address.
 
 ## Disabling warnings and advanced configuration {#disabling-warnings-and-advanced-configuration}
-You may disable some warnings that may be printed to the console by using the following command line arguments:
+You may disable some warnings that may be printed to the console by using the following command line arguments. The values shown are the defaults used by Geyser, unless otherwise noted.
 
 :::caution
 
@@ -59,9 +59,9 @@ Disabling Geyser warnings from being logged will not fix the real issue! Only di
   - Sets RakNet's per-ip per-tick (10ms) post-connection packet limit.
 - `-DGeyser.RakGlobalPacketLimit=100000`
   - Sets RakNet's per-tick (10ms) overall packet limit.
-- `-DGeyser.RakRateLimitingDisabled=true`
+- `-DGeyser.RakRateLimitingDisabled=false`
   - Completely disable RakNet's post-connection rate limiter. This should not be disabled unless initial RakNet connections are being handled by a reverse proxy.
-- `-DGeyser.RakSendCookie=false`
+- `-DGeyser.RakSendCookie=true`
   - Disables sending and validation of a cookie challenge in [Open Connection Reply 1](https://wiki.vg/Raknet_Protocol#Open_Connection_Reply_1) packet. This should not be set to `false` unless Geyser is running behind a reverse proxy that is also sending a challenge to prevent IP spoofing.
 
 ## Geyser-Standalone Specific Options {#geyser-standalone-specific-options}
