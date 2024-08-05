@@ -60,9 +60,9 @@ Disabling Geyser warnings from being logged will not fix the real issue! Only di
 - `-DGeyser.RakGlobalPacketLimit=100000`
   - Sets RakNet's per-tick (10ms) overall packet limit.
 - `-DGeyser.RakRateLimitingDisabled=false`
-  - Completely disable RakNet's post-connection rate limiter. This should not be disabled unless initial RakNet connections are being handled by a reverse proxy.
+  - Allows you to disable RakNet's post-connection rate limiter. The rate limiter should not be disabled unless initial RakNet connections are being handled by a reverse proxy.
 - `-DGeyser.RakSendCookie=true`
-  - Disables sending and validation of a cookie challenge in [Open Connection Reply 1](https://wiki.vg/Raknet_Protocol#Open_Connection_Reply_1) packet. This should not be set to `false` unless Geyser is running behind a reverse proxy that is also sending a challenge to prevent IP spoofing.
+  - Allows you to disable sending and validation of a cookie challenge in [Open Connection Reply 1](https://wiki.vg/Raknet_Protocol#Open_Connection_Reply_1) packet. This should not be set to `false` unless Geyser is running behind a reverse proxy that is also sending a challenge to prevent IP spoofing.
 
 ## Geyser-Standalone Specific Options {#geyser-standalone-specific-options}
 
