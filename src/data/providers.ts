@@ -387,7 +387,7 @@ export const providersData: Providers = {
             url: 'https://hosting-minecraft.pro/',
             description: translate({
                 id: 'providers.provider.hosting-minecraft.description',
-                message: "Create a new port and use that port in the config. If you have a plan from the 'Boost' category, you will need to open a [support ticket](https://my.hosting-minecraft.pro/submitticket.php) to get a port with UDP protocol enabled."
+                message: "Create a new port in \"Allocations\" tab and use that port in the config."
             })
         },
         {
