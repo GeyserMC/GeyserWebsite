@@ -387,7 +387,7 @@ export const providersData: Providers = {
             url: 'https://hosting-minecraft.pro/',
             description: translate({
                 id: 'providers.provider.hosting-minecraft.description',
-                message: "Create a new port in \"Allocations\" tab and use that port in the config."
+                message: 'Create a new port in the "Allocations" tab and use that port in the config.'
             })
         },
         {
