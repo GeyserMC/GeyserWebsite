@@ -54,7 +54,7 @@ Stores a list of Bedrock player usernames that should have their Java Edition ac
 This saves an auth chain token that can be reused to authenticate the player later. This does not save emails or passwords,
 but you should still be cautious when adding to this list and giving others access to this Geyser instance's files.
 Removing a name from this list will delete its cached login information on the next Geyser startup.
-The file that tokens will be saved in is in the same folder as this config, named `saved-auth-chains.jsom`.
+The file that tokens will be saved in is in the same folder as this config, named `saved-auth-chains.json`.
 
 Format:
 
