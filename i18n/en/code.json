@@ -90,7 +90,7 @@
     "message": "Set the Bedrock port to the Java server's port and connect with that port; note that this provider appears to only provide service in Russia."
   },
   "providers.provider.dedicatedmc.description": {
-    "message": "Contact the support to open the default Bedrock port, which Geyser is configured to use by default."
+    "message": "Check [DedicatedMC's documentation](https://docs.dedicatedmc.io/plugins-mods/how-to-install-geysermc/) for specific instructions."
   },
   "providers.provider.elfidc.description": {
     "message": "When placing an order, choose Paper/Spigot + Geyser, which will automatically install the Geyser plugin. Connect with the Java server's IP and port. Note: This provider only provides service in China."
