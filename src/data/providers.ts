@@ -614,7 +614,7 @@ export const providersData: Providers = {
             url: 'https://vultam.net/',
             description: translate({
                 id: 'providers.provider.vultam.description',
-                message: "Set the `bedrock port` to the Java server's port, or request an additional port. The additional port can be `19132` if you buy a dedicated IP."
+                message: "Enable `clone-remote-port` in the Geyser config, and connect with the Java IP and port. Alternatively, allocate an additional port to your server from the Network section of the control panel and set it as the `bedrock.port` in the Geyser config. Use that port to connect from Bedrock. Please contact [Vultam support](https://clients.vultam.net/submitticket.php?step=2&deptid=1) if you need assistance."
             })
         },
         {
