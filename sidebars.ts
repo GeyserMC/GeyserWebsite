@@ -121,6 +121,7 @@ const sidebars: SidebarsConfig = {
     ],
 
     floodgateSidebar: [
+        'floodgate/index',
         'floodgate/setup',
         'floodgate/issues',
         'floodgate/faq',
