@@ -70,6 +70,26 @@ const ConfigEditorPage: React.FC = () => {
 
             // Check if we are in a comment
             if (line.startsWith('#')) {
+                if (!line.includes('# ') && line.includes(': ')) {
+                    const splitLine = line.split(':');
+                    splitLine[0] = splitLine[0].trim();
+                    splitLine[1] = splitLine[1].trim();
+                    if (splitLine[0] === '#proxy-protocol-whitelisted-ips') {
+                        currentComment = '';
+                        return;
+                    }
+                    currentComment += '<strong>Note: This option is commented on, and if you change it, it will be automatically uncommented.</strong>' + '<br>';
+                    // Add the config option to the config object
+                    newConfig[currentSection] = newConfig[currentSection] || {};
+                    newConfig[currentSection][splitLine[0]] = {
+                        desc: currentComment,
+                        value: splitLine[1]
+                    };
+
+                    // Reset the comment
+                    currentComment = '';
+                    return;
+                }
                 currentComment += line.replace(/^# ?/i, '') + '<br>';
                 return;
             }
@@ -118,10 +138,10 @@ const ConfigEditorPage: React.FC = () => {
                     {Object.keys(config[configKey]).map(configOption => {
                         const configOptionInfo = config[configKey][configOption];
                         const configOptionKey = configKey === '' ? configOption : `${configKey}.${configOption}`;
-
+                        const showOptionName = configOption.replace('#','')
                         return (
                             <div key={configOptionKey} className={styles.configOption}>
-                                <h3>{configOption}</h3>
+                                <h3>{showOptionName}</h3>
                                 <p dangerouslySetInnerHTML={{ __html: configOptionInfo.desc }} />
                                 {getInput(configOptionKey, configOptionInfo.value)}
                             </div>
@@ -143,7 +163,12 @@ const ConfigEditorPage: React.FC = () => {
                 if (currentObj.hasOwnProperty(nestedKey)) {
                     if (index === keys.length - 1) {
                         const oldValue = currentObj[nestedKey].value;
-                        newConfig = newConfig.replace(`  ${nestedKey}: ${oldValue}`, `  ${nestedKey}: ${value}`);
+                        if (nestedKey.startsWith('#')) {
+                            const newKey = nestedKey.replace('#','');
+                            newConfig = newConfig.replace(`  ${nestedKey}: ${oldValue}`, `  ${newKey}: ${value}`);
+                        } else {
+                            newConfig = newConfig.replace(`  ${nestedKey}: ${oldValue}`, `  ${nestedKey}: ${value}`);
+                        }
                     } else {
                         currentObj = currentObj[nestedKey];
                     }
@@ -202,16 +227,19 @@ const ConfigEditorPage: React.FC = () => {
                     // Boolean
                     return (
                         <div key={name}>
-                            <input className={styles.checkbox} type='checkbox' id={name} defaultChecked={value.toLowerCase() === 'true'} onChange={handleChange} />
+                            <input className={styles.checkbox} type='checkbox' id={name}
+                                   defaultChecked={value.toLowerCase() === 'true'} onChange={handleChange}/>
                             <label htmlFor={name} className='switch'></label>
                         </div>
                     );
                 } else if (!isNaN(value)) {
                     // Number
-                    return <input key={name} className={styles.formInput} type='number' defaultValue={value} id={name} onChange={handleChange} />;
+                    return <input key={name} className={styles.formInput} type='number' defaultValue={value}
+                                  id={name} onChange={handleChange}/>;
                 } else {
                     // String
-                    return <input key={name} className={styles.formInput} type='text' defaultValue={value.replace(/"/g, '')} id={name} onChange={handleChange} />;
+                    return <input key={name} className={styles.formInput} type='text'
+                                  defaultValue={value.replace(/"/g, '')} id={name} onChange={handleChange}/>;
                 }
         }
     }
