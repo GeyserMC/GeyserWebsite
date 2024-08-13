@@ -92,7 +92,7 @@ The network package contains basic information about the remote server via the
 interface, such as the server's IP address and port, and the protocol version of the remote server. Or the auth type.
 You can also get the port/IP that Geyser listens to via the [BedrockListener](https://github.com/GeyserMC/Geyser/blob/master/api/src/main/java/org/geysermc/geyser/api/network/BedrockListener.java) interface.
 
-### [Skin](https://github.com/GeyserMC/Geyser/tree/master/api/src/main/java/org/geysermc/geyser/api/skin) {#skin}
+#### [Skin](https://github.com/GeyserMC/Geyser/tree/master/api/src/main/java/org/geysermc/geyser/api/skin) {#skin}
 The skin package contains some records representing skin data. If you want to change the skin of players, you can listen to the [SessionSkinApplyEvent](https://github.com/GeyserMC/Geyser/blob/master/api/src/main/java/org/geysermc/geyser/api/event/bedrock/SessionSkinApplyEvent.java), and set a new skin, skin geometry or cape there.
 
 #### [Pack](https://github.com/GeyserMC/Geyser/tree/master/api/src/main/java/org/geysermc/geyser/api/pack) {#pack}
