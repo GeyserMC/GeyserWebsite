@@ -166,8 +166,9 @@ const ConfigEditorPage: React.FC = () => {
                         if (nestedKey.startsWith('#')) {
                             const newKey = nestedKey.replace('#','');
                             newConfig = newConfig.replace(`  ${nestedKey}: ${oldValue}`, `  ${newKey}: ${value}`);
+                        } else {
+                            newConfig = newConfig.replace(`  ${nestedKey}: ${oldValue}`, `  ${nestedKey}: ${value}`);
                         }
-                        newConfig = newConfig.replace(`  ${nestedKey}: ${oldValue}`, `  ${nestedKey}: ${value}`);
                     } else {
                         currentObj = currentObj[nestedKey];
                     }
