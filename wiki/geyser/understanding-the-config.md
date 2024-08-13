@@ -22,6 +22,8 @@ The options for Geyser on the Bedrock-facing end. Mostly contains options for ho
 
 **`compression-level`**: An number value that represents how much to compress outgoing traffic. Can be any number from -1 to 9; any other value will be replaced with the nearest acceptable value. The higher the number, the more CPU processing that is used but with less bandwidth used. Default is 6.
 
+**`broadcast-port`**:  The port to broadcast to Bedrock clients with the MOTD that they should use to connect to the server. DO NOT uncomment and change this unless Geyser runs on a different internal port than the one that is used to connect.
+
 **`enable-proxy-protocol`**:  Whether to enable PROXY protocol or not for clients. You DO NOT WANT this feature unless you run UDP reverse proxy in front of your Geyser instance. You do NOT need this for BungeeCord (and forks), Velocity, or Waterfall.
 
 **`proxy-protocol-whitelisted-ips`**: Disabled by default, and only enable this if you use "enable-proxy-protocol". A list of allowed PROXY protocol speaking proxy IP addresses/subnets. Should really only be used when you are not able to use a proper firewall (usually true with shared hosting providers etc.). Keeping this list empty means there is no IP address whitelist. IP addresses, subnets, and links to plain text files containing either are supported.
@@ -36,6 +38,8 @@ Options for the remote (Java) server.
 **`auth-type`**: The authentication type of the Minecraft: Java Edition server. Valid options are `online`, `offline`, and `floodgate`. 
 
 **Please keep in mind, what you specify in the Geyser `auth-type` option MUST be the same as what the remote server has (with the exception of Geyser being in online mode and remote being in offline mode). You simply cannot join an online mode server without a genuine account. If you want to allow Minecraft: Bedrock Edition accounts to join without a Minecraft: Java Edition account, see the [Floodgate](/wiki/floodgate/) wiki page.**
+
+**`allow-password-authentication`**: Allow for password-based authentication methods through Geyser. Only useful in online mode. If this is false, users must authenticate to Microsoft using a code provided by Geyser on their desktop.
 
 **`use-proxy-protocol`**: Whether to enable PROXY/HAProxy protocol or not while connecting to the server. This is useful only when:
 - Your server supports PROXY protocol (it probably doesn't)
@@ -67,8 +71,6 @@ saved-user-logins:
 **`command-suggestions`**: Bedrock clients freeze or crash when opening up the command prompt for the first time with a large amount of command suggestions. This config option disables command suggestions being sent to prevent any freezing. **Since 1.16.100:** command freezing and crashing has been largely reduced; you may no longer need this option disabled.
 
 **`passthrough-motd`**: If the MOTD should be relayed from the remote server. Causes the `motd1` and `motd2` options in the bedrock section to no longer have a use.
-
-**`passthrough-protocol-name`**: Relay the protocol name (e.g. BungeeCord [X.X], Paper 1.X) - this is only really useful when using a custom protocol name! This will also show up on sites like MCSrvStatus. \<mcsrvstat.us\>
 
 **`passthrough-player-count`**: If the current and max player counts should be relayed from the remote server.
 
