@@ -17,7 +17,7 @@ This project is still in very early development and should not be used on produc
 
 ## Download {#download} 
 
-You can download Hydraulic on [here](https://geysermc.org/download/?project=other-projects&hydraulic=expanded).
+You can download Hydraulic [here](https://geysermc.org/download/?project=other-projects&hydraulic=expanded).
 
 ## Contributing {#contributing}
 
