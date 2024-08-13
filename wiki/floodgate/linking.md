@@ -30,7 +30,7 @@ player-link:
   enabled: true
   # Whether to use global linking. Global linking uses a central server to request link
   # accounts, allowing people to link once, join everywhere (on servers with global linking).
-  use-global-linking: true
+  enable-global-linking: true
 ```
 ([see the default config](https://github.com/GeyserMC/Floodgate/blob/master/core/src/main/resources/config.yml))
 
