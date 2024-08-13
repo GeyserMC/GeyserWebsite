@@ -26,7 +26,7 @@ Most [API methods have a simple explanation](https://github.com/GeyserMC/Floodga
 
 :::note
 
-To see full, detailed documentation, see the [javadocs](https://repo.opencollab.dev/javadoc/maven-snapshots/org/geysermc/floodgate/api/2.2.2-SNAPSHOT).
+To see full, detailed documentation, see the [javadocs](https://repo.opencollab.dev/javadoc/maven-snapshots/org/geysermc/floodgate/api/latest).
 
 :::
 
