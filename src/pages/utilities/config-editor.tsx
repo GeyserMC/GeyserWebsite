@@ -78,7 +78,7 @@ const ConfigEditorPage: React.FC = () => {
                         currentComment = '';
                         return;
                     }
-                    currentComment += '<strong>Note: This option is commented on, and if you change it, it will be automatically uncommented</strong>' + '<br>';
+                    currentComment += '<strong>Note: This option is commented on, and if you change it, it will be automatically uncommented.</strong>' + '<br>';
                     // Add the config option to the config object
                     newConfig[currentSection] = newConfig[currentSection] || {};
                     newConfig[currentSection][splitLine[0]] = {
