@@ -96,7 +96,11 @@ const ConfigEditorPage: React.FC = () => {
             // Get the key and value
             const splitLine = line.split(':');
             splitLine[0] = splitLine[0].trim();
-            splitLine[1] = splitLine[1].trim();
+            let val = '';
+            for (let j = 1;j<splitLine.length;j++) {
+                val += splitLine[j];
+            }
+            val = val.trim();
 
             if (splitLine[0].includes('proxy-protocol-whitelisted-ips')) {
                 currentComment = '';
@@ -111,7 +115,7 @@ const ConfigEditorPage: React.FC = () => {
             newConfig[currentSection] = newConfig[currentSection] || {};
             newConfig[currentSection][splitLine[0]] = {
                 desc: currentComment,
-                value: splitLine[1],
+                value: val,
                 line: i
             };
 
