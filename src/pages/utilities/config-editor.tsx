@@ -124,7 +124,7 @@ const ConfigEditorPage: React.FC = () => {
     const generateHTML = (config: any) => {
         return Object.keys(config).map(configKey => (
             <div key={configKey} className={styles.card}>
-                <div className={styles.cardHeader}>{configKey === '' ? '.' : configKey}</div>
+                <div className={styles.cardHeader}>{configKey === '' ? 'Root' : configKey}</div>
                 <div className={styles.cardBody}>
                     {Object.keys(config[configKey]).map(configOption => {
                         const configOptionInfo = config[configKey][configOption];
