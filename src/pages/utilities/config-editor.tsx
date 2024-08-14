@@ -112,7 +112,7 @@ const ConfigEditorPage: React.FC = () => {
             }
 
             // Ignore user auths section
-            if (currentSection === 'userAuths' || currentSection === 'saved-user-logins') {
+            if (currentSection === 'saved-user-logins') {
                 return;
             }
 
