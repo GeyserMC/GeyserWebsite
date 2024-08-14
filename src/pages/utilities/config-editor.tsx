@@ -98,7 +98,7 @@ const ConfigEditorPage: React.FC = () => {
             splitLine[0] = splitLine[0].trim();
             splitLine[1] = splitLine[1].trim();
 
-            if (splitLine[0] === '#proxy-protocol-whitelisted-ips') {
+            if (splitLine[0].includes('proxy-protocol-whitelisted-ips')) {
                 currentComment = '';
                 continue;
             }
