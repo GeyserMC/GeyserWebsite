@@ -39,8 +39,6 @@ Options for the remote (Java) server.
 
 **Please keep in mind, what you specify in the Geyser `auth-type` option MUST be the same as what the remote server has (with the exception of Geyser being in online mode and remote being in offline mode). You simply cannot join an online mode server without a genuine account. If you want to allow Minecraft: Bedrock Edition accounts to join without a Minecraft: Java Edition account, see the [Floodgate](/wiki/floodgate/) wiki page.**
 
-**`allow-password-authentication`**: Allow for password-based authentication methods through Geyser. Only useful in online mode. If this is false, users must authenticate to Microsoft using a code provided by Geyser on their desktop.
-
 **`use-proxy-protocol`**: Whether to enable PROXY/HAProxy protocol or not while connecting to the server. This is useful only when:
 - Your server supports PROXY protocol (it probably doesn't)
 - You run Velocity or BungeeCord with its respective option enabled.
