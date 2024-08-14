@@ -8,7 +8,8 @@ import { useRef, useState } from 'react';
 const ConfigEditorPage: React.FC = () => {
     const [config, setConfig] = useState('');
     const [parsedConfig, setParsedConfig] = useState<any>({});
-
+    // match optional key
+    const keyReg = /^#? ?[^:\sA-Z]+:(?!\S)/
     const editedConfig = useRef<any>({});
     const uploadRef = useRef<any>(null);
 
@@ -55,7 +56,8 @@ const ConfigEditorPage: React.FC = () => {
         const newConfig = {};
 
         // Parse each line of the config
-        lines.forEach(line => {
+        for (let i = 0; i < lines.length; i++) {
+            let line = lines[i];
             // Reset the section if we are no indented
             if (!line.startsWith('  ')) {
                 currentSection = '';
@@ -65,38 +67,30 @@ const ConfigEditorPage: React.FC = () => {
             line = line.trim()
             if (line === '') {
                 currentComment = '';
-                return;
+                continue;
             }
 
-            // Check if we are in a comment
-            if (line.startsWith('#')) {
-                if (!line.includes('# ') && line.includes(': ')) {
-                    const splitLine = line.split(':');
-                    splitLine[0] = splitLine[0].trim();
-                    splitLine[1] = splitLine[1].trim();
-                    if (splitLine[0] === '#proxy-protocol-whitelisted-ips') {
-                        currentComment = '';
-                        return;
-                    }
-                    currentComment += '<strong>Note: This option is commented on, and if you change it, it will be automatically uncommented.</strong>' + '<br>';
-                    // Add the config option to the config object
-                    newConfig[currentSection] = newConfig[currentSection] || {};
-                    newConfig[currentSection][splitLine[0]] = {
-                        desc: currentComment,
-                        value: splitLine[1]
-                    };
+            const commented = line.startsWith('#');
 
-                    // Reset the comment
-                    currentComment = '';
-                    return;
+            const match = line.match(keyReg)
+            if (match === null) {
+                // Check if we are in a comment
+                if (commented) {
+                    currentComment += line.replace(/^# ?/i, '') + '<br>';
                 }
-                currentComment += line.replace(/^# ?/i, '') + '<br>';
-                return;
+                continue;
             }
 
-            // Ignore these lines since they will fail to parse
-            if (!line.includes(':')) {
-                return;
+            // Check if we are in a new section
+            if (line.endsWith(':')) {
+                currentSection = line.replace(':', '');
+                currentComment = '';
+                continue;
+            }
+
+            // Ignore user auths section
+            if (currentSection === 'saved-user-logins') {
+                continue;
             }
 
             // Get the key and value
@@ -104,29 +98,26 @@ const ConfigEditorPage: React.FC = () => {
             splitLine[0] = splitLine[0].trim();
             splitLine[1] = splitLine[1].trim();
 
-            // Check if we are in a new section
-            if (line.endsWith(':')) {
-                currentSection = splitLine[0];
+            if (splitLine[0] === '#proxy-protocol-whitelisted-ips') {
                 currentComment = '';
-                return;
+                continue;
             }
 
-            // Ignore user auths section
-            if (currentSection === 'saved-user-logins') {
-                return;
+            if (commented) {
+                currentComment += '<strong>Note: This option is commented on, and if you change it, it will be automatically uncommented.</strong>' + '<br>';
             }
 
             // Add the config option to the config object
             newConfig[currentSection] = newConfig[currentSection] || {};
             newConfig[currentSection][splitLine[0]] = {
                 desc: currentComment,
-                value: splitLine[1]
+                value: splitLine[1],
+                line: i
             };
 
             // Reset the comment
             currentComment = '';
-        })
-
+        }
         return newConfig;
     }
 
@@ -138,7 +129,7 @@ const ConfigEditorPage: React.FC = () => {
                     {Object.keys(config[configKey]).map(configOption => {
                         const configOptionInfo = config[configKey][configOption];
                         const configOptionKey = configKey === '' ? configOption : `${configKey}.${configOption}`;
-                        const showOptionName = configOption.replace('#','')
+                        const showOptionName = configOption.replace('#','').trim()
                         return (
                             <div key={configOptionKey} className={styles.configOption}>
                                 <h3>{showOptionName}</h3>
@@ -154,7 +145,7 @@ const ConfigEditorPage: React.FC = () => {
 
     const handleExport = () => {
         let newConfig = config;
-
+        const lines = newConfig.split('\n');
         Object.entries(editedConfig.current).forEach(([key, value]) => {
             const keys = key.split('.');
             let currentObj = parsedConfig;
@@ -162,19 +153,18 @@ const ConfigEditorPage: React.FC = () => {
             keys.forEach((nestedKey, index) => {
                 if (currentObj.hasOwnProperty(nestedKey)) {
                     if (index === keys.length - 1) {
-                        const oldValue = currentObj[nestedKey].value;
-                        if (nestedKey.startsWith('#')) {
-                            const newKey = nestedKey.replace('#','');
-                            newConfig = newConfig.replace(`  ${nestedKey}: ${oldValue}`, `  ${newKey}: ${value}`);
-                        } else {
-                            newConfig = newConfig.replace(`  ${nestedKey}: ${oldValue}`, `  ${nestedKey}: ${value}`);
-                        }
+                        const option = currentObj[nestedKey];
+                        const oldValue = option.value;
+                        const index = option.line;
+                        const newKey = nestedKey.replace('#','').trim();
+                        lines[index] = lines[index].replace(`  ${nestedKey}: ${oldValue}`,`  ${newKey}: ${value}`);
                     } else {
                         currentObj = currentObj[nestedKey];
                     }
                 }
             });
         });
+        newConfig = lines.join('\n');
 
         // Trigger a download of the final config
         downloadString(newConfig, 'text/plain', 'config.yml');
