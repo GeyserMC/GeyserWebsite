@@ -173,30 +173,9 @@
     }
 }
 
-.widerButton {
-    width: 50.05%;
-    outline: 3px solid var(--ifm-tabs-color-active);
-    outline-offset: -3px;
-    border: 0;
-    border-radius: var(--ifm-global-radius);
-    background-color: transparent;
-    text-align: center;
-    font-size: 18px;
-    font-weight: normal;
-    transition: background-color 0.5s ease, color 0.5s ease;
-    padding-top: 10px;
-    padding-bottom: 10px;
-    color: var(--ifm-tabs-color-active);
-
-    &:hover {
-        background-color: var(--ifm-color-primary);
-        color: #fff;
-    }
-}
-
 .buttonSecondary {
     outline: 3px solid var(--ifm-color-secondary);
-
+    
     &:hover {
         background-color: var(--ifm-color-secondary);
     }
@@ -211,35 +190,12 @@
     font-size: 16px;
 }
 
-.listInput {
-    border-radius: var(--ifm-global-radius);
-    outline: 1px solid var(--ifm-color-secondary);
-    outline-offset: -1px;
-    padding: 10px;
-    min-width: 50%;
-    font-size: 16px;
-}
-
 .noOutline {
     outline: none;
-}
-
-.fa {
-    display:inline-block;
-    font-size:inherit;
-    text-rendering:auto;
-    -webkit-font-smoothing:antialiased;
-    -moz-osx-font-smoothing:grayscale
 }
 
 @media screen and (max-width: 768px) {
     .formInput {
         min-width: 100%;
-    }
-    .widerButton {
-        min-width: 100%;
-    }
-    .listInput {
-        min-width: calc(100% - 27px);
     }
 }
