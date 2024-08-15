@@ -101,12 +101,11 @@ const ConfigEditorPage: React.FC = () => {
                 val += splitLine[j];
             }
             val = val.trim();
-            /*
+
             if (splitLine[0].includes('proxy-protocol-whitelisted-ips')) {
                 currentComment = '';
                 continue;
             }
-             */
 
             if (commented) {
                 currentComment += '<strong>Note: This option is commented on, and if you change it, it will be automatically uncommented.</strong>' + '<br>';
@@ -215,10 +214,7 @@ const ConfigEditorPage: React.FC = () => {
                 return <input key={name} className={styles.formInput} type='text' disabled defaultValue={value.replace(/"/g, '')} />;
             case 'metrics.uuid':
                 return <input key={name} className={styles.formInput} id={name} type='text' disabled defaultValue={value === 'generateduuid' ? crypto.randomUUID() : value} />;
-            case 'bedrock.#proxy-protocol-whitelisted-ips':
-            case 'bedrock.proxy-protocol-whitelisted-ips':
-                console.log(JSON.parse(value));
-                console.log(value);
+
             default:
                 // Handle all the other inputs
                 if (value.toLowerCase() === 'true' || value.toLowerCase() === 'false') {
