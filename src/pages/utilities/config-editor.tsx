@@ -4,6 +4,7 @@ import HeroBackground from '@site/static/img/site/split-background.webp';
 import Layout from '@theme/Layout';
 import styles from './utilities.module.scss';
 import { useRef, useState } from 'react';
+import {renderToString} from "react-dom/server";
 
 const ConfigEditorPage: React.FC = () => {
     const [config, setConfig] = useState('');
@@ -101,11 +102,12 @@ const ConfigEditorPage: React.FC = () => {
                 val += splitLine[j];
             }
             val = val.trim();
-
+            /*
             if (splitLine[0].includes('proxy-protocol-whitelisted-ips')) {
                 currentComment = '';
                 continue;
             }
+             */
 
             if (commented) {
                 currentComment += '<strong>Note: This option is commented on, and if you change it, it will be automatically uncommented.</strong>' + '<br>';
@@ -176,13 +178,59 @@ const ConfigEditorPage: React.FC = () => {
 
     function getInput(name, value) {
         const handleChange = (event) => {
-            const { id, value, type, checked } = event.target;
+            const {id, value, type, checked} = event.target;
 
             editedConfig.current = {
                 ...editedConfig.current,
                 [id]: type === 'checkbox' ? checked.toString() : value
             };
         }
+
+        const listInputIdMap = {
+            'bedrock.proxy-protocol-whitelisted-ips': 0
+        }
+
+        const addInput = (id) => {
+            let parentNode = document.getElementById(id);
+            const name = id.replace('listEditor_','');
+            let index = listInputIdMap[name];
+            let inputId = "listInput_" + name + index;
+            index++;
+            const node = document.createRange().createContextualFragment(
+                renderToString(<div><input id={inputId} key={name} className={styles.listInput} type='text'
+                              defaultValue='' onChange={handleChange}/>
+                    <button onClick={e => removeInput(e.target)}>
+                        <i className="fa">&#10006;</i></button>
+            </div>));
+            parentNode.appendChild(node);
+            let elements = parentNode.getElementsByTagName("button")
+            let button = elements[elements.length - 1] as HTMLButtonElement;
+            button.onclick = (e) => removeInput(e.target);
+            handleListEditorChange(0,inputId);
+        }
+
+        const removeInput = (button): any=> {
+            let parent = button.parentElement;
+            while (parent.nodeName.toLowerCase() != 'div') {
+                console.log(parent.nodeName)
+                parent = parent.parentElement;
+            }
+            parent.remove();
+            handleListEditorChange(0,parent.firstElementChild.id);
+        };
+
+        const handleListEditorChange = (type,id)=> {
+            switch (type) {
+                // add
+                case 0:
+                    
+                // remove
+                case 1:
+                // input
+                case 2:
+            }
+        };
+
 
         switch (name) {
             // Handle all the dropdowns
@@ -214,7 +262,24 @@ const ConfigEditorPage: React.FC = () => {
                 return <input key={name} className={styles.formInput} type='text' disabled defaultValue={value.replace(/"/g, '')} />;
             case 'metrics.uuid':
                 return <input key={name} className={styles.formInput} id={name} type='text' disabled defaultValue={value === 'generateduuid' ? crypto.randomUUID() : value} />;
-
+            case 'bedrock.#proxy-protocol-whitelisted-ips':
+            case 'bedrock.proxy-protocol-whitelisted-ips':
+                const arr = JSON.parse(value);
+                let re = [];
+                let id = '';
+                let str = name.replace('#','');
+                for (let i = 0; i < arr.length; i++) {
+                    let content = arr[i];
+                    let index = listInputIdMap[str];
+                    id = "listInput_" + name + index;
+                    index++;
+                    re[i] = <div><input id={id} key={name} className={styles.listInput} type='text'
+                                        defaultValue={content.replace(/"/g, '')} onChange={handleChange}/>
+                        <button onClick={e=>removeInput(e.target)}><i className="fa">&#10006;</i></button></div>;
+                }
+                id = 'listEditor_' + str;
+                return [<div id={id}>{re}</div>,
+                <button className={styles.widerButton} onClick={e => addInput(id)}>Add</button>];
             default:
                 // Handle all the other inputs
                 if (value.toLowerCase() === 'true' || value.toLowerCase() === 'false') {
