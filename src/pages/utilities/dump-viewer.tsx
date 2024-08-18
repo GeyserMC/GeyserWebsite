@@ -16,6 +16,8 @@ const DumpViewerPage: React.FC = () => {
 
     const pluginPopoverRef = useRef<any>(null);
 
+    const urlReg = /^(https?:\/\/)?dump\.geysermc\.org/;
+
     useEffect(() => {
         const handleClickOutside = (event) => setActivePlugin({});
         document.addEventListener("mousedown", handleClickOutside);
@@ -44,7 +46,7 @@ const DumpViewerPage: React.FC = () => {
         }
         let id = dumpId;
 
-        if (dumpId.startsWith('https://dump.geysermc.org/')) {
+        if (dumpId.match(urlReg)) {
             id = dumpId.split('/').pop();
         }
         setDumpId(id);
