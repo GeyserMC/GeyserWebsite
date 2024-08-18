@@ -257,6 +257,9 @@
   "pages.configeditor.subheading": {
     "message": "Edit your Geyser configuration."
   },
+  "pages.configeditor.configurl": {
+    "message": "https://raw.githubusercontent.com/GeyserMC/Geyser/master/core/src/main/resources/config.yml"
+  },
   "pages.dumpviewer.title": {
     "message": "Dump Viewer"
   },
