@@ -13,5 +13,3 @@ files:
     translation: /i18n/%locale%/docusaurus-plugin-content-blog/**/%original_file_name%
   - source: /openapi/**/*
     translation: /i18n/%locale%/openapi/**/%original_file_name%
-  - source: /src/data/providers.ts
-    translation: /i18n/%locale%/src/data/providers.ts
