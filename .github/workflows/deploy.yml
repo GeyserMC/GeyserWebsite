@@ -3,23 +3,7 @@ name: Deploy to GitHub Pages
 on:
   push:
     branches:
-      - master
-    paths-ignore:
-      - '.github/CODEOWNERS'
-      - '.github/workflows/pr.yml'
-      - '.idea/**'
-      - '.vscode/**'
-      - '.gitattributes'
-      - '.gitignore'
-      - 'CONTRIBUTING.md'
-      - 'LICENSE'
-      - 'README.md'
-  workflow_dispatch:
-
-permissions:
-  contents: read
-  pages: write
-  id-token: write
+      - i18n-support
 
 concurrency:
   group: "pages"
@@ -44,6 +28,11 @@ jobs:
 
       - name: Install dependencies
         run: yarn install --frozen-lockfile
+
+      - name: Sync with Crowdin
+        run: yarn run crowdin:sync
+        env:
+          CROWDIN_PERSONAL_TOKEN: ${{ secrets.CROWDIN_PERSONAL_TOKEN }}
 
       - uses: actions/cache@0c45773b623bea8c8e75f6c82b208c3cf94ea4f9
         with:
