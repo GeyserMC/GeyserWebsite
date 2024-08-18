@@ -3,11 +3,13 @@ import type { Config } from '@docusaurus/types';
 import type * as Preset from '@docusaurus/preset-classic';
 import { docOgRenderer, blogOgRenderer, pageOgRenderer } from './src/renderer/ImageRenderers';
 
+const DefaultLocal = 'en';
+
 const config: Config = {
     title: 'GeyserMC',
     tagline: 'Revolutionize Your Minecraft Server',
     favicon: 'img/favicon.ico',
-    
+
     url: 'https://geysermc.org',
     baseUrl: '/',
 
@@ -18,46 +20,36 @@ const config: Config = {
     onBrokenMarkdownLinks: 'warn',
 
     i18n: {
-        defaultLocale: 'en',
-        locales: ['en', 'zh-CN'],
+        defaultLocale: DefaultLocal,
+        locales: ['en', 'zh-CN', 'zh-TW' ],
     },
+
     presets: [
-        [
-            '@docusaurus/preset-classic',
-            {
-                docs: {
-                    editUrl: ({locale, versionDocsDirPath, docPath}) => {
-                        // Link to Crowdin for French docs
-                        if (locale !== 'en') {
-                            return `https://crowdin.com/project/geyserwebsitetranslationexampl/${locale}`;
-                        }
-                        // Link to GitHub for English docs
-                        return `https://github.com/GeyserMC/GeyserWebsite/edit/main/website/${versionDocsDirPath}/${docPath}`;
-                    },
-                },
-                blog: {
-                    editUrl: ({locale, blogDirPath, blogPath}) => {
-                        if (locale !== 'en') {
-                            return `https://crowdin.com/project/geyserwebsitetranslationexampl/${locale}`;
-                        }
-                        return `https://github.com/GeyserMC/GeyserWebsite/edit/main/website/${blogDirPath}/${blogPath}`;
-                    },
-                },
-            },
-        ],
         [
             'classic',
             {
                 docs: {
+                    editUrl: ({locale, versionDocsDirPath, docPath}) => {
+                        // Link to Crowdin for French docs
+                        if (locale !== DefaultLocal) {
+                            return `https://crowdin.com/project/geyserwebsitetranslationexampl/${locale}`;
+                        }
+                        // Link to GitHub for English docs
+                        return `https://github.com/GeyserMC/GeyserWebsite/tree/master/${versionDocsDirPath}/${docPath}`;
+                    },
                     sidebarPath: require.resolve("./sidebars.ts"),
-                    editUrl:
-                        'https://github.com/GeyserMC/GeyserWebsite/tree/master/',
-
                     routeBasePath: '/wiki',
                     docItemComponent: "@theme/ApiItem",
-                    path: 'wiki',
+                    path: './wiki',
                 },
-                blog: {},
+                blog: {
+                    editUrl: ({locale, blogDirPath, blogPath}) => {
+                        if (locale !== DefaultLocal) {
+                            return `https://crowdin.com/project/geyserwebsitetranslationexampl/${locale}`;
+                        }
+                        return `https://github.com/GeyserMC/GeyserWebsite/tree/master/${blogDirPath}/${blogPath}`;
+                    },
+                },
                 theme: {
                     customCss: './src/css/custom.scss',
                 },
@@ -181,11 +173,6 @@ const config: Config = {
                     href: 'https://github.com/GeyserMC/Geyser',
                     position: 'right',
                     className: 'header-github-link'
-                },
-                {
-                    href: 'https://discord.gg/geysermc',
-                    position: 'right',
-                    className: 'header-discord-link'
                 },
                 {
                     href: 'https://discord.gg/geysermc',

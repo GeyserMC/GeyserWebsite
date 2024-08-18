@@ -27,4 +27,6 @@ npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
 package-lock.json
+
 /i18n/
+!/i18n/en/
