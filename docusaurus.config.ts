@@ -21,8 +21,30 @@ const config: Config = {
         defaultLocale: 'en',
         locales: ['en', 'zh-CN'],
     },
-
     presets: [
+        [
+            '@docusaurus/preset-classic',
+            {
+                docs: {
+                    editUrl: ({locale, versionDocsDirPath, docPath}) => {
+                        // Link to Crowdin for French docs
+                        if (locale !== 'en') {
+                            return `https://crowdin.com/project/geyserwebsitetranslationexampl/${locale}`;
+                        }
+                        // Link to GitHub for English docs
+                        return `https://github.com/GeyserMC/GeyserWebsite/edit/main/website/${versionDocsDirPath}/${docPath}`;
+                    },
+                },
+                blog: {
+                    editUrl: ({locale, blogDirPath, blogPath}) => {
+                        if (locale !== 'en') {
+                            return `https://crowdin.com/project/geyserwebsitetranslationexampl/${locale}`;
+                        }
+                        return `https://github.com/GeyserMC/GeyserWebsite/edit/main/website/${blogDirPath}/${blogPath}`;
+                    },
+                },
+            },
+        ],
         [
             'classic',
             {
@@ -152,9 +174,18 @@ const config: Config = {
                     className: 'header-download-link'
                 },
                 {
+                    type: 'localeDropdown',
+                    position: 'right',
+                },
+                {
                     href: 'https://github.com/GeyserMC/Geyser',
                     position: 'right',
                     className: 'header-github-link'
+                },
+                {
+                    href: 'https://discord.gg/geysermc',
+                    position: 'right',
+                    className: 'header-discord-link'
                 },
                 {
                     href: 'https://discord.gg/geysermc',

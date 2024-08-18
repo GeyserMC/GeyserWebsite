@@ -6,10 +6,10 @@ files:
     translation: /i18n/%two_letters_code%/**/%original_file_name%
   # Wiki Markdown files
   - source: /wiki/**/*
-    translation: /i18n/%two_letters_code%/wiki/current/**/%original_file_name%
+    translation: /i18n/%two_letters_code%/docusaurus-plugin-content-docs/current/**/%original_file_name%
   # Blog Markdown files
   - source: /blog/**/*
-    translation: /i18n/%two_letters_code%/blog/**/%original_file_name%
+    translation: /i18n/%two_letters_code%/docusaurus-plugin-content-blog/**/%original_file_name%
   - source: /openapi/**/*
     translation: /i18n/%two_letters_code%/openapi/**/%original_file_name%
   - source: /src/data/providers.ts
