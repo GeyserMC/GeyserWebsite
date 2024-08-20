@@ -32,7 +32,7 @@ const config: Config = {
                     editUrl: ({locale, versionDocsDirPath, docPath}) => {
                         // Link to Crowdin for French docs
                         if (locale !== DefaultLocal) {
-                            return `https://crowdin.com/project/geyserwebsitetranslationexampl/${locale}`;
+                            return `https://crowdin.com/project/******/${locale}`;
                         }
                         // Link to GitHub for English docs
                         return `https://github.com/GeyserMC/GeyserWebsite/tree/master/${versionDocsDirPath}/${docPath}`;
@@ -45,7 +45,7 @@ const config: Config = {
                 blog: {
                     editUrl: ({locale, blogDirPath, blogPath}) => {
                         if (locale !== DefaultLocal) {
-                            return `https://crowdin.com/project/geyserwebsitetranslationexampl/${locale}`;
+                            return `https://crowdin.com/project/******/${locale}`;
                         }
                         return `https://github.com/GeyserMC/GeyserWebsite/tree/master/${blogDirPath}/${blogPath}`;
                     },
