@@ -86,8 +86,8 @@ const sidebars: SidebarsConfig = {
                 id: 'geyser/faq'
             },
             items: [
+                'geyser/compatibility',
                 'geyser/supported-versions',
-                'geyser/anticheat-compatibility',
                 'geyser/current-limitations'
             ]
         },
