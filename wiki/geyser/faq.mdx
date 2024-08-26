@@ -93,7 +93,7 @@ Here you can find answers to frequently asked questions about Geyser - if you ha
         <A>
             If there is a prefix on Floodgate players, you must include the prefix in the name. Floodgate also replaces all spaces in names with underscores, so be sure to replace any spaces with underscores when executing the command. If this does not work, put double quotes around the name.
 
-            Example: `/tp ".<bedrock_username/>"`
+            Example: `/tp ".<bedrock_username>"`
         </A>
     </Q>
     <Q>
@@ -101,7 +101,7 @@ Here you can find answers to frequently asked questions about Geyser - if you ha
         <A>
             There are three ways you can do this.
 
-            1. Use Floodgate’s built-in whitelist command: `/fwhitelist add <bedrock_username/>`. This will only work if the player has joined any Geyser server already.
+            1. Use Floodgate’s built-in whitelist command: `/fwhitelist add <bedrock_username>`. This will only work if the player has joined any Geyser server already.
 
             2. Turn off the whitelist using `/whitelist off`, then get the Geyser player to join. After that, run `/whitelist add ".<bedrock_username/>"`, and finally, turn the whitelist back on using `/whitelist on`.
             When using Local Linking: If you're linking a Bedrock account to an existing whitelisted Java account, you don't need to whitelist the Bedrock account separately. You can link the accounts and immediately turn the whitelist back on.
@@ -122,7 +122,7 @@ Here you can find answers to frequently asked questions about Geyser - if you ha
     <Q>
         Can I remove the prefix of Floodgate players?
         <A>
-            While you can remove the prefix, it is generally recommended not to remove the prefix to prevent situations where player usernames are the same on both editions (Ex: Bedrock Username: `JohnDoe`, Java Username: `JohnDoe`). While they have different UUIDs, they have the same username, which may cause conflicts with commands that involve a player name. If you want to remove the prefix to use commands, Try adding quotation marks around the name. Example: `/tp ".<bedrock_username/>"` Otherwise, the prefix is located in the Floodgate `config.yml` under `username-prefix:`.
+            While you can remove the prefix, it is generally recommended not to remove the prefix to prevent situations where player usernames are the same on both editions (Ex: Bedrock Username: `JohnDoe`, Java Username: `JohnDoe`). While they have different UUIDs, they have the same username, which may cause conflicts with commands that involve a player name. If you want to remove the prefix to use commands, Try adding quotation marks around the name. Example: `/tp ".<bedrock_username>"` Otherwise, the prefix is located in the Floodgate `config.yml` under `username-prefix:`.
         </A>
     </Q>
     <Q>
