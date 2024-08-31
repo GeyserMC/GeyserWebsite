@@ -79,7 +79,8 @@ const config: Config = {
             },
         ],
         'docusaurus-plugin-sass',
-        './src/plugins/create-versions-json.ts'
+        './src/plugins/create-versions-json.ts',
+        './src/plugins/create-providers-json.ts'
     ],
     themes: ["docusaurus-theme-openapi-docs"],
 
