@@ -38,6 +38,9 @@
   "providers.provider.ggservers.description": {
     "message": "Can be installed to any server from their auto plugin setups. No further configuration needed."
   },
+  "providers.provider.lilypad.description": {
+    "message": "Tick the 'Enable Bedrock crossplay?' option when changing your server software to automatically install and configure Geyser + Floodgate. For more details, navigate to [lilypad.gg/bedrock](https://lilypad.gg/bedrock)."
+  },
   "providers.provider.mcprohosting.description": {
     "message": "Click 'Enable Bedrock Support' on the server dashboard and follow the steps. For manual installation: Add 'Destination Port' `19132` with 'Protocol UDP' to the port forward mapping and connect to the given source port."
   },

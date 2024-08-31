@@ -86,7 +86,10 @@ export const providersData: Providers = {
         {
             name: 'Lilypad',
             url: 'https://lilypad.gg',
-            description: 'Choose the "Pufferfish + Geyser" option during checkout to automatically install Geyser, or follow the guide at [lilypad.gg/bedrock](https://lilypad.gg/bedrock).'
+            description: translate({
+                id: 'providers.provider.lilypad.description',
+                message: "Tick the 'Enable Bedrock crossplay?' option when changing your server software to automatically install and configure Geyser + Floodgate. For more details, navigate to [lilypad.gg/bedrock](https://lilypad.gg/bedrock)."
+            })
         },
         {
             name: 'MCProHosting',
