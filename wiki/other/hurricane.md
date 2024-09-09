@@ -18,7 +18,7 @@ Supported Versions:
 - 1.17.x & above for pig riding
 
 ## Download {#download}
-- Spigot/Paper: [GitHub releases](https://github.com/GeyserMC/Hurricane/releases)
+- Spigot/Paper: [GeyserMC downloads page](/download?project=other-projects&hurricane=expanded)
 - Fabric/NeoForge: [Modrinth](https://modrinth.com/mod/hurricane/versions)
 
 ## Source {#source}

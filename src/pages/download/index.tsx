@@ -126,6 +126,21 @@ const DownloadPage: React.FC = () => (
                             />
                         }
                     />
+                    <Collapsible
+                        title='Hurricane'
+                        subtitle={<Translate id='pages.download.description.hurricane'>Various workarounds for Geyser players that modify the server in order to achieve their goal.</Translate>}
+                        id='hurricane'
+                        inner={
+                            <ProjectDownload
+                                projectId="hurricane"
+                                setup='/wiki/other/hurricane'
+                                downloadsInfo={{
+                                    spigot: <PlatformIcon img={PaperSpigotIcon} text="Spigot/Paper" />,
+                                }}
+                                gridColumns={1}
+                            />
+                        }
+                    />
                 </Collapsibles>
             </TabItem>
         </Tabs>
