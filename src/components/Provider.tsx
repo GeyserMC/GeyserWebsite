@@ -2,7 +2,7 @@ import type { HostingProvider, ProviderType } from "@site/src/types/providers";
 import ReactMarkdown from "react-markdown";
 import Admonition from '@theme/Admonition';
 import React, { useState } from 'react';
-import Translate from "@docusaurus/Translate";
+import Translate, { translate } from "@docusaurus/Translate";
 import { providersData } from "../data/providers";
 
 export const noP = (props: { children: any; }) => {
@@ -35,6 +35,14 @@ export const ProviderSelector = () => {
         ...Object.values(providersData.support), 
         ...Object.values(providersData.no_support)
     ].flat().sort((a, b) => a.name.localeCompare(b.name));
+
+    providers.unshift({
+        name: 'Not listed',
+        description: translate({
+            id: 'providers.provider.not_listed.description',
+            message: "If your hosting provider is not listed, try enabling the `clone-remote-port` option in the config. Then, restart the server, and try connecting with the same IP and port as on Java Edition. <br> If this does not work, ask your server hosting provider for a UDP port, and use that. For VPS/KVM servers please follow the self-hosting steps."
+        })
+    } as HostingProvider);
     
 
     const [selectedProvider, setSelectedProvider] = useState(null);
