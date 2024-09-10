@@ -53,32 +53,22 @@ const DownloadPage: React.FC = () => (
                         spigot: <PlatformIcon img={PaperSpigotIcon} text="Spigot/Paper" />,
                         velocity: <PlatformIcon img={VelocityIcon} text="Velocity" />,
                         fabric: <PlatformIcon img={FabricIcon} text="Fabric" />,
+                        neoforge: <PlatformIcon img={NeoForgeIcon} text="NeoForge" />
                     }}
                     additionalDownloads={{
                         fabric: {
                             url: "https://modrinth.com/mod/floodgate",
                             file: "floodgate-fabric.jar"
+                        },
+                        neoforge: {
+                            url: "https://modrinth.com/mod/floodgate",
+                            file: "floodgate-neoforge.jar"
                         }
                     }}
                 />
             </TabItem>
             <TabItem value="other-projects" label="Other Projects">
                 <Collapsibles>
-                    <Collapsible
-                        title='GeyserConnect'
-                        subtitle={<Translate id='pages.download.description.geyserconnect'>A plugin to allow for Geyser players to connect to your server without needing to use a proxy.</Translate>}
-                        id='geyserconnect'
-                        inner={
-                            <ProjectDownload
-                                projectId="geyserconnect"
-                                setup='/wiki/other/geyserconnect'
-                                downloadsInfo={{
-                                    geyserconnect: <><FontAwesomeIcon icon={faTowerCell} /> GeyserConnect</>,
-                                }}
-                                gridColumns={1}
-                            />
-                        }
-                    />
                     <Collapsible
                         title='GeyserOptionalPack'
                         subtitle={<Translate id='pages.download.description.geyseroptionalpack'>An optional Bedrock resource pack to extend Geyser functionality.</Translate>}
@@ -94,7 +84,7 @@ const DownloadPage: React.FC = () => (
                             />
                         }
                     />
-                     <Collapsible
+                    <Collapsible
                         title='ThirdPartyCosmetics'
                         subtitle={<Translate id='pages.download.description.thirdpartycosmetics'>An extension that adds support for loading ears and other third party cosmetics on java players</Translate>}
                         id='thirdpartycosmetics'
@@ -104,6 +94,36 @@ const DownloadPage: React.FC = () => (
                                 setup='/wiki/other/thirdpartycosmetics'
                                 downloadsInfo={{
                                     thirdpartycosmetics: <><FontAwesomeIcon icon={faFileZipper} /> ThirdPartyCosmetics</>,
+                                }}
+                                gridColumns={1}
+                            />
+                        }
+                    />
+                    <Collapsible
+                        title='Hurricane'
+                        subtitle={<Translate id='pages.download.description.hurricane'>A plugin with various workarounds for Geyser players that modify the server in order to achieve their goal.</Translate>}
+                        id='hurricane'
+                        inner={
+                            <ProjectDownload
+                                projectId="hurricane"
+                                setup='/wiki/other/hurricane'
+                                downloadsInfo={{
+                                    spigot: <PlatformIcon img={PaperSpigotIcon} text="Spigot/Paper" />,
+                                }}
+                                gridColumns={1}
+                            />
+                        }
+                    />
+                    <Collapsible
+                        title='GeyserConnect'
+                        subtitle={<Translate id='pages.download.description.geyserconnect'>A Geyser extension allowing players to connect to different Java or Geyser servers.</Translate>}
+                        id='geyserconnect'
+                        inner={
+                            <ProjectDownload
+                                projectId="geyserconnect"
+                                setup='/wiki/other/geyserconnect'
+                                downloadsInfo={{
+                                    geyserconnect: <><FontAwesomeIcon icon={faTowerCell} /> GeyserConnect</>,
                                 }}
                                 gridColumns={1}
                             />
@@ -121,21 +141,6 @@ const DownloadPage: React.FC = () => (
                                 downloadsInfo={{
                                     fabric: <PlatformIcon img={FabricIcon} text="Fabric" />,
                                     neoforge: <PlatformIcon img={NeoForgeIcon} text="NeoForge" />,
-                                }}
-                                gridColumns={1}
-                            />
-                        }
-                    />
-                    <Collapsible
-                        title='Hurricane'
-                        subtitle={<Translate id='pages.download.description.hurricane'>Various workarounds for Geyser players that modify the server in order to achieve their goal.</Translate>}
-                        id='hurricane'
-                        inner={
-                            <ProjectDownload
-                                projectId="hurricane"
-                                setup='/wiki/other/hurricane'
-                                downloadsInfo={{
-                                    spigot: <PlatformIcon img={PaperSpigotIcon} text="Spigot/Paper" />,
                                 }}
                                 gridColumns={1}
                             />
