@@ -224,6 +224,14 @@ export const providersData: Providers = {
             })
         },
         {
+            name: 'Birdflop',
+            url: 'https://birdflop.com/',
+            description: translate({
+                id: 'providers.provider.birdflop.description',
+                message: "Open an allocation in the networks tab. If you have a dedicated IP, we can allocate you the 19312 default port free of charge—just let them know in a ticket. Update the config to use the allocated port, and restart."
+            })
+        },
+        {
             name: 'Bloom.Host',
             url: 'https://www.bloom.host/',
             description: translate({
