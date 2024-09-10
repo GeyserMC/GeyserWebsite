@@ -224,6 +224,14 @@ export const providersData: Providers = {
             })
         },
         {
+            name: 'Birdflop',
+            url: 'https://birdflop.com/',
+            description: translate({
+                id: 'providers.provider.birdflop.description',
+                message: "Open an allocation in the networks tab. If you have a dedicated IP, you can open a ticket to request allocation of the default Bedrock port (19132). Update the config to use the allocated port and restart the server."
+            })
+        },
+        {
             name: 'Bloom.Host',
             url: 'https://www.bloom.host/',
             description: translate({
