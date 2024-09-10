@@ -23,6 +23,9 @@
   "providers.provider.aternos.description": {
     "message": "Install Geyser in the Aternos plugin list and connect to your server with your Java IP and port. See [Aternos's article](https://support.aternos.org/hc/en-us/articles/360051047631) for more details. Do note: Aternos automatically installs the latest version of the plugin, but does not auto update it. To update Geyser on Aternos, simply reinstall the plugin (no need to uninstall the plugin/deleting the plugin files)."
   },
+  "providers.provider.birdflop.description": {
+    "message": "Open an allocation in the networks tab. If you have a dedicated IP, we can allocate you the 19312 default port free of charge—just let them know in a ticket. Update the config to use the allocated port, and restart."
+  },
   "providers.provider.cloud_nord.description": {
     "message": "Go to their [Crossplay Server](https://cloudnord.net/minecraftcrossplay-server-hosting/) hosting section and order your server. Instructions on how to join are provided."
   },
