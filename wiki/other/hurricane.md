@@ -1,6 +1,6 @@
 ---
 title: Hurricane
-description: Hurricane is a Paper / Spigot plugin and Fabric mod that fixes some bugs that otherwise cannot be fixed without server-side modification.
+description: Hurricane is a Paper / Spigot plugin and Fabric / NeoForge mod that fixes some bugs that otherwise cannot be fixed without server-side modification.
 ---
 
 # Hurricane
@@ -8,14 +8,13 @@ description: Hurricane is a Paper / Spigot plugin and Fabric mod that fixes some
 Hurricane is a Paper/Spigot plugin, and Fabric mod (unofficial port), that fixes some bugs that otherwise cannot be fixed without server modification. 
 
 ## Fixes {#fixes}
-Issues with each workaround are listed in the plugin's config. **Please take your time to read them as the workarounds in this plugin can be used for exploitative purposes.**
+Issues with each workaround are listed in the Hurricane config. **Please take your time to read them as the workarounds in this plugin can be used for exploitative purposes.**
 
 - Bamboo and dripstone collision (by setting them to no server-side collision)
-- [GeyserMC/Geyser#638](https://github.com/GeyserMC/Geyser/issues/638) by implementing the control server-side.
 
 Supported Versions:
-- 1.14.x - 1.20.x
-- 1.17.x & above for pig riding
+- Spigot/Paper: 1.14.x - 1.21.1
+- Fabric: 1.21/1.21.1
 
 ## Download {#download}
 - Spigot/Paper: [GeyserMC downloads page](/download?project=other-projects&hurricane=expanded)

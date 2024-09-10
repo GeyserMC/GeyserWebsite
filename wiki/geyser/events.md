@@ -35,33 +35,6 @@ public void onGeyserLoadResourcePacksEvent(GeyserLoadResourcePacksEvent event) {
 If you wish to listen to events in a Spigot/Paper plugin or a Fabric mod, you need to register the Geyser Event Bus as a listener first. Just make sure you implement `EventRegistrar` in the main class of your mod or plugin.
 Extensions do not need to do that - they are automatically registered, so a simple @Subscribe annotation is enough.
 
-**Fabric mod example:**
-```java
-public class ExampleMod implements ModInitializer, EventRegistrar {
-    public static final Logger LOGGER = LoggerFactory.getLogger("modid");
-    
-    @Override 
-    public void onInitialize() {
-        ServerLifecycleEvents.SERVER_STARTING.register((server) -> {
-            GeyserApi.api().eventBus().register(this, this); // register your mod & this class instance as a listener
-        });
-        
-        LOGGER.info("Geyser is cool!");
-    }
-    
-    // here an event, we subscribe as usual with the @Subscribe annotation
-    @Subscribe 
-    public void onGeyserPostInitializeEvent(GeyserPostInitializeEvent event) {
-        LOGGER.info("Geyser started!");
-    }
-}
-```
-:::info
-    Note: We cannot directly register the event bus in the mod initializer, since the Geyser API would not be loaded yet.
-:::
-
-Therefore, we register it in the server starting event provided by the Fabric API.
-
 **Paper/Spigot plugin example:**
 
 1. In your plugin.yml, add the following lines:
@@ -89,9 +62,36 @@ public class ExamplePlugin extends JavaPlugin implements EventRegistrar {
 ```
 3. If you want to provide your event with a consumer, rather than annotating it, you can also manually subscribe your method to the event bus:
 ```java
-// replace GeyserEvent.class with the event class you want to listen to
-GeyserApi.api().eventBus().subscribe(this, GeyserEvent.class, this::yourMethod);
+// add this after you register your event registrar in onEnable
+GeyserApi.api().eventBus().subscribe(this, GeyserPostInitializeEvent.class, this::onGeyserPostInitializeEvent);
 ```
+
+**Fabric mod example:**
+```java
+public class ExampleMod implements ModInitializer, EventRegistrar {
+    public static final Logger LOGGER = LoggerFactory.getLogger("modid");
+    
+    @Override 
+    public void onInitialize() {
+        ServerLifecycleEvents.SERVER_STARTING.register((server) -> {
+            GeyserApi.api().eventBus().register(this, this); // register your mod & this class instance as a listener
+        });
+        
+        LOGGER.info("Geyser is cool!");
+    }
+    
+    // here an event, we subscribe as usual with the @Subscribe annotation
+    @Subscribe 
+    public void onGeyserPostInitializeEvent(GeyserPostInitializeEvent event) {
+        LOGGER.info("Geyser started!");
+    }
+}
+```
+:::info
+    Note: We cannot directly register the event bus in the mod initializer, since the Geyser API would not be loaded yet.
+:::
+
+Therefore, we register it in the server starting event provided by the Fabric API.
 
 ## Event Priority {#event-priority}
 Events can have a priority, which is used to determine the order in which the listeners are called. The default priority is NORMAL.

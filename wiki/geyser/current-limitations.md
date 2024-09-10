@@ -12,22 +12,20 @@ Despite Minecraft Bedrock and Java being quite close in comparison, there are so
 
 The following things cannot be fixed without changes to Bedrock or the Java protocol in general. As of now, they are not fixable in Geyser.
 
-- Custom heads in inventories
 - Clickable links in chat
 - Glowing effect
 - Crafting in the 2x2 menu while in creative mode - with the GeyserOptionalPack, this grid is hidden as it does not exist on Java.
 - Distinguishing between left and right clicks in inventories
 - Redstone dot blockstates
-- "Can be placed on/destroyed" tag for *some* blocks - for example, different slab variants that aren't yet split up into separate blocks.
 - Potion colors implemented using NBT
 - Various command arguments for any command that doesn't use the Minecraft Brigadier library
 - Anything that relies on tab complete or typing in the chat UI (related to the above) - Bedrock sends no packet that indicates they are in this menu
 - Unable to see banner layers past 6
-- Movement issues around bamboo due to offset differences between Java and Bedrock: [Hurricane](/wiki/other/hurricane) can work around it.
+- Movement issues around bamboo due to offset differences between Java and Bedrock. Use [Hurricane](/wiki/other/hurricane) to work around it.
 - Custom anvil recipes or custom smithing table ingredients/patterns ([GeyserMC/Geyser#4706](https://github.com/GeyserMC/Geyser/issues/4706))
 - Heights lower than -64 or higher than 320 in the overworld with extended height enabled, and heights lower than 0 or higher than 256 in other dimensions ([GeyserMC/Geyser#3804](https://github.com/GeyserMC/Geyser/issues/3804))
 - Dolphin's Grace potion effect visuals (effects should still work correctly)
-- Invisible item frames
+- Invisible item frames - however, there are Bedrock edition resource packs making *all* item frames invisible 
 - Blocks (excluding jack-o-lantern) on entity heads (E.G. armor stands, players)
 - Some block state changes are controlled client side, and are not influenced by the debug stick - fences for example. ([GeyserMC/Geyser#3125](https://github.com/GeyserMC/Geyser/issues/3125))
 - Custom beacon base blocks ([GeyserMC/Geyser#2301](https://github.com/GeyserMC/Geyser/issues/2301)) - these are hardcoded on Bedrock edition.
@@ -49,3 +47,9 @@ The following changes **are supported** with the [GeyserOptionalPack](/wiki/othe
 - Spectral arrow texture
 - Scoreboard width that matches Java
 - Inventory UI changes to match Java
+
+## Fixable with Hurricane {#fixable-with-hurricane}
+
+The following issues can be worked around with the [Hurricane](/wiki/other/hurricane) plugin/mod. However, these involve Java server
+modifications.
+- Movement issues around bamboo due to offset differences between Java and Bedrock.

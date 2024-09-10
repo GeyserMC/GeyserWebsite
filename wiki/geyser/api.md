@@ -22,7 +22,7 @@ It can be used easily in Geyser Extensions, see [here](/wiki/geyser/extensions) 
 
 **Quick overview:**   
 :::info
-    Note: To see full, detailed documentation, see the <a href="https://repo.opencollab.dev/javadoc/maven-snapshots/org/geysermc/geyser/api/latest">javadocs</a>.
+    Javadocs can be found <a href="https://repo.opencollab.dev/javadoc/maven-snapshots/org/geysermc/geyser/api/latest">here</a>.
 :::
 
 #### [GeyserApi](https://github.com/GeyserMC/Geyser/blob/master/api/src/main/java/org/geysermc/geyser/api/GeyserApi.java): {#geyserapi}
