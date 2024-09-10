@@ -228,7 +228,7 @@ export const providersData: Providers = {
             url: 'https://birdflop.com/',
             description: translate({
                 id: 'providers.provider.birdflop.description',
-                message: "Open an allocation in the networks tab. If you have a dedicated IP, we can allocate you the 19312 default port free of charge—just let them know in a ticket. Update the config to use the allocated port, and restart."
+                message: "Open an allocation in the networks tab. If you have a dedicated IP, you can open a ticket to request allocation of the default Bedrock port (19132). Update the config to use the allocated port and restart the server."
             })
         },
         {
