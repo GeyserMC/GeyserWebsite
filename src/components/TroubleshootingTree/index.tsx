@@ -1,12 +1,16 @@
 import { Controls, Step, useControls, Wizard } from 'react-decision-tree-flow'
 
 import Step1 from './steps/Step1'
-import Error from './steps/Error'
-import Step3 from './steps/Step3'
 import Step2 from './steps/Step2'
+import Step3 from './steps/Step3'
+import Error from './steps/Error'
 import { useEffect, useState } from 'react'
 import { StepData } from './StepProps'
+import MarkDownStep from './steps/MarkDownStep'
 
+import Test from './steps/md/Test.mdx'
+
+// React components for each step
 const stepComponents = [
 	Step1,
 	Step2,
@@ -18,7 +22,14 @@ const stepComponents = [
 function formatStepName(name: string): string {
 	return name.charAt(0).toLowerCase() + name.slice(1)
 }
-const steps = Object.fromEntries(stepComponents.map((Component) => [formatStepName(Component.name), Component]))
+let steps = Object.fromEntries(stepComponents.map((Component) => [formatStepName(Component.name), Component]))
+
+// Add the markdown steps
+steps = {
+	test: MarkDownStep(Test),
+	...steps
+}
+
 
 // Make a tree so all steps can go to all others
 const tree = Object.fromEntries(Object.keys(steps).map((key, i, arr) => {
@@ -32,6 +43,9 @@ function TreeInternals(): JSX.Element {
 	
 	const { step } = useControls();
 	useEffect(() => {
+		if (step == 'internalStep') {
+			console.log()
+		}
 		setData(data => ({...data, path: [...data.path, step as string]}))
 	}, [step])
 
