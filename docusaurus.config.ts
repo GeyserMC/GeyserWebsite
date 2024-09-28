@@ -3,11 +3,13 @@ import type { Config } from '@docusaurus/types';
 import type * as Preset from '@docusaurus/preset-classic';
 import { docOgRenderer, blogOgRenderer, pageOgRenderer } from './src/renderer/ImageRenderers';
 
+const DefaultLocal = 'en';
+
 const config: Config = {
     title: 'GeyserMC',
     tagline: 'Revolutionize Your Minecraft Server',
     favicon: 'img/favicon.ico',
-    
+
     url: 'https://geysermc.org',
     baseUrl: '/',
 
@@ -18,8 +20,8 @@ const config: Config = {
     onBrokenMarkdownLinks: 'warn',
 
     i18n: {
-        defaultLocale: 'en',
-        locales: ['en'],
+        defaultLocale: DefaultLocal,
+        locales: ['en', 'zh-CN', 'zh-TW' ],
     },
 
     presets: [
@@ -27,15 +29,27 @@ const config: Config = {
             'classic',
             {
                 docs: {
+                    editUrl: ({locale, versionDocsDirPath, docPath}) => {
+                        // Link to Crowdin for French docs
+                        if (locale !== DefaultLocal) {
+                            return `https://crowdin.com/project/******/${locale}`;
+                        }
+                        // Link to GitHub for English docs
+                        return `https://github.com/GeyserMC/GeyserWebsite/tree/master/${versionDocsDirPath}/${docPath}`;
+                    },
                     sidebarPath: require.resolve("./sidebars.ts"),
-                    editUrl:
-                        'https://github.com/GeyserMC/GeyserWebsite/tree/master/',
-
                     routeBasePath: '/wiki',
                     docItemComponent: "@theme/ApiItem",
-                    path: 'wiki',
+                    path: './wiki',
                 },
-                blog: {},
+                blog: {
+                    editUrl: ({locale, blogDirPath, blogPath}) => {
+                        if (locale !== DefaultLocal) {
+                            return `https://crowdin.com/project/******/${locale}`;
+                        }
+                        return `https://github.com/GeyserMC/GeyserWebsite/tree/master/${blogDirPath}/${blogPath}`;
+                    },
+                },
                 theme: {
                     customCss: './src/css/custom.scss',
                 },
@@ -151,6 +165,10 @@ const config: Config = {
                     label: 'Download',
                     position: 'left',
                     className: 'header-download-link'
+                },
+                {
+                    type: 'localeDropdown',
+                    position: 'right',
                 },
                 {
                     href: 'https://github.com/GeyserMC/Geyser',

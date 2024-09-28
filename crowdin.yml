@@ -1,0 +1,15 @@
+project_id: '******'
+api_token_env: CROWDIN_PERSONAL_TOKEN
+preserve_hierarchy: true
+files:
+  # JSON translation files
+  - source: /i18n/en/**/*
+    translation: /i18n/%locale%/**/%original_file_name%
+  # Wiki Markdown files
+  - source: /wiki/**/*
+    translation: /i18n/%locale%/docusaurus-plugin-content-docs/current/**/%original_file_name%
+  # Blog Markdown files
+  - source: /blog/**/*
+    translation: /i18n/%locale%/docusaurus-plugin-content-blog/**/%original_file_name%
+  - source: /openapi/**/*
+    translation: /i18n/%locale%/openapi/**/%original_file_name%

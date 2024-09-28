@@ -1,4 +1,5 @@
 import Translate from '@docusaurus/Translate';
+import { translate } from '@docusaurus/Translate';
 import HeroBanner from '@site/src/components/HeroBanner';
 import HeroBackground from '@site/static/img/site/split-background.webp';
 import Layout from '@theme/Layout';
@@ -15,7 +16,11 @@ const ConfigEditorPage: React.FC = () => {
 
     const loadDefault = async () => {
         try {
-            const response = await fetch('https://raw.githubusercontent.com/GeyserMC/Geyser/master/core/src/main/resources/config.yml');
+            const response = await fetch(translate(
+                {
+                    message: "https://raw.githubusercontent.com/GeyserMC/Geyser/master/core/src/main/resources/config.yml",
+                    id: 'pages.configeditor.configurl'
+                }));
             if (!response.ok) {
                 throw new Error('Network response was not ok');
             }

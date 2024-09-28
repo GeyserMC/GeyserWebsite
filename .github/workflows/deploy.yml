@@ -57,7 +57,10 @@ jobs:
 
       - name: Build website
         run: yarn build
-
+      - name: Sync with Crowdin
+        run: yarn run crowdin:sync
+        env:
+          CROWDIN_PERSONAL_TOKEN: ${{ secrets.CROWDIN_PERSONAL_TOKEN }}
       - name: Upload artifact
         uses: actions/upload-pages-artifact@56afc609e74202658d3ffba0e8f6dda462b719fa
         with:
