@@ -4,7 +4,6 @@ description: Frequently asked questions about Geyser, including how it works, wh
 ---
 
 import { Questions, Q, A } from "@site/src/components/Questions";
-import { Versions } from '@site/src/components/Versions'
 
 ### General Questions {#general-questions}
 
@@ -30,24 +29,9 @@ Here you can find answers to frequently asked questions about Geyser - if you ha
         </A>
     </Q>
     <Q>
-        What plugins don't work with Geyser?
+        What plugins/services don't work with Geyser?
         <A>
-            Geyser should generally work fine with plugins, as we emulate a Java client. There are exceptions, though:
-
-            * [TCPShield](https://tcpshield.com/) requires `only-allow-proxy-connections` disabled without a paid plan. However, their "Premium" plan will allow the support of Geyser - please see [here](https://docs.tcpshield.com/miscellaneous/geyser) for setup instructions.
-
-            Floodgate can cause issues with plugins as it modifies the login process. *Please note that any offline mode authenticator plugins are only here for documentation; Geyser does not support offline mode usage.*
-
-            * [DynamicBungeeAuth](https://www.spigotmc.org/resources/27480/) Currently working on latest version 10.28B+ (10.27B and older versions produces invalid credentials for Bedrock players)
-            * [FastLogin](https://www.spigotmc.org/resources/14153/) does not let floodgate add player prefix.
-            * [ExploitFixer](https://www.spigotmc.org/resources/62842/) thinks that Floodgate users are UUID spoofing - disable the `uuidspoof` setting in ExploitFixer's config.
-            * [JPremium](https://www.spigotmc.org/resources/27766/) alters the UUID of a player, causing Floodgate not to be able to get the Bedrock data from its map.
-            * [LibHatesMods](https://www.spigotmc.org/resources/78202/) causes authentication to fail with `com.github.steveice10.mc.auth.exception.request.InvalidCredentialsException`
-            * [ProtocolSupport](https://www.spigotmc.org/resources/7201/) ~~is currently incompatible with Floodgate.~~ Works with Floodgate, but we recommend using [ViaBackwards](https://hangar.papermc.io/ViaVersion/ViaBackwards) instead.
-            * [ProtocolSupportBungee](https://www.spigotmc.org/resources/8733/) changes how the login process works and therefore breaks the Floodgate injection code.
-            * [SayNoToMcLeaks](https://www.spigotmc.org/resources/40906/) prevents Floodgate from finishing its login system.
-
-            If you come across any more, please let us know via [Discord](https://discord.gg/geysermc).
+            See [our compatibility wiki page](/wiki/geyser/compatibility) for infos.
         </A>
     </Q>
     <Q>
@@ -119,7 +103,7 @@ Here you can find answers to frequently asked questions about Geyser - if you ha
 
             1. Use Floodgate’s built-in whitelist command: `/fwhitelist add <bedrock_username>`. This will only work if the player has joined any Geyser server already.
 
-            2. Turn off the whitelist using `/whitelist off`, then get the Geyser player to join. After that, run `/whitelist add ".<bedrock_username>"`, and finally, turn the whitelist back on using `/whitelist on`. 
+            2. Turn off the whitelist using `/whitelist off`, then get the Geyser player to join. After that, run `/whitelist add ".<bedrock_username/>"`, and finally, turn the whitelist back on using `/whitelist on`.
             When using Local Linking: If you're linking a Bedrock account to an existing whitelisted Java account, you don't need to whitelist the Bedrock account separately. You can link the accounts and immediately turn the whitelist back on.
 
             3. Add the player’s UUID, as given by Floodgate, to the `whitelist.json` file. Then, run `/whitelist reload` to update the whitelist.
@@ -166,23 +150,6 @@ Here you can find answers to frequently asked questions about Geyser - if you ha
         </A>
     </Q>
     <Q>
-        Can I use Geyser with Ngrok?
-        <A>
-            Unfortunately, Ngrok is TCP-only, so you will not be able to use Geyser with Ngrok. As an alternative, you can use [playit.gg](https://playit.gg), which supports both TCP and UDP.
-        </A>
-    </Q>
-    <Q>
-        How do I setup Cosmic Guard?
-        <A>
-            1. You will need access to the host systems terminal. Note: This guide is for Linux systems only!
-            2. Setup a "Guard" select gaming then Minecraft: Bedrock edition.
-            3. Click setup for linux and run the guardian installer and start the service.
-            4. Run "guardian status" and take note of the "Local IP" it starts with "10.31.x.x".
-            5. Go to the Geyser config.yml and update the Bedrock address to the Local IP which you found above.
-            6. Restart the mc server and test it out, it should work for both Java and Bedrock.
-        </A>
-    </Q>
-    <Q>
         Can I connect Geyser to an older server?
         <A>
             If the server has ViaVersion and/or supports the latest Minecraft version, yes. However, we are unable to support older versions of Minecraft due to a limitation in our Java support library.
@@ -210,32 +177,6 @@ Here you can find answers to frequently asked questions about Geyser - if you ha
             Note: you need to be running DiscordSRV v1.22.0 or newer. Floodgate 2.0 or GeyserSkinRestorer is still required for skins to show up for Java players and for this to work.
 
             Alternatively, if you cannot get the above AvatarUrl to work with DiscordSRV, or you'd like to use it with another plugin that does not support texture ids, you can use the [TydiumCraft Skin API.](https://tydiumcraft.net/docs/skinapi)
-        </A>
-    </Q>
-    <Q>
-        Can I use Buycraft (Tebex) with Geyser?
-        <A>
-            You sure can! Buycraft supports Java & Bedrock players via the Offline store mode **(Recommended to be used with Floodgate)**
-
-            **(Currently, Buycraft does not support special symbols like `*` or `-`, so you'll have to change the Floodgate prefix to `_` or remove it entirely.)**
-            <h3>Steps to create a store to support both versions</h3>
-            - Buycraft-> Create Webstore
-            - Select Game-> Minecraft Offline
-            - Continue-> Click "Create my Webstore"
-            - Name your server & Select currency-> Continue
-            - Select Game Server-> Continue
-            - Download the plugin version that best suits your server.
-            - Execute the secret command from your server's console
-
-            Your store is now set up to support Bedrock & Java players.
-
-            **(Please note, if you are using a prefix with Floodgate, Bedrock players will have to enter the prefix.)**
-        </A>
-    </Q>
-    <Q>
-        Can I use CraftingStore with Geyser?
-        <A>
-            Yes, CraftingStore works with Geyser. However, if you are using a Floodgate prefix that is not `+`, you will need to disable the premium name checking config option.
         </A>
     </Q>
 </Questions>
