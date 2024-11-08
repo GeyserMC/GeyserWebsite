@@ -3,7 +3,7 @@ title: ThirdPartyCosmetics
 description: An optional Bedrock resource pack to extend Geyser functionality.
 ---
 
-## [Download here](/download/?project=other-projects&hurricane=expanded&thirdpartycosmetics=expanded) {#download-here}
+## [Download here](/download/?project=other-projects&thirdpartycosmetics=expanded) {#download-here}
 
 ThirdPartyCosmetics is an extension that adds support for loading ears and other third party cosmetics on java players.
 
