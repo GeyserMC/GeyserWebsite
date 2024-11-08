@@ -21,7 +21,7 @@ Full Compatibility (Checks Bedrock Players Accurately)
 
 Partially Compatible (Does not Check/Ignores Bedrock Players)
 
-- [GrimAC](https://github.com/MWHunter/Grim) - Last checked on 30th June 2024
+- [GrimAC](https://github.com/GrimAnticheat/Grim) - Last checked on 8th November 2024
 - [Intave](https://intave.ac) (Paid) Requires [GeyserMC addon](https://github.com/intave/bedrock) - Last checked on 2nd July 2024
 - [Matrix](https://matrix.rip/) (Paid) - Last checked on 23rd July 2024
 - [Spartan: Java Edition](https://www.spigotmc.org/resources/25638/) (Paid) - Last checked on 18th July 2024
