@@ -17,7 +17,7 @@ Supported Versions:
 - Fabric: 1.21/1.21.1
 
 ## Download {#download}
-- Spigot/Paper: [GeyserMC downloads page](/download?project=other-projects&hurricane=expanded)
+- Spigot/Paper: [GeyserMC downloads page](/download/?project=other-projects&hurricane=expanded)
 - Fabric/NeoForge: [Modrinth](https://modrinth.com/mod/hurricane/versions)
 
 ## Source {#source}

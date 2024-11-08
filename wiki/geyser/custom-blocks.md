@@ -292,12 +292,12 @@ The following details the schema for the mappings file. Only the `name` field is
                         - Type: `string`
                             - Default: `building_blocks`
                             - Description: The creative category to place the block in.
-                            - Range: See [Creative Categories](https://wiki.bedrock.dev/documentation/creative-categories.html#list-of-creative-categories) on the Bedrock Wiki.
+                            - Range: See [Menu Categories](https://wiki.bedrock.dev/documentation/menu-categories.html#list-of-categories) on the Bedrock Wiki.
                     - `creative_group`:
                         - Type: `string`
                             - Default: none
                             - Description: The creative group to place the block in.
-                            - Range: See [Creative Tabs](https://wiki.bedrock.dev/documentation/creative-categories.html#list-of-creative-tabs) on the Bedrock Wiki.
+                            - Range: See [Menu Groups](https://wiki.bedrock.dev/documentation/menu-categories.html#list-of-groups) on the Bedrock Wiki.
                     - `included_in_creative_inventory`:
                         - Type: `boolean`
                             - Default: `true`
@@ -311,7 +311,7 @@ The following details the schema for the mappings file. Only the `name` field is
                             - Description: An object containing state overrides for the block.
                                 - `property1=value1,property2=value2,...`:
                                     - Type: `object`
-                                        - Description: An override for a specific block state. Possible states are listed in Geyser's [Block Mappings](https://raw.githubusercontent.com/GeyserMC/mappings/master/blocks.json)
+                                        - Description: An override for a specific block state. Possible states are listed in Geyser's [Block Mappings](https://raw.githubusercontent.com/GeyserMC/mappings/6b661f0d517d895aebc1f55a25d2c86f033beb1d/blocks.json)
                                         - Accepts all of the same properties as a block definition except `creative_category`, `creative_group`, `included_in_creative_inventory`, `only_override_states`, and `state_overrides`.
 
 </div>

@@ -45,7 +45,7 @@ Set `allow-invalid-usernames` to `true` in LuckPerms' config.
 
 ## Failed to verify username! (with Paper) {#failed-to-verify-username-with-paper}
 
-To completely mitigate this issue, disable `perform-username-validation` in the [unsupported settings of the `config/paper-global.yml` file](https://paper.readthedocs.io/en/latest/server/configuration.html#unsupported_settings) (`paper.yml` in the root server folder on servers below 1.19). Using Floodgate on the backend servers will also mitigate this issue.
+To completely mitigate this issue, disable `perform-username-validation` in the [unsupported settings of the `config/paper-global.yml` file](https://docs.papermc.io/paper/reference/global-configuration#unsupported_settings) (`paper.yml` in the root server folder on servers below 1.19). Using Floodgate on the backend servers will also mitigate this issue.
 
 ## Error with Forge or Fabric Bukkit Hybrid {#error-with-forge-or-fabric-bukkit-hybrid}
 
