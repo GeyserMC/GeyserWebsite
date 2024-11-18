@@ -3,7 +3,7 @@ import HeroBanner from '@site/src/components/HeroBanner';
 import HeroBackground from '@site/static/img/site/split-background.webp';
 import Layout from '@theme/Layout';
 import styles from './utilities.module.scss';
-import { useRef, useState } from 'react';
+import {useRef, useState} from 'react';
 
 const ConfigEditorPage: React.FC = () => {
     const [config, setConfig] = useState('');
@@ -53,7 +53,9 @@ const ConfigEditorPage: React.FC = () => {
         let currentSection = '';
         let currentComment = '';
 
-        const newConfig = {};
+        const newConfig = {"": {}};
+
+        let ignore = false;
 
         // Parse each line of the config
         for (let i = 0; i < lines.length; i++) {
@@ -72,7 +74,7 @@ const ConfigEditorPage: React.FC = () => {
 
             const commented = line.startsWith('#');
 
-            const match = line.match(keyReg)
+            const match = line.match(keyReg);
             if (match === null) {
                 // Check if we are in a comment
                 if (commented) {
@@ -84,12 +86,26 @@ const ConfigEditorPage: React.FC = () => {
             // Check if we are in a new section
             if (line.endsWith(':')) {
                 currentSection = line.replace(':', '');
+
+                // Ignore user auths section
+                if (currentSection === 'saved-user-logins') {
+                    ignore = true;
+                    continue;
+                }
+                ignore = false;
+                if (commented) {
+                    currentComment += '<strong>Note: This option is commented out by default. It will be automatically uncommented if modified.</strong>' + '<br>';
+                }
+
+                currentComment = currentComment.replace(URL_REGEX, function ($0) {
+                    return '<a href="' + $0 + '">' + $0 + '</a>';
+                })
+                newConfig[currentSection] = {sectionDesc0: currentComment};
                 currentComment = '';
                 continue;
             }
 
-            // Ignore user auths section
-            if (currentSection === 'saved-user-logins') {
+            if (ignore) {
                 continue;
             }
 
@@ -97,7 +113,7 @@ const ConfigEditorPage: React.FC = () => {
             const splitLine = line.split(':');
             splitLine[0] = splitLine[0].trim();
             let val = '';
-            for (let j = 1;j<splitLine.length;j++) {
+            for (let j = 1; j < splitLine.length; j++) {
                 val += splitLine[j];
             }
             val = val.trim();
@@ -108,11 +124,14 @@ const ConfigEditorPage: React.FC = () => {
             }
 
             if (commented) {
-                currentComment += '<strong>Note: This option is commented on, and if you change it, it will be automatically uncommented.</strong>' + '<br>';
+                currentComment += '<strong>Note: This option is commented out by default. It will be automatically uncommented if modified.</strong>' + '<br>';
             }
 
+            currentComment = currentComment.replace(URL_REGEX, function ($0) {
+                return '<a href="' + $0 + '">' + $0 + '</a>';
+            })
+
             // Add the config option to the config object
-            newConfig[currentSection] = newConfig[currentSection] || {};
             newConfig[currentSection][splitLine[0]] = {
                 desc: currentComment,
                 value: val,
@@ -132,12 +151,22 @@ const ConfigEditorPage: React.FC = () => {
                 <div className={styles.cardBody}>
                     {Object.keys(config[configKey]).map(configOption => {
                         const configOptionInfo = config[configKey][configOption];
+                        if (configOption == "sectionDesc0") {
+                            if (configOptionInfo === "") {
+                                return;
+                            }
+                            return (
+                                <div className={styles.configOption}>
+                                    <p dangerouslySetInnerHTML={{__html: configOptionInfo}}/>
+                                </div>
+                            )
+                        }
                         const configOptionKey = configKey === '' ? configOption : `${configKey}.${configOption}`;
-                        const showOptionName = configOption.replace('#','').trim()
+                        const showOptionName = configOption.replace('#', '').trim()
                         return (
                             <div key={configOptionKey} className={styles.configOption}>
                                 <h3>{showOptionName}</h3>
-                                <p dangerouslySetInnerHTML={{ __html: configOptionInfo.desc }} />
+                                <p dangerouslySetInnerHTML={{__html: configOptionInfo.desc}}/>
                                 {getInput(configOptionKey, configOptionInfo.value)}
                             </div>
                         )
@@ -146,6 +175,8 @@ const ConfigEditorPage: React.FC = () => {
             </div>
         ))
     }
+
+    const URL_REGEX = /https?:\/\/(([0-9a-z.]+\.[a-z]+)|(([0-9]{1,3}\.){3}[0-9]{1,3}))(:[0-9]+)?(\/[0-9a-z%\/.\-_]*)?(\?[0-9a-z=&%_\-]*)?(#[0-9a-z=&%_\-]*)?/ig;
 
     const handleExport = () => {
         let newConfig = config;
@@ -160,8 +191,8 @@ const ConfigEditorPage: React.FC = () => {
                         const option = currentObj[nestedKey];
                         const oldValue = option.value;
                         const index = option.line;
-                        const newKey = nestedKey.replace('#','').trim();
-                        lines[index] = lines[index].replace(`  ${nestedKey}: ${oldValue}`,`  ${newKey}: ${value}`);
+                        const newKey = nestedKey.replace('#', '').trim();
+                        lines[index] = lines[index].replace(`  ${nestedKey}: ${oldValue}`, `  ${newKey}: ${value}`);
                     } else {
                         currentObj = currentObj[nestedKey];
                     }
@@ -176,7 +207,7 @@ const ConfigEditorPage: React.FC = () => {
 
     function getInput(name, value) {
         const handleChange = (event) => {
-            const { id, value, type, checked } = event.target;
+            const {id, value, type, checked} = event.target;
 
             editedConfig.current = {
                 ...editedConfig.current,
@@ -188,7 +219,8 @@ const ConfigEditorPage: React.FC = () => {
             // Handle all the dropdowns
             case 'remote.auth-type':
                 return (
-                    <select key={name} className={styles.formInput} id={name} defaultValue={value} onChange={handleChange}>
+                    <select key={name} className={styles.formInput} id={name} defaultValue={value}
+                            onChange={handleChange}>
                         <option value='offline'>offline</option>
                         <option value='online'>online</option>
                         <option value='floodgate'>floodgate</option>
@@ -196,7 +228,8 @@ const ConfigEditorPage: React.FC = () => {
                 );
             case 'show-cooldown':
                 return (
-                    <select key={name} className={styles.formInput} id={name} defaultValue={value} onChange={handleChange}>
+                    <select key={name} className={styles.formInput} id={name} defaultValue={value}
+                            onChange={handleChange}>
                         <option value='title'>title</option>
                         <option value='actionbar'>actionbar</option>
                         <option value='false'>false</option>
@@ -204,16 +237,19 @@ const ConfigEditorPage: React.FC = () => {
                 );
             case 'emote-offhand-workaround':
                 return (
-                    <select key={name} className={styles.formInput} id={name} defaultValue={value} onChange={handleChange}>
+                    <select key={name} className={styles.formInput} id={name} defaultValue={value}
+                            onChange={handleChange}>
                         <option value='disabled'>disabled</option>
                         <option value='no-emotes'>no-emotes</option>
                         <option value='emotes-and-offhand'>emotes-and-offhand</option>
                     </select>
                 );
             case 'config-version':
-                return <input key={name} className={styles.formInput} type='text' disabled defaultValue={value.replace(/"/g, '')} />;
+                return <input key={name} className={styles.formInput} type='text' disabled
+                              defaultValue={value.replace(/"/g, '')}/>;
             case 'metrics.uuid':
-                return <input key={name} className={styles.formInput} id={name} type='text' disabled defaultValue={value === 'generateduuid' ? crypto.randomUUID() : value} />;
+                return <input key={name} className={styles.formInput} id={name} type='text' disabled
+                              defaultValue={value === 'generateduuid' ? crypto.randomUUID() : value}/>;
 
             default:
                 // Handle all the other inputs
@@ -240,7 +276,7 @@ const ConfigEditorPage: React.FC = () => {
 
     // From https://gist.github.com/danallison/3ec9d5314788b337b682
     function downloadString(text, fileType, fileName) {
-        const blob = new Blob([text], { type: fileType })
+        const blob = new Blob([text], {type: fileType})
 
         const a = document.createElement('a')
         a.download = fileName
@@ -251,13 +287,16 @@ const ConfigEditorPage: React.FC = () => {
         a.click()
         document.body.removeChild(a)
 
-        setTimeout(() => { URL.revokeObjectURL(a.href) }, 1500)
+        setTimeout(() => {
+            URL.revokeObjectURL(a.href)
+        }, 1500)
     }
 
     const NoConfigSection = () => (
         <>
             <h1><Translate id='pages.configeditor.noconfigselected.heading'>No config selected.</Translate></h1>
-            <h3 className={styles.fontNormal}><Translate id='pages.configeditor.noconfigselected.subheading'>Upload a file or get started with the default config!</Translate></h3>
+            <h3 className={styles.fontNormal}><Translate id='pages.configeditor.noconfigselected.subheading'>Upload a
+                file or get started with the default config!</Translate></h3>
 
             <div className={styles.buttonsContainer}>
                 <button className={styles.button} onClick={loadDefault}>
@@ -280,7 +319,7 @@ const ConfigEditorPage: React.FC = () => {
 
     const EditorView = () => (
         <>
-            <div className={styles.buttonsContainer} style={{ marginBottom: '30px' }}>
+            <div className={styles.buttonsContainer} style={{marginBottom: '30px'}}>
                 <button className={styles.button} onClick={handleExport}>
                     <Translate id='pages.configeditor.button.export'>Export</Translate>
                 </button>
@@ -297,8 +336,8 @@ const ConfigEditorPage: React.FC = () => {
                 backgroundImage={HeroBackground}
             />
 
-            <div className='container' style={{ marginTop: '30px' }}>
-                {Object.keys(parsedConfig).length === 0 ? <NoConfigSection /> : <EditorView />}
+            <div className='container' style={{marginTop: '30px'}}>
+                {Object.keys(parsedConfig).length === 0 ? <NoConfigSection/> : <EditorView/>}
             </div>
 
 
@@ -315,7 +354,7 @@ export default function ConfigEditor(): JSX.Element {
         >
             <main>
                 <div className='container container--fluid margin-vert--lg'>
-                    <ConfigEditorPage />
+                    <ConfigEditorPage/>
                 </div>
             </main>
         </Layout>
