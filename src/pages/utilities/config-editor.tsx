@@ -94,7 +94,7 @@ const ConfigEditorPage: React.FC = () => {
                 }
                 ignore = false;
                 if (commented) {
-                    currentComment += '<strong>Note: This option is commented on, and if you change it, it will be automatically uncommented.</strong>' + '<br>';
+                    currentComment += '<strong>Note: This option is commented out by default. It will be automatically uncommented if modified.</strong>' + '<br>';
                 }
 
                 currentComment = currentComment.replace(URL_REGEX, function ($0) {
