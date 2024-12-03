@@ -99,9 +99,9 @@ It has other benefits too. Here's a plugin that can just do that:
 [CommandWhitelist](https://www.spigotmc.org/resources/81326/). Alternatively, use the [HideCommands](https://github.com/Redned235/HideCommands) Geyser extension to hide commands just for Bedrock players.
 
 # Failed to load locale asset cache: Unrecognized token 'Cannot'
-This or anything else related to failing to download a locale file on startup is usually caused by java trying to connect using IPv6 and Mojang only use IPv4, so start Geyser or the server up with this flag `-Djava.net.preferIPv4Stack=true`, EG: `java -Xms1024M -Djava.net.preferIPv4Stack=true -jar Geyser.jar`
+This or anything else related to failing to download a locale file on startup is usually caused by java trying to connect using IPv6 and Mojadng only use IPv4, so start Geyser or the server up with this flag `-Djava.net.preferIPv4Stack=true`, EG: `java -Xms1024M -Djava.net.preferIPv4Stack=true -jar Geyser.jar`
 
-# Outdated client! Please use 1.x.x
+# Outdated client! Please use 1.x.x 
 
 The server is too new or Geyser is outdated. Make sure you're on the latest Geyser.
 

@@ -8547,6 +8547,11 @@ rc@1.2.8:
     minimist "^1.2.0"
     strip-json-comments "~2.0.1"
 
+react-decision-tree-flow@^2.1.0:
+  version "2.1.0"
+  resolved "https://registry.yarnpkg.com/react-decision-tree-flow/-/react-decision-tree-flow-2.1.0.tgz#c8b114212b420316f83bfa62a42c49c1a82131a5"
+  integrity sha512-LuMj5/O1vKxfpbRcw5mI1iSL4eIxxxJf1eDa4ZJbjkduiLGYqaM5KB0r8zNQ8uZl8DA1MtXj9RDT2gXtn5w61A==
+
 react-dev-utils@^12.0.1:
   version "12.0.1"
   resolved "https://registry.yarnpkg.com/react-dev-utils/-/react-dev-utils-12.0.1.tgz#ba92edb4a1f379bd46ccd6bcd4e7bc398df33e73"

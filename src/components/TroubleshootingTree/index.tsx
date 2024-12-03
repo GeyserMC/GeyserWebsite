@@ -8,7 +8,6 @@ import { useEffect, useState } from 'react'
 import { StepData } from './StepProps'
 import MarkDownStep from './steps/MarkDownStep'
 
-import Test from './steps/md/Test.mdx'
 
 // React components for each step
 const stepComponents = [
@@ -26,7 +25,7 @@ let steps = Object.fromEntries(stepComponents.map((Component) => [formatStepName
 
 // Add the markdown steps
 steps = {
-	test: MarkDownStep(Test),
+	//test: MarkDownStep(Test),
 	...steps
 }
 
