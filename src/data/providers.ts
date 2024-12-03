@@ -629,6 +629,14 @@ export const providersData: Providers = {
             })
         },
         {
+            name: 'Wasabi Hosting',
+            url: 'https://wasabihosting.com',
+            description: translate({
+                id: 'providers.provider.wasabihosting.description',
+                message: "Install Geyser with the plugin installer. Use the same port as your Java server in the Geyser config. Connect with the same address and port as your Java server."
+            })
+        },
+        {
             name: "Wepwawet",
             url: "https://wepwawet.net/",
             description: "Add a new port in the Network tab. Use this new port as the bedrock port."
