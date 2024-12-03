@@ -633,7 +633,7 @@ export const providersData: Providers = {
             url: 'https://wasabihosting.com',
             description: translate({
                 id: 'providers.provider.wasabihosting.description',
-                message: "Install Geyser with the our Plugin installer. Use the same port as your Java server in your config. Connect with the same address and port as your Java server."
+                message: "Install Geyser with the plugin installer. Use the same port as your Java server in the Geyser config. Connect with the same address and port as your Java server."
             })
         },
         {
