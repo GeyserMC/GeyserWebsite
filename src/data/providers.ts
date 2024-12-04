@@ -92,14 +92,6 @@ export const providersData: Providers = {
             })
         },
         {
-            name: 'MCProHosting',
-            url: 'https://mcprohosting.com/',
-            description: translate({
-                id: 'providers.provider.mcprohosting.description',
-                message: "Click 'Enable Bedrock Support' on the server dashboard and follow the steps. For manual installation: Add 'Destination Port' `19132` with 'Protocol UDP' to the port forward mapping and connect to the given source port."
-            })
-        },
-        {
             name: 'Minefort',
             url: 'https://minefort.com/',
             description: translate({
