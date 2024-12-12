@@ -30,7 +30,7 @@ In order for Bedrock players to chat (1.19.3+) or join (1.19.1/1.19.2), you need
 This is unfortunately not possible. You'll need to use a proxy such as Velocity or BungeeCord, or set up Geyser-Standalone separately with the [ViaVersion](https://github.com/ViaVersion/ViaVersion) plugin. Another alternative would be to install [ViaProxy](https://github.com/ViaVersion/ViaProxy), which is a standalone ViaVersion proxy that 
 translates between different Minecraft: Java edition versions, and to install Geyser-ViaProxy on it.
 
-### Using Geyser-Fabric or Geyser-NeoForge on servers that do not run <Versions platform="java"/>
+### Using Geyser on Fabric/NeoForge servers not on the latest Minecraft version {#fabric-neoforge-servers}
 Unfortunately, Geyser-Fabric and Geyser-NeoForge only support the latest version of Minecraft: Java edition. The recommended way to still use
 Geyser with older versions would be to install [ViaProxy](https://github.com/ViaVersion/ViaProxy), which is a standalone ViaVersion proxy that 
 translates between different Minecraft: Java edition versions, and to install Geyser-ViaProxy on it. This will also work with Floodgate auth.
