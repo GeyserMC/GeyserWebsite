@@ -30,6 +30,13 @@ jobs:
     name: Deploy to GitHub Pages
     runs-on: ubuntu-latest
     steps:
+      - uses: actions/setup-node@39370e3970a6d050c480ffad4ff0ed4d3fdee5af
+        with:
+          node-version: 22
+
+      - name: Enable Corepack
+        run: corepack enable
+
       - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
         with:
           fetch-depth: 0
