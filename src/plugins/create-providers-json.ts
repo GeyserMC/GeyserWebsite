@@ -9,10 +9,10 @@ const createProvidersJsonPlugin = (context: LoadContext, options: PluginOptions)
     name: 'docusaurus-plugin-create-providers-json',
 
     async postBuild({ outDir, routes, plugins }) {
-      const originalResolveFilename = Module._resolveFilename
+      const originalResolveFilename = (Module as any)._resolveFilename
 
       // This is a hack to allow us to import a custom module instead of the normal translation module
-      Module._resolveFilename = function (request, parent, isMain, options) {
+      (Module as any)._resolveFilename = function (request, parent, isMain, options) {
         if (request == '@docusaurus/Translate') {
           request = path.resolve(__dirname, 'custom_modules', 'translate.ts');
         }
@@ -23,7 +23,7 @@ const createProvidersJsonPlugin = (context: LoadContext, options: PluginOptions)
       const { providersData } = await import('../data/providers');
 
       // Restore the original resolve function
-      Module._resolveFilename = originalResolveFilename
+      (Module as any)._resolveFilename = originalResolveFilename
 
       const providersFilePath = path.join(outDir, 'data/providers.json');
 
