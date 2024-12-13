@@ -770,5 +770,46 @@
   "theme.unlistedContent.message": {
     "message": "This page is unlisted. Search engines will not index it, and only users having a direct link can access it.",
     "description": "The unlisted content banner message"
+  },
+  "providers.provider.not_listed.description": {
+    "message": "If your hosting provider is not listed, try enabling the `clone-remote-port` option in the config. Then, restart the server, and try connecting with the same IP and port as on Java Edition. <br> If this does not work, ask your server hosting provider for a UDP port, and use that. For VPS/KVM servers please follow the self-hosting steps."
+  },
+  "providers.provider.wasabihosting.description": {
+    "message": "Install Geyser with the plugin installer. Use the same port as your Java server in the Geyser config. Connect with the same address and port as your Java server."
+  },
+  "pages.download.description.hurricane": {
+    "message": "A plugin with various workarounds for Geyser players that modify the server in order to achieve their goal."
+  },
+  "theme.blog.author.pageTitle": {
+    "message": "{authorName} - {nPosts}",
+    "description": "The title of the page for a blog author"
+  },
+  "theme.blog.authorsList.pageTitle": {
+    "message": "Authors",
+    "description": "The title of the authors page"
+  },
+  "theme.blog.authorsList.viewAll": {
+    "message": "View all authors",
+    "description": "The label of the link targeting the blog authors page"
+  },
+  "theme.blog.author.noPosts": {
+    "message": "This author has not written any posts yet.",
+    "description": "The text for authors with 0 blog post"
+  },
+  "theme.contentVisibility.unlistedBanner.title": {
+    "message": "Unlisted page",
+    "description": "The unlisted content banner title"
+  },
+  "theme.contentVisibility.unlistedBanner.message": {
+    "message": "This page is unlisted. Search engines will not index it, and only users having a direct link can access it.",
+    "description": "The unlisted content banner message"
+  },
+  "theme.contentVisibility.draftBanner.title": {
+    "message": "Draft page",
+    "description": "The draft content banner title"
+  },
+  "theme.contentVisibility.draftBanner.message": {
+    "message": "This page is a draft. It will only be visible in dev and be excluded from the production build.",
+    "description": "The draft content banner message"
   }
 }
