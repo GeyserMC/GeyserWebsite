@@ -1,6 +1,8 @@
 import { translate } from "@docusaurus/Translate"
 import { Providers } from "../types/providers"
 
+// Do not modify the structure of this file without updating the extraction logic in create-providers-json.ts
+
 const descriptionTemplates = {
     default: translate({
         id: 'providers.templates.default',

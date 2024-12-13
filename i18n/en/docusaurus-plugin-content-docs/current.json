@@ -182,5 +182,9 @@
   "sidebar.geyserSidebar.category.Geyser API": {
     "message": "Geyser API",
     "description": "The label for category Geyser API in sidebar geyserSidebar"
+  },
+  "sidebar.geyserSidebar.category.Custom Resource Packs": {
+    "message": "Custom Resource Packs",
+    "description": "The label for category Custom Resource Packs in sidebar geyserSidebar"
   }
 }

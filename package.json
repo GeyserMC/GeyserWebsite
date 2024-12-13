@@ -23,30 +23,33 @@
         "typecheck": "tsc"
     },
     "dependencies": {
-        "@docusaurus/core": "^3.4.0",
-        "@docusaurus/preset-classic": "^3.4.0",
-        "@fortawesome/fontawesome-svg-core": "^6.5.1",
-        "@fortawesome/free-brands-svg-icons": "^6.5.1",
-        "@fortawesome/free-regular-svg-icons": "^6.5.1",
-        "@fortawesome/free-solid-svg-icons": "^6.5.1",
-        "@fortawesome/react-fontawesome": "^0.2.0",
+        "@docusaurus/core": "3.6.3",
+        "@docusaurus/preset-classic": "3.6.3",
+        "@fortawesome/fontawesome-svg-core": "6.5.1",
+        "@fortawesome/free-brands-svg-icons": "6.5.1",
+        "@fortawesome/free-regular-svg-icons": "6.5.1",
+        "@fortawesome/free-solid-svg-icons": "6.5.1",
+        "@fortawesome/react-fontawesome": "0.2.0",
         "@kas-tle/docusaurus-og": "https://github.com/Kas-tle/docusaurus-og",
-        "@mdx-js/react": "^3.0.0",
-        "clsx": "^1.2.1",
-        "docusaurus-plugin-openapi-docs": "^3.0.1",
-        "docusaurus-theme-openapi-docs": "^3.0.1",
-        "prism-react-renderer": "^2.1.0",
-        "react": "^18.0.0",
-        "react-dom": "^18.0.0",
+        "@mdx-js/react": "3.0.0",
+        "clsx": "1.2.1",
+        "docusaurus-plugin-openapi-docs": "4.3.0",
+        "docusaurus-theme-openapi-docs": "4.3.0",
+        "prism-react-renderer": "2.1.0",
+        "react": "18.3.1",
+        "react-dom": "18.3.1",
         "react-markdown": "^9.0.0"
     },
     "devDependencies": {
-        "@docusaurus/module-type-aliases": "^3.4.0",
-        "@docusaurus/tsconfig": "^3.4.0",
-        "@docusaurus/types": "^3.4.0",
-        "docusaurus-plugin-sass": "^0.2.5",
-        "sass": "^1.77.8",
-        "typescript": "~5.2.2"
+        "@docusaurus/module-type-aliases": "^3.6.3",
+        "@docusaurus/tsconfig": "^3.6.3",
+        "@docusaurus/types": "^3.6.3",
+        "docusaurus-plugin-sass": "0.2.5",
+        "sass": "1.77.8",
+        "typescript": "5.7.2"
+    },
+    "resolutions": {
+        "postman-code-generators": "1.14.0"
     },
     "browserslist": {
         "production": [
@@ -61,6 +64,7 @@
         ]
     },
     "engines": {
-        "node": ">=18.0"
-    }
+        "node": ">=22.0"
+    },
+    "packageManager": "yarn@4.5.3"
 }
