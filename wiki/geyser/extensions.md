@@ -36,6 +36,13 @@ If you have an extension you'd like to see on this list, feel free to open a PR!
 To install an extension, simply put the extension .jar file into Geyser's `extensions` folder. 
 Then, restart Geyser (or the server Geyser runs on).
 
+## Updating Extensions {#updating-extensions}
+To update extensions, use the `update` folder within the extensions directory as follows:
+
+1. Copy the updated versions of your extension jars into the `update` folder inside the extensions directory.
+2. On the next server or application restart, any extensions in the `update` folder will automatically replace the corresponding extensions in the main extensions directory. If an extension is new, it will be added.
+3. If an update fails, it will be logged, and the server/application will proceed with loading extensions as usual. You can review the logs to address any issues.
+
 ## Creating Geyser Extensions {#creating-geyser-extensions}
 
 The easiest way to create an extension would be utilizing [this official template](https://github.com/GeyserMC/GeyserExampleExtension/). 
