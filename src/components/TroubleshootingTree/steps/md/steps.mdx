@@ -1,0 +1,116 @@
+steps:
+
+init: u owner?
+"""
+
+// TODO figure out steps; simplify language
+
+# Before we start...
+
+Are you hosting a Geyser instance yourself?
+
+You should click "Yes" if you...:
+- ...own and operate a Minecraft: Java edition server with the Geyser plugin/mod installed.
+- ...have a Geyser-Standalone / Geyser-ViaProxy instance set up to connect to other servers.
+- ...use any variant of Geyser on any supported platform.
+
+If you are NOT hosting your own Geyser instance or server - and are intead connecting to someone's server -
+then please contact the server administrator for help.
+
+options: y/n -> y: start troubleshooting; n -> show a link to send to administrator
+"""
+
+then: u using right guide?
+
+"""
+
+any errors in your log? do you see a connection attempt? conntest command?
+
+"""
+
+1. Toubleshooting start 
+
+Self hosting vs minecraft server hosting provider
+
+"""
+Hosting provider:
+Select this option if you are using a Minecraft server hosting provider that
+provides you with a Minecraft server.
+
+Self-Hosted @ home:
+Select this option if you are hosting on your own Windows/Linux/MacOS computer,
+server located at your location.
+
+Self-Hosted @ nothome:
+Applies for KVM/VPS/Bare-Metal servers (and similar) that are not located at your location.
+"""
+
+-------------------------------------------------------------------------------
+
+Hosting provider:
+
+1. Select provider (dropdown w. search / not listed)
+
+Non-Listed:
+- recommend clone-remote-port, do basic dump checks for bad options/system properties
+- pls contact host!
+
+"""
+We unfortunately do not have instructions available for the server hosting provider you're using.
+
+However, we recommend trying these configurations:
+
+1. Runnning Geyser on the Java server port
+
+- Open the Geyser configuration, and set `clone-remote-port` to `true`. Then, save the changes, and restart the server.
+
+- Verify connecting works:
+    -> directly connect with the java server ip and port
+    or
+    -> connectiontest command
+
+If none of these options work, please contact your server hosting provider for help on how to set up Geyser.
+
+"""
+
+Listed:
+- geyser dump 
+    -> configuration check (match with instructions???)
+    -> bad options: proxy protocol; remote address
+    -> check for system properties
+
+- options:
+    -> re-ask for a geyser dump (verify correct changes)
+    -> still not working; continue troubleshooting
+        -> errors in log?
+        -> else: contact host pls
+    -> works now -> send to feedback page?
+
+OR: unable to get dump
+    -> is server running? log???
+
+    Options:
+    -> addr. in use -> show setup steps
+    -> port in use (-> check for voice plugins/query???)
+    -> startup errors -> join discord/open github issue
+    -> ...
+
+IF server running/config correct:
+-> ensure connection to proper ip/port
+-> contact server hosting provider for help
+-> join discord if unclear
+
+-------------------------------------------------------------------------------
+
+Self-Hosted @ home:
+
+First stage: Gather information!
+
+Which OS are you hosting on? Linux/Win/MacOS
+
+-> Windows
+-> MacOS
+-> Linux
+
+
+-------------------------------------------------------------------------------
