@@ -35,7 +35,10 @@ export const providersData: Providers = {
         {
             name: 'Arth Hosting',
             url: 'https://arthmc.xyz/',
-            description: "Geyser is installed and configured on all servers by default. You can disable it in the 'Manage Plugins' menu."
+            description: translate({
+                id: 'providers.provider.arth_hosting.description',
+                message: "Geyser is installed and configured on all servers by default. You can disable it in the 'Manage Plugins' menu."
+            })
         },
         {
             name: 'Aternos',
@@ -427,7 +430,10 @@ export const providersData: Providers = {
         {
             name: 'MCFORFREE.DE',
             url: 'https://mcforfree.de/',
-            description: 'Create an extra port in the game panel, then change the `port` in the `bedrock` section to the newly created port. To connect on Bedrock edition, use the Java server\'s IP and the port you\'ve created. It may take a few minutes for the port to become active.'
+            description: translate({
+                id: 'providers.provider.mcforfree.de.description',
+                message: 'Create an extra port in the game panel, then change the `port` in the `bedrock` section to the newly created port. To connect on Bedrock edition, use the Java server\'s IP and the port you\'ve created. It may take a few minutes for the port to become active.'
+            })
         },
         {
             name: 'MCPEhost.ru',
@@ -490,7 +496,10 @@ export const providersData: Providers = {
         {
             name: 'PaperNodes',
             url: 'https://papernodes.com/',
-            description: 'Enable clone-remote-port (or manually set the Bedrock port to the Java port), and connect with the Java IP and port. Alternatively, you can contact the host to request an additional port or a dedicated IP.'
+            description: translate({
+                id: 'providers.provider.papernodes.description',
+                message: 'Enable clone-remote-port (or manually set the Bedrock port to the Java port), and connect with the Java IP and port. Alternatively, you can contact the host to request an additional port or a dedicated IP.'
+            })
         },
         {
             name: 'Pebblehost',
@@ -633,7 +642,10 @@ export const providersData: Providers = {
         {
             name: "Wepwawet",
             url: "https://wepwawet.net/",
-            description: "Add a new port in the Network tab. Use this new port as the bedrock port."
+            description: translate({
+                id: 'providers.provider.wepwawet.description',
+                message: "Add a new port in the Network tab. Use this new port as the bedrock port."
+            })
         },
         {
             name: 'WinterNode',
