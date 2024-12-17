@@ -109,41 +109,6 @@
     border-radius: 50%;
 }
 
-/* https://codepen.io/JAGATHISH1123/pen/PvayMB */
-.switch {
-    position: relative;
-    display: inline-block;
-    width: 40px;
-    height: 20px;
-    background-color: var(--switch-background-color);
-    border-radius: 20px;
-    transition: all 0.3s;
-
-    &::after {
-        content: '';
-        position: absolute;
-        width: 18px;
-        height: 18px;
-        border-radius: 50%;
-        background-color: white;
-        top: 1px;
-        left: 1px;
-        transition: all 0.3s;
-    }
-}
-
-.checkbox:checked+.switch::after {
-    left: 20px;
-}
-
-.checkbox:checked+.switch {
-    background-color: var(--ifm-color-secondary);
-}
-
-.checkbox {
-    display: inline-block;
-}
-
 .hidden {
     display: none;
 }
@@ -197,5 +162,43 @@
 @media screen and (max-width: 768px) {
     .formInput {
         min-width: 100%;
+    }
+}
+
+/* Modified from https://danklammer.com/articles/simple-css-toggle-switch */
+.checkbox {
+    appearance: none;
+    position: relative;
+    display: inline-block;
+    box-sizing: content-box;
+    width: 4.5em;
+    height: 1.8em;
+    padding: 0.2em;
+    border: none;
+    cursor: pointer;
+    border-radius: 1.5em;
+    overflow: hidden;
+    background-color: #707070;
+    transition: background ease 0.3s;
+
+    &:before {
+        content: "";
+        display: block;
+        position: absolute;
+        z-index: 2;
+        width: 1.8em;
+        height: 1.8em;
+        background: #fff;
+        color: #fff;
+        border-radius: 1.5em;
+        transition: transform cubic-bezier(0.3, 1.5, 0.7, 1) 0.3s;
+    }
+      
+    &:checked {
+        background-color: var(--ifm-color-secondary);
+    }
+      
+    &:checked:before {
+        transform: translateX(2.5em);
     }
 }

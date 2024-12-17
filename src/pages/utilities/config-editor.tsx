@@ -259,7 +259,6 @@ const ConfigEditorPage: React.FC = () => {
                         <div key={name}>
                             <input className={styles.checkbox} type='checkbox' id={name}
                                    defaultChecked={value.toLowerCase() === 'true'} onChange={handleChange}/>
-                            <label htmlFor={name} className='switch'></label>
                         </div>
                     );
                 } else if (!isNaN(value)) {
