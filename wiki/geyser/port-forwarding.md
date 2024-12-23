@@ -23,7 +23,7 @@ Do note: if you do not have a static IP address, your IP address may change over
 
 Some ISPs (Internet Service Providers) block certain ports, or don't allow you to open ports (e.g. by using CGNAT, which doesn't allow you to open a port with a dynamic IP).
 Other ISPs may require you to pay extra for a static IP address.   
-As an alternative to port forwarding, you can use <a href="/wiki/geyser/playit-gg/">playit.gg</a> to create a tunnel.
+As an alternative to port forwarding, you can use [playit.gg](/wiki/geyser/playit-gg/) to create a tunnel.
 
 :::
 

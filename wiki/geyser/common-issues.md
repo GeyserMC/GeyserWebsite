@@ -13,15 +13,15 @@ If you still can't make it work, join [our Discord](https://discord.gg/geysermc)
 For Floodgate issues see: [Floodgate: Known Issues/Caveats](/wiki/floodgate/issues/).
 
 # I can't connect! (Either the server doesn't show up in the friends list or I get "Unable to connect to world")
-* If you don't use a reverse proxy such as TCPShield make sure that `enable-proxy-protocol` is set to false.
+- If you don't use a reverse proxy such as TCPShield make sure that `enable-proxy-protocol` is set to false.
 To fix "Unable to connect to world" with no console errors, see [here](/wiki/geyser/fixing-unable-to-connect-to-world/).
 
 ## If the server doesn't show up in the friends list {#if-the-server-doesnt-show-up-in-the-friends-list}
 
-* *If using Windows 10, iOS, or Android*: try adding the server to the Servers list in-game.
-* *If using Xbox One*: try connecting with [BedrockConnect](/wiki/geyser/using-geyser-with-consoles/).
-* *If using PS4*: [try using a LAN proxy.](/wiki/geyser/using-geyser-with-consoles#playstation-4)
-* *If using Nintendo Switch*: there is currently no way for local servers to show up in the Friends tab, but you can still connect using [BedrockConnect](/wiki/geyser/using-geyser-with-consoles/).
+- *If using Windows 10, iOS, or Android*: try adding the server to the Servers list in-game.
+- *If using Xbox One*: try connecting with [BedrockConnect](/wiki/geyser/using-geyser-with-consoles/).
+- *If using PS4*: [try using a LAN proxy.](/wiki/geyser/using-geyser-with-consoles#playstation-4)
+- *If using Nintendo Switch*: there is currently no way for local servers to show up in the Friends tab, but you can still connect using [BedrockConnect](/wiki/geyser/using-geyser-with-consoles/).
 
 *If the Geyser instance is locally hosted:* try using `localhost` or `0.0.0.0` as the IP address.
 *If that doesn't work, or your Geyser instance is on another computer in the network*: use your **local** IPv4 address.
@@ -113,7 +113,7 @@ Update the server or ask them to install [ViaVersion](https://viaversion.com/). 
 
 See here: https://www.spigotmc.org/threads/query-incorrect-magic-and-high-cpu-usage.159386/#post-2709057
 
-* If you don't use a reverse proxy such as TCPShield make sure that `enable-proxy-protocol` is set to false.
+- If you don't use a reverse proxy such as TCPShield make sure that `enable-proxy-protocol` is set to false.
 
 # Only for BungeeCord with floodgate
 
@@ -126,9 +126,9 @@ If you use floodgate ensure that it is installed on all of your Spigot backend s
 
 And so on.
 
-* Please also make sure that you have the same `key.pem` and `config.yml` on all of your servers.
+- Please also make sure that you have the same `key.pem` and `config.yml` on all of your servers.
 
 If your players can't connect from the lobby to another backend server, check console.
 
 ### Plugins that can cause issues {#plugins-that-can-cause-issues}
-* `HamsterAPI`
+- `HamsterAPI`

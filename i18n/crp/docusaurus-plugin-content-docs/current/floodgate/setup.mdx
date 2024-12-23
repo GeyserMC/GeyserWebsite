@@ -1,0 +1,43 @@
+---
+title: crwdns18755:0crwdne18755:0
+page_sidebar: false
+description: crwdns18757:0crwdne18757:0
+---
+
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+
+import ModdedServers from './setup/modded.mdx';
+import ProxyServers from './setup/proxy-servers.mdx';
+import PaperSpigot from './setup/paper-spigot.mdx';
+import ViaProxy from './setup/viaproxy.mdx';
+import Standalone from './setup/standalone.mdx';
+
+import PlatformIcon from '@site/src/components/PlatformIcon'
+import ModIcon from '@site/static/img/icons/fabric.png';
+import ProxyServersIcon from '@site/static/img/icons/velocity.png';
+import PaperSpigotIcon from '@site/static/img/icons/paper.png';
+import ViaProxyIcon from '@site/static/img/icons/viaproxy.png';
+import StandaloneIcon from '@site/static/img/icons/geyser.png';
+
+import { MDXTranslatable } from "@site/src/components/MDXTranslatable";
+
+```mdx-code-block
+<Tabs queryString="platform">
+    <TabItem value="paper-spigot" label={<PlatformIcon img={PaperSpigotIcon} text={<MDXTranslatable.setup.paper_spigot/>}/>} default>
+        <PaperSpigot/>
+    </TabItem>
+    <TabItem value="modded" label={<PlatformIcon img={ModIcon} text={<MDXTranslatable.setup.modded_servers/>}/>}>
+        <ModdedServers/>
+    </TabItem>
+    <TabItem value="proxy-servers" label={<PlatformIcon img={ProxyServersIcon} text={<MDXTranslatable.setup.proxy_servers/>}/>}>
+        <ProxyServers/>
+    </TabItem>
+    <TabItem value="viaproxy" label={<PlatformIcon img={ViaProxyIcon} text={<MDXTranslatable.setup.viaproxy/>}/>}>
+        <ViaProxy/>
+    </TabItem>
+    <TabItem value="standalone" label={<PlatformIcon img={StandaloneIcon} text={<MDXTranslatable.setup.standalone/>}/>}>
+        <Standalone/>
+    </TabItem>
+</Tabs>
+```
