@@ -97,6 +97,14 @@ export const providersData: Providers = {
             })
         },
         {
+            name: 'MCServerHost',
+            url: 'https://mcserverhost.com/',
+            description: translate({
+                id: 'providers.provider.mcserverhost.description',
+                message: "Head to our configurator and click Java -> 'Crossplay' to automatically install and configure Geyser. Then simply join through your .mcsh.io address and enjoy playing with all your friends!"
+            })
+        },
+        {
             name: 'Minefort',
             url: 'https://minefort.com/',
             description: translate({
