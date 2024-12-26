@@ -101,7 +101,7 @@ export const providersData: Providers = {
             url: 'https://mcserverhost.com/',
             description: translate({
                 id: 'providers.provider.mcserverhost.description',
-                message: "Under the server configuration select Crossplay, the installer will automatically install Geyser and Floodgate. After the installation you can immediately join with the connection address. MCServerHost does not automatically update the plugin, to update it simply replace the plugin file in the server manager and restart the server."
+                message: "Under the server configuration, select 'Crossplay' to automatically install Geyser and Floodgate. Join with the connection address. To update Geyser and Floodgate, replace the plugin jars in the server manager and restart the server."
             })
         },
         {
