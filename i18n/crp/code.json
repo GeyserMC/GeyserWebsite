@@ -1,0 +1,848 @@
+{
+  "components.provider.instructions": {
+    "message": "crwdns24255:0crwdne24255:0"
+  },
+  "components.provider.select": {
+    "message": "crwdns24257:0crwdne24257:0"
+  },
+  "providers.templates.default": {
+    "message": "crwdns24259:0`clone-remote-port`crwdnd24259:0`bedrock port`crwdne24259:0"
+  },
+  "providers.templates.ip_and_port": {
+    "message": "crwdns24261:0`clone-remote-port`crwdnd24261:0`bedrock port`crwdnd24261:0`bedrock address`crwdnd24261:0`0.0.0.0`crwdne24261:0"
+  },
+  "providers.templates.forwarding_option": {
+    "message": "crwdns24263:0crwdne24263:0"
+  },
+  "providers.templates.java_ip": {
+    "message": "crwdns24265:0`bedrock address`crwdnd24265:0`0.0.0.0`crwdne24265:0"
+  },
+  "providers.provider.apex_hosting.description": {
+    "message": "crwdns24267:0[crwdnd24267:0](https://apexminecrafthosting.com/geysermc/)crwdne24267:0"
+  },
+  "providers.provider.aternos.description": {
+    "message": "crwdns24269:0[crwdnd24269:0](https://support.aternos.org/hc/en-us/articles/360051047631)crwdne24269:0"
+  },
+  "providers.provider.birdflop.description": {
+    "message": "crwdns24271:0crwdne24271:0"
+  },
+  "providers.provider.cloud_nord.description": {
+    "message": "crwdns24273:0[crwdnd24273:0](https://cloudnord.net/minecraftcrossplay-server-hosting/)crwdne24273:0"
+  },
+  "providers.provider.creeperhost.description": {
+    "message": "crwdns24275:0crwdne24275:0"
+  },
+  "providers.provider.cubes_hosting.description": {
+    "message": "crwdns24277:0crwdne24277:0"
+  },
+  "providers.provider.exaroton.description": {
+    "message": "crwdns24279:0[crwdnd24279:0](https://support.exaroton.com/hc/en-us/articles/360019857918-Geyser)crwdne24279:0"
+  },
+  "providers.provider.ggservers.description": {
+    "message": "crwdns24281:0crwdne24281:0"
+  },
+  "providers.provider.lilypad.description": {
+    "message": "crwdns24283:0[crwdnd24283:0](https://lilypad.gg/bedrock)crwdne24283:0"
+  },
+  "providers.provider.mcprohosting.description": {
+    "message": "crwdns24285:0`19132`crwdne24285:0"
+  },
+  "providers.provider.minefort.description": {
+    "message": "crwdns24287:0`play.minefort.com`crwdnd24287:0`/server [servername]`crwdnd24287:0`[servername].minefort.com`crwdne24287:0"
+  },
+  "providers.provider.minehut.description": {
+    "message": "crwdns24289:0`bedrock.minehut.com`crwdnd24289:0`/join [servername]`crwdnd24289:0`[servername].bedrock.minehut.gg`crwdne24289:0"
+  },
+  "providers.provider.piglinhost.description": {
+    "message": "crwdns24291:0[crwdnd24291:0](https://piglinhost.com/minecraft-java-hosting.html)crwdnd24291:0[crwdnd24291:0](https://billing.piglinhost.com/submitticket.php?step=2&deptid=5)crwdne24291:0"
+  },
+  "providers.provider.omgserv.description": {
+    "message": "crwdns24293:0[crwdnd24293:0](https://i.imgur.com/Gewpsrq.png)crwdnd24293:0[crwdnd24293:0](https://i.imgur.com/jg5mzNj.png)crwdne24293:0"
+  },
+  "providers.provider.pufferfish_host.description": {
+    "message": "crwdns24295:0crwdne24295:0"
+  },
+  "providers.provider.server.pro.description": {
+    "message": "crwdns24297:0[crwdnd24297:0](https://i.imgur.com/loSNmvu.png)crwdnd24297:0`clone-remote-port`crwdne24297:0"
+  },
+  "providers.provider.snakecraft_hosting.description": {
+    "message": "crwdns24299:0crwdne24299:0"
+  },
+  "providers.provider.srkhost.description": {
+    "message": "crwdns24301:0crwdne24301:0"
+  },
+  "providers.provider.virtual_gladiators.description": {
+    "message": "crwdns24303:0crwdne24303:0"
+  },
+  "providers.provider.wisehosting.description": {
+    "message": "crwdns24305:0`Properties`crwdnd24305:0`Install`crwdnd24305:0[crwdnd24305:0](https://help.wisehosting.com/en/articles/13-how-to-install-geysermc-java-bedrock-crossplay-to-your-server)crwdne24305:0"
+  },
+  "providers.provider.zaphosting.description": {
+    "message": "crwdns24307:0crwdne24307:0"
+  },
+  "providers.provider.365hosts.description": {
+    "message": "crwdns24309:0[crwdnd24309:0](https://www.365hosts.com/gaming/crossplayminecraft)crwdne24309:0"
+  },
+  "providers.provider.aquatis.description": {
+    "message": "crwdns24311:0`bedrock port`crwdne24311:0"
+  },
+  "providers.provider.bisecthosting.description": {
+    "message": "crwdns24313:0`bedrock address`crwdnd24313:0`address: 51.79.129.18`crwdnd24313:0`19132`crwdnd24313:0[crwdnd24313:0](https://www.bisecthosting.com/clients/index.php?rp=/knowledgebase/193/How-to-install-Geyser-and-Floodgate-on-a-Minecraft-Java-server.html)crwdne24313:0"
+  },
+  "providers.provider.bloomhost.description": {
+    "message": "crwdns24315:0[crwdnd24315:0](https://docs.bloom.host/plugins/geysermc/)crwdne24315:0"
+  },
+  "providers.provider.craft-hosting.description": {
+    "message": "crwdns24317:0crwdne24317:0"
+  },
+  "providers.provider.dedicatedmc.description": {
+    "message": "crwdns24319:0[crwdnd24319:0](https://docs.dedicatedmc.io/plugins-mods/how-to-install-geysermc/)crwdne24319:0"
+  },
+  "providers.provider.elfidc.description": {
+    "message": "crwdns24321:0crwdne24321:0"
+  },
+  "providers.provider.fadehost.description": {
+    "message": "crwdns24323:0crwdne24323:0"
+  },
+  "providers.provider.fakaheda.description": {
+    "message": "crwdns24325:0`bedrock port`crwdne24325:0"
+  },
+  "providers.provider.falixnodes.description": {
+    "message": "crwdns24327:0crwdne24327:0"
+  },
+  "providers.provider.ferox_hosting.description": {
+    "message": "crwdns24329:0[crwdnd24329:0](https://feroxhosting.nl/kb/)crwdne24329:0"
+  },
+  "providers.provider.fusion_hosting.description": {
+    "message": "crwdns24331:0crwdne24331:0"
+  },
+  "providers.provider.gportal.description": {
+    "message": "crwdns24333:0crwdne24333:0"
+  },
+  "providers.provider.heavynode.description": {
+    "message": "crwdns24335:0`19132`crwdnd24335:0[crwdnd24335:0](https://wiki.geysermc.org/geyser/port-forwarding/#ovh-and-soyoustart)crwdne24335:0"
+  },
+  "providers.provider.hicoria.description": {
+    "message": "crwdns24337:0crwdne24337:0"
+  },
+  "providers.provider.hosterfy.description": {
+    "message": "crwdns24339:0`clone-remote-port`crwdne24339:0"
+  },
+  "providers.provider.hostez.description": {
+    "message": "crwdns24341:0crwdne24341:0"
+  },
+  "providers.provider.hosting-minecraft.description": {
+    "message": "crwdns24343:0[crwdnd24343:0](https://my.hosting-minecraft.pro/submitticket.php)crwdne24343:0"
+  },
+  "providers.provider.humbleservers.description": {
+    "message": "crwdns24345:0crwdne24345:0"
+  },
+  "providers.provider.kekshost.description": {
+    "message": "crwdns24347:0crwdne24347:0"
+  },
+  "providers.provider.kinetic_hosting.description": {
+    "message": "crwdns24349:0`bedrock port`crwdnd24349:0`clone-remote-port`crwdnd24349:0[crwdnd24349:0](https://www.kinetichosting.net/articles/minecraft-java/plugins/geyser)crwdne24349:0"
+  },
+  "providers.provider.mcpehost.ru.description": {
+    "message": "crwdns24351:0`bedrock port`crwdne24351:0"
+  },
+  "providers.provider.meloncube.description": {
+    "message": "crwdns24353:0`bedrock port`crwdne24353:0"
+  },
+  "providers.provider.netbela.description": {
+    "message": "crwdns24355:0crwdne24355:0"
+  },
+  "providers.provider.nfoservers.description": {
+    "message": "crwdns24357:0`bedrock address`crwdne24357:0"
+  },
+  "providers.provider.nitrado.description": {
+    "message": "crwdns24359:0[crwdnd24359:0](https://wiki.nitrado.net/en/How_to_install_GeyserMC_and_Floodgate)crwdne24359:0"
+  },
+  "providers.provider.nodecraft.description": {
+    "message": "crwdns24361:0`0.0.0.0`crwdne24361:0"
+  },
+  "providers.provider.pebblehost.description": {
+    "message": "crwdns24363:0`clone-remote-port`crwdnd24363:0`bedrock port`crwdnd24363:0[crwdnd24363:0](https://youtu.be/v9lC80UBZF4)crwdne24363:0"
+  },
+  "providers.provider.pubcs.description": {
+    "message": "crwdns24365:0crwdne24365:0"
+  },
+  "providers.provider.revivenode.description": {
+    "message": "crwdns24367:0`bedrock port`crwdnd24367:0`clone-remote-port`crwdnd24367:0`network tab`crwdnd24367:0`Unable to Connect`crwdnd24367:0[crwdnd24367:0](https://wiki.geysermc.org/geyser/port-forwarding/#ovh-and-soyoustart)crwdne24367:0"
+  },
+  "providers.provider.shockbyte.description": {
+    "message": "crwdns24369:0[crwdnd24369:0](https://shockbyte.com/billing/knowledgebase/173/Introduction-to-GeyserMCorDragonProxy-How-GeyserMC-Works.html)crwdne24369:0"
+  },
+  "providers.provider.skynode.pro.description": {
+    "message": "crwdns24371:0`bedrock port`crwdne24371:0"
+  },
+  "providers.provider.stipe.description": {
+    "message": "crwdns24373:0crwdne24373:0"
+  },
+  "providers.provider.syntexhosting.description": {
+    "message": "crwdns24375:0crwdne24375:0"
+  },
+  "providers.provider.the_minecraft hosting.description": {
+    "message": "crwdns24377:0`19132`crwdnd24377:0`bedrock port`crwdne24377:0"
+  },
+  "providers.provider.volthosting.description": {
+    "message": "crwdns24379:0[crwdnd24379:0](https://volthosting.co.uk/contact.html)crwdne24379:0"
+  },
+  "providers.provider.vultam.description": {
+    "message": "crwdns24381:0`bedrock port`crwdnd24381:0`19132`crwdne24381:0"
+  },
+  "providers.provider.winternode.description": {
+    "message": "crwdns24383:0crwdne24383:0"
+  },
+  "providers.provider.witherhosting.description": {
+    "message": "crwdns24385:0[crwdnd24385:0](https://support.witherhosting.com/en/article/how-to-install-and-use-geysermc-1xn5l6v/)crwdne24385:0"
+  },
+  "providers.provider.myarena.description": {
+    "message": "crwdns24387:0crwdne24387:0"
+  },
+  "providers.provider.nicraft.description": {
+    "message": "crwdns24389:0[crwdnd24389:0](https://wiki.geysermc.org/geyser/port-forwarding/#ovh-and-soyoustart)crwdne24389:0"
+  },
+  "providers.provider.feather.description": {
+    "message": "crwdns24391:0crwdne24391:0"
+  },
+  "pages.main.title": {
+    "message": "crwdns24393:0crwdne24393:0"
+  },
+  "pages.main.subtitle": {
+    "message": "crwdns24395:0crwdne24395:0"
+  },
+  "components.homepage_features.1": {
+    "message": "crwdns24397:0crwdne24397:0"
+  },
+  "components.homepage_features.features.2": {
+    "message": "crwdns24399:0crwdne24399:0"
+  },
+  "components.homepage_features.features.3": {
+    "message": "crwdns24401:0crwdne24401:0"
+  },
+  "pages.download.title": {
+    "message": "crwdns24403:0crwdne24403:0"
+  },
+  "pages.download.subheading": {
+    "message": "crwdns24405:0crwdne24405:0"
+  },
+  "pages.download.description.geyser": {
+    "message": "crwdns24407:0crwdne24407:0"
+  },
+  "pages.download.description.floodgate": {
+    "message": "crwdns24409:0crwdne24409:0"
+  },
+  "pages.download.description.geyserconnect": {
+    "message": "crwdns24411:0crwdne24411:0"
+  },
+  "pages.download.description.geyseroptionalpack": {
+    "message": "crwdns24413:0crwdne24413:0"
+  },
+  "pages.download.description.thirdpartycosmetics": {
+    "message": "crwdns24415:0crwdne24415:0"
+  },
+  "pages.configeditor.noconfigselected.heading": {
+    "message": "crwdns24417:0crwdne24417:0"
+  },
+  "pages.configeditor.noconfigselected.subheading": {
+    "message": "crwdns24419:0crwdne24419:0"
+  },
+  "pages.configeditor.button.defaultconfig": {
+    "message": "crwdns24421:0crwdne24421:0"
+  },
+  "pages.configeditor.button.upload": {
+    "message": "crwdns24423:0crwdne24423:0"
+  },
+  "pages.configeditor.button.export": {
+    "message": "crwdns24425:0crwdne24425:0"
+  },
+  "pages.configeditor.title": {
+    "message": "crwdns24427:0crwdne24427:0"
+  },
+  "pages.configeditor.subheading": {
+    "message": "crwdns24429:0crwdne24429:0"
+  },
+  "pages.dumpviewer.title": {
+    "message": "crwdns24431:0crwdne24431:0"
+  },
+  "pages.dumpviewer.subheading": {
+    "message": "crwdns24433:0crwdne24433:0"
+  },
+  "pages.dumpviewer.enterdumpid": {
+    "message": "crwdns24435:0crwdne24435:0"
+  },
+  "pages.dumpviewer.button.load": {
+    "message": "crwdns24437:0crwdne24437:0"
+  },
+  "pages.dumpviewer.versions": {
+    "message": "crwdns24439:0crwdne24439:0"
+  },
+  "pages.dumpviewer.versions.geyserver": {
+    "message": "crwdns24441:0crwdne24441:0"
+  },
+  "pages.dumpviewer.versions.javaver": {
+    "message": "crwdns24443:0crwdne24443:0"
+  },
+  "pages.dumpviewer.versions.os": {
+    "message": "crwdns24445:0crwdne24445:0"
+  },
+  "pages.dumpviewer.geyserver": {
+    "message": "crwdns24447:0crwdne24447:0"
+  },
+  "pages.dumpviewer.geyserver.build": {
+    "message": "crwdns24449:0crwdne24449:0"
+  },
+  "pages.dumpviewer.geyserver.commit": {
+    "message": "crwdns24451:0crwdne24451:0"
+  },
+  "pages.dumpviewer.geyserver.branch": {
+    "message": "crwdns24453:0crwdne24453:0"
+  },
+  "pages.dumpviewer.platform": {
+    "message": "crwdns24455:0crwdne24455:0"
+  },
+  "pages.dumpviewer.platform.id": {
+    "message": "crwdns24457:0crwdne24457:0"
+  },
+  "pages.dumpviewer.platform.name": {
+    "message": "crwdns24459:0crwdne24459:0"
+  },
+  "pages.dumpviewer.platform.version": {
+    "message": "crwdns24461:0crwdne24461:0"
+  },
+  "pages.dumpviewer.platform.apiver": {
+    "message": "crwdns24463:0crwdne24463:0"
+  },
+  "pages.dumpviewer.platform.onlinemode": {
+    "message": "crwdns24465:0crwdne24465:0"
+  },
+  "pages.dumpviewer.sysinfo": {
+    "message": "crwdns24467:0crwdne24467:0"
+  },
+  "pages.dumpviewer.cpucount": {
+    "message": "crwdns24469:0crwdne24469:0"
+  },
+  "pages.dumpviewer.cpuname": {
+    "message": "crwdns24471:0crwdne24471:0"
+  },
+  "pages.dumpviewer.ram": {
+    "message": "crwdns24473:0crwdne24473:0"
+  },
+  "pages.dumpviewer.javaname": {
+    "message": "crwdns24475:0crwdne24475:0"
+  },
+  "pages.dumpviewer.javavendor": {
+    "message": "crwdns24477:0crwdne24477:0"
+  },
+  "pages.dumpviewer.dockercheck": {
+    "message": "crwdns24479:0crwdne24479:0"
+  },
+  "pages.dumpviewer.plugins": {
+    "message": "crwdns24481:0crwdne24481:0"
+  },
+  "pages.dumpviewer.plugins.noplugins": {
+    "message": "crwdns24483:0crwdne24483:0"
+  },
+  "pages.dumpviewer.plugins.helptext": {
+    "message": "crwdns24485:0crwdne24485:0"
+  },
+  "pages.dumpviewer.config": {
+    "message": "crwdns24487:0crwdne24487:0"
+  },
+  "pages.dumpviewer.viewsource": {
+    "message": "crwdns24489:0crwdne24489:0"
+  },
+  "theme.ErrorPageContent.title": {
+    "message": "crwdns24491:0crwdne24491:0",
+    "description": "The title of the fallback page when the page crashed"
+  },
+  "theme.BackToTopButton.buttonAriaLabel": {
+    "message": "crwdns24493:0crwdne24493:0",
+    "description": "The ARIA label for the back to top button"
+  },
+  "theme.blog.archive.title": {
+    "message": "crwdns24495:0crwdne24495:0",
+    "description": "The page & hero title of the blog archive page"
+  },
+  "theme.blog.archive.description": {
+    "message": "crwdns24497:0crwdne24497:0",
+    "description": "The page & hero description of the blog archive page"
+  },
+  "theme.blog.paginator.navAriaLabel": {
+    "message": "crwdns24499:0crwdne24499:0",
+    "description": "The ARIA label for the blog pagination"
+  },
+  "theme.blog.paginator.newerEntries": {
+    "message": "crwdns24501:0crwdne24501:0",
+    "description": "The label used to navigate to the newer blog posts page (previous page)"
+  },
+  "theme.blog.paginator.olderEntries": {
+    "message": "crwdns24503:0crwdne24503:0",
+    "description": "The label used to navigate to the older blog posts page (next page)"
+  },
+  "theme.blog.post.paginator.navAriaLabel": {
+    "message": "crwdns24505:0crwdne24505:0",
+    "description": "The ARIA label for the blog posts pagination"
+  },
+  "theme.blog.post.paginator.newerPost": {
+    "message": "crwdns24507:0crwdne24507:0",
+    "description": "The blog post button label to navigate to the newer/previous post"
+  },
+  "theme.blog.post.paginator.olderPost": {
+    "message": "crwdns24509:0crwdne24509:0",
+    "description": "The blog post button label to navigate to the older/next post"
+  },
+  "theme.blog.post.plurals": {
+    "message": "crwdns24511:0{count}crwdne24511:0",
+    "description": "Pluralized label for \"{count} posts\". Use as much plural forms (separated by \"|\") as your language support (see https://www.unicode.org/cldr/cldr-aux/charts/34/supplemental/language_plural_rules.html)"
+  },
+  "theme.blog.tagTitle": {
+    "message": "crwdns24513:0{nPosts}crwdnd24513:0{tagName}crwdne24513:0",
+    "description": "The title of the page for a blog tag"
+  },
+  "theme.tags.tagsPageLink": {
+    "message": "crwdns24515:0crwdne24515:0",
+    "description": "The label of the link targeting the tag list page"
+  },
+  "theme.colorToggle.ariaLabel": {
+    "message": "crwdns24517:0{mode}crwdne24517:0",
+    "description": "The ARIA label for the navbar color mode toggle"
+  },
+  "theme.colorToggle.ariaLabel.mode.dark": {
+    "message": "crwdns24519:0crwdne24519:0",
+    "description": "The name for the dark color mode"
+  },
+  "theme.colorToggle.ariaLabel.mode.light": {
+    "message": "crwdns24521:0crwdne24521:0",
+    "description": "The name for the light color mode"
+  },
+  "theme.docs.DocCard.categoryDescription.plurals": {
+    "message": "crwdns24523:0{count}crwdne24523:0",
+    "description": "The default description for a category card in the generated index about how many items this category includes"
+  },
+  "theme.docs.breadcrumbs.navAriaLabel": {
+    "message": "crwdns24525:0crwdne24525:0",
+    "description": "The ARIA label for the breadcrumbs"
+  },
+  "theme.docs.paginator.navAriaLabel": {
+    "message": "crwdns24527:0crwdne24527:0",
+    "description": "The ARIA label for the docs pagination"
+  },
+  "theme.docs.paginator.previous": {
+    "message": "crwdns24529:0crwdne24529:0",
+    "description": "The label used to navigate to the previous doc"
+  },
+  "theme.docs.paginator.next": {
+    "message": "crwdns24531:0crwdne24531:0",
+    "description": "The label used to navigate to the next doc"
+  },
+  "theme.docs.tagDocListPageTitle.nDocsTagged": {
+    "message": "crwdns24533:0{count}crwdne24533:0",
+    "description": "Pluralized label for \"{count} docs tagged\". Use as much plural forms (separated by \"|\") as your language support (see https://www.unicode.org/cldr/cldr-aux/charts/34/supplemental/language_plural_rules.html)"
+  },
+  "theme.docs.tagDocListPageTitle": {
+    "message": "crwdns24535:0{nDocsTagged}crwdnd24535:0{tagName}crwdne24535:0",
+    "description": "The title of the page for a docs tag"
+  },
+  "theme.docs.versionBadge.label": {
+    "message": "crwdns24537:0{versionLabel}crwdne24537:0"
+  },
+  "theme.docs.versions.unreleasedVersionLabel": {
+    "message": "crwdns24539:0{siteTitle}crwdnd24539:0{versionLabel}crwdne24539:0",
+    "description": "The label used to tell the user that he's browsing an unreleased doc version"
+  },
+  "theme.docs.versions.unmaintainedVersionLabel": {
+    "message": "crwdns24541:0{siteTitle}crwdnd24541:0{versionLabel}crwdne24541:0",
+    "description": "The label used to tell the user that he's browsing an unmaintained doc version"
+  },
+  "theme.docs.versions.latestVersionSuggestionLabel": {
+    "message": "crwdns24543:0{latestVersionLink}crwdnd24543:0{versionLabel}crwdne24543:0",
+    "description": "The label used to tell the user to check the latest version"
+  },
+  "theme.docs.versions.latestVersionLinkLabel": {
+    "message": "crwdns24545:0crwdne24545:0",
+    "description": "The label used for the latest version suggestion link label"
+  },
+  "theme.common.editThisPage": {
+    "message": "crwdns24547:0crwdne24547:0",
+    "description": "The link label to edit the current page"
+  },
+  "theme.common.headingLinkTitle": {
+    "message": "crwdns24549:0{heading}crwdne24549:0",
+    "description": "Title for link to heading"
+  },
+  "theme.lastUpdated.atDate": {
+    "message": "crwdns24551:0{date}crwdne24551:0",
+    "description": "The words used to describe on which date a page has been last updated"
+  },
+  "theme.lastUpdated.byUser": {
+    "message": "crwdns24553:0{user}crwdne24553:0",
+    "description": "The words used to describe by who the page has been last updated"
+  },
+  "theme.lastUpdated.lastUpdatedAtBy": {
+    "message": "crwdns24555:0{atDate}crwdnd24555:0{byUser}crwdne24555:0",
+    "description": "The sentence used to display when a page has been last updated, and by who"
+  },
+  "theme.NotFound.title": {
+    "message": "crwdns24557:0crwdne24557:0",
+    "description": "The title of the 404 page"
+  },
+  "theme.navbar.mobileVersionsDropdown.label": {
+    "message": "crwdns24559:0crwdne24559:0",
+    "description": "The label for the navbar versions dropdown on mobile view"
+  },
+  "theme.tags.tagsListLabel": {
+    "message": "crwdns24561:0crwdne24561:0",
+    "description": "The label alongside a tag list"
+  },
+  "theme.AnnouncementBar.closeButtonAriaLabel": {
+    "message": "crwdns24563:0crwdne24563:0",
+    "description": "The ARIA label for close button of announcement bar"
+  },
+  "theme.admonition.caution": {
+    "message": "crwdns24565:0crwdne24565:0",
+    "description": "The default label used for the Caution admonition (:::caution)"
+  },
+  "theme.admonition.danger": {
+    "message": "crwdns24567:0crwdne24567:0",
+    "description": "The default label used for the Danger admonition (:::danger)"
+  },
+  "theme.admonition.info": {
+    "message": "crwdns24569:0crwdne24569:0",
+    "description": "The default label used for the Info admonition (:::info)"
+  },
+  "theme.admonition.note": {
+    "message": "crwdns24571:0crwdne24571:0",
+    "description": "The default label used for the Note admonition (:::note)"
+  },
+  "theme.admonition.tip": {
+    "message": "crwdns24573:0crwdne24573:0",
+    "description": "The default label used for the Tip admonition (:::tip)"
+  },
+  "theme.admonition.warning": {
+    "message": "crwdns24575:0crwdne24575:0",
+    "description": "The default label used for the Warning admonition (:::warning)"
+  },
+  "theme.blog.sidebar.navAriaLabel": {
+    "message": "crwdns24577:0crwdne24577:0",
+    "description": "The ARIA label for recent posts in the blog sidebar"
+  },
+  "theme.CodeBlock.copied": {
+    "message": "crwdns24579:0crwdne24579:0",
+    "description": "The copied button label on code blocks"
+  },
+  "theme.CodeBlock.copyButtonAriaLabel": {
+    "message": "crwdns24581:0crwdne24581:0",
+    "description": "The ARIA label for copy code blocks button"
+  },
+  "theme.CodeBlock.copy": {
+    "message": "crwdns24583:0crwdne24583:0",
+    "description": "The copy button label on code blocks"
+  },
+  "theme.CodeBlock.wordWrapToggle": {
+    "message": "crwdns24585:0crwdne24585:0",
+    "description": "The title attribute for toggle word wrapping button of code block lines"
+  },
+  "theme.DocSidebarItem.expandCategoryAriaLabel": {
+    "message": "crwdns24587:0{label}crwdne24587:0",
+    "description": "The ARIA label to expand the sidebar category"
+  },
+  "theme.DocSidebarItem.collapseCategoryAriaLabel": {
+    "message": "crwdns24589:0{label}crwdne24589:0",
+    "description": "The ARIA label to collapse the sidebar category"
+  },
+  "theme.NavBar.navAriaLabel": {
+    "message": "crwdns24591:0crwdne24591:0",
+    "description": "The ARIA label for the main navigation"
+  },
+  "theme.NotFound.p1": {
+    "message": "crwdns24593:0crwdne24593:0",
+    "description": "The first paragraph of the 404 page"
+  },
+  "theme.NotFound.p2": {
+    "message": "crwdns24595:0crwdne24595:0",
+    "description": "The 2nd paragraph of the 404 page"
+  },
+  "theme.navbar.mobileLanguageDropdown.label": {
+    "message": "crwdns24597:0crwdne24597:0",
+    "description": "The label for the mobile language switcher dropdown"
+  },
+  "theme.TOCCollapsible.toggleButtonLabel": {
+    "message": "crwdns24599:0crwdne24599:0",
+    "description": "The label used by the button on the collapsible TOC component"
+  },
+  "theme.blog.post.readMore": {
+    "message": "crwdns24601:0crwdne24601:0",
+    "description": "The label used in blog post item excerpts to link to full blog posts"
+  },
+  "theme.blog.post.readMoreLabel": {
+    "message": "crwdns24603:0{title}crwdne24603:0",
+    "description": "The ARIA label for the link to full blog posts from excerpts"
+  },
+  "theme.blog.post.readingTime.plurals": {
+    "message": "crwdns24605:0{readingTime}crwdne24605:0",
+    "description": "Pluralized label for \"{readingTime} min read\". Use as much plural forms (separated by \"|\") as your language support (see https://www.unicode.org/cldr/cldr-aux/charts/34/supplemental/language_plural_rules.html)"
+  },
+  "theme.docs.breadcrumbs.home": {
+    "message": "crwdns24607:0crwdne24607:0",
+    "description": "The ARIA label for the home page in the breadcrumbs"
+  },
+  "theme.docs.sidebar.collapseButtonTitle": {
+    "message": "crwdns24609:0crwdne24609:0",
+    "description": "The title attribute for collapse button of doc sidebar"
+  },
+  "theme.docs.sidebar.collapseButtonAriaLabel": {
+    "message": "crwdns24611:0crwdne24611:0",
+    "description": "The title attribute for collapse button of doc sidebar"
+  },
+  "theme.docs.sidebar.navAriaLabel": {
+    "message": "crwdns24613:0crwdne24613:0",
+    "description": "The ARIA label for the sidebar navigation"
+  },
+  "theme.docs.sidebar.closeSidebarButtonAriaLabel": {
+    "message": "crwdns24615:0crwdne24615:0",
+    "description": "The ARIA label for close button of mobile sidebar"
+  },
+  "theme.docs.sidebar.expandButtonTitle": {
+    "message": "crwdns24617:0crwdne24617:0",
+    "description": "The ARIA label and title attribute for expand button of doc sidebar"
+  },
+  "theme.docs.sidebar.expandButtonAriaLabel": {
+    "message": "crwdns24619:0crwdne24619:0",
+    "description": "The ARIA label and title attribute for expand button of doc sidebar"
+  },
+  "theme.navbar.mobileSidebarSecondaryMenu.backButtonLabel": {
+    "message": "crwdns24621:0crwdne24621:0",
+    "description": "The label of the back button to return to main menu, inside the mobile navbar sidebar secondary menu (notably used to display the docs sidebar)"
+  },
+  "theme.docs.sidebar.toggleSidebarButtonAriaLabel": {
+    "message": "crwdns24623:0crwdne24623:0",
+    "description": "The ARIA label for hamburger menu button of mobile navigation"
+  },
+  "theme.SearchBar.seeAll": {
+    "message": "crwdns24625:0{count}crwdne24625:0"
+  },
+  "theme.SearchPage.documentsFound.plurals": {
+    "message": "crwdns24627:0{count}crwdne24627:0",
+    "description": "Pluralized label for \"{count} documents found\". Use as much plural forms (separated by \"|\") as your language support (see https://www.unicode.org/cldr/cldr-aux/charts/34/supplemental/language_plural_rules.html)"
+  },
+  "theme.SearchPage.existingResultsTitle": {
+    "message": "crwdns24629:0{query}crwdne24629:0",
+    "description": "The search page title for non-empty query"
+  },
+  "theme.SearchPage.emptyResultsTitle": {
+    "message": "crwdns24631:0crwdne24631:0",
+    "description": "The search page title for empty query"
+  },
+  "theme.SearchPage.inputPlaceholder": {
+    "message": "crwdns24633:0crwdne24633:0",
+    "description": "The placeholder for search page input"
+  },
+  "theme.SearchPage.inputLabel": {
+    "message": "crwdns24635:0crwdne24635:0",
+    "description": "The ARIA label for search page input"
+  },
+  "theme.SearchPage.algoliaLabel": {
+    "message": "crwdns24637:0crwdne24637:0",
+    "description": "The ARIA label for Algolia mention"
+  },
+  "theme.SearchPage.noResultsText": {
+    "message": "crwdns24639:0crwdne24639:0",
+    "description": "The paragraph for empty search result"
+  },
+  "theme.SearchPage.fetchingNewResults": {
+    "message": "crwdns24641:0crwdne24641:0",
+    "description": "The paragraph for fetching new search results"
+  },
+  "theme.SearchBar.label": {
+    "message": "crwdns24643:0crwdne24643:0",
+    "description": "The ARIA label and placeholder for search button"
+  },
+  "theme.SearchModal.searchBox.resetButtonTitle": {
+    "message": "crwdns24645:0crwdne24645:0",
+    "description": "The label and ARIA label for search box reset button"
+  },
+  "theme.SearchModal.searchBox.cancelButtonText": {
+    "message": "crwdns24647:0crwdne24647:0",
+    "description": "The label and ARIA label for search box cancel button"
+  },
+  "theme.SearchModal.startScreen.recentSearchesTitle": {
+    "message": "crwdns24649:0crwdne24649:0",
+    "description": "The title for recent searches"
+  },
+  "theme.SearchModal.startScreen.noRecentSearchesText": {
+    "message": "crwdns24651:0crwdne24651:0",
+    "description": "The text when no recent searches"
+  },
+  "theme.SearchModal.startScreen.saveRecentSearchButtonTitle": {
+    "message": "crwdns24653:0crwdne24653:0",
+    "description": "The label for save recent search button"
+  },
+  "theme.SearchModal.startScreen.removeRecentSearchButtonTitle": {
+    "message": "crwdns24655:0crwdne24655:0",
+    "description": "The label for remove recent search button"
+  },
+  "theme.SearchModal.startScreen.favoriteSearchesTitle": {
+    "message": "crwdns24657:0crwdne24657:0",
+    "description": "The title for favorite searches"
+  },
+  "theme.SearchModal.startScreen.removeFavoriteSearchButtonTitle": {
+    "message": "crwdns24659:0crwdne24659:0",
+    "description": "The label for remove favorite search button"
+  },
+  "theme.SearchModal.errorScreen.titleText": {
+    "message": "crwdns24661:0crwdne24661:0",
+    "description": "The title for error screen of search modal"
+  },
+  "theme.SearchModal.errorScreen.helpText": {
+    "message": "crwdns24663:0crwdne24663:0",
+    "description": "The help text for error screen of search modal"
+  },
+  "theme.SearchModal.footer.selectText": {
+    "message": "crwdns24665:0crwdne24665:0",
+    "description": "The explanatory text of the action for the enter key"
+  },
+  "theme.SearchModal.footer.selectKeyAriaLabel": {
+    "message": "crwdns24667:0crwdne24667:0",
+    "description": "The ARIA label for the Enter key button that makes the selection"
+  },
+  "theme.SearchModal.footer.navigateText": {
+    "message": "crwdns24669:0crwdne24669:0",
+    "description": "The explanatory text of the action for the Arrow up and Arrow down key"
+  },
+  "theme.SearchModal.footer.navigateUpKeyAriaLabel": {
+    "message": "crwdns24671:0crwdne24671:0",
+    "description": "The ARIA label for the Arrow up key button that makes the navigation"
+  },
+  "theme.SearchModal.footer.navigateDownKeyAriaLabel": {
+    "message": "crwdns24673:0crwdne24673:0",
+    "description": "The ARIA label for the Arrow down key button that makes the navigation"
+  },
+  "theme.SearchModal.footer.closeText": {
+    "message": "crwdns24675:0crwdne24675:0",
+    "description": "The explanatory text of the action for Escape key"
+  },
+  "theme.SearchModal.footer.closeKeyAriaLabel": {
+    "message": "crwdns24677:0crwdne24677:0",
+    "description": "The ARIA label for the Escape key button that close the modal"
+  },
+  "theme.SearchModal.footer.searchByText": {
+    "message": "crwdns24679:0crwdne24679:0",
+    "description": "The text explain that the search is making by Algolia"
+  },
+  "theme.SearchModal.noResultsScreen.noResultsText": {
+    "message": "crwdns24681:0crwdne24681:0",
+    "description": "The text explains that there are no results for the following search"
+  },
+  "theme.SearchModal.noResultsScreen.suggestedQueryText": {
+    "message": "crwdns24683:0crwdne24683:0",
+    "description": "The text for the suggested query when no results are found for the following search"
+  },
+  "theme.SearchModal.noResultsScreen.reportMissingResultsText": {
+    "message": "crwdns24685:0crwdne24685:0",
+    "description": "The text for the question where the user thinks there are missing results"
+  },
+  "theme.SearchModal.noResultsScreen.reportMissingResultsLinkText": {
+    "message": "crwdns24687:0crwdne24687:0",
+    "description": "The text for the link to report missing results"
+  },
+  "theme.SearchModal.placeholder": {
+    "message": "crwdns24689:0crwdne24689:0",
+    "description": "The placeholder of the input of the DocSearch pop-up modal"
+  },
+  "theme.ErrorPageContent.tryAgain": {
+    "message": "crwdns24691:0crwdne24691:0",
+    "description": "The label of the button to try again rendering when the React error boundary captures an error"
+  },
+  "theme.common.skipToMainContent": {
+    "message": "crwdns24693:0crwdne24693:0",
+    "description": "The skip to content label used for accessibility, allowing to rapidly navigate to main content with keyboard tab/enter navigation"
+  },
+  "theme.tags.tagsPageTitle": {
+    "message": "crwdns24695:0crwdne24695:0",
+    "description": "The title of the tag list page"
+  },
+  "theme.unlistedContent.title": {
+    "message": "crwdns24697:0crwdne24697:0",
+    "description": "The unlisted content banner title"
+  },
+  "theme.unlistedContent.message": {
+    "message": "crwdns24699:0crwdne24699:0",
+    "description": "The unlisted content banner message"
+  },
+  "providers.provider.not_listed.description": {
+    "message": "crwdns24701:0`clone-remote-port`crwdne24701:0"
+  },
+  "providers.provider.wasabihosting.description": {
+    "message": "crwdns24703:0crwdne24703:0"
+  },
+  "pages.download.description.hurricane": {
+    "message": "crwdns24705:0crwdne24705:0"
+  },
+  "theme.blog.author.pageTitle": {
+    "message": "crwdns24707:0{authorName}crwdnd24707:0{nPosts}crwdne24707:0",
+    "description": "The title of the page for a blog author"
+  },
+  "theme.blog.authorsList.pageTitle": {
+    "message": "crwdns24709:0crwdne24709:0",
+    "description": "The title of the authors page"
+  },
+  "theme.blog.authorsList.viewAll": {
+    "message": "crwdns24711:0crwdne24711:0",
+    "description": "The label of the link targeting the blog authors page"
+  },
+  "theme.blog.author.noPosts": {
+    "message": "crwdns24713:0crwdne24713:0",
+    "description": "The text for authors with 0 blog post"
+  },
+  "theme.contentVisibility.unlistedBanner.title": {
+    "message": "crwdns24715:0crwdne24715:0",
+    "description": "The unlisted content banner title"
+  },
+  "theme.contentVisibility.unlistedBanner.message": {
+    "message": "crwdns24717:0crwdne24717:0",
+    "description": "The unlisted content banner message"
+  },
+  "theme.contentVisibility.draftBanner.title": {
+    "message": "crwdns24719:0crwdne24719:0",
+    "description": "The draft content banner title"
+  },
+  "theme.contentVisibility.draftBanner.message": {
+    "message": "crwdns24721:0crwdne24721:0",
+    "description": "The draft content banner message"
+  },
+  "providers.provider.arth_hosting.description": {
+    "message": "crwdns24723:0crwdne24723:0"
+  },
+  "providers.provider.mcforfree.de.description": {
+    "message": "crwdns24725:0`port`crwdnd24725:0`bedrock`crwdne24725:0"
+  },
+  "providers.provider.papernodes.description": {
+    "message": "crwdns24727:0crwdne24727:0"
+  },
+  "providers.provider.wepwawet.description": {
+    "message": "crwdns24729:0crwdne24729:0"
+  },
+  "mdx.setup.host_provider": {
+    "message": "crwdns24731:0crwdne24731:0"
+  },
+  "mdx.setup.self_host": {
+    "message": "crwdns24733:0crwdne24733:0"
+  },
+  "mdx.setup.paper_spigot": {
+    "message": "crwdns24735:0crwdne24735:0"
+  },
+  "mdx.setup.modded_servers": {
+    "message": "crwdns24737:0crwdne24737:0"
+  },
+  "mdx.setup.proxy_servers": {
+    "message": "crwdns24739:0crwdne24739:0"
+  },
+  "mdx.setup.viaproxy": {
+    "message": "crwdns24741:0crwdne24741:0"
+  },
+  "mdx.setup.standalone": {
+    "message": "crwdns24743:0crwdne24743:0"
+  }
+}
