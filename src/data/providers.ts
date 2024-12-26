@@ -97,6 +97,14 @@ export const providersData: Providers = {
             })
         },
         {
+            name: 'MCServerHost',
+            url: 'https://mcserverhost.com/',
+            description: translate({
+                id: 'providers.provider.mcserverhost.description',
+                message: "Under the server configuration, select 'Crossplay' to automatically install Geyser and Floodgate. Join with the connection address. To update Geyser and Floodgate, replace the plugin jars in the server manager and restart the server."
+            })
+        },
+        {
             name: 'Minefort',
             url: 'https://minefort.com/',
             description: translate({
