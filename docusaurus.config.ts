@@ -109,6 +109,17 @@ const config: Config = {
         'docusaurus-plugin-sass',
         './src/plugins/create-versions-json.ts',
         './src/plugins/create-providers-json.ts',
+        [
+            './src/plugins/crowdin-sync.ts',
+            {
+                projectId: 11,
+                markdownFolders: [
+                    { path: 'wiki', destination: 'docusaurus-plugin-content-docs/current' },
+                    { path: 'blog', destination: 'docusaurus-plugin-content-blog' },
+                ],
+                jsonKeyExclusions: [ 'providers.provider.' ]
+            }
+        ]
     ],
     themes: ["docusaurus-theme-openapi-docs"],
 
