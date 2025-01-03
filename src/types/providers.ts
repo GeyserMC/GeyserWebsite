@@ -27,7 +27,6 @@ export type HostingProvider = {
     config?: ConfigDetails; // If present, geyser config must be modified to function
     connect_instructions: React.ReactNode; // what players must input to connect
     additional_step?: React.ReactNode; // e.g.: must enable udp in settings/enable geyser mode
-    description?: React.ReactNode; // TODO yeet
     info?: React.ReactNode; // Additional information. Displayed in info bubble.
     warn?: React.ReactNode; // shaming server hosting providers with issues.
 }
