@@ -49,6 +49,14 @@ export const providersData: Providers = {
             })
         },
         {
+            name: 'AxentHost',
+            url: 'https://axenthost.com/',
+            description: translate({
+                id: 'providers.provider.axenthost.description',
+                message: "Once activated, navigate to the server Variants tab and select GeyserMC. Removing the server files in the Files tab beforehand will be required to make a clean installation of Geyser."
+            })
+        },
+        {
             name: 'Cloud Nord',
             url: 'https://cloudnord.net/',
             description: translate({
