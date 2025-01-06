@@ -53,7 +53,7 @@ export const providersData: Providers = {
             url: 'https://axenthost.com/',
             description: translate({
                 id: 'providers.provider.axenthost.description',
-                message: "Once activated, navigate to the server Variants tab and select GeyserMC. Removing the server files in the Files tab beforehand will be required to make a clean installation of Geyser."
+                message: "Navigate to the server Variants tab and select GeyserMC. By default, vanilla Minecraft servers are created, so removing the server files in the Files tab before switching variant will be required to make a clean installation of Geyser. This happens since the reinstallation is a soft reinstall and the process doesn't remove the old server files from the vanilla variant."
             })
         },
         {
