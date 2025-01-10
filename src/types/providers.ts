@@ -1,22 +1,4 @@
 import React from "react";
-// TODO additional step vs description???
-
-/*
- * Setup guide:
- *
- * - search by name
- *
- * - if unsupported -> end
- *
- * - if custom_install_location: show that
- * - if config present: show that
- * - show connect instructions
- *
- * - if hosting article present: show that
- * - if hosting support present: show that
- *
- * - show blue info banner
- */
 
 export type HostingProvider = {
     name: string;
