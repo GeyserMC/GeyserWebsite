@@ -37,9 +37,17 @@ export const ProviderSelector = ({setProvider}) => {
 
     providers.unshift({
         name: 'Not listed',
-        description: translate({
+        url: null,
+        config: {
+            clone_remote_port: true
+        },
+        connect_instructions: translate({
+            id: 'providers.connect.templates.java_ip_port',
+            message: 'Connect with the Java server IP and Java server port.'
+        }),
+        info: translate({
             id: 'providers.provider.not_listed.description',
-            message: "If your hosting provider is not listed, try enabling the `clone-remote-port` option in the config. Then, restart the server, and try connecting with the same IP and port as on Java Edition. <br> If this does not work, ask your server hosting provider for a UDP port, and use that. For VPS/KVM servers please follow the self-hosting steps."
+            message: "If this does not work, ask your server hosting provider for a UDP port, and use that. For VPS/KVM servers please follow the self-hosting steps."
         })
     } as HostingProvider);
     
