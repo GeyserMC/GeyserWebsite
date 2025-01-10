@@ -490,9 +490,20 @@ export const providersData: Providers = {
         {
             name: 'Heavynode',
             url: 'https://www.heavynode.com/',
-            description: translate({
-                id: 'providers.provider.heavynode.description',
-                message: "Open a port yourself in the networking section of the control panel. Port `19132` is only available with a dedicated IP (contact support), otherwise you will need to use a randomly assigned port. To resolve further connection issues for servers located in Canada and the UK, contact their support with the info found [here](https://wiki.geysermc.org/geyser/port-forwarding/#ovh-and-soyoustart)."
+            connect_instructions: connectionTemplates.default,
+            config: {
+                port_instruction: translate({
+                    id: "providers.provider.heavynode.config.port",
+                    message: "Open a port yourself in the networking section of the control panel."
+                })
+            },
+            info: translate({
+                id: 'providers.provider.heavynode.info',
+                message: "The default bedrock port `19132` is available with a dedicated IP (contact support)."
+            }),
+            warn: translate({
+                id: "providers.provider.heavynode.warn",
+                message: "To resolve further connection issues for servers located in Canada and the UK, contact their support with the info found [here](https://wiki.geysermc.org/geyser/port-forwarding/#ovh-and-soyoustart)."
             })
         },
         {
@@ -507,14 +518,14 @@ export const providersData: Providers = {
             config: configChangeTemplates.cloneRemotePortOrSupport,
             connect_instructions: connectionTemplates.sameAsJava,
         },
-        {
-            name: 'HostEZ',
-            url: 'https://hostez.io/minecraft',
-            description: translate({
-                id: 'providers.provider.hostez.description',
-                message: "Geyser plugin supported with self-install or installed on request with its own port."
-            })
-        },
+        // {
+        //     name: 'HostEZ',
+        //     url: 'https://hostez.io/minecraft',
+        //     description: translate({
+        //         id: 'providers.provider.hostez.description',
+        //         message: "Geyser plugin supported with self-install or installed on request with its own port."
+        //     })
+        // }, // TODO wtf
         {
             name: 'Host Havoc',
             url: 'https://hosthavoc.com/minecraft',
@@ -535,11 +546,18 @@ export const providersData: Providers = {
         {
             name: 'HumbleServers',
             url: 'https://humbleservers.com/',
-            description: translate({
-                id: 'providers.provider.humbleservers.description',
-                message: "Set the Bedrock port to the Java server's port, or to one of the two extra ports, and connect with that port. If the subdomain doesn't work, use your regular numbered IP address."
+            config: {
+                clone_remote_port: true,
+                other_instructions: translate({
+                    id: 'providers.provider.humbleservers.config.other',
+                    message: "Alternatively, use one of the two extra ports."
+                })
+            },
+            connect_instructions: translate({
+                id: 'providers.provider.humbleservers.connect',
+                message: "Connect with the Java server IP and Java server port. If the subdomain doesn't work, use your regular numbered IP address."
             })
-        },
+        }, // TODO
         {
             name: 'KeKsHost',
             url: 'https://kekshost.com/en/',
@@ -553,7 +571,7 @@ export const providersData: Providers = {
                 id: 'providers.provider.kinetic_hosting.description',
                 message: "Open a port in the Network and Ports page, and set that port as the `bedrock port` in the Geyser config. Alternatively, use the Java server's port by enabling the `clone-remote-port` option in the config. Connect with the same IP as on Java, and the port that you have chosen."
             })
-        },
+        }, // TODO
         {
             name: 'MC-HOST24.de',
             url: 'https://mc-host24.de/',
@@ -568,7 +586,7 @@ export const providersData: Providers = {
                 id: 'providers.provider.mcpehost.ru.description',
                 message: "Create an additional port in the server settings and enable UDP protocol, then use that as the `bedrock port` in the config. Connect with the Java IP and that new port."
             })
-        },
+        }, // TODO
         {
             name: 'Meloncube',
             url: 'https://www.meloncube.net/',
@@ -672,7 +690,7 @@ export const providersData: Providers = {
                 message: "Set `bedrock port` to the Java server's port (either by setting it yourself, or enabling `clone-remote-port`). You can also create a secondary port in the `network tab` and use that."
             }),
             warn: warnings.ovhFirewallMisconfiguration
-        },
+        }, // TODO
         {
             name: 'ScalaCube',
             url: 'https://scalacube.com/',
