@@ -4,9 +4,9 @@ import { Providers } from "../types/providers"
 // Do not modify the structure of this file without updating the extraction logic in create-providers-json.ts
 
 const connectionTemplates = {
-    default: translate({
+    asConfigured: translate({
         id: 'providers.connect.templates.default.as_configured',
-        message: "Connect using the Java server IP and Bedrock port set in your Geyser config."
+        message: "Connect using the Java server IP and the Bedrock port set in your Geyser config."
     }),
     bedrockPort: translate({
        id: 'providers.connect.templates.default_bedrock_port',
@@ -103,7 +103,7 @@ export const providersData: Providers = {
         {
             name: 'Arth Hosting',
             url: 'https://arthmc.xyz/',
-            connect_instructions: connectionTemplates.default,
+            connect_instructions: connectionTemplates.asConfigured,
             custom_install_location: translate({
                 id: 'providers.provider.arth_hosting.install',
                 message: "Geyser is installed and configured on all servers by default. You can disable it in the 'Manage Plugins' menu."
@@ -127,7 +127,7 @@ export const providersData: Providers = {
         {
             name: 'Cloud Nord',
             url: 'https://cloudnord.net/',
-            connect_instructions: connectionTemplates.default,
+            connect_instructions: connectionTemplates.asConfigured,
             hosting_support: "https://cloudnord.net/submitticket.php",
             info: translate({
                 id: 'providers.provider.cloud_nord.description',
@@ -232,7 +232,7 @@ export const providersData: Providers = {
             config: {
               other_instructions: translate({
                   id: 'providers.provider.config.other',
-                  message: "If you did not order the server from the [cross-platform servers page](https://piglinhost.com/minecraft-java-hosting.html), contact the support for help."
+                  message: "If you did not order the server from the [cross-platform servers page](https://piglinhost.com/minecraft-java-hosting.html), contact the support for help with Geyser setup."
               })
             }
         },
@@ -254,14 +254,17 @@ export const providersData: Providers = {
                 message: "Geyser is installed and configured on all servers by default."
             })
         },
-        // { TODO outdated instructions
-        //     name: 'Server.pro (Dedicated IP servers)',
-        //     url: 'https://server.pro',
-        //     custom_install_location: translate({
-        //         id: 'providers.provider.server.pro.vps.description',
-        //         message: "Select Geyser in the [Service Type Menu](https://i.imgur.com/loSNmvu.png), Floodgate can be enabled on the dashboard configuration. For manual installation: If you are using a PRO or a VPS plan, you can use any port, which can be opened on the Firewall tab."
-        //     })
-        // },
+        {
+            name: 'Server.pro (Gaming plans)',
+            url: 'https://server.pro',
+            config: {
+                port_instruction: translate({
+                    id: 'providers.provider.server_pro.port',
+                    message: "Allocate a UDP port in the firewall tab, and set 'bedrock port' to it."
+                })
+            },
+            connect_instructions: connectionTemplates.asConfigured
+        },
         {
             name: 'Snakecraft Hosting',
             url: 'https://snakecrafthosting.com/',
@@ -304,28 +307,31 @@ export const providersData: Providers = {
         {
             name: 'Akliz',
             url: 'https://www.akliz.net/',
-            connect_instructions: connectionTemplates.default,
+            connect_instructions: connectionTemplates.asConfigured,
             config: configChangeTemplates.assignPort,
         },
         {
             name: 'Aquatis',
             url: 'https://aquatis.host/',
-            connect_instructions: connectionTemplates.default,
+            connect_instructions: connectionTemplates.asConfigured,
             config: configChangeTemplates.contactHostForPort,
         },
         {
             name: 'BisectHosting',
             url: 'https://www.bisecthosting.com/',
             hosting_support: 'https://www.bisecthosting.com/clients/index.php?rp=/knowledgebase/193/How-to-install-Geyser-and-Floodgate-on-a-Minecraft-Java-server.html',
-            connect_instructions: connectionTemplates.default,
+            connect_instructions: connectionTemplates.asConfigured,
             config: {
                 port: 19132,
                 address_instruction: translate({
                     id: 'providers.provider.bisecthosting.config.address',
                     message: "Set 'bedrock address' to the public IP of your server (e.g. `address: 51.79.129.18`)"
-                }),
-                other_instructions: "Under the home tab, select 'Enable UDP Network' and restart the server."
+                })
             },
+            additional_step: translate({
+                id: 'providers.provider.additional_step',
+                message: "Under the home tab, select 'Enable UDP Network' and restart the server."
+            }),
             warn: translate({
                 id: 'providers.provider.bisecthosting.info',
                 message: "If you still cannot connect after following these instructions, contact Bisects support as they reportedly have UDP disabled on some nodes."
@@ -334,14 +340,14 @@ export const providersData: Providers = {
         {
             name: 'Birdflop',
             url: 'https://birdflop.com/',
-            connect_instructions: connectionTemplates.default,
+            connect_instructions: connectionTemplates.asConfigured,
             config: {
                 port_instruction: translate({
                     id: 'providers.provider.birdflop.config.port',
                     message: "Open an allocation in the networks tab, and set 'bedrock address' to it."
                 }),
                 other_instructions: translate({
-                    id: 'providers.provider.birdflop.other_instructions',
+                    id: 'providers.provider.birdflop.other',
                     message: "If you have a dedicated IP, you can open a ticket to request allocation of the default Bedrock port (19132)"
                 })
             }
@@ -353,7 +359,7 @@ export const providersData: Providers = {
             connect_instructions: connectionTemplates.bedrockPort,
             config: {
                 other_instructions: translate({
-                    id: 'providers.provider.bloom.other_instructions',
+                    id: 'providers.provider.bloom.other',
                     message: "Create the allocation for port 19132 in the 'port and proxies' tab on the panel."
                 })
             }
@@ -375,7 +381,7 @@ export const providersData: Providers = {
             url: 'https://craft-hosting.ru/',
             config: configChangeTemplates.cloneRemotePort,
             connect_instructions: connectionTemplates.sameAsJava,
-            info: translate({
+            warn: translate({
                 id: 'providers.provider.craft-hosting.description',
                 message: "This provider appears to only provide service in Russia."
             })
@@ -421,13 +427,13 @@ export const providersData: Providers = {
         {
             name: 'FakaHeda',
             url: 'https://fakaheda.eu/',
-            connect_instructions: connectionTemplates.default,
+            connect_instructions: connectionTemplates.asConfigured,
             config: configChangeTemplates.cloneRemotePortOrCustom
         },
         {
             name: 'FalixNodes',
             url: 'https://falixnodes.net/',
-            connect_instructions: connectionTemplates.default,
+            connect_instructions: connectionTemplates.asConfigured,
             config: {
                 port_instruction: translate({
                     id: 'providers.provider.falixnodes.config.port',
@@ -439,7 +445,7 @@ export const providersData: Providers = {
             name: 'Ferox Hosting',
             url: 'https://feroxhosting.nl',
             hosting_article: "https://feroxhosting.nl/kb/",
-            connect_instructions: connectionTemplates.default,
+            connect_instructions: connectionTemplates.asConfigured,
             config: configChangeTemplates.assignPort,
         },
         {
@@ -485,12 +491,12 @@ export const providersData: Providers = {
                     message: "Set 'bedrock address' to the Java server IP."
                 })
             },
-            connect_instructions: connectionTemplates.default
+            connect_instructions: connectionTemplates.asConfigured
         },
         {
             name: 'Heavynode',
             url: 'https://www.heavynode.com/',
-            connect_instructions: connectionTemplates.default,
+            connect_instructions: connectionTemplates.asConfigured,
             config: {
                 port_instruction: translate({
                     id: "providers.provider.heavynode.config.port",
@@ -510,7 +516,7 @@ export const providersData: Providers = {
             name: 'Hicoria',
             url: 'https://hicoria.com/en/',
             config: configChangeTemplates.allocatedPort,
-            connect_instructions: connectionTemplates.default
+            connect_instructions: connectionTemplates.asConfigured
         },
         {
             name: 'Hosterfy',
@@ -518,14 +524,25 @@ export const providersData: Providers = {
             config: configChangeTemplates.cloneRemotePortOrSupport,
             connect_instructions: connectionTemplates.sameAsJava,
         },
-        // {
-        //     name: 'HostEZ',
-        //     url: 'https://hostez.io/minecraft',
-        //     description: translate({
-        //         id: 'providers.provider.hostez.description',
-        //         message: "Geyser plugin supported with self-install or installed on request with its own port."
-        //     })
-        // }, // TODO wtf
+        {
+            name: 'HostEZ',
+            url: 'https://hostez.io/minecraft',
+            config: {
+                port_instruction: translate({
+                    id: 'providers.provider.hostez.config.port',
+                    message: "Add 1 to the port you were assigned (e.g. 25565 -> 25566), and set that as the 'bedrock port' in the config."
+                }),
+                other_instructions: translate({
+                    id: 'providers.provider.hostez.config.other',
+                    message: "Different ports can be set in the Allocations tab. Premium products with a dedicated IP can use the default port (19132)."
+                })
+            },
+            connect_instructions: connectionTemplates.asConfigured,
+            info: translate({
+                id: 'providers.provider.hostez.info',
+                message: "Most MC plans also include UDP DDoS protection, which can be used with Geyser."
+            })
+        },
         {
             name: 'Host Havoc',
             url: 'https://hosthavoc.com/minecraft',
@@ -541,7 +558,7 @@ export const providersData: Providers = {
                   message: "Create a new port in the \"Allocations\" tab and set 'bedrock port' to that port."
               })
             },
-            connect_instructions: connectionTemplates.default
+            connect_instructions: connectionTemplates.asConfigured
         },
         {
             name: 'HumbleServers',
@@ -550,14 +567,14 @@ export const providersData: Providers = {
                 clone_remote_port: true,
                 other_instructions: translate({
                     id: 'providers.provider.humbleservers.config.other',
-                    message: "Alternatively, use one of the two extra ports."
+                    message: "Alternatively to using the Java server port, use one of the two extra ports."
                 })
             },
             connect_instructions: translate({
                 id: 'providers.provider.humbleservers.connect',
                 message: "Connect with the Java server IP and Java server port. If the subdomain doesn't work, use your regular numbered IP address."
             })
-        }, // TODO
+        },
         {
             name: 'KeKsHost',
             url: 'https://kekshost.com/en/',
@@ -567,11 +584,15 @@ export const providersData: Providers = {
             name: 'Kinetic Hosting',
             url: 'https://kinetichosting.net/',
             hosting_article: 'https://www.kinetichosting.net/articles/minecraft-java/plugins/geyser',
-            description: translate({
-                id: 'providers.provider.kinetic_hosting.description',
-                message: "Open a port in the Network and Ports page, and set that port as the `bedrock port` in the Geyser config. Alternatively, use the Java server's port by enabling the `clone-remote-port` option in the config. Connect with the same IP as on Java, and the port that you have chosen."
-            })
-        }, // TODO
+            config: {
+                clone_remote_port: true,
+                other_instructions: translate({
+                    id: 'providers.provider.config.other',
+                    message: "Alternatively to using the Java server port, open a port in the Network and Ports page, and set that port as the `bedrock port` in the Geyser config."
+                })
+            },
+            connect_instructions: connectionTemplates.asConfigured
+        },
         {
             name: 'MC-HOST24.de',
             url: 'https://mc-host24.de/',
@@ -581,12 +602,14 @@ export const providersData: Providers = {
         {
             name: 'MCPEhost.ru',
             url: 'https://mcpehost.ru',
-            connect_instructions: connectionTemplates.default,
-            description: translate({
-                id: 'providers.provider.mcpehost.ru.description',
-                message: "Create an additional port in the server settings and enable UDP protocol, then use that as the `bedrock port` in the config. Connect with the Java IP and that new port."
-            })
-        }, // TODO
+            connect_instructions: connectionTemplates.asConfigured,
+            config: {
+                port_instruction: translate({
+                    id: 'providers.provider.mcpehost_ru.config.port',
+                    message: "Create an additional port in the server settings and enable UDP protocol, then use that as the `bedrock port`."
+                })
+            }
+        },
         {
             name: 'Meloncube',
             url: 'https://www.meloncube.net/',
@@ -629,7 +652,7 @@ export const providersData: Providers = {
             name: 'Nitrado',
             url: 'https://nitrado.net',
             hosting_article: 'https://wiki.nitrado.net/en/How_to_install_GeyserMC_and_Floodgate',
-            connect_instructions: connectionTemplates.default,
+            connect_instructions: connectionTemplates.asConfigured,
             config: {
                 port_instruction: translate({
                     id: 'providers.provider.nitrado.config.port',
@@ -685,12 +708,16 @@ export const providersData: Providers = {
         {
             name: 'Revivenode',
             url: 'https://revivenode.com/',
-            description: translate({
-                id: 'providers.provider.revivenode.description',
-                message: "Set `bedrock port` to the Java server's port (either by setting it yourself, or enabling `clone-remote-port`). You can also create a secondary port in the `network tab` and use that."
-            }),
+            config: {
+                clone_remote_port: true,
+                other_instructions: translate({
+                    id: 'providers.provider.revivenode.config.other',
+                    message: "You can also create a secondary port in the `network tab` and use that as the `bedrock port`."
+                })
+            },
+            connect_instructions: connectionTemplates.sameAsJava,
             warn: warnings.ovhFirewallMisconfiguration
-        }, // TODO
+        },
         {
             name: 'ScalaCube',
             url: 'https://scalacube.com/',
@@ -706,7 +733,7 @@ export const providersData: Providers = {
         {
             name: 'Skynode.pro',
             url: 'https://skynode.pro/',
-            connect_instructions: connectionTemplates.default,
+            connect_instructions: connectionTemplates.asConfigured,
             config: {
                 port_instruction: translate({
                     id: 'providers.provider.skynode.pro.config.port',
@@ -780,17 +807,17 @@ export const providersData: Providers = {
             config: {
                 clone_remote_port: true,
                 other_instructions: translate({
-                    id: 'providers.provider.volthosting.description',
+                    id: 'providers.provider.volthosting.config.other',
                     message: "Alternatively, request an additional port, or buy a dedicated IP address."
                 })
             },
-            connect_instructions: connectionTemplates.default,
+            connect_instructions: connectionTemplates.asConfigured,
         },
         {
             name: 'Vultam',
             url: 'https://vultam.net/',
             hosting_support: 'https://clients.vultam.net/submitticket.php?step=2&deptid=1',
-            connect_instructions: connectionTemplates.default,
+            connect_instructions: connectionTemplates.asConfigured,
             config: {
                 clone_remote_port: true,
                 other_instructions: translate({
@@ -812,10 +839,10 @@ export const providersData: Providers = {
         {
             name: "Wepwawet",
             url: "https://wepwawet.net/",
-            connect_instructions: connectionTemplates.default,
+            connect_instructions: connectionTemplates.asConfigured,
             config: {
                 other_instructions: translate({
-                    id: 'providers.provider.wepwawet.description',
+                    id: 'providers.provider.wepwawet.config.other',
                     message: "Add a new port in the Network tab. Use this new port as the bedrock port."
                 })
             }
@@ -826,7 +853,7 @@ export const providersData: Providers = {
             config: {
                 clone_remote_port: true,
                 other_instructions: translate({
-                    id: 'providers.provider.winternode.config.other_description',
+                    id: 'providers.provider.winternode.config.other',
                     message: "Alternatively, request an additional port, or buy a dedicated IP address."
                 })
             },
@@ -836,10 +863,10 @@ export const providersData: Providers = {
             name: 'WitherHosting',
             url: 'https://witherhosting.com/',
             hosting_article: 'https://support.witherhosting.com/en/article/how-to-install-and-use-geysermc-1xn5l6v',
-            connect_instructions: connectionTemplates.default,
+            connect_instructions: connectionTemplates.asConfigured,
             config: {
               other_instructions: translate({
-                  id: 'providers.provider.witherhosting.description',
+                  id: 'providers.provider.witherhosting.config.other',
                   message: "Either use the Java server's port, or create a port in the ports manager on the panel and use that for Bedrock."
               })
             }
