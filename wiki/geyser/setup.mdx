@@ -9,8 +9,8 @@ import TabItem from '@theme/TabItem'
 import Admonition from '@theme/Admonition';
 import Translate from "@docusaurus/Translate";
 
-import ModdedServers from '@site/wiki/geyser/setup/provider/modded-servers.mdx'
-import ProxyServers from '@site/wiki/geyser/setup/provider/proxy-servers.mdx'
+import ModdedServers from '@site/wiki/geyser/setup/provider/_modded-servers.mdx'
+import ProxyServers from '@site/wiki/geyser/setup/provider/_proxy-servers.mdx'
 import PaperSpigot from '@site/wiki/geyser/setup/provider/_paper-spigot.mdx'
 
 import ModdedServersSelf from '@site/wiki/geyser/setup/self/modded-servers.mdx'
@@ -43,10 +43,10 @@ export const SetupGuide = () => {
                                     <PaperSpigot provider={provider} />
                                 </TabItem>
                                 <TabItem value='modded-servers' label={<PlatformIcon img={ModIcon} text='Modded Servers' />}>
-                                    <ModdedServers />
+                                    <ModdedServers provider={provider}/>
                                 </TabItem>
                                 <TabItem value='proxy-servers' label={<PlatformIcon img={ProxyServersIcon} text='Proxy Servers' />}>
-                                    <ProxyServers />
+                                    <ProxyServers provider={provider}/>
                                 </TabItem>
                             </Tabs>
                         ) : (<Admonition type="warning" title={<Translate id='components.provider.no_support'>Not supported</Translate>}>{provider.warn}</Admonition>)}

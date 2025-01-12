@@ -62,7 +62,7 @@ const configChangeTemplates = {
         clone_remote_port: true,
         other_instructions: translate({
             id: 'providers.config.templates.custom_port_dedicated_ip',
-            message: "If you have a dedicated IP, you can contact the support to use a custom port."
+            message: "If you have a dedicated IP, you can contact the server hosting provider's support to use a custom port."
         })
     },
     javaAddress: {

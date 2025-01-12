@@ -46,8 +46,8 @@ export const ProviderSelector = ({setProvider}) => {
             message: 'Connect with the Java server IP and Java server port.'
         }),
         info: translate({
-            id: 'providers.provider.not_listed.description',
-            message: "If this does not work, ask your server hosting provider for a UDP port, and use that. For VPS/KVM servers please follow the self-hosting steps."
+            id: 'providers.provider.not_listed.info',
+            message: "If these instructions do not work, contact your server hosting provider and ask for a UDP port. Then, set clone-remote-port to false, and set 'bedrock port' to the port you got. For VPS/KVM servers, please follow the self-hosting steps."
         })
     } as HostingProvider);
     
