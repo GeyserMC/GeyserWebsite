@@ -1,6 +1,7 @@
 ---
 title: Creating a Startup Script
 description: Learn how to create a startup script for Geyser-Standalone.
+crowdin_page_id: 0d187a8f-ad87-4d07-b122-4ae5f990e2cb
 ---
 
 # Creating a Startup Script for Geyser-Standalone

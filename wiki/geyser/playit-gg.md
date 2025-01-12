@@ -1,6 +1,8 @@
 ---
 title: playit.gg Setup
 description: How to set up playit.gg to use Geyser without port forwarding.
+crowdin_sync: true
+crowdin_page_id: 3aee52d0-b943-4e37-8797-4a83ef55e42a
 ---
 
 ## Prerequisites {#prerequisites}

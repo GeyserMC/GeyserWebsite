@@ -19,7 +19,7 @@ const config: Config = {
 
     i18n: {
         defaultLocale: 'en',
-        locales: ['en', 'de', 'crp'],
+        locales: ['en', 'ar','crp', 'cs', 'de', 'fr', 'it', 'ja', 'ru', 'tr', 'uk', 'zh-CN'],
         localeConfigs: {
             crp: {
                 label: 'Crowdin',

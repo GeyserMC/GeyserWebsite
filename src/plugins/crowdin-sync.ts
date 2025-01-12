@@ -3,13 +3,14 @@ import { I18nConfig, LoadContext, Plugin, PluginOptions } from '@docusaurus/type
 import crowdin, { Credentials, ResponseObject, SourceFiles, SourceFilesModel, UploadStorage } from '@crowdin/crowdin-api-client';
 import path from 'path';
 import fs from 'fs';
+import logger from '@docusaurus/logger';
 import { finished } from "stream/promises";
 import { Readable } from 'stream';
 import { ReadableStream } from 'stream/web';
 import matter from 'gray-matter';
 import { safeGlobby } from '@docusaurus/utils';
 import crypto from 'crypto';
-import retry from 'retry'
+import retry from 'retry';
 
 type TranslationJson = {
     [key: string]: {
@@ -31,19 +32,20 @@ type Locales = {
 
 type MarkdownFolders = {
     path: string,
-    destionation: string,
+    destination: string,
 }[];
+
+const PLUGIN_NAME = 'docusaurus-plugin-crowdin-sync';
 
 const crowdinSyncPlugin = (context: LoadContext, options: PluginOptions): Plugin => {
     return {
-        name: 'docusaurus-plugin-crowdin-sync',
+        name: PLUGIN_NAME,
         extendCli(cli) {
             cli
                 .command('crowdin-sync')
                 .description('Sync translations with Crowdin')
                 .action(async () => {
-                    const buildDir = path.join(context.siteDir, '.docusaurus');
-                    const pluginDir = path.join(buildDir, 'docusaurus-plugin-crowdin-sync');
+                    const pluginDir = path.join(context.generatedFilesDir, PLUGIN_NAME);
 
                     const credentials: Credentials = {
                         token: process.env.CROWDIN_TOKEN || '',
@@ -56,6 +58,10 @@ const crowdinSyncPlugin = (context: LoadContext, options: PluginOptions): Plugin
                     const markdownFolders = options.markdownFolders as MarkdownFolders;
 
                     await uploadAction({ context, options, crowdinClient, projectId, pluginDir, locales, markdownFolders });
+                    logger.info('Uploaded files to Crowdin');
+
+                    await downloadAction({ context, options, crowdinClient, projectId, pluginDir, locales, markdownFolders });
+                    logger.info('Downloaded translations from Crowdin');
                 })
         },
     }
@@ -99,7 +105,7 @@ const uploadAction = async (inp: {
         unprocessedFiles.add(file);
     }
 
-    const jsonFolder = locales.localeConfigs[locales.defaultLocale].path;
+    const jsonFolder = path.join(locales.path, locales.localeConfigs[locales.defaultLocale].path);
     const jsonFiles = await safeGlobby(
         [path.join(context.siteDir, jsonFolder)],
         { expandDirectories: ['**/*.json'] }
@@ -291,72 +297,74 @@ const downloadAction = async (inp: {
     const { translationsApi } = crowdinClient;
 
     const build = await translationsApi.buildProject(projectId);
+    
+    let retries = 0;
 
-    const operation = retry.operation({
-        retries: 60,
-        factor: 2,
-        minTimeout: 1000,
-        maxTimeout: 10000,
-    });
-
-    operation.attempt(async () => {
+    while (retries < 60) {
         const status = await translationsApi.checkBuildStatus(projectId, build.data.id);
-
-        switch (status.data.status) {
-            case 'finished':
-                const translations = await translationsApi.downloadTranslations(projectId, build.data.id);
-                const zipPath = path.join(pluginDir, 'translations.zip');
-                await downloadFile({ url: translations.data.url, filePath: zipPath });
-                const zip = new AdmZip(zipPath);
-
-
-                for (const entry of zip.getEntries()) {
-                    if (entry.isDirectory) continue;
-
-                    const entryParts = entry.entryName.split('/');
-                    if (entryParts.length < 2) continue;
-
-                    const locale = entryParts[0];
-                    const entryPath = entryParts.slice(1).join('/');
-
-                    if (entryPath.startsWith(path.join(locales.path, '/'))) {
-                        
-                    }
-
-                    const markdownFolder = markdownFolders.find(f => entryPath.startsWith(path.join(f.path, '/')));
-                    if (markdownFolder) {
-                        const destinationPath = path.join(
-                            context.siteDir, 
-                            locales.path, 
-                            locales.localeConfigs[locales.defaultLocale].path, 
-                            markdownFolder.destionation,
-                            entryPath.slice(markdownFolder.path.length)
-                        );
-
-                        const destinationDir = path.dirname(destinationPath);
-                        if (!fs.existsSync(destinationDir)) {
-                            fs.mkdirSync(destinationDir, { recursive: true });
-                        }
-
-                        zip.extractEntryTo(entry, destinationDir, false, true);
-                    }
-                }
-
-                break;
-            case 'inProgress':
-                operation.retry(new Error('Translations build not finished'));
-                break;
-            case 'failed':
-                operation.stop();
-                throw new Error('Translations build failed');
-            case 'canceled':
-                operation.stop();
-                throw new Error('Translations build canceled');
-            default:
-                operation.stop();
-                throw new Error('Unknown translations build status');
+        logger.info(`Translation bundle build status: ${status.data.status}`);
+        if (status.data.status === 'finished') break;
+        if (status.data.status === 'failed') {
+            throw new Error('Translations build failed');
         }
-    });
+
+        await new Promise(resolve => setTimeout(resolve, 1000));
+        retries++;
+    }
+
+    const translations = await translationsApi.downloadTranslations(projectId, build.data.id);
+    const zipPath = path.join(pluginDir, 'translations.zip');
+    await downloadFile({ url: translations.data.url, filePath: zipPath });
+    const zip = new AdmZip(zipPath);
+
+
+    for (const entry of zip.getEntries()) {
+        if (entry.isDirectory) continue;
+
+        const entryParts = entry.entryName.split('/');
+        if (entryParts.length < 2) continue;
+
+        const locale = entryParts[0];
+        if (locale === locales.defaultLocale) continue;
+
+        const entryPath = entryParts.slice(1).join('/');
+
+        if (entryPath.startsWith(path.join(locales.path, '/'))) {
+            const destinationPath = path.join(
+                context.siteDir, 
+                locales.path, 
+                locales.localeConfigs[locale].path, 
+                entryPath.slice(locales.path.length + locales.localeConfigs[locales.defaultLocale].path.length + 1)
+            );
+
+            const destinationDir = path.dirname(destinationPath);
+            if (!fs.existsSync(destinationDir)) {
+                fs.mkdirSync(destinationDir, { recursive: true });
+            }
+
+            zip.extractEntryTo(entry, destinationDir, false, true);
+            continue;
+        }
+
+        const markdownFolder = markdownFolders.find(f => entryPath.startsWith(path.join(f.path, '/')));
+        if (markdownFolder) {
+            const destinationPath = path.join(
+                context.siteDir, 
+                locales.path, 
+                locales.localeConfigs[locale].path, 
+                markdownFolder.destination,
+                entryPath.slice(markdownFolder.path.length)
+            );
+
+            const destinationDir = path.dirname(destinationPath);
+            if (!fs.existsSync(destinationDir)) {
+                fs.mkdirSync(destinationDir, { recursive: true });
+            }
+
+            zip.extractEntryTo(entry, destinationDir, false, true);
+            continue;
+        }
+    }
 };
 
 const populateLocales = (inp: { i18n: I18nConfig }): Locales => {
@@ -364,17 +372,19 @@ const populateLocales = (inp: { i18n: I18nConfig }): Locales => {
 
     const defaultLocale = i18n.defaultLocale ?? 'en';
     const locales = i18n.locales ?? [defaultLocale];
-    const path = i18n.path ?? 'i18n';
+    const localePath = i18n.path ?? 'i18n';
 
     const localeConfigs: { [locale: string]: { path: string } } = {};
     for (const locale of locales) {
-        localeConfigs[locale].path = (i18n.localeConfigs[locale] ?? {}).path ?? locale;
+        localeConfigs[locale] = {
+            path: (i18n.localeConfigs[locale] ?? {}).path ?? locale,
+        };
     }
 
     return {
         defaultLocale,
         locales,
-        path,
+        path: localePath,
         localeConfigs,
     }
 };
@@ -419,6 +429,7 @@ const fetchPaginatedCrowdinData = async <T>(
 
 const downloadFile = async (inp: { url: string, filePath: string }) => {
     const { url, filePath } = inp;
+    logger.info(`Downloading translation file to ${filePath}`);
     const { body } = await fetch(url);
     const stream = fs.createWriteStream(filePath);
     await finished(Readable.fromWeb(body as ReadableStream<any>).pipe(stream));
@@ -486,8 +497,8 @@ const createCrowdinDirectory = async (inp: {
     const remainingDirs: string[] = [];
     let parentDirId: number = null;
 
-    for (let i = pathArr.length; i > 1; i--) {
-        const dirPath = pathArr.slice(0, i).join('/');
+    for (let i = pathArr.length; i > 0; i--) {
+        const dirPath = path.join('/', pathArr.slice(0, i).join('/'));
         const dir = directories.find(d => d.data.path === dirPath);
 
         if (dir) {
@@ -504,9 +515,10 @@ const createCrowdinDirectory = async (inp: {
     for (const dir of remainingDirs) {
         const newDir = await sourceFilesApi.createDirectory(projectId, {
             name: dir,
-            directoryId: parentDirId,
+            directoryId: parentDirId ?? undefined,
         });
 
+        directories.push(newDir);
         parentDirId = newDir.data.id;
     }
 

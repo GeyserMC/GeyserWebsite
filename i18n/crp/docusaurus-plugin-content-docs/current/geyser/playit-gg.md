@@ -1,37 +1,39 @@
 ---
-title: crwdns19187:0crwdne19187:0
-description: crwdns19189:0crwdne19189:0
+title: crwdns27467:0crwdne27467:0
+description: crwdns27469:0crwdne27469:0
+crowdin_sync: true
+crowdin_page_id: crwdns27471:0crwdne27471:0
 ---
 
-## crwdns19191:0{#prerequisites}crwdne19191:0
+## crwdns27473:0{#prerequisites}crwdne27473:0
 
 :::info
-crwdns19193:0crwdne19193:0
+crwdns27475:0crwdne27475:0
 :::
 
 :::warning
-crwdns19195:0crwdne19195:0 crwdns19197:0crwdne19197:0
+crwdns27477:0crwdne27477:0 crwdns27479:0crwdne27479:0
 :::
 
-- crwdns19199:0crwdne19199:0
+- crwdns27481:0crwdne27481:0
 
-## crwdns19201:0{#setup}crwdne19201:0
+## crwdns27483:0{#setup}crwdne27483:0
 
-1. crwdns19203:0[crwdnd19203:0](https://playit.gg/)crwdne19203:0 crwdns19205:0crwdne19205:0 crwdns19207:0crwdne19207:0
-2. crwdns19209:0crwdne19209:0 crwdns19211:0crwdne19211:0
-   crwdns19213:0![crwdnd19213:0](/img/wiki/playit-gg/running.png)crwdne19213:0
-3. crwdns19215:0crwdne19215:0 crwdns19217:0crwdne19217:0
-   crwdns19219:0![crwdnd19219:0](/img/wiki/playit-gg/add_tunnel.png)crwdne19219:0
-4. crwdns19221:0crwdne19221:0 crwdns19223:0![crwdnd19223:0](/img/wiki/playit-gg/added_tunnel.png)crwdne19223:0 crwdns19225:0crwdne19225:0
-5. crwdns19227:0crwdne19227:0 crwdns19229:0crwdne19229:0 crwdns19231:0crwdne19231:0
-6. crwdns19233:0crwdne19233:0 crwdns19235:0crwdne19235:0 crwdns19237:0crwdne19237:0
-   crwdns19239:0[crwdnd19239:0](#troubleshooting)crwdne19239:0
+1. crwdns27485:0[crwdnd27485:0](https://playit.gg/)crwdne27485:0 crwdns27487:0crwdne27487:0 crwdns27489:0crwdne27489:0
+2. crwdns27491:0crwdne27491:0 crwdns27493:0crwdne27493:0
+   crwdns27495:0![crwdnd27495:0](/img/wiki/playit-gg/running.png)crwdne27495:0
+3. crwdns27497:0crwdne27497:0 crwdns27499:0crwdne27499:0
+   crwdns27501:0![crwdnd27501:0](/img/wiki/playit-gg/add_tunnel.png)crwdne27501:0
+4. crwdns27503:0crwdne27503:0 crwdns27505:0![crwdnd27505:0](/img/wiki/playit-gg/added_tunnel.png)crwdne27505:0 crwdns27507:0crwdne27507:0
+5. crwdns27509:0crwdne27509:0 crwdns27511:0crwdne27511:0 crwdns27513:0crwdne27513:0
+6. crwdns27515:0crwdne27515:0 crwdns27517:0crwdne27517:0 crwdns27519:0crwdne27519:0
+   crwdns27521:0[crwdnd27521:0](#troubleshooting)crwdne27521:0
 
-## crwdns19241:0{#troubleshooting}crwdne19241:0
+## crwdns27523:0{#troubleshooting}crwdne27523:0
 
-### crwdns19243:0crwdne19243:0 crwdns19245:0{#i-cant-connect-to-my-server}crwdne19245:0
+### crwdns27525:0crwdne27525:0 crwdns27527:0{#i-cant-connect-to-my-server}crwdne27527:0
 
-- crwdns19247:0crwdne19247:0
-- crwdns19249:0[crwdnd19249:0](/wiki/geyser/fixing-unable-to-connect-to-world/)crwdne19249:0
-- crwdns19251:0crwdne19251:0 crwdns19253:0crwdne19253:0
-- crwdns19255:0`bedrock`crwdnd19255:0`port`crwdnd19255:0`19132`crwdne19255:0
+- crwdns27529:0crwdne27529:0
+- crwdns27531:0[crwdnd27531:0](/wiki/geyser/fixing-unable-to-connect-to-world/)crwdne27531:0
+- crwdns27533:0crwdne27533:0 crwdns27535:0crwdne27535:0
+- crwdns27537:0`bedrock`crwdnd27537:0`port`crwdnd27537:0`19132`crwdne27537:0

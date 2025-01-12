@@ -1,6 +1,7 @@
 ---
 title: Developer Guide
 description: A guide for developers who want to contribute to GeyserMC projects.
+crowdin_page_id: 4bb5f78c-33f5-4fb1-8950-a01e8f896f39
 ---
 
 # Compiling {#compiling}

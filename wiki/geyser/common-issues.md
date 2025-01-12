@@ -1,6 +1,9 @@
 ---
 title: Common Issues
-description: Common issues that people may encounter with Geyser and potential fixes for them.
+description: >-
+  Common issues that people may encounter with Geyser and potential fixes for
+  them.
+crowdin_page_id: 301468c5-271b-4c31-b7a3-35fa55db0bf2
 ---
 
 # Common Issues
@@ -71,7 +74,7 @@ This message can occur with a Floodgate setup. Usually, it means that a misconfi
 
 If you have your configuration set up like this, put simply, it won't work. If authentication for the Java server is set to online, it is expected Geyser is configured the same way. The server requires a valid Minecraft: Java Edition account, and if you aren't logging into one with Geyser, then you will be unable to join the server. If your configuration is set up properly and you're still getting this issue, it could be that your credentials are invalid.
 
-### Connection Refused: \<INSERT IP AND/OR DOMAIN\> {#connection-refused-insert-ip-andor-domain}
+### Connection Refused: [INSERT IP AND/OR DOMAIN] {#connection-refused-insert-ip-andor-domain}
 
 Connection Refused usually means that a Java server could not be found on that port, or the server denied access to the connection on a network level. 
 The latter can happen with anti-DDOS plugins such as TCPShield, but otherwise ensure that the server you're trying to connect to is spelled correctly in the config, is up and is port forwarded correctly.

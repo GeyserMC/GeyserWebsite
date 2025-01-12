@@ -1,6 +1,9 @@
 ---
 title: Community Geyser Projects
-description: A list of community-compiled plugins, extensions and tools that work with Geyser.
+description: >-
+  A list of community-compiled plugins, extensions and tools that work with
+  Geyser.
+crowdin_page_id: 799ddbf8-3cac-44e9-9d24-7fc6c29c4b0e
 ---
 
 Below is a list of community-compiled plugins, extensions and tools that work with Geyser. 

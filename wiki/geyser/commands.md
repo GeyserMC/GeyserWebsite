@@ -1,6 +1,8 @@
 ---
 title: Commands and Permissions
 description: Commands and their associated permission nodes for Geyser.
+crowdin_sync: true
+crowdin_page_id: cd92ff4f-9105-46a2-8696-8b0e2f8b9d31
 ---
 
 # Commands and Permissions

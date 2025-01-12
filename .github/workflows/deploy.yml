@@ -62,6 +62,22 @@ jobs:
           restore-keys: |
             ${{ runner.os }}-docusaurus-${{ hashFiles('**/yarn.lock') }}
 
+      - name: Sync Translations
+        run: yarn crowdin-sync
+        env:
+          CROWDIN_TOKEN: ${{ secrets.CROWDIN_TOKEN }}
+          CROWDIN_ORGANIZATION: ${{ secrets.CROWDIN_ORGANIZATION }}
+
+      - name: Commit Changes
+        # See https://github.com/planetscale/ghcommit-action/releases
+        uses: planetscale/ghcommit-action@d4176bfacef926cc2db351eab20398dfc2f593b5 # v0.2.0
+        with:
+          commit_message: "Sync translations with Crowdin"
+          repo: ${{ github.repository }}
+          branch: ${{ github.head_ref || github.ref_name }}
+        env:
+          GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
+
       - name: Build website
         run: yarn build
 

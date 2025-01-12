@@ -3742,7 +3742,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@docusaurus/module-type-aliases@npm:3.6.3, @docusaurus/module-type-aliases@npm:^3.6.3":
+"@docusaurus/module-type-aliases@npm:3.6.3":
   version: 3.6.3
   resolution: "@docusaurus/module-type-aliases@npm:3.6.3"
   dependencies:
@@ -4060,7 +4060,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@docusaurus/tsconfig@npm:^3.6.3":
+"@docusaurus/tsconfig@npm:3.6.3":
   version: 3.6.3
   resolution: "@docusaurus/tsconfig@npm:3.6.3"
   checksum: 10c0/0ff7af6e0fe267d22c2e1c439d887aef1668b626731b07b4053c6fb5377f0faeec74d69f30d139522f6de74ba73d4462242400564024faa7ab0076c3af83d5d9
@@ -4087,7 +4087,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@docusaurus/types@npm:3.6.3, @docusaurus/types@npm:^3.6.3":
+"@docusaurus/types@npm:3.6.3":
   version: 3.6.3
   resolution: "@docusaurus/types@npm:3.6.3"
   dependencies:
@@ -4426,7 +4426,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@kas-tle/docusaurus-og@https://github.com/Kas-tle/docusaurus-og":
+"@kas-tle/docusaurus-og@https://github.com/Kas-tle/docusaurus-og#55f297255a7bd0610f46986f1e57f938b4c7a23b":
   version: 1.0.0-alpha.132
   resolution: "@kas-tle/docusaurus-og@https://github.com/Kas-tle/docusaurus-og.git#commit=55f297255a7bd0610f46986f1e57f938b4c7a23b"
   dependencies:
@@ -5179,7 +5179,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/adm-zip@npm:^0":
+"@types/adm-zip@npm:0.5.7":
   version: 0.5.7
   resolution: "@types/adm-zip@npm:0.5.7"
   dependencies:
@@ -9010,7 +9010,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"file-loader@npm:^6.2.0":
+"file-loader@npm:6.2.0":
   version: 6.2.0
   resolution: "file-loader@npm:6.2.0"
   dependencies:
@@ -9357,18 +9357,18 @@ __metadata:
   dependencies:
     "@crowdin/crowdin-api-client": "npm:1.41.0"
     "@docusaurus/core": "npm:3.6.3"
-    "@docusaurus/module-type-aliases": "npm:^3.6.3"
+    "@docusaurus/module-type-aliases": "npm:3.6.3"
     "@docusaurus/preset-classic": "npm:3.6.3"
-    "@docusaurus/tsconfig": "npm:^3.6.3"
-    "@docusaurus/types": "npm:^3.6.3"
+    "@docusaurus/tsconfig": "npm:3.6.3"
+    "@docusaurus/types": "npm:3.6.3"
     "@fortawesome/fontawesome-svg-core": "npm:6.5.1"
     "@fortawesome/free-brands-svg-icons": "npm:6.5.1"
     "@fortawesome/free-regular-svg-icons": "npm:6.5.1"
     "@fortawesome/free-solid-svg-icons": "npm:6.5.1"
     "@fortawesome/react-fontawesome": "npm:0.2.0"
-    "@kas-tle/docusaurus-og": "https://github.com/Kas-tle/docusaurus-og"
+    "@kas-tle/docusaurus-og": "https://github.com/Kas-tle/docusaurus-og#55f297255a7bd0610f46986f1e57f938b4c7a23b"
     "@mdx-js/react": "npm:3.0.0"
-    "@types/adm-zip": "npm:^0"
+    "@types/adm-zip": "npm:0.5.7"
     adm-zip: "npm:0.5.16"
     clsx: "npm:1.2.1"
     docusaurus-plugin-openapi-docs: "npm:4.3.0"
@@ -17418,7 +17418,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"url-loader@npm:^4.1.1":
+"url-loader@npm:4.1.1":
   version: 4.1.1
   resolution: "url-loader@npm:4.1.1"
   dependencies:
