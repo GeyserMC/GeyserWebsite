@@ -53,9 +53,7 @@
         "typescript": "5.7.2"
     },
     "resolutions": {
-        "postman-code-generators": "1.14.0",
-        "file-loader": "6.2.0",
-        "url-loader": "4.1.1"
+        "postman-code-generators": "1.14.0"
     },
     "browserslist": {
         "production": [
