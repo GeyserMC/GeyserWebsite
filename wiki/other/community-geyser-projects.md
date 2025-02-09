@@ -82,7 +82,7 @@ Plugin that blocks Java players from joining your Geyser server, so you can have
 Creator: [Camotoy](https://github.com/Camotoy)
 
 ## GeyserExtras {#geyserextras}
-A Spigot plugin which attempts to unify features for Bedrock Edition players, including features like a cleaner looking combat cooldown, combat sounds and other helpful features and workarounds.
+An extension and plugin which attempts to unify features for Bedrock Edition players, including features like a cleaner looking combat cooldown, combat sounds and other helpful features and workarounds.
 
 * [Modrinth](https://modrinth.com/plugin/geyserextras)
 * [Hangar](https://hangar.papermc.io/GeyserExtras/GeyserExtras)
