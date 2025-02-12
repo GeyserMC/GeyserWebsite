@@ -118,7 +118,7 @@ Small application that waits for a player to connect before launching actual min
 Creator: [Vincss](https://github.com/vincss)
 
 ## Starlight Skin API {#starlight-skin-api}
-An updated API that makes it easier for Bedrock Skins to be outputted. 
+An API that makes it easier for Bedrock Skins to be outputted. 
 * [Website](https://lunareclipse.studio/creations/starlight-skinapi)
 
 Creators: [Bret06](https://www.bret06.net/)
