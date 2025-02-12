@@ -38,7 +38,7 @@ Creator: [Camotoy](https://github.com/Camotoy)
 
 ## CreeperNation Skin API {#creepernation-skin-api}
 
-An SkinAPI that displays Java or Bedrock skins based on the UUID or username.
+A SkinAPI that displays Java or Bedrock skins based on the UUID or username.
 
 * [Website](https://docs.creepernation.net)
 
@@ -116,9 +116,3 @@ Small application that waits for a player to connect before launching actual min
 * [GitHub](https://github.com/vincss/mcsleepingserverstarter)
 
 Creator: [Vincss](https://github.com/vincss)
-
-## TydiumCraft Skin API {#tydiumcraft-skin-api}
-An API makes it easier for your Bedrock skin to be rendered and outputted!
-* [Website](https://tydiumcraft.net/api)
-
-Creators: [Tydium](https://github.com/Tydium)
