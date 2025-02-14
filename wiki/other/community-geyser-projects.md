@@ -38,7 +38,7 @@ Creator: [Camotoy](https://github.com/Camotoy)
 
 ## CreeperNation Skin API {#creepernation-skin-api}
 
-An SkinAPI that displays Java or Bedrock skins based on the UUID or username.
+A SkinAPI that displays Java or Bedrock skins based on the UUID or username.
 
 * [Website](https://docs.creepernation.net)
 
