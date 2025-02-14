@@ -117,8 +117,8 @@ Small application that waits for a player to connect before launching actual min
 
 Creator: [Vincss](https://github.com/vincss)
 
-## TydiumCraft Skin API {#tydiumcraft-skin-api}
-An API makes it easier for your Bedrock skin to be rendered and outputted!
-* [Website](https://tydiumcraft.net/api)
+## Starlight Skin API {#starlight-skin-api}
+An API that makes it easier for Bedrock Skins to be outputted. 
+* [Website](https://lunareclipse.studio/creations/starlight-skinapi)
 
-Creators: [Tydium](https://github.com/Tydium)
+Creators: [Bret06](https://www.bret06.net/)
