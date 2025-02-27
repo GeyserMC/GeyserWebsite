@@ -72,7 +72,7 @@ jobs:
 
       - name: Define matrix
         id: locales
-        run: echo "locales=$(cat locales.json)" >> $GITHUB_ENV
+        run: echo "locales=$(cat locales.json)" >> $GITHUB_OUTPUT
 
   build:
     runs-on: ubuntu-latest
