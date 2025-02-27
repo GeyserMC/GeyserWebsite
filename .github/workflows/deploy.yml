@@ -32,6 +32,8 @@ jobs:
     outputs:
       locales: ${{ steps.locales.outputs.locales }}
       commit: ${{ steps.commit.outputs.commit-hash == '' && steps.commit.outputs.commit-hash || github.sha }}
+    permissions:
+      contents: write
     steps:
       - uses: actions/setup-node@39370e3970a6d050c480ffad4ff0ed4d3fdee5af
         with:
