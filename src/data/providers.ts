@@ -25,14 +25,6 @@ const descriptionTemplates = {
 export const providersData: Providers = {
     built_in: [
         {
-            name: 'VemoxHost',
-            url: 'https://vemoxhost.com/',
-            description: translate({
-                id: 'providers.provider.vemox_hosting.description',
-                message: "Full automatic installation. Go to one of the panel options and select the option to enable GeyserMC. Then, restart and connect to your server using your Java IP and port."
-            })
-        },
-        {
             name: 'Apex Hosting',
             url: 'https://apexminecrafthosting.com/',
             description: translate({
@@ -179,6 +171,14 @@ export const providersData: Providers = {
             description: translate({
                 id: 'providers.provider.srkhost.description',
                 message: "You can enable Geyser on the version changer page. Geyser will run on the given port by the host."
+            })
+        },
+        {
+            name: 'VemoxHost',
+            url: 'https://vemoxhost.com/',
+            description: translate({
+                id: 'providers.provider.vemox_hosting.description',
+                message: "Full automatic installation. Go to one of the panel options and select the option to enable GeyserMC. Then, restart and connect to your server using your Java IP and port."
             })
         },
         {
