@@ -9,8 +9,8 @@ crowdin_page_id: 8305f35d-f481-4fd7-92cb-0f8203151788
 ---
 
 # Overview
-Floodgate is a hybrid mode plugin. It introduces new features:
-- Ability to join Minecraft: Java Edition servers with Minecraft: Bedrock accounts without needing a paid Minecraft: Java Edition account. 
+Floodgate is a hybrid mode server-plugin. It introduces new features:
+- Ability for clients to join Minecraft: Java Edition servers with Minecraft: Bedrock accounts without needing a paid Minecraft: Java Edition account. 
 - Ability to [see Bedrock player skins on Java edition](/wiki/floodgate/features#what-is-skin-uploading).
 - Ability for plugins to [send Bedrock forms](/wiki/geyser/forms/).
 - Ability to query players through the [Global Api](/wiki/api/api.geysermc.org/global-api/), 
