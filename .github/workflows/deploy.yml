@@ -31,6 +31,7 @@ jobs:
     runs-on: ubuntu-latest
     outputs:
       locales: ${{ steps.locales.outputs.locales }}
+      commit: ${{ steps.commit.outputs.commit-hash == '' && steps.commit.outputs.commit-hash || github.sha }}
     steps:
       - uses: actions/setup-node@39370e3970a6d050c480ffad4ff0ed4d3fdee5af
         with:
@@ -58,6 +59,7 @@ jobs:
           CROWDIN_ORGANIZATION: ${{ secrets.CROWDIN_ORGANIZATION }}
 
       - name: Commit Changes
+        id: commit
         # See https://github.com/planetscale/ghcommit-action/releases
         uses: planetscale/ghcommit-action@d4176bfacef926cc2db351eab20398dfc2f593b5 # v0.2.0
         with:
@@ -91,6 +93,7 @@ jobs:
       - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
         with:
           fetch-depth: 0
+          ref: ${{ needs.sync.outputs.commit }}
 
       - uses: actions/setup-node@39370e3970a6d050c480ffad4ff0ed4d3fdee5af
         with:
@@ -111,11 +114,12 @@ jobs:
 
   combine:
     runs-on: ubuntu-latest
-    needs: build
+    needs: [build, sync]
     steps:
       - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
         with:
           fetch-depth: 0
+          ref: ${{ needs.sync.outputs.commit }}
 
       - name: Setup Pages
         uses: actions/configure-pages@983d7736d9b0ae728b81ab479565c72886d7745b
