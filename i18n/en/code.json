@@ -844,5 +844,8 @@
   },
   "mdx.setup.standalone": {
     "message": "Standalone"
+  },
+  "providers.provider.mcserverhost.description": {
+    "message": "Under the server configuration, select 'Crossplay' to automatically install Geyser and Floodgate. Join with the connection address. To update Geyser and Floodgate, replace the plugin jars in the server manager and restart the server."
   }
 }

@@ -392,10 +392,10 @@ const populateLocales = (inp: { i18n: I18nConfig }): Locales => {
 const processJsonContent = (content: string, exclusions: string[]): string => {
     const jsonContent: TranslationJson = JSON.parse(content);
     const includedContent: TranslationJson = {};
-    for (const key in jsonContent) {
-        for (const exclusion in exclusions) {
+    nextKey: for (const key in jsonContent) {
+        for (const exclusion of exclusions) {
             if (key.startsWith(exclusion)) {
-                continue;
+                continue nextKey;
             }
             includedContent[key] = jsonContent[key];
         }
