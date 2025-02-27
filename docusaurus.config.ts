@@ -120,6 +120,7 @@ const config: Config = {
                 jsonKeyExclusions: [ 'providers.provider.' ]
             }
         ],
+        './src/plugins/output-locales.ts',
         './src/plugins/modify-webpack.ts',
     ],
     themes: ["docusaurus-theme-openapi-docs"],
