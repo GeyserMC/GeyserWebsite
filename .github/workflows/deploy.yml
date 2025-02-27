@@ -29,6 +29,8 @@ jobs:
   sync:
     name: Deploy to GitHub Pages
     runs-on: ubuntu-latest
+    outputs:
+      locales: ${{ steps.locales.outputs.locales }}
     steps:
       - uses: actions/setup-node@39370e3970a6d050c480ffad4ff0ed4d3fdee5af
         with:
@@ -48,16 +50,6 @@ jobs:
 
       - name: Install dependencies
         run: yarn install --immutable
-
-      - uses: actions/cache@1bd1e32a3bdc45362d1e726936510720a7c30a57
-        with:
-          path: |
-            ${{ github.workspace }}/.docusaurus
-            ${{ github.workspace }}/**/.cache
-          key: |
-            ${{ runner.os }}-docusaurus-${{ hashFiles('**/yarn.lock') }}-${{ hashFiles('**.[jt]s', '**.[jt]sx') }}
-          restore-keys: |
-            ${{ runner.os }}-docusaurus-${{ hashFiles('**/yarn.lock') }}
 
       - name: Sync Translations
         run: yarn crowdin-sync
@@ -107,16 +99,6 @@ jobs:
 
       - name: Install dependencies
         run: yarn install --immutable
-
-      - uses: actions/cache@1bd1e32a3bdc45362d1e726936510720a7c30a57
-        with:
-          path: |
-            ${{ github.workspace }}/.docusaurus
-            ${{ github.workspace }}/**/.cache
-          key: |
-            ${{ runner.os }}-docusaurus-${{ hashFiles('**/yarn.lock') }}-${{ hashFiles('**.[jt]s', '**.[jt]sx') }}
-          restore-keys: |
-            ${{ runner.os }}-docusaurus-${{ hashFiles('**/yarn.lock') }}
 
       - name: Build Locale
         run: yarn build --locale ${{ matrix.locales }}
