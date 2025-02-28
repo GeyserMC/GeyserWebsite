@@ -2,6 +2,7 @@
 title: Setup
 page_sidebar: false
 description: Guides to setup Geyser on all supported platforms
+crowdin_page_id: c0450f30-546a-4420-a3a6-5ff077a6a924
 ---
 
 import Tabs from '@theme/Tabs'
@@ -9,9 +10,11 @@ import TabItem from '@theme/TabItem'
 import Admonition from '@theme/Admonition';
 import Translate from "@docusaurus/Translate";
 
-import ModdedServers from '@site/wiki/geyser/setup/provider/_modded-servers.mdx'
-import ProxyServers from '@site/wiki/geyser/setup/provider/_proxy-servers.mdx'
-import PaperSpigot from '@site/wiki/geyser/setup/provider/_paper-spigot.mdx'
+import Fabric from '@site/wiki/geyser/setup/provider/fabric.mdx'
+import NeoForge from '@site/wiki/geyser/setup/provider/neoforge.mdx'
+import Velocity from '@site/wiki/geyser/setup/provider/velocity.mdx'
+import BungeeCord from '@site/wiki/geyser/setup/provider/bungeecord.mdx'
+import PaperSpigot from '@site/wiki/geyser/setup/provider/paper-spigot.mdx'
 
 import ModdedServersSelf from '@site/wiki/geyser/setup/self/modded-servers.mdx'
 import ProxyServersSelf from '@site/wiki/geyser/setup/self/proxy-servers.mdx'
@@ -20,33 +23,44 @@ import ViaProxy from '@site/wiki/geyser/setup/self/viaproxy.mdx'
 import Standalone from '@site/wiki/geyser/setup/self/standalone.mdx'
 
 import PlatformIcon from '@site/src/components/PlatformIcon'
-import ModIcon from '@site/static/img/icons/fabric.png'
-import ProxyServersIcon from '@site/static/img/icons/velocity.png'
+import FabricIcon from '@site/static/img/icons/fabric.png'
+import NeoForgeIcon from '@site/static/img/icons/neoforge.png'
+import VelocityIcon from '@site/static/img/icons/velocity.png'
+import BungeeCordIcon from '@site/static/img/icons/bungeecord.png'
 import PaperSpigotIcon from '@site/static/img/icons/paper.png'
 import ViaProxyIcon from '@site/static/img/icons/viaproxy.png'
 import StandaloneIcon from '@site/static/img/icons/geyser.png'
 
+
 import { ProviderSelector } from '@site/src/components/Provider'
+import { MDXTranslatable } from '@site/src/components/MDXTranslatable'
 import { useState } from 'react'
 
+````mdx-code-block
 export const SetupGuide = () => {
     const [provider, setProvider] = useState(null)
     return (
         <Tabs queryString='host' className='tabs-host-type'>
-            <TabItem value='provider' label='Host Provider' default>
+            <TabItem value='provider' label={<MDXTranslatable.setup.host_provider/>} default>
                 <ProviderSelector setProvider={setProvider} />
                 {provider ? (
                     <>
                         {provider.connect_instructions ? (
                             <Tabs queryString='platform'>
-                                <TabItem value='paper-spigot' label={<PlatformIcon img={PaperSpigotIcon} text='Paper / Spigot' />} default>
+                                <TabItem value='paper-spigot' label={<PlatformIcon img={PaperSpigotIcon} text={<MDXTranslatable.setup.paper_spigot/>} />} default>
                                     <PaperSpigot provider={provider} />
                                 </TabItem>
-                                <TabItem value='modded-servers' label={<PlatformIcon img={ModIcon} text='Modded Servers' />}>
-                                    <ModdedServers provider={provider}/>
+                                <TabItem value='fabric' label={<PlatformIcon img={FabricIcon} text={<MDXTranslatable.setup.fabric/>} />}>
+                                    <Fabric provider={provider}/>
                                 </TabItem>
-                                <TabItem value='proxy-servers' label={<PlatformIcon img={ProxyServersIcon} text='Proxy Servers' />}>
-                                    <ProxyServers provider={provider}/>
+                                <TabItem value='neoforge' label={<PlatformIcon img={NeoForgeIcon} text={<MDXTranslatable.setup.neoforge/>} />}>
+                                    <NeoForge provider={provider}/>
+                                </TabItem>
+                                <TabItem value='velocity' label={<PlatformIcon img={VelocityIcon} text={<MDXTranslatable.setup.velocity/>} />}>
+                                    <Velocity provider={provider}/>
+                                </TabItem>
+                                <TabItem value='bungeecord' label={<PlatformIcon img={BungeeCordIcon} text={<MDXTranslatable.setup.bungeecord/>} />}>
+                                    <BungeeCord provider={provider}/>
                                 </TabItem>
                             </Tabs>
                         ) : (<Admonition type="warning" title={<Translate id='components.provider.no_support'>Not supported</Translate>}>{provider.warn}</Admonition>)}
@@ -55,19 +69,19 @@ export const SetupGuide = () => {
             </TabItem>
             <TabItem value='self' label='Self Host'>
                 <Tabs queryString='platform'>
-                    <TabItem value='paper-spigot' label={<PlatformIcon img={PaperSpigotIcon} text='Paper / Spigot' />} default>
+                    <TabItem value='paper-spigot' label={<PlatformIcon img={PaperSpigotIcon} text={<MDXTranslatable.setup.paper_spigot/>} />} default>
                         <PaperSpigotSelf />
                     </TabItem>
-                    <TabItem value='modded-servers' label={<PlatformIcon img={ModIcon} text='Modded Servers' />}>
+                    <TabItem value='modded-servers' label={<PlatformIcon img={FabricIcon} text={<MDXTranslatable.setup.modded_servers/>} />}>
                         <ModdedServersSelf />
                     </TabItem>
-                    <TabItem value='proxy-servers' label={<PlatformIcon img={ProxyServersIcon} text='Proxy Servers' />}>
+                    <TabItem value='proxy-servers' label={<PlatformIcon img={VelocityIcon} text={<MDXTranslatable.setup.proxy_servers/>} />}>
                         <ProxyServersSelf />
                     </TabItem>
-                    <TabItem value='viaproxy' label={<PlatformIcon img={ViaProxyIcon} text='ViaProxy' />}>
+                    <TabItem value='viaproxy' label={<PlatformIcon img={ViaProxyIcon} text={<MDXTranslatable.setup.viaproxy/>} />}>
                         <ViaProxy />
                     </TabItem>
-                    <TabItem value='standalone' label={<PlatformIcon img={StandaloneIcon} text='Standalone' />}>
+                    <TabItem value='standalone' label={<PlatformIcon img={StandaloneIcon} text={<MDXTranslatable.setup.standalone/>} />}>
                         <Standalone />
                     </TabItem>
                 </Tabs>
@@ -77,3 +91,4 @@ export const SetupGuide = () => {
 }
 
 <SetupGuide />
+````

@@ -1,0 +1,20 @@
+---
+title: Geyser Provider Hosted Paper / Spigot Setup
+hide_title: true
+crowdin_page_id: fd6b7dc0-14dc-4916-a67d-ac3b7fdcc49a
+---
+
+import { Versions } from '@site/src/components/Versions'
+import { ProviderGeyserSetup } from '@site/src/components/Provider'
+
+:::info
+If your server is not running <Versions.java/>, you will need to install [ViaVersion](https://viaversion.com/).
+See also [this page](/wiki/geyser/supported-versions/) on supported versions.
+:::
+
+<ProviderGeyserSetup 
+    provider={props.provider} 
+    jarName={'Geyser-Spigot.jar'}
+    jarDirectory={'plugins'}
+    configLocation={'/config/Geyser-Spigot/config.yml'}
+/>
