@@ -56,12 +56,14 @@ export const SetupGuide = () => {
                                 <TabItem value='neoforge' label={<PlatformIcon img={NeoForgeIcon} text={<MDXTranslatable.setup.neoforge/>} />}>
                                     <NeoForge provider={provider}/>
                                 </TabItem>
-                                <TabItem value='velocity' label={<PlatformIcon img={VelocityIcon} text={<MDXTranslatable.setup.velocity/>} />}>
-                                    <Velocity provider={provider}/>
-                                </TabItem>
-                                <TabItem value='bungeecord' label={<PlatformIcon img={BungeeCordIcon} text={<MDXTranslatable.setup.bungeecord/>} />}>
-                                    <BungeeCord provider={provider}/>
-                                </TabItem>
+                                {!provider.proxies_banned && [
+                                    <TabItem value='velocity' label={<PlatformIcon img={VelocityIcon} text={<MDXTranslatable.setup.velocity/>} />}>
+                                        <Velocity provider={provider}/>
+                                    </TabItem>,
+                                    <TabItem value='bungeecord' label={<PlatformIcon img={BungeeCordIcon} text={<MDXTranslatable.setup.bungeecord/>} />}>
+                                        <BungeeCord provider={provider}/>
+                                    </TabItem>
+                                ]}
                             </Tabs>
                         ) : (<Admonition type="warning" title={<Translate id='components.provider.no_support'>Not supported</Translate>}>{provider.warn}</Admonition>)}
                     </>

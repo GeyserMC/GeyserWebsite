@@ -122,7 +122,8 @@ export const providersData: Providers = {
             info: translate({
                 id: 'providers.provider.aternos.info',
                 message: "Aternos automatically installs the latest version of Geyser, but does not auto update it. To update, reinstall the plugin (no need to uninstall Geyser/deleting the plugin files)."
-            })
+            }),
+            proxies_banned: true
         },
         {
             name: 'Cloud Nord',

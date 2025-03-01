@@ -11,6 +11,7 @@ export type HostingProvider = {
     additional_step?: React.ReactNode; // e.g.: must enable udp in settings/enable geyser mode
     info?: React.ReactNode; // Additional information. Displayed in info bubble.
     warn?: React.ReactNode; // shaming server hosting providers with issues.
+    proxies_banned?: boolean; // If the provider does not allow proxies, we hide proxy setup instructions (e.g. Aternos)
 }
 
 // Either: clone-remote-port, or
