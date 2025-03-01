@@ -146,7 +146,7 @@ export const ProviderGeyserSetup: React.FC<ProviderGeyserSetupProps> = ({ provid
 
                     {provider.config && (
                         <>
-                            <Heading as="h3" id="geyser-config-changes">
+                            <Heading as="h2" id="geyser-config-changes">
                                 <MDXTranslatable.setup.geyser_config_changes />
                             </Heading>
                             <MDXTranslatable.setup.open_config configLocation={configLocation} />
@@ -193,7 +193,7 @@ export const ProviderGeyserSetup: React.FC<ProviderGeyserSetupProps> = ({ provid
 
                     {provider.additional_step && (
                         <>
-                            <Heading as="h3" id="additional-steps">
+                            <Heading as="h2" id="additional-steps">
                                 <MDXTranslatable.setup.additional_steps />
                             </Heading>
                             <ReactMarkdown>
@@ -205,7 +205,7 @@ export const ProviderGeyserSetup: React.FC<ProviderGeyserSetupProps> = ({ provid
 
                     {provider.connect_instructions && (
                         <>
-                            <Heading as="h3" id="connecting-on-bedrock">
+                            <Heading as="h2" id="connecting-on-bedrock">
                                 <MDXTranslatable.setup.connecting_on_bedrock />
                             </Heading>
                             <ReactMarkdown>
@@ -227,7 +227,7 @@ export const ProviderGeyserSetup: React.FC<ProviderGeyserSetupProps> = ({ provid
 
                     {(provider.hosting_article || provider.hosting_support) && (
                         <>
-                            <Heading as="h3" id="more-information">
+                            <Heading as="h2" id="more-information">
                                 <MDXTranslatable.setup.more_information />
                             </Heading>
                             <ul>
