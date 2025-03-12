@@ -44,6 +44,9 @@
   "providers.provider.lilypad.description": {
     "message": "Tick the 'Enable Bedrock crossplay?' option when changing your server software to automatically install and configure Geyser + Floodgate. For more details, navigate to [lilypad.gg/bedrock](https://lilypad.gg/bedrock)."
   },
+  "providers.provider.playhosting.description": {
+    "message": "Tick the 'Enable Bedrock crossplay?' option when changing your server software to automatically install and configure Geyser + Floodgate. For more details, navigate to [help.play.hosting/minecraft/crossplay](https://help.play.hosting/minecraft/crossplay)."
+  },
   "providers.provider.mcprohosting.description": {
     "message": "Click 'Enable Bedrock Support' on the server dashboard and follow the steps. For manual installation: Add 'Destination Port' `19132` with 'Protocol UDP' to the port forward mapping and connect to the given source port."
   },
