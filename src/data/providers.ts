@@ -97,6 +97,14 @@ export const providersData: Providers = {
             })
         },
         {
+            name: 'Play Hosting',
+            url: 'https://play.hosting',
+            description: translate({
+                id: 'providers.provider.playhosting.description',
+                message: "Tick the 'Enable Bedrock crossplay?' option when changing your server software to automatically install and configure Geyser + Floodgate. For more details, navigate to [help.play.hosting/minecraft/crossplay](https://help.play.hosting/minecraft/crossplay)."
+            })
+        },
+        {
             name: 'MCServerHost',
             url: 'https://mcserverhost.com/',
             description: translate({
