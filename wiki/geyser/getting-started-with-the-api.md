@@ -32,7 +32,7 @@ Add Geyser's API codebase as a dependency:
 <dependency>
     <groupId>org.geysermc.geyser</groupId>
     <artifactId>api</artifactId>
-    <version>2.4.2-SNAPSHOT</version>
+    <version>2.6.1-SNAPSHOT</version>
     <scope>provided</scope>
 </dependency>
 ```
@@ -40,7 +40,7 @@ Add Geyser's API codebase as a dependency:
 **Gradle**
 ```groovy
 dependencies {
-    compileOnly('org.geysermc.geyser:api:2.4.2-SNAPSHOT')
+    compileOnly('org.geysermc.geyser:api:2.6.1-SNAPSHOT')
 }
 ```
 
@@ -66,7 +66,7 @@ Add Floodgate's API as a dependency:
 <dependency>
     <groupId>org.geysermc.floodgate</groupId>
     <artifactId>api</artifactId>
-    <version>2.2.3-SNAPSHOT</version>
+    <version>2.2.4-SNAPSHOT</version>
     <scope>provided</scope>
 </dependency>
 ```
@@ -74,7 +74,7 @@ Add Floodgate's API as a dependency:
 **Gradle**
 ```groovy
 dependencies {
-    compileOnly('org.geysermc.floodgate:api:2.2.3-SNAPSHOT')
+    compileOnly('org.geysermc.floodgate:api:2.2.4-SNAPSHOT')
 }
 ```
 
