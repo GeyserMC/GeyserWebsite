@@ -121,6 +121,14 @@ export const providersData: Providers = {
             })
         },
         {
+            name: 'OMGServ',
+            url: 'https://www.omgserv.com/en/',
+            description: translate({
+                id: 'providers.provider.omgserv.description',
+                message: "Select Geyser in the [Install Menu](https://i.imgur.com/Gewpsrq.png), it will be automatically installed. You can enable floodgate in the [server properties on the dashboard](https://i.imgur.com/jg5mzNj.png)."
+            })
+        },
+        {
             name: 'Physgun',
             url: 'https://physgun.com/',
             description: descriptionTemplates.default
@@ -134,11 +142,11 @@ export const providersData: Providers = {
             })
         },
         {
-            name: 'OMGServ',
-            url: 'https://www.omgserv.com/en/',
+            name: 'Play Hosting',
+            url: 'https://play.hosting',
             description: translate({
-                id: 'providers.provider.omgserv.description',
-                message: "Select Geyser in the [Install Menu](https://i.imgur.com/Gewpsrq.png), it will be automatically installed. You can enable floodgate in the [server properties on the dashboard](https://i.imgur.com/jg5mzNj.png)."
+                id: 'providers.provider.playhosting.description',
+                message: "Tick the 'Enable Bedrock crossplay?' option when changing your server software to automatically install and configure Geyser + Floodgate. For more details, navigate to [help.play.hosting/minecraft/crossplay](https://help.play.hosting/minecraft/crossplay)."
             })
         },
         {
