@@ -24,7 +24,7 @@ The following things cannot be fixed without changes to Bedrock or the Java prot
 - Unable to see banner layers past 6
 - Movement issues around bamboo due to offset differences between Java and Bedrock. Use [Hurricane](/wiki/other/hurricane) to work around it.
 - Custom anvil recipes or custom smithing table ingredients/patterns ([GeyserMC/Geyser#4706](https://github.com/GeyserMC/Geyser/issues/4706))
-- Heights lower than -64 or higher than 320 in the overworld with extended height enabled, and heights lower than 0 or higher than 256 in other dimensions ([GeyserMC/Geyser#3804](https://github.com/GeyserMC/Geyser/issues/3804))
+- Heights lower than -512 or higher than 512 in the overworld (and custom dimensions mapped by Geyser to the overworld), and heights lower than 0 or higher than 256 in other dimensions ([GeyserMC/Geyser#3804](https://github.com/GeyserMC/Geyser/issues/3804))
 - Dolphin's Grace potion effect visuals (effects should still work correctly)
 - Invisible item frames - however, there are Bedrock edition resource packs making *all* item frames invisible 
 - Blocks (excluding jack-o-lantern) on entity heads (E.G. armor stands, players)
@@ -32,7 +32,6 @@ The following things cannot be fixed without changes to Bedrock or the Java prot
 - Custom beacon base blocks ([GeyserMC/Geyser#2301](https://github.com/GeyserMC/Geyser/issues/2301)) - these are hardcoded on Bedrock edition.
 - Climbable blocks changed by datapacks ([GeyserMC/Geyser#4051](https://github.com/GeyserMC/Geyser/issues/4051))
 - Custom enchantments/sweeping edge ([GeyserMC/Geyser#3121](https://github.com/GeyserMC/Geyser/issues/3121))
-- "Bordure Indented" pattern shape not appearing on the Bedrock side in the loom ([GeyserMC/Geyser#3183](https://github.com/GeyserMC/Geyser/issues/3183))
 - Gliding without elytras/custom elytras (https://github.com/GeyserMC/Geyser/issues/3255, https://github.com/GeyserMC/Geyser/issues/3299)
 - Custom furnace cook times ([GeyserMC/Geyser#4104](https://github.com/GeyserMC/Geyser/issues/4104))
 - Maximum sign length different on Java/Bedrock edition ([GeyserMC/Geyser#4130](https://github.com/GeyserMC/Geyser/issues/4130))

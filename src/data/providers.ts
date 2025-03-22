@@ -200,6 +200,15 @@ export const providersData: Providers = {
             })
         },
         {
+            // TODO
+            name: 'MCServerHost',
+            url: 'https://mcserverhost.com/',
+            description: translate({
+                id: 'providers.provider.mcserverhost.description',
+                message: "Under the server configuration, select 'Crossplay' to automatically install Geyser and Floodgate. Join with the connection address. To update Geyser and Floodgate, replace the plugin jars in the server manager and restart the server."
+            })
+        },
+        {
             name: 'Minefort',
             url: 'https://minefort.com/',
             additional_step: translate({
@@ -217,6 +226,15 @@ export const providersData: Providers = {
             connect_instructions: translate({
                 id: 'providers.provider.minehut.connect_instructions',
                 message: "Connect via `bedrock.minehut.com` and do `/join [servername]`, or connect directly via `[servername].bedrock.minehut.gg`."
+            })
+        },
+        {
+            name: 'OMGServ',
+            url: 'https://www.omgserv.com/en/',
+            connect_instructions: connectionTemplates.providedByHost,
+            custom_install_location: translate({
+                id: 'providers.provider.omgserv.install',
+                message: "Automatic Geyser install can be done in the [Install Menu](https://i.imgur.com/Gewpsrq.png). You can enable floodgate in the [server properties on the dashboard](https://i.imgur.com/jg5mzNj.png)."
             })
         },
         {
@@ -238,13 +256,11 @@ export const providersData: Providers = {
             }
         },
         {
-            name: 'OMGServ',
-            url: 'https://www.omgserv.com/en/',
-            connect_instructions: connectionTemplates.providedByHost,
-            custom_install_location: translate({
-                id: 'providers.provider.omgserv.install',
-                message: "Automatic Geyser install can be done in the [Install Menu](https://i.imgur.com/Gewpsrq.png). You can enable floodgate in the [server properties on the dashboard](https://i.imgur.com/jg5mzNj.png)."
-            })
+            name: 'Play Hosting', // TODO
+            url: 'https://play.hosting',
+            description: translate({
+                id: 'providers.provider.playhosting.description',
+                message: "Tick the 'Enable Bedrock crossplay?' option when changing your server software to automatically install and configure Geyser + Floodgate. For more details, navigate to [help.play.hosting/minecraft/crossplay](https://help.play.hosting/minecraft/crossplay)."
         },
         {
             name: 'Pufferfish Host',
@@ -282,6 +298,14 @@ export const providersData: Providers = {
             custom_install_location: translate({
                 id: 'providers.provider.srkhost.install',
                 message: "Enable Geyser on the version changer page. Geyser will run on the given port by the host."
+            })
+        },
+        {
+            name: 'VemoxHost',
+            url: 'https://vemoxhost.com/',
+            description: translate({
+                id: 'providers.provider.vemox_hosting.description',
+                message: "Full automatic installation. Go to one of the panel options and select the option to enable GeyserMC. Then, restart and connect to your server using your Java IP and port."
             })
         },
         {
