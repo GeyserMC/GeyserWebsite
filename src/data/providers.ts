@@ -200,13 +200,11 @@ export const providersData: Providers = {
             })
         },
         {
-            // TODO
             name: 'MCServerHost',
             url: 'https://mcserverhost.com/',
-            description: translate({
-                id: 'providers.provider.mcserverhost.description',
-                message: "Under the server configuration, select 'Crossplay' to automatically install Geyser and Floodgate. Join with the connection address. To update Geyser and Floodgate, replace the plugin jars in the server manager and restart the server."
-            })
+            hosting_article: 'https://www.mcserverhost.com/community/tutorials/how-to-set-up-a-minecraft-java-and-bedrock-crossplay-server-with-mcserverhost',
+            config: configChangeTemplates.cloneRemotePort,
+            connect_instructions: connectionTemplates.sameAsJava
         },
         {
             name: 'Minefort',
@@ -249,18 +247,21 @@ export const providersData: Providers = {
             hosting_support: 'https://billing.piglinhost.com/submitticket.php?step=2&deptid=5',
             connect_instructions: connectionTemplates.providedByHost,
             config: {
-              other_instructions: translate({
-                  id: 'providers.provider.config.other',
-                  message: "If you did not order the server from the [cross-platform servers page](https://piglinhost.com/minecraft-java-hosting.html), contact the support for help with Geyser setup."
-              })
+                other_instructions: translate({
+                    id: 'providers.provider.config.other',
+                    message: "If you did not order the server from the [cross-platform servers page](https://piglinhost.com/minecraft-java-hosting.html), contact the support for help with Geyser setup."
+                })
             }
         },
         {
-            name: 'Play Hosting', // TODO
+            name: 'Play Hosting',
             url: 'https://play.hosting',
-            description: translate({
-                id: 'providers.provider.playhosting.description',
-                message: "Tick the 'Enable Bedrock crossplay?' option when changing your server software to automatically install and configure Geyser + Floodgate. For more details, navigate to [help.play.hosting/minecraft/crossplay](https://help.play.hosting/minecraft/crossplay)."
+            hosting_article: 'https://help.play.hosting/minecraft/crossplay',
+            connect_instructions: connectionTemplates.providedByHost,
+            custom_install_location: translate({
+                // Not a typo! They're the same.
+                id: 'providers.provider.lilypad.install'
+            })
         },
         {
             name: 'Pufferfish Host',
@@ -303,9 +304,10 @@ export const providersData: Providers = {
         {
             name: 'VemoxHost',
             url: 'https://vemoxhost.com/',
-            description: translate({
+            connect_instructions: connectionTemplates.sameAsJava,
+            custom_install_location: translate({
                 id: 'providers.provider.vemox_hosting.description',
-                message: "Full automatic installation. Go to one of the panel options and select the option to enable GeyserMC. Then, restart and connect to your server using your Java IP and port."
+                message: "Full automatic installation. Open the panel options and select the option to enable GeyserMC."
             })
         },
         {
