@@ -99,6 +99,7 @@ const sidebars: SidebarsConfig = {
                 id: 'geyser/custom-resource-packs'
             },
             items: [
+                'geyser/packs',
                 'geyser/custom-items',
                 'geyser/custom-blocks',
                 'geyser/custom-skulls',
