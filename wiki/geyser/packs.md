@@ -77,8 +77,8 @@ Alternatively, just using the `-v` header will turn on verbose mode that would a
  
 - **Does Geyser support behavior packs/add-ons?** <br />
 No. These would require modifications on the Java server side, which isn't possible when Geyser is used on a proxy. 
-However, many things that are possible with add-ons or behavior packs can be done with Geyser's API - such as [custom items](/geyser/custom-items)
-or [custom blocks](/geyser/custom-blocks).
+However, many things that are possible with add-ons or behavior packs can be done with Geyser's API - such as [custom items](/wiki/geyser/custom-items)
+or [custom blocks](/wiki/geyser/custom-blocks).
 
 - **Does Geyser convert Java edition resource packs?** <br />
 Not currently. For now, you need to manually create a Bedrock edition resource pack equivalent.
@@ -93,7 +93,7 @@ However, with the usage of the transfer packet, it is possible to instruct the B
 For per-server-packs, you can use the unofficial [GeyserPackSync](https://github.com/onebeastchris/GeyserPackSync) plugin.
 
 - **Does Geyser have an API to send resource packs?** <br />
-Yes! See the [Geyser API docs](/geyser/api/) for more info on that. There is a `SessionLoadResourcePacksEvent` to determine which 
+Yes! See the [Geyser API docs](/wiki/geyser/api/) for more info on that. There is a `SessionLoadResourcePacksEvent` to determine which 
 packs are sent to each connecting player, or the more general `GeyserDefineResourcePacksEvent` that defines the packs all users receive.
 
 - **Can I use subpacks or specify the load order of resource packs**? <br />
