@@ -39,7 +39,7 @@ Then, restart Geyser (or the server Geyser runs on).
 ## Updating Extensions {#updating-extensions}
 To update extensions, use the `update` folder within the extensions directory as follows:
 
-1. Copy the updated versions of your extension jars into the `update` folder inside the extensions directory.
+1. Copy the updated versions of your extension jars into the `update` folder inside the `extensions` directory.
 2. On the next server or application restart, any extensions in the `update` folder will automatically replace the corresponding extensions in the main extensions directory. If an extension is new, it will be added.
 3. If an update fails, it will be logged, and the server/application will proceed with loading extensions as usual. You can review the logs to address any issues.
 
@@ -54,7 +54,7 @@ Geyser recognizes extensions when they have a file called `extension.yml` in the
 id: exampleid
 name: ExampleExtension
 main: org.geyser.extension.exampleid.ExampleExtension
-api: 2.4.1
+api: 2.6.2
 version: 1.0.0
 authors: [ExampleAuthor]
 ```
