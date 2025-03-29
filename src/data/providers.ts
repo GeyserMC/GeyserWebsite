@@ -486,6 +486,14 @@ export const providersData: Providers = {
             description: descriptionTemplates.default
         },
         {
+            name: 'Modrinth Servers',
+            url: 'https://modrinth.com/servers',
+            description: translate({
+                id: 'providers.provider.modrinth.description',
+                message: "Check [Modrinth's documentation](https://support.modrinth.com/en/articles/10986613-adding-geyser-to-your-server) for specific instructions."
+            })
+        },
+        {
             name: 'Netbela',
             url: 'https://netbela.nl/store/minecraft',
             description: translate({
