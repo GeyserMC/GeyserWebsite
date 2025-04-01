@@ -54,7 +54,7 @@ Geyser recognizes extensions when they have a file called `extension.yml` in the
 id: exampleid
 name: ExampleExtension
 main: org.geyser.extension.exampleid.ExampleExtension
-api: 2.6.2
+api: 2.7.0
 version: 1.0.0
 authors: [ExampleAuthor]
 ```
