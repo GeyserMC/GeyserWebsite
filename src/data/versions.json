@@ -1,6 +1,6 @@
 {
     "bedrock": {
-        "supported": "1.21.50-1.21.71",
+        "supported": "1.21.50-1.21.72",
         "latest": {
             "id": 786,
             "name": "1.21.70"
