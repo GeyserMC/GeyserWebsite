@@ -240,7 +240,7 @@ const config: Config = {
                 href: '/',
                 width: 430,
             },
-            copyright: `Copyright © ${new Date().getFullYear()} GeyserMC. Built with Docusaurus. This website is not an official Minecraft website and is not associated with Mojang Studios or Microsoft. All product and company names are trademarks or registered trademarks of their respective holders. Use of these names does not imply any affiliation or endorsement by them.`,
+            copyright: `Copyright © ${new Date().getFullYear()} GeyserMC. Built with Docusaurus.<br>This website is not an official Minecraft website and is not associated with Mojang Studios or Microsoft. All product and company names are trademarks or registered trademarks of their respective holders. Use of these names does not imply any affiliation or endorsement by them.`,
             links: [
                 {
                     title: 'Wiki',
