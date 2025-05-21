@@ -159,7 +159,7 @@ const DumpViewerPage: React.FC = () => {
                                             </div>
                                             <div>
                                                 <b><Translate id='pages.dumpviewer.platform.name'>Platform Name</Translate></b><br />
-                                                <p id='platformName'>{data.bootstrapInfo.platformName ?? capitalizeFirstLetter(data.bootstrapInfo.platform.toLowerCase())}</p>
+                                                <p id='platformName'>{data.bootstrapInfo.platformName ?? capitalizeFirstLetter(data.bootstrapInfo.platform.platformName.toLowerCase())}</p>
                                             </div>
                                             <div>
                                                 <b><Translate id='pages.dumpviewer.platform.version'>Platform Version</Translate></b><br />
@@ -211,10 +211,11 @@ const DumpViewerPage: React.FC = () => {
                                 </div>
                                 <div className={styles.card}>
                                     <div className={styles.cardHeader}>
-                                        <Translate id='pages.dumpviewer.plugins'>Plugins</Translate> ({data.bootstrapInfo.plugins.length})
+                                        <Translate id='pages.dumpviewer.plugins'>Plugins</Translate> ({data.bootstrapInfo.plugins?.length ?? 0})
                                     </div>
                                     <div className={styles.cardBody}>
-                                        {data.bootstrapInfo.plugins.length === 0 ? <p><Translate id='pages.dumpviewer.plugins.noplugins'>No plugins to show.</Translate></p> : (
+                                        {!data.bootstrapInfo.plugins || data.bootstrapInfo.plugins.length === 0 ? (
+                                            <p><Translate id='pages.dumpviewer.plugins.noplugins'>No plugins to show.</Translate></p>) : (
                                             <>
                                                 <p><Translate id='pages.dumpviewer.plugins.helptext'>Click on a plugin to view more information.</Translate></p>
 
