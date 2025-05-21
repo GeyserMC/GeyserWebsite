@@ -18,6 +18,20 @@ or the [Public GeyserConnect](https://www.geyserconnect.net) which allows connec
 
 :::
 
+## Friend Methode (Recomend) {#friend-methode-recomend}
+
+1.  In the Minecraft main menu
+2.  Click "Play" and then go to the "Friends" tab
+3.  Click "Add Friend" or "Find Cross-Platform Friends" or "Search for players" (whichever is available on your game version)
+4.  Search for the gamer tag BCMain, and add this user as friend
+5.  Return to the Minecraft main menu, and wait about 20 seconds. Then click "Play" and return to the "Friends" tab
+6.  You should soon see a joinable instance show up, "Join to Open Server List". Or, you should see BCMain under the "Online" section.
+7.  Join instance to connect to BedrockConnect server list
+
+(If the join option doesn't appear, you may need to wait another minute for the bot to process the friend request)
+
+[Original instructions from Bedrock Connect](https://github.com/Pugmatt/BedrockConnect#add-friend-method)
+
 ## Xbox One {#xbox-one}
 
 (Video linked below)
