@@ -526,6 +526,14 @@ export const providersData: Providers = {
             })
         },
         {
+            name: 'OrionNodes',
+            url: 'https://orionnodes.com',
+            description: translate({
+                id: 'providers.provider.orionnodes.description',
+                message: "Open a port yourself from the network page in the game panel, use that port in the bedrock section of the Geyser config."
+            })
+        },
+        {
             name: 'PaperNodes',
             url: 'https://papernodes.com/',
             description: translate({
