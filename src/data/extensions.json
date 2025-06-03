@@ -1,0 +1,86 @@
+[
+    {
+        "name": "EmoteMenu",
+        "description": "Creates a quick menu for easy access for Geyser features and command execution, even with Xbox Achievements turned on.",
+        "author": "Carbuino",
+        "official": false,
+        "url": "https://github.com/Carbuino/EmoteMenu"
+    },
+    {
+        "name": "GeyserConnect",
+        "description": "Allows you to host a GeyserConnect instance to connect to any Java server, with or without Geyser. Like Geyser Standalone on steroids.",
+        "author": "GeyserMC",
+        "official": true,
+        "url": "https://github.com/GeyserMC/GeyserConnect"
+    },
+    {
+        "name": "GeyserFloatingPoints",
+        "description": "An extension that adds a hacky workaround to fix floating-point precision at large distances (Bedrock distance effect).",
+        "author": "Oryxel",
+        "official": false,
+        "url": "https://github.com/Oryxel/GeyserFloatingPoints"
+    },
+    {
+        "name": "HideCommands",
+        "description": "Allows you to hide Java commands from Bedrock players.",
+        "author": "Redned235",
+        "official": true,
+        "url": "https://github.com/Redned235/HideCommands"
+    },
+    {
+        "name": "Jukebox Extended Reborn",
+        "description": "Level up your server with custom music discs. Allows JEXT to work with Geyser standalone.",
+        "author": "Spartacus04",
+        "official": false,
+        "url": "https://github.com/spartacus04/jext-reborn"
+    },
+    {
+        "name": "LuckLink",
+        "description": "A LuckPerms integration that automatically registers permissions for Geyser and Geyser extensions on platforms where there is no built-in permission manager. These include Fabric, Velocity, and BungeeCord. Also requires LuckPerms to be installed.",
+        "author": "onebeastchris",
+        "official": true,
+        "url": "https://github.com/onebeastchris/LuckLink"
+    },
+    {
+        "name": "MagicMenu",
+        "description": "Allows you to run custom commands with forms & quick accessing them with emotes.",
+        "author": "onebeastchris",
+        "official": true,
+        "url": "https://github.com/onebeastchris/MagicMenu"
+    },
+    {
+        "name": "MCXboxBroadcast",
+        "description": "Creates & hosts a simple friend bot to connect to your Geyser server. Makes joining Geyser servers on consoles super easy!",
+        "author": "rtm516",
+        "official": true,
+        "url": "https://github.com/MCXboxBroadcast/Broadcaster"
+    },
+    {
+        "name": "PickPack",
+        "description": "Allows Bedrock players to choose & toggle their resource packs while playing on your server!",
+        "author": "onebeastchris",
+        "official": true,
+        "url": "https://github.com/onebeastchris/pickpack/"
+    },
+    {
+        "name": "Spark",
+        "description": "A Spark implementation for Geyser-Standalone. Can be used to create performance profiles, heap dumps, and general health reporting. Note; a download is not yet available so you would need to compile it yourself.",
+        "author": "GeyserMC",
+        "official": true,
+        "url": "https://github.com/GeyserMC/spark"
+    },
+    {
+        "name": "ThirdPartyCosmetics",
+        "description": "Adds support for third-party capes and ears to Geyser.",
+        "author": "GeyserMC",
+        "official": true,
+        "url": "https://github.com/GeyserMC/ThirdPartyCosmetics"
+    },
+    {
+        "name": "TransferTool",
+        "description": "Allows you to configure Geyser servers to send a player to when Geyser receives a Java transfer packet.",
+        "author": "onebeastchris",
+        "official": true,
+        "url": "https://github.com/onebeastchris/TransferTool"
+    }
+]

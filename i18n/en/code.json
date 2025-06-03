@@ -245,6 +245,12 @@
   "pages.download.description.thirdpartycosmetics": {
     "message": "An extension that adds support for loading ears and other third party cosmetics on java players"
   },
+  "pages.extensions.title": {
+    "message": "Extensions"
+  },
+  "pages.extensions.subheading": {
+    "message": "A list of known Geyser extensions."
+  },
   "pages.configeditor.noconfigselected.heading": {
     "message": "No config selected."
   },
