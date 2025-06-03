@@ -4,7 +4,6 @@ import HeroBackground from '@site/static/img/site/split-background.webp';
 import Layout from '@theme/Layout';
 import Admonition from '@theme/Admonition';
 import Translate from '@docusaurus/Translate';
-import { Grid } from '../components/Grid';
 import extensionsData from '@site/src/data/extensions.json';
 
 type Extension = {
@@ -28,20 +27,18 @@ const ExtensionsPage: React.FC = () => (
         <Admonition type="warning" className="mt-20">
             Some of these extensions are not maintained by the GeyserMC team and as such should be used with caution. Extensions marked "Official Extension" are maintained by at least one member of the core GeyserMC team.
         </Admonition>
-    
+
         <div className="mt-20">
-            <Grid elementsPerRow={1}>
-                {extensions.map((extension) => (
-                    <a key={extension.name} href={extension.url} className="extension-button">
-                        <div className="extension-button-header">
-                            <span className="extension-name">{extension.name}</span>
-                            <span className="extension-author">by {extension.author}</span>
-                        </div>
-                        {extension.official && <span className="extension-badge">Official Extension</span>}
-                        <div className="extension-description">{extension.description}</div>
-                    </a>
-                ))}
-            </Grid>
+            {extensions.map((extension) => (
+                <a key={extension.name} href={extension.url} className="extension-button">
+                    <div className="extension-button-header">
+                        <span className="extension-name">{extension.name}</span>
+                        <span className="extension-author">by {extension.author}</span>
+                    </div>
+                    {extension.official && <span className="extension-badge">Official Extension</span>}
+                    <div className="extension-description">{extension.description}</div>
+                </a>
+            ))}
         </div>
     </>
 );
