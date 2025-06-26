@@ -1,12 +1,12 @@
 {
     "bedrock": {
-        "supported": "1.21.50-1.21.90",
+        "supported": "1.21.70-1.21.92",
         "latest": {
             "id": 818,
-            "name": "1.21.90"
+            "name": "1.21.92"
         }
     },
     "java": {
-        "supported": "1.21.5"
+        "supported": "1.21.6"
     }
 }
