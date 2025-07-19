@@ -16,6 +16,7 @@
     --ifm-color-primary-light: #33925d;
     --ifm-color-primary-lighter: #359962;
     --ifm-color-primary-lightest: #3cad6e;
+    --ifm-color-warning: #e4f126;
     --ifm-code-font-size: 95%;
     --ifm-footer-color: rgb(238, 249, 253);
     --ifm-footer-background-color: #303846;
@@ -301,6 +302,15 @@ html[data-theme='dark'] {
         background-color: var(--ifm-color-secondary);
         color: #fff;
     }
+}
+
+.warning-box {
+    width: 100%;
+    border-left: 3px solid var(--ifm-color-warning);
+    text-align: center;
+    font-size: 18px;
+    padding-top: 5px;
+    padding-bottom: 5px;
 }
 
 .tabs {
