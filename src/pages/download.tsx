@@ -129,7 +129,22 @@ const DownloadPage: React.FC = () => (
                             />
                         }
                     />
-{/*                     <Collapsible
+                    <Collapsible
+                        title='Rainbow'
+                        subtitle={<Translate id='pages.download.description.rainbow'>A Minecraft mod to generate Geyser item mappings and bedrock resourcepacks for use with Geyser's custom item API (v2). </Translate>}
+                        id='rainbow'
+                        tags={['Beta']}
+                        inner={
+                            <ProjectDownload
+                                projectId="rainbow"
+                                downloadsInfo={{
+                                    rainbow: <PlatformIcon img={FabricIcon} text="Fabric" />,
+                                }}
+                                gridColumns={1}
+                            />
+                        }
+                    />
+                    <Collapsible
                         title='Hydraulic'
                         subtitle={<Translate id='pages.download.description.hydraulic'>A companion mod to Geyser which allows for Bedrock players to join modded Minecraft: Java Edition servers.</Translate>}
                         id='hydraulic'
@@ -143,9 +158,21 @@ const DownloadPage: React.FC = () => (
                                     neoforge: <PlatformIcon img={NeoForgeIcon} text="NeoForge" />,
                                 }}
                                 gridColumns={1}
+                                warning={ // Remove when Item API V2 is merged!
+                                    <>
+                                        <Translate id='pages.download.warning.hydraulic'>
+                                           A preview version of Geyser is required to run Hydraulic, you can download the Item API V2 preview below:
+                                        </Translate>
+                                        <p>
+                                           <a href="https://download.geysermc.org/v2/projects/geyserpreview/versions/pr.5189/builds/latest/downloads/fabric">Fabric</a>
+                                           <span>, </span>
+                                           <a href="https://download.geysermc.org/v2/projects/geyserpreview/versions/pr.5189/builds/latest/downloads/neoforge">NeoForge</a>
+                                        </p>
+                                    </>
+                                }
                             />
                         }
-                    /> */}
+                    />
                 </Collapsibles>
             </TabItem>
         </Tabs>
