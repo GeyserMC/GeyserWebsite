@@ -186,7 +186,8 @@ sudo firewall-cmd --reload
 #### Ubuntu {#ubuntu}
 
 1. Remove/comment out `-A INPUT -j REJECT --reject-with icmp-host-prohibited` in the `/etc/iptables/rules.v4` file.
-2. Run the following command to fix `ufw`:
-```bash 
-sudo iptables-restore < /etc/iptables/rules.v4
+2. Run the following commands to fix `ufw`:
+```bash
+sudo -i
+iptables-restore < /etc/iptables/rules.v4
 ```
