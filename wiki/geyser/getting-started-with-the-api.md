@@ -32,7 +32,7 @@ Add Geyser's API codebase as a dependency:
 <dependency>
     <groupId>org.geysermc.geyser</groupId>
     <artifactId>api</artifactId>
-    <version>2.8.2-SNAPSHOT</version>
+    <version>2.8.3-SNAPSHOT</version>
     <scope>provided</scope>
 </dependency>
 ```
@@ -40,7 +40,7 @@ Add Geyser's API codebase as a dependency:
 **Gradle**
 ```groovy
 dependencies {
-    compileOnly('org.geysermc.geyser:api:2.8.2-SNAPSHOT')
+    compileOnly('org.geysermc.geyser:api:2.8.3-SNAPSHOT')
 }
 ```
 
