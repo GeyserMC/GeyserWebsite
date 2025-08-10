@@ -137,6 +137,7 @@ const DownloadPage: React.FC = () => (
                         inner={
                             <ProjectDownload
                                 projectId="rainbow"
+                                setup='/wiki/other/rainbow'
                                 downloadsInfo={{
                                     rainbow: <PlatformIcon img={FabricIcon} text="Fabric" />,
                                 }}
@@ -170,6 +171,22 @@ const DownloadPage: React.FC = () => (
                                         </p>
                                     </>
                                 }
+                            />
+                        }
+                    />
+                    <Collapsible
+                        title='Thunder'
+                        subtitle={<Translate id='pages.download.description.thunder'>A java application to convert simple Java Edition resource packs to Bedrock Edition ones.</Translate>}
+                        id='thunder'
+                        tags={['Beta']}
+                        inner={
+                            <ProjectDownload
+                                projectId="thunder"
+                                setup='/wiki/other/thunder'
+                                downloadsInfo={{
+                                    thunder: <><FontAwesomeIcon icon={faFileZipper} /> Thunder</>,
+                                }}
+                                gridColumns={1}
                             />
                         }
                     />

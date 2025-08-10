@@ -13,8 +13,8 @@ Issues with each workaround are listed in the Hurricane config. **Please take yo
 - Bamboo and dripstone collision (by setting them to no server-side collision)
 
 Supported Versions:
-- Spigot/Paper: 1.14.x - 1.21.1
-- Fabric: 1.21/1.21.1
+- Spigot/Paper: 1.14 - 1.21.8
+- Fabric: 1.21 - 1.21.4
 
 ## Download {#download}
 - Spigot/Paper: [GeyserMC downloads page](/download/?project=other-projects&hurricane=expanded)
