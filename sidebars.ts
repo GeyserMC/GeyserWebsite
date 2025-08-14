@@ -139,7 +139,9 @@ const sidebars: SidebarsConfig = {
         'other/geyseroptionalpack',
         'other/community-geyser-projects',
         'other/hurricane',
+        'other/rainbow',
         'other/hydraulic',
+        'other/thunder',
         'other/test-server',
         'other/developer-guide',
         'other/discord-bot-usage'
