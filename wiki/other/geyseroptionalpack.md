@@ -23,6 +23,7 @@ GeyserOptionalPack is a Bedrock resource pack that adds more features to Geyser 
   - 2x2 crafting grid while in creative mode
   - Tick-delay and rename fields in the command block menu
   - Structure block options that do not exist on Java
+- Hides the accessibility background on titles for the weapon cooldown
   
 A more complete list can be found on the optional pack's [README](https://github.com/GeyserMC/GeyserOptionalPack/blob/master/README.md). Implementation details for those interested in how features are added can be found [here](https://github.com/GeyserMC/GeyserOptionalPack/blob/master/developer_documentation.md).
 
