@@ -3,7 +3,7 @@ title: Rainbow
 description: A Minecraft mod to generate Geyser item mappings and bedrock resourcepacks for use with Geyser's Custom Item API V2.
 ---
 
-Rainbow is a Fabric client-sided Minecraft mod to generate Geyser item mappings and bedrock resourcepacks for use with Geyser's custom item API (v2) for use on servers. 
+Rainbow is a 1.21.7/.8 Fabric client-sided Minecraft mod to generate Geyser item mappings and bedrock resourcepacks for use with Geyser's custom item API (v2) for use on servers. 
 
 ## What is Rainbow? {#what-is-rainbow}
 
@@ -35,8 +35,3 @@ You can download Rainbow [here](/download/?project=other-projects&rainbow=expand
 
 Any contributions are appreciated. Please feel free to reach out to us on [Discord](https://discord.gg/geysermc) if
 you're interested in helping out with Rainbow.
-
-### Project Setup {#project-setup}
-
-1. Clone the repo to your computer
-2. Run gradlew build and locate to bootstrap/build folder.
