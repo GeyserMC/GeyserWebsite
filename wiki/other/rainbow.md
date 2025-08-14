@@ -21,9 +21,9 @@ To use Rainbow:
 1. You need setup a 1.21.7/.8 Fabric client for Java Edition and ensure the mod is present on the client.
 2. Join your server of choice to start converting packs and run `/rainbow create <pack name>` with `<pack name>` being the name of your output pack.
 3. You can map things in a couple of ways:
-    - Hold each item in your hand one by one and run `/rainbow map` after holding each one.
+    - Hold each item in your hand one by one and run `/rainbow map` while holding the item.
     - Fill your inventory with the custom items and run `/rainbow mapinventory` to map your entire inventory.
-    - Run `/rainbow auto inventory` and open a UI with the custom content (For example, a chest or command from a plugin to show custom content.), stop this with `/rainbow auto stop`.
+    - Run `/rainbow auto inventory` and open a UI with the custom content (For example, a chest or command from a plugin to show custom content.). Rainbow will continue mapping all custom items until you stop the process with `/rainbow auto stop`.
 4. Run `/rainbow finish` to finish your conversion, Rainbow will then output your pack and mappings file to `<instance folder>/rainbow/<pack name>`, optionally, you can click the `Wrote pack to disk` message in chat to open the folder.
 5. In this folder, you will find 3 files, `pack.zip` which you put in your `packs` folder of your server, `geyser_mappings.json` which you put in your `custom_mappings` folder of your server and finally `report.txt` which you can send in our [Discord](https://discord.gg/geysermc) if you face issues, otherwise, you can ignore this file.
 

@@ -18,10 +18,11 @@ Not only is this project in early beta, it does **not** convert custom items! Pl
 ## Usage {#usage}
 
 1. Ensure you have Java 17 or higher installed, if you do you should be able to open the file like a normal program.
-2. Select your pack using the big button on the left. Once you do, if it was successful you should see the icon of the pack has showed up.
-3. Change the output pack name to what you desire, this changes the name shown in bedrock, not the file name.
-4. Hit the convert button and be patient while it converts, it may take a while.
-5. Once completed, your pack should be put in the same place as where your Java pack was, you can now either use the pack on your client if your device supports adding custom packs, or place it in the `packs` folder in your Geyser server.
+2. Select the Java edition resource pack using the button on the left. Once you do, if it was successful you should see the icon of the pack.
+3. Change the output pack name. This is the name shown to the Bedrock client.
+4. Hit the convert button to start the conversion process. This step may take a while.
+5. Once completed, the converter Bedrock edition resource pack will be in the same place as where your Java pack was. 
+You can now either use the pack on the Bedrock client, or place it in the `packs` folder in your Geyser server.
 
 ## Download {#download} 
 
