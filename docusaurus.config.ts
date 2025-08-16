@@ -146,6 +146,12 @@ const config: Config = {
                         }
                     ]
                 },
+                 {
+                    to: 'extensions',
+                    label: 'Extensions',
+                    position: 'left',
+                    className: 'header-extensions-link'
+                },
                 {
                     to: 'download',
                     label: 'Download',
