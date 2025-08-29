@@ -68,7 +68,6 @@ If you have an Android device, you have several options:
 - [BedrockTogether](https://play.google.com/store/apps/details?id=pl.extollite.bedrocktogetherapp)
 - [MC Lan Proxy (Trial)](https://play.google.com/store/apps/details?id=com.luzenna.mineproxydroidtrial)
 - [MC Lan Proxy (Paid)](https://play.google.com/store/apps/details?id=com.luzenna.mineproxydroid)
-- [MC Server Connector](https://play.google.com/store/apps/details?id=com.smokiem.mcserverconnector)
 
 ### Using an iOS device {#using-an-ios-device}
 If you have an iOS 14+ device, you can use [BedrockTogether](https://apps.apple.com/app/bedrocktogether/id1534593376).
