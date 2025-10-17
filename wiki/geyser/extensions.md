@@ -59,7 +59,7 @@ version: 1.0.0
 authors: [ExampleAuthor]
 dependencies: # Optional
   exampledependency:
-    # How this dependency should load (BEFORE or AFTER this extension)
+    # When this dependency should be loaded (BEFORE or AFTER your extension)
     load: BEFORE # Default: BEFORE
     # This determines whether or not this dependency is required for this extension to load
     required: true # Default: true
