@@ -59,9 +59,15 @@ Geyser recognizes extensions when they have a file called `extension.yml` in the
 id: exampleid
 name: ExampleExtension
 main: org.geyser.extension.exampleid.ExampleExtension
-api: 2.7.0
+api: 2.9.0
 version: 1.0.0
 authors: [ExampleAuthor]
+dependencies: # Optional
+  exampledependency:
+    # When this dependency should be loaded (BEFORE or AFTER your extension)
+    load: BEFORE # Default: BEFORE
+    # This determines whether or not this dependency is required for this extension to load
+    required: true # Default: true
 ```
 
 Explanations for the individual fields:
@@ -70,6 +76,7 @@ Explanations for the individual fields:
 - main: The main class of your extension.
 - api: The Geyser API version your extension targets.
 - authors: The author(s) of the extension. To add more than one entry, separate entries with a comma.
+- dependencies: The dependencies of the extension. Each dependency has a load order and required property with defaults of `BEFORE` and `true` respectively.
 
 ## Creating the main class {#creating-the-main-class}
 
