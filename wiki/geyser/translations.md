@@ -52,7 +52,7 @@ These languages are also supported, and are available in the Bedrock client usin
 | Hindi               | hi_in |
 
 ## How can I help translate Geyser? {#how-can-i-help-translate-geyser}
-We use [Crowdin](https://geysermc.crowdin.com/) to manage our translations.
+We use [Crowdin](https://translate.geysermc.org/) to manage our translations.
 We also can add support for more languages, and please request them in the Discord server if you are willing to translate them.
 (Those can be enabled clientside via [https://www.curseforge.com/minecraft-bedrock/addons/translations-for-minecraft](https://www.curseforge.com/minecraft-bedrock/addons/translations-for-minecraft))
 
