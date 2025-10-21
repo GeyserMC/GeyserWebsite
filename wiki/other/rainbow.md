@@ -18,7 +18,7 @@ This project is early in development! Any bugs and issues should be reported in 
 ## Usage {#usage}
 
 To use Rainbow:
-1. You need setup a 1.21.7/.8 Fabric client for Java Edition and ensure the mod is present on the client.
+1. You need setup a 1.21.9/.10 Fabric client for Java Edition and ensure the mod is present on the client.
 2. Join your server of choice to start converting packs and run `/rainbow create <pack name>` with `<pack name>` being the name of your output pack.
 3. You can map things in a couple of ways:
     - Hold each item in your hand one by one and run `/rainbow map` while holding the item.
