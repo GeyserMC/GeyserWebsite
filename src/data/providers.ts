@@ -241,7 +241,7 @@ export const providersData: Providers = {
             url: 'https://www.bisecthosting.com/',
             description: translate({
                 id: 'providers.provider.bisecthosting.description',
-                message: "You must have a plan with a dedicated IP. In Geyser's config, uncomment the `bedrock address` and set it to the public IP of your server (e.g. `address: 51.79.129.18`). Leave the port as `19132`. Under the home tab, select 'Enable UDP Network' and restart the server. See Bisect's [article](https://www.bisecthosting.com/clients/index.php?rp=/knowledgebase/193/How-to-install-Geyser-and-Floodgate-on-a-Minecraft-Java-server.html) for full instructions. If you still cannot connect after following these instructions, contact Bisect Support as they reportedly have UDP disabled on some nodes."
+                message: "Navigate to the Network tab on your server panel to find the available ports. In Geyser's config, uncomment the `bedrock address` and set it to the public IP of your server (e.g. `address: 12.34.456.78`). Set the Bedrock port to one from your Network page, save the file and restart the server. See Bisect's [article](https://www.bisecthosting.com/clients/index.php?rp=/knowledgebase/193/How-to-install-Geyser-and-Floodgate-on-a-Minecraft-Java-server.html) for full instructions. If you still cannot connect after following these instructions, contact Bisect Support as they reportedly have UDP disabled on some nodes."
             })
         },
         {
