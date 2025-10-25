@@ -645,6 +645,14 @@ export const providersData: Providers = {
             config: configChangeTemplates.assignPort
         },
         {
+            name: 'Modrinth Servers',
+            url: 'https://modrinth.com/servers',
+            description: translate({
+                id: 'providers.provider.modrinth.description',
+                message: "Check [Modrinth's documentation](https://support.modrinth.com/en/articles/10986613-adding-geyser-to-your-server) for specific instructions."
+            })
+        },
+        {
             name: 'Netbela',
             url: 'https://netbela.nl/store/minecraft',
             config: configChangeTemplates.cloneRemotePort,
@@ -689,6 +697,14 @@ export const providersData: Providers = {
             url: 'https://orionnodes.com',
             connect_instructions: connectionTemplates.default,
             config: configChangeTemplates.assignPort
+        },
+        {
+            name: 'OrionNodes',
+            url: 'https://orionnodes.com',
+            description: translate({
+                id: 'providers.provider.orionnodes.description',
+                message: "Open a port yourself from the network page in the game panel, use that port in the bedrock section of the Geyser config."
+            })
         },
         {
             name: 'PaperNodes',
