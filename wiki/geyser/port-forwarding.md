@@ -185,9 +185,9 @@ sudo firewall-cmd --reload
 
 #### Ubuntu {#ubuntu}
 
-1. Remove/comment out `-A INPUT -j REJECT --reject-with icmp-host-prohibited` in the `/etc/iptables/rules.v4` file.
-2. Run the following commands to fix `ufw`:
+Run the following commands to allow Minecraft and Geyser through the OS firewall:
+
 ```bash
-sudo -i
-iptables-restore < /etc/iptables/rules.v4
+sudo ufw allow 25565/tcp
+sudo ufw allow 19132/udp
 ```
