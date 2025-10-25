@@ -26,7 +26,7 @@ crwdns27561:0crwdne27561:0
 :::info
 
 crwdns27563:0crwdne27563:0
-crwdns27565:0crwdne27565:0\
+crwdns27565:0crwdne27565:0  
 crwdns27567:0[crwdnd27567:0](/wiki/geyser/playit-gg/)crwdne27567:0
 
 :::
@@ -63,21 +63,21 @@ crwdns27619:0crwdne27619:0 crwdns27621:0`19132`crwdne27621:0
   ```bash
   sudo ufw allow 19132/udp
   ```
-  crwdns27627:0`sudo ufw reload`crwdnd27627:0`sudo ufw status`crwdne27627:0\
+  crwdns27627:0`sudo ufw reload`crwdnd27627:0`sudo ufw status`crwdne27627:0  
   crwdns27629:0[crwdnd27629:0](https://www.digitalocean.com/community/tutorials/how-to-setup-a-firewall-with-ufw-on-an-ubuntu-and-debian-cloud-server)crwdnd27629:0[crwdnd27629:0](https://www.baeldung.com/linux/uncomplicated-firewall)crwdne27629:0
 
 - crwdns27631:0`firewalld`crwdne27631:0
   ```bash
   sudo firewall-cmd --zone=public --permanent --add-port=19132/udp
   ```
-  crwdns27633:0`sudo firewall-cmd --reload`crwdnd27633:0`sudo firewall-cmd --list-all`crwdne27633:0\
+  crwdns27633:0`sudo firewall-cmd --reload`crwdnd27633:0`sudo firewall-cmd --list-all`crwdne27633:0  
   crwdns27635:0[crwdnd27635:0](https://www.digitalocean.com/community/tutorials/how-to-set-up-a-firewall-using-firewalld-on-centos-7)crwdne27635:0
 
 - crwdns27637:0`iptables`crwdne27637:0 crwdns27639:0crwdne27639:0
   ```bash
   sudo iptables -A INPUT -p udp --dport 19132 -j ACCEPT
   ```
-  crwdns27641:0`sudo iptables-save`crwdnd27641:0`sudo iptables -L`crwdne27641:0\
+  crwdns27641:0`sudo iptables-save`crwdnd27641:0`sudo iptables -L`crwdne27641:0  
   crwdns27643:0[crwdnd27643:0](https://www.digitalocean.com/community/tutorials/how-to-set-up-a-firewall-using-iptables-on-ubuntu-14-04)crwdnd27643:0[crwdnd27643:0](https://help.ubuntu.com/community/IptablesHowTo)crwdne27643:0
 
 ### crwdns27645:0{#macos}crwdne27645:0
@@ -204,9 +204,9 @@ sudo firewall-cmd --reload
 
 #### crwdns27779:0{#ubuntu}crwdne27779:0
 
-1. crwdns27781:0`-A INPUT -j REJECT --reject-with icmp-host-prohibited`crwdnd27781:0`/etc/iptables/rules.v4`crwdne27781:0
-2. crwdns27783:0`ufw`crwdne27783:0
+crwdns28949:0crwdne28949:0
 
 ```bash
-sudo iptables-restore < /etc/iptables/rules.v4
+sudo ufw allow 25565/tcp
+sudo ufw allow 19132/udp
 ```

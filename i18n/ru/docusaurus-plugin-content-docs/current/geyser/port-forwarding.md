@@ -26,7 +26,7 @@ Do note: if you do not have a static IP address, your IP address may change over
 :::info
 
 Some ISPs (Internet Service Providers) block certain ports, or don't allow you to open ports (e.g. by using CGNAT, which doesn't allow you to open a port with a dynamic IP).
-Other ISPs may require you to pay extra for a static IP address.\
+Other ISPs may require you to pay extra for a static IP address.  
 As an alternative to port forwarding, you can use [playit.gg](/wiki/geyser/playit-gg/) to create a tunnel.
 
 :::
@@ -63,21 +63,21 @@ Different Linux distributions, even different VPS providers ship and configure d
   ```bash
   sudo ufw allow 19132/udp
   ```
-  Then, reload the firewall with `sudo ufw reload`, and see all open rules with `sudo ufw status`.\
+  Then, reload the firewall with `sudo ufw reload`, and see all open rules with `sudo ufw status`.  
   Further helpful guides: [DigitalOcean](https://www.digitalocean.com/community/tutorials/how-to-setup-a-firewall-with-ufw-on-an-ubuntu-and-debian-cloud-server), [Baeldung](https://www.baeldung.com/linux/uncomplicated-firewall)
 
 - `firewalld` Add a port on UDP by running:
   ```bash
   sudo firewall-cmd --zone=public --permanent --add-port=19132/udp
   ```
-  Then, reload the firewall with `sudo firewall-cmd --reload`, and see all open rules with `sudo firewall-cmd --list-all`.\
+  Then, reload the firewall with `sudo firewall-cmd --reload`, and see all open rules with `sudo firewall-cmd --list-all`.  
   Further helpful guides: [DigitalOcean](https://www.digitalocean.com/community/tutorials/how-to-set-up-a-firewall-using-firewalld-on-centos-7)
 
 - `iptables` is a common firewall that is used on many Linux distributions. To open a port on UDP, run the following command:
   ```bash
   sudo iptables -A INPUT -p udp --dport 19132 -j ACCEPT
   ```
-  Then, save the firewall with `sudo iptables-save`, and see all open rules with `sudo iptables -L`.\
+  Then, save the firewall with `sudo iptables-save`, and see all open rules with `sudo iptables -L`.  
   Further helpful guides for iptables: [DigitalOcean](https://www.digitalocean.com/community/tutorials/how-to-set-up-a-firewall-using-iptables-on-ubuntu-14-04), [Ubuntu](https://help.ubuntu.com/community/IptablesHowTo)
 
 ### macOS {#macos}
@@ -204,9 +204,9 @@ sudo firewall-cmd --reload
 
 #### Ubuntu {#ubuntu}
 
-1. Remove/comment out `-A INPUT -j REJECT --reject-with icmp-host-prohibited` in the `/etc/iptables/rules.v4` file.
-2. Run the following command to fix `ufw`:
+Run the following commands to allow Minecraft and Geyser through the OS firewall:
 
 ```bash
-sudo iptables-restore < /etc/iptables/rules.v4
+sudo ufw allow 25565/tcp
+sudo ufw allow 19132/udp
 ```
