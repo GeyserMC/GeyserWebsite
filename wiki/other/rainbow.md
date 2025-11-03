@@ -1,6 +1,9 @@
 ---
 title: Rainbow
-description: A Minecraft mod to generate Geyser item mappings and bedrock resourcepacks for use with Geyser's Custom Item API V2.
+description: >-
+  A Minecraft mod to generate Geyser item mappings and bedrock resourcepacks for
+  use with Geyser's Custom Item API V2.
+crowdin_page_id: 36ba71a2-79ae-41ba-aba7-3e95609afbec
 ---
 
 Rainbow is a Fabric client-sided Minecraft mod to generate Geyser item mappings and bedrock resourcepacks for use with Geyser's custom item API (v2) for use on servers. 
