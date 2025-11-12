@@ -4,7 +4,7 @@ on:
   push:
     branches:
       - master
-      # Remove before merging
+      # Remove before merging 
       - feature/i18n
     paths-ignore:
       - '.github/CODEOWNERS'
