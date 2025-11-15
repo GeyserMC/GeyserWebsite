@@ -239,11 +239,11 @@
   "pages.download.description.geyserconnect": {
     "message": "A plugin to allow for Geyser players to connect to your server without needing to use a proxy."
   },
-  "pages.download.description.geyseroptionalpack": {
-    "message": "An optional Bedrock resource pack to extend Geyser functionality."
-  },
   "pages.download.description.thirdpartycosmetics": {
     "message": "An extension that adds support for loading ears and other third party cosmetics on java players"
+  },
+  "pages.download.description.emoteoffhand": {
+    "message": "An extension that allows Bedrock players to switch their offhand and mainhand item by emoting."
   },
   "pages.dumpviewer.title": {
     "message": "Dump Viewer"

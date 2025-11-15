@@ -18,7 +18,7 @@ const descriptionTemplates = {
     }),
     javaIp: translate({
         id: 'providers.templates.java_ip',
-        message: "Chane `bedrock address` from `0.0.0.0` to your Java server's IP."
+        message: "Change `bedrock address` from `0.0.0.0` to your Java server's IP."
     })
 }
 
