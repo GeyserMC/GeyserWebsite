@@ -9,7 +9,7 @@ It should be noted that blocks and their associated components are not very stab
 
 ## Enabling custom blocks {#enabling-custom-blocks}
 
-Before beginning, ensure that `add-non-bedrock-items` is set to `true` in your `config.yml` file.
+Before beginning, ensure that `gameplay.enable-custom-content` is set to `true` in your `config.yml` file.
 
 ```yml
 # Whether to add any items and blocks which normally does not exist in Bedrock Edition.
@@ -17,7 +17,7 @@ Before beginning, ensure that `add-non-bedrock-items` is set to `true` in your `
 # If this is disabled, furnace minecart items will be mapped to hopper minecart items.
 # Geyser's block, item, and skull mappings systems will also be disabled.
 # This option requires a restart of Geyser in order to change its setting.
-add-non-bedrock-items: true
+enable-custom-content: true
 ```
 
 ## JSON mappings {#json-mappings}

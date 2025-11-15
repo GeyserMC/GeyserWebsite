@@ -14,7 +14,6 @@ The following things cannot be fixed without changes to Bedrock or the Java prot
 
 - Clickable links in chat
 - Glowing effect
-- Crafting in the 2x2 menu while in creative mode - with the GeyserOptionalPack, this grid is hidden as it does not exist on Java.
 - Distinguishing between left and right clicks in inventories
 - Redstone dot blockstates
 - Potion colors implemented using NBT
@@ -35,9 +34,9 @@ The following things cannot be fixed without changes to Bedrock or the Java prot
 - Custom furnace cook times ([GeyserMC/Geyser#4104](https://github.com/GeyserMC/Geyser/issues/4104))
 - Maximum sign length different on Java/Bedrock edition ([GeyserMC/Geyser#4130](https://github.com/GeyserMC/Geyser/issues/4130))
 
-## Fixable With GeyserOptionalPack {#fixable-with-geyseroptionalpack}
+## Fixed with the included GeyserIntegratedPack {#fixable-with-geyserintegratedpack}
 
-The following changes **are supported** with the [GeyserOptionalPack](/wiki/other/geyseroptionalpack/), which is a Bedrock resource pack you can install for additional functionality for features Bedrock does not natively support:
+The following changes **are supported** with the included GeyserIntegratedPack, which is a Bedrock resource pack to add features Bedrock doesn't natively support:
 - Custom armor stand poses
 - Illusioners
 - Hit particles and other miscellaneous particles not natively in Bedrock

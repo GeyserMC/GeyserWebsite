@@ -68,10 +68,6 @@ const sidebars: SidebarsConfig = {
         {
             type: 'category',
             label: 'Configuring Geyser',
-            link: {
-                type: 'doc',
-                id: 'geyser/understanding-the-config',
-            },
             items: [
                 'geyser/commands',
                 'geyser/translations',
@@ -136,7 +132,7 @@ const sidebars: SidebarsConfig = {
         'other/index',
         'other/geyserconnect',
         'other/thirdpartycosmetics',
-        'other/geyseroptionalpack',
+        'other/geyserintegratedpack',
         'other/community-geyser-projects',
         'other/hurricane',
         'other/rainbow',

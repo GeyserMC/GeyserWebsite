@@ -13,7 +13,7 @@ If you still can't make it work, join [our Discord](https://discord.gg/geysermc)
 For Floodgate issues see: [Floodgate: Known Issues/Caveats](/wiki/floodgate/issues/).
 
 # I can't connect! (Either the server doesn't show up in the friends list or I get "Unable to connect to world")
-* If you don't use a reverse proxy such as TCPShield make sure that `enable-proxy-protocol` is set to false.
+* If you don't use a reverse proxy such as TCPShield make sure that `advanced.java.use-haproxy-protocol` is set to false.
 To fix "Unable to connect to world" with no console errors, see [here](/wiki/geyser/fixing-unable-to-connect-to-world/).
 
 ## If the server doesn't show up in the friends list {#if-the-server-doesnt-show-up-in-the-friends-list}
@@ -51,7 +51,7 @@ One way to get around this (if you're using an online host) is to shut down your
 
 You may need to update your Java version. If so, update at [Adoptium.net](https://adoptium.net/).
 
-Sometimes this happens in poor-network environments. There is an `mtu` option in the Geyser config; lower this number slowly (in batches of 100), restart each time, and re-test joining.
+Sometimes this happens in poor-network environments. There is an `advanced.bedrock.mtu` option in the Geyser config; lower this number slowly (in batches of 100), restart each time, and re-test joining.
 
 This option will most likely not help if you are getting "Unable to Connect to World" with no console logs indicating a connection.
 
@@ -75,8 +75,6 @@ If you have your configuration set up like this, put simply, it won't work. If a
 
 Connection Refused usually means that a Java server could not be found on that port, or the server denied access to the connection on a network level. 
 The latter can happen with anti-DDOS plugins such as TCPShield, but otherwise ensure that the server you're trying to connect to is spelled correctly in the config, is up and is port forwarded correctly.
-
-If you're updating from an old build of Geyser, set your remote address to `auto` and try again.
 
 ### Floodgate Misconfiguration {#floodgate-misconfiguration}
 See [this page](/wiki/floodgate/setup/) for more information.
@@ -108,12 +106,6 @@ The server is too new or Geyser is outdated. Make sure you're on the latest Geys
 # Outdated server! I'm still on 1.x.x
 
 Update the server or ask them to install [ViaVersion](https://viaversion.com/). You can also try [VIAaaS](https://github.com/ViaVersion/VIAaaS) (ViaVersion as a Service).
-
-# Query: Incorrect Magic!
-
-See here: https://www.spigotmc.org/threads/query-incorrect-magic-and-high-cpu-usage.159386/#post-2709057
-
-* If you don't use a reverse proxy such as TCPShield make sure that `enable-proxy-protocol` is set to false.
 
 # Only for BungeeCord with floodgate
 

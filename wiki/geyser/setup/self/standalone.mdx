@@ -26,13 +26,15 @@ Geyser-Standalone is NOT a plugin or mod! It is a standalone Java program that y
 4. Open your Geyser config (`config.yml`), and find the following:
 
    ```yaml
-   bedrock: 
-      # The IP address that will listen for connections. 
-      # Generally, you should only uncomment and change this if you want to limit what IPs can connect to your server. 
-      #address: 0.0.0.0 
+   bedrock:
+     # The IP address that Geyser will bind on to listen for incoming Bedrock connections.
+     # Generally, you should only change this if you want to limit what IPs can connect to your server.
+     address: 0.0.0.0
 
-      # The port that will listen for connections. This is the port that Bedrock players will use to connect to your server.
-      port: 19132 
+     # The port that will Geyser will listen on for incoming Bedrock connections.
+     # Since Minecraft: Bedrock Edition uses UDP, this port must allow UDP traffic.
+     port: 19132
+
    ```
    The `port` is the port Bedrock players will enter to connect to the server.   
    Uncommenting and changing `address` here is only needed if you need to limit connections to a specific IP address.
@@ -40,18 +42,18 @@ Geyser-Standalone is NOT a plugin or mod! It is a standalone Java program that y
 
    To configure which Java Edition server Geyser Standalone will send players to, find the remote section:
    ```yaml
-   remote:
-      # The IP address of the remote (Java Edition) server
-      # If it is "auto", for standalone version the remote address will be set to 127.0.0.1.
-      address: auto
+   java:
+     # The IP address of the Java Edition server.
+     address: 127.0.0.1
 
-      # The port of the remote (Java Edition) server
-      port: 25565
-      
-      # Authentication type. Can be offline, online, or floodgate (see https://github.com/GeyserMC/Geyser/wiki/Floodgate).
-      auth-type: online
+     # The port of the Java Edition server.
+     port: 25565
+
+     # What type of authentication Bedrock players will be checked against when logging into the Java server.
+     # Can be "floodgate" (see https://wiki.geysermc.org/floodgate/), "online", or "offline".
+     auth-type: online
    ```
-   Here, change `address` to the Java server's address, or to `auto` if the server is on the same machine as Geyser-Standalone. 
+   Here, change `address` to the Java server's address, or leave it as-is if the server is on the same machine as Geyser-Standalone.
 Then, change `port` to the Java server's port. If you have set up Floodgate on the remote Java server, you can set auth-type to "floodgate" - otherwise, 
 set it to either `online` for an online mode server, or `offline` for an offline mode server. To install and set up Floodgate with a Standalone server, see [here](/wiki/floodgate/setup).   
    
