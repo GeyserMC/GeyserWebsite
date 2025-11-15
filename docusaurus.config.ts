@@ -136,11 +136,6 @@ const config: Config = {
                     items: [
                         {
 
-                            to: 'utilities/config-editor',
-                            label: 'Config Editor',
-                        },
-                        {
-
                             to: 'utilities/dump-viewer',
                             label: 'Dump Viewer',
                         }

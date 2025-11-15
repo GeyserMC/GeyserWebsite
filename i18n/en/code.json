@@ -245,27 +245,6 @@
   "pages.download.description.thirdpartycosmetics": {
     "message": "An extension that adds support for loading ears and other third party cosmetics on java players"
   },
-  "pages.configeditor.noconfigselected.heading": {
-    "message": "No config selected."
-  },
-  "pages.configeditor.noconfigselected.subheading": {
-    "message": "Upload a file or get started with the default config!"
-  },
-  "pages.configeditor.button.defaultconfig": {
-    "message": "Default"
-  },
-  "pages.configeditor.button.upload": {
-    "message": "Upload"
-  },
-  "pages.configeditor.button.export": {
-    "message": "Export"
-  },
-  "pages.configeditor.title": {
-    "message": "Config Editor"
-  },
-  "pages.configeditor.subheading": {
-    "message": "Edit your Geyser configuration."
-  },
   "pages.dumpviewer.title": {
     "message": "Dump Viewer"
   },

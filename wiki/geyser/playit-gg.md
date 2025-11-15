@@ -23,7 +23,7 @@ The playit.gg Minecraft server plugin does not support UDP tunnels. You will nee
    ![img](/img/wiki/playit-gg/add_tunnel.png)
 4. Once "Add tunnel" is clicked, it should create a new tunnel, and you are set! Scroll down until you see this:
    ![img](/img/wiki/playit-gg/added_tunnel.png)
-   In Geyser config, set the `broadcast-port` to the playit.gg port from the "Allocation" tab. This will fix ping issues.
+   In Geyser config, set the `advanced.bedrock.broadcast-port` to the playit.gg port from the "Allocation" tab. It is necessary for the motd to appear.
    
    **Please do not change your Geyser port in `config.yml`** unless you have a reason to (e.g. hosting another Geyser server on the same machine), in which case skip to the paragraph below. The bedrock (Geyser) port in `config.yml` and the playit.gg ports are entirely seperate, playit.gg will forward its port to the default Geyser port and should already work. Changing it can cause errors. If you have changed your config port, change the bedrock port back to the default of 19132 and ensure that `clone-remote-port` is `false`.
    
