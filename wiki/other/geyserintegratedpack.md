@@ -4,7 +4,7 @@ description: GeyserIntegratedPack is a Bedrock resource pack that fixes parity i
 ---
 
 :::info
-Geyser includes the GeyserIntegratedPack (previously called "GeyserOptionalPack", so you do not need to add it manually.
+Geyser includes the GeyserIntegratedPack (previously called "GeyserOptionalPack"), you do not need to add it manually!
 See the "Migration" section for further details.
 :::
 
