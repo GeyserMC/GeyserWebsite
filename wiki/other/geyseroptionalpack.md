@@ -7,6 +7,6 @@ description: GeyserOptionalPack is a Bedrock resource pack that fixes parity iss
 
 :::info
 This page has been [moved](/wiki/other/geyserintegratedpack/).
-Since Geyser builds #982 and above, users no longer need to manually add this resource pack as it is natively integrated
+Geyser now includes the GeyserIntegratedPack, so users no longer need to manually add this resource pack as it is natively integrated
 into Geyser!
 :::
