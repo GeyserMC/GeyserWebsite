@@ -25,11 +25,7 @@ The underlying Geyser API is steadily expanding, creating more and more opportun
 
 ## Which Geyser Extensions exist? {#which-geyser-extensions-exist}
 
-At the moment, extensions are still a new system, so there is only a small list of known extensions for Geyser. 
-However, new extensions are always being created!
-
-There is an [official list](https://github.com/GeyserMC/GeyserExtensionList) of available extensions you can check out. 
-If you have an extension you'd like to see on this list, feel free to open a PR!
+Check out Modrinth's Geyser extensions section under the "plugins" tab!
 
 ## Installing Extensions {#installing-extensions}
 

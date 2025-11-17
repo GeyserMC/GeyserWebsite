@@ -70,21 +70,6 @@ const DownloadPage: React.FC = () => (
             <TabItem value="other-projects" label="Other Projects">
                 <Collapsibles>
                     <Collapsible
-                        title='GeyserOptionalPack'
-                        subtitle={<Translate id='pages.download.description.geyseroptionalpack'>An optional Bedrock resource pack to extend Geyser functionality.</Translate>}
-                        id='geyseroptionalpack'
-                        inner={
-                            <ProjectDownload
-                                projectId="geyseroptionalpack"
-                                setup='/wiki/other/geyseroptionalpack'
-                                downloadsInfo={{
-                                    geyseroptionalpack: <><FontAwesomeIcon icon={faFileZipper} /> GeyserOptionalPack</>,
-                                }}
-                                gridColumns={1}
-                            />
-                        }
-                    />
-                    <Collapsible
                         title='ThirdPartyCosmetics'
                         subtitle={<Translate id='pages.download.description.thirdpartycosmetics'>An extension that adds support for loading ears and other third party cosmetics on java players</Translate>}
                         id='thirdpartycosmetics'
@@ -94,6 +79,20 @@ const DownloadPage: React.FC = () => (
                                 setup='/wiki/other/thirdpartycosmetics'
                                 downloadsInfo={{
                                     thirdpartycosmetics: <><FontAwesomeIcon icon={faFileZipper} /> ThirdPartyCosmetics</>,
+                                }}
+                                gridColumns={1}
+                            />
+                        }
+                    />
+                    <Collapsible
+                        title='EmoteOffhand'
+                        subtitle={<Translate id='pages.download.description.offhandextension'>An extension that allows Bedrock players to switch their offhand and mainhand item by emoting.</Translate>}
+                        id='emoteoffhand'
+                        inner={
+                            <ProjectDownload
+                                projectId="emoteoffhand"
+                                downloadsInfo={{
+                                    emoteoffhand: <><FontAwesomeIcon icon={faFileZipper} /> EmoteOffhand</>,
                                 }}
                                 gridColumns={1}
                             />
