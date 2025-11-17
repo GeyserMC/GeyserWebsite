@@ -34,7 +34,7 @@ The following things cannot be fixed without changes to Bedrock or the Java prot
 - Custom furnace cook times ([GeyserMC/Geyser#4104](https://github.com/GeyserMC/Geyser/issues/4104))
 - Maximum sign length different on Java/Bedrock edition ([GeyserMC/Geyser#4130](https://github.com/GeyserMC/Geyser/issues/4130))
 
-## Fixed with the included GeyserIntegratedPack {#fixable-with-geyserintegratedpack}
+## Fixed with the included GeyserIntegratedPack {#fixed-with-geyserintegratedpack}
 
 The following changes **are supported** with the included GeyserIntegratedPack, which is a Bedrock resource pack to add features Bedrock doesn't natively support:
 - Custom armor stand poses
