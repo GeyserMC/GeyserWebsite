@@ -31,6 +31,9 @@ on the proxy server to assign permissions to players. Assigning permissions on t
 |           `geyser version`            |   `geyser.command.version`    |                       Shows the current Geyser version and checks for updates.                       |
 |           `geyser tooltips`           |   `geyser.command.tooltips`   |                          Toggle showing Advanced Tooltips (F3 + H on Java)                           |
 |          `geyser extensions`          |  `geyser.command.extensions`  | Lists all currently loaded extensions. This command is only registered if any extensions are loaded. |
+|             `geyser ping`             |     `geyser.command.ping`     |                      Shows the ping between the player and the Geyser instance.                      |
+|           `geyser options`            |   `geyser.command.options`    |               Opens the "pause screen additions" dialogue, if sent by the Java server                |
+|         `geyser quickactions`         | `geyser.command.quickactions` |                   Opens the "quick actions" dialogue, if sent by the Java server.                    |
 
 ## Permissions for Geyser extensions {#extension-permissions}
 

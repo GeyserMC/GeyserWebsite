@@ -39,10 +39,6 @@
     "message": "Other",
     "description": "Navbar item with label Other"
   },
-  "item.label.Config Editor": {
-    "message": "Config Editor",
-    "description": "Navbar item with label Config Editor"
-  },
   "item.label.Dump Viewer": {
     "message": "Dump Viewer",
     "description": "Navbar item with label Dump Viewer"

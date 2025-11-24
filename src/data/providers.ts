@@ -10,7 +10,7 @@ const descriptionTemplates = {
     }),
     ipAndPort: translate({
         id: 'providers.templates.ip_and_port',
-        message: "Enable `clone-remote-port` (or manually set `bedrock port` to the Java port), uncomment `bedrock address`, and change `0.0.0.0` to your Java server's IP. Connect with the Java IP and port."
+        message: "Enable `clone-remote-port` (or manually set `bedrock port` to the Java port), and change `bedrock address` from `0.0.0.0` to your Java server's IP. Connect with the Java IP and port."
     }),
     forwardingOption: translate({
         id: 'providers.templates.forwarding_option',
@@ -18,7 +18,7 @@ const descriptionTemplates = {
     }),
     javaIp: translate({
         id: 'providers.templates.java_ip',
-        message: "Make sure your remote address is 'auto', uncomment `bedrock address`, and change `0.0.0.0` to your Java server's IP."
+        message: "Change `bedrock address` from `0.0.0.0` to your Java server's IP."
     })
 }
 
@@ -506,7 +506,7 @@ export const providersData: Providers = {
             url: 'https://nfoservers.com/',
             description: translate({
                 id: 'providers.provider.nfoservers.description',
-                message: "Uncomment and set `bedrock address` to the server IP in the Geyser config file. As an alternative, you can run Geyser standalone separately on an Unmanaged VDS."
+                message: "Set `bedrock address` to the server IP in the Geyser config file. As an alternative, you can run Geyser standalone separately on an Unmanaged VDS."
             })
         },
         {
@@ -668,7 +668,7 @@ export const providersData: Providers = {
             url: 'https://vultam.net/',
             description: translate({
                 id: 'providers.provider.vultam.description',
-                message: "Enable `clone-remote-port` in the Geyser config, and connect with the Java IP and port. Alternatively, allocate an additional port to your server from the Network section of the control panel and set it as the `bedrock.port` in the Geyser config. Use that port to connect from Bedrock. Please contact [Vultam support](https://clients.vultam.net/submitticket.php?step=2&deptid=1) if you need assistance."
+                message: "Enable `clone-remote-port` in the Geyser config, and connect with the Java IP and port. Alternatively, allocate an additional port to your server from the Network section of the control panel and set it as the `bedrock port` in the Geyser config. Use that port to connect from Bedrock. Please contact [Vultam support](https://clients.vultam.net/submitticket.php?step=2&deptid=1) if you need assistance."
             })
         },
         {
