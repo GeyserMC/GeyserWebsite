@@ -49,6 +49,14 @@ export const providersData: Providers = {
             })
         },
         {
+            name: 'AxentHost',
+            url: 'https://axenthost.com/games/minecraft/',
+            description: translate({
+                id: 'providers.provider.axenthost.description',
+                message: 'Create a default Minecraft server. On the server control panel, navigate to the "Variants" tab and select "GeyserMC". The server will be automatically reinstalled with Geyser instead of Vanilla.'
+            })
+        },
+        {
             name: 'Cloud Nord',
             url: 'https://cloudnord.net/',
             description: translate({
