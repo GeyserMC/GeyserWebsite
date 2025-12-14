@@ -224,12 +224,12 @@ Geyser initially rolled out a fix that forced these defaults, but has since been
 These defaults may present an issue to those running a reverse proxy in front of their Geyser instance, particularly those utilizing DDoS mitigation services like TCPShield and CosmicGuard, as to Network it will appear that all connections are originating from the same IP. To make configuration on these services easier, Geyser will disable these rate limits provided proxy protocol is enabled for the bedrock connection, and the Geyser instance is properly configured to only accept connections from the IPs of the proxy. To simplify this configuration, Geyser’s config can now accept a URL to specify proxy server IP ranges. Many DDoS mitigation providers have a static link to an always up to date text file of these.
 
 ```yaml
-bedrock:
+advanced.bedrock:
 # ...
-  enable-proxy-protocol: true
-  proxy-protocol-whitelisted-ips: [ "https://cosmic.global/ips/", "https://tcpshield.com/v4/" ]
+  use-haproxy-protocol: true
+  haproxy-protocol-whitelisted-ips: [ "https://cosmic.global/ips/", "https://tcpshield.com/v4/" ]
 ```
-*Geyser configuration using a URL pointing a new-line separated text file containing allowed IPs for proxy-protocol usage.*
+*Geyser configuration using a URL pointing a new-line separated text file containing allowed IPs for haproxy-protocol usage.*
 
 
 ## Long Term Impact
