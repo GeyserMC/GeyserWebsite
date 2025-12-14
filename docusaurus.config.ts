@@ -136,11 +136,6 @@ const config: Config = {
                     items: [
                         {
 
-                            to: 'utilities/config-editor',
-                            label: 'Config Editor',
-                        },
-                        {
-
                             to: 'utilities/dump-viewer',
                             label: 'Dump Viewer',
                         }
@@ -152,12 +147,12 @@ const config: Config = {
                     position: 'left',
                     className: 'header-download-link'
                 },
-                {
+                { // Name on mobile sidebar specified in custom.scss
                     href: 'https://github.com/GeyserMC/Geyser',
                     position: 'right',
                     className: 'header-github-link'
                 },
-                {
+                { // Name on mobile sidebar specified in custom.scss
                     href: 'https://discord.gg/geysermc',
                     position: 'right',
                     className: 'header-discord-link'

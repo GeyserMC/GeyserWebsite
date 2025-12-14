@@ -209,6 +209,12 @@
   "providers.provider.feather.description": {
     "message": "Their proxy network does not support UDP. Therefore, Geyser is not supported. As an alternative, set up a paper server with e.g. playit.gg instead of port forwarding."
   },
+  "providers.provider.freemcserver_net.description": {
+    "message": "Install Geyser from the Plugins tab, then connect to your server using your Java IP and port."
+  },
+  "providers.provider.ultraservers.description": {
+    "message": "Select 'Paper + Geyser' under the Change version tab. You can connect to your server using the same IP and port as you would on Java. Existing servers can use the Plugins/Minecraft mods tab to install Geyser. See [Crossplay](https://docs.ultraservers.com/minecraft/plugins-mods/crossplay-on-java-and-bedrock) for more information."
+  },
   "providers.provider.bedrockhost.description": {
     "message": "Easiest solution is: Go to hosting panel > install new engine > Ready-made solutions and select Geyser. This will install Paper & Geyser-Spigot - no setup needed, just connect with your Java IP and port. See [BedrockHost's article](https://bedrockhost.pl/w/geyser-czyli-serwer-minecraft-java-i-bedrock-w-jednym) for more details or for custom setup instructions (available in Polish)."
   },
@@ -242,32 +248,11 @@
   "pages.download.description.geyserconnect": {
     "message": "A plugin to allow for Geyser players to connect to your server without needing to use a proxy."
   },
-  "pages.download.description.geyseroptionalpack": {
-    "message": "An optional Bedrock resource pack to extend Geyser functionality."
-  },
   "pages.download.description.thirdpartycosmetics": {
     "message": "An extension that adds support for loading ears and other third party cosmetics on java players"
   },
-  "pages.configeditor.noconfigselected.heading": {
-    "message": "No config selected."
-  },
-  "pages.configeditor.noconfigselected.subheading": {
-    "message": "Upload a file or get started with the default config!"
-  },
-  "pages.configeditor.button.defaultconfig": {
-    "message": "Default"
-  },
-  "pages.configeditor.button.upload": {
-    "message": "Upload"
-  },
-  "pages.configeditor.button.export": {
-    "message": "Export"
-  },
-  "pages.configeditor.title": {
-    "message": "Config Editor"
-  },
-  "pages.configeditor.subheading": {
-    "message": "Edit your Geyser configuration."
+  "pages.download.description.emoteoffhand": {
+    "message": "An extension that allows Bedrock players to switch their offhand and mainhand item by emoting."
   },
   "pages.dumpviewer.title": {
     "message": "Dump Viewer"

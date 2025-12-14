@@ -14,25 +14,37 @@ export const Provider = ({ type }) => {
     const hostingProviders: HostingProvider[] = providersData[type as ProviderType]
 
     return (
-        <div>
-            <ul>{hostingProviders.map((provider: HostingProvider) => (
-                <li>
-                    <a href={provider.url}>{provider.name}</a>
-                    {provider.description != null ? (
-                        <ReactMarkdown children={`&nbsp;&hyphen; ${provider.description}`} components={{ p: noP }} />
-                    ) : (
-                        ''
-                    )}
-                </li>
-            ))}</ul>
-        </div>
+        <table>
+            <thead>
+                <tr>
+                    <th>Provider</th>
+                    <th>Description</th>
+                </tr>
+            </thead>
+            <tbody>
+                {hostingProviders.map((provider: HostingProvider) => (
+                    <tr>
+                        <td>
+                            <a href={provider.url}>{provider.name}</a>
+                        </td>
+                        <td>
+                            {provider.description != null ? (
+                                <ReactMarkdown children={`&nbsp;&hyphen; ${provider.description}`} components={{ p: noP }} />
+                            ) : (
+                                ''
+                            )}
+                        </td>
+                    </tr>
+                ))}
+            </tbody>
+        </table>
     )
 }
 
 export const ProviderSelector = () => {
     const providers: HostingProvider[] = [
         ...Object.values(providersData.built_in),
-        ...Object.values(providersData.support), 
+        ...Object.values(providersData.support),
         ...Object.values(providersData.no_support)
     ].flat().sort((a, b) => a.name.localeCompare(b.name));
 
@@ -43,7 +55,7 @@ export const ProviderSelector = () => {
             message: "If your hosting provider is not listed, try enabling the `clone-remote-port` option in the config. Then, restart the server, and try connecting with the same IP and port as on Java Edition. <br> If this does not work, ask your server hosting provider for a UDP port, and use that. For VPS/KVM servers please follow the self-hosting steps."
         })
     } as HostingProvider);
-    
+
 
     const [selectedProvider, setSelectedProvider] = useState(null);
 

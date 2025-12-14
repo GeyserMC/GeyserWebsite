@@ -10,7 +10,7 @@ const descriptionTemplates = {
     }),
     ipAndPort: translate({
         id: 'providers.templates.ip_and_port',
-        message: "Enable `clone-remote-port` (or manually set `bedrock port` to the Java port), uncomment `bedrock address`, and change `0.0.0.0` to your Java server's IP. Connect with the Java IP and port."
+        message: "Enable `clone-remote-port` (or manually set `bedrock port` to the Java port), and change `bedrock address` from `0.0.0.0` to your Java server's IP. Connect with the Java IP and port."
     }),
     forwardingOption: translate({
         id: 'providers.templates.forwarding_option',
@@ -18,7 +18,7 @@ const descriptionTemplates = {
     }),
     javaIp: translate({
         id: 'providers.templates.java_ip',
-        message: "Make sure your remote address is 'auto', uncomment `bedrock address`, and change `0.0.0.0` to your Java server's IP."
+        message: "Change `bedrock address` from `0.0.0.0` to your Java server's IP."
     })
 }
 
@@ -86,6 +86,14 @@ export const providersData: Providers = {
             description: translate({
                 id: 'providers.provider.exaroton.description',
                 message: "Install Geyser in the exaroton plugin list and connect to your server with your Java IP and port. See [exaroton's article](https://support.exaroton.com/hc/en-us/articles/360019857918-Geyser) for more details."
+            })
+        },
+        {
+            name: 'FreeMcServer.net',
+            url: 'https://freemcserver.net',
+            description: translate({
+                id: 'providers.provider.freemcserver_net.description',
+                message: "Install Geyser from the Plugins tab, then connect to your server using your Java IP and port."
             })
         },
         {
@@ -190,6 +198,14 @@ export const providersData: Providers = {
             })
         },
         {
+            name: 'UltraServers',
+            url: 'https://ultraservers.com/',
+            description: translate({
+                id: 'providers.provider.ultraservers.description',
+                message: "Select 'Paper + Geyser' under the Change version tab. You can connect to your server using the same IP and port as you would on Java. Existing servers can use the Plugins/Minecraft mods tab to install Geyser. See [Crossplay](https://docs.ultraservers.com/minecraft/plugins-mods/crossplay-on-java-and-bedrock) for more information."
+        })
+        },
+        {
             name: 'VemoxHost',
             url: 'https://vemoxhost.com/',
             description: translate({
@@ -249,7 +265,7 @@ export const providersData: Providers = {
             url: 'https://www.bisecthosting.com/',
             description: translate({
                 id: 'providers.provider.bisecthosting.description',
-                message: "You must have a plan with a dedicated IP. In Geyser's config, uncomment the `bedrock address` and set it to the public IP of your server (e.g. `address: 51.79.129.18`). Leave the port as `19132`. Under the home tab, select 'Enable UDP Network' and restart the server. See Bisect's [article](https://www.bisecthosting.com/clients/index.php?rp=/knowledgebase/193/How-to-install-Geyser-and-Floodgate-on-a-Minecraft-Java-server.html) for full instructions. If you still cannot connect after following these instructions, contact Bisect Support as they reportedly have UDP disabled on some nodes."
+                message: "Navigate to the Network tab on your server panel to find the available ports. In Geyser's config, uncomment the `bedrock address` and set it to the public IP of your server (e.g. `address: 12.34.56.78`). Set the Bedrock port to one from your Network page, save the file and restart the server. See Bisect's [article](https://www.bisecthosting.com/clients/index.php?rp=/knowledgebase/193/How-to-install-Geyser-and-Floodgate-on-a-Minecraft-Java-server.html) for full instructions. If you still cannot connect after following these instructions, contact Bisect Support as they reportedly have UDP disabled on some nodes."
             })
         },
         {
@@ -352,11 +368,6 @@ export const providersData: Providers = {
         {
             name: 'FREAKHOSTING',
             url: 'https://freakhosting.com/',
-            description: descriptionTemplates.default
-        },
-        {
-            name: 'FreeMcServer.net',
-            url: 'https://freemcserver.net',
             description: descriptionTemplates.default
         },
         {
@@ -514,7 +525,7 @@ export const providersData: Providers = {
             url: 'https://nfoservers.com/',
             description: translate({
                 id: 'providers.provider.nfoservers.description',
-                message: "Uncomment and set `bedrock address` to the server IP in the Geyser config file. As an alternative, you can run Geyser standalone separately on an Unmanaged VDS."
+                message: "Set `bedrock address` to the server IP in the Geyser config file. As an alternative, you can run Geyser standalone separately on an Unmanaged VDS."
             })
         },
         {
@@ -676,7 +687,7 @@ export const providersData: Providers = {
             url: 'https://vultam.net/',
             description: translate({
                 id: 'providers.provider.vultam.description',
-                message: "Enable `clone-remote-port` in the Geyser config, and connect with the Java IP and port. Alternatively, allocate an additional port to your server from the Network section of the control panel and set it as the `bedrock.port` in the Geyser config. Use that port to connect from Bedrock. Please contact [Vultam support](https://clients.vultam.net/submitticket.php?step=2&deptid=1) if you need assistance."
+                message: "Enable `clone-remote-port` in the Geyser config, and connect with the Java IP and port. Alternatively, allocate an additional port to your server from the Network section of the control panel and set it as the `bedrock port` in the Geyser config. Use that port to connect from Bedrock. Please contact [Vultam support](https://clients.vultam.net/submitticket.php?step=2&deptid=1) if you need assistance."
             })
         },
         {

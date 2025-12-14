@@ -9,7 +9,7 @@ To setup custom skulls in geyser, you have to choose how you are going to regist
 
 ## Enabling custom skulls {#enabling-custom-skulls}
 
-To enable custom skulls, you must set `add-non-bedrock-items` to `true` in the `config.yml` file. This will enable the generation of the custom resource pack and the translation of custom skulls to custom blocks. You can then add custom skulls to the `custom-skulls.yml` file.
+To enable custom skulls, you must set `gameplay.enable-custom-content` to `true` in the `config.yml` file. This will enable the generation of the custom resource pack and the translation of custom skulls to custom blocks. You can then add custom skulls to the `custom-skulls.yml` file.
 
 ```yaml
 # Whether to add any items and blocks which normally does not exist in Bedrock Edition.
@@ -17,7 +17,7 @@ To enable custom skulls, you must set `add-non-bedrock-items` to `true` in the `
 # If this is disabled, furnace minecart items will be mapped to hopper minecart items.
 # Geyser's block, item, and skull mappings systems will also be disabled.
 # This option requires a restart of Geyser in order to change its setting.
-add-non-bedrock-items: true
+enable-custom-content: true
 ```
 
 ## custom-skulls.yml {#custom-skullsyml}
