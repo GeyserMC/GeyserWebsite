@@ -209,6 +209,9 @@
   "providers.provider.feather.description": {
     "message": "Their proxy network does not support UDP. Therefore, Geyser is not supported. As an alternative, set up a paper server with e.g. playit.gg instead of port forwarding."
   },
+  "providers.provider.ultraservers.description": {
+    "message": "Select 'Paper + Geyser' under the Change version tab. You can connect to your server using the same IP and port as you would on Java. Existing servers can use the Plugins/Minecraft mods tab to install Geyser. See [Crossplay](https://docs.ultraservers.com/minecraft/plugins-mods/crossplay-on-java-and-bedrock) for more information."
+  },
   "pages.main.title": {
     "message": "Revolutionize Your Minecraft Server"
   },
