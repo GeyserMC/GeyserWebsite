@@ -53,7 +53,7 @@ export const providersData: Providers = {
             url: 'https://bedrockhost.pl/',
             description: translate({
                 id: 'providers.provider.bedrockhost.description',
-                message: "Install server as Ready-made solution then select Geyser. No setup needed, connect with your Java IP and port. See [BedrockHost's article](https://bedrockhost.pl/w/geyser-czyli-serwer-minecraft-java-i-bedrock-w-jednym) for more details (available in Polish). Latest version of Geyser and Paper will be installed, if you want to update just select update in server's settings page or reinstall."
+                message: "Easiest solution is: Go to hosting panel > install new engine > Ready-made solutions and select Geyser. This will install Paper & Geyser-Spigot - no setup needed, just connect with your Java IP and port. See [BedrockHost's article](https://bedrockhost.pl/w/geyser-czyli-serwer-minecraft-java-i-bedrock-w-jednym) for more details or for custom setup instructions (available in Polish)."
             })
         },
         {
