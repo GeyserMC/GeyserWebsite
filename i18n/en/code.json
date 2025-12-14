@@ -209,6 +209,9 @@
   "providers.provider.feather.description": {
     "message": "Their proxy network does not support UDP. Therefore, Geyser is not supported. As an alternative, set up a paper server with e.g. playit.gg instead of port forwarding."
   },
+  "providers.provider.bedrockhost.description": {
+    "message": "Easiest solution is: Go to hosting panel > install new engine > Ready-made solutions and select Geyser. This will install Paper & Geyser-Spigot - no setup needed, just connect with your Java IP and port. See [BedrockHost's article](https://bedrockhost.pl/w/geyser-czyli-serwer-minecraft-java-i-bedrock-w-jednym) for more details or for custom setup instructions (available in Polish)."
+  },
   "pages.main.title": {
     "message": "Revolutionize Your Minecraft Server"
   },
