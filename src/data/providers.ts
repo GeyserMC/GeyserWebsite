@@ -81,6 +81,14 @@ export const providersData: Providers = {
             })
         },
         {
+            name: 'FreeMcServer.net',
+            url: 'https://freemcserver.net',
+            description: translate({
+                id: 'providers.provider.freemcserver_net.description',
+                message: "Install Geyser from the Plugins tab, then connect to your server using your Java IP and port."
+            })
+        },
+        {
             name: 'GGServers',
             url: 'https://ggservers.com',
             description: translate({
@@ -344,11 +352,6 @@ export const providersData: Providers = {
         {
             name: 'FREAKHOSTING',
             url: 'https://freakhosting.com/',
-            description: descriptionTemplates.default
-        },
-        {
-            name: 'FreeMcServer.net',
-            url: 'https://freemcserver.net',
             description: descriptionTemplates.default
         },
         {
