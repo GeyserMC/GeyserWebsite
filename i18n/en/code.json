@@ -209,6 +209,9 @@
   "providers.provider.feather.description": {
     "message": "Their proxy network does not support UDP. Therefore, Geyser is not supported. As an alternative, set up a paper server with e.g. playit.gg instead of port forwarding."
   },
+  "providers.provider.freemcserver_net.description": {
+    "message": "Install Geyser from the Plugins tab, then connect to your server using your Java IP and port."
+  },
   "pages.main.title": {
     "message": "Revolutionize Your Minecraft Server"
   },
