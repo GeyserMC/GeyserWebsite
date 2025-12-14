@@ -190,6 +190,14 @@ export const providersData: Providers = {
             })
         },
         {
+            name: 'UltraServers',
+            url: 'https://ultraservers.com/',
+            description: translate({
+                id: 'providers.provider.ultraservers.description',
+                message: "Select 'Paper + Geyser' under the Change version tab. You can connect to your server using the same IP and port as you would on Java. Existing servers can use the Plugins/Minecraft mods tab to install Geyser. See [Crossplay](https://docs.ultraservers.com/minecraft/plugins-mods/crossplay-on-java-and-bedrock) for more information."
+        })
+        },
+        {
             name: 'VemoxHost',
             url: 'https://vemoxhost.com/',
             description: translate({
