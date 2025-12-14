@@ -49,6 +49,14 @@ export const providersData: Providers = {
             })
         },
         {
+            name: 'BedrockHost',
+            url: 'https://bedrockhost.pl/',
+            description: translate({
+                id: 'providers.provider.bedrockhost.description',
+                message: "Easiest solution is: Go to hosting panel > install new engine > Ready-made solutions and select Geyser. This will install Paper & Geyser-Spigot - no setup needed, just connect with your Java IP and port. See [BedrockHost's article](https://bedrockhost.pl/w/geyser-czyli-serwer-minecraft-java-i-bedrock-w-jednym) for more details or for custom setup instructions (available in Polish)."
+            })
+        },
+        {
             name: 'Cloud Nord',
             url: 'https://cloudnord.net/',
             description: translate({
