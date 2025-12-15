@@ -93,6 +93,21 @@ const config: Config = {
                 src: 'img/apple-touch-icon.png',
             },
             items: [
+                 {
+                    type: 'dropdown',
+                    label: 'Software',
+                    position: 'left',
+                    items: [
+                        {
+                            to: '/software/geyser',
+                            label: 'Geyser',
+                        },
+                        {
+                            to: '/software/floodgate',
+                            label: 'Floodgate',
+                        },
+                    ]
+                },
                 {
                     type: 'dropdown',
                     label: 'Wiki',
