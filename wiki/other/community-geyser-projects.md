@@ -38,7 +38,7 @@ Creator: [Camotoy](https://github.com/Camotoy)
 
 ## CreeperNation Skin API {#creepernation-skin-api}
 
-An SkinAPI that displays Java or Bedrock skins based on the UUID or username.
+A SkinAPI that displays Java or Bedrock skins based on the UUID or username.
 
 * [Website](https://docs.creepernation.net)
 
@@ -82,7 +82,7 @@ Plugin that blocks Java players from joining your Geyser server, so you can have
 Creator: [Camotoy](https://github.com/Camotoy)
 
 ## GeyserExtras {#geyserextras}
-A Spigot plugin which attempts to unify features for Bedrock Edition players, including features like a cleaner looking combat cooldown, combat sounds and other helpful features and workarounds.
+A Geyser extension / plugin which attempts to unify features for Bedrock Edition players, including features like a cleaner looking combat cooldown, combat sounds and other helpful features and workarounds.
 
 * [Modrinth](https://modrinth.com/plugin/geyserextras)
 * [Hangar](https://hangar.papermc.io/GeyserExtras/GeyserExtras)
@@ -117,8 +117,8 @@ Small application that waits for a player to connect before launching actual min
 
 Creator: [Vincss](https://github.com/vincss)
 
-## TydiumCraft Skin API {#tydiumcraft-skin-api}
-An API makes it easier for your Bedrock skin to be rendered and outputted!
-* [Website](https://tydiumcraft.net/api)
+## Starlight Skin API {#starlight-skin-api}
+An API that makes it easier for Bedrock Skins to be outputted. 
+* [Website](https://lunareclipse.studio/creations/starlight-skinapi)
 
-Creators: [Tydium](https://github.com/Tydium)
+Creators: [Bret06](https://www.bret06.net/)

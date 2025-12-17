@@ -15,13 +15,18 @@ See also [this page](/wiki/geyser/supported-versions/) on supported versions.
 3. Open your Geyser config, located in `/plugins/Geyser-Spigot/config.yml`, and find the following:
 
     ```yaml
-    bedrock: 
-        # The IP address that will listen for connections. 
-        # Generally, you should only uncomment and change this if you want to limit what IPs can connect to your server. 
-        #address: 0.0.0.0 
+    bedrock:
+      # The IP address that will listen for connections.
+      # Generally, you should only change this if you want to limit what IPs can connect to your server.
+      address: 0.0.0.0
 
-        # The port that will listen for connections. This is the port that Bedrock players will use to connect to your server.
-        port: 19132 
+      # The port that will Geyser will listen on for incoming Bedrock connections.
+      # Since Minecraft: Bedrock Edition uses UDP, this port must allow UDP traffic.
+      port: 19132
+
+      # Some hosting services change your Java port everytime you start the server and require the same port to be used for Bedrock.
+      # This option makes the Bedrock port the same as the Java port every time you start the server.
+      clone-remote-port: false
     ```
     The vital part is the port. This is the port that Bedrock players will use to connect to your server!
     If you enable `clone-remote-port`, the port will be overridden and the Java port is used.

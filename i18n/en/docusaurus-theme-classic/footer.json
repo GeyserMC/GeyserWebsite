@@ -1,8 +1,4 @@
 {
-  "copyright": {
-    "message": "Copyright © 2024 GeyserMC. Built with Docusaurus.",
-    "description": "The footer copyright"
-  },
   "link.title.Wiki": {
     "message": "Wiki",
     "description": "The title of the footer links column with title=Wiki in the footer"

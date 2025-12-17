@@ -16,9 +16,10 @@ interface ProjectDownloadProps {
         [key: string]: { url: string, file: string };
     };
     gridColumns?: number;
+    warning?: React.ReactNode;
 }
 
-export const ProjectDownload: React.FC<ProjectDownloadProps> = ({ projectId, description, setup, downloadsInfo, additionalDownloads, gridColumns }) => {
+export const ProjectDownload: React.FC<ProjectDownloadProps> = ({ projectId, description, setup, downloadsInfo, additionalDownloads, gridColumns, warning }) => {
     const [platformInfo, setPlatformInfo] = useState<Downloads.Builds>({
         project_id: '',
         project_name: '',
@@ -79,6 +80,11 @@ export const ProjectDownload: React.FC<ProjectDownloadProps> = ({ projectId, des
                 <Column>
                     <h3>Build #{latestBuild.build} · {new Date(latestBuild.time).toLocaleDateString()}:</h3>
                     <Grid elementsPerRow={gridColumns || 2} gap="8px">
+                        { warning && 
+                            <div className='warning-box'>
+                                { warning }
+                            </div>
+                        }
                         { setup &&
                             <a href={setup} className='no-underline setup-button large-button'>
                                 <b><FontAwesomeIcon icon={faBook}/> Setup Instructions</b>
