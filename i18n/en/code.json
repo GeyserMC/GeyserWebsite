@@ -219,7 +219,7 @@
     "message": "Easiest solution is: Go to hosting panel > install new engine > Ready-made solutions and select Geyser. This will install Paper & Geyser-Spigot - no setup needed, just connect with your Java IP and port. See [BedrockHost's article](https://bedrockhost.pl/w/geyser-czyli-serwer-minecraft-java-i-bedrock-w-jednym) for more details or for custom setup instructions (available in Polish)."
   },
   "providers.provider.axenthost.description": {
-    "message": "Once you choose Minecraft as your game server and activate it, navigate to its Variants tab and select GeyserMC. The server will be automatically reinstalled with Geyser instead of Vanilla."
+    "message": "For a quick and easy installation, navigate to your server Variants tab and select GeyserMC. The server will be automatically reinstalled with Geyser-Spigot alongside a Paper server. For a custom install using Fabric, Purpur, Paper or even Folia variants, installing Geyser through the Addons manager tab is not supported for now. A manual installation by downloading Geyser through the official download page and uploading it to the server through the file manager will be required."
   },
   "pages.main.title": {
     "message": "Revolutionize Your Minecraft Server"
