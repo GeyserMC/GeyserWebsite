@@ -224,6 +224,9 @@
   "providers.provider.simplegamehosting.description": {
     "message": "Contact live chat support to open a port and check out the [help center guide](https://help.simplegamehosting.com/how-to-enable-crossplay-with-geyser-on-your-minecraft-server/) for how to install and configure Geyser on your server."
   },
+  "providers.provider.axenthost.description": {
+    "message": "Once you choose Minecraft as your game server and activate it, navigate to its Variants tab and select GeyserMC. The server will be automatically reinstalled with Geyser instead of Vanilla."
+  },
   "pages.main.title": {
     "message": "Revolutionize Your Minecraft Server"
   },
