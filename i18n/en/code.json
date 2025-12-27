@@ -224,14 +224,20 @@
   "pages.main.subtitle": {
     "message": "Enable clients from Minecraft Bedrock Edition to join your Minecraft Java server"
   },
-  "components.homepage_features.1": {
-    "message": "Geyser is a program that allows Minecraft: Bedrock Edition clients to join Minecraft: Java Edition servers, allowing for true crossplay between both editions of the game. The ultimate goal of this project is to allow Minecraft: Bedrock Edition users to join Minecraft: Java Edition servers as seamlessly as possible."
+  "components.homepage_features.1.line1": {
+    "message": "Geyser is a program that allows Minecraft: Bedrock Edition clients to join Minecraft: Java Edition servers, allowing for true crossplay between both editions of the game."
   },
-  "components.homepage_features.features.2": {
+  "components.homepage_features.1.line2": {
+    "message": "The ultimate goal of this project is to allow Minecraft: Bedrock Edition users to join Minecraft: Java Edition servers as seamlessly as possible."
+  },
+  "components.homepage_features.2": {
     "message": "Geyser acts as a translator which sits between the Bedrock client and the Java server. It takes data from the Bedrock client and translates it into a format the Java server understands and vice versa. Geyser works with any modern Minecraft version and can be installed either as a plugin or ran as a standalone program."
   },
-  "components.homepage_features.features.3": {
-    "message": "Geyser can be joined from Bedrock clients on Windows 10/11, iOS, Android, and even consoles. Geyser works with a wide array of hosting providers, but can also be used as its own standalone proxy to join any Minecraft server! If you are a server owner, you can install our Floodgate plugin which allows Xbox Live authenticated Bedrock users to join without a Java Edition account!"
+  "components.homepage_features.3.line1": {
+    "message": "Geyser can be joined from Bedrock clients on Windows 10/11, iOS, Android, and even consoles. Geyser works with a wide array of hosting providers, but can also be used as its own standalone proxy to join any Minecraft server!"
+  },
+  "components.homepage_features.3.line2": {
+    "message": "If you are a server owner, you can install our Floodgate plugin which allows Xbox Live authenticated Bedrock users to join without a Java Edition account!"
   },
   "pages.download.title": {
     "message": "Download"
