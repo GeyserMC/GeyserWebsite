@@ -200,8 +200,8 @@ This identifier cannot be in the `minecraft` namespace. If no namespace is provi
 - `priority`: Optionally specifies a priority of a definition over other definitions for the same item + item model combination. Only used
 when there are multiple custom item definitions.
 
-<Tabs>
-    <TabItem value="using-json" label="Definitions in the Json format">
+<Tabs groupId="custom-item-implementation">
+    <TabItem value="json" label="Definitions in the Json format">
         Json mapping files have to specify the `format_version` set to `2`, and list all definitions for each item
         under the `items` key. It holds an object in which keys are Java items, and in which each value is an array of objects,
         specifying custom item definitions for that Java item.
@@ -232,7 +232,7 @@ when there are multiple custom item definitions.
         The type of a definition is defined in the `type` key.
 
         <Tabs>
-            <TabItem value = "definition-type" label="Definition (1.21.4+)">
+            <TabItem value="definition-type" label="Definition (1.21.4+)">
                 ```json
                 {
                     "type": "definition",
@@ -244,7 +244,7 @@ when there are multiple custom item definitions.
                 This should be used for 1.21.4+ and above. For custom items using the legacy `custom_model_data` format,
                 use the `legacy` type.
             </TabItem>
-            <TabItem value = "group-type" label="Group definition">
+            <TabItem value="group-type" label="Group definition">
                 ```json
                 {
                     "type": "group",
@@ -257,7 +257,7 @@ when there are multiple custom item definitions.
                 If a group has no model set, all definitions in the group must specify the item model themselves.
                 Definitions in a group are also allowed to be a group, and definitions in a group can also override the Java item model definition of the group.
             </TabItem>
-            <TabItem value = "legacy-type" label="Legacy (pre 1.21.4+)">
+            <TabItem value="legacy-type" label="Legacy (pre 1.21.4+)">
                 ```json
                 {
                     "type": "legacy",
@@ -351,7 +351,7 @@ when there are multiple custom item definitions.
         </details>
     </TabItem>
 
-    <TabItem value="using-api" label="Definitions in the Geyser API">
+    <TabItem value="api" label="Definitions in the Geyser API">
         Custom item definitions are registered using the `GeyserDefineCustomItemsEvent`.
 
         ```java
@@ -402,14 +402,14 @@ that output a custom item. Otherwise, Bedrock will *not* show recipes for custom
 
 <details>
 <summary>Expand for examples</summary>
-<Tabs>
-    <TabItem value="json-bedrock-options" label="Json mapping example">
+<Tabs groupId="custom-item-implementation">
+    <TabItem value="json" label="Json mapping example">
         ```json
             TODO
         ```
     </TabItem>
 
-    <TabItem value="using-api" label="Geyser API Example">
+    <TabItem value="api" label="Geyser API Example">
         ```java
             TODO
         ```
@@ -457,15 +457,14 @@ Along with the components listed here, default component removal is also possibl
 
 <details>
 <summary>Expand for component usage examples</summary>
-<Tabs>
-    <TabItem value="json-component-examples" label="Using components in json mappings">
+<Tabs groupId="custom-item-implementation">
+    <TabItem value="json" label="Using components in json mappings">
         TODO
     </TabItem>
 
-    <TabItem value="api-component-examples" label="Using components with API">
+    <TabItem value="api" label="Using components with API">
         TODO
     </TabItem>
-
 </Tabs>
 </details>
 
@@ -474,8 +473,8 @@ Just as is possible on Java edition, default components of the base item can be 
 
 <details>
 <summary>Expand for usage examples of component removal</summary>
-<Tabs>
-    <TabItem value="json-removing-component-examples" label="Removing components in json mappings">
+<Tabs groupId="custom-item-implementation">
+    <TabItem value="json" label="Removing components in json mappings">
         In Json mappings, this is done by adding an `!` in front of the component.
         ```json
         "components": {
@@ -484,7 +483,7 @@ Just as is possible on Java edition, default components of the base item can be 
         ```
     </TabItem>
 
-    <TabItem value="api-removing-component-examples" label="Removing components using the Geyser API">
+    <TabItem value="api" label="Removing components using the Geyser API">
         The `CustomItemDefinition#Builder` class supports removing default components by either
         specifying the item data component identifier, or by passing the type.
         ```java
@@ -526,8 +525,8 @@ The `condition` predicate type checks for a boolean property and returns `true` 
 
 <details>
 <summary>Expand for usage examples.</summary>
-<Tabs>
-    <TabItem value="json-condition-predicate-examples" label="Using condition predicates in json mappings">
+<Tabs groupId="custom-item-implementation">
+    <TabItem value="json" label="Using condition predicates in json mappings">
         All condition predicate types must set the `type` to `condition`.
 
         ```json
@@ -579,7 +578,7 @@ The `condition` predicate type checks for a boolean property and returns `true` 
 
     </TabItem>
 
-    <TabItem value="api-condition-predicate-examples" label="Using condition predicates with API">
+    <TabItem value="api" label="Using condition predicates with API">
         TODO
     </TabItem>
 
@@ -599,8 +598,8 @@ The `match` predicate requires a value to be specified in the `value` key.
 
 <details>
     <summary>Expand for usage examples.</summary>
-    <Tabs>
-        <TabItem value="json-match-predicate-examples" label="Using match predicates in json mappings">
+    <Tabs groupId="custom-item-implementation">
+        <TabItem value="json" label="Using match predicates in json mappings">
             All condition predicate types must set the `type` to `match`.
 
             ```json
@@ -649,7 +648,7 @@ The `match` predicate requires a value to be specified in the `value` key.
 
         </TabItem>
 
-        <TabItem value="api-match-predicate-examples" label="Using match predicates with API">
+        <TabItem value="api" label="Using match predicates with API">
             TODO
         </TabItem>
 
@@ -673,12 +672,12 @@ The `range_dispatch` predicate has 3 extra keys, one of them required:
 
 <details>
     <summary>Expand for usage examples.</summary>
-    <Tabs>
-        <TabItem value="json-range-dispatch-predicate-examples" label="Using range dispatch predicates in json mappings">
+    <Tabs groupId="custom-item-implementation">
+        <TabItem value="json" label="Using range dispatch predicates in json mappings">
             TODO
         </TabItem>
 
-        <TabItem value="api-range-dispatch-predicate-examples" label="Using range dispatch predicates with API">
+        <TabItem value="api" label="Using range dispatch predicates with API">
             TODO
         </TabItem>
 
@@ -698,8 +697,8 @@ TODO
 The full Java Edition datapack + resource pack, as well as the relevant Geyser mappings and Bedrock resource pack can be found
 [here](https://github.com/eclipseisoffline/geyser-example-mappings/).
 
-<Tabs> <TabItem value="json-mapping" label="Json mapping example">
-
+<Tabs groupId="custom-item-implementation">
+    <TabItem value="json" label="Json mapping example">
     <details>
     <summary>Simple custom food item mapping</summary>
         ```json
@@ -876,11 +875,11 @@ The full Java Edition datapack + resource pack, as well as the relevant Geyser m
                 ]
             }
         }
-
         ```
     </details>
 
-</TabItem> <TabItem value="code" label="Code example">
+</TabItem>
+<TabItem value="api" label="Code example">
 
     <details>
         <summary>Simple custom food item mapping</summary>
@@ -1006,7 +1005,8 @@ The full Java Edition datapack + resource pack, as well as the relevant Geyser m
         }
         ```
     </details>
-</TabItem> </Tabs>
+</TabItem>
+</Tabs>
 
 ## Resource Packs
 Custom items also require a Bedrock Edition resource pack. Geyser does not generate or convert Java Edition resource packs into
@@ -1050,8 +1050,8 @@ For example, an item registered with the Bedrock identifier `example:yummy_food`
 This section assumes you already set up and configured Geyser so Bedrock players are able to connect. Further, the `enable-custom-content`
 config option in Geyser's config must be set to `true` for custom items to work!
 
-<Tabs>
-    <TabItem value="json-mapping" label="Loading json mappings">
+<Tabs groupId="custom-item-implementation">
+    <TabItem value="json" label="Loading json mappings">
         1. Find the `custom_mappings` folder created by Geyser. For plugin/mod versions of Geyser, it will be under
         `plugins/Geyser-[platform]/custom_mappings` (or `config/Geyser-[platform]/custom_mappings`). For Geyser-Standalone,
         it will be in the root folder.
@@ -1060,7 +1060,7 @@ config option in Geyser's config must be set to `true` for custom items to work!
         4. Restart the server.
     </TabItem>
 
-    <TabItem value="geyser-extension" label="Loading Geyser Extensions">
+    <TabItem value="api" label="Loading Geyser Extensions">
         1. Place the extension jar file into the `extensions` folder. For plugin/mod versions of Geyser, it will be under
         `plugins/Geyser-[platform]/extensions` (or `config/Geyser-[platform]/extensions`). For Geyser-Standalone,
         it will be in the root folder.
