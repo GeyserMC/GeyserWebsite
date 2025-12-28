@@ -225,8 +225,6 @@ when there are multiple custom item definitions.
         }
         ```
 
-        ## Definition types
-
         There are multiple types of custom item definitions:
         - definition: a single custom item, defined for a Java item model definition.
         - legacy: a single custom item, defined for a Java custom item making use of legacy custom model data numbers.
@@ -238,7 +236,7 @@ when there are multiple custom item definitions.
                 ```json
                 {
                     "type": "definition",
-                    "model": "example:example:model",
+                    "model": "example:example_model",
                     "bedrock_identifier": "example:example_item"
                 }
                 ```
@@ -250,7 +248,7 @@ when there are multiple custom item definitions.
                 ```json
                 {
                     "type": "group",
-                    "model": "geyser_mc:a_cool_item_model", // Optional
+                    "model": "example:example_model", // Optional
                     "definitions": [...]
                 }
                 ```
@@ -407,13 +405,13 @@ that output a custom item. Otherwise, Bedrock will *not* show recipes for custom
 <Tabs>
     <TabItem value="json-bedrock-options" label="Json mapping example">
         ```json
-
+            TODO
         ```
     </TabItem>
 
     <TabItem value="using-api" label="Geyser API Example">
         ```java
-
+            TODO
         ```
     </TabItem>
 </Tabs>
@@ -457,22 +455,27 @@ For documentation of all item components and their respective json formats, see 
 
 Along with the components listed here, default component removal is also possible.
 
+<details>
+<summary>Expand for component usage examples</summary>
 <Tabs>
     <TabItem value="json-component-examples" label="Using components in json mappings">
-
+        TODO
     </TabItem>
 
     <TabItem value="api-component-examples" label="Using components with API">
-
+        TODO
     </TabItem>
 
 </Tabs>
+</details>
 
 #### Removing default components
 Just as is possible on Java edition, default components of the base item can be removed (e.g. making non-edible apples).
 
+<details>
+<summary>Expand for usage examples of component removal</summary>
 <Tabs>
-    <TabItem value="using-json" label="Removing default components in json mapping files">
+    <TabItem value="json-removing-component-examples" label="Removing components in json mappings">
         In Json mappings, this is done by adding an `!` in front of the component.
         ```json
         "components": {
@@ -481,7 +484,7 @@ Just as is possible on Java edition, default components of the base item can be 
         ```
     </TabItem>
 
-    <TabItem value="using-api" label="Removing default using the Geyser API">
+    <TabItem value="api-removing-component-examples" label="Removing components using the Geyser API">
         The `CustomItemDefinition#Builder` class supports removing default components by either
         specifying the item data component identifier, or by passing the type.
         ```java
@@ -497,24 +500,200 @@ Just as is possible on Java edition, default components of the base item can be 
         ```
     </TabItem>
 </Tabs>
+</details>
 
 ### Predicates
 
+Predicates are used to tell Geyser which custom item definition to use for a particular combination of Java item and item model.
+For simpler legacy mappings or custom items that don't have multiple component variants, predicates aren't required.
+
+For each combination of a Java item and a Java item model definition, there can be one item definition without predicates,
+and one or multiple definitions with predicates. There cannot be multiple item definitions with the same predicates for the same Java item and Java item model definition.
+If the Java item model definition is in the `minecraft` namespace, there cannot be an item definition without a predicate.
+
+:::info
+Predicates can also be inverted to match for the inverse condition.
+:::
+
+#### Condition predicates
+The `condition` predicate type checks for a boolean property and returns `true` if the property matches the expected value. It has 5 possible properties:
+
+- `broken`: if the item is broken (has only 1 durability point left).
+- `damaged`: if the item is damaged (not at full durability).
+- `custom_model_data`: checks the item's custom model data flags at the index specified in the `index` key. Defaults to `false`.
+- `has_component`: if the item has the component set in the `component` key. Includes default components.
+- `fishing_rod_cast`: if the player is currently holding a cast fishing rod.
+
+<details>
+<summary>Expand for usage examples.</summary>
+<Tabs>
+    <TabItem value="json-condition-predicate-examples" label="Using condition predicates in json mappings">
+        All condition predicate types must set the `type` to `condition`.
+
+        ```json
+        "predicate": {
+            "type": "condition",
+            "property": "broken"
+        }
+        ```
+
+        ```json
+        "predicate": {
+            "type": "condition",
+            "property": "damaged"
+        }
+        ```
+
+        ```json
+        "predicate": {
+            "type": "condition",
+            "property": "has_component",
+            "component": "minecraft:unbreakable"
+        }
+        ```
+
+        ```json
+        "predicate": {
+            "type": "condition",
+            "property": "custom_model_data",
+            "index": 1
+        }
+        ```
+
+        ```json
+        "predicate": {
+            "type": "condition",
+            "property": "fishing_rod_cast"
+        }
+        ```
+
+        Components can also be inverted by adding and setting the `expected` key to `false`. If not set, it defaults to `true`.
+        Example:
+        ```json
+        "predicate": {
+            "type": "condition",
+            "property": "broken",
+            "expected": "false"
+        }
+        ```
+
+    </TabItem>
+
+    <TabItem value="api-condition-predicate-examples" label="Using condition predicates with API">
+        TODO
+    </TabItem>
+
+</Tabs>
+</details>
+
+#### Match predicates
+
+The `match` predicate type checks for a text-like property and returns `true` if it matches the given value. It has 4 possible properties:
+
+- `charge_type`: the item currently charged in the crossbow (in the `minecraft:charged_projectiles` component). Can be `none`, `arrow`, or `rocket`.
+- `trim_material`: the trim material (resource location) of this item.
+- `context_dimension`: the dimension (resource location) the player is currently in.
+- `custom_model_data`: fetches a string from the item's custom model data strings.
+
+The `match` predicate requires a value to be specified in the `value` key.
+
+<details>
+    <summary>Expand for usage examples.</summary>
+    <Tabs>
+        <TabItem value="json-match-predicate-examples" label="Using match predicates in json mappings">
+            All condition predicate types must set the `type` to `match`.
+
+            ```json
+            "predicate": {
+                "type": "match",
+                "property": "charge_type",
+                "value": "arrow" # TODO none???
+            }
+            ```
+
+            ```json
+            "predicate": {
+                "type": "match",
+                "property": "trim_material",
+                "value": "minecraft:coast_armor_trim"
+            }
+            ```
+
+            ```json
+            "predicate": {
+                "type": "match",
+                "property": "context_dimension",
+                "value": "minecraft:the_end"
+            }
+            ```
+
+            ```json
+            "predicate": {
+                "type": "match",
+                "property": "custom_model_data",
+                "value": "MyString",
+                "index": 1
+            }
+            ```
+
+            Components can also be inverted by adding and setting the `expected` key to `false`. If not set, it defaults to `true`.
+            Example:
+            ```json
+            "predicate": {
+                "type": "match",
+                "property": "context_dimension",
+                "value": "minecraft:the_end",
+                "expected": "false"
+            }
+            ```
+
+        </TabItem>
+
+        <TabItem value="api-match-predicate-examples" label="Using match predicates with API">
+            TODO
+        </TabItem>
+
+    </Tabs>
+</details>
+
+#### Range dispatch predicates
+
+The `range_dispatch` predicate type checks for a numeric property and returns `true` if it is above the specified threshold. It has 4 possible properties:
+
+- `bundle_fullness`: checks the item's bundle fullness. Returns the total stack count of all the items in a bundle (in the `minecraft:bundle_contents` component).
+- `damage`: checks the item's damage value. Can be normalised.
+- `count`: checks the item's count. Can be normalised.
+- `custom_model_data`: checks the item's custom model data floats. Defaults to `0.0`.
+
+The `range_dispatch` predicate has 3 extra keys, one of them required:
+
+- `threshold`: the threshold required to return true (required).
+- `scale`: the factor to scale the property value by before comparing it with the threshold. Defaults to `1.0`.
+- `normalize`: if the property value should be normalized before scaling it and comparing it with the threshold. Defaults to `false`, only works for certain properties.
+
+<details>
+    <summary>Expand for usage examples.</summary>
+    <Tabs>
+        <TabItem value="json-range-dispatch-predicate-examples" label="Using range dispatch predicates in json mappings">
+            TODO
+        </TabItem>
+
+        <TabItem value="api-range-dispatch-predicate-examples" label="Using range dispatch predicates with API">
+            TODO
+        </TabItem>
+
+    </Tabs>
+</details>
+
+### Predicate strategy for multiple predicates
+
+There is also a `predicate_strategy` key, which can be `and` or `or` and defaults to `and`. This was inspired by the advancement requirement strategies, and decides if all predicates (`and`), or only one predicate (`or`) of an item definition has to match for it to be used.
+
 ### Priority
 
-## Creating mappings
+TODO
 
-<Tabs>
-    <TabItem value="using-json" label="Json mapping files">
-
-    </TabItem>
-
-    <TabItem value="using-api" label="Using Geyser API">
-
-    </TabItem>
-</Tabs>
-
-## Examples for mapping vanilla items
+## Examples
 
 The full Java Edition datapack + resource pack, as well as the relevant Geyser mappings and Bedrock resource pack can be found
 [here](https://github.com/eclipseisoffline/geyser-example-mappings/).
@@ -889,3 +1068,6 @@ config option in Geyser's config must be set to `true` for custom items to work!
         3. Restart the server.
     </TabItem>
 </Tabs>
+
+# Non-vanilla items
+
