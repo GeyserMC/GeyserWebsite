@@ -188,12 +188,14 @@ For such use-cases, Geyser supports registering multiple custom Bedrock items wi
 predicates. The previous `custom-model-data` approach continues to be supported using `legacy` definitions.
 
 ## How does it work?
-This section explains how item mappings work in Geyser, how they can be created, and lists all configurable options.
+"Custom" items in Java edition are based on vanilla items, with a modified appearance (using item models on 1.21.4+, or custom model data on older versions).
+Therefore, all mapped Bedrock custom item definitions are based on vanilla Java items and their components. Further, mapped definitions
+can specify additional components to modify the items' behavior.
 
 ### Prerequisites: Vocabulary
-- `Java item`: Any vanilla item that exists in the Minecraft: Java Edition base game. Java datapacks make custom items by overriding the components of a Java item.
-- `Java item component`: On Java Edition, items have their properties and behaviour defined using item components.
-Every Java item has a set of default components, and item stacks can override these components to remove or modify them.
+- `Java item`: Any vanilla item that exists in the Minecraft: Java Edition base game. Java datapacks / plugins can create custom items by overriding components of a Java item.
+- `Java item component`: On Java Edition since 1.21.4+, items have their properties and behaviour defined using item components.
+Every Java item has a set of default components, which can be overridden to change how an item looks or functions.
 - `Bedrock item component`: Custom Bedrock items also have components that determine item behaviour, similar to Java Edition.
 However, these components cannot be changed at runtime for item stacks and have to be defined once.
 - `Java legacy custom model data`: The system used before Java 1.21.4. Before 1.21.4, each "custom item" had a custom model data number,
@@ -205,6 +207,191 @@ Every Java item stores its item model definition in the `minecraft:item_model` i
 Multiple custom item definitions, and thus multiple Bedrock items, can exist for the same Java item model definition, but for every combination of a Java item and Java item model definition, there can only be one custom item definition without predicates.
 - `Non-vanilla custom item definition`: also a Geyser term. Represents a Bedrock custom item that maps a Java non-vanilla (modded) item. Like normal custom item definitions, it contains info on the item's properties on Java and Bedrock.
 At the moment, there can only be one non-vanilla custom item definition per Java non-vanilla item.
+
+### Definitions
+Every custom item definition represents one custom Bedrock item that has a specific set of pre-defined Bedrock options.
+It is tied to a specific Java item + item model combination (or, for legacy items, a specific Java item + custom model data combination).
+
+#### Mandatory definition properties
+- `bedrock_identifier`: This identifier is used for the custom Bedrock item (and also in e.g. attachables), and cannot be shared with **any** other custom item definition.
+This identifier cannot be in the `minecraft` namespace. If no namespace is provided, `geyser_custom` is used.
+- `item_model` (or `custom_model_data` for `legacy` definitions in json mappings) is also required.
+
+#### Optional definition properties
+- `display_name`: A string, or json text component for the item's default display name. If not set, it is derived from the bedrock identifier.
+- `bedrock_options`: The [bedrock options](#bedrock-options) that specify additional Bedrock properties
+- `components`: Java item components that specify item behavior, such as the maximum stack size. See TODO for more information.
+- `predicate`: Predicates used to match a specific custom item definition to an item stack. See TODO for more
+- `predicate_strategy`: Specifies how multiple predicates are evaluated. Only used when predicates are specified.
+- `priority`: Optionally specifies a priority of a definition over other definitions for the same item + item model combination. Only used
+when there are multiple custom item definitions.
+
+<Tabs>
+    <TabItem value="using-json" label="Definitions in the Json format">
+        Json mapping files have to specify the `format_version` set to `2`, and list all definitions for each item
+        under the `items` key. It holds an object in which keys are Java items, and in which each value is an array of objects,
+        specifying custom item definitions for that Java item.
+
+        Example structure of a `mappings.json` mappings file:
+        ```json
+        {
+            "format_version": 2,
+            "items": {
+                "minecraft:flint": [
+                    { definition }
+                ],
+                "minecraft:apple": [
+                    { definition1 },
+                    { definition2 }
+                ],
+                "minecraft:diamond": [
+                    { definition }
+                ]
+            }
+        }
+        ```
+
+        ## Definition types
+
+        There are multiple types of custom item definitions:
+        - definition: a single custom item, defined for a Java item model definition.
+        - legacy: a single custom item, defined for a Java custom item making use of legacy custom model data numbers.
+        - group: a group of custom item definitions.
+        The type of a definition is defined in the `type` key.
+
+        <Tabs>
+            <TabItem value = "definition-type" label="Definition (1.21.4+)">
+                ```json
+                {
+                    "type": "definition",
+                    "model": "example:example:model",
+                    "bedrock_identifier": "example:example_item"
+                }
+                ```
+                The `definition` type is used to map one definition for a specific item's `item_model` component value.
+                This should be used for 1.21.4+ and above. For custom items using the legacy `custom_model_data` format,
+                use the `legacy` type.
+            </TabItem>
+            <TabItem value = "group-type" label="Group definition">
+                ```json
+                {
+                    "type": "group",
+                    "model": "geyser_mc:a_cool_item_model", // Optional
+                    "definitions": [...]
+                }
+                ```
+                A `group` definition represents a group of custom item definitions. These can both be standard or legacy definitions.
+                All non-legacy definitions in the group inherit the group's Java item `model` definition, if one is set.
+                If a group has no model set, all definitions in the group must specify the item model themselves.
+                Definitions in a group are also allowed to be a group, and definitions in a group can also override the Java item model definition of the group.
+            </TabItem>
+            <TabItem value = "legacy-type" label="Legacy (pre 1.21.4+)">
+                ```json
+                {
+                    "type": "legacy",
+                    "custom_model_data": 42,
+                    "bedrock_identifier": "example:example_item_legacy"
+                }
+                ```
+                The `legacy` definition should be used for custom items created on versions before the introduction of data
+                components (and therefore `item_models`). These must specify a `custom_model_data` float value.
+
+                TODO damage predicate / unbreakable
+            </TabItem>
+        </Tabs>
+
+
+        <details>
+        <summary>Expand to see examples</summary>
+        ```json
+        {
+            "format_version": 2,
+            "items": {
+                "minecraft:flint": [
+                    {
+                        "type": "definition",
+                        "model": "geyser_mc:test_item",
+                        "bedrock_identifier": "geyser_mc:test_item",
+                        "display_name": "An Example Item!",
+                        "bedrock_options": {
+                            "icon": "potato",
+                            "creative_category": "items"
+                        }
+                    },
+                    {
+                        "type": "legacy",
+                        "custom_model_data": 42,
+                        "bedrock_identifier": "geyser_mc:test_legacy_item",
+                        "display_name": "A Very Old Item!",
+                        "bedrock_options": {
+                            "icon": "cobweb"
+                        }
+                    },
+                    {
+                        "type": "group",
+                        "model": "geyser_mc:another_test_item",
+                        "definitions": [
+                            {
+                                "bedrock_identifier": "geyser_mc:another_test_item_nether",
+                                "bedrock_options": {
+                                    "icon": "carrot"
+                                },
+                                "predicate": {
+                                    "type": "match",
+                                    "property": "context_dimension",
+                                    "value": "minecraft:the_nether"
+                                },
+                                "components": {
+                                    "minecraft:consumable": {
+                                        "animation": "drink",
+                                        "consume_seconds": 10
+                                    }
+                                }
+                            },
+                            {
+                                "bedrock_identifier": "geyser_mc:another_test_item",
+                                "bedrock_options": {
+                                    "icon": "carrot"
+                                },
+                                "components": {
+                                    "minecraft:consumable": {
+                                        "animation": "drink",
+                                        "consume_seconds": 10
+                                    }
+                                }
+                            }
+                        ]
+                    }
+                ]
+            }
+        }
+        ```
+
+        In this example, the Java item `minecraft:flint` has four mapped definitions:
+        - The first is mapped using a "simple" definition for the `geyser_mc:test_item` model. Hence, it will always be used
+        when Geyser encounters a flint item with the `item_model` component being set to the `geyser_mc:test_item` model.
+        - The second is a "legacy" definition for the custom model data value of 42. Hence, if Geyser encounters a flint item with
+        the first float value in the `floats` list set to `42`, it will use the second definition.
+        Such an item could be retrieved using the following command: `/give @s flint[custom_model_data={floats:[42]}] 1`
+        - The third and fourth definition is part of a `group` type, which maps multiple definitions to `minecraft:flint` items with the
+        `geyser_mc:another_test_item` item model to use under different conditions. Specifically, the third definition (with the bedrock identifier `geyser_mc:another_test_item_nether`)
+        is used when the supplied dimension predicate matches the nether dimension. Otherwise, the fourth definition, which does not
+        specify a predicate, is used.
+        </details>
+    </TabItem>
+
+    <TabItem value="using-api" label="Definitions in the Geyser API">
+
+    </TabItem>
+</Tabs>
+
+### Bedrock Options
+
+### Components
+
+### Predicates
+
+### Priority
 
 ## Creating mappings
 
