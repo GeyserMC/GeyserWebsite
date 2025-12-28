@@ -23,6 +23,18 @@ repositories {
 }
 ```
 
+When you writing paper plugins, make sure say the plugin (soft)depends on floodgate, otherwise paper won't give your plugin access to the classes.
+
+**plugin.yml**
+```yml
+....
+depend:
+  - Geyser-Spigot
+  - floodgate
+```
+
+
+
 ## Using Geyser {#using-geyser}
 
 Add Geyser's API codebase as a dependency:
