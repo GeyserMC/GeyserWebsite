@@ -32,7 +32,7 @@ However, you can use automatic tools such as [Rainbow](/wiki/other/rainbow/) to 
 `format_version: 1` is no longer receiving updates. New features will only be added to format version 2.
 :::
 
-## JSON mappings
+## JSON mappings (v1)
 
 1. Start your server, and you should have a folder called `custom_mappings` that is created. That would be with the folder of `Geyser.jar` file for standalone and inside your Geyser data folder for a plugin.
 2. Create a `.json` file, it can be any name you like and as many files as you like. You don't need to make one file per item. Here is the structure of the file:
@@ -101,9 +101,9 @@ However, you can use automatic tools such as [Rainbow](/wiki/other/rainbow/) to 
     }
     ```
 
-## Geyser extensions
+## Geyser extensions (v1)
 
-### Extending a vanilla item
+### Extending a vanilla item (v1)
 
 1. Create your custom item options or registrations, to which you can add any of the following. They can be stacked, so that all of the specified types need to match, but you **do NOT need all of them.**
 ```java
@@ -136,7 +136,7 @@ public void onGeyserPreInitializeEvent(GeyserDefineCustomItemsEvent event) {
 }
 ```
 
-### Non vanilla (modded) items with Geyser extensions (for example to use with Fabric)
+### Non vanilla (modded) items with Geyser extensions (for example to use with Fabric) (v1)
 
 1. Create your item data:
 ```java
@@ -153,32 +153,6 @@ public void onGeyserDefineCustomItemsEvent(GeyserDefineCustomItemsEvent event) {
     event.register(data);
 }
 ```
-
-## Resource pack
-
-1. Setup a basic bedrock resource pack. If you need help, you can find it [here](https://wiki.bedrock.dev/guide/project-setup.html#rp-manifest).
-2. Make a `textures` folder.
-3. Create `item_texture.json` in the `textures`, and put this in it:
-
-```json
-{
-  "resource_pack_name": "MY_PACK_NAME_HERE",
-  "texture_name": "atlas.items",
-  "texture_data": {
-    
-  }
-}
-```
-4. Inside texture data, you can add your items. The texture name and path must match the name that you set in your mappings.
-
-```json
-"my_item": {
-    "textures": [
-        "textures/items/my_item"
-    ]
-}
-```
-5. Then you need to put your textures inside the `textures/items`. Make sure to have it match the texture path that you specified in `item_texture.json`!
 </details>
 
 ## Format version 2
@@ -300,7 +274,6 @@ when there are multiple custom item definitions.
             </TabItem>
         </Tabs>
 
-
         <details>
         <summary>Expand to see examples</summary>
         ```json
@@ -381,13 +354,74 @@ when there are multiple custom item definitions.
     </TabItem>
 
     <TabItem value="using-api" label="Definitions in the Geyser API">
+        Custom item definitions are registered using the `GeyserDefineCustomItemsEvent`.
 
+        ```java
+        @Subscribe
+        public void onGeyserDefineCustomItems(GeyserDefineCustomItemsEvent event) {
+            event.register(Identifier.of("flint"), CustomItemDefinition.builder(
+                    Identifier.of("example:example_item_identifier"), // mandatory: Bedrock item identifier
+                    Identifier.of("example:custom_item_model") // mandatory: item model
+                )
+                    // The following are optional
+                    .displayName("displayName")
+                    .bedrockOptions(...)
+                    .component(ItemDataComponents.MAX_STACK_SIZE, 60)
+                    .predicate(ItemRangeDispatchPredicate.count(32))
+                    .predicateStrategy(PredicateStrategy.OR)
+                    .priority(1)
+                    .build());
+        }
+        ```
+
+        The `register` method takes in two parameters: The identifier of the base vanilla item, and a
+        `CustomItemDefinition`. The latter must be created using the `CustomItemDefinition#builder`, which
+        requires passing the Bedrock item identifier and item model as arguments.
     </TabItem>
 </Tabs>
 
 ### Bedrock Options
 
+These options allow configuring Bedrock-specific options that aren't represented by components.
+These include:
+- `icon`: Determines the icon to use for the item. If not set, the item's Bedrock identifier is used
+(with `:` being replaced with `.`, and `/` with `_` (e.g.: `geyser_mc:a_cool_item` -> `geyser_mc.a_cool_item`))
+This value corresponds to icon shorthands defined in the textures.json file.
+- `allow_offhand`: Whether the custom item may be held / put into the offhand. Defaults to true.
+- `display_handheld`: Whether the item should be displayed handheld (e.g. for tools or weapons). Defaults to false.
+- `protection_value`: Determines how many armour protection points should be shown when this item is worn. This is purely visual,
+and only has an effect if the item is equippable. Defaults to 0.
+- `creative_category`: Sets the item's creative category (also shown in the recipe book). Can be `none`,
+`construction`, `nature`, `equipment`, or `items`. Defaults to `none`.
+- `creative_group`: Sets the item's creative group (for the recipe book). See [here](https://wiki.bedrock.dev/documentation/menu-categories#list-of-vanilla-groups)
+for a list of possible values.
+- `tags`: Sets tags that an item has. These can be used for Molang expressions in resource packs.
+
+:::info
+A `creative_category` (and optionally `creative_group`) must be set if you have crafting recipes
+that output a custom item. Otherwise, Bedrock will *not* show recipes for custom items in the recipe book!
+:::
+
+<details>
+<summary>Expand for examples</summary>
+<Tabs>
+    <TabItem value="json-bedrock-options" label="Json mapping example">
+        ```json
+
+        ```
+    </TabItem>
+
+    <TabItem value="using-api" label="Geyser API Example">
+        ```java
+
+        ```
+    </TabItem>
+</Tabs>
+</details>
+
 ### Components
+
+
 
 ### Predicates
 
@@ -780,7 +814,3 @@ config option in Geyser's config must be set to `true` for custom items to work!
         3. Restart the server.
     </TabItem>
 </Tabs>
-
-# FAQ
-
-TODO
