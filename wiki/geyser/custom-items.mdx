@@ -421,7 +421,82 @@ that output a custom item. Otherwise, Bedrock will *not* show recipes for custom
 
 ### Components
 
+Item components are used in Java Edition to customize how items function and behave.
+Java Edition allows modifying these for any item stack at runtime. This is, unfortunately,
+not a feature Bedrock Edition supports. Therefore, components must be specified in mapping files.
+It is expected that a custom item will *always* have these components sent by the server when the custom item definition
+is used. For different set of components, multiple custom item definitions with predicates should be used.
 
+#### Adding or Modifying components
+
+The following Java item components are supported (some with limitations):
+
+- `minecraft:consumable`: doesn't support consume particles/sounds.
+- `minecraft:equippable`: doesn't support the camera overlay or swappable properties.
+- `minecraft:food`
+- `minecraft:max_damage`
+- `minecraft:max_stack_size`
+- `minecraft:use_cooldown`
+- `minecraft:enchantable`
+    - On Bedrock, this will be mapped to the `minecraft:enchantable` component with `slot=all`. This should, but does not guarantee, allow for compatibility with vanilla enchantments. Non-vanilla enchantments are unlikely to work.
+- `minecraft:tool`
+- `minecraft:repairable`
+- `minecraft:enchantment_glint_override`
+- `minecraft:attack_range`
+    - Due to Bedrock limitations, only has an effect in combination with the `minecraft:kinetic_weapon` or `minecraft:piercing_weapon` components.
+- `minecraft:kinetic_weapon`
+- `minecraft:piercing_weapon`
+- `minecraft:swing_animation`
+- Due to Bedrock limitations, the actual animation played is hardcoded, only the duration of the animation can be changed.
+- `minecraft:use_effects`
+- Due to Bedrock limitations, the `can_sprint` property cannot be translated.
+
+Some components, like `minecraft:rarity` and `minecraft:attribute_modifiers`, are already automatically translated and should not be listed.
+
+For documentation of all item components and their respective json formats, see [the item data component page on the Minecraft wiki](https://minecraft.wiki/w/Data_component_format).
+
+Along with the components listed here, default component removal is also possible.
+
+<Tabs>
+    <TabItem value="json-component-examples" label="Using components in json mappings">
+
+    </TabItem>
+
+    <TabItem value="api-component-examples" label="Using components with API">
+
+    </TabItem>
+
+</Tabs>
+
+#### Removing default components
+Just as is possible on Java edition, default components of the base item can be removed (e.g. making non-edible apples).
+
+<Tabs>
+    <TabItem value="using-json" label="Removing default components in json mapping files">
+        In Json mappings, this is done by adding an `!` in front of the component.
+        ```json
+        "components": {
+            "!minecraft:food": {}
+        }
+        ```
+    </TabItem>
+
+    <TabItem value="using-api" label="Removing default using the Geyser API">
+        The `CustomItemDefinition#Builder` class supports removing default components by either
+        specifying the item data component identifier, or by passing the type.
+        ```java
+        @Subscribe
+        public void onDefineCustomItems5(GeyserDefineCustomItemsEvent event) {
+            event.register(Identifier.of("apple"), CustomItemDefinition.builder(
+                    Identifier.of("example:rotten_apple"), Identifier.of("example:rotten_apple")
+                )
+                .displayName("Rotten apple")
+                .removeComponent(ItemDataComponents.FOOD)
+                .build());
+        }
+        ```
+    </TabItem>
+</Tabs>
 
 ### Predicates
 
