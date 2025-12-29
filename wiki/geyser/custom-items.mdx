@@ -194,14 +194,14 @@ This identifier cannot be in the `minecraft` namespace. If no namespace is provi
 #### Optional definition properties
 - `display_name`: A string, or json text component for the item's default display name. If not set, it is derived from the bedrock identifier.
 - `bedrock_options`: The [bedrock options](#bedrock-options) that specify additional Bedrock properties
-- `components`: Java item components that specify item behavior, such as the maximum stack size. See TODO for more information.
-- `predicate`: Predicates used to match a specific custom item definition to an item stack. See TODO for more
+- `components`: Java item components that specify item behavior, such as the maximum stack size.
+- `predicate`: Predicates used to match a specific custom item definition to an item stack.
 - `predicate_strategy`: Specifies how multiple predicates are evaluated. Only used when predicates are specified.
 - `priority`: Optionally specifies a priority of a definition over other definitions for the same item + item model combination. Only used
 when there are multiple custom item definitions.
 
 <Tabs groupId="custom-item-implementation">
-    <TabItem value="json" label="Definitions in the Json format">
+    <TabItem value="json" label="Definitions: Json mappings">
         Json mapping files have to specify the `format_version` set to `2`, and list all definitions for each item
         under the `items` key. It holds an object in which keys are Java items, and in which each value is an array of objects,
         specifying custom item definitions for that Java item.
@@ -273,7 +273,7 @@ when there are multiple custom item definitions.
         </Tabs>
 
         <details>
-        <summary>Expand to see examples</summary>
+        <summary>Expand to see examples of all definition types</summary>
         ```json
         {
             "format_version": 2,
@@ -351,7 +351,7 @@ when there are multiple custom item definitions.
         </details>
     </TabItem>
 
-    <TabItem value="api" label="Definitions in the Geyser API">
+    <TabItem value="api" label="Definitions: Geyser API">
         Custom item definitions are registered using the `GeyserDefineCustomItemsEvent`.
 
         ```java
@@ -401,17 +401,52 @@ that output a custom item. Otherwise, Bedrock will *not* show recipes for custom
 :::
 
 <details>
-<summary>Expand for examples</summary>
+<summary>Expand for bedrock option examples</summary>
 <Tabs groupId="custom-item-implementation">
-    <TabItem value="json" label="Json mapping example">
+    <TabItem value="json" label="Json mappings">
         ```json
-            TODO
+            "bedrock_options": {
+                "icon": "example:chestplate", // must match shorthands defined in item_textures.json
+                "protection_value": 4,
+                "creative_category": "equipment"
+                "creative_group": "itemGroup.name.chestplate",
+                "tags": ["example:tag_one", "example:tag_two"]
+            }
+        ```
+
+        ```json
+            "bedrock_options": {
+                "icon": "example:my_sword", // must match shorthands defined in item_textures.json
+                "display_handheld": true, // usually only set for weapons or tools
+                "creative_category": "items",
+                "creative_group": "itemGroup.name.sword",
+                "tags": "example:my_weapon"
+            }
         ```
     </TabItem>
 
-    <TabItem value="api" label="Geyser API Example">
+    <TabItem value="api" label="Geyser API">
+        In the API, Bedrock item options are defined using the `CustomItemBedrockOptions#Builder`.
+        The following snippets show example usages:
+
         ```java
-            TODO
+        .bedrockOptions(CustomItemBedrockOptions.builder()
+                        .icon("example:chestplate")
+                        .protectionValue(4)
+                        .creativeCategory(CreativeCategory.EQUIPMENT)
+                        .creativeGroup("itemGroup.name.chestplate")
+                        .tags(Set.of(Identifier.of("example:tag_one"), Identifier.of("example:tag_two")))
+                )
+        ```
+
+        ```java
+        .bedrockOptions(CustomItemBedrockOptions.builder()
+                .icon("example:my_sword")
+                .displayHandheld(true)
+                .creativeCategory(CreativeCategory.ITEMS)
+                .creativeGroup("itemGroup.name.sword")
+                .tag(Identifier.of("example:my_weapon"))
+        )
         ```
     </TabItem>
 </Tabs>
@@ -420,8 +455,8 @@ that output a custom item. Otherwise, Bedrock will *not* show recipes for custom
 ### Components
 
 Item components are used in Java Edition to customize how items function and behave.
-Java Edition allows modifying these for any item stack at runtime. This is, unfortunately,
-not a feature Bedrock Edition supports. Therefore, components must be specified in mapping files.
+Java Edition allows modifying these for any item stack at runtime. This is, unfortunately, not a feature Bedrock Edition supports.
+Therefore, components must be specified in advance in mapping files.
 It is expected that a custom item will *always* have these components sent by the server when the custom item definition
 is used. For different set of components, multiple custom item definitions with predicates should be used.
 
@@ -453,17 +488,23 @@ Some components, like `minecraft:rarity` and `minecraft:attribute_modifiers`, ar
 
 For documentation of all item components and their respective json formats, see [the item data component page on the Minecraft wiki](https://minecraft.wiki/w/Data_component_format).
 
-Along with the components listed here, default component removal is also possible.
-
 <details>
 <summary>Expand for component usage examples</summary>
 <Tabs groupId="custom-item-implementation">
-    <TabItem value="json" label="Using components in json mappings">
-        TODO
+    <TabItem value="json" label="Json mappings">
+        All components listed follow the same json structure as would be used in datapacks, which are documented on the
+        Minecraft wiki. Here are some examples:
+
+        ```json
+        ```
     </TabItem>
 
-    <TabItem value="api" label="Using components with API">
-        TODO
+    <TabItem value="api" label="Geyser API">
+        All components can be found in the [ItemDataComponents](TODO JAVADOC) class, and are typically built builders.
+
+        Some examples:
+        ```java
+        ```
     </TabItem>
 </Tabs>
 </details>
@@ -474,7 +515,7 @@ Just as is possible on Java edition, default components of the base item can be 
 <details>
 <summary>Expand for usage examples of component removal</summary>
 <Tabs groupId="custom-item-implementation">
-    <TabItem value="json" label="Removing components in json mappings">
+    <TabItem value="json" label="Json mappings">
         In Json mappings, this is done by adding an `!` in front of the component.
         ```json
         "components": {
@@ -483,7 +524,7 @@ Just as is possible on Java edition, default components of the base item can be 
         ```
     </TabItem>
 
-    <TabItem value="api" label="Removing components using the Geyser API">
+    <TabItem value="api" label="Geyser API">
         The `CustomItemDefinition#Builder` class supports removing default components by either
         specifying the item data component identifier, or by passing the type.
         ```java
@@ -526,7 +567,7 @@ The `condition` predicate type checks for a boolean property and returns `true` 
 <details>
 <summary>Expand for usage examples.</summary>
 <Tabs groupId="custom-item-implementation">
-    <TabItem value="json" label="Using condition predicates in json mappings">
+    <TabItem value="json" label="Json mappings">
         All condition predicate types must set the `type` to `condition`.
 
         ```json
@@ -578,8 +619,23 @@ The `condition` predicate type checks for a boolean property and returns `true` 
 
     </TabItem>
 
-    <TabItem value="api" label="Using condition predicates with API">
-        TODO
+    <TabItem value="api" label="Geyser API">
+        All condition predicates can be found in the `ItemConditionPredicate` interface. Examples:
+
+        ```java
+        .predicate(ItemConditionPredicate.FISHING_ROD_CAST)
+        ```
+
+        Some predicates require additional arguments:
+        ```java
+        .predicate(ItemConditionPredicate.customModelData(1))
+        .predicate(ItemConditionPredicate.hasComponent(ItemDataComponents.REPAIRABLE.identifier()))
+        ```
+
+        To negate predicates:
+        ```java
+        .predicate(ItemConditionPredicate.DAMAGEABLE.negate())
+        ```
     </TabItem>
 
 </Tabs>
@@ -599,7 +655,7 @@ The `match` predicate requires a value to be specified in the `value` key.
 <details>
     <summary>Expand for usage examples.</summary>
     <Tabs groupId="custom-item-implementation">
-        <TabItem value="json" label="Using match predicates in json mappings">
+        <TabItem value="json" label="Json mappings">
             All condition predicate types must set the `type` to `match`.
 
             ```json
@@ -648,8 +704,17 @@ The `match` predicate requires a value to be specified in the `value` key.
 
         </TabItem>
 
-        <TabItem value="api" label="Using match predicates with API">
-            TODO
+        <TabItem value="api" label="Geyser API">
+            Match predicates can be found in the `ItemMatchPredicate` interface, and due to Java limitations, also in `MatchPredicate`.
+
+            Examples:
+            ```java
+            .predicate(ItemMatchPredicate.chargeType(ChargedProjectile.ChargeType.ARROW));
+            ```
+
+            ```java
+            .predicate(MatchPredicate.dimension(Identifier.of("the_end")));
+            ```
         </TabItem>
 
     </Tabs>
@@ -673,11 +738,11 @@ The `range_dispatch` predicate has 3 extra keys, one of them required:
 <details>
     <summary>Expand for usage examples.</summary>
     <Tabs groupId="custom-item-implementation">
-        <TabItem value="json" label="Using range dispatch predicates in json mappings">
+        <TabItem value="json" label="Json mappings">
             TODO
         </TabItem>
 
-        <TabItem value="api" label="Using range dispatch predicates with API">
+        <TabItem value="api" label="Geyser API">
             TODO
         </TabItem>
 
@@ -686,13 +751,162 @@ The `range_dispatch` predicate has 3 extra keys, one of them required:
 
 ### Predicate strategy for multiple predicates
 
-There is also a `predicate_strategy` key, which can be `and` or `or` and defaults to `and`. This was inspired by the advancement requirement strategies, and decides if all predicates (`and`), or only one predicate (`or`) of an item definition has to match for it to be used.
+There is also a `predicate_strategy` key, which can be `and` or `or` and defaults to `and`. This was inspired by the advancement requirement strategies,
+and decides if all predicates (`and`), or only one predicate (`or`) of an item definition has to match for it to be used.
 
-### Priority
+<details>
+    <summary>Expand for usage examples.</summary>
+    <Tabs groupId="custom-item-implementation">
+        <TabItem value="json" label="Json mappings">
+            ```json
+            "predicate": [
+                {
+                    "type": "match",
+                    "property": "context_dimension",
+                    "value": "minecraft:the_end"
+                },
+                {
+                    "type": "condition",
+                    "property": "broken"
+                }
+            ],
+            "predicate_strategy": "and"
+            ```
+            This would require two conditions to both match for a specific custom item definition to be used.
+        </TabItem>
 
-TODO
+        <TabItem value="api" label="Geyser API">
+            ```java
+            .predicate(ItemConditionPredicate.BROKEN)
+            .predicate(MatchPredicate.dimension(Identifier.of("the_end")))
+            .predicateStrategy(PredicateStrategy.AND)
+            ```
+            This would require two conditions to both match for a specific custom item definition to be used.
 
-## Examples
+            Custom predicates can also be implemented, however, prefer using built-in predicates since these
+            can be cached properly.
+        </TabItem>
+    </Tabs>
+</details>
+
+:::info
+When multiple predicates are specified using the API, it is important to list all predicates separately and use
+the provided predicates, where possible. Chaining predicates manually or custom predicates cannot be cached, and
+are therefore more intensive as they require re-computing!
+
+<details>
+Do NOT do this:
+
+```java
+    .predicate(ItemConditionPredicate.BROKEN.and(MatchPredicate.dimension(Identifier.of("the_end"))))
+```
+
+Do this:
+```java
+    .predicate(ItemConditionPredicate.BROKEN)
+    .predicate(MatchPredicate.dimension(Identifier.of("the_end")))
+    .predicateStrategy(PredicateStrategy.AND)
+```
+
+These have the same result, but only the latter can be cached.
+
+</details>
+:::
+
+### Sorting and Priority
+
+Custom item definitions are automatically sorted so that the definitions' predicates are checked in a correct order when translating items.
+Specifically, Geyser sorts custom item definitions in this order:
+
+1. First custom item definitions with a higher priority value are sorted above definitions with lower ones.
+2. Custom item definitions with similar range dispatch predicates are sorted by their threshold, with higher thresholds going first.
+3. Custom item definitions with more predicates are sorted over definitions with less.
+
+This system ensures that in most cases, item definitions with predicates are checked in proper order, no matter which order they are put in the mappings.
+In the few cases that Geyser does not sort definitions correctly (that will most likely occur when using multiple `range_dispatch` predicates, or using them in combination with other predicates),
+the `priority` key can be used to specify which definitions should be checked first.
+
+If there is only one custom item definition for an item + item model combination, specifying priorities is not necessary!
+
+<details>
+    <summary>Expand for usage examples.</summary>
+    <Tabs groupId="custom-item-implementation">
+        <TabItem value="json" label="Json mappings">
+            ```json
+            "priority": 5
+            ```
+        </TabItem>
+
+        <TabItem value="api" label="Geyser API">
+            ```java
+            .priority(5)
+            ```
+        </TabItem>
+    </Tabs>
+</details>
+
+## Resource Packs
+Custom items also require a Bedrock Edition resource pack. Geyser does not generate or convert Java Edition resource packs into
+Bedrock Edition resource packs, so you will need to set it up manually! You can also try using [Rainbow](/wiki/other/rainbow) or
+other third-party converters.
+
+### Creating your own Bedrock Edition resource pack
+
+1. Setup a basic bedrock resource pack with a valid manifest. If you need help, you can find it [here](https://wiki.bedrock.dev/guide/project-setup.html#rp-manifest).
+2. Create a `textures` folder.
+3. In that folder, create an `item_texture.json` file, and put this in it:
+
+```json
+{
+  "resource_pack_name": "YOUR_PACK_NAME",
+  "texture_name": "atlas.items",
+  "texture_data": {
+
+  }
+}
+```
+4. Inside `texture_data`, you can add your items. The texture name and path must match the Bedrock identifier (and/or icon) that you set in your mappings.
+For example, an item registered with the Bedrock identifier `example:yummy_food` would need the following entry:
+
+```json
+"example:yummy_food": {
+    "textures": [
+        "textures/items/yummy_food"
+    ]
+}
+```
+5. Then you need to put your textures inside the `textures/items` folder. Make sure to have it match the texture path that you specified in `item_texture.json`!
+
+### Further references:
+- [Minecraft creator docs on texture pack conversion](https://learn.microsoft.com/en-us/minecraft/creator/documents/convertingtexturepacks?view=minecraft-bedrock-stable)
+- [Creating textures for custom items](https://wiki.bedrock.dev/items/items-intro#applying-textures)
+- [High resolution items](https://wiki.bedrock.dev/items/high-resolution-items)
+
+## Loading mappings and resource packs
+This section assumes you already set up and configured Geyser so Bedrock players are able to connect. Further, the `enable-custom-content`
+config option in Geyser's config must be set to `true` for custom items to work!
+
+<Tabs groupId="custom-item-implementation">
+    <TabItem value="json" label="Loading json mappings">
+        1. Find the `custom_mappings` folder created by Geyser. For plugin/mod versions of Geyser, it will be under
+        `plugins/Geyser-[platform]/custom_mappings` (or `config/Geyser-[platform]/custom_mappings`). For Geyser-Standalone,
+        it will be in the root folder.
+        2. Place the mapping .json file into the folder. You can have multiple mapping files with different file names.
+        3. Place the Bedrock edition resource pack into the `packs` folder.
+        4. Restart the server.
+    </TabItem>
+
+    <TabItem value="api" label="Loading Geyser Extensions">
+        1. Place the extension jar file into the `extensions` folder. For plugin/mod versions of Geyser, it will be under
+        `plugins/Geyser-[platform]/extensions` (or `config/Geyser-[platform]/extensions`). For Geyser-Standalone,
+        it will be in the root folder.
+        2. If the extension also provides a resource pack, place that in Geyser's `packs` folder.
+        3. Restart the server.
+    </TabItem>
+</Tabs>
+
+
+## Full Examples
 
 The full Java Edition datapack + resource pack, as well as the relevant Geyser mappings and Bedrock resource pack can be found
 [here](https://github.com/eclipseisoffline/geyser-example-mappings/).
@@ -1008,66 +1222,39 @@ The full Java Edition datapack + resource pack, as well as the relevant Geyser m
 </TabItem>
 </Tabs>
 
-## Resource Packs
-Custom items also require a Bedrock Edition resource pack. Geyser does not generate or convert Java Edition resource packs into
-Bedrock Edition resource packs, so you will need to set it up manually! You can also try using [Rainbow](/wiki/other/rainbow) or
-other third-party converters.
+## Non-vanilla items
 
-### Creating your own Bedrock Edition resource pack
+Geyser also supports registering non-vanilla items (available on modded servers, such as Fabric/NeoForge), which are *not*
+based on vanilla items and require a modded Java client to join. These must be registered through the API, and cannot be registered
+with Json mappings.
 
-1. Setup a basic bedrock resource pack with a valid manifest. If you need help, you can find it [here](https://wiki.bedrock.dev/guide/project-setup.html#rp-manifest).
-2. Create a `textures` folder.
-3. In that folder, create an `item_texture.json` file, and put this in it:
-
-```json
-{
-  "resource_pack_name": "YOUR_PACK_NAME",
-  "texture_name": "atlas.items",
-  "texture_data": {
-
-  }
-}
+Example:
+```java
+event.register(NonVanillaCustomItemDefinition.builder(Identifier.of("hydraulic_test_mod:inauri_ingot"), 99)
+    .component(ItemDataComponents.MAX_STACK_SIZE, 3)
+    .component(ItemDataComponents.CONSUMABLE, Consumable.builder()
+        .consumeSeconds(2.5f)
+        .animation(Consumable.Animation.NONE)
+        .build())
+    .component(ItemDataComponents.USE_COOLDOWN, UseCooldown.builder()
+        .seconds(999999f)
+        .cooldownGroup(Identifier.of("hydraulic_test_mod:inauri_says_fly"))
+        .build())
+    .build());
 ```
-4. Inside `texture_data`, you can add your items. The texture name and path must match the Bedrock identifier (and/or icon) that you set in your mappings.
-For example, an item registered with the Bedrock identifier `example:yummy_food` would need the following entry:
 
-```json
-"example:yummy_food": {
-    "textures": [
-        "textures/items/yummy_food"
-    ]
-}
-```
-5. Then you need to put your textures inside the `textures/items` folder. Make sure to have it match the texture path that you specified in `item_texture.json`!
+Notable differences however are the following:
+- the Java item id which is sent over the network must be provided in the NonVanillaCustomItemDefinition#builder method
+- predicates, predicate strategies, and priority are *not* supported
+- non-vanilla items can use additional components, which would otherwise be inherited from vanilla base items.
 
-### Further references:
-- [Minecraft creator docs on texture pack conversion](https://learn.microsoft.com/en-us/minecraft/creator/documents/convertingtexturepacks?view=minecraft-bedrock-stable)
-- [Creating textures for custom items](https://wiki.bedrock.dev/items/items-intro#applying-textures)
-- [High resolution items](https://wiki.bedrock.dev/items/high-resolution-items)
+The `GeyserDataComponent` class contains all additional components available for modded items:
+- `chargeable`: Allows creating custom shooter items
+- `attack_damage`: Allows placing a visual indicators for the item's attack damage.
+- `block_placer`: Indicates that the item is able to place blocks
+- `throwable`: Indicates that the item is throwable
+- `projectile`: Marks a custom item as a projectile to make these usable for custom shooter items
+- `entity_placer`: Notes that an item is able to place entities
 
 
-## Loading mappings and resource packs
-This section assumes you already set up and configured Geyser so Bedrock players are able to connect. Further, the `enable-custom-content`
-config option in Geyser's config must be set to `true` for custom items to work!
-
-<Tabs groupId="custom-item-implementation">
-    <TabItem value="json" label="Loading json mappings">
-        1. Find the `custom_mappings` folder created by Geyser. For plugin/mod versions of Geyser, it will be under
-        `plugins/Geyser-[platform]/custom_mappings` (or `config/Geyser-[platform]/custom_mappings`). For Geyser-Standalone,
-        it will be in the root folder.
-        2. Place the mapping .json file into the folder. You can have multiple mapping files with different file names.
-        3. Place the Bedrock edition resource pack into the `packs` folder.
-        4. Restart the server.
-    </TabItem>
-
-    <TabItem value="api" label="Loading Geyser Extensions">
-        1. Place the extension jar file into the `extensions` folder. For plugin/mod versions of Geyser, it will be under
-        `plugins/Geyser-[platform]/extensions` (or `config/Geyser-[platform]/extensions`). For Geyser-Standalone,
-        it will be in the root folder.
-        2. If the extension also provides a resource pack, place that in Geyser's `packs` folder.
-        3. Restart the server.
-    </TabItem>
-</Tabs>
-
-# Non-vanilla items
 
