@@ -59,6 +59,25 @@ A Spigot plugin that allows users to enter commands starting with `.`, to work a
 
 Creator: [Chew](https://github.com/Chew)
 
+## Emotecraft {#emotecraft}
+A mod (NeoForge, Fabric), plugin (Paper), and Geyser extension that allows Java players to view Bedrock emotes, and for both Java and Bedrock players to be able to play custom emotes.
+
+:::note
+
+Java clients obviously need the mod to be installed.  
+You need both the extension, and the mod or plugin for your server.
+
+:::
+
+* [Wiki](https://docs.zigythebird.com/emotecraft/geyserext)
+* [Modrinth (all downloads)](https://modrinth.com/plugin/emotecraft)
+* [CurseForge (Fabric)](https://www.curseforge.com/minecraft/mc-mods/emotecraft)
+* [CurseForge (NeoForge)](https://www.curseforge.com/minecraft/mc-mods/emotecraft-forge)
+* [Hangar](https://hangar.papermc.io/dima_dencep/emotecraft)
+* [GitHub](https://github.com/KosmX/emotes)
+
+Creators: [dima_dencep](https://github.com/dima-dencep), [Zigy](https://github.com/ZigyTheBird), [KosmX](https://github.com/KosmX)
+
 ## FloodgatePlaceholders {#floodgateplaceholders}
 Placeholders support for Floodgate.
 
