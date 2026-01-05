@@ -408,7 +408,7 @@ that output a custom item. Otherwise, Bedrock will *not* show recipes for custom
             "bedrock_options": {
                 "icon": "example:chestplate", // must match shorthands defined in item_textures.json
                 "protection_value": 4,
-                "creative_category": "equipment"
+                "creative_category": "equipment",
                 "creative_group": "itemGroup.name.chestplate",
                 "tags": ["example:tag_one", "example:tag_two"]
             }
@@ -480,9 +480,9 @@ The following Java item components are supported (some with limitations):
 - `minecraft:kinetic_weapon`
 - `minecraft:piercing_weapon`
 - `minecraft:swing_animation`
-- Due to Bedrock limitations, the actual animation played is hardcoded, only the duration of the animation can be changed.
+    - Due to Bedrock limitations, the actual animation played is hardcoded, only the duration of the animation can be changed.
 - `minecraft:use_effects`
-- Due to Bedrock limitations, the `can_sprint` property cannot be translated.
+    - Due to Bedrock limitations, the `can_sprint` property cannot be translated.
 
 Some components, like `minecraft:rarity` and `minecraft:attribute_modifiers`, are already automatically translated and should not be listed.
 
@@ -1230,7 +1230,7 @@ with Json mappings.
 
 Example:
 ```java
-event.register(NonVanillaCustomItemDefinition.builder(Identifier.of("hydraulic_test_mod:inauri_ingot"), 99)
+event.register(NonVanillaCustomItemDefinition.builder(Identifier.of("hydraulic_test_mod:irauri_ingot"), 99)
     .component(ItemDataComponents.MAX_STACK_SIZE, 3)
     .component(ItemDataComponents.CONSUMABLE, Consumable.builder()
         .consumeSeconds(2.5f)
@@ -1238,15 +1238,15 @@ event.register(NonVanillaCustomItemDefinition.builder(Identifier.of("hydraulic_t
         .build())
     .component(ItemDataComponents.USE_COOLDOWN, UseCooldown.builder()
         .seconds(999999f)
-        .cooldownGroup(Identifier.of("hydraulic_test_mod:inauri_says_fly"))
+        .cooldownGroup(Identifier.of("hydraulic_test_mod:irauri_says_fly"))
         .build())
     .build());
 ```
 
 Notable differences however are the following:
-- the Java item id which is sent over the network must be provided in the NonVanillaCustomItemDefinition#builder method
-- predicates, predicate strategies, and priority are *not* supported
-- non-vanilla items can use additional components, which would otherwise be inherited from vanilla base items.
+- The Java item id which is sent over the network must be provided in the NonVanillaCustomItemDefinition#builder method
+- Predicates, predicate strategies, and priority are *not* supported
+- Non-vanilla items can use additional components, which would otherwise be inherited from vanilla base items.
 
 The `GeyserDataComponent` class contains all additional components available for modded items:
 - `chargeable`: Allows creating custom shooter items
