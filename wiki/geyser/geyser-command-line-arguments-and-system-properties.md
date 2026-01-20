@@ -59,6 +59,9 @@ Disabling Geyser warnings from being logged will not fix the real issue! Only di
 - `-DGeyser.AddTeamSuggestions=true`
   - Allows you to turn off suggestions for teams in the scoreboard command. This is enabled by default, disabling this can help with performance if there are a lot of teams defined. 
   Setting "command-suggestions" to false in the config will also disable this.
+- `-DGeyser.NoPlayerListPS=true`
+  - Enables a less-than-ideal workaround to resolve client crashing when chatting / typing commands on PlayStation consoles with lots of player online.
+  Disabled by default, as it is not needed for most setups.
 - `-DGeyser.RakPacketLimit=120`
   - Sets RakNet's per-ip per-tick (10ms) post-connection packet limit.
 - `-DGeyser.RakGlobalPacketLimit=100000`
