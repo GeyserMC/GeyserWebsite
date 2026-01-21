@@ -6,160 +6,33 @@ description: Geyser allows custom Bedrock items to be added for an equivalency t
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-Minecraft: Java Edition supports "custom" items that are based on vanilla items. With Minecraft 1.21.4+, the introduction of item components
-made it possible to customize item behavior like never before - therefore making it possible to create custom items using
-resource packs, and a datapack / plugin on the server.
+Minecraft: Java Edition supports creating "custom" items that are based on vanilla items. With Minecraft 1.21.4+, the introduction of item components
+further allows the customization of item behaviour on a per-item-stack basis, such as changing the visual appearance using the item model component,
+and modifying item properties such as the ability to eat or equip an item.
 
 Unlike Java Edition, Bedrock natively supports adding custom items that are not based on vanilla items. However, Bedrock does not support
 extending vanilla items or modifying vanilla item behavior. Therefore, Geyser has a mapping system that allows mapping custom Bedrock items
 to modified vanilla Java items. Geyser further supports mapping custom Bedrock items to modded non-vanilla items which
-would require modded Java clients.
+would normally require mods to be installed on the Java client.
 
-To setup custom items in Geyser, you have to choose how you are going to register your items. The easiest is [using a json file](#json-mappings), but you can also [use a Geyser extension](#geyser-extensions).
-Further, a Bedrock edition resource pack must also be supplied to ensure Bedrock players can see custom items.
+To set up custom items in Geyser, you have to choose how you are going to register your items. The easiest is [using a json mapping file](#json-mappings),
+but you can also [use a Geyser extension](#geyser-extensions). Further, a Bedrock edition resource pack must also be supplied to ensure Bedrock players can see custom items.
 
 :::warning
-Geyser does not convert resource packs from Java Edition, and also does not generate mappings automatically.
+Geyser does not convert resource packs from Java Edition, and also does not generate custom item mappings automatically.
 However, you can use automatic tools such as [Rainbow](/wiki/other/rainbow/) to make converting content simpler.
 :::
 
-### Format version 1 (legacy)
-
-<details>
-<summary>Click to see legacy documentation for format version 1</summary>
-
-:::warning
-`format_version: 1` is no longer receiving updates. New features will only be added to format version 2.
+:::info
+Since the Geyser API version 2.9.3 (Build #1040 and up), the old custom item format (v1) is deprecated and is no
+longer being updated. Old docs can however still be found [here](/wiki/geyser/custom-items-old)
 :::
 
-## JSON mappings (v1)
-
-1. Start your server, and you should have a folder called `custom_mappings` that is created. That would be with the folder of `Geyser.jar` file for standalone and inside your Geyser data folder for a plugin.
-2. Create a `.json` file, it can be any name you like and as many files as you like. You don't need to make one file per item. Here is the structure of the file:
-```json
-{
-    "format_version": 1,
-    "items": {
-
-    }
-}
-```
-3. Inside the `items` entry, you can add your java item to extend:
-
-```json
-"minecraft:JAVA_ITEM": [
-
-]
-```
-4. Inside this java item, goes an array of all your custom items.
-
-```json
-{
-    "name": "my_item"
-}
-```
-5. Then, you need to set one or more item options or registrations, they can be stacked, so that all of the specified types need to match.
-    * Custom model data: `custom_model_data` (int)
-    * Damage predicate: `damage_predicate` (int) This is a fractional value of damage/max damage and not a number between 0 and 1.
-    * Unbreakable: `unbreakable` (boolean)
-6. You also have some extra modifiers that you can set to further customise your item. **Note that the following modifiers are NOT required.**
-    * `display_name` (string) default: item name
-    * `icon` (string) default: item name
-    * `allow_offhand` (boolean) default: false
-    * `texture_size` (int) default: 16
-    * `creative_category` (int) default: not set. This can take values between 1-5, and defines the creative category the item appears in. Note: Adding your item to a creative category is needed if you want recipes that output this custom item to show up in the recipe book! However, including it does NOT mean you can get the custom item from the creative inventory.
-    * `creative_group` (string) default: not set. Requires a creative category to also be set - allows you to group the custom item in a sub-group. See [here](https://wiki.bedrock.dev/documentation/menu-categories.html#list-of-categories) for all categories.
-    * `render_offsets` (object) It works as follows. Note that all the sub-objects are optional, except x, y and z. You can have for example only a main hand with a position, and noting else. default: no render offset
-    * `tags` (array) default: no tags. Allows defining tags that can be used in Molang queries. Example value: ["test:tag_one", "test:tag_two"].
-    ```json
-    "render_offsets": {
-        "main_hand": {
-            "first_person": {
-                "position": {
-                    "x": 0,
-                    "y": 0,
-                    "z": 0
-                },
-                "rotation": {
-                    "x": 0,
-                    "y": 0,
-                    "z": 0
-                },
-                "scale": {
-                    "x": 0,
-                    "y": 0,
-                    "z": 0
-                }
-            },
-            "third_person": {
-
-            }
-        },
-        "off_hand": {
-
-        }
-    }
-    ```
-
-## Geyser extensions (v1)
-
-### Extending a vanilla item (v1)
-
-1. Create your custom item options or registrations, to which you can add any of the following. They can be stacked, so that all of the specified types need to match, but you **do NOT need all of them.**
-```java
-CustomItemOptions itemOptions = CustomItemOptions.builder()
-        .customModelData(1)
-        .damagePredicate(1) //This is a fractional value of damage/max damage and not a number between 0 and 1.
-        .unbreakable(true)
-        .build();
-```
-2. Create your custom item, and store it somewhere:
-```java
-CustomItemData data = CustomItemData.builder()
-        .name("my_item")
-        .customItemOptions(itemOptions)
-        .build();
-```
-3. You have some modifiers that you can set to further customise your item. **Note that the following modifiers are NOT required.**
-```java
-.displayName("displayName"); //Default: item name
-.icon("my_icon"); //Default: item name
-.allowOffhand(false); //Default: false
-.textureSize(16); //Default: 16
-.renderOffsets(new CustomRenderOffsets(...)); //Default: no render offset
-```
-4. Then, in your pre init event, you can register your item:
-```java
-@Subscribe
-public void onGeyserPreInitializeEvent(GeyserDefineCustomItemsEvent event) {
-    event.registerCustomItem("minecraft:JAVA_ITEM", data);
-}
-```
-
-### Non vanilla (modded) items with Geyser extensions (for example to use with Fabric) (v1)
-
-1. Create your item data:
-```java
-NonVanillaCustomItemData data = NonVanillaCustomItemData.builder()
-        .name("my_item")
-        .identifier("my_mod:my_item")
-        .javaId(1)
-```
-2. There are many other options you can set to match the behavior that you require for your item. You can see them [here](https://github.com/GeyserMC/Geyser/blob/master/api/src/main/java/org/geysermc/geyser/api/item/custom/NonVanillaCustomItemData.java)
-3. Register your item in the GeyserDefineCustomItems event:
-```java
-@Subscribe
-public void onGeyserDefineCustomItemsEvent(GeyserDefineCustomItemsEvent event) {
-    event.register(data);
-}
-```
-</details>
-
-## Format version 2
-With Geyser build 1020 (and above), Geyser supports the `item_model` and item component features introduced in 1.21.4+.
-Unlike Java Edition, Bedrock Edition does not support modifying item properties dynamically at runtime (e.g. making dirt edible with a command).
-For such use-cases, Geyser supports registering multiple custom Bedrock items with different properties to somewhat support dynamic mappings using
-predicates. The previous `custom-model-data` approach continues to be supported using `legacy` definitions.
+## Custom items (v2)
+Geyser supports mapping items using `item_model` and item component features introduced in 1.21.4+. The previous `custom-model-data` approach continues to be supported using `legacy` definitions.
+However, there are some caveats. Unlike Java Edition, Bedrock Edition does not support modifying item properties dynamically at runtime (e.g. making dirt edible with a command).
+For such use-cases, Geyser supports a predicate system which allows registering multiple custom Bedrock items with different properties to map
+to different item stacks with specific components.
 
 ## How does it work?
 "Custom" items in Java edition are based on vanilla items, with a modified appearance (using item models on 1.21.4+, or custom model data on older versions).
@@ -171,7 +44,7 @@ can specify additional components to modify the items' behavior.
 - `Java item component`: On Java Edition since 1.21.4+, items have their properties and behaviour defined using item components.
 Every Java item has a set of default components, which can be overridden to change how an item looks or functions.
 - `Bedrock item component`: Custom Bedrock items also have components that determine item behaviour, similar to Java Edition.
-However, these components cannot be changed at runtime for item stacks and have to be defined once.
+However, these components cannot be changed at runtime for item stacks and have to be pre-defined when the Bedrock client joins.
 - `Java legacy custom model data`: The system used before Java 1.21.4. Before 1.21.4, each "custom item" had a custom model data number,
 used to decide which model a Java item should use (= different texture for players).
 - `Java item model definition`: Introduced in Java 1.21.4, they are found in the `assets/<namespace>/items/` directory of Java resource packs.
@@ -187,7 +60,7 @@ Every custom item definition represents one custom Bedrock item that has a speci
 It is tied to a specific Java item + item model combination (or, for legacy items, a specific Java item + custom model data combination).
 
 #### Mandatory definition properties
-- `bedrock_identifier`: This identifier is used for the custom Bedrock item (and also in e.g. attachables), and cannot be shared with **any** other custom item definition.
+- `bedrock_identifier`: This identifier is used for the custom Bedrock item (and also in e.g. attachables in Bedrock resource packs), and cannot be shared with **any** other custom item definition.
 This identifier cannot be in the `minecraft` namespace. If no namespace is provided, `geyser_custom` is used.
 - `item_model` (or `custom_model_data` for `legacy` definitions in json mappings) is also required.
 
@@ -248,7 +121,7 @@ when there are multiple custom item definitions.
                 ```json
                 {
                     "type": "group",
-                    "model": "example:example_model", // Optional
+                    "model": "example:example_model", // Optional, can be set per-definition
                     "definitions": [...]
                 }
                 ```
@@ -267,8 +140,6 @@ when there are multiple custom item definitions.
                 ```
                 The `legacy` definition should be used for custom items created on versions before the introduction of data
                 components (and therefore `item_models`). These must specify a `custom_model_data` float value.
-
-                TODO damage predicate / unbreakable
             </TabItem>
         </Tabs>
 
@@ -304,9 +175,6 @@ when there are multiple custom item definitions.
                         "definitions": [
                             {
                                 "bedrock_identifier": "geyser_mc:another_test_item_nether",
-                                "bedrock_options": {
-                                    "icon": "carrot"
-                                },
                                 "predicate": {
                                     "type": "match",
                                     "property": "context_dimension",
@@ -352,7 +220,7 @@ when there are multiple custom item definitions.
     </TabItem>
 
     <TabItem value="api" label="Definitions: Geyser API">
-        Custom item definitions are registered using the `GeyserDefineCustomItemsEvent`.
+        Custom item definitions are registered using the [`GeyserDefineCustomItemsEvent`](https://repo.opencollab.dev/javadoc/maven-snapshots/org/geysermc/geyser/api/latest/.cache/unpack/org/geysermc/geyser/api/event/lifecycle/GeyserDefineCustomItemsEvent.html).
 
         ```java
         @Subscribe
@@ -364,7 +232,7 @@ when there are multiple custom item definitions.
                     // The following are optional
                     .displayName("displayName")
                     .bedrockOptions(...)
-                    .component(ItemDataComponents.MAX_STACK_SIZE, 60)
+                    .component(JavaItemDataComponents.MAX_STACK_SIZE, 60)
                     .predicate(ItemRangeDispatchPredicate.count(32))
                     .predicateStrategy(PredicateStrategy.OR)
                     .priority(1)
@@ -392,7 +260,7 @@ and only has an effect if the item is equippable. Defaults to 0.
 - `creative_category`: Sets the item's creative category (also shown in the recipe book). Can be `none`,
 `construction`, `nature`, `equipment`, or `items`. Defaults to `none`.
 - `creative_group`: Sets the item's creative group (for the recipe book). See [here](https://wiki.bedrock.dev/documentation/menu-categories#list-of-vanilla-groups)
-for a list of possible values.
+for a list of possible values. Creating custom creative groups is not currently supported by Geyser.
 - `tags`: Sets tags that an item has. These can be used for Molang expressions in resource packs.
 
 :::info
@@ -426,17 +294,18 @@ that output a custom item. Otherwise, Bedrock will *not* show recipes for custom
     </TabItem>
 
     <TabItem value="api" label="Geyser API">
+        TODO link javadoc
         In the API, Bedrock item options are defined using the `CustomItemBedrockOptions#Builder`.
         The following snippets show example usages:
 
         ```java
         .bedrockOptions(CustomItemBedrockOptions.builder()
-                        .icon("example:chestplate")
-                        .protectionValue(4)
-                        .creativeCategory(CreativeCategory.EQUIPMENT)
-                        .creativeGroup("itemGroup.name.chestplate")
-                        .tags(Set.of(Identifier.of("example:tag_one"), Identifier.of("example:tag_two")))
-                )
+                .icon("example:chestplate")
+                .protectionValue(4)
+                .creativeCategory(CreativeCategory.EQUIPMENT)
+                .creativeGroup("itemGroup.name.chestplate")
+                .tags(Set.of(Identifier.of("example:tag_one"), Identifier.of("example:tag_two")))
+            )
         ```
 
         ```java
@@ -456,9 +325,9 @@ that output a custom item. Otherwise, Bedrock will *not* show recipes for custom
 
 Item components are used in Java Edition to customize how items function and behave.
 Java Edition allows modifying these for any item stack at runtime. This is, unfortunately, not a feature Bedrock Edition supports.
-Therefore, components must be specified in advance in mapping files.
+Therefore, any modifications to the base Java item's data components must be specified in mapping files.
 It is expected that a custom item will *always* have these components sent by the server when the custom item definition
-is used. For different set of components, multiple custom item definitions with predicates should be used.
+is used. For different sets of components, multiple custom item definitions with predicates should be used.
 
 #### Adding or Modifying components
 
@@ -482,7 +351,8 @@ The following Java item components are supported (some with limitations):
 - `minecraft:swing_animation`
     - Due to Bedrock limitations, the actual animation played is hardcoded, only the duration of the animation can be changed.
 - `minecraft:use_effects`
-    - Due to Bedrock limitations, the `can_sprint` property cannot be translated.
+    - Due to Bedrock limitations, the `can_sprint` property cannot be translated. Further, this component will only be translated
+        when the base item is either able to shoot arrows, throw projectiles, or is edible (or made edible with the food component).
 
 Some components, like `minecraft:rarity` and `minecraft:attribute_modifiers`, are already automatically translated and should not be listed.
 
@@ -496,14 +366,16 @@ For documentation of all item components and their respective json formats, see 
         Minecraft wiki. Here are some examples:
 
         ```json
+        TODO JSON COMPONENT EXAMPLES
         ```
     </TabItem>
 
     <TabItem value="api" label="Geyser API">
-        All components can be found in the [ItemDataComponents](TODO JAVADOC) class, and are typically built builders.
+        All supported components can be found in the [JavaItemDataComponents](TODO JAVADOC) class, and are typically built builders.
 
         Some examples:
         ```java
+
         ```
     </TabItem>
 </Tabs>
@@ -525,6 +397,7 @@ Just as is possible on Java edition, default components of the base item can be 
     </TabItem>
 
     <TabItem value="api" label="Geyser API">
+        TODO JAVADOC
         The `CustomItemDefinition#Builder` class supports removing default components by either
         specifying the item data component identifier, or by passing the type.
         ```java
@@ -534,7 +407,7 @@ Just as is possible on Java edition, default components of the base item can be 
                     Identifier.of("example:rotten_apple"), Identifier.of("example:rotten_apple")
                 )
                 .displayName("Rotten apple")
-                .removeComponent(ItemDataComponents.FOOD)
+                .removeComponent(JavaItemDataComponents.FOOD)
                 .build());
         }
         ```
@@ -632,7 +505,7 @@ The `condition` predicate type checks for a boolean property and returns `true` 
         .predicate(ItemConditionPredicate.hasComponent(ItemDataComponents.REPAIRABLE.identifier()))
         ```
 
-        To negate predicates:
+        To negate predicates, call `#negate()`:
         ```java
         .predicate(ItemConditionPredicate.DAMAGEABLE.negate())
         ```
@@ -645,7 +518,7 @@ The `condition` predicate type checks for a boolean property and returns `true` 
 
 The `match` predicate type checks for a text-like property and returns `true` if it matches the given value. It has 4 possible properties:
 
-- `charge_type`: the item currently charged in the crossbow (in the `minecraft:charged_projectiles` component). Can be `none`, `arrow`, or `rocket`.
+- `charge_type`: the item currently charged in the crossbow (in the `minecraft:charged_projectiles` component). Can be `arrow` or `rocket`.
 - `trim_material`: the trim material (resource location) of this item.
 - `context_dimension`: the dimension (resource location) the player is currently in.
 - `custom_model_data`: fetches a string from the item's custom model data strings.
@@ -662,7 +535,7 @@ The `match` predicate requires a value to be specified in the `value` key.
             "predicate": {
                 "type": "match",
                 "property": "charge_type",
-                "value": "arrow" # TODO none???
+                "value": "arrow"
             }
             ```
 
@@ -691,7 +564,7 @@ The `match` predicate requires a value to be specified in the `value` key.
             }
             ```
 
-            Components can also be inverted by adding and setting the `expected` key to `false`. If not set, it defaults to `true`.
+            Predicates can also be inverted by adding and setting the `expected` key to `false`. If not set, it defaults to `true`.
             Example:
             ```json
             "predicate": {
@@ -705,6 +578,7 @@ The `match` predicate requires a value to be specified in the `value` key.
         </TabItem>
 
         <TabItem value="api" label="Geyser API">
+            TODO JAVADOC
             Match predicates can be found in the `ItemMatchPredicate` interface, and due to Java limitations, also in `MatchPredicate`.
 
             Examples:
@@ -791,8 +665,8 @@ and decides if all predicates (`and`), or only one predicate (`or`) of an item d
 
 :::info
 When multiple predicates are specified using the API, it is important to list all predicates separately and use
-the provided predicates, where possible. Chaining predicates manually or custom predicates cannot be cached, and
-are therefore more intensive as they require re-computing!
+the provided predicates, where possible. Chaining predicates manually or creating custom predicates results in Geyser being
+unable to cache results!
 
 <details>
 Do NOT do this:
@@ -808,7 +682,7 @@ Do this:
     .predicateStrategy(PredicateStrategy.AND)
 ```
 
-These have the same result, but only the latter can be cached.
+These have the same result, but only the result of the latter can be cached by Geyser.
 
 </details>
 :::
@@ -1104,12 +978,12 @@ The full Java Edition datapack + resource pack, as well as the relevant Geyser m
             Identifier modelIdentifier = Identifier.of("geyser_mc:yummy_food");
             event.register(Identifier.of("flint"), CustomItemDefinition.builder(bedrockIdentifier, modelIdentifier)
                 .displayName("Yummy food!")
-                .component(ItemDataComponents.CONSUMABLE, Consumable.builder().build())
-                .component(ItemDataComponents.FOOD, FoodProperties.builder()
+                .component(JavaItemDataComponents.CONSUMABLE, JavaConsumable.builder().build())
+                .component(JavaItemDataComponents.FOOD, JavaFoodProperties.builder()
                     .nutrition(5)
                     .saturation(0)
                     .build())
-                .component(ItemDataComponents.MAX_STACK_SIZE, 16)
+                .component(JavaItemDataComponents.MAX_STACK_SIZE, 16)
                 .build());
         }
         ```
@@ -1123,10 +997,10 @@ The full Java Edition datapack + resource pack, as well as the relevant Geyser m
             Identifier modelIdentifier = Identifier.of("geyser_mc:not_so_yummy_food");
             event.register(Identifier.of("flint"), CustomItemDefinition.builder(Identifier.of("geyser_mc:not_so_yummy_food"), modelIdentifier)
                 .displayName("Not so yummy food!")
-                .component(ItemDataComponents.CONSUMABLE, Consumable.builder()
+                .component(JavaItemDataComponents.CONSUMABLE, JavaConsumable.builder()
                     .consumeSeconds(5)
                     .build())
-                .component(ItemDataComponents.FOOD, FoodProperties.builder()
+                .component(JavaItemDataComponents.FOOD, JavaFoodProperties.builder()
                     .nutrition(2)
                     .saturation(0.7f)
                     .build())
@@ -1135,10 +1009,10 @@ The full Java Edition datapack + resource pack, as well as the relevant Geyser m
             event.register(Identifier.of("flint"), CustomItemDefinition.builder(Identifier.of("geyser_mc:not_so_yummy_food_end"), modelIdentifier)
                 .displayName("Not so yummy food!")
                 .predicate(MatchPredicate.dimension(Identifier.of("the_end")))
-                .component(ItemDataComponents.CONSUMABLE, Consumable.builder()
+                .component(JavaItemDataComponents.CONSUMABLE, JavaConsumable.builder()
                     .consumeSeconds(5)
                     .build())
-                .component(ItemDataComponents.FOOD, FoodProperties.builder()
+                .component(JavaItemDataComponents.FOOD, JavaFoodProperties.builder()
                     .nutrition(2)
                     .saturation(0.7f)
                     .build())
@@ -1156,15 +1030,15 @@ The full Java Edition datapack + resource pack, as well as the relevant Geyser m
             Identifier modelIdentifier = Identifier.of("geyser_mc:magic_item");
             event.register(Identifier.of("flint"), CustomItemDefinition.builder(bedrockIdentifier, modelIdentifier)
                 .displayName("Magic item!")
-                .component(ItemDataComponents.CONSUMABLE, Consumable.builder()
+                .component(JavaItemDataComponents.CONSUMABLE, JavaConsumable.builder()
                     .consumeSeconds(0.05f)
-                    .animation(Consumable.Animation.NONE)
+                    .animation(JavaConsumable.Animation.NONE)
                     .build())
-                .component(ItemDataComponents.USE_COOLDOWN, UseCooldown.builder()
+                .component(JavaItemDataComponents.USE_COOLDOWN, JavaUseCooldown.builder()
                     .seconds(5)
                     .cooldownGroup(modelIdentifier)
                     .build())
-                .component(ItemDataComponents.MAX_STACK_SIZE, 16)
+                .component(JavaItemDataComponents.MAX_STACK_SIZE, 16)
                 .build());
         }
         ```
@@ -1182,8 +1056,8 @@ The full Java Edition datapack + resource pack, as well as the relevant Geyser m
                 .bedrockOptions(CustomItemBedrockOptions.builder()
                     .displayHandheld(true)
                 )
-                .component(ItemDataComponents.MAX_DAMAGE, 10)
-                .component(ItemDataComponents.MAX_STACK_SIZE, 1)
+                .component(JavaItemDataComponents.MAX_DAMAGE, 10)
+                .component(JavaItemDataComponents.MAX_STACK_SIZE, 1)
                 .build());
 
             event.register(Identifier.of("flint"), CustomItemDefinition.builder(
@@ -1194,8 +1068,8 @@ The full Java Edition datapack + resource pack, as well as the relevant Geyser m
                     .displayHandheld(true)
                 )
                 .predicate(ItemConditionPredicate.BROKEN)
-                .component(ItemDataComponents.MAX_DAMAGE, 10)
-                .component(ItemDataComponents.MAX_STACK_SIZE, 1)
+                .component(JavaItemDataComponents.MAX_DAMAGE, 10)
+                .component(JavaItemDataComponents.MAX_STACK_SIZE, 1)
                 .build());
         }
         ```
@@ -1213,8 +1087,8 @@ The full Java Edition datapack + resource pack, as well as the relevant Geyser m
                 .bedrockOptions(CustomItemBedrockOptions.builder()
                     .protectionValue(5)
                 )
-                .component(ItemDataComponents.EQUIPPABLE, Equippable.of(Equippable.EquipmentSlot.CHEST))
-                .component(ItemDataComponents.MAX_STACK_SIZE, 1)
+                .component(JavaItemDataComponents.EQUIPPABLE, JavaEquippable.of(JavaEquippable.EquipmentSlot.CHEST))
+                .component(JavaItemDataComponents.MAX_STACK_SIZE, 1)
                 .build());
         }
         ```
@@ -1231,12 +1105,12 @@ with Json mappings.
 Example:
 ```java
 event.register(NonVanillaCustomItemDefinition.builder(Identifier.of("hydraulic_test_mod:irauri_ingot"), 99)
-    .component(ItemDataComponents.MAX_STACK_SIZE, 3)
-    .component(ItemDataComponents.CONSUMABLE, Consumable.builder()
+    .component(JavaItemDataComponents.MAX_STACK_SIZE, 3)
+    .component(JavaItemDataComponents.CONSUMABLE, JavaConsumable.builder()
         .consumeSeconds(2.5f)
-        .animation(Consumable.Animation.NONE)
+        .animation(JavaConsumable.Animation.NONE)
         .build())
-    .component(ItemDataComponents.USE_COOLDOWN, UseCooldown.builder()
+    .component(JavaItemDataComponents.USE_COOLDOWN, JavaUseCooldown.builder()
         .seconds(999999f)
         .cooldownGroup(Identifier.of("hydraulic_test_mod:irauri_says_fly"))
         .build())
@@ -1248,7 +1122,8 @@ Notable differences however are the following:
 - Predicates, predicate strategies, and priority are *not* supported
 - Non-vanilla items can use additional components, which would otherwise be inherited from vanilla base items.
 
-The `GeyserDataComponent` class contains all additional components available for modded items:
+TODO JAVADOC
+The [`GeyserItemDataComponent`] class contains all additional components available for modded items:
 - `chargeable`: Allows creating custom shooter items
 - `attack_damage`: Allows placing a visual indicators for the item's attack damage.
 - `block_placer`: Indicates that the item is able to place blocks
