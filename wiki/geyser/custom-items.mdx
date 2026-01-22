@@ -329,6 +329,10 @@ Therefore, any modifications to the base Java item's data components must be spe
 It is expected that a custom item will *always* have these components sent by the server when the custom item definition
 is used. For different sets of components, multiple custom item definitions with predicates should be used.
 
+:::info
+You do not need to map components that are unchanged from the base Java item.
+:::
+
 #### Adding or Modifying components
 
 The following Java item components are supported (some with limitations):
@@ -366,16 +370,23 @@ For documentation of all item components and their respective json formats, see 
         Minecraft wiki. Here are some examples:
 
         ```json
-        TODO JSON COMPONENT EXAMPLES
+        "components": {
+            "minecraft:max_stack_size": 16,
+            "minecraft:enchantment_glint_override": true
+        }
         ```
     </TabItem>
 
     <TabItem value="api" label="Geyser API">
-        All supported components can be found in the [JavaItemDataComponents](TODO JAVADOC) class, and are typically built builders.
+        All supported components can be found in the [JavaItemDataComponents](TODO JAVADOC) class, and are typically built with builders.
 
         Some examples:
         ```java
+        .component(JavaItemDataComponents.MAX_STACK_SIZE, 16)
+        ```
 
+        ```java
+        .component(JavaItemDataComponents.ENCHANTMENT_GLINT_OVERRIDE, true)
         ```
     </TabItem>
 </Tabs>
