@@ -596,14 +596,16 @@ The `match` predicate requires a value to be specified in the `value` key.
 
 #### Range dispatch predicates
 
-The `range_dispatch` predicate type checks for a numeric property and returns `true` if it is above the specified threshold. It has 4 possible properties:
+The `range_dispatch` predicate type checks for a numeric property and returns `true` if it is at or above the specified threshold. It has 4 possible types:
 
-- `bundle_fullness`: checks the item's bundle fullness. Returns the total stack count of all the items in a bundle (in the `minecraft:bundle_contents` component).
+- `bundle_fullness`: checks the item's bundle fullness. Returns the total weight of all items (in the `minecraft:bundle_contents` component).
+    - This property cannot be normalized!
 - `damage`: checks the item's damage value. Can be normalised.
 - `count`: checks the item's count. Can be normalised.
-- `custom_model_data`: checks the item's custom model data floats. Defaults to `0.0`.
+- `custom_model_data`: checks the item's custom model data float at the specified index. Defaults to `0.0`.
+    - This property cannot be normalized!
 
-The `range_dispatch` predicate has 3 extra keys, one of them required:
+The `range_dispatch` predicate has 3 extra keys:
 
 - `threshold`: the threshold required to return true (required).
 - `scale`: the factor to scale the property value by before comparing it with the threshold. Defaults to `1.0`.
@@ -613,13 +615,74 @@ The `range_dispatch` predicate has 3 extra keys, one of them required:
     <summary>Expand for usage examples.</summary>
     <Tabs groupId="custom-item-implementation">
         <TabItem value="json" label="Json mappings">
-            TODO
+            ```json
+            "predicate": {
+                "type": "range_dispatch",
+                "property": "count",
+                "threshold": 32
+            }
+            ```
+            This predicate evaluates to "true" when the count is equal or above 32.
+
+            ```json
+            "predicate": {
+                "type": "range_dispatch",
+                "property": "count",
+                "normalize": true,
+                "threshold": 0.5
+            }
+            ```
+            This predicate evaluates to "true" when the normalized count (count / max count; between 0 and 1) is equal to
+            or higher than 0.5.
+
+            ```json
+            "predicate": {
+                "type": "range_dispatch",
+                "property": "count",
+                "threshold": 8,
+                "scale": 2
+            }
+            ```
+            This predicate evaluates to "true" when the threshold is higher or equal to double the count value.
+
+            Using the `custom_model_data` range dispatch property requires specifying an index to check!
+            Indexes start at 0 - to check the first element in the floats list, you have to set index to 0:
+            ```json
+            "predicate": {
+                "type": "range_dispatch",
+                "property": "custom_model_data",
+                "threshold": 3,
+                "index": 0
+            }
+            ```
         </TabItem>
 
         <TabItem value="api" label="Geyser API">
-            TODO
-        </TabItem>
+            ```java
+            CustomItemDefinition.builder(..., ...)
+                .predicate(ItemRangeDispatchPredicate.count(32))
+                .build();
+            ```
+            This predicate evaluates to "true" when the count is equal or above 32.
 
+            ```java
+            CustomItemDefinition.builder(..., ...)
+                .predicate(ItemRangeDispatchPredicate.normalisedCount(0.5))
+                .build();
+            ```
+            This predicate evaluates to "true" when the normalized count (count / max count; between 0 and 1) is equal to
+            or higher than 0.5.
+
+            ```java
+            CustomItemDefinition.builder(..., ...)
+                .predicate(ItemRangeDispatchPredicate.customModelData(1, 12))
+            .build();
+            ```
+            This predicate evaluates to "true" when the second index of the floats list in the `custom_model_data` component
+            is present and is equal to or higher than 12.
+
+            To scale a property, divide the threshold by the scale factor.
+        </TabItem>
     </Tabs>
 </details>
 
