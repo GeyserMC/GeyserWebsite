@@ -15,8 +15,8 @@ extending vanilla items or modifying vanilla item behavior. Therefore, Geyser ha
 to modified vanilla Java items. Geyser further supports mapping custom Bedrock items to modded non-vanilla items which
 would normally require mods to be installed on the Java client.
 
-To set up custom items in Geyser, you have to choose how you are going to register your items. The easiest is [using a json mapping file](#json-mappings),
-but you can also [use a Geyser extension](#geyser-extensions). Further, a Bedrock edition resource pack must also be supplied to ensure Bedrock players can see custom items.
+To set up custom items in Geyser, you have to choose how you are going to register your items. The easiest is 1using a json mapping file,
+but you can also use a Geyser extension which uses the [Geyser API](/wiki/geyser/api/). Further, a Bedrock edition resource pack must also be supplied to ensure Bedrock players can see custom items.
 
 :::warning
 Geyser does not convert resource packs from Java Edition, and also does not generate custom item mappings automatically.
@@ -62,7 +62,7 @@ It is tied to a specific Java item + item model combination (or, for legacy item
 #### Mandatory definition properties
 - `bedrock_identifier`: This identifier is used for the custom Bedrock item (and also in e.g. attachables in Bedrock resource packs), and cannot be shared with **any** other custom item definition.
 This identifier cannot be in the `minecraft` namespace. If no namespace is provided, `geyser_custom` is used.
-- `item_model` (or `custom_model_data` for `legacy` definitions in json mappings) is also required.
+- `model` (or `custom_model_data` for `legacy` definitions in json mappings) is also required.
 
 #### Optional definition properties
 - `display_name`: A string, or json text component for the item's default display name. If not set, it is derived from the bedrock identifier.
@@ -105,7 +105,7 @@ when there are multiple custom item definitions.
         The type of a definition is defined in the `type` key.
 
         <Tabs>
-            <TabItem value="definition-type" label="Definition (1.21.4+)">
+            <TabItem value="model-definition-type" label="Item Model Definition (1.21.4+)">
                 ```json
                 {
                     "type": "definition",
@@ -117,7 +117,7 @@ when there are multiple custom item definitions.
                 This should be used for 1.21.4+ and above. For custom items using the legacy `custom_model_data` format,
                 use the `legacy` type.
             </TabItem>
-            <TabItem value="group-type" label="Group definition">
+            <TabItem value="group-type" label="Group Definition">
                 ```json
                 {
                     "type": "group",
@@ -130,7 +130,7 @@ when there are multiple custom item definitions.
                 If a group has no model set, all definitions in the group must specify the item model themselves.
                 Definitions in a group are also allowed to be a group, and definitions in a group can also override the Java item model definition of the group.
             </TabItem>
-            <TabItem value="legacy-type" label="Legacy (pre 1.21.4+)">
+            <TabItem value="legacy-definition-type" label="Legacy Definition (pre 1.21.4+)">
                 ```json
                 {
                     "type": "legacy",
@@ -251,8 +251,8 @@ when there are multiple custom item definitions.
 These options allow configuring Bedrock-specific options that aren't represented by components.
 These include:
 - `icon`: Determines the icon to use for the item. If not set, the item's Bedrock identifier is used
-(with `:` being replaced with `.`, and `/` with `_` (e.g.: `geyser_mc:a_cool_item` -> `geyser_mc.a_cool_item`))
-This value corresponds to icon shorthands defined in the textures.json file.
+    (with `:` being replaced with `.`, and `/` with `_` (e.g.: `geyser_mc:a_cool_item` -> `geyser_mc.a_cool_item`))
+    This value corresponds to icon shorthands defined in the `item_textures.json` file.
 - `allow_offhand`: Whether the custom item may be held / put into the offhand. Defaults to true.
 - `display_handheld`: Whether the item should be displayed handheld (e.g. for tools or weapons). Defaults to false.
 - `protection_value`: Determines how many armour protection points should be shown when this item is worn. This is purely visual,
@@ -288,13 +288,13 @@ that output a custom item. Otherwise, Bedrock will *not* show recipes for custom
                 "display_handheld": true, // usually only set for weapons or tools
                 "creative_category": "items",
                 "creative_group": "itemGroup.name.sword",
-                "tags": "example:my_weapon"
+                "tags": ["example:my_weapon"]
             }
         ```
     </TabItem>
 
     <TabItem value="api" label="Geyser API">
-        TODO link javadoc
+        TODO javadoc
         In the API, Bedrock item options are defined using the `CustomItemBedrockOptions#Builder`.
         The following snippets show example usages:
 
@@ -378,7 +378,7 @@ For documentation of all item components and their respective json formats, see 
     </TabItem>
 
     <TabItem value="api" label="Geyser API">
-        All supported components can be found in the [JavaItemDataComponents](TODO JAVADOC) class, and are typically built with builders.
+        All supported components can be found in the [`JavaItemDataComponents`](TODO JAVADOC) class, and are typically built with builders.
 
         Some examples:
         ```java
@@ -497,7 +497,7 @@ The `condition` predicate type checks for a boolean property and returns `true` 
         "predicate": {
             "type": "condition",
             "property": "broken",
-            "expected": "false"
+            "expected": false
         }
         ```
 
@@ -540,7 +540,7 @@ The `match` predicate requires a value to be specified in the `value` key.
     <summary>Expand for usage examples.</summary>
     <Tabs groupId="custom-item-implementation">
         <TabItem value="json" label="Json mappings">
-            All condition predicate types must set the `type` to `match`.
+            All match predicate types must set the `type` to `match`.
 
             ```json
             "predicate": {
@@ -582,7 +582,7 @@ The `match` predicate requires a value to be specified in the `value` key.
                 "type": "match",
                 "property": "context_dimension",
                 "value": "minecraft:the_end",
-                "expected": "false"
+                "expected": false
             }
             ```
 
@@ -654,7 +654,7 @@ The `range_dispatch` predicate has 3 extra keys:
                 "scale": 2
             }
             ```
-            This predicate evaluates to "true" when the threshold is higher or equal to double the count value.
+            This predicate evaluates to "true" when the scaled count (count × 2) is greater than or equal to the threshold.
 
             Using the `custom_model_data` range dispatch property requires specifying an index to check!
             Indexes start at 0 - to check the first element in the floats list, you have to set index to 0:
