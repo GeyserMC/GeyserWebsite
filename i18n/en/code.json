@@ -140,6 +140,9 @@
   "providers.provider.humbleservers.description": {
     "message": "Set the Bedrock port to the Java server's port, or to one of the two extra ports, and connect with that port. If the subdomain doesn't work, use your regular numbered IP address."
   },
+  "providers.provider.kaashosting.description": {
+    "message": "Enable `clone-remote-port` in the Geyser config and connect with the Java IP and port, or use an additional port. See [KaasHosting's article](https://www.kaashosting.nl/help/nl/minecraft/hoe-maak-ik-mijn-minecraft-server-crossplay-met-geysermc) for more details."
+  },
   "providers.provider.kekshost.description": {
     "message": "Use the default bedrock port (19132) and the server ip to connect on Bedrock edition. No changes to the Geyser config are needed. You can also ask for a new port and use it instead."
   },
