@@ -132,7 +132,6 @@ const DownloadPage: React.FC = () => (
                         title='Rainbow'
                         subtitle={<Translate id='pages.download.description.rainbow'>A Minecraft mod to generate Geyser item mappings and bedrock resourcepacks for use with Geyser's custom item API (v2). </Translate>}
                         id='rainbow'
-                        tags={['Beta']}
                         inner={
                             <ProjectDownload
                                 projectId="rainbow"
@@ -158,18 +157,6 @@ const DownloadPage: React.FC = () => (
                                     neoforge: <PlatformIcon img={NeoForgeIcon} text="NeoForge" />,
                                 }}
                                 gridColumns={1}
-                                warning={ // Remove when Item API V2 is merged!
-                                    <>
-                                        <Translate id='pages.download.warning.hydraulic'>
-                                           A preview version of Geyser is required to run Hydraulic, you can download the Item API V2 preview below:
-                                        </Translate>
-                                        <p>
-                                           <a href="https://download.geysermc.org/v2/projects/geyserpreview/versions/pr.5189/builds/latest/downloads/fabric">Fabric</a>
-                                           <span>, </span>
-                                           <a href="https://download.geysermc.org/v2/projects/geyserpreview/versions/pr.5189/builds/latest/downloads/neoforge">NeoForge</a>
-                                        </p>
-                                    </>
-                                }
                             />
                         }
                     />
