@@ -450,6 +450,14 @@ export const providersData: Providers = {
             })
         },
         {
+            name: 'KaasHosting',
+            url: 'https://www.kaashosting.nl',
+            description: translate({
+                id: 'providers.provider.kaashosting.description',
+                message: "Enable `clone-remote-port` in the Geyser config and connect with the Java IP and port, or use an additional port. See [KaasHosting's article](https://www.kaashosting.nl/help/nl/minecraft/hoe-maak-ik-mijn-minecraft-server-crossplay-met-geysermc) for more details."
+            })
+        },
+        {
             name: 'KeKsHost',
             url: 'https://kekshost.com/en/',
             description: translate({
