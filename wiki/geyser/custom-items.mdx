@@ -7,7 +7,7 @@ import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
 Minecraft: Java Edition supports creating "custom" items that are based on vanilla items. With Minecraft 1.21.4+, the introduction of item components
-further allows the customization of item behaviour on a per-item-stack basis, such as changing the visual appearance using the item model component,
+further allows the customization of item behavior on a per-item-stack basis, such as changing the visual appearance using the item model component,
 and modifying item properties such as the ability to eat or equip an item.
 
 Unlike Java Edition, Bedrock natively supports adding custom items that are not based on vanilla items. However, Bedrock does not support
@@ -15,7 +15,7 @@ extending vanilla items or modifying vanilla item behavior. Therefore, Geyser ha
 to modified vanilla Java items. Geyser further supports mapping custom Bedrock items to modded non-vanilla items which
 would normally require mods to be installed on the Java client.
 
-To set up custom items in Geyser, you have to choose how you are going to register your items. The easiest is 1using a json mapping file,
+To set up custom items in Geyser, you have to choose how you are going to register your items. The easiest is using a json mapping file,
 but you can also use a Geyser extension which uses the [Geyser API](/wiki/geyser/api/). Further, a Bedrock edition resource pack must also be supplied to ensure Bedrock players can see custom items.
 
 :::warning
@@ -41,9 +41,9 @@ can specify additional components to modify the items' behavior.
 
 ### Prerequisites: Vocabulary
 - `Java item`: Any vanilla item that exists in the Minecraft: Java Edition base game. Java datapacks / plugins can create custom items by overriding components of a Java item.
-- `Java item component`: On Java Edition since 1.21.4+, items have their properties and behaviour defined using item components.
+- `Java item component`: On Java Edition since 1.21.4+, items have their properties and behavior defined using item components.
 Every Java item has a set of default components, which can be overridden to change how an item looks or functions.
-- `Bedrock item component`: Custom Bedrock items also have components that determine item behaviour, similar to Java Edition.
+- `Bedrock item component`: Custom Bedrock items also have components that determine item behavior, similar to Java Edition.
 However, these components cannot be changed at runtime for item stacks and have to be pre-defined when the Bedrock client joins.
 - `Java legacy custom model data`: The system used before Java 1.21.4. Before 1.21.4, each "custom item" had a custom model data number,
 used to decide which model a Java item should use (= different texture for players).
