@@ -85,23 +85,23 @@ when there are multiple custom item definitions.
             "format_version": 2,
             "items": {
                 "minecraft:flint": [
-                    { definition }
+                    // definition
                 ],
                 "minecraft:apple": [
-                    { definition1 },
-                    { definition2 }
+                    // definition1,
+                    // definition2
                 ],
                 "minecraft:diamond": [
-                    { definition }
+                    // definition
                 ]
             }
         }
         ```
 
         There are multiple types of custom item definitions:
-        - definition: a single custom item, defined for a Java item model definition.
-        - legacy: a single custom item, defined for a Java custom item making use of legacy custom model data numbers.
-        - group: a group of custom item definitions.
+        - `definition`: a single custom item, defined for a Java item model definition.
+        - `legacy`: a single custom item, defined for a Java custom item making use of legacy custom model data numbers.
+        - `group`: a group of custom item definitions.
         The type of a definition is defined in the `type` key.
 
         <Tabs>
@@ -250,13 +250,18 @@ when there are multiple custom item definitions.
 
 These options allow configuring Bedrock-specific options that aren't represented by components.
 These include:
-- `icon`: Determines the icon to use for the item. If not set, the item's Bedrock identifier is used
-    (with `:` being replaced with `.`, and `/` with `_` (e.g.: `geyser_mc:a_cool_item` -> `geyser_mc.a_cool_item`))
-    This value corresponds to icon shorthands defined in the `item_textures.json` file.
-- `allow_offhand`: Whether the custom item may be held / put into the offhand. Defaults to true.
-- `display_handheld`: Whether the item should be displayed handheld (e.g. for tools or weapons). Defaults to false.
-- `protection_value`: Determines how many armour protection points should be shown when this item is worn. This is purely visual,
-and only has an effect if the item is equippable. Defaults to 0.
+- `icon`: Determines the icon to use for the item. If not set, the item's Bedrock identifier is used.
+This value corresponds to icon shorthands defined in the `item_texture.json` file.
+
+   If the Bedrock item's identifier is used, the following changes are made:
+   - `:` would be replaced with `.`
+   - `/` with `_`
+
+   Example: `geyser_mc:a_cool_item` -> `geyser_mc.a_cool_item`.
+- `allow_offhand`: Whether the custom item may be held / put into the offhand. Defaults to `true`.
+- `display_handheld`: Whether the item should be displayed handheld (e.g. for tools or weapons). Defaults to `false`.
+- `protection_value`: Determines how many armor protection points should be shown when this item is worn. This is purely visual,
+and only has an effect if the item is equippable. Defaults to `0`.
 - `creative_category`: Sets the item's creative category (also shown in the recipe book). Can be `none`,
 `construction`, `nature`, `equipment`, or `items`. Defaults to `none`.
 - `creative_group`: Sets the item's creative group (for the recipe book). See [here](https://wiki.bedrock.dev/documentation/menu-categories#list-of-vanilla-groups)
@@ -274,7 +279,7 @@ that output a custom item. Otherwise, Bedrock will *not* show recipes for custom
     <TabItem value="json" label="Json mappings">
         ```json
             "bedrock_options": {
-                "icon": "example:chestplate", // must match shorthands defined in item_textures.json
+                "icon": "example:chestplate", // must match shorthands defined in item_texture.json
                 "protection_value": 4,
                 "creative_category": "equipment",
                 "creative_group": "itemGroup.name.chestplate",
@@ -284,7 +289,7 @@ that output a custom item. Otherwise, Bedrock will *not* show recipes for custom
 
         ```json
             "bedrock_options": {
-                "icon": "example:my_sword", // must match shorthands defined in item_textures.json
+                "icon": "example:my_sword", // must match shorthands defined in item_texture.json
                 "display_handheld": true, // usually only set for weapons or tools
                 "creative_category": "items",
                 "creative_group": "itemGroup.name.sword",
@@ -611,8 +616,8 @@ The `range_dispatch` predicate type checks for a numeric property and returns `t
 
 - `bundle_fullness`: checks the item's bundle fullness. Returns the total weight of all items (in the `minecraft:bundle_contents` component).
     - This property cannot be normalized!
-- `damage`: checks the item's damage value. Can be normalised.
-- `count`: checks the item's count. Can be normalised.
+- `damage`: checks the item's damage value. Can be normalized.
+- `count`: checks the item's count. Can be normalized.
 - `custom_model_data`: checks the item's custom model data float at the specified index. Defaults to `0.0`.
     - This property cannot be normalized!
 
@@ -678,7 +683,7 @@ The `range_dispatch` predicate has 3 extra keys:
 
             ```java
             CustomItemDefinition.builder(..., ...)
-                .predicate(ItemRangeDispatchPredicate.normalisedCount(0.5))
+                .predicate(ItemRangeDispatchPredicate.normalizedCount(0.5))
                 .build();
             ```
             This predicate evaluates to "true" when the normalized count (count / max count; between 0 and 1) is equal to
