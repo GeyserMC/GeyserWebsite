@@ -241,7 +241,7 @@ when there are multiple custom item definitions.
         ```
 
         The `register` method takes in two parameters: The identifier of the base vanilla item, and a
-        `CustomItemDefinition`. The latter must be created using the `CustomItemDefinition#builder`, which
+        [`CustomItemDefinition`](https://repo.opencollab.dev/javadoc/maven-snapshots/org/geysermc/geyser/api/latest/.cache/unpack/org/geysermc/geyser/api/item/custom/v2/CustomItemDefinition.html). The latter must be created using the [`CustomItemDefinition.Builder`](https://repo.opencollab.dev/javadoc/maven-snapshots/org/geysermc/geyser/api/latest/.cache/unpack/org/geysermc/geyser/api/item/custom/v2/CustomItemDefinition.Builder.html), which
         requires passing the Bedrock item identifier and item model as arguments.
     </TabItem>
 </Tabs>
@@ -299,8 +299,7 @@ that output a custom item. Otherwise, Bedrock will *not* show recipes for custom
     </TabItem>
 
     <TabItem value="api" label="Geyser API">
-        TODO javadoc
-        In the API, Bedrock item options are defined using the `CustomItemBedrockOptions#Builder`.
+        In the API, Bedrock item options are defined using the [`CustomItemBedrockOptions#Builder`](https://repo.opencollab.dev/javadoc/maven-snapshots/org/geysermc/geyser/api/latest/.cache/unpack/org/geysermc/geyser/api/item/custom/v2/CustomItemBedrockOptions.Builder.html).
         The following snippets show example usages:
 
         ```java
@@ -383,7 +382,7 @@ For documentation of all item components and their respective json formats, see 
     </TabItem>
 
     <TabItem value="api" label="Geyser API">
-        All supported components can be found in the [`JavaItemDataComponents`](TODO JAVADOC) class, and are typically built with builders.
+        All supported components can be found in the [`JavaItemDataComponents`](https://repo.opencollab.dev/javadoc/maven-snapshots/org/geysermc/geyser/api/latest/.cache/unpack/org/geysermc/geyser/api/item/custom/v2/component/java/JavaItemDataComponents.html) class, and are typically built with builders.
 
         Some examples:
         ```java
@@ -413,9 +412,8 @@ Just as is possible on Java edition, default components of the base item can be 
     </TabItem>
 
     <TabItem value="api" label="Geyser API">
-        TODO JAVADOC
-        The `CustomItemDefinition#Builder` class supports removing default components by either
-        specifying the item data component identifier, or by passing the type.
+        The [`CustomItemDefinition#Builder`](https://repo.opencollab.dev/javadoc/maven-snapshots/org/geysermc/geyser/api/latest/.cache/unpack/org/geysermc/geyser/api/item/custom/v2/CustomItemDefinition.Builder.html)
+        builder supports removing default components by either specifying the item data component identifier, or by passing the type.
         ```java
         @Subscribe
         public void onDefineCustomItems5(GeyserDefineCustomItemsEvent event) {
@@ -509,7 +507,7 @@ The `condition` predicate type checks for a boolean property and returns `true` 
     </TabItem>
 
     <TabItem value="api" label="Geyser API">
-        All condition predicates can be found in the `ItemConditionPredicate` interface. Examples:
+        All condition predicates can be found in the [`ItemConditionPredicate`](https://repo.opencollab.dev/javadoc/maven-snapshots/org/geysermc/geyser/api/latest/.cache/unpack/org/geysermc/geyser/api/predicate/item/ItemConditionPredicate.html) interface. Examples:
 
         ```java
         .predicate(ItemConditionPredicate.FISHING_ROD_CAST)
@@ -594,8 +592,8 @@ The `match` predicate requires a value to be specified in the `value` key.
         </TabItem>
 
         <TabItem value="api" label="Geyser API">
-            TODO JAVADOC
-            Match predicates can be found in the `ItemMatchPredicate` interface, and due to Java limitations, also in `MatchPredicate`.
+            Item match predicates can be found in the [`ItemMatchPredicate`](https://repo.opencollab.dev/javadoc/maven-snapshots/org/geysermc/geyser/api/latest/.cache/unpack/org/geysermc/geyser/api/predicate/item/ItemMatchPredicate.html)
+            interface, additionally to generic match predicates in the [`MatchPredicate`](https://repo.opencollab.dev/javadoc/maven-snapshots/org/geysermc/geyser/api/latest/.cache/unpack/org/geysermc/geyser/api/predicate/MatchPredicate.html) interface.
 
             Examples:
             ```java
@@ -674,6 +672,8 @@ The `range_dispatch` predicate has 3 extra keys:
         </TabItem>
 
         <TabItem value="api" label="Geyser API">
+            Range dispatch predicates are found in the [`ItemRangeDispatchPredicate`](https://repo.opencollab.dev/javadoc/maven-snapshots/org/geysermc/geyser/api/latest/.cache/unpack/org/geysermc/geyser/api/predicate/item/ItemRangeDispatchPredicate.html) interface.
+
             ```java
             CustomItemDefinition.builder(..., ...)
                 .predicate(ItemRangeDispatchPredicate.count(32))
@@ -1201,8 +1201,7 @@ Notable differences however are the following:
 - Predicates, predicate strategies, and priority are *not* supported
 - Non-vanilla items can use additional components, which would otherwise be inherited from vanilla base items.
 
-TODO JAVADOC
-The [`GeyserItemDataComponent`] class contains all additional components available for modded items:
+The [`GeyserItemDataComponent`](https://repo.opencollab.dev/javadoc/maven-snapshots/org/geysermc/geyser/api/latest/.cache/unpack/org/geysermc/geyser/api/item/custom/v2/component/geyser/GeyserItemDataComponents.html) class contains all additional components available for modded items:
 - `chargeable`: Allows creating custom shooter items
 - `attack_damage`: Allows placing a visual indicators for the item's attack damage.
 - `block_placer`: Indicates that the item is able to place blocks
