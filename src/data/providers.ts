@@ -49,6 +49,13 @@ export const providersData: Providers = {
             })
         },
         {
+            name: 'AxentHost',
+            url: 'https://axenthost.com/games/minecraft/',
+            description: translate({
+                id: 'providers.provider.axenthost.description',
+                message: 'For a quick and easy installation, navigate to your server "Variants" tab and select "GeyserMC". The server will be automatically reinstalled with Geyser-Spigot alongside a Paper server. For a custom install using Fabric, Purpur, Paper or even Folia variants, installing Geyser through the "Addons" manager tab is not supported for now. A manual installation by downloading Geyser through the official download page and uploading it to the server through the file manager will be required.'
+         },
+         {                        
             name: 'BedrockHost',
             url: 'https://bedrockhost.pl/',
             description: translate({
