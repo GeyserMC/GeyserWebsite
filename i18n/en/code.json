@@ -9,13 +9,13 @@
     "message": "Enable `clone-remote-port` (or manually set `bedrock port` to the Java port), and connect with the Java IP and port."
   },
   "providers.templates.ip_and_port": {
-    "message": "Enable `clone-remote-port` (or manually set `bedrock port` to the Java port), change `bedrock address`, from `0.0.0.0` to your Java server's IP. Connect with the Java IP and port."
+    "message": "Enable `clone-remote-port` (or manually set `bedrock port` to the Java port) and change `bedrock address` from `0.0.0.0` to your Java server's IP. Connect with the Java IP and port."
   },
   "providers.templates.forwarding_option": {
     "message": "Offers a working port forwarding option."
   },
   "providers.templates.java_ip": {
-    "message": "Make sure your remote address is 'auto', change `bedrock address`, from `0.0.0.0` to your Java server's IP."
+    "message": "Change `bedrock address` from `0.0.0.0` to your Java server's IP."
   },
   "providers.provider.apex_hosting.description": {
     "message": "Full auto installation. Go to the Customizations tab in the panel and select 'Enabled' under the 'Geyser Auto Installer' option. Then, restart and connect to your server with your Java IP and port. See [Apex's article](https://apexminecrafthosting.com/geysermc/) for more details."
@@ -90,7 +90,7 @@
     "message": "Need to open a support ticket to get a UDP port, then use that as the `bedrock port`."
   },
   "providers.provider.bisecthosting.description": {
-    "message": "In Geyser's config, change `bedrock address`, and set it to the public IP of your server (e.g. `address: 51.79.129.18`). Leave the port as `19132`. Under the home tab, select 'Enable UDP Network' and restart the server. See Bisect's [article](https://www.bisecthosting.com/clients/index.php?rp=/knowledgebase/193/How-to-install-Geyser-and-Floodgate-on-a-Minecraft-Java-server.html) for full instructions. If you still cannot connect after following these instructions, contact Bisect Support as they reportedly have UDP disabled on some nodes."
+    "message": "In Geyser's config, change `bedrock address` to the public IP of your server (e.g. `address: 51.79.129.18`). Leave the port as `19132`. Under the home tab, select 'Enable UDP Network' and restart the server. See Bisect's [article](https://www.bisecthosting.com/clients/index.php?rp=/knowledgebase/193/How-to-install-Geyser-and-Floodgate-on-a-Minecraft-Java-server.html) for full instructions. If you still cannot connect after following these instructions, contact Bisect Support as they reportedly have UDP disabled on some nodes."
   },
   "providers.provider.bloomhost.description": {
     "message": "See [Bloom's documentation](https://docs.bloom.host/plugins/geysermc/) for setup instructions."
