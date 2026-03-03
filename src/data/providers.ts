@@ -10,7 +10,7 @@ const descriptionTemplates = {
     }),
     ipAndPort: translate({
         id: 'providers.templates.ip_and_port',
-        message: "Enable `clone-remote-port` (or manually set `bedrock port` to the Java port), and change `bedrock address` from `0.0.0.0` to your Java server's IP. Connect with the Java IP and port."
+        message: "Enable `clone-remote-port` (or manually set `bedrock port` to the Java port) and change `bedrock address` from `0.0.0.0` to your Java server's IP. Connect with the Java IP and port."
     }),
     forwardingOption: translate({
         id: 'providers.templates.forwarding_option',
@@ -265,7 +265,7 @@ export const providersData: Providers = {
             url: 'https://www.bisecthosting.com/',
             description: translate({
                 id: 'providers.provider.bisecthosting.description',
-                message: "Navigate to the Network tab on your server panel to find the available ports. In Geyser's config, uncomment the `bedrock address` and set it to the public IP of your server (e.g. `address: 12.34.56.78`). Set the Bedrock port to one from your Network page, save the file and restart the server. See Bisect's [article](https://www.bisecthosting.com/clients/index.php?rp=/knowledgebase/193/How-to-install-Geyser-and-Floodgate-on-a-Minecraft-Java-server.html) for full instructions. If you still cannot connect after following these instructions, contact Bisect Support as they reportedly have UDP disabled on some nodes."
+                message: "Go to the Network tab and copy an available port not in use by other mods. In Geyser's config, under the bedrock section, on the port: line, edit the value to the port you copied. See Bisect's [article](https://www.bisecthosting.com/clients/index.php?rp=/knowledgebase/193/How-to-install-Geyser-and-Floodgate-on-a-Minecraft-Java-server.html) for full instructions. If you still cannot connect after following these instructions, contact Bisect Support, as they reportedly have UDP disabled on some nodes."
             })
         },
         {
