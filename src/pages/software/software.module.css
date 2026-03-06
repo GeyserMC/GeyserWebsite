@@ -1,0 +1,6 @@
+.featureSection {
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+    margin-top: 30px;
+}
