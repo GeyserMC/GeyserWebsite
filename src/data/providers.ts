@@ -513,7 +513,7 @@ export const providersData: Providers = {
             description: descriptionTemplates.default
         },
         {
-            name: 'Modrinth Servers',
+            name: 'Modrinth Hosting',
             url: 'https://modrinth.com/servers',
             description: translate({
                 id: 'providers.provider.modrinth.description',
