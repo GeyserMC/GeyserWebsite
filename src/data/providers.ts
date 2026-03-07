@@ -514,7 +514,7 @@ export const providersData: Providers = {
         },
         {
             name: 'Modrinth Hosting',
-            url: 'https://modrinth.com/servers',
+            url: 'https://modrinth.com/hosting',
             description: translate({
                 id: 'providers.provider.modrinth.description',
                 message: "Check [Modrinth's documentation](https://support.modrinth.com/en/articles/10986613-adding-geyser-to-your-server) for specific instructions."
