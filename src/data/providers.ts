@@ -49,6 +49,13 @@ export const providersData: Providers = {
             })
         },
         {
+            name: 'AxentHost',
+            url: 'https://axenthost.com/games/minecraft/',
+            description: translate({
+                id: 'providers.provider.axenthost.description',
+                message: "For a quick installation, navigate to your server Variants tab and select GeyserMC. The server will be automatically reinstalled with Geyser-Spigot alongside a Paper server. For a manual install using any other variant such as Paper, you will need to upload the GeyserMC jar to your server and set the the clone-remote-port option to true. See AxentHost's [guide](https://axenthost.com/knowledgebase/categories/minecraft/create-a-crossplay-server-with-geyser/) to see all the steps."
+         },
+         {                        
             name: 'BedrockHost',
             url: 'https://bedrockhost.pl/',
             description: translate({
