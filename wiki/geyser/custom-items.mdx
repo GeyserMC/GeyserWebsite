@@ -337,6 +337,12 @@ is used. For different sets of components, multiple custom item definitions with
 You do not need to map components that are unchanged from the base Java item.
 :::
 
+:::warning
+There are some limitations about which components can be used together!
+For example, Bedrock currently [does not support](https://bugs.mojang.com/browse/MCPE/issues/MCPE-176931) wearable stackable items.
+You can remove conflicting default components as a temporary fix when using equippable items (e.g. horse armor) as base items.
+:::
+
 #### Adding or Modifying components
 
 The following Java item components are supported (some with limitations):
