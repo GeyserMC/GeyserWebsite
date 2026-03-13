@@ -14,6 +14,7 @@ This is a community-compiled list and does not indicate any endorsement from Gey
 
 Full Compatibility (Checks Bedrock Players Accurately)
 
+- [Boar](https://modrinth.com/plugin/boar) - Last check on 13th March 2026
 - [Themis](https://www.spigotmc.org/resources/90766/) - Last checked on 11th July 2024
 
 Partially Compatible (Does not Check/Ignores Bedrock Players)
