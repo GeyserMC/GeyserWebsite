@@ -621,6 +621,14 @@ export const providersData: Providers = {
             })
         },
         {
+            name: 'SimpleGameHosting',
+            url: 'https://simplegamehosting.com/',
+            description: translate({
+                id: 'providers.provider.simplegamehosting.description',
+                message: "Contact live chat support to open a port and check out the [help center guide](https://help.simplegamehosting.com/how-to-enable-crossplay-with-geyser-on-your-minecraft-server/) for how to install and configure Geyser on your server."
+            })
+        },
+        {
             name: 'Skynode.pro',
             url: 'https://skynode.pro/',
             description: translate({
