@@ -41,7 +41,6 @@ The playit.gg Minecraft server plugin does not support UDP tunnels. You will nee
 13. Copy your tunnels port. For example my tunnels ip is visiting-phone.gl.at.ply.gg:6695, 6695 would be tunnels port.
 14. Find `broadcast-port` under `bedrock` and set it to your tunnels port. (In our example it would be 6695).
 15. Save your config. Start your Minecraft server and connect with your tunnels ip and port.
-
 16. If you join successfully, then you are done! Make sure to leave the playit.gg program running as closing it will close the tunnel. You also may want to ratelimit individual connections - use the "Per Connection Rate Limit" option to do so.
    (If you failed to join, check out the [troubleshooting](#troubleshooting) section of the page.) 
 
