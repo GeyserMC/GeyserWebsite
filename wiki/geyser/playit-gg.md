@@ -16,20 +16,33 @@ The playit.gg Minecraft server plugin does not support UDP tunnels. You will nee
 - If you already have playit.gg running & set up (for e.g. Minecraft Java edition), skip steps 1 and 2 and proceed with step 3.
 
 ## Setup {#setup}
-1. Head over to [playit.gg's website](https://playit.gg/) - download the program & run it. It will open the login site in the browser - create an account & sign in. Or, use a guest account.
-2. Once logged in, make sure to connect the program + site, until step 4 is reached. This should happen automatically, if it does not, follow the instructions on the website and the playit.gg program console.
-   ![img](/img/wiki/playit-gg/running.png)
-3. Click "Create Tunnel" if you see the screen above, or, select the "Tunnels" tab when logged in to your account. There, select "Minecraft Bedrock", leave "Enable Tunnel" ticked, and click "Add tunnel".
-   ![img](/img/wiki/playit-gg/add_tunnel.png)
-4. Once "Add tunnel" is clicked, it should create a new tunnel, and you are set! Scroll down until you see this:
-   ![img](/img/wiki/playit-gg/added_tunnel.png)
-   In Geyser config, set the `advanced.bedrock.broadcast-port` to the playit.gg port from the "Allocation" tab. It is necessary for the motd to appear.
-   
-   **Please do not change your Geyser port in `config.yml`** unless you have a reason to (e.g. hosting another Geyser server on the same machine), in which case skip to the paragraph below. The bedrock (Geyser) port in `config.yml` and the playit.gg ports are entirely seperate, playit.gg will forward its port to the default Geyser port and should already work. Changing it can cause errors. If you have changed your config port, change the bedrock port back to the default of 19132 and ensure that `clone-remote-port` is `false`.
-   
-   If you have Geyser running on a port that is not 19132, update the "Local Port" with your Geyser port on the page shown above. The "Local Address" does not need to be changed unless you are not running playit.gg and Geyser on the same device.
-5. Connect to your server - use the IP and Port from the "Allocation" tab. In our example - "180.ip.ply.gg" as the IP, and "17019" as the port. Alternatively, use the Domain it gives you instead of the IP.
-6. If you join successfully, then you are done! Make sure to leave the playit.gg program running as closing it will close the tunnel. You also may want to ratelimit individual connections - use the "Per Connection Rate Limit" option to do so.
+1. Head over to [playit.gg's website](https://playit.gg/) - download the program & run it.
+2. The program will provide you the claiming link. Visit that, it will ask you to login, go ahead and login.
+   ![img](/img/wiki/playit-gg/playit_claim.png)
+3. Go ahead, confirm your agent.
+   ![img](/img/wiki/playit-gg/playit_claim_confirm.png)
+4. Add the agent.
+   ![img](/img/wiki/playit-gg/playit_add_agent.png)
+5. Once the agent is created, go ahead and create a tunnel.
+   ![img](/img/wiki/playit-gg/playit_add_tunnel.png)
+6. Name your tunnel and hit next.
+   ![img](/img/wiki/playit-gg/playit_name_tunnel.png)
+7. Select Minecraft Bedrock as the tunnel type and hit next.
+   ![img](/img/wiki/playit-gg/playit_tunnel_type.png)
+8. Select the Free Network and hit next.
+   ![img](/img/wiki/playit-gg/playit_select_network.png)
+   **Please do not change your Geyser port in `config.yml`** unless you have a reason to (e.g. hosting another Geyser server on the same machine). The bedrock (Geyser) port in `config.yml` and the playit.gg ports are entirely seperate, playit.gg will forward its port to the default Geyser port and should already work. Changing it can cause errors. If you have changed your config port, change the bedrock port back to the default of 19132 and ensure that `clone-remote-port` is `false`.
+9. If you are running the playit.gg agent and GeyserMc on the same device leave the ip as `127.0.0.1`, change port to what you set in GeyserMcs config. https://cdn.hasankayra04.com/cuQo1/jalewasA34.png / https://cdn.hasankayra04.com/cuQo1/TomibiwO03.png
+   ![img](/img/wiki/playit-gg/playit_set_ipandport.png)
+10. Select `proxy-protocol-v2` for the Proxy Protocol section, hit next.
+11. Find `use-haproxy-protocol` under `bedrock:` set it to `true`.
+12. Hit create tunnel and wait for the tunnel to be created.
+   ![img](/img/wiki/playit-gg/playit_create_tunnel.png)
+13. Copy your tunnels port. For example my tunnels ip is visiting-phone.gl.at.ply.gg:6695, 6695 would be tunnels port.
+14. Find `broadcast-port` under `bedrock` and set it to your tunnels port. (In our example it would be 6695).
+15. Save your config. Start your Minecraft server and connect with your tunnels ip and port.
+
+16. If you join successfully, then you are done! Make sure to leave the playit.gg program running as closing it will close the tunnel. You also may want to ratelimit individual connections - use the "Per Connection Rate Limit" option to do so.
    (If you failed to join, check out the [troubleshooting](#troubleshooting) section of the page.) 
 
 ## Troubleshooting {#troubleshooting}
