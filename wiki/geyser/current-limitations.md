@@ -35,6 +35,7 @@ The following things cannot be fixed without changes to Bedrock or the Java prot
 - Maximum sign length different on Java/Bedrock edition ([GeyserMC/Geyser#4130](https://github.com/GeyserMC/Geyser/issues/4130))
 - Second line on advancement toasts ([GeyserMC/Geyser#3205](https://github.com/GeyserMC/Geyser/issues/3205))
 - Showing non-vanilla enchantment levels, such as "Silk Touch 2" ([GeyserMC/Geyser#5252](https://github.com/GeyserMC/Geyser/issues/5252))
+- Test instance blocks are not available in Bedrock ([GeyserMC/Geyser#6164](https://github.com/GeyserMC/Geyser/issues/6164))
 
 ## Fixed with the included GeyserIntegratedPack {#fixed-with-geyserintegratedpack}
 
