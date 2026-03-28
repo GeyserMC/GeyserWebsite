@@ -34,7 +34,7 @@ The playit.gg Minecraft server plugin does not support UDP tunnels. You will nee
 9. If the playit.gg agent and GeyserMC are running on the same device, leave the IP as `127.0.0.1` and set the port to whatever you configured in GeyserMC's config.  
    ![img](/img/wiki/playit-gg/playit_set_ipandport.png)
 10. Select `proxy-protocol-v2` for the Proxy Protocol section and click Next.
-11. Under `bedrock:`, set `use-haproxy-protocol` to `true`.
+11. In the GeyserMC config, under `bedrock:`, set `use-haproxy-protocol` to `true`.
 12. Click Create Tunnel and wait for the tunnel to be created.
    ![img](/img/wiki/playit-gg/playit_create_tunnel.png)
 13. Copy your tunnel's port. For example, if your tunnel address is `visiting-phone.gl.at.ply.gg:6695`, then `6695` is the tunnel port.
