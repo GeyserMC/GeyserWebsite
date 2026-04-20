@@ -189,7 +189,7 @@ const config: Config = {
                         },
                         {
                             label: 'Other',
-                            to: 'wiki/other/geyseroptionalpack',
+                            to: 'wiki/other/geyserintegratedpack',
                         },
                     ],
                 },
