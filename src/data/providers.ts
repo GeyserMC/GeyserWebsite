@@ -234,7 +234,7 @@ export const providersData: Providers = {
             url: 'https://wisehosting.com',
             description: translate({
                 id: 'providers.provider.wisehosting.description',
-                message: "Both auto and manual installation available. Find the GeyserMC presets from the `Properties` tab in the Game Panel. There, click `Install` and restart your server. See [Crossplay FAQ](https://help.wisehosting.com/en/articles/13-how-to-install-geysermc-java-bedrock-crossplay-to-your-server) for additional details."
+                message: "Both auto and manual installation available. Find the GeyserMC presets from the `Addons` tab in the Game Panel. There, click `Install` and restart your server. See [Crossplay FAQ](https://wisehosting.com/help/how-to-install-geysermc-to-your-minecraft-server) for additional details."
             })
         },
         {
