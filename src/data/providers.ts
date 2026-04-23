@@ -65,7 +65,7 @@ export const providersData: Providers = {
             })
         },
         {
-            name: 'Cloud Nord',
+            name: 'CloudNord',
             url: 'https://cloudnord.net/',
             description: translate({
                 id: 'providers.provider.cloud_nord.description',
@@ -187,6 +187,14 @@ export const providersData: Providers = {
             description: translate({
                 id: 'providers.provider.server.pro.description',
                 message: "Different instructions for different plans: On VPS, select Geyser in the [Service Type Menu](https://i.imgur.com/loSNmvu.png), Floodgate can be enabled on the dashboard configuration. For manual installation: Using a Premium or Free plan, use the same port as your Java server for the Bedrock port in the configuration file and connect that; for the Free plan, also enable the `clone-remote-port` option. If you are using a PRO or a VPS plan, you can use any port, which can be opened on the Firewall tab."
+            })
+        },
+        {
+            name: 'ServerPrism',
+            url: 'https://serverprism.com/',
+            description: translate({
+                id: 'providers.provider.serverprism.description',
+                message: "Order a [Minecraft server](https://serverprism.com/minecraft-server-hosting) on any plugin-compatible runtime (Paper, Spigot, Purpur, etc.), then install Geyser from the panel's plugin installer. Connect with the same IP and port as your Java server."
             })
         },
         {
