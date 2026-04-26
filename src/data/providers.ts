@@ -113,6 +113,14 @@ export const providersData: Providers = {
             })
         },
         {
+            name: 'KaasHosting',
+            url: 'https://www.kaashosting.nl/minecraft-servers',
+            description: translate({
+                id: 'providers.provider.kaashosting.description',
+                message: "Automatic and manual installation supported. Go to the `Plugin Installer` tab, search for Geyser and click `Install Automatically`. Connect with the Java IP and port. See [KaasHosting's article](https://www.kaashosting.nl/help/nl/minecraft/hoe-maak-ik-mijn-minecraft-server-crossplay-met-geysermc) for more details."
+            })
+        },
+        {
             name: 'Lilypad',
             url: 'https://lilypad.gg',
             description: translate({
@@ -463,14 +471,6 @@ export const providersData: Providers = {
             description: translate({
                 id: 'providers.provider.humbleservers.description',
                 message: "Set the Bedrock port to the Java server's port, or to one of the two extra ports, and connect with that port. If the subdomain doesn't work, use your regular numbered IP address."
-            })
-        },
-        {
-            name: 'KaasHosting',
-            url: 'https://www.kaashosting.nl',
-            description: translate({
-                id: 'providers.provider.kaashosting.description',
-                message: "Enable `clone-remote-port` in the Geyser config and connect with the Java IP and port, or use an additional port. See [KaasHosting's article](https://www.kaashosting.nl/help/nl/minecraft/hoe-maak-ik-mijn-minecraft-server-crossplay-met-geysermc) for more details."
             })
         },
         {
