@@ -751,7 +751,7 @@ export const providersData: Providers = {
             url: 'https://witherhosting.com/',
             description: translate({
                 id: 'providers.provider.witherhosting.description',
-                message: "Either use the Java server's port, or create a port in the ports manager on the panel and use that for Bedrock. Refer to the hosts [support article](https://support.witherhosting.com/en/article/how-to-install-and-use-geysermc-1xn5l6v/) for further info."
+                message: "Either use the Java server's port, or create a port in the ports manager on the panel and use that for Bedrock. Refer to the hosts [support article](https://my.witherhosting.com/kb/how-to-install-and-use-geysermc-java) for further info."
             })
         }
     ],
