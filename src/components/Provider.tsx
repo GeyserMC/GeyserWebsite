@@ -29,7 +29,7 @@ export const Provider = ({ type }) => {
                         </td>
                         <td>
                             {provider.description != null ? (
-                                <ReactMarkdown children={`&nbsp;&hyphen; ${provider.description}`} components={{ p: noP }} />
+                                <ReactMarkdown children={provider.description} components={{ p: noP }} />
                             ) : (
                                 ''
                             )}
