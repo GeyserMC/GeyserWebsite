@@ -13,8 +13,6 @@ You must be able to connect to your Geyser instance locally!
 The playit.gg Minecraft server plugin does not support UDP tunnels. You will need to use the program agent instead!
 :::
 
-- If you already have playit.gg running & set up (for e.g. Minecraft Java edition), skip steps 1 and 2 and proceed with step 3.
-
 ## Setup {#setup}
 1. Head over to [playit.gg's website](https://playit.gg/) - download the program & run it.
 2. The program will provide a claiming link. Visit that link, log in.
