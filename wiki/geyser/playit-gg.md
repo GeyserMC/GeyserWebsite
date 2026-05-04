@@ -27,7 +27,8 @@ The playit.gg Minecraft server plugin does not support UDP tunnels. You will nee
    ![img](/img/wiki/playit-gg/playit_name_tunnel.png)
 7. Select "Minecraft Bedrock" as the tunnel type and click Next.
    ![img](/img/wiki/playit-gg/playit_tunnel_type.png)
-8. Select the Free Network and click Next.  
+8. Select the Free Network and click Next.
+   ![img](/img/wiki/playit-gg/playit_select_network.png)
    **Do not change your Geyser port in `config.yml` unless you have a reason (for example, hosting another Geyser server on the same machine).** The Bedrock (Geyser) port in `config.yml` and the playit.gg ports are separate. playit.gg will forward its port to the default Geyser port and should work as-is. Changing it can cause errors. If you have changed your config port, set the Bedrock port back to the default `19132` and ensure `clone-remote-port` is `false`.
 9. If the playit.gg agent and GeyserMC are running on the same device, leave the IP as `127.0.0.1` and set the port to whatever you configured in GeyserMC's config.  
    ![img](/img/wiki/playit-gg/playit_set_ipandport.png)
