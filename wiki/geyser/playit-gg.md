@@ -45,6 +45,7 @@ The playit.gg Minecraft server plugin does not support UDP tunnels. You will nee
 ## Troubleshooting {#troubleshooting}
 
 ### I can't connect to my server! {#i-cant-connect-to-my-server}
+* *Try going to the Agents page, set your agent to IPv4 only, and change the region. You may need to switch regions a few times before you can connect.*
 * *Are there errors in your minecraft server console?*
 * *Unless you manually changed the "Local Port" on the playit.gg website, in Geyser config, ensure that the bedrock port is the default of `19132` and that `clone-remote-port` is `false`.*
 * *If you changed the `bedrock-port` or set `clone-remote-port` to `true` and have a reason for doing so (e.g. hosting another Geyser server on the same machine), you'll have to tell playit.gg to use that port instead! See the last paragraph in step 8.*
