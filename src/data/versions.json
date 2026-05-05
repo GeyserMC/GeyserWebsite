@@ -7,6 +7,6 @@
         }
     },
     "java": {
-        "supported": "1.21.11"
+        "supported": "26.1"
     }
 }
