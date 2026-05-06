@@ -7,7 +7,7 @@ description: Learn how to create a startup script for Geyser-Standalone.
 
 :::caution
 
-In order for this to work, you MUST have Java 17 (or higher) installed!
+In order for this to work, you MUST have Java 21 (or higher) installed!
 
 :::
 
