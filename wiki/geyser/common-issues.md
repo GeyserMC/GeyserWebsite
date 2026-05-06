@@ -35,9 +35,9 @@ See [here](/wiki/geyser/fixing-unable-to-connect-to-world/) for fixing "Unable t
 ### `java.net.BindException: Address already in use: bind` on startup. {#javanetbindexception-address-already-in-use-bind-on-startup}
 This means something (likely another instance of Geyser) is running on the port you have specified in the config. Please make sure you close all applications running on this port. If you don't recall opening anything, usually restarting your computer fixes this.
 
-### [...]` has been compiled by a more recent version of the Java Runtime (class file version 60.0)` {#-has-been-compiled-by-a-more-recent-version-of-the-java-runtime-class-file-version-600}
+### [...]` has been compiled by a more recent version of the Java Runtime (class file version 65.0)` {#-has-been-compiled-by-a-more-recent-version-of-the-java-runtime-class-file-version-600}
 
-See this link for updating to Java 17: https://docs.papermc.io/misc/java-install.
+See this link for updating to Java 21: https://docs.papermc.io/misc/java-install.
 
 ### Hosting provider will not immediately open up UDP. {#hosting-provider-will-not-immediately-open-up-udp}
 

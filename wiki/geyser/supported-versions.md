@@ -21,12 +21,12 @@ Geyser emulates a <Versions platform="java"/> client, so a Java server must acce
 This is possible thanks to [ViaVersion](https://viaversion.com/), which allows Java edition players with newer versions to join servers 
 that run older versions of the game.
 
-### Using Geyser-Spigot on a Spigot/Paper server running on 1.16.5 or above
-You can use Geyser-Spigot on servers that run on 1.16.5 or above. Do note that Geyser requires Java 17 to run! You will also need to run at least Java 17 or later to use Geyser. See [here](https://docs.papermc.io/misc/java-install) for more info on updating Java. Paper versions not supporting Java 17 can add `-DPaper.IgnoreJavaVersion=true` flag to the Java startup arguments to allow Paper to run on Java 17.
+### Using Geyser-Spigot on a Spigot/Paper server running on 1.20.5 or above
+You can use Geyser-Spigot on servers that run on 1.20.5 or above. Do note that Geyser requires Java 21 to run! You will also need to run at least Java 21 or later to use Geyser. See [here](https://docs.papermc.io/misc/java-install) for more info on updating Java. Paper versions not supporting Java 21 can add `-DPaper.IgnoreJavaVersion=true` flag to the Java startup arguments to allow Paper to run on Java 21.
 
 In order for Bedrock players to chat (1.19.3+) or join (1.19.1/1.19.2), you need to disable chat signing. More information about that can be read on the [chat signing page](/wiki/geyser/secure-chat).
 
-### Using Geyser-Spigot on a Spigot/Paper server running on a version below 1.16.5
+### Using Geyser-Spigot on a Spigot/Paper server running on a version below 1.20.5
 This is unfortunately not possible. You'll need to use a proxy such as Velocity or BungeeCord, or set up Geyser-Standalone separately with the [ViaVersion](https://github.com/ViaVersion/ViaVersion) plugin. Another alternative would be to install [ViaProxy](https://github.com/ViaVersion/ViaProxy), which is a standalone ViaVersion proxy that 
 translates between different Minecraft: Java edition versions, and to install Geyser-ViaProxy on it.
 
