@@ -114,7 +114,7 @@
     "message": "Set the `bedrock port` in the config to the Java server's port or use one of the available ports allocated to your server, and connect with that port."
   },
   "providers.provider.falixnodes.description": {
-    "message": "Open a port yourself on the network page in the game panel, then use that port in the bedrock section of the Geyser config."
+    "message": "Enable `clone-remote-port` (or manually set `bedrock port` to the Java port), and connect with the Java IP and port."
   },
   "providers.provider.ferox_hosting.description": {
     "message": "Open a port yourself in their panel and check out the [knowledgebase article](https://feroxhosting.nl/kb/) for how to install and configure Geyser."
