@@ -22,7 +22,7 @@ This is possible thanks to [ViaVersion](https://viaversion.com/), which allows J
 that run older versions of the game.
 
 ### Using Geyser-Spigot on a Spigot/Paper server running on 1.20.5 or above
-You can use Geyser-Spigot on servers that run on 1.20.5 or above. Do note that Geyser requires Java 21 to run! You will also need to run at least Java 21 or later to use Geyser. See [here](https://docs.papermc.io/misc/java-install) for more info on updating Java. Paper versions not supporting Java 21 can add `-DPaper.IgnoreJavaVersion=true` flag to the Java startup arguments to allow Paper to run on Java 21.
+You can use Geyser-Spigot on servers that run on 1.20.5 or above. You will also need to run at least Java 21 or later to use Geyser. See [here](https://docs.papermc.io/misc/java-install) for more info on updating Java. Paper versions not supporting Java 21 can add `-DPaper.IgnoreJavaVersion=true` flag to the Java startup arguments to allow Paper to run on Java 21.
 
 In order for Bedrock players to chat (1.19.3+) or join (1.19.1/1.19.2), you need to disable chat signing. More information about that can be read on the [chat signing page](/wiki/geyser/secure-chat).
 
