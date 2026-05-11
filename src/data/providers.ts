@@ -373,7 +373,7 @@ export const providersData: Providers = {
             url: 'https://falixnodes.net/',
             description: translate({
                 id: 'providers.provider.falixnodes.description',
-                message: "Open a port yourself on the network page in the game panel, then use that port in the bedrock section of the Geyser config."
+                message: "Enable `clone-remote-port` (or manually set `bedrock port` to the Java port), and connect with the Java IP and port."
             })
         },
         {
