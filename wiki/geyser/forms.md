@@ -23,7 +23,7 @@ Then we'll talk about sending the form, receiving a response and doing advanced 
 While this is the easiest form type it's also the least customisable.  
 You have a title, description (content) and two buttons.
 
-![Example of a ModalForm](https://i.imgur.com/kMpMgOh.png)
+![Example of a ModalForm](/img/wiki/cumulus/modalform-example.png)
 
 Code used in the image:
 
@@ -40,7 +40,7 @@ ModalForm.builder()
 While this one is less easy than ModalForm is, it also has more customizability.  
 It's still limited to a title, content and buttons, but these buttons can also have images and do not have a minimum and maximum of two.
 
-![Example of a SimpleForm](https://i.imgur.com/3rj2OQ2.png)
+![Example of a SimpleForm](/img/wiki/cumulus/simpleform-example.png)
 
 Code used in the image:
 ```java
@@ -58,7 +58,7 @@ While the CustomForm is the last one on our list (and thus the least easy one), 
 This form exists of a title, content and a list of different components e.g. label, slider and input.  
 See [Components](https://github.com/GeyserMC/Cumulus/tree/master/src/main/java/org/geysermc/cumulus/component) for more information about every component you can use and in which form type.
 
-![Example of a CustomForm](https://i.imgur.com/zHgxELm.png)
+![Example of a CustomForm](/img/wiki/cumulus/customform-example.png)
 
 Code used in the image:
 
