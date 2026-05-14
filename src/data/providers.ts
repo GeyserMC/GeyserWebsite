@@ -569,6 +569,14 @@ export const providersData: Providers = {
             })
         },
         {
+            name: 'NolimitHost',
+            url: 'https://nolimithost.cc',
+            description: translate({
+                id: 'providers.provider.nolimithost.description',
+                message: "Check [NolimitHost's documentation](https://nolimithost.cc/docs/minecraft/geyser) for specific instructions."
+            })
+        },
+        {
             name: 'OrionNodes',
             url: 'https://orionnodes.com',
             description: translate({

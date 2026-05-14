@@ -170,6 +170,9 @@
   "providers.provider.nodecraft.description": {
     "message": "Use the default server port and `0.0.0.0` or your server IP as the host address."
   },
+  "providers.provider.nolimithost.description": {
+    "message": "Check [NolimitHost's documentation](https://nolimithost.cc/docs/minecraft/geyser) for specific instructions."
+  },
   "providers.provider.pebblehost.description": {
     "message": "Enable `clone-remote-port` (or manually set `bedrock port` to the Java port), and connect with the Java IP and port. See [this video](https://youtu.be/v9lC80UBZF4) for a PebbleHost-specific tutorial."
   },
