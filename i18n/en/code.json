@@ -96,7 +96,7 @@
     "message": "Go to the Network tab and copy an available port not in use by other mods. In Geyser's config, under the bedrock section, on the port: line, edit the value to the port you copied. See Bisect's [article](https://www.bisecthosting.com/clients/index.php?rp=/knowledgebase/193/How-to-install-Geyser-and-Floodgate-on-a-Minecraft-Java-server.html) for full instructions. If you still cannot connect after following these instructions, contact Bisect Support, as they reportedly have UDP disabled on some nodes."
   },
   "providers.provider.bloomhost.description": {
-    "message": "See [Bloom's documentation](https://docs.bloom.host/plugins/geysermc/) for setup instructions."
+    "message": "See [Bloom's documentation](https://docs.bloom.host/multiplatform/geysermc) for setup instructions."
   },
   "providers.provider.craft-hosting.description": {
     "message": "Set the Bedrock port to the Java server's port and connect with that port; note that this provider appears to only provide service in Russia."
