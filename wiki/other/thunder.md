@@ -17,7 +17,7 @@ Not only is this project in early beta, it does **not** convert custom items! Pl
 
 ## Usage {#usage}
 
-1. Ensure you have Java 17 or higher installed, if you do you should be able to open the file like a normal program.
+1. Ensure you have Java 21 or higher installed, if you do you should be able to open the file like a normal program.
 2. Select the Java edition resource pack using the button on the left. Once you do, if it was successful you should see the icon of the pack.
 3. Change the output pack name. This is the name shown to the Bedrock client.
 4. Hit the convert button to start the conversion process. This step may take a while.
