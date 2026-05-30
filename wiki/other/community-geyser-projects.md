@@ -22,13 +22,6 @@ A Spigot shop plugin that uses Bedrock forms.
 
 Creator: [KejonaMC](https://github.com/kejonaMC)
 
-## Bedrock Player Manager for Floodgate {#bedrock-player-manager-for-floodgate}
-A Spigot plugin that is able to run certain commands when a Bedrock player joins, or have Bedrock players able to bypass the anticheat, etc. 
-
-* [Spigot page](https://www.spigotmc.org/resources/82278/)
-
-Creator: ofunny
-
 ## BedrockSkinUtility {#bedrockskinutility}
 This is a Fabric mod that allows you to view Bedrock capes from Java.
 
@@ -129,6 +122,16 @@ This is a Spigot/BungeeCord/Velocity plugin that can be used to automatically up
 * [Spigot page](https://www.spigotmc.org/resources/88555/)
 
 Creators: [Jens](https://github.com/Jens-Co), [YHDiamond](https://github.com/YHDiamond), [Konicai](https://github.com/Konicai)
+
+## Junction {#junction}
+A modern Geyser and Floodgate management solution for Paper, Purpur, and Folia servers. It automates Bedrock player management by executing platform-specific commands and handling LuckPerms or Vault group assignments.
+
+* [Modrinth](https://modrinth.com/plugin/junction)
+* [Hangar](https://hangar.papermc.io/Maboroshi/Junction)
+* [Wiki](https://docs.maboroshi.org/)
+* [GitHub](https://github.com/MaboroshiKobo/Junction)
+
+Creator: [muhdfdeen](https://github.com/muhdfdeen)
 
 ## SleepingServerStarter {#sleepingserverstarter}
 Small application that waits for a player to connect before launching actual minecraft server.
