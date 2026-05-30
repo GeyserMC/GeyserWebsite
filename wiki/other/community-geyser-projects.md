@@ -141,3 +141,9 @@ An API that makes it easier for Bedrock Skins to be outputted.
 * [Website](https://lunareclipse.studio/creations/starlight-skinapi)
 
 Creators: [Bret06](https://www.bret06.net/)
+
+## VelocityNavigator {#velocitynavigator}
+Premium lobby load balancing with Bedrock/Geyser support, circuit breaker, sticky sessions, and contextual routing for Velocity proxies.
+* [Modrinth](https://modrinth.com/plugin/velocitynavigator)
+
+Creators: [DemonZDevelopment](https://github.com/DemonZ-Development)
