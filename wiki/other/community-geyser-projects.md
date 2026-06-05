@@ -128,7 +128,7 @@ A modern Geyser and Floodgate management solution for Paper, Purpur, and Folia s
 
 * [Modrinth](https://modrinth.com/plugin/junction)
 * [Hangar](https://hangar.papermc.io/Maboroshi/Junction)
-* [Wiki](https://docs.maboroshi.org/)
+* [Documentation](https://docs.maboroshi.org/projects/junction)
 * [GitHub](https://github.com/MaboroshiKobo/Junction)
 
 Creator: [muhdfdeen](https://github.com/muhdfdeen)
