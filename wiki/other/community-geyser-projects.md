@@ -22,6 +22,13 @@ A Spigot shop plugin that uses Bedrock forms.
 
 Creator: [KejonaMC](https://github.com/kejonaMC)
 
+## Bedrock Player Manager for Floodgate {#bedrock-player-manager-for-floodgate}
+A Spigot plugin that is able to run certain commands when a Bedrock player joins, or have Bedrock players able to bypass the anticheat, etc. 
+
+* [Spigot page](https://www.spigotmc.org/resources/82278/)
+
+Creator: ofunny
+
 ## BedrockSkinUtility {#bedrockskinutility}
 This is a Fabric mod that allows you to view Bedrock capes from Java.
 
