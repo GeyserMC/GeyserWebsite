@@ -121,6 +121,3 @@ And so on.
 * Please also make sure that you have the same `key.pem` and `config.yml` on all of your servers.
 
 If your players can't connect from the lobby to another backend server, check console.
-
-### Plugins that can cause issues {#plugins-that-can-cause-issues}
-* `HamsterAPI`
