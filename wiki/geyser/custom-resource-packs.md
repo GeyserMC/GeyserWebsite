@@ -7,3 +7,4 @@ Geyser supports custom resource packs for use with custom items, blocks, and sku
 - [Custom items](/wiki/geyser/custom-items)
 - [Custom blocks](/wiki/geyser/custom-blocks)
 - [Custom skulls](/wiki/geyser/custom-skulls)
+- [Custom waypoint icons](/wiki/geyser/custom-waypoints)

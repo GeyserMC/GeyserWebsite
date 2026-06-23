@@ -1,0 +1,221 @@
+---
+title: Custom Waypoint Icons
+description: Geyser supports custom locator bar icons (also known as waypoint icons), though they have to be mapped manually.
+---
+
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+
+Minecraft: Java Edition supports showing custom icons on the locator bar. These are known as custom waypoints and, on
+Java Edition, implemented through custom "waypoint styles" in a resource pack. These waypoint styles specify a near
+and far distance in blocks, and a list of sprites to display on the locator bar.
+
+Bedrock Edition, on the other hand, does not natively support custom waypoint icons through behaviour or resource packs.
+However, in the network layer, this is supported, and as such Geyser can make use out of it to support Java's custom
+waypoint icons. These are implemented through custom JSON mappings, similar to custom block or item mappings.
+
+Geyser extensions can also make use out of Bedrock's support for custom waypoint icons. Unlike JSON mappings however,
+extensions have more freedom in how icons are displayed to the client.
+
+When an unknown custom waypoint style is sent to Geyser by the Java server,
+Geyser will display the waypoint using vanilla's default icons.
+
+:::info
+This guide only describes the steps required to write custom waypoint style mappings. You still need to create a resource pack
+for Bedrock Edition, add the waypoint icons to it, and use it in Geyser. Geyser cannot automatically pull icons from
+Java Edition resource packs.
+:::
+
+:::warning
+As with custom blocks and items, Geyser does not convert resource packs from Java Edition, and also does not generate
+custom waypoint mappings automatically. However, automatic tools such as [Rainbow](/wiki/other/rainbow/) are planning
+support for these conversions.
+:::
+
+## Simple icons
+
+Custom waypoint icons following Java's system of having a near- and far-distance should be mapped using JSON mappings, or,
+when using Geyser extensions, Geyser's `CustomWaypointStyle.VanillaBuilder` helper builder. Both of these methods follow
+the same format as Java's custom waypoint styles and should feel very familiar.
+
+<Tabs groupId="custom-waypoint-implementation">
+    <TabItem value="json" label="JSON-mappings">
+        JSON mappings have to specify the `format_version` set to `1`, and list all custom waypoint styles under the
+        `waypoint_styles` key. This key holds an object in which keys are identifiers of waypoint styles, and each
+        value is the definition of that waypoint style.
+
+        For example, take the following `waypoint_mappings.json` file:
+        ```json
+        {
+          "format_version": 1,
+          "waypoint_styles": {
+            "geyser:my_first_waypoint": {
+              "near_distance": 10,
+              "far_distance": 100,
+              "sprites": [
+                "geyser:custom_waypoint_0",
+                "geyser:custom_waypoint_1"
+              ]
+            },
+            "geyser:my_second_waypoint": {
+              "sprites": [
+                "geyser:second_waypoint/texture_1",
+                "geyser:second_waypoint/texture_2",
+                "geyser:second_waypoint/texture_3",
+                "geyser:second_waypoint/texture_4"
+              ]
+            },
+            "geyser:the_best_waypoint": {
+            "near_distance": 50,
+              "sprites": [
+                "geyser:ultimate_waypoint/near",
+                "geyser:ultimate_waypoint/far"
+              ]
+            }
+          }
+        }
+        ```
+
+        These mappings specify 3 custom waypoint styles, `geyser:my_first_waypoint`, `geyser:my_second_waypoint`, and
+        `geyser:the_best_waypoint`.
+
+        Just like on Java Edition, the default value for `near_distance` when not specified is 128, and for `far_distance`
+        it is 332. And, just like on Java Edition, at least one texture sprite must be specified.
+
+        Since namespaces do not exist in Bedrock Edition's resource packs, Geyser must flatten the texture sprite identifier
+        to be used in the resource pack on Bedrock Edition. Geyser does this using the following format:
+
+        > `textures/ui/&lt;namespace&rt;/locator_bar_dot/&lt;path&rt;`
+
+        As such, in the example above, the `geyser:my_first_waypoint` waypoint style refers to the following textures in the Bedrock resource pack:
+
+        - `textures/ui/geyser/locator_bar_dot/custom_waypoint_0`
+        - `textures/ui/geyser/locator_bar_dot/custom_waypoint_1`
+    </TabItem>
+    <TabItem value="api" label="Geyser API">
+        The Geyser API provides a helper builder, called `VanillaBuilder` in `CustomWaypointStyle`, to implement custom
+        waypoint icons that are similar to Java Edition's custom icons. The builder is similar to JSON-mappings in use
+        and requires the same fields to be specified.
+
+        Custom waypoint styles are registered per-connection in the `SessionDefineCustomWaypointsEvent`,
+        and as such you can check the `GeyserConnection` before registering a custom waypoint style. If a custom waypoint
+        style is used across multiple connections, it can be useful to only create it once to save memory.
+
+        ```java
+        @Subscribe
+        public void onSessionDefineCustomWaypoints(SessionDefineCustomWaypointsEvent event) {
+            event.register(Identifier.of("geyser:my_first_waypoint"), CustomWaypointStyle.vanillaLike(10, 100)
+                .withTexture(Identifier.of("geyser:custom_waypoint_0"))
+                .withTexture(Identifier.of("geyser:custom_waypoint_1"))
+                .build());
+
+            event.register(Identifier.of("geyser:my_second_waypoint"), CustomWaypointStyle.vanillaLike(128, 332)
+                .withTexture(Identifier.of("geyser:second_waypoint/texture_1"))
+                .withTexture(Identifier.of("geyser:second_waypoint/texture_2"))
+                .withTexture(Identifier.of("geyser:second_waypoint/texture_3"))
+                .withTexture(Identifier.of("geyser:second_waypoint/texture_4"))
+                .build());
+
+            event.register(Identifier.of("geyser:the_best_waypoint"), CustomWaypointStyle.vanillaLike(50, 332)
+                .withTexture(Identifier.of("geyser:ultimate_waypoint/near"))
+                .withTexture(Identifier.of("geyser:ultimate_waypoint/far"))
+                .build());
+        }
+        ```
+
+        As with JSON mappings, Geyser flattens the texture identifier into a string using the following format:
+
+        > `textures/ui/&lt;namespace&rt;/locator_bar_dot/&lt;path&rt;`
+
+        However, you can also pass a literal texture string to `withTexture`. This string must not be prefixed with
+        `textures/` and must also not be suffixed with the texture extension (e.g. `.png`).
+
+        You can register the same custom waypoint style for multiple waypoint style identifiers. However, each
+        waypoint style identifier may only have one custom waypoint style attached to it. If a duplicate is registered,
+        a `CustomWaypointStyleRegisterException` will be thrown.
+    </TabItem>
+</Tabs>
+
+---
+
+<details>
+    <summary>Changing vanilla waypoint styles</summary>
+    Creating custom waypoint styles for vanilla waypoint styles, like `minecraft:default`, is allowed, and can be done
+    as follows:
+
+    <Tabs groupId="custom-waypoint-implementation">
+        <TabItem value="json" label="JSON-mappings">
+            ```json
+            {
+              "format_version": 1,
+              "waypoint_styles": {
+                "minecraft:default": {
+                  "sprites": [
+                    "geyser:custom_vanilla_0",
+                    "geyser:custom_vanilla_1",
+                    "geyser:custom_vanilla_2",
+                    "geyser:custom_vanilla_3",
+                    "geyser:custom_vanilla_4"
+                  ]
+                }
+              }
+            }
+            ```
+        </TabItem>
+        <TabItem value="api" label="Geyser API">
+            ```java
+            @Subscribe
+            public void onSessionDefineCustomWaypoints(SessionDefineCustomWaypointsEvent event) {
+                event.register(Identifier.of("minecraft:default"), CustomWaypointStyle.vanillaLike(128, 332)
+                    .withTexture(Identifier.of("geyser:custom_vanilla_0"))
+                    .withTexture(Identifier.of("geyser:custom_vanilla_1"))
+                    .withTexture(Identifier.of("geyser:custom_vanilla_2"))
+                    .withTexture(Identifier.of("geyser:custom_vanilla_3"))
+                    .withTexture(Identifier.of("geyser:custom_vanilla_4"))
+                    .build());
+            }
+            ```
+        </TabItem>
+    </Tabs>
+</details>
+
+
+## Advanced icons
+
+Geyser API users may write custom implementations of `CustomWaypointStyle`, to run custom checks for waypoint textures
+and waypoint icon sizes. Just like waypoint styles created using the `VanillaBuilder`, these can be registered for one
+or more custom waypoint style identifiers in the `SessionDefineCustomWaypointsEvent`. For example, the following
+implementation will always use the same texture and icon size, no matter the distance:
+
+```java
+public final class MyCustomWaypointStyle implements CustomWaypointStyle {
+    public static final CustomWaypointStyle INSTANCE = new MyCustomWaypointStyle();
+    private static final Vector2f SIZE = Vector2f.from(0.5, 0.5);
+
+    private MyCustomWaypointStyle() {}
+
+    @Override
+    public String texturePath(Identifier style, float distance) {
+        return "ui/geyser/locator_bar_dot/my_icon";
+    }
+
+    @Override
+    public Vector2f textureSize(Identifier style, float distance) {
+        return SIZE;
+    }
+}
+```
+
+It can then be registered through the `SessionDefineCustomWaypointsEvent` as follows:
+
+```java
+@Subscribe
+public void onSessionDefineCustomWaypoints(SessionDefineCustomWaypointsEvent event) {
+    event.register(Identifier.of("geyser:my_style", MyCustomWaypointStyle.INSTANCE));
+}
+```
+
+Like with `VanillaBuilder`, should you use a custom waypoint style across multiple connections,
+it can be useful to only keep one instance of it, to save memory. Also, avoid running time-taking operations in your
+`texturePath` or `textureSize` implementations, since these methods are called frequently. For full implementation details,
+refer to the Javadocs of `CustomWaypointStyle`.
