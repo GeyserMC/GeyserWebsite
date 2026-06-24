@@ -25,6 +25,15 @@ you should look into using [Thunder](/wiki/other/thunder).
 This project is in early development! Any bugs and issues should be reported at its [issue tracker](https://github.com/GeyserMC/Rainbow/issues).
 :::
 
+You can use Rainbow to convert custom content of datapacks (that require a resource pack), custom content plugins like Nexo or ItemsAdder, or even
+server-side only Fabric/NeoForge mods, such as Polymer mods. However, these custom content providers may use
+[item displays](https://minecraft.wiki/w/Display), which Geyser does not yet support. This may result in your custom blocks or items
+not rendering on Bedrock when placed in the world.
+
+You can use extensions created by the community, such as [GeyserDisplayEntity](https://github.com/GeyserExtensionists/GeyserDisplayEntity),
+to add support for item displays to Geyser. However, keep in mind that these are not created by or affiliated with Geyser,
+and as such any issues that may occur should not be reported to us.
+
 ## Usage {#usage}
 
 Rainbow works by analysing the loaded resource packs on the client and extracting the custom content found. As such,
