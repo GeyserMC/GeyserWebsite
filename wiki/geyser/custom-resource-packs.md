@@ -12,5 +12,5 @@ Geyser supports custom resource packs for use with custom items, blocks, and sku
 
 :::info
 Geyser does not convert resource packs from Java Edition automatically.
-However, you can use automatic tools such as [Rainbow](/wiki/other/rainbow/) to make converting content simpler.
+However, you can use automatic tools such as [Rainbow](/wiki/other/rainbow/) or [Thunder](/wiki/other/thunder) to make converting content simpler.
 :::

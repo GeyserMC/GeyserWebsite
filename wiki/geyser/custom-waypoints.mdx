@@ -85,7 +85,7 @@ the same format as Java's custom waypoint styles and should feel very familiar.
         Since namespaces do not exist in Bedrock Edition's resource packs, Geyser must flatten the texture sprite identifier
         to be used in the resource pack on Bedrock Edition. Geyser does this using the following format:
 
-        > `textures/ui/&lt;namespace&rt;/locator_bar_dot/&lt;path&rt;`
+        > `textures/ui/<namespace>/locator_bar_dot/<path>`
 
         As such, in the example above, the `geyser:my_first_waypoint` waypoint style refers to the following textures in the Bedrock resource pack:
 
@@ -101,6 +101,9 @@ the same format as Java's custom waypoint styles and should feel very familiar.
         and as such you can check the `GeyserConnection` before registering a custom waypoint style. If a custom waypoint
         style is used across multiple connections, it can be useful to only create it once to save memory.
 
+        `VanillaBuilder` instances are created by using `CustomWaypointStyle#vanillaLike(int nearDistance, int farDistance)`.
+        When not specifying a near- and far-distance, the Java defaults of 128 and 332 are used.
+
         ```java
         @Subscribe
         public void onSessionDefineCustomWaypoints(SessionDefineCustomWaypointsEvent event) {
@@ -109,7 +112,7 @@ the same format as Java's custom waypoint styles and should feel very familiar.
                 .withTexture(Identifier.of("geyser:custom_waypoint_1"))
                 .build());
 
-            event.register(Identifier.of("geyser:my_second_waypoint"), CustomWaypointStyle.vanillaLike(128, 332)
+            event.register(Identifier.of("geyser:my_second_waypoint"), CustomWaypointStyle.vanillaLike()
                 .withTexture(Identifier.of("geyser:second_waypoint/texture_1"))
                 .withTexture(Identifier.of("geyser:second_waypoint/texture_2"))
                 .withTexture(Identifier.of("geyser:second_waypoint/texture_3"))
@@ -125,7 +128,7 @@ the same format as Java's custom waypoint styles and should feel very familiar.
 
         As with JSON mappings, Geyser flattens the texture identifier into a string using the following format:
 
-        > `textures/ui/&lt;namespace&rt;/locator_bar_dot/&lt;path&rt;`
+        > `textures/ui/<namespace>/locator_bar_dot/<path>`
 
         However, you can also pass a literal texture string to `withTexture`. This string must not be prefixed with
         `textures/` and must also not be suffixed with the texture extension (e.g. `.png`).
@@ -179,7 +182,6 @@ the same format as Java's custom waypoint styles and should feel very familiar.
     </Tabs>
 </details>
 
-
 ## Advanced icons
 
 Geyser API users may write custom implementations of `CustomWaypointStyle`, to run custom checks for waypoint textures
@@ -206,7 +208,12 @@ public final class MyCustomWaypointStyle implements CustomWaypointStyle {
 }
 ```
 
-It can then be registered through the `SessionDefineCustomWaypointsEvent` as follows:
+Implementations must always implement `texturePath(Identifier, float)` and `textureSize(Identifier, float)`. The first
+returns the texture path to use for that waypoint style and distance (not prefixed with `textures/`), and the second
+returns the size of the texture to use (where a size of `[1, 1]` is the size icons normally appear as when the waypoint
+is close to the player).
+
+Implementations can then be registered through the `SessionDefineCustomWaypointsEvent` as follows:
 
 ```java
 @Subscribe
