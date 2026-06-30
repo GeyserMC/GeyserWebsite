@@ -18,6 +18,8 @@ Custom entities currently (as of 26.2) do not exist in Minecraft: Java Edition. 
 Unlike Java Edition, Bedrock does support custom entity types, but does not feature item or block displays. With this API, Geyser extensions can register custom entity definitions to use instead of Java
 entity types in entity spawning events to properly support custom entities for Bedrock players. Further, it allows modifying entity properties and data for any entity sent to a Bedrock player at runtime.
 
+Additionally to registering custom entity definitions, you will also need to provide a resource pack to players [defining custom entity textures and animations](https://wiki.bedrock.dev/guide/custom-entity).
+
 ## Prerequisites: Vocabulary {#vocabulary}
 
 - **Bedrock Entity Definition** (`GeyserEntityDefinition` / `CustomEntityDefinition`): Identifies the Bedrock entity type to spawn, either a built-in type, or custom
