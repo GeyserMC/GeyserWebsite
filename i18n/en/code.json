@@ -215,7 +215,7 @@
   "providers.provider.nicraft.description": {
     "message": "Does not provide Bedrock support, and are affected by a [firewall configuration issue](https://wiki.geysermc.org/geyser/port-forwarding/#ovh-and-soyoustart), which prohibits most players from joining."
   },
-  "providers.provider.feather.description": {
+  "providers.provider.dawn.description": {
     "message": "Their proxy network does not support UDP. Therefore, Geyser is not supported. As an alternative, set up a paper server with e.g. playit.gg instead of port forwarding."
   },
   "providers.provider.freemcserver_net.description": {
