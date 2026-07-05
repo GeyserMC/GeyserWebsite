@@ -129,6 +129,14 @@ export const providersData: Providers = {
             })
         },
         {
+            name: 'MCHosts',
+            url: 'https://mchosts.com.au/',
+            description: translate({
+                id: 'providers.provider.mchosts.description',
+                message: "Free on all plans. Enable it from the Connections tab in the control panel to automatically install Geyser and Floodgate. See [MCHosts's article](https://mchosts.com.au/knowledgebase/bedrock-edition) for connection details."
+            })
+        },
+        {
             name: 'MCServerHost',
             url: 'https://mcserverhost.com/',
             description: translate({
