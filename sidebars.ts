@@ -99,7 +99,8 @@ const sidebars: SidebarsConfig = {
                 'geyser/custom-items',
                 'geyser/custom-blocks',
                 'geyser/custom-skulls',
-                'geyser/custom-waypoints'
+                'geyser/custom-waypoints',
+                'geyser/custom-entities'
             ]
         },
         {
