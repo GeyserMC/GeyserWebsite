@@ -100,7 +100,7 @@ const DownloadPage: React.FC = () => (
                     />
                     <Collapsible
                         title='Hurricane'
-                        subtitle={<Translate id='pages.download.description.hurricane'>A plugin with various workarounds for Geyser players that modify the server in order to achieve their goal.</Translate>}
+                        subtitle={<Translate id='pages.download.description.hurricane'>A plugin with various workarounds for Geyser players that modify the server in order to achieve better playability.</Translate>}
                         id='hurricane'
                         inner={
                             <ProjectDownload
