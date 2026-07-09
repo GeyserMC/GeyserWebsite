@@ -16,6 +16,7 @@ The playit.gg Minecraft server plugin does not support UDP tunnels. You will nee
 :::
 
 ## Setup {#setup}
+
 1. Head over to [playit.gg's website](https://playit.gg/) - download the program & run it.
 2. The program will provide a claiming link. Visit that link, log in.
    ![img](/img/wiki/playit-gg/playit_claim.png)
@@ -37,20 +38,21 @@ The playit.gg Minecraft server plugin does not support UDP tunnels. You will nee
 10. Select `proxy-protocol-v2` for the Proxy Protocol section and click Next.
 11. In the GeyserMC config, under `advanced:` `bedrock:`, set `use-haproxy-protocol` to `true`.
 12. Click Create Tunnel and wait for the tunnel to be created.
-   ![img](/img/wiki/playit-gg/playit_create_tunnel.png)
+    ![img](/img/wiki/playit-gg/playit_create_tunnel.png)
 13. Copy your tunnel's port. For example, if your tunnel address is `visiting-phone.gl.at.ply.gg:6695`, then `6695` is the tunnel port.
 14. In the GeyserMC config under `advanced:` `bedrock:`, set `broadcast-port` to your tunnel port (`6695` in the example).
 15. Save your config. Start your Minecraft server and connect using your tunnel's IP and port.
 16. If you join successfully, then you are done! Make sure to leave the playit.gg program running as closing it will close the tunnel. You also may want to ratelimit individual connections - use the "Per Connection Rate Limit" option to do so.
-   (If you failed to join, check out the [troubleshooting](#troubleshooting) section of the page.) 
+    (If you failed to join, check out the [troubleshooting](#troubleshooting) section of the page.)
 
 ## Troubleshooting {#troubleshooting}
 
 ### I can't connect to my server! {#i-cant-connect-to-my-server}
-* *Try going to the Agents page, set your agent to IPv4 only, and change the region. You may need to switch regions a few times before you can connect.*
-* *Are there errors in your minecraft server console?*
-* *Unless you manually changed the "Local Port" on the playit.gg website, in Geyser config, ensure that the bedrock port is the default of `19132` and that `clone-remote-port` is `false`.*
-* *If you changed the `bedrock-port` or set `clone-remote-port` to `true` and have a reason for doing so (e.g. hosting another Geyser server on the same machine), you'll have to tell playit.gg to use that port instead! See the last paragraph in step 8.*
-* *Check that you're joining with playit.gg's IP and port from the "Allocation" tab.*
-* *Make sure that you have the program agent open while trying to join.*
-* *See [here](/wiki/geyser/fixing-unable-to-connect-to-world/) for general troubleshooting steps.*
+
+- *Try going to the Agents page, set your agent to IPv4 only, and change the region. You may need to switch regions a few times before you can connect.*
+- *Are there errors in your minecraft server console?*
+- *Unless you manually changed the "Local Port" on the playit.gg website, in Geyser config, ensure that the bedrock port is the default of `19132` and that `clone-remote-port` is `false`.*
+- *If you changed the `bedrock-port` or set `clone-remote-port` to `true` and have a reason for doing so (e.g. hosting another Geyser server on the same machine), you'll have to tell playit.gg to use that port instead! See the last paragraph in step 8.*
+- *Check that you're joining with playit.gg's IP and port from the "Allocation" tab.*
+- *Make sure that you have the program agent open while trying to join.*
+- *See [here](/wiki/geyser/fixing-unable-to-connect-to-world/) for general troubleshooting steps.*

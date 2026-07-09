@@ -1,56 +1,57 @@
 ---
-title: playit.gg Setup
-description: How to set up playit.gg to use Geyser without port forwarding.
+title: crwdns27467:0crwdne27467:0
+description: crwdns27469:0crwdne27469:0
 crowdin_sync: true
-crowdin_page_id: 3aee52d0-b943-4e37-8797-4a83ef55e42a
+crowdin_page_id: crwdns27471:0crwdne27471:0
 ---
 
-## Prerequisites {#prerequisites}
+## crwdns27473:0{#prerequisites}crwdne27473:0
 
 :::info
-You must be able to connect to your Geyser instance locally!
+crwdns27475:0crwdne27475:0
 :::
 
 :::warning
-The playit.gg Minecraft server plugin does not support UDP tunnels. You will need to use the program agent instead!
+crwdns27477:0crwdne27477:0 crwdns27479:0crwdne27479:0
 :::
 
-## Setup {#setup}
-1. Head over to [playit.gg's website](https://playit.gg/) - download the program & run it.
-2. The program will provide a claiming link. Visit that link, log in.
-   ![img](/img/wiki/playit-gg/playit_claim.png)
-3. Confirm your agent.
-   ![img](/img/wiki/playit-gg/playit_claim_confirm.png)
-4. Add the agent.
-   ![img](/img/wiki/playit-gg/playit_add_agent.png)
-5. After the agent is created, create a tunnel.
-   ![img](/img/wiki/playit-gg/playit_add_tunnel.png)
-6. Name your tunnel and click Next.
-   ![img](/img/wiki/playit-gg/playit_name_tunnel.png)
-7. Select "Minecraft Bedrock" as the tunnel type and click Next.
-   ![img](/img/wiki/playit-gg/playit_tunnel_type.png)
-8. Select the Free Network and click Next.
-   ![img](/img/wiki/playit-gg/playit_select_network.png)
-   **Do not change your Geyser port in `config.yml` unless you have a reason (for example, hosting another Geyser server on the same machine).** The Bedrock (Geyser) port in `config.yml` and the playit.gg ports are separate. playit.gg will forward its port to the default Geyser port and should work as-is. Changing it can cause errors. If you have changed your config port, set the Bedrock port back to the default `19132` and ensure `clone-remote-port` is `false`.
-9. If the playit.gg agent and GeyserMC are running on the same device, leave the IP as `127.0.0.1` and set the port to whatever you configured in GeyserMC's config.  
-   ![img](/img/wiki/playit-gg/playit_set_ipandport.png)
-10. Select `proxy-protocol-v2` for the Proxy Protocol section and click Next.
-11. In the GeyserMC config, under `advanced:` `bedrock:`, set `use-haproxy-protocol` to `true`.
-12. Click Create Tunnel and wait for the tunnel to be created.
-   ![img](/img/wiki/playit-gg/playit_create_tunnel.png)
-13. Copy your tunnel's port. For example, if your tunnel address is `visiting-phone.gl.at.ply.gg:6695`, then `6695` is the tunnel port.
-14. In the GeyserMC config under `advanced:` `bedrock:`, set `broadcast-port` to your tunnel port (`6695` in the example).
-15. Save your config. Start your Minecraft server and connect using your tunnel's IP and port.
-16. If you join successfully, then you are done! Make sure to leave the playit.gg program running as closing it will close the tunnel. You also may want to ratelimit individual connections - use the "Per Connection Rate Limit" option to do so.
-   (If you failed to join, check out the [troubleshooting](#troubleshooting) section of the page.) 
+## crwdns27483:0{#setup}crwdne27483:0
 
-## Troubleshooting {#troubleshooting}
+1. crwdns27485:0[crwdnd27485:0](https://playit.gg/)crwdne27485:0
+2. crwdns29104:0crwdne29104:0 crwdns29106:0crwdne29106:0
+   crwdns29108:0![crwdnd29108:0](/img/wiki/playit-gg/playit_claim.png)crwdne29108:0
+3. crwdns29110:0crwdne29110:0
+   crwdns29112:0![crwdnd29112:0](/img/wiki/playit-gg/playit_claim_confirm.png)crwdne29112:0
+4. crwdns29114:0crwdne29114:0
+   crwdns29116:0![crwdnd29116:0](/img/wiki/playit-gg/playit_add_agent.png)crwdne29116:0
+5. crwdns29118:0crwdne29118:0
+   crwdns29120:0![crwdnd29120:0](/img/wiki/playit-gg/playit_add_tunnel.png)crwdne29120:0
+6. crwdns29122:0crwdne29122:0
+   crwdns29124:0![crwdnd29124:0](/img/wiki/playit-gg/playit_name_tunnel.png)crwdne29124:0
+7. crwdns29126:0crwdne29126:0
+   crwdns29128:0![crwdnd29128:0](/img/wiki/playit-gg/playit_tunnel_type.png)crwdne29128:0
+8. crwdns29130:0crwdne29130:0
+   crwdns29132:0![crwdnd29132:0](/img/wiki/playit-gg/playit_select_network.png)crwdnd29132:0`config.yml`crwdnd29132:0`config.yml`crwdne29132:0 crwdns29134:0crwdne29134:0 crwdns29136:0crwdne29136:0 crwdns29138:0`19132`crwdnd29138:0`clone-remote-port`crwdnd29138:0`false`crwdne29138:0
+9. crwdns29140:0`127.0.0.1`crwdne29140:0  
+   crwdns29142:0![crwdnd29142:0](/img/wiki/playit-gg/playit_set_ipandport.png)crwdne29142:0
+10. crwdns29144:0`proxy-protocol-v2`crwdne29144:0
+11. crwdns29146:0`advanced:`crwdnd29146:0`bedrock:`crwdnd29146:0`use-haproxy-protocol`crwdnd29146:0`true`crwdne29146:0
+12. crwdns29148:0crwdne29148:0
+    crwdns29150:0![crwdnd29150:0](/img/wiki/playit-gg/playit_create_tunnel.png)crwdne29150:0
+13. crwdns29152:0crwdne29152:0 crwdns29154:0`visiting-phone.gl.at.ply.gg:6695`crwdnd29154:0`6695`crwdne29154:0
+14. crwdns29156:0`advanced:`crwdnd29156:0`bedrock:`crwdnd29156:0`broadcast-port`crwdnd29156:0`6695`crwdne29156:0
+15. crwdns29158:0crwdne29158:0 crwdns29160:0crwdne29160:0
+16. crwdns27515:0crwdne27515:0 crwdns27517:0crwdne27517:0 crwdns27519:0crwdne27519:0
+    crwdns27521:0[crwdnd27521:0](#troubleshooting)crwdne27521:0
 
-### I can't connect to my server! {#i-cant-connect-to-my-server}
-* *Try going to the Agents page, set your agent to IPv4 only, and change the region. You may need to switch regions a few times before you can connect.*
-* *Are there errors in your minecraft server console?*
-* *Unless you manually changed the "Local Port" on the playit.gg website, in Geyser config, ensure that the bedrock port is the default of `19132` and that `clone-remote-port` is `false`.*
-* *If you changed the `bedrock-port` or set `clone-remote-port` to `true` and have a reason for doing so (e.g. hosting another Geyser server on the same machine), you'll have to tell playit.gg to use that port instead! See the last paragraph in step 8.*
-* *Check that you're joining with playit.gg's IP and port from the "Allocation" tab.*
-* *Make sure that you have the program agent open while trying to join.*
-* *See [here](/wiki/geyser/fixing-unable-to-connect-to-world/) for general troubleshooting steps.*
+## crwdns27523:0{#troubleshooting}crwdne27523:0
+
+### crwdns27525:0crwdne27525:0 crwdns27527:0{#i-cant-connect-to-my-server}crwdne27527:0
+
+- crwdns29162:0crwdne29162:0 crwdns29164:0crwdne29164:0
+- crwdns27529:0crwdne27529:0
+- crwdns29166:0`19132`crwdnd29166:0`clone-remote-port`crwdnd29166:0`false`crwdne29166:0
+- crwdns29168:0`bedrock-port`crwdnd29168:0`clone-remote-port`crwdnd29168:0`true`crwdne29168:0 crwdns29170:0crwdne29170:0
+- crwdns29172:0crwdne29172:0
+- crwdns29174:0crwdne29174:0
+- crwdns29176:0[crwdnd29176:0](/wiki/geyser/fixing-unable-to-connect-to-world/)crwdne29176:0

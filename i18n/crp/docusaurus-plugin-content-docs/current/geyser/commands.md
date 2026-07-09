@@ -1,79 +1,77 @@
 ---
-title: Commands and Permissions
-description: Commands and their associated permission nodes for Geyser.
+title: crwdns27289:0crwdne27289:0
+description: crwdns27291:0crwdne27291:0
 crowdin_sync: true
-crowdin_page_id: cd92ff4f-9105-46a2-8696-8b0e2f8b9d31
+crowdin_page_id: crwdns27293:0crwdne27293:0
 ---
 
-# Commands and Permissions
+# crwdns27295:0crwdne27295:0
 
-Geyser features many built-in commands that can be used by players or server owners.
+crwdns27297:0crwdne27297:0
 
 :::info
 
-When using BungeeCord and Velocity, you will need to use a permission plugin such as [LuckPerms](https://luckperms.net/)
-on the proxy server to assign permissions to players. Assigning permissions on the backend servers will not work.
+crwdns27299:0[crwdnd27299:0](https://luckperms.net/)crwdne27299:0 crwdns27301:0crwdne27301:0
 
 :::
 
-## Geyser commands & their permissions {#geyser-commands--their-permissions}
+## crwdns27303:0{#geyser-commands--their-permissions}crwdne27303:0
 
-|                Command                |          Permission           |                                             Description                                              |
-|:-------------------------------------:|:-----------------------------:|:----------------------------------------------------------------------------------------------------:|
-|  `geyser` <br/> Geyser root command   |       `geyser.command`        |                       The permission required to see/run any Geyser commands.                        |
-|    `geyser help` <br/> `geyser ?`     |     `geyser.command.help`     |                               Shows help for all registered commands.                                |
-|         `geyser advancements`         | `geyser.command.advancements` |                                   Open the Java advancements menu.                                   |
-|             `geyser dump`             |     `geyser.command.dump`     |                           Dumps Geyser debug information for bug reports.                            |
-|             `geyser list`             |     `geyser.command.list`     |                              List all players connected through Geyser.                              |
-|           `geyser offhand`            |   `geyser.command.offhand`    |                                    Puts an item in your offhand.                                     |
-|            `geyser reload`            |    `geyser.command.reload`    |                   Reloads the Geyser configurations. Kicks all players when used!                    |
-|           `geyser settings`           |   `geyser.command.settings`   |                  Opens a settings menu allowing you to modify aspects of the world.                  |
-| `geyser shutdown` <br/> `geyser stop` |   `geyser.command.shutdown`   |                   Shuts down Geyser.<br/>*This command only works on Standalone.*                    |
-|          `geyser statistics`          |  `geyser.command.statistics`  |                                    Open the Java statistics menu.                                    |
-|           `geyser version`            |   `geyser.command.version`    |                       Shows the current Geyser version and checks for updates.                       |
-|           `geyser tooltips`           |   `geyser.command.tooltips`   |                          Toggle showing Advanced Tooltips (F3 + H on Java)                           |
-|          `geyser extensions`          |  `geyser.command.extensions`  | Lists all currently loaded extensions. This command is only registered if any extensions are loaded. |
-|             `geyser ping`             |     `geyser.command.ping`     |                      Shows the ping between the player and the Geyser instance.                      |
-|           `geyser options`            |   `geyser.command.options`    |               Opens the "pause screen additions" dialogue, if sent by the Java server                |
-|         `geyser quickactions`         | `geyser.command.quickactions` |                   Opens the "quick actions" dialogue, if sent by the Java server.                    |
+|                               crwdns27305:0crwdne27305:0                              |                crwdns27307:0crwdne27307:0               |                               crwdns27309:0crwdne27309:0                              |
+| :-------------------------------------------------------------------------------------------------------------------: | :-------------------------------------------------------------------------------------: | :-------------------------------------------------------------------------------------------------------------------: |
+|                           crwdns27311:0`geyser`crwdne27311:0                          |        crwdns27313:0`geyser.command`crwdne27313:0       |                               crwdns27315:0crwdne27315:0                              |
+|     crwdns27317:0`geyser help`crwdnd27317:0`geyser ?`crwdne27317:0    |     crwdns27319:0`geyser.command.help`crwdne27319:0     |                               crwdns27321:0crwdne27321:0                              |
+|                    crwdns27323:0`geyser advancements`crwdne27323:0                    | crwdns27325:0`geyser.command.advancements`crwdne27325:0 |                               crwdns27327:0crwdne27327:0                              |
+|                        crwdns27329:0`geyser dump`crwdne27329:0                        |     crwdns27331:0`geyser.command.dump`crwdne27331:0     |                               crwdns27333:0crwdne27333:0                              |
+|                        crwdns27335:0`geyser list`crwdne27335:0                        |     crwdns27337:0`geyser.command.list`crwdne27337:0     |                               crwdns27339:0crwdne27339:0                              |
+|                       crwdns27341:0`geyser offhand`crwdne27341:0                      |    crwdns27343:0`geyser.command.offhand`crwdne27343:0   |                               crwdns27345:0crwdne27345:0                              |
+|                       crwdns27347:0`geyser reload`crwdne27347:0                       |    crwdns27349:0`geyser.command.reload`crwdne27349:0    | crwdns27351:0crwdne27351:0 crwdns27353:0crwdne27353:0 |
+|                      crwdns27355:0`geyser settings`crwdne27355:0                      |   crwdns27357:0`geyser.command.settings`crwdne27357:0   |                               crwdns27359:0crwdne27359:0                              |
+| crwdns27361:0`geyser shutdown`crwdnd27361:0`geyser stop`crwdne27361:0 |   crwdns27363:0`geyser.command.shutdown`crwdne27363:0   |                               crwdns27365:0crwdne27365:0                              |
+|                     crwdns27367:0`geyser statistics`crwdne27367:0                     |  crwdns27369:0`geyser.command.statistics`crwdne27369:0  |                               crwdns27371:0crwdne27371:0                              |
+|                       crwdns27373:0`geyser version`crwdne27373:0                      |    crwdns27375:0`geyser.command.version`crwdne27375:0   |                               crwdns27377:0crwdne27377:0                              |
+|                      crwdns27379:0`geyser tooltips`crwdne27379:0                      |   crwdns27381:0`geyser.command.tooltips`crwdne27381:0   |                               crwdns27383:0crwdne27383:0                              |
+|                     crwdns27385:0`geyser extensions`crwdne27385:0                     |  crwdns27387:0`geyser.command.extensions`crwdne27387:0  | crwdns27389:0crwdne27389:0 crwdns27391:0crwdne27391:0 |
+|                        crwdns29086:0`geyser ping`crwdne29086:0                        |     crwdns29088:0`geyser.command.ping`crwdne29088:0     |                               crwdns29090:0crwdne29090:0                              |
+|                       crwdns29092:0`geyser options`crwdne29092:0                      |    crwdns29094:0`geyser.command.options`crwdne29094:0   |                               crwdns29096:0crwdne29096:0                              |
+|                    crwdns29098:0`geyser quickactions`crwdne29098:0                    | crwdns29100:0`geyser.command.quickactions`crwdne29100:0 |                               crwdns29102:0crwdne29102:0                              |
 
-## Permissions for Geyser extensions {#extension-permissions}
+## crwdns27393:0{#extension-permissions}crwdne27393:0
 
-For the following, `<id>` refers to the extensions' id.
+crwdns27395:0`<id>`crwdne27395:0
 
-| Command                    | Permission                    | Description                                               |
-|:---------------------------|:------------------------------|:----------------------------------------------------------|
-| `<id> help` <br/> `<id> ?` | `geyser.command.exthelp.<id>` | Shows help for all commands registered by this extension. |
+| crwdns27397:0crwdne27397:0                                                 | crwdns27399:0crwdne27399:0                              | crwdns27401:0crwdne27401:0 |
+| :--------------------------------------------------------------------------------------------------------- | :-------------------------------------------------------------------------------------- | :--------------------------------------------------------- |
+| crwdns27403:0`<id> help`crwdnd27403:0`<id> ?`crwdne27403:0 | crwdns27405:0`geyser.command.exthelp.<id>`crwdne27405:0 | crwdns27407:0crwdne27407:0 |
 
-## Other Permissions {#other-permissions}
+## crwdns27409:0{#other-permissions}crwdne27409:0
 
-Besides commands, there are other permissions that are used to guard specific Geyser features.
+crwdns27411:0crwdne27411:0
 
-| Permission                  | Description                                                                                                                         |
-|-----------------------------|-------------------------------------------------------------------------------------------------------------------------------------|
-| `geyser.settings.server`    | Allow players to use the [game settings menu](/img/wiki/game_menu.png). (Also requires player to have op.)                          |
-| `geyser.settings.gamerules` | Defines whether a user can alter gamerules in the [game settings menu](/img/wiki/game_menu.png). (Also requires player to have op.) |
-| `geyser.update`             | Whether this player will receive Geyser update notifications upon joining.                                                          |
+| crwdns27413:0crwdne27413:0                            | crwdns27415:0crwdne27415:0                                                                                                                    |
+| ------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| crwdns27417:0`geyser.settings.server`crwdne27417:0    | crwdns27419:0[crwdnd27419:0](/img/wiki/game_menu.png)crwdne27419:0 crwdns27421:0crwdne27421:0 |
+| crwdns27423:0`geyser.settings.gamerules`crwdne27423:0 | crwdns27425:0[crwdnd27425:0](/img/wiki/game_menu.png)crwdne27425:0 crwdns27427:0crwdne27427:0 |
+| crwdns27429:0`geyser.update`crwdne27429:0             | crwdns27431:0crwdne27431:0                                                                                                                    |
 
-## Permissions when using Geyser-Standalone/Geyser-ViaProxy {#standalone-viaproxy-permissions}
-Geyser-ViaProxy and Geyser-Standalone feature their own basic permission handler. To edit base permissions,
-open the `permissions.yml` file and add or remove permissions that Geyser players should receive when joining.
-See the file for more information.
+## crwdns27433:0{#standalone-viaproxy-permissions}crwdne27433:0
 
-You can further customize permission handling by creating a [Geyser extension](/wiki/geyser/extensions/) that makes use of Geysers API
-to deal with permission checking.
+crwdns27435:0crwdne27435:0 crwdns27437:0`permissions.yml`crwdne27437:0
+crwdns27439:0crwdne27439:0
 
-## Permissions when using Geyser on platforms without permission handlers {#permissions-platforms-no-permission-handlers}
-The following affects Geyser-BungeeCord, Geyser-Velocity, and Geyser-Fabric.
-These platforms unfortunately do not have built-in permission handlers. Because of that, you will need to grant permissions on those platforms
-manually using permission handlers, such as [LuckPerms](https://luckperms.net/). Geyser's permission are listed above. For extension permissions, consult their documentation.
+crwdns27441:0[crwdnd27441:0](/wiki/geyser/extensions/)crwdne27441:0
 
-Alternatively, you can use [LuckLink](https://github.com/onebeastchris/LuckLink), a third-party Geyser extension, to automatically register permissions using [LuckPerms](https://luckperms.net/).
-- Install [LuckPerms](https://luckperms.net/) on the platform where you've installed Geyser (BungeeCord/Velocity/Fabric).
-- To allow Geyser to automatically register permission defaults, install the [LuckLink](https://github.com/onebeastchris/LuckLink) Geyser extension
-  by downloading the `LuckLink.jar` and adding it to Geyser's `extensions` folder.
-- Restart the server, and permissions should be automatically registered.
+## crwdns27443:0{#permissions-platforms-no-permission-handlers}crwdne27443:0
 
-## Floodgate commands and permissions {#floodgate-commands-and-permissions}
+crwdns27445:0crwdne27445:0
+crwdns27447:0crwdne27447:0 crwdns27449:0[crwdnd27449:0](https://luckperms.net/)crwdne27449:0 crwdns27451:0crwdne27451:0 crwdns27453:0crwdne27453:0
 
-For Floodgate commands, see [here](/wiki/floodgate/commands/).
+crwdns27455:0[crwdnd27455:0](https://github.com/onebeastchris/LuckLink)crwdnd27455:0[crwdnd27455:0](https://luckperms.net/)crwdne27455:0
+
+- crwdns27457:0[crwdnd27457:0](https://luckperms.net/)crwdne27457:0
+- crwdns27459:0[crwdnd27459:0](https://github.com/onebeastchris/LuckLink)crwdnd27459:0`LuckLink.jar`crwdnd27459:0`extensions`crwdne27459:0
+- crwdns27461:0crwdne27461:0
+
+## crwdns27463:0{#floodgate-commands-and-permissions}crwdne27463:0
+
+crwdns27465:0[crwdnd27465:0](/wiki/floodgate/commands/)crwdne27465:0
