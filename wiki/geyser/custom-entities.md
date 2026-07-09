@@ -11,18 +11,18 @@ The `GeyserDefineEntityPropertiesEvent` has been available since **2.9.0**, but 
 :::
 
 :::info
-This API currently cannot be used via JSON mappings. In the future, we are planning to support entity variants, which would likely also usable through JSON mappings. 
+This API currently cannot be used via JSON mappings. In the future, we are planning to support entity variants, which would likely also be usable through JSON mappings. 
 :::
 
 Custom entities currently (as of 26.2) do not exist in Minecraft: Java Edition. Instead, they can be simulated with armor stands holding item models, or item/block display entity combinations.
-Unlike Java Edition, Bedrock does support custom entity types, but does not feature item or block displays. With this API, Geyser extensions can register custom entity definitions to use instead of Java
+Unlike Java Edition, Bedrock does support custom entity types, but does not have item or block display entities. With this API, Geyser extensions can register custom Bedrock entity definitions to use instead of Java
 entity types in entity spawning events to properly support custom entities for Bedrock players. Further, it allows modifying entity properties and data for any entity sent to a Bedrock player at runtime.
 
 Additionally to registering custom entity definitions, you will also need to provide a resource pack to players [defining custom entity textures and animations](https://wiki.bedrock.dev/guide/custom-entity).
 
 ## Prerequisites: Vocabulary {#vocabulary}
 
-- **Bedrock Entity Definition** (`GeyserEntityDefinition` / `CustomEntityDefinition`): Identifies the Bedrock entity type to spawn, either a built-in type, or custom
+- **Bedrock Entity Definition** (`GeyserEntityDefinition` / `CustomEntityDefinition`): Identifies the Bedrock entity type to spawn, either a built-in type, or a custom type
 - **Entity Properties**: Bedrock Molang-queryable values (`query.property(...)`) registered per Bedrock entity type. See [here](https://learn.microsoft.com/en-us/minecraft/creator/documents/introductiontoentityproperties?view=minecraft-bedrock-stable) for official documentation.
 - **Entity Data Types**: Properties on entities that can be changed dynamically, such as scale, size, hitboxes, and color.
 
@@ -50,9 +50,13 @@ Each connection has its own entity cache, so different players will never share 
 Example:
 
 ```java
-
 private static final Identifier ZOMBIE = Identifier.of("minecraft:zombie");
 private static final CustomEntityDefinition MY_ENTITY = CustomEntityDefinition.of(Identifier.of("mynamespace:my_entity"));
+
+@Subscribe
+public void onDefineEntities(GeyserDefineEntitiesEvent event) {
+    event.register(MY_ENTITY);
+}
 
 @Subscribe
 public void onSpawn(ServerSpawnEntityEvent event) {
@@ -62,7 +66,10 @@ public void onSpawn(ServerSpawnEntityEvent event) {
 }
 ```
 
-Optionally, a consumer for the resulting `GeyserEntity` can be provided to set initial entity data values before the entity is spawned:
+This example replaces all spawned zombies with our custom entity, which we registered in `onDefineEntities`.
+
+:::info
+The `ServerSpawnEntityEvent` fires before the entity is spawned (since it could be canceled). You can provide a consumer for the resulting `GeyserEntity` to set initial entity data values before the entity is spawned on the client:
 
 ```java
 private static final Identifier ZOMBIE = Identifier.of("minecraft:zombie");
@@ -75,42 +82,46 @@ public void onSpawn(ServerSpawnEntityEvent event) {
     }
     event.definition(MY_ENTITY);
     event.preSpawnConsumer(entity -> {
-        entity.update(GeyserEntityDataTypes.SCALE, 2.0f);
-        entity.update(GeyserEntityDataTypes.COLOR, (byte) 5);
+        entity.override(GeyserEntityDataTypes.SCALE, 2.0f);
+        entity.override(GeyserEntityDataTypes.COLOR, (byte) 5);
     });
 }
 ```
+:::
 
 ### Modifying shoulder parrots {#shoulder-parrots}
 
-`ServerAttachParrotsEvent` fires when a parrot is attached to a player's shoulder. It extends `ServerSpawnEntityEvent`, so definition replacement, cancellation, and `preSpawnConsumer` are supported.
+`ServerAttachParrotsEvent` fires when a parrot is attached to a player's shoulder. It extends `ServerSpawnEntityEvent`, so definition replacement, cancellation, and setting a pre spawn consumer for the 
+resulting `GeyserEntity` instance are all available.
 
 ```java
 @Subscribe
 public void onParrotAttach(ServerAttachParrotsEvent event) {
-    event.definition(myParrotReplacement); // can also be canceled 
+    event.definition(myParrotReplacement); // this entity definition would also be registered previously
 }
 ```
 
 ## Modifying entity data {#entity-data}
 
 Entity data consists of runtime-modifiable values such as scale, size, and hitboxes. All constants live in `GeyserEntityDataTypes`. Values for these types can be updated on a `GeyserEntity` 
-at any time using `entity.update(type, value)`, or set inside a pre-spawn consumer in the entity spawn events to modify it before the spawn packet is sent.
+at any time using `entity.override(type, value)`, or set inside a pre-spawn consumer in the entity spawn events to modify it before the spawn packet is sent.
 
 Updating any of these values will override the value sent by the server until the override is removed. To remove an override, a `null` value can be used.
 
-| Constant                     | Value Type     | Description                                                            |
-|------------------------------|----------------|------------------------------------------------------------------------|
-| `COLOR`                      | `Byte`         | Bedrock color component (0–15)                                         |
-| `VARIANT`                    | `Integer`      | Numeric variant index, queryable via `query.variant` in resource packs |
-| `WIDTH`                      | `Float`        | Collision box width                                                    |
-| `HEIGHT`                     | `Float`        | Collision box height                                                   |
-| `VERTICAL_OFFSET`            | `Float`        | Y-axis offset applied on top of the Java entity position               |
-| `SCALE`                      | `Float`        | Visual scale multiplier                                                |
-| `HITBOXES`                   | `List<Hitbox>` | Custom hitboxes. Use an empty list to remove all hitboxes              |
-| `SEAT_OFFSET`                | `Vector3f`     | Riding position offset                                                 |
-| `ROTATION_LOCKED_TO_VEHICLE` | `Boolean`      | Whether the rider's rotation is locked to the vehicle's rotation       |
-| `ROTATE_RIDER_DEGREES`       | `Float`        | Rotation offset for the seat in degrees                                |
+| Constant                           | Value Type     | Description                                                                  |
+|------------------------------------|----------------|------------------------------------------------------------------------------|
+| `COLOR`                            | `Byte`         | Bedrock color component (0–15)                                               |
+| `VARIANT`                          | `Integer`      | Numeric variant index, queryable via `query.variant` in resource packs       |
+| `WIDTH`                            | `Float`        | Collision box width                                                          |
+| `HEIGHT`                           | `Float`        | Collision box height                                                         |
+| `VERTICAL_OFFSET`                  | `Float`        | Y-axis offset applied on top of the Java entity position                     |
+| `SCALE`                            | `Float`        | Visual scale multiplier                                                      |
+| `HITBOXES`                         | `List<Hitbox>` | Custom hitboxes. Set an empty list to remove all hitboxes                    |
+| `SEAT_OFFSET`                      | `Vector3f`     | Riding position offset                                                       |
+| `ROTATION_LOCKED_TO_VEHICLE`       | `Boolean`      | Whether the rider's rotation is locked to the vehicle's rotation             |
+| `SEAT_LOCK_RIDER_ROTATION_DEGREES` | `Float`        | The degrees of rotation a rider may rotate within when mounted on an entity. |
+| `SEAT_HAS_ROTATION`                | `Boolean`      | Whether a seat has rotation                                                  | 
+| `ROTATE_RIDER_DEGREES`             | `Float`        | Rotation offset for the seat in degrees                                      |
 
 :::info
 Hitbox `min`, `max` and `pivot` are absolute world coordinates, not relative to the entity's position.
@@ -121,7 +132,7 @@ Hitbox `min`, `max` and `pivot` are absolute world coordinates, not relative to 
 Entity properties expose Java-side state to Bedrock resource packs via `query.property('namespace:name')` in Molang. Entity properties can be registered for both custom, and vanilla entity types using the `GeyserDefineEntityPropertiesEvent`, which fires during Geyser startup.
 
 :::warning Breaking Change in 2.11.0
-`GeyserDefineEntityPropertiesEvent` has been available since **2.9.0**, but its first parameter changed in 2.11.0: it now takes a **Bedrock** entity identifier (e.g. `minecraft:zombie`) instead of a Java entity identifier.
+`GeyserDefineEntityPropertiesEvent` has been available since **2.9.0**, but its first parameter changed in 2.11.0: it now takes a **Bedrock** entity type identifier.
 :::
 
 A maximum of 32 properties per entity type can be registered.
@@ -214,8 +225,8 @@ public class MyExtension implements Extension {
         // Unless you want to replace everything, you should probably add checks for e.g., entity type, or entity UUID
         event.definition(enhancedZombie);
         event.preSpawnConsumer(entity -> {
-            entity.update(GeyserEntityDataTypes.SCALE, 1.5f);
-            entity.update(GeyserEntityDataTypes.COLOR, (byte) 4);
+            entity.override(GeyserEntityDataTypes.SCALE, 1.5f);
+            entity.override(GeyserEntityDataTypes.COLOR, (byte) 4);
         });
     }
 }
