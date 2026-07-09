@@ -7,12 +7,10 @@ import Tabs from "@theme/Tabs";
 import TabItem from "@theme/TabItem";
 
 Minecraft: Java Edition supports showing custom icons on the locator bar. These are known as custom waypoints and, on
-Java Edition, implemented through custom "waypoint styles" in a resource pack. These waypoint styles specify a near
+Java Edition, are implemented through custom "waypoint styles" in a resource pack. These waypoint styles specify a near
 and far distance in blocks, and a list of sprites to display on the locator bar.
 
-Bedrock Edition, on the other hand, does not natively support custom waypoint icons through behaviour or resource packs.
-However, in the network layer, this is supported, and as such Geyser can make use out of it to support Java's custom
-waypoint icons. These are implemented through custom JSON mappings, similar to custom block or item mappings.
+Bedrock Edition also supports custom waypoint icons through behaviour + resource packs. In Geyser, these are implemented through custom JSON mappings, similar to custom block or item mappings, alongside a Bedrock resource pack.
 
 Geyser extensions can also make use out of Bedrock's support for custom waypoint icons. Unlike JSON mappings however,
 extensions have more freedom in how icons are displayed to the client.
@@ -66,7 +64,7 @@ the same format as Java's custom waypoint styles and should feel very familiar.
               ]
             },
             "geyser:the_best_waypoint": {
-            "near_distance": 50,
+              "near_distance": 50,
               "sprites": [
                 "geyser:ultimate_waypoint/near",
                 "geyser:ultimate_waypoint/far"
