@@ -61,10 +61,19 @@ Text directions:
 
 If you'd rather try emulating a LAN game on your network on another device, here's how you'd do that.
 
-*Note that this method will not work with the Nintendo Switch.*
+### MultiPlatform {#multiplatform}
+
+#### MCCompanion — free and ad-free.
+
+- iOS (iOS 12.0 or later): [Download on the App Store](https://apps.apple.com/be/app/netherlink/id6747323142?l=en)  
+- Android: [Download on the Play Store](https://play.google.com/store/apps/details?id=net.netherdev.netherLink)  
+- macOS: [Download on the App Store](https://apps.apple.com/us/app/mccompanion/id6747323142?platform=mac)  
+- Windows: [Download on the Microsoft Store](https://apps.microsoft.com/detail/9NSFPT6D8PTR)
+
 
 ### Using a PC {#using-a-pc}
-If you have a PC, you can use [Phantom](https://github.com/jhead/phantom).
+*Note that this method will not work with the Nintendo Switch.*
+- [Phantom](https://github.com/jhead/phantom).
 
 ### Using an Android Device {#using-an-android-device}
 If you have an Android device, you have several options:

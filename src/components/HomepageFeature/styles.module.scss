@@ -1,0 +1,40 @@
+.feature {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+}
+
+.feature.flipped > *:first-child {
+    order: 2;
+}
+
+.feature.flipped > *:last-child {
+    order: 1;
+}
+
+.content {
+    margin-top: auto;
+    margin-bottom: auto;
+}
+
+.title {
+    font-size: 30px;
+}
+
+@media (max-width: 768px) {
+    .feature {
+        grid-template-columns: 1fr;
+    }
+
+    .feature > *:first-child {
+        order: 2;
+    }
+
+    .feature > *:last-child {
+        order: 1;
+    }
+
+    .title {
+        margin-top: 15px;
+    }
+}

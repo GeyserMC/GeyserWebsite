@@ -48,7 +48,7 @@ export const ProviderSelector = ({ setProvider }) => {
             id: 'providers.provider.not_listed.info',
             message: "If these instructions do not work, contact your server hosting provider and ask for a UDP port. Then, set clone-remote-port to false, and set `port` under the `bedrock` section to the port you got. For VPS/KVM servers, please follow the self-hosting steps."
         })
-    } as HostingProvider);
+    } as unknown as HostingProvider);
 
 
     const [selectedProvider, setSelectedProvider] = useState(null);

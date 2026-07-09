@@ -15,10 +15,9 @@ The following things cannot be fixed without changes to Bedrock or the Java prot
 
 - Clickable links in chat
 - Glowing effect
-- Crafting in the 2x2 menu while in creative mode - with the GeyserOptionalPack, this grid is hidden as it does not exist on Java.
 - Distinguishing between left and right clicks in inventories
 - Redstone dot blockstates
-- Potion colors implemented using NBT
+- Potion colors implemented using the PotionContents data component
 - Various command arguments for any command that doesn't use the Minecraft Brigadier library
 - Anything that relies on tab complete or typing in the chat UI (related to the above) - Bedrock sends no packet that indicates they are in this menu
 - Unable to see banner layers past 6
@@ -35,10 +34,13 @@ The following things cannot be fixed without changes to Bedrock or the Java prot
 - Gliding without elytras/custom elytras (https://github.com/GeyserMC/Geyser/issues/3255, https://github.com/GeyserMC/Geyser/issues/3299)
 - Custom furnace cook times ([GeyserMC/Geyser#4104](https://github.com/GeyserMC/Geyser/issues/4104))
 - Maximum sign length different on Java/Bedrock edition ([GeyserMC/Geyser#4130](https://github.com/GeyserMC/Geyser/issues/4130))
+- Second line on advancement toasts ([GeyserMC/Geyser#3205](https://github.com/GeyserMC/Geyser/issues/3205))
+- Showing non-vanilla enchantment levels, such as "Silk Touch 2" ([GeyserMC/Geyser#5252](https://github.com/GeyserMC/Geyser/issues/5252))
+- Test instance blocks are not available in Bedrock ([GeyserMC/Geyser#6164](https://github.com/GeyserMC/Geyser/issues/6164))
 
-## Fixable With GeyserOptionalPack {#fixable-with-geyseroptionalpack}
+## Fixed with the included GeyserIntegratedPack {#fixed-with-geyserintegratedpack}
 
-The following changes **are supported** with the [GeyserOptionalPack](/wiki/other/geyseroptionalpack/), which is a Bedrock resource pack you can install for additional functionality for features Bedrock does not natively support:
+The following changes **are supported** with the included GeyserIntegratedPack, which is a Bedrock resource pack to add features Bedrock doesn't natively support:
 - Custom armor stand poses
 - Illusioners
 - Hit particles and other miscellaneous particles not natively in Bedrock

@@ -8,7 +8,7 @@ crowdin_page_id: 0d187a8f-ad87-4d07-b122-4ae5f990e2cb
 
 :::caution
 
-In order for this to work, you MUST have Java 17 (or higher) installed!
+In order for this to work, you MUST have Java 21 (or higher) installed!
 
 :::
 

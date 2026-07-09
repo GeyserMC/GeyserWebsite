@@ -31,5 +31,6 @@ you're interested in helping out with Hydraulic.
 
 1. Clone the repo to your computer.
 2. Navigate to the Hydraulic root directory and run `git submodule update --init --recursive`. This command downloads all the needed submodules for Hydraulic and is a crucial step in this process.
-3. The project should import into your IDE after the loom setup is complete. For more detailed information, see the [Fabric setup](https://fabricmc.net/wiki/tutorial:setup)
-4. Use `./gradlew build` to compile a jar file, or use `./gradlew :fabric:runServer` or `./gradlew :neoforge:runServer` to run a server with Hydraulic installed. Make sure to install Geyser into your `mods` folder!
+3. If your default JVM/JDK is not Java 25, please set your IDE to use a valid Java 25 JVM. Otherwise, you will run into an error while building Hydraulic.
+4. The project should import into your IDE after the loom setup is complete. For detailed information, see the [Fabric setup](https://docs.fabricmc.net/develop/getting-started/setting-up).
+5. Use `./gradlew build` to compile a jar file, or use `./gradlew :fabric:runServer` to run a server with Hydraulic installed. Make sure you have Geyser in your `mods` folder along with Hydraulic!

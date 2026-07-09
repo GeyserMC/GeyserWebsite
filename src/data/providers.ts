@@ -109,6 +109,10 @@ const infos = {
     installed_by_default: translate({
         id: 'providers.config.templates.info.geyser_installed_by_default',
         message: "Geyser is installed and configured on all servers by default."
+    }),
+    javaIp: translate({
+        id: 'providers.templates.java_ip',
+        message: "Change `bedrock address` from `0.0.0.0` to your Java server's IP."
     })
 }
 
@@ -148,7 +152,19 @@ export const providersData: Providers = {
             proxies_banned: true
         },
         {
-            name: 'Cloud Nord',
+            name: 'AxentHost',
+            url: 'https://axenthost.com/games/minecraft/',
+            config: configChangeTemplates.cloneRemotePort,
+            connect_instructions: connectionTemplates.sameAsJava
+        },
+        {
+            name: 'BedrockHost',
+            url: 'https://bedrockhost.pl/',
+            config: configChangeTemplates.cloneRemotePort,
+            connect_instructions: connectionTemplates.sameAsJava
+        },
+        {
+            name: 'CloudNord',
             url: 'https://cloudnord.net/',
             connect_instructions: connectionTemplates.default,
             hosting_support: "https://cloudnord.net/submitticket.php",
@@ -189,12 +205,28 @@ export const providersData: Providers = {
             custom_install_location: customInstallLocations.plugin_list
         },
         {
+            name: 'FreeMcServer.net',
+            url: 'https://freemcserver.net',
+            config: configChangeTemplates.cloneRemotePort,
+            connect_instructions: connectionTemplates.sameAsJava
+        },
+        {
             name: 'GGServers',
             url: 'https://ggservers.com',
             connect_instructions: connectionTemplates.providedByHost,
             custom_install_location: translate({
                 id: 'providers.provider.ggservers.install',
                 message: "Install Geyser in the auto plugin setups section."
+            })
+        },
+        {
+            name: 'KaasHosting',
+            url: 'https://www.kaashosting.nl/minecraft-servers',
+            config: configChangeTemplates.cloneRemotePort,
+            connect_instructions: connectionTemplates.sameAsJava,
+            info: translate({
+                id: 'providers.provider.kaashosting.description',
+                message: "When installing Geyser through the `Plugin Installer` tab and clicking `Install Automatically`, no extra configuration is required."
             })
         },
         {
@@ -278,6 +310,16 @@ export const providersData: Providers = {
             connect_instructions: connectionTemplates.default
         },
         {
+            name: 'ServerPrism',
+            url: 'https://serverprism.com/',
+            config: configChangeTemplates.cloneRemotePort,
+            connect_instructions: connectionTemplates.sameAsJava,
+            info: translate({
+                id: 'providers.provider.serverprism.description',
+                message: "Geyser is automatically configured when installing through the panel's plugin installer."
+            })
+        },
+        {
             name: 'Snakecraft Hosting',
             url: 'https://snakecrafthosting.com/',
             connect_instructions: connectionTemplates.sameAsJava,
@@ -294,6 +336,16 @@ export const providersData: Providers = {
                 id: 'providers.provider.srkhost.install',
                 message: "Enable Geyser on the version changer page. Geyser will run on the given port by the host."
             })
+        },
+        {
+            name: 'UltraServers',
+            url: 'https://ultraservers.com/',
+            config: configChangeTemplates.cloneRemotePort,
+            connect_instructions: connectionTemplates.sameAsJava
+            // description: translate({
+            //     id: 'providers.provider.ultraservers.description',
+            //     message: "Select 'Paper + Geyser' under the Change version tab. You can connect to your server using the same IP and port as you would on Java. Existing servers can use the Plugins/Minecraft mods tab to install Geyser. See [Crossplay](https://docs.ultraservers.com/minecraft/plugins-mods/crossplay-on-java-and-bedrock) for more information."
+            // })
         },
         {
             name: 'VemoxHost',
@@ -342,7 +394,7 @@ export const providersData: Providers = {
             config: configChangeTemplates.allocatedPort,
             warn: translate({
                 id: 'providers.provider.bisecthosting.info',
-                message: "If you still cannot connect after following these instructions and see warnings similar to \"sendmmsg(..) failed: Operation not permitted\", contact BisectHostings support as they reportedly have UDP disabled on some nodes."
+                message: "Go to the Network tab and copy an available port not in use by other mods. In Geyser's config, under the bedrock section, on the port: line, edit the value to the port you copied. See Bisect's [article](https://www.bisecthosting.com/clients/index.php?rp=/knowledgebase/193/How-to-install-Geyser-and-Floodgate-on-a-Minecraft-Java-server.html) for full instructions. If you still cannot connect after following these instructions, contact Bisect Support, as they reportedly have UDP disabled on some nodes."
             }),
         },
         {
@@ -429,7 +481,7 @@ export const providersData: Providers = {
             name: 'FalixNodes',
             url: 'https://falixnodes.net/',
             connect_instructions: connectionTemplates.default,
-            config: configChangeTemplates.assignPort
+            config: configChangeTemplates.cloneRemotePortOrCustom
         },
         {
             name: 'Ferox Hosting',
@@ -605,13 +657,6 @@ export const providersData: Providers = {
             config: configChangeTemplates.assignPort
         },
         {
-            name: 'Modrinth Servers',
-            url: 'https://modrinth.com/servers',
-            hosting_article: 'https://support.modrinth.com/en/articles/10986613-adding-geyser-to-your-server',
-            connect_instructions: connectionTemplates.default,
-            config: configChangeTemplates.assignPort
-        },
-        {
             name: 'Netbela',
             url: 'https://netbela.nl/store/minecraft',
             config: configChangeTemplates.cloneRemotePort,
@@ -647,6 +692,12 @@ export const providersData: Providers = {
                 port: 19132
             },
             connect_instructions: connectionTemplates.bedrockPort
+        },
+        {
+            name: 'NolimitHost',
+            url: 'https://nolimithost.cc',
+            config: configChangeTemplates.cloneRemotePort,
+            connect_instructions: connectionTemplates.sameAsJava
         },
         {
             name: 'OrionNodes',
@@ -715,6 +766,17 @@ export const providersData: Providers = {
             url: 'https://shockbyte.com/',
             hosting_article: 'https://shockbyte.com/billing/knowledgebase/173/Introduction-to-GeyserMCorDragonProxy-How-GeyserMC-Works.html',
             connect_instructions: connectionTemplates.sameAsJava,
+        },
+        {
+            name: 'SimpleGameHosting',
+            url: 'https://simplegamehosting.com/',
+            connect_instructions: connectionTemplates.default,
+            config: {
+                port_instruction: translate({
+                    id: 'providers.provider.simplegamehosting.config.port',
+                    message: "Contact live chat support to open a port and check out the [help center guide](https://help.simplegamehosting.com/how-to-enable-crossplay-with-geyser-on-your-minecraft-server/) for how to install and configure Geyser on your server."
+                })
+            }
         },
         {
             name: 'Skynode.pro',

@@ -12,7 +12,7 @@ It should be noted that blocks and their associated components are not very stab
 
 ## Enabling custom blocks {#enabling-custom-blocks}
 
-Before beginning, ensure that `add-non-bedrock-items` is set to `true` in your `config.yml` file.
+Before beginning, ensure that `gameplay.enable-custom-content` is set to `true` in your `config.yml` file.
 
 ```yml
 # Whether to add any items and blocks which normally does not exist in Bedrock Edition.
@@ -20,7 +20,7 @@ Before beginning, ensure that `add-non-bedrock-items` is set to `true` in your `
 # If this is disabled, furnace minecart items will be mapped to hopper minecart items.
 # Geyser's block, item, and skull mappings systems will also be disabled.
 # This option requires a restart of Geyser in order to change its setting.
-add-non-bedrock-items: true
+enable-custom-content: true
 ```
 
 ## JSON mappings {#json-mappings}
@@ -102,12 +102,12 @@ The following details the schema for the mappings file. Only the `name` field is
                             - Default: none
                             - Description: The name of the custom block.
                     - `collision_box`:
-                        - Type: `object`
+                        - Type: `object` or array of `object`s for multiple collision boxes
                             - `origin`: 
                                 - Type: `array`
                                     - Default: Inferred from overridden block
                                     - Description: An array of x, y, and z origin values
-                                    - Range: Must be in range `[-8, 0, -8]` to `[8, 16, 8]`, inclusive
+                                    - Range: Must be in range `[-8, 0, -8]` to `[8, 24, 8]`, inclusive
                                         - `items`:
                                             - Type: `float`
                                                 - Default: Inferred from overridden block
@@ -116,11 +116,12 @@ The following details the schema for the mappings file. Only the `name` field is
                                 - Type: `array`
                                     - Default: Inferred from overridden block
                                     - Description: An array of x, y, and z size values
+                                    - Range: Must be in range `[0, 0, 0]` to `[16, 24, 16]`, inclusive
                                         - `items`:
                                             - Type: `float`
                                                 - Default: Inferred from overridden block
                                                 - Description: An size value for a single axis
-                            - Range: Addittion of `origin` and `size` must be in range `[-8, 0, -8]` to `[8, 16, 8]`, inclusive.
+                            - Range: The sum of `origin` and `size` must be in range `[-8, 0, -8]` to `[8, 24, 8]`, inclusive.
                     - `destructible_by_mining`:
                         - Type: `integer`
                             - Default: Inferred from overridden block
@@ -129,26 +130,6 @@ The following details the schema for the mappings file. Only the `name` field is
                         - Type: `string`
                             - Default: the name of the custom block
                             - Description: The display name of the block.
-                    - `extended_collision_box`:
-                        - Type: `object`
-                            - `origin`: 
-                                - Type: `array`
-                                    - Default: Inferred from overridden block
-                                    - Description: An array of x, y, and z origin values
-                                    - Range: Must be in range `[-8, 0, -8]` to `[8, 16, 8]`, inclusive
-                                        - `items`:
-                                            - Type: `float`
-                                                - Default: Inferred from overridden block
-                                                - Description: An origin value for a single axis
-                            - `size`: 
-                                - Type: `array`
-                                    - Default: Inferred from overridden block
-                                    - Description: An array of x, y, and z size values
-                                        - `items`:
-                                            - Type: `float`
-                                                - Default: Inferred from overridden block
-                                                - Description: An size value for a single axis
-                            - Range: Addittion of `origin` and `size` must be in range `[-8, 0, -8]` to `[8, 16, 8]`, inclusive.
                     - `friction`:
                         - Type: `float`
                             - Range: `0.0` to `1.0`

@@ -201,11 +201,6 @@ const config: Config = {
                     items: [
                         {
 
-                            to: 'utilities/config-editor',
-                            label: 'Config Editor',
-                        },
-                        {
-
                             to: 'utilities/dump-viewer',
                             label: 'Dump Viewer',
                         }
@@ -259,7 +254,7 @@ const config: Config = {
                         },
                         {
                             label: 'Other',
-                            to: 'wiki/other/geyseroptionalpack',
+                            to: 'wiki/other/geyserintegratedpack',
                         },
                     ],
                 },

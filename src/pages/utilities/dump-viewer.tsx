@@ -8,15 +8,9 @@ import { Grid } from '@site/src/components/Grid';
 import CodeBlock from '@theme/CodeBlock';
 import clsx from 'clsx';
 
-const DumpViewerPage: React.FC = () => {
-    const [dumpId, setDumpId] = useState('');
-    const [data, setData] = useState<any>({});
-    const [statusMessage, setStatusMessage] = useState('');
+const PluginList = ({plugins}, {}) => {
     const [activePlugin, setActivePlugin] = useState<any>({});
-
     const pluginPopoverRef = useRef<any>(null);
-
-    const urlReg = /^(https?:\/\/)?dump\.geysermc\.org/;
 
     useEffect(() => {
         const handleClickOutside = (event) => setActivePlugin({});
@@ -26,6 +20,37 @@ const DumpViewerPage: React.FC = () => {
             document.removeEventListener("mousedown", handleClickOutside);
         };
     }, [pluginPopoverRef]);
+
+    return <Grid elementsPerRow={5}>
+        {plugins.map(plugin => (
+            <div key={plugin.main}>
+                <div onClick={() => setActivePlugin(plugin)} className={styles.pluginName}>
+                    <b>{plugin.name}</b> <div className={styles.pluginEnabledIndicator} style={{ backgroundColor: plugin.enabled ? "green" : "red" }} />
+                </div>
+
+                {activePlugin?.main === plugin.main ? (
+                    <div ref={pluginPopoverRef} className={styles.pluginInfoPopover}>
+                        <p className={styles.pluginNamePopover}>{plugin.name}</p>
+                        <p>{plugin.version}</p>
+                        <p className={styles.pluginEnabled} style={{ backgroundColor: plugin.enabled ? "green" : "red" }}>{plugin.enabled ? "Enabled" : "Disabled"}</p>
+
+                        <p className={styles.pluginAuthorsLabel}>Authors:</p>
+                        <ul>
+                            {plugin.authors.map(author => <li>{author}</li>)}
+                        </ul>
+                    </div>
+                ) : undefined}
+            </div>
+        ))}
+    </Grid>
+};
+
+const DumpViewerPage: React.FC = () => {
+    const [dumpId, setDumpId] = useState('');
+    const [data, setData] = useState<any>({});
+    const [statusMessage, setStatusMessage] = useState('');
+
+    const urlReg = /^(https?:\/\/)?dump\.geysermc\.org/;
 
     useEffect(() => {
         // Get the ID from the URL
@@ -74,10 +99,6 @@ const DumpViewerPage: React.FC = () => {
 
     const capitalizeFirstLetter = (string) => {
         return string.charAt(0).toUpperCase() + string.slice(1)
-    }
-
-    const handlePluginClick = (plugin) => {
-        setActivePlugin(plugin);
     }
 
     return (
@@ -219,28 +240,22 @@ const DumpViewerPage: React.FC = () => {
                                             <>
                                                 <p><Translate id='pages.dumpviewer.plugins.helptext'>Click on a plugin to view more information.</Translate></p>
 
-                                                <Grid elementsPerRow={5}>
-                                                    {data.bootstrapInfo.plugins.map(plugin => (
-                                                        <div>
-                                                            <b onClick={() => handlePluginClick(plugin)} className={styles.pluginName}>
-                                                                {plugin.name} <div className={styles.pluginEnabledIndicator} style={{ backgroundColor: plugin.enabled ? "green" : "red" }} />
-                                                            </b>
+                                                <PluginList plugins={data.bootstrapInfo.plugins}></PluginList>
+                                            </>
+                                        )}
+                                    </div>
+                                </div>
+                                <div className={styles.card}>
+                                    <div className={styles.cardHeader}>
+                                        <Translate id='pages.dumpviewer.extensions'>Extensions</Translate> ({data.extensionInfo?.length ?? 0})
+                                    </div>
+                                    <div className={styles.cardBody}>
+                                        {!data.extensionInfo || data.extensionInfo.length === 0 ? (
+                                            <p><Translate id='pages.dumpviewer.extensions.noextensions'>No extensions to show.</Translate></p>) : (
+                                            <>
+                                                <p><Translate id='pages.dumpviewer.extensions.helptext'>Click on an extension to view more information.</Translate></p>
 
-                                                            {activePlugin?.main === plugin.main ? (
-                                                                <div ref={pluginPopoverRef} className={styles.pluginInfoPopover}>
-                                                                    <p className={styles.pluginNamePopover}>{plugin.name}</p>
-                                                                    <p>{plugin.version}</p>
-                                                                    <p className={styles.pluginEnabled} style={{ backgroundColor: plugin.enabled ? "green" : "red" }}>{plugin.enabled ? "Enabled" : "Disabled"}</p>
-
-                                                                    <p className={styles.pluginAuthorsLabel}>Authors:</p>
-                                                                    <ul>
-                                                                        {plugin.authors.map(author => <li>{author}</li>)}
-                                                                    </ul>
-                                                                </div>
-                                                            ) : undefined}
-                                                        </div>
-                                                    ))}
-                                                </Grid>
+                                                <PluginList plugins={data.extensionInfo}></PluginList>
                                             </>
                                         )}
                                     </div>
