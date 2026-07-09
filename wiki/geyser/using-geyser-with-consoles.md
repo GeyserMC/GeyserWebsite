@@ -60,11 +60,11 @@ If you'd rather try emulating a LAN game on your network on another device, here
 
 ### MultiPlatform {#multiplatform}
 
-#### Netherlink — free and ad-free.
+#### MCCompanion — free and ad-free.
 
 - iOS (iOS 12.0 or later): [Download on the App Store](https://apps.apple.com/be/app/netherlink/id6747323142?l=en)  
 - Android: [Download on the Play Store](https://play.google.com/store/apps/details?id=net.netherdev.netherLink)  
-- macOS: [Download DMG](https://github.com/NetherLinkMC/NetherLinkWebsite/raw/refs/heads/main/downloads/apple/NetherLink.dmg)  
+- macOS: [Download on the App Store](https://apps.apple.com/us/app/mccompanion/id6747323142?platform=mac)  
 - Windows: [Download on the Microsoft Store](https://apps.microsoft.com/detail/9NSFPT6D8PTR)
 
 
