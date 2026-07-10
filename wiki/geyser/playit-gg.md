@@ -30,14 +30,14 @@ The playit.gg Minecraft server plugin does not support UDP tunnels. You will nee
 8. Select the Free Network and click Next.
    ![img](/img/wiki/playit-gg/playit_select_network.png)
    **Do not change your Geyser port in `config.yml` unless you have a reason (for example, hosting another Geyser server on the same machine).** The Bedrock (Geyser) port in `config.yml` and the playit.gg ports are separate. playit.gg will forward its port to the default Geyser port and should work as-is. Changing it can cause errors. If you have changed your config port, set the Bedrock port back to the default `19132` and ensure `clone-remote-port` is `false`.
-9. If the playit.gg agent and GeyserMC are running on the same device, leave the IP as `127.0.0.1` and set the port to whatever you configured in GeyserMC's config.  
+9. If the playit.gg agent and Geyser are running on the same device, leave the IP as `127.0.0.1` and set the port to whatever you configured in Geyser's config.  
    ![img](/img/wiki/playit-gg/playit_set_ipandport.png)
 10. Select `proxy-protocol-v2` for the Proxy Protocol section and click Next.
-11. In the GeyserMC config, under `advanced:` `bedrock:`, set `use-haproxy-protocol` to `true`.
+11. In the Geyser config, under `advanced:` `bedrock:`, set `use-haproxy-protocol` to `true`.
 12. Click Create Tunnel and wait for the tunnel to be created.
    ![img](/img/wiki/playit-gg/playit_create_tunnel.png)
 13. Copy your tunnel's port. For example, if your tunnel address is `visiting-phone.gl.at.ply.gg:6695`, then `6695` is the tunnel port.
-14. In the GeyserMC config under `advanced:` `bedrock:`, set `broadcast-port` to your tunnel port (`6695` in the example).
+14. In the Geyser config under `advanced:` `bedrock:`, set `broadcast-port` to your tunnel port (`6695` in the example).
 15. Save your config. Start your Minecraft server and connect using your tunnel's IP and port.
 16. If you join successfully, then you are done! Make sure to leave the playit.gg program running as closing it will close the tunnel. You also may want to ratelimit individual connections - use the "Per Connection Rate Limit" option to do so.
    (If you failed to join, check out the [troubleshooting](#troubleshooting) section of the page.) 
