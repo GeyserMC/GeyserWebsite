@@ -89,16 +89,18 @@ const sidebars: SidebarsConfig = {
         },
         {
             type: 'category',
-            label: 'Custom Resource Packs',
+            label: 'Custom Content',
             link: {
                 type: 'doc',
-                id: 'geyser/custom-resource-packs'
+                id: 'geyser/custom-content'
             },
             items: [
                 'geyser/packs',
                 'geyser/custom-items',
                 'geyser/custom-blocks',
                 'geyser/custom-skulls',
+                'geyser/custom-waypoints',
+                'geyser/custom-entities'
             ]
         },
         {
