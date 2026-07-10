@@ -1,6 +1,9 @@
 ---
 title: GeyserIntegratedPack
-description: GeyserIntegratedPack is a Bedrock resource pack that fixes parity issues with Geyser to bring Bedrock Edition in line with Java Edition.
+description: >-
+  GeyserIntegratedPack is a Bedrock resource pack that fixes parity issues with
+  Geyser to bring Bedrock Edition in line with Java Edition.
+crowdin_page_id: 6fa53f1f-ce87-4a0e-9a57-df4ce90b0023
 ---
 
 :::info

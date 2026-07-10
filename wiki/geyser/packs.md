@@ -1,6 +1,7 @@
 ---
 title: Using Resource Packs with Geyser
 description: This page explains how to use resource packs with Geyser.
+crowdin_page_id: 2bdcbcca-710e-4066-aa1f-1938be452783
 ---
 
 # Introduction

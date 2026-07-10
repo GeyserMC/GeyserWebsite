@@ -1,0 +1,21 @@
+---
+title: Geyser Provider Hosted Velocity Setup
+hide_title: true
+crowdin_page_id: afab615c-e8f3-43c7-88fb-f4ed9cf600aa
+---
+
+import { Versions } from '@site/src/components/Versions'
+import { ProviderGeyserSetup } from '@site/src/components/Provider'
+
+:::info
+- Install Geyser **only** on the Velocity server! You can install Floodgate on all servers for better skin support &
+network-wide Floodgate API availability for other plugins.
+- All servers on the network must accept <Versions.java/> Java clients, as Geyser imitates one.
+:::
+
+<ProviderGeyserSetup 
+    provider={props.provider} 
+    jarName={'Geyser-Velocity.jar'}
+    jarDirectory={'plugins'}
+    configLocation={'/plugins/Geyser-Velocity/config.yml'}
+/>

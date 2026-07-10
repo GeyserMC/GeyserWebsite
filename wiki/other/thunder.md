@@ -1,6 +1,9 @@
 ---
 title: Thunder
-description: 'A java application to convert simple Java Edition resource packs to Bedrock Edition ones.'
+description: >-
+  A java application to convert simple Java Edition resource packs to Bedrock
+  Edition ones.
+crowdin_page_id: 194ebe0d-d12b-4e7d-bd8c-5e9f7415b43a
 ---
 
 Thunder is a java application to convert simple Java Edition resource packs to Bedrock Edition ones.

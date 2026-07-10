@@ -1,0 +1,26 @@
+---
+title: Geyser Provider Hosted Fabric Setup
+hide_title: true
+crowdin_page_id: 64e3826f-d8ea-4c60-9116-d7f8330911bb
+---
+
+import { Versions } from '@site/src/components/Versions'
+import { MDXTranslatable } from '@site/src/components/MDXTranslatable'
+import { ProviderGeyserSetup } from '@site/src/components/Provider'
+
+:::caution
+Geyser-Fabric runs **only** on a <Versions.java/> server.
+See [this page](/wiki/geyser/supported-versions#using-geyser-on-fabric-neoforge-servers-not-on-the-latest-minecraft-version) for more details.
+:::
+
+:::info
+Geyser only works with **server-side** mods. Mods that require a client-side install will not work!
+:::
+
+<ProviderGeyserSetup 
+    provider={props.provider} 
+    jarName={'Geyser-Fabric.jar'}
+    jarDirectory={'mods'}
+    configLocation={'/config/Geyser-Fabric/config.yml'}
+    dependencyTranslation={MDXTranslatable.setup.fabric_dependency}
+/>
