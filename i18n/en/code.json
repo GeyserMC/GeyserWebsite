@@ -69,7 +69,7 @@
     "message": "Different instructions for different plans: On VPS, select Geyser in the [Service Type Menu](https://i.imgur.com/loSNmvu.png), Floodgate can be enabled on the dashboard configuration. For manual installation: Using a Premium or Free plan, use the same port as your Java server for the Bedrock port in the configuration file and connect that; for the Free plan, also enable the `clone-remote-port` option. If you are using a PRO or a VPS plan, you can use any port, which can be opened on the Firewall tab."
   },
   "providers.provider.serverprism.description": {
-    "message": "Order a [Minecraft server](https://serverprism.com/minecraft-server-hosting) on any plugin-compatible runtime (Paper, Spigot, Purpur, etc.), then install Geyser from the panel's plugin installer. Connect with the same IP and port as your Java server."
+    "message": "Geyser is automatically configured when installing through the panel's plugin installer."
   },
   "providers.provider.snakecraft_hosting.description": {
     "message": "Select 'Paper + Geyser with Floodgate' under the Jar Type at checkout to install the Geyser plugin. Players will Connect with the same IP and port as you would on Java."
@@ -144,7 +144,7 @@
     "message": "Set the Bedrock port to the Java server's port, or to one of the two extra ports, and connect with that port. If the subdomain doesn't work, use your regular numbered IP address."
   },
   "providers.provider.kaashosting.description": {
-    "message": "Automatic and manual installation supported. Go to the `Plugin Installer` tab, search for Geyser and click `Install Automatically`. Connect with the Java IP and port. See [KaasHosting's article](https://www.kaashosting.nl/help/nl/minecraft/hoe-maak-ik-mijn-minecraft-server-crossplay-met-geysermc) for more details."
+    "message": "When installing Geyser through the `Plugin Installer` tab and clicking `Install Automatically`, no extra configuration is required."
   },
   "providers.provider.kekshost.description": {
     "message": "Use the default bedrock port (19132) and the server ip to connect on Bedrock edition. No changes to the Geyser config are needed. You can also ask for a new port and use it instead."
@@ -1040,7 +1040,7 @@
   "providers.provider.config.other": {
     "message": "If you did not order the server from the [cross-platform servers page](https://piglinhost.com/minecraft-java-hosting.html), contact the support for help with Geyser setup."
   },
-  "providers.provider.snakecraft_hosting.install": {
+  "providers.provider.rackgenius.install": {
     "message": "Select 'Paper + Geyser with Floodgate' under the Jar Type at checkout to install the Geyser plugin."
   },
   "providers.provider.srkhost.install": {

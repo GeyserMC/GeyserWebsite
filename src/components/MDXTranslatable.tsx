@@ -72,5 +72,6 @@ export const MDXTranslatable = {
 
         hosting_provider_article: () => <Translate id="mdx.setup.hosting_provider_article">Hosting provider article</Translate>,
         hosting_provider_support: () => <Translate id="mdx.setup.hosting_provider_support">Hosting provider support</Translate>,
+        hosting_provider_discord: () => <Translate id="mdx.setup.hosting_provider_discord">Hosting provider Discord</Translate>,
     }
 }

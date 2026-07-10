@@ -123,6 +123,7 @@ export const providersData: Providers = {
             url: 'https://apexminecrafthosting.com/',
             hosting_article: "https://apexminecrafthosting.com/geysermc/",
             hosting_support: "https://apexminecrafthosting.com/support/",
+            hosting_discord: 'https://discord.apexminecrafthosting.com/',
             connect_instructions: connectionTemplates.sameAsJava,
             custom_install_location: translate({
                 id: 'providers.provider.apex_hosting.install',
@@ -132,6 +133,7 @@ export const providersData: Providers = {
         {
             name: 'Arth Hosting',
             url: 'https://arthmc.xyz/',
+            hosting_discord: 'https://discord.com/invite/jUeNm7UvKy',
             connect_instructions: connectionTemplates.default,
             custom_install_location: translate({
                 id: 'providers.provider.arth_hosting.install',
@@ -143,7 +145,8 @@ export const providersData: Providers = {
             url: 'https://aternos.org/',
             connect_instructions: connectionTemplates.sameAsJava,
             hosting_article: "https://support.aternos.org/hc/en-us/articles/360051047631",
-            hosting_support: "https://discord.aternos.org/",
+            hosting_discord: "https://discord.aternos.org/",
+            hosting_support: 'https://support.aternos.org/',
             custom_install_location: customInstallLocations.plugin_list,
             info: translate({
                 id: 'providers.provider.aternos.info',
@@ -154,12 +157,14 @@ export const providersData: Providers = {
         {
             name: 'AxentHost',
             url: 'https://axenthost.com/games/minecraft/',
+            hosting_discord: 'https://discord.axenthost.com/',
             config: configChangeTemplates.cloneRemotePort,
             connect_instructions: connectionTemplates.sameAsJava
         },
         {
             name: 'BedrockHost',
             url: 'https://bedrockhost.pl/',
+            hosting_support: 'https://bedrockhost.pl/kontakt',
             config: configChangeTemplates.cloneRemotePort,
             connect_instructions: connectionTemplates.sameAsJava
         },
@@ -168,6 +173,7 @@ export const providersData: Providers = {
             url: 'https://cloudnord.net/',
             connect_instructions: connectionTemplates.default,
             hosting_support: "https://cloudnord.net/submitticket.php",
+            hosting_discord: 'https://cloudnord.net/discord',
             info: translate({
                 id: 'providers.provider.cloud_nord.description',
                 message: "Servers from the [Crossplay Server](https://cloudnord.net/minecraftcrossplay-server-hosting/) hosting section do not need further configuration."
@@ -178,6 +184,7 @@ export const providersData: Providers = {
         {
             name: 'CreeperHost',
             url: 'https://www.creeperhost.net/',
+            hosting_discord: 'https://discord.gg/cJTYkdmbgy',
             connect_instructions: "provided_by_host",
             custom_install_location: translate({
                 id: 'providers.provider.creeperhost.install',
@@ -187,6 +194,8 @@ export const providersData: Providers = {
         {
             name: 'Cubes Hosting',
             url: 'https://www.cubes.host/',
+            hosting_discord: 'https://discord.gg/K8XzK4RqUH',
+            hosting_support: 'https://cubes.host/client/submitticket.php',
             connect_instructions: translate({
                 id: 'providers.provider.cubes_hosting.connect',
                 message: "Connect with the address of the Java server and the port shown in the server console."
@@ -201,6 +210,7 @@ export const providersData: Providers = {
             name: 'exaroton',
             url: 'https://exaroton.com/',
             hosting_article: "https://support.exaroton.com/hc/en-us/articles/360019857918-Geyser",
+            hosting_discord: 'https://discord.gg/exaroton',
             connect_instructions: connectionTemplates.sameAsJava,
             custom_install_location: customInstallLocations.plugin_list
         },
@@ -213,6 +223,8 @@ export const providersData: Providers = {
         {
             name: 'GGServers',
             url: 'https://ggservers.com',
+            hosting_discord: 'https://discord.gg/ggservers',
+            hosting_article: 'https://ggservers.com/knowledgebase/article/how-to-set-up-and-use-geyser-plugin/',
             connect_instructions: connectionTemplates.providedByHost,
             custom_install_location: translate({
                 id: 'providers.provider.ggservers.install',
@@ -222,6 +234,8 @@ export const providersData: Providers = {
         {
             name: 'KaasHosting',
             url: 'https://www.kaashosting.nl/minecraft-servers',
+            hosting_discord: 'https://kaas.gg/discord',
+            hosting_article: 'https://www.kaashosting.nl/help/nl/minecraft/hoe-maak-ik-mijn-minecraft-server-crossplay-met-geysermc',
             config: configChangeTemplates.cloneRemotePort,
             connect_instructions: connectionTemplates.sameAsJava,
             info: translate({
@@ -233,6 +247,7 @@ export const providersData: Providers = {
             name: 'Lilypad',
             url: 'https://lilypad.gg',
             hosting_article: "https://lilypad.gg/bedrock",
+            hosting_discord: "https://lilypad.gg/discord",
             connect_instructions: connectionTemplates.providedByHost,
             custom_install_location: customInstallLocations.enable_bedrock_crossplay_option
         },
@@ -240,12 +255,15 @@ export const providersData: Providers = {
             name: 'MCServerHost',
             url: 'https://mcserverhost.com/',
             hosting_article: 'https://www.mcserverhost.com/community/tutorials/how-to-set-up-a-minecraft-java-and-bedrock-crossplay-server-with-mcserverhost',
+            hosting_discord: 'https://discord.gg/mcserverhost',
             config: configChangeTemplates.cloneRemotePort,
             connect_instructions: connectionTemplates.sameAsJava
         },
         {
             name: 'Minefort',
             url: 'https://minefort.com/',
+            hosting_support: 'https://minefort.com/support',
+            hosting_discord: 'https://discord.minefort.com/',
             additional_step: translate({
                 id: 'providers.provider.minefort.additional_step',
                 message: "Go to the server dashboard under 'Connect Support', and enable the 'Allow Bedrock' option."
@@ -258,6 +276,7 @@ export const providersData: Providers = {
         {
             name: 'Minehut',
             url: 'https://minehut.com/',
+            hosting_discord: 'https://discord.gg/cCyEeUs',
             connect_instructions: translate({
                 id: 'providers.provider.minehut.connect_instructions',
                 message: "Connect via `bedrock.minehut.com` and do `/join [servername]`, or connect directly via `[servername].bedrock.minehut.gg`."
@@ -269,12 +288,14 @@ export const providersData: Providers = {
             connect_instructions: connectionTemplates.providedByHost,
             custom_install_location: translate({
                 id: 'providers.provider.omgserv.install',
+                // TODO imgur? RIP the brits
                 message: "Automatic Geyser install can be done in the [Install Menu](https://i.imgur.com/Gewpsrq.png). You can enable floodgate in the [server properties on the dashboard](https://i.imgur.com/jg5mzNj.png)."
             })
         },
         {
             name: 'Physgun',
             url: 'https://physgun.com/',
+            hosting_discord: 'https://physgun.com/discord',
             config: configChangeTemplates.cloneRemotePort,
             connect_instructions: connectionTemplates.sameAsJava
         },
@@ -282,6 +303,7 @@ export const providersData: Providers = {
             name: 'PiglinHost',
             url: 'https://piglinhost.com/',
             hosting_support: 'https://billing.piglinhost.com/submitticket.php',
+            hosting_discord: 'https://discord.gg/piglinhost',
             connect_instructions: connectionTemplates.providedByHost,
             config: {
                 other_instructions: translate({
@@ -294,38 +316,46 @@ export const providersData: Providers = {
             name: 'Play Hosting',
             url: 'https://play.hosting',
             hosting_article: 'https://help.play.hosting/minecraft/crossplay',
+            hosting_discord: 'https://discord.com/invite/PmXc62p4PN',
             connect_instructions: connectionTemplates.providedByHost,
             custom_install_location: customInstallLocations.enable_bedrock_crossplay_option
         },
         {
             name: 'Pufferfish Host',
             url: 'https://pufferfish.host/',
+            hosting_discord: 'https://discord.gg/reZw4vQV9H',
+            hosting_article: 'https://docs.pufferfish.host/plugins/how-to-allow-bedrock-and-java-crossplay/',
             connect_instructions: connectionTemplates.providedByHost,
             info: infos.installed_by_default
         },
         {
+            name: 'RackGenius',
+            url: 'https://rackgenius.com/game-hosting/',
+            connect_instructions: connectionTemplates.sameAsJava,
+            custom_install_location: translate({
+                id: 'providers.provider.rackgenius.install',
+                message: "Select 'Paper + Geyser with Floodgate' under the Jar Type at checkout to install the Geyser plugin."
+            })
+        },
+        {
             name: 'Server.pro (Gaming plans)',
             url: 'https://server.pro',
+            hosting_support: 'https://server.pro/support',
+            hosting_discord: 'https://server.pro/discord',
             config: configChangeTemplates.assignPort,
             connect_instructions: connectionTemplates.default
         },
         {
             name: 'ServerPrism',
             url: 'https://serverprism.com/',
+            hosting_support: 'https://serverprism.com/tickets/create',
+            hosting_discord: 'https://serverprism.com/discord',
+            hosting_article: 'https://serverprism.com/docs/minecraft/crossplay-getting-started',
             config: configChangeTemplates.cloneRemotePort,
             connect_instructions: connectionTemplates.sameAsJava,
             info: translate({
                 id: 'providers.provider.serverprism.description',
                 message: "Geyser is automatically configured when installing through the panel's plugin installer."
-            })
-        },
-        {
-            name: 'Snakecraft Hosting',
-            url: 'https://snakecrafthosting.com/',
-            connect_instructions: connectionTemplates.sameAsJava,
-            custom_install_location: translate({
-                id: 'providers.provider.snakecraft_hosting.install',
-                message: "Select 'Paper + Geyser with Floodgate' under the Jar Type at checkout to install the Geyser plugin."
             })
         },
         {
@@ -340,6 +370,9 @@ export const providersData: Providers = {
         {
             name: 'UltraServers',
             url: 'https://ultraservers.com/',
+            hosting_discord: 'https://discord.ultraservers.com/',
+            hosting_support: 'https://ultraservers.com/contact',
+            hosting_article: 'https://docs.ultraservers.com/minecraft/plugins-mods/crossplay-on-java-and-bedrock',
             config: configChangeTemplates.cloneRemotePort,
             connect_instructions: connectionTemplates.sameAsJava
             // description: translate({
@@ -350,6 +383,8 @@ export const providersData: Providers = {
         {
             name: 'VemoxHost',
             url: 'https://vemoxhost.com/',
+            hosting_discord: 'https://discord.com/invite/NWv4KyQDzg',
+            hosting_article: 'https://vemoxhost.com/post/como-instalar-y-configurar-geysermc',
             connect_instructions: connectionTemplates.sameAsJava,
             custom_install_location: translate({
                 id: 'providers.provider.vemox_hosting.description',
@@ -360,6 +395,8 @@ export const providersData: Providers = {
             name: 'WiseHosting',
             url: 'https://wisehosting.com',
             hosting_article: 'https://help.wisehosting.com/en/articles/13-how-to-install-geysermc-java-bedrock-crossplay-to-your-server',
+            hosting_support: 'https://wisehosting.com/billing/supporttickets.php',
+            hosting_discord: 'https://discord.gg/9NSbNnTN3J',
             connect_instructions: connectionTemplates.providedByHost,
             custom_install_location: translate({
                 id: 'providers.provider.wisehosting.install',
@@ -369,6 +406,8 @@ export const providersData: Providers = {
         {
             name: 'ZapHosting',
             url: 'https://zap-hosting.com/en/',
+            hosting_discord: 'https://discord.gg/zaphosting',
+            hosting_support: 'https://zap-hosting.com/en/customer/support/',
             connect_instructions: connectionTemplates.sameAsJava,
             custom_install_location: customInstallLocations.plugin_list
         }

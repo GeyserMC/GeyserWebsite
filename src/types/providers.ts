@@ -5,6 +5,7 @@ export type HostingProvider = {
     url: string;
     hosting_article?: String; // Many hosts have their own articles for Geyser
     hosting_support?: String; // A link to the host support, can show when setup help fails
+    hosting_discord?: String;
     custom_install_location?: React.ReactNode; // e.g. aternos, can skip the entire download/config process on setup guide
     config?: ConfigDetails; // If present, geyser config must be modified to function
     connect_instructions: React.ReactNode; // what players must input to connect

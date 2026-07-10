@@ -91,6 +91,7 @@ interface ProviderGeyserSetupProps {
         info?: string;
         hosting_article?: string;
         hosting_support?: string;
+        hosting_discord?: string;
     };
     jarName: string;
     jarDirectory: string;
@@ -225,7 +226,7 @@ export const ProviderGeyserSetup: React.FC<ProviderGeyserSetupProps> = ({ provid
                     )}
 
 
-                    {(provider.hosting_article || provider.hosting_support) && (
+                    {(provider.hosting_article || provider.hosting_support || provider.hosting_discord) && (
                         <>
                             <Heading as="h2" id="more-information">
                                 <MDXTranslatable.setup.more_information />
@@ -242,6 +243,13 @@ export const ProviderGeyserSetup: React.FC<ProviderGeyserSetupProps> = ({ provid
                                     <li>
                                         <Link to={provider.hosting_support}>
                                             <MDXTranslatable.setup.hosting_provider_support />
+                                        </Link>
+                                    </li>
+                                )}
+                                {provider.hosting_discord && (
+                                    <li>
+                                        <Link to={provider.hosting_discord}>
+                                            <MDXTranslatable.setup.hosting_provider_discord />
                                         </Link>
                                     </li>
                                 )}
