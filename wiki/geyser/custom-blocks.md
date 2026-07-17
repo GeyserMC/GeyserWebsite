@@ -7,6 +7,11 @@ To setup custom blocks in geyser, you have to choose how you are going to regist
 
 It should be noted that blocks and their associated components are not very stable. Mojang tends to make changes to these much more often than they do for items. This means that any components Geyser allows you to register are liable to break in future versions of Bedrock.
 
+:::warning
+Geyser does not convert resource packs from Java Edition, and also does not generate custom block mappings automatically.
+However, you can use automatic tools such as [Rainbow](/wiki/other/rainbow/) to make converting content simpler.
+:::
+
 ## Enabling custom blocks {#enabling-custom-blocks}
 
 Before beginning, ensure that `gameplay.enable-custom-content` is set to `true` in your `config.yml` file.
