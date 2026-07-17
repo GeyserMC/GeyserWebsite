@@ -81,7 +81,8 @@ However, many things that are possible with add-ons or behavior packs can be don
 or [custom blocks](/wiki/geyser/custom-blocks).
 
 - **Does Geyser convert Java edition resource packs?** <br />
-Not currently. For now, you need to manually create a Bedrock edition resource pack equivalent.
+Not currently. For now, you need to manually create a Bedrock edition resource pack equivalent. You can however
+use automatic tools such as [Rainbow](/wiki/other/rainbow/) or [Thunder](/wiki/other/thunder) to make converting content simpler.
 
 - **Can I allow players to choose resource packs themselves?** <br />
 On most Bedrock platforms (except consoles), players are able to download and install resource packs on the client. 
