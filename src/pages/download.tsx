@@ -81,9 +81,9 @@ const DownloadPage: React.FC = () => (
                                 projectId="floodgatedb"
                                 setup='/wiki/floodgate/linking/#local-linking'
                                 downloadsInfo={{
-                                    mongodb: <><FontAwesomeIcon icon={MongoDBIcon} /> MongoDB</>,
-                                    mysql: <><FontAwesomeIcon icon={MySQLIcon} /> MySQL</>,
-                                    sqlite: <><FontAwesomeIcon icon={SQLiteIcon} /> SQLite</>,
+                                    mongodb: <PlatformIcon img={MongoDBIcon} text="MongoDB" />,
+                                    mysql: <PlatformIcon img={MySQLIcon} text="MySQL" />,
+                                    sqlite: <PlatformIcon img={SQLiteIcon} text="SQLite" />,
                                 }}
                                 gridColumns={1}
                             />
