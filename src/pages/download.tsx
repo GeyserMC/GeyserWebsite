@@ -12,9 +12,6 @@ import FabricIcon from '@site/static/img/icons/fabric.png';
 import NeoForgeIcon from '@site/static/img/icons/neoforge.png';
 import ViaProxyIcon from '@site/static/img/icons/viaproxy.png';
 import StandaloneIcon from '@site/static/img/icons/geyser.png';
-import MongoDBIcon from '@site/static/img/icons/mongodb.png';
-import MySQLIcon from '@site/static/img/icons/mariadb.png';
-import SQLiteIcon from '@site/static/img/icons/sqlite.png';
 import PlatformIcon from '@site/src/components/PlatformIcon';
 import { ProjectDownload } from '@site/src/components/ProjectDownload';
 import { Collapsibles, Collapsible } from '@site/src/components/Collapsibles';
@@ -81,9 +78,9 @@ const DownloadPage: React.FC = () => (
                                 projectId="floodgatedb"
                                 setup='/wiki/floodgate/linking/#local-linking'
                                 downloadsInfo={{
-                                    mongodb: <PlatformIcon img={MongoDBIcon} text="MongoDB" />,
-                                    mysql: <PlatformIcon img={MySQLIcon} text="MySQL" />,
-                                    sqlite: <PlatformIcon img={SQLiteIcon} text="SQLite" />,
+                                    mongodb: <><FontAwesomeIcon icon={faFileZipper} /> MongoDB</>,
+                                    mysql: <><FontAwesomeIcon icon={faFileZipper} /> MySQL</>,
+                                    sqlite: <><FontAwesomeIcon icon={faFileZipper} /> SQLite</>,
                                 }}
                                 gridColumns={1}
                             />
