@@ -43,13 +43,15 @@ You can also set up a local linking database on your server. Local linking can w
 
 Note that you only have to follow these steps on your proxy (BungeeCord or Velocity), if you have one.
 
-1. Download one of the linking databases extensions [here](https://ci.opencollab.dev/job/GeyserMC/job/Floodgate/job/fix-weird-via-issue/).
+1. Download one of the linking databases extensions [here](https://github.com/GeyserMC/Floodgate/actions).
+   Click the latest workflow run with a green checkmark.
+   Scroll down to Artifacts and download the one you need.
    If you need help picking the right one: choose `mysql` if you already have a database or want to have a multi-proxy setup. For anything else choose `sqlite`. The full name should be `floodgate-*type*-database.jar`.
 2. Copy the database extension jar you just downloaded *into* the floodgate 2.0 plugin folder (e.g. `/plugins/floodgate/`).
 3. Enable `enable-own-linking` in the `player-link` section of Floodgate.
 4. Set `type` in the `player-link` section to your database type (currently either `mysql` or `sqlite`). (If you used Floodgate 1.0 and had linking enabled back then; the database type was `sqlite`).
-5. Restart your server
+5. Restart your server.
 
-If you have selected `mysql` a new data folder for the database should be generated inside the Floodgate data folder. You can enter your database credentials in there. After you did that restart your server once more.
+If you have selected `mysql`, a new data folder for the database should be generated inside the Floodgate data folder. You can enter your database credentials in there. After you did that, restart your server once more.
 
 That should be it. You can then link your accounts by following the instructions you get when typing `/linkaccount`.
