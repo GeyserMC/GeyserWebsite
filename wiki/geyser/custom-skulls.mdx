@@ -26,6 +26,11 @@ Whilst Geyser tries its best to convert custom skulls automatically, it does not
 However, you can use automatic tools such as [Rainbow](/wiki/other/rainbow/) to make converting content simpler.
 :::
 
+:::info
+Custom skulls used to be registered using a YAML file in Geyser's config directory, `custom-skulls.yml`. This file
+is legacy and its contents will automatically be migrated to custom JSON mappings when Geyser starts.
+:::
+
 ## Registering custom skulls
 
 Custom skulls can be registered through 4 methods:
@@ -43,6 +48,8 @@ Custom skulls can be registered through 4 methods:
 
 <Tabs groupId="custom-skull-implementation">
     <TabItem value="json" label="JSON mappings">
+        For setting up JSON mappings, please see the instructions [here](/wiki/geyser/custom-content#json-mappings).
+
         JSON mappings have to specify the `format_version` set to `1`, and list all custom skulls under the
         `skulls` key. This key holds an object in which Java Edition usernames, user UUIDs, profile hashes or skin texture
         hashes can be specified.
