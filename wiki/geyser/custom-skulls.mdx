@@ -1,0 +1,106 @@
+---
+title: Custom Skulls
+description: Geyser allows mapping of custom skulls to custom blocks for use in inventories and on entities.
+---
+
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+
+Unlike Minecraft: Java Edition, Bedrock Edition does not have native support for custom skull items.
+As a result, any method to display custom skulls with Geyser is, to some extent, a workaround.
+Geyser has long supported in-world custom skulls via the spawning of player entities.
+This, however, does not allow for the use of custom skulls in inventories, nor does it allow them to be worn by entities.
+
+To resolve this, Geyser allows for the pre-registration of custom skulls via custom JSON mappings
+or the Geyser API. Geyser will then generate a custom resource pack on start that contains the geometry and textures
+for the pre-registered custom skulls.
+
+To the client, these skulls are blocks. Therefore, they can be held in player inventories.
+In addition, attachables are defined for each skull block, so that it is displayed correctly when worn and held by entities.
+
+To set up custom skulls in Geyser, you have to choose how you are going to register them.
+The easiest is using custom mappings via JSON files. Alternatively, you can also use the Geyser API, for example using a Geyser extension or a plugin.
+
+:::info
+You can use tools such as [Rainbow](/wiki/other/rainbow/) to automatically generate custom JSON mappings for skulls.
+:::
+
+:::info
+Custom skulls used to be registered using a YAML file in Geyser's config directory, `custom-skulls.yml`. This file
+is legacy and its contents will automatically be migrated to custom JSON mappings when Geyser starts.
+:::
+
+## Registering custom skulls
+
+Custom skulls can be registered through 4 methods:
+
+- By player username. These will be updated when Geyser starts. As a result, they may change if the player's username or skin changes.
+    - Use this option for skulls marked `Dynamic` on Java Edition.
+- By player UUID. These will also be updated when Geyser starts. As a result, they may change if skin changes.
+    - Use this option for skulls marked `Dynamic` on Java Edition.
+- By the base-64 encoded `textures` property of game profiles. These will only ever change when the registered value itself changes, as they hold a static reference to a skin.
+    - You can get these values from a custom skull in your hand using the following command in Minecraft: Java Edition: `/data get entity @s SelectedItem.components."minecraft:profile".properties[{name:"textures"}].value`.
+    - Please note that this command has only been tested on Java Edition 26.2. If the command fails, that could mean your custom skull is a dynamic one, and you should register a UUID or username instead.
+- By skin texture hash. These will also only ever change when the value itself changes. They are a static reference to a skin texture over at `https://textures.minecraft.net/texture/`.
+  - You generally don't need to use this option, as it is often easier to just use the base-64 profile found in a skull.
+  - If you want to publish an extension or custom skull mappings however, this option can be useful to hide player names/UUIDs, if you wish to do so.
+
+<Tabs groupId="custom-skull-implementation">
+    <TabItem value="json" label="JSON mappings">
+        For setting up JSON mappings, please see the instructions [here](/wiki/geyser/custom-content#json-mappings).
+
+        JSON mappings have to specify the `format_version` set to `1`, and list all custom skulls under the
+        `skulls` key. This key holds an object in which Java Edition usernames, user UUIDs, profile hashes or skin texture
+        hashes can be specified.
+
+        For example, take the following `custom_skulls.json` file:
+        ```json
+        {
+          "format_version": 1,
+          "skulls": {
+            "username": [
+              "GeyserMC"
+            ],
+            "uuid": [
+              "8b8d8e8f-2759-47c6-acb5-5827de8a72b8"
+            ],
+            "profile": [
+              "ewogICJ0aW1lc3RhbXAiIDogMTY1NzMyMjIzOTgzMywKICAicHJvZmlsZUlkIiA6ICJjZGRiZTUyMGQwNDM0YThiYTFjYzlmYzkyZmRlMmJjZiIsCiAgInByb2ZpbGVOYW1lIiA6ICJBbWJlcmljaHUiLAogICJ0ZXh0dXJlcyIgOiB7CiAgICAiU0tJTiIgOiB7CiAgICAgICJ1cmwiIDogImh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvYTkwNzkwYzU3ZTE4MWVkMTNhZGVkMTRjNDdlZTJmN2M4ZGUzNTMzZTAxN2JhOTU3YWY3YmRmOWRmMWJkZTk0ZiIsCiAgICAgICJtZXRhZGF0YSIgOiB7CiAgICAgICAgIm1vZGVsIiA6ICJzbGltIgogICAgICB9CiAgICB9CiAgfQp9"
+            ],
+            "skin_hash": [
+              "a90790c57e181ed13aded14c47ee2f7c8de3533e017ba957af7bdf9df1bde94f"
+            ]
+          }
+        }
+        ```
+
+        These mappings specify skulls for the `GeyserMC` user, the `Camotoy` user (using UUID `8b8d8e8f-2759-47c6-acb5-5827de8a72b8`),
+        and [this](http://textures.minecraft.net/texture/a90790c57e181ed13aded14c47ee2f7c8de3533e017ba957af7bdf9df1bde94f) skin (through the base-64 `profile` entry and the `skin_hash` entry).
+    </TabItem>
+    <TabItem value="api" label="Geyser API">
+        Custom skulls are registered at startup through the `GeyserDefineCustomSkullsEvent`. All skulls are registered
+        through the `register(String texture, SkullTextureType type)` method, in which the `type` parameter defines the
+        type of the string registered, which is one of:
+
+        - `SkullTextureType.USERNAME` for usernames.
+        - `SkullTextureType.UUID` for UUIDs.
+        - `SkullTextureType.PROFILE` for base-64 encoded `textures` properties of game profiles.
+        - `SkullTextureType.SKIN_HASH` for skin texture hashes.
+
+        As an example:
+
+        ```java
+        @Subscribe
+        public void onDefineCustomSkulls(GeyserDefineCustomSkullsEvent event) {
+            event.register("GeyserMC", SkullTextureType.USERNAME);
+            event.register("8b8d8e8f-2759-47c6-acb5-5827de8a72b8", SkullTextureType.UUID);
+            event.register("ewogICJ0aW1lc3RhbXAiIDogMTY1NzMyMjIzOTgzMywKICAicHJvZmlsZUlkIiA6ICJjZGRiZTUyMGQwNDM0YThiYTFjYzlmYzkyZmRlMmJjZiIsCiAgInByb2ZpbGVOYW1lIiA6ICJBbWJlcmljaHUiLAogICJ0ZXh0dXJlcyIgOiB7CiAgICAiU0tJTiIgOiB7CiAgICAgICJ1cmwiIDogImh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvYTkwNzkwYzU3ZTE4MWVkMTNhZGVkMTRjNDdlZTJmN2M4ZGUzNTMzZTAxN2JhOTU3YWY3YmRmOWRmMWJkZTk0ZiIsCiAgICAgICJtZXRhZGF0YSIgOiB7CiAgICAgICAgIm1vZGVsIiA6ICJzbGltIgogICAgICB9CiAgICB9CiAgfQp9", SkullTextureType.PROFILE);
+            event.register("a90790c57e181ed13aded14c47ee2f7c8de3533e017ba957af7bdf9df1bde94f", SkullTextureType.SKIN_HASH);
+        }
+        ```
+
+        This example specifies skulls for the `GeyserMC` user, the `Camotoy` user (using UUID `8b8d8e8f-2759-47c6-acb5-5827de8a72b8`),
+        and [this](http://textures.minecraft.net/texture/a90790c57e181ed13aded14c47ee2f7c8de3533e017ba957af7bdf9df1bde94f) skin (through the base-64 `PROFILE` entry and the `SKIN_HASH` entry).
+    </TabItem>
+</Tabs>
+
