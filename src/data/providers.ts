@@ -692,10 +692,10 @@ export const providersData: Providers = {
             })
         },
         {
-            name: 'Feather',
-            url: 'https://feathermc.com/',
+            name: 'Dawn',
+            url: 'https://dawn.gg/',
             description: translate({
-                id: 'providers.provider.feather.description',
+                id: 'providers.provider.dawn.description',
                 message: "Their proxy network does not support UDP. Therefore, Geyser is not supported. As an alternative, set up a paper server with e.g. playit.gg instead of port forwarding."
             })
         }
