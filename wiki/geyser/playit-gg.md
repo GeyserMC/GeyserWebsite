@@ -13,6 +13,10 @@ You must be able to connect to your Geyser instance locally!
 The playit.gg Minecraft server plugin does not support UDP tunnels. You will need to use the program agent instead!
 :::
 
+:::alternative method
+Alternatively playit.gg has created their own setup guide for both PaperMC and Fabric. They have written guides [here](https://playit.gg/support/use-geyser-with-playit/), the Fabric guide also has a video you can watch.
+:::
+
 ## Setup {#setup}
 1. Head over to [playit.gg's website](https://playit.gg/) - download the program & run it.
 2. The program will provide a claiming link. Visit that link, log in.
