@@ -39,7 +39,7 @@ Especially on mobile devices, sometimes just restarting Minecraft fixes the issu
 
 ### Is it the server or the client? {#is-it-the-server-or-the-client}
 
-Run your Java server IP and Bedrock address here: https://mcsrvstat.us/. It's a great way of determining if the server is reachable in the first place. 
+Test the Java server IP and Bedrock address separately with an external status checker, such as [mcsrvstat.us](https://mcsrvstat.us/) or [ServerBuddy's Java and Bedrock status checker](https://serverbuddy.net/tools/minecraft-server-status). A successful Java check does not prove that the Bedrock UDP port is reachable, so enter the configured Bedrock port explicitly.
 Additionally, check if you can see a connection attempt in the server console. If you can't, it's likely a network issue.
 
 For console players specifically: If only they can't join, while other Bedrock players can, it is likely an issue with their console connecting method.
