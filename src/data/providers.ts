@@ -222,6 +222,14 @@ export const providersData: Providers = {
             })
         },
         {
+            name: 'TrueTick',
+            url: 'https://truetick.gg/',
+            description: translate({
+                id: 'providers.provider.truetick.description',
+                message: "Turn on Bedrock crossplay in Settings: Geyser and Floodgate are installed and the Bedrock port is opened together. Restart once, then give Bedrock players the address shown on the panel's Connect line - the same hostname as Java on a different port, not 19132 from the outside. Offered on plain Paper and Purpur servers on the flat plan. See [TrueTick's article](https://truetick.gg/help/connect-and-share#bedrock-crossplay) for more details."
+            })
+        },
+        {
             name: 'UltraServers',
             url: 'https://ultraservers.com/',
             description: translate({
