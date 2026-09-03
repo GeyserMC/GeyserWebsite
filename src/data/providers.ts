@@ -612,7 +612,7 @@ export const providersData: Providers = {
             url: 'https://supercraft.host/',
             description: translate({
                 id: 'providers.provider.supercraft.description',
-                message: "Upload Geyser-Spigot and Floodgate into the Plugins partition of the file manager and restart once to generate the config. Then set the Bedrock port to your server port + 2 (the server port itself is taken by Java and the query listener, the next one by RCON), bind address 0.0.0.0, point remote.port at your server port, and restart; connect Bedrock clients to that +2 port. Full steps: [Supercraft Geyser guide](https://supercraft.host/wiki/minecraft/geyser_setup/#supercraft)."
+                message: "Set the Bedrock port to your server port + 2. The server port itself is used by Java and the query listener, and the next one by RCON. Upload Geyser and Floodgate in the panel, restart, then connect on that +2 port. [Setup guide](https://supercraft.host/wiki/minecraft/geyser_setup/#supercraft)."
             })
         },
         {
