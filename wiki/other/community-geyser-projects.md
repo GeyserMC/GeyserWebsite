@@ -130,6 +130,16 @@ This is a Spigot/BungeeCord/Velocity plugin that can be used to automatically up
 
 Creators: [Jens](https://github.com/Jens-Co), [YHDiamond](https://github.com/YHDiamond), [Konicai](https://github.com/Konicai)
 
+## Junction {#junction}
+A modern Geyser and Floodgate management solution for Paper, Purpur, and Folia servers. It automates Bedrock player management by executing platform-specific commands and handling LuckPerms or Vault group assignments.
+
+* [Modrinth](https://modrinth.com/plugin/junction)
+* [Hangar](https://hangar.papermc.io/Maboroshi/Junction)
+* [Documentation](https://docs.maboroshi.org/projects/junction)
+* [GitHub](https://github.com/MaboroshiKobo/Junction)
+
+Creator: [muhdfdeen](https://github.com/muhdfdeen)
+
 ## SleepingServerStarter {#sleepingserverstarter}
 Small application that waits for a player to connect before launching actual minecraft server.
 * [GitHub](https://github.com/vincss/mcsleepingserverstarter)
