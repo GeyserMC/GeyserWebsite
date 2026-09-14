@@ -608,6 +608,14 @@ export const providersData: Providers = {
             })
         },
         {
+            name: 'Supercraft',
+            url: 'https://supercraft.host/',
+            description: translate({
+                id: 'providers.provider.supercraft.description',
+                message: "Set the Bedrock port to your server port + 2. The server port itself is used by Java and the query listener, and the next one by RCON. Upload Geyser and Floodgate in the panel, restart, then connect on that +2 port. [Setup guide](https://supercraft.host/wiki/minecraft/geyser_setup/#supercraft)."
+            })
+        },
+        {
             name: 'The Minecraft Hosting',
             url: 'https://theminecrafthosting.com/',
             description: translate({
