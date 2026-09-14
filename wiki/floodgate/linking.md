@@ -14,9 +14,9 @@ Keep in mind: While having your accounts linked, you will use the Java account's
 Global Linking is part of the [Global Api](/wiki/api/api.geysermc.org/global-api/) and uses the GlobalLinkServer to link your account. To be able to link your account you have to do the following:
 1. Join the GlobalLinkServer with both your Java and Bedrock account  
    (IP: `link.geysermc.org`, Java port: `25565`, Bedrock port: `19132`)
-2. Start the linking process by typing `/linkaccount` on your Java **or** Bedrock account
+2. Start the linking process by typing `/linkaccount <target>` on your Java **or** Bedrock account
 3. You'll get a message with a random number that you have to enter on the account that you did not start the linking process on.
-4. Enter the random number on the other account by typing `/linkaccount <code>`
+4. Enter the random number on the other account by typing `/linkaccount <target> <code>`
 5. You should get kicked from the server on both your Bedrock and Java account with the message that it had successfully linked your accounts.
 
 To unlink your globally linked accounts, join the GlobalLinkServer (as described above for linking) on either Java or Bedrock, and use the `/unlinkaccount` command. 
@@ -52,4 +52,4 @@ Note that you only have to follow these steps on your proxy (BungeeCord or Veloc
 
 If you have selected `mysql` a new data folder for the database should be generated inside the Floodgate data folder. You can enter your database credentials in there. After you did that restart your server once more.
 
-That should be it. You can then link your accounts by following the instructions you get when typing `/linkaccount`.
+That should be it. You can then link your accounts by following the instructions you get when typing `/linkaccount <target>`.
