@@ -784,7 +784,7 @@
     "description": "The unlisted content banner message"
   },
   "providers.provider.not_listed.description": {
-    "message": "If your hosting provider is not listed, try enabling the `clone-remote-port` option in the config. Then, restart the server, and try connecting with the same IP and port as on Java Edition. <br> If this does not work, ask your server hosting provider for a UDP port, and use that. For VPS/KVM servers please follow the self-hosting steps."
+    "message": "If your hosting provider is not listed, try using [Warden Signalling](/wiki/geyser/nethernet/setup#warden-signalling). If this doesn't work, ask your hosting provider for a TCP and UDP port and use that. For VPS/KVM servers please follow the self-hosting steps."
   },
   "providers.provider.wasabihosting.description": {
     "message": "Install Geyser with the plugin installer. Use the same port as your Java server in the Geyser config. Connect with the same address and port as your Java server."
@@ -868,5 +868,11 @@
   },
   "pages.dumpviewer.extensions.helptext": {
     "message": "Click on an extension to view more information."
+  },
+  "providers.provider.consulhosting.description": {
+    "message": "GeyserMC can be installed with a single click on ConsulHosting's Minecraft server hosting. Head to your server panel, find the GeyserMC option at Software, and install it automatically — no manual configuration needed. For step-by-step instructions, see [ConsulHosting's GeyserMC installation tutorial](https://consulhosting.com/help/install-geysermc/)."
+  },
+  "pages.download.description.floodgatedatabases": {
+    "message": "Database extension jars for Floodgate local linking."
   }
 }
