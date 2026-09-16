@@ -10,6 +10,7 @@ Geyser supports mapping various custom additions to the game via resource packs 
 - [Custom skulls](/wiki/geyser/custom-skulls)
 - [Custom waypoint icons](/wiki/geyser/custom-waypoints)
 - [Custom entities](/wiki/geyser/custom-entities)
+- [Custom biomes](/wiki/geyser/custom-biomes)
 
 :::info
 Geyser does not convert resource packs from Java Edition automatically.
@@ -26,7 +27,7 @@ that `gameplay.enable-custom-content` is set to `true` in your `config.yml` file
 # Whether to add any items and blocks which normally does not exist in Bedrock Edition.
 # This should only need to be disabled if using a proxy that does not use the "transfer packet" style of server switching.
 # If this is disabled, furnace minecart items will be mapped to hopper minecart items.
-# Geyser's block, item, and skull mappings systems will also be disabled.
+# Geyser's biome, block, item, and skull mappings systems will also be disabled.
 # This option requires a restart of Geyser in order to change its setting.
 enable-custom-content: true
 ```
