@@ -26,6 +26,7 @@
     left: 50%;
     transform: translate(-50%, 0%);
     width: 100%;
+    animation: fadeIn 0.8s ease-out;
 }
 
 .heroImage {
@@ -73,4 +74,15 @@
     display: flex;
     flex-direction: column;
     gap: 40px;
+    animation: fadeIn 1s ease-out;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
 }
