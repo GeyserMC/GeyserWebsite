@@ -19,7 +19,7 @@ Raknet will do the following with a bedrock server:
 - Make a small connection to the server to get the MOTD, player count and ping
 - The client then connects to the server properly and starts sending the join data
 
-This small difference shakes up the entire networking involved when connecting to a server on Bedrock, for this reason, the migration to Nethernet may be difficult for some users, but we're hoping with the preparation time we've been given, we can make the transition smoother.
+This small difference shakes up the entire networking involved when connecting to a server on Bedrock. For this reason, the migration to Nethernet may be difficult for some users; but, we're hoping with the preparation time we've been given, we can make the transition smoother.
 
 ## What does this mean for you?
 
