@@ -23,7 +23,7 @@ This small difference shakes up the entire networking involved when connecting t
 
 ## What does this mean for you?
 
-This means something different depending on how you host your server, but generally you need to redo your network configurations if you made any previously for your server.
+Depending on how you host your server, this could mean different things. Generally, you need to redo your network configurations if you made any previously for your server.
 
 :::caution
 
