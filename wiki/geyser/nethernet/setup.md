@@ -3,7 +3,7 @@ title: Nethernet Setup Guide
 description: A guide for setting Nethernet up with Geyser.
 ---
 
-Geyser now supports the new Nethernet mode of transport used by default on Bedrock as of build TODO BUILD NUM HERE, this is preferred over Raknet which will be removed in the upcoming 26.60 update (Date TBA).
+Geyser now supports the new Nethernet mode of transport used by default on Bedrock as of build #1237, this is preferred over Raknet which will be removed in the upcoming 26.60 update (Date TBA).
 
 ## Differences between Nethernet and Raknet
 
@@ -68,6 +68,6 @@ What this means:
 
 :::info
 
-Warden is limited, once your server is too big, you'll reach the TODO limit, and either need to upgrade, or use another external signalling server.
+Warden is designed for smaller servers, if you own a big server, it is strongly advised you use your own signalling server or use Geyser's built in one.
 
 :::
