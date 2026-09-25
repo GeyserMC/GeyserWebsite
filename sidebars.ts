@@ -100,7 +100,8 @@ const sidebars: SidebarsConfig = {
                 'geyser/custom-blocks',
                 'geyser/custom-skulls',
                 'geyser/custom-waypoints',
-                'geyser/custom-entities'
+                'geyser/custom-entities',
+                'geyser/custom-biomes'
             ]
         },
         {
