@@ -186,5 +186,21 @@
   "sidebar.geyserSidebar.category.Custom Resource Packs": {
     "message": "Custom Resource Packs",
     "description": "The label for category Custom Resource Packs in sidebar geyserSidebar"
+  },
+  "sidebar.geyserSidebar.category.Nethernet": {
+    "message": "Nethernet",
+    "description": "The label for category Nethernet in sidebar geyserSidebar"
+  },
+  "sidebar.geyserSidebar.category.Nethernet.link.generated-index.title": {
+    "message": "Nethernet",
+    "description": "The generated-index page title for category Nethernet in sidebar geyserSidebar"
+  },
+  "sidebar.geyserSidebar.category.Nethernet.link.generated-index.description": {
+    "message": "An explanation of Nethernet",
+    "description": "The generated-index page description for category Nethernet in sidebar geyserSidebar"
+  },
+  "sidebar.geyserSidebar.category.Custom Content": {
+    "message": "Custom Content",
+    "description": "The label for category Custom Content in sidebar geyserSidebar"
   }
 }
