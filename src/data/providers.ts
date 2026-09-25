@@ -138,10 +138,10 @@ export const providersData: Providers = {
         },
         {
             name: 'MCServerHost',
-            url: 'https://mcserverhost.com/',
+            url: 'https://www.mcserverhost.com/',
             description: translate({
                 id: 'providers.provider.mcserverhost.description',
-                message: "Under the server configuration, select 'Crossplay' to automatically install Geyser and Floodgate. Join with the connection address. To update Geyser and Floodgate, replace the plugin jars in the server manager and restart the server."
+                message: "On the server panel under the Software tab, turn on 'Bedrock crossplay' and restart the server. Geyser and Floodgate are installed automatically and kept up to date on every start. Then connect via `[servername].mcsh.gg` on the default Bedrock port 19132 — the same address Java players use."
             })
         },
         {
@@ -150,6 +150,14 @@ export const providersData: Providers = {
             description: translate({
                 id: 'providers.provider.minefort.description',
                 message: "On the server dashboard under 'Connect Support', make sure 'Allow Bedrock' is enabled. Then connect via `play.minefort.com` and join using `/server [servername]`, or connect via `[servername].minefort.com`."
+            })
+        },
+        {
+            name: 'Minehost',
+            url: 'https://www.minehost.com/',
+            description: translate({
+                id: 'providers.provider.minehost.description',
+                message: "On the server panel under the Software tab, turn on 'Minecraft Bedrock support' and restart the server. Geyser and Floodgate are installed automatically and kept up to date on every start. Then connect via `[servername].minehost.gg` on the default Bedrock port 19132 — the same address Java players use."
             })
         },
         {
