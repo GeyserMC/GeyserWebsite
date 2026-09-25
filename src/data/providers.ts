@@ -177,6 +177,14 @@ export const providersData: Providers = {
             })
         },
         {
+            name: 'OuiHeberg',
+            url: 'https://www.ouiheberg.com/en/minecraft-hosting/',
+            description: translate({
+                id: 'providers.provider.ouiheberg.description',
+                message: "Geyser can be installed automatically from the OuiPanel plugin manager. Then enable `clone-remote-port` (or manually set `bedrock port` to the Java port) and connect with the Java IP and port. Alternatively, add an additional port from the Network tab of OuiPanel, set it as the `bedrock port` and connect with the Java IP and that port."
+            })
+        },
+        {
             name: 'Physgun',
             url: 'https://physgun.com/',
             description: descriptionTemplates.default
