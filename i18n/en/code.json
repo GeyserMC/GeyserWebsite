@@ -191,6 +191,9 @@
   "providers.provider.stipe.description": {
     "message": "Set the Bedrock port to the Java server's port and connect with that port; note that this provider only provides service in Australia."
   },
+  "providers.provider.supercraft.description": {
+    "message": "Set the Bedrock port to your server port + 2. The server port itself is used by Java and the query listener, and the next one by RCON. Upload Geyser and Floodgate in the panel, restart, then connect on that +2 port. [Setup guide](https://supercraft.host/wiki/minecraft/geyser_setup/#supercraft)."
+  },
   "providers.provider.syntexhosting.description": {
     "message": "Set the Bedrock port to the Java server's port and connect with that port, or request a (free) additional port."
   },
