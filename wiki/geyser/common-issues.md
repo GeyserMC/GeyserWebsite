@@ -105,7 +105,7 @@ The server is too new or Geyser is outdated. Make sure you're on the latest Geys
 
 # Outdated server! I'm still on 1.x.x
 
-Update the server or ask them to install [ViaVersion](https://viaversion.com/). You can also try [VIAaaS](https://github.com/ViaVersion/VIAaaS) (ViaVersion as a Service).
+Update the server or ask them to install [ViaVersion](https://viaversion.com/viaversion). You can also try [VIAaaS](https://github.com/ViaVersion/VIAaaS) (ViaVersion as a Service).
 
 # Only for BungeeCord with floodgate
 
