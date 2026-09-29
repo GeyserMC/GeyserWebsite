@@ -27,12 +27,12 @@ You can use Geyser-Spigot on servers that run on 1.20.5 or above. You will also 
 In order for Bedrock players to chat (1.19.3+) or join (1.19.1/1.19.2), you need to disable chat signing. More information about that can be read on the [chat signing page](/wiki/geyser/secure-chat).
 
 ### Using Geyser-Spigot on a Spigot/Paper server running on a version below 1.20.5
-This is unfortunately not possible. You'll need to use a proxy such as Velocity or BungeeCord, or set up Geyser-Standalone separately with the [ViaVersion](https://viaversion.com/viaversion) plugin. Another alternative would be to install [ViaProxy](https://github.com/ViaVersion/ViaProxy), which is a standalone ViaVersion proxy that 
+This is unfortunately not possible. You'll need to use a proxy such as Velocity or BungeeCord, or set up Geyser-Standalone separately with the [ViaVersion](https://viaversion.com/viaversion) plugin. Another alternative would be to install [ViaProxy](https://viaversion.com/viaproxy), which is a standalone ViaVersion proxy that 
 translates between different Minecraft: Java edition versions, and to install Geyser-ViaProxy on it.
 
 ### Using Geyser on Fabric/NeoForge servers not on the latest Minecraft version {#fabric-neoforge-servers}
 Unfortunately, Geyser-Fabric and Geyser-NeoForge only support the latest version of Minecraft: Java edition. The recommended way to still use
-Geyser with older versions would be to install [ViaProxy](https://github.com/ViaVersion/ViaProxy), which is a standalone ViaVersion proxy that 
+Geyser with older versions would be to install [ViaProxy](https://viaversion.com/viaproxy), which is a standalone ViaVersion proxy that 
 translates between different Minecraft: Java edition versions, and to install Geyser-ViaProxy on it. This will also work with Floodgate auth.
 
 ### Using Geyser-Velocity or Geyser-BungeeCord on a proxy
