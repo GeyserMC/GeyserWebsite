@@ -67,6 +67,11 @@ If you'd rather try emulating a LAN game on your network on another device, here
 - macOS: [Download on the App Store](https://apps.apple.com/us/app/mccompanion/id6747323142?platform=mac)  
 - Windows: [Download on the Microsoft Store](https://apps.microsoft.com/detail/9NSFPT6D8PTR)
 
+#### BridgePlay — free, no ads while you connect.
+
+- iOS (iOS 16.0 or later): [Download on the App Store](https://apps.apple.com/app/id6786974231)  
+- Android (8.0 or later): [Download on the Play Store](https://play.google.com/store/apps/details?id=com.bridgeplay.app)  
+
 
 ### Using a PC {#using-a-pc}
 *Note that this method will not work with the Nintendo Switch.*
