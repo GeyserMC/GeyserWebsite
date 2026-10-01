@@ -1,9 +1,9 @@
 {
     "bedrock": {
-        "supported": "26.30-26.51",
+        "supported": "26.30-26.52",
         "latest": {
             "id": 2193,
-            "name": "26.51"
+            "name": "26.52"
         }
     },
     "java": {
