@@ -277,6 +277,14 @@ export const providersData: Providers = {
             })
         },
         {
+            name: 'Astrol Nodes',
+            url: 'https://astrolnodes.net/en/products/minecraft-game-server',
+            description: translate({
+                id: 'providers.provider.astrol_nodes.description',
+                message: "Install Geyser and Floodgate from the plugin installer in the panel, enable `clone-remote-port` in Geyser's config and restart. Connect from Bedrock with the same IP and port as Java."
+            })
+        },
+        {
             name: 'BisectHosting',
             url: 'https://www.bisecthosting.com/',
             description: translate({

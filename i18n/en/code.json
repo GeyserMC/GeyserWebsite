@@ -92,6 +92,9 @@
   "providers.provider.aquatis.description": {
     "message": "Need to open a support ticket to get a UDP port, then use that as the `bedrock port`."
   },
+  "providers.provider.astrol_nodes.description": {
+    "message": "Install Geyser and Floodgate from the plugin installer in the panel, enable `clone-remote-port` in Geyser's config and restart. Connect from Bedrock with the same IP and port as Java."
+  },
   "providers.provider.bisecthosting.description": {
     "message": "Go to the Network tab and copy an available port not in use by other mods. In Geyser's config, under the bedrock section, on the port: line, edit the value to the port you copied. See Bisect's [article](https://www.bisecthosting.com/clients/index.php?rp=/knowledgebase/193/How-to-install-Geyser-and-Floodgate-on-a-Minecraft-Java-server.html) for full instructions. If you still cannot connect after following these instructions, contact Bisect Support, as they reportedly have UDP disabled on some nodes."
   },
