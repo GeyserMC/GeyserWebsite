@@ -1,0 +1,258 @@
+---
+title: Custom Biomes
+description: Geyser can map Java biomes to custom Bedrock biomes, with colors, fog and ambient particles supplied through JSON mappings or the Geyser API.
+---
+
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+
+Minecraft: Java Edition servers can add biomes through datapacks and mods. Bedrock Edition does not know these biomes,
+so by default Geyser shows them as a vanilla biome that fits the dimension, with vanilla colors and fog.
+
+A custom biome mapping gives a Java biome a Bedrock biome of its own. The colors, fog and ambient particles for it are
+supplied through JSON mappings or the Geyser API, and Geyser generates a resource pack from those values and sends it to
+Bedrock clients alongside any other packs.
+
+Rain and snow are not part of the mappings. They use the base temperature, downfall and precipitation of the Java biome
+from the server's registry, so Java behavior that varies with the position inside a biome, such as mountain snow lines,
+is approximated.
+
+Before beginning, ensure that `gameplay.enable-custom-content` is set to `true` in your `config.yml` file. Both the JSON
+mappings and the API event depend on it.
+
+:::info
+Custom biomes only take effect on servers that have the Java biome in their registry. A mapping for a biome the server
+does not know is not applied on that server. The generated resource pack still contains every registered appearance.
+:::
+
+:::warning
+Geyser does not read biomes out of datapacks or mods automatically. Every custom biome has to be mapped, either in a
+JSON mappings file or through the Geyser API.
+:::
+
+## Mapping a biome
+
+<Tabs groupId="custom-biome-implementation">
+    <TabItem value="json" label="JSON-mappings">
+        For setting up JSON mappings, please see the instructions [here](/wiki/geyser/custom-content#json-mappings).
+
+        Set `format_version` to `1` and list the custom biomes under the `biomes` key, mapping each Java biome identifier
+        to its definition.
+
+        A definition has up to three parts. `effects` and `attributes` use the same keys and color formats as a Java
+        biome definition, so the values listed below can be copied over from the datapack. Any other keys in them are
+        ignored. The optional `geyser` object holds what Bedrock needs on top of that.
+
+        Example `biome_mappings.json`:
+        ```json
+        {
+          "format_version": 1,
+          "biomes": {
+            "my_datapack:crystal_caves": {
+              "attributes": {
+                "minecraft:visual/sky_color": "#78a7ff",
+                "minecraft:visual/fog_color": 12632256,
+                "minecraft:visual/water_fog_color": "#050533",
+                "minecraft:visual/water_fog_end_distance": 48.0
+              },
+              "effects": {
+                "water_color": "#3f76e4",
+                "grass_color": "#5f9f45",
+                "foliage_color": "#4f8f3f",
+                "dry_foliage_color": "#9e814d"
+              },
+              "geyser": {
+                "bedrock_identifier": "my_datapack:crystal_caves",
+                "tags": ["overworld", "monster"],
+                "water_surface_opacity": 0.55,
+                "precipitation": {
+                  "type": "blue_spores",
+                  "density": 2.0
+                }
+              }
+            },
+            "my_datapack:plains_variant": {
+              "effects": {
+                "grass_color": "#5f9f45"
+              }
+            }
+          }
+        }
+        ```
+
+        The following values are read. All of them are optional; a value that is left out uses the client's default,
+        except grass and foliage, which the client derives from the biome's climate. A biome with no visual values at
+        all is valid and gets no generated visuals.
+
+        | Key | Description |
+        |---|---|
+        | `effects.water_color` | Color of the water surface |
+        | `effects.grass_color` | Grass tint |
+        | `effects.foliage_color` | Foliage tint |
+        | `effects.dry_foliage_color` | Dry foliage tint |
+        | `attributes.minecraft:visual/sky_color` | Sky color |
+        | `attributes.minecraft:visual/fog_color` | Color of the distance fog in air. Shown darkened during rain, like on Java |
+        | `attributes.minecraft:visual/water_fog_color` | Color of the fog seen underwater |
+        | `attributes.minecraft:visual/water_fog_end_distance` | Distance in blocks at which the underwater fog is fully opaque, `0.0` or greater |
+        | `geyser.bedrock_identifier` | Identifier of the Bedrock biome, see below |
+        | `geyser.tags` | Bedrock biome tags, see below |
+        | `geyser.water_surface_opacity` | Opacity of the water surface, between `0.0` and `1.0` |
+        | `geyser.water_fog_end_distance` | Same as the attribute above; this one wins when both are set |
+        | `geyser.precipitation` | Ambient particles, see below |
+
+        Colors are either an integer, or a string in the `#rrggbb` or `#aarrggbb` format, where the alpha is ignored.
+        Java's array form is not accepted. Attributes written in Java's object form, with `argument` and `modifier`, are
+        skipped, as they have no fixed value to translate.
+
+        If only one of `water_fog_color` and `water_fog_end_distance` is set, the other uses the vanilla Bedrock default
+        fog: `#44AFF5`, fully opaque at 60 blocks.
+
+        A biome with an invalid value is logged and skipped; the other biomes in the file still load. Leave optional
+        keys out rather than setting them to `null`.
+
+        When `geyser.bedrock_identifier` is not set, the Java identifier is reused if it is valid as a Bedrock identifier,
+        otherwise Geyser derives a `geyser:auto_` identifier from it. Bedrock identifiers may only contain lowercase
+        letters, digits, `.`, `_` and `-` in the namespace and the path, so a Java identifier such as
+        `my_datapack:cave/crystal_caves` gets a derived one. The `minecraft` namespace and the `geyser:auto_` prefix
+        cannot be used for identifiers you set yourself, and an identifier without a namespace, such as `crystal_caves`,
+        becomes `geyser_custom:crystal_caves`. Set the identifier yourself when a resource pack of your own needs to
+        refer to the biome by name.
+
+        Bedrock's data-driven content, such as spawn rules, matches biomes with the `has_biome_tag` filter. The tags in
+        `geyser.tags` are passed through to the Bedrock biome. A tag may contain lowercase letters, digits, `.` and `_`,
+        with at most one `:` separating a namespace, and cannot start with `minecraft:`. Without `geyser.tags`, the
+        biome has no tags.
+
+        `geyser.precipitation` adds ambient ash or spore particles, like in the vanilla soul sand valley. When present,
+        both keys are required: `type` is one of `ash`, `white_ash`, `red_spores` or `blue_spores`, and `density` is
+        `0.0` or greater. For reference, the vanilla basalt deltas use white ash at a density of `2.0`. This is not rain
+        or snow, which follow the Java climate.
+    </TabItem>
+    <TabItem value="api" label="Geyser API">
+        Custom biomes are registered in the `GeyserDefineCustomBiomesEvent`, which is fired once on Geyser's startup
+        after the JSON mappings have been loaded. Definitions are created with `CustomBiomeDefinition.builder(Identifier)`,
+        which takes the Bedrock identifier of the biome, and registered for the identifier of a Java biome.
+
+        ```java
+        @Subscribe
+        public void onDefineCustomBiomes(GeyserDefineCustomBiomesEvent event) {
+            event.register(Identifier.of("my_datapack:crystal_caves"),
+                CustomBiomeDefinition.builder(Identifier.of("my_datapack:crystal_caves"))
+                    .tag("overworld")
+                    .tag("monster")
+                    .appearance(CustomBiomeAppearance.builder()
+                        .skyColor(new Color(0x78a7ff))
+                        .fogColor(new Color(12632256))
+                        .waterFogColor(new Color(0x050533))
+                        .waterFogEndDistance(48.0f)
+                        .waterSurfaceColor(new Color(0x3f76e4))
+                        .waterSurfaceOpacity(0.55f)
+                        .grassColor(new Color(0x5f9f45))
+                        .foliageColor(new Color(0x4f8f3f))
+                        .dryFoliageColor(new Color(0x9e814d))
+                        .precipitation(CustomBiomePrecipitation.of(CustomBiomePrecipitation.Type.BLUE_SPORES, 2.0f)))
+                    .build());
+        }
+        ```
+
+        `CustomBiomeAppearance` holds the same values as the JSON mappings, with the same rules, and every value is
+        optional. Colors are `java.awt.Color`; the alpha component is ignored. Building an appearance with no value set
+        throws an `IllegalArgumentException`, so leave `appearance(...)` out for a biome that your own resource pack
+        styles. The definition still maps the Java biome to the Bedrock one.
+
+        Identifiers passed to the builder must be fully namespaced: `Identifier.of("crystal_caves")` is in the
+        `minecraft` namespace, which is rejected. Invalid identifiers, tags and values are rejected when the definition
+        or appearance is built.
+
+        Registering after the event has been fired, or with a definition that was not created through
+        `CustomBiomeDefinition.builder(...)`, throws a `CustomBiomeDefinitionRegisterException`, as does reusing a Java
+        biome or a Bedrock identifier that is already registered. The map returned by `customBiomeDefinitions()` lists
+        what is already registered, including the biomes from JSON mappings.
+    </TabItem>
+</Tabs>
+
+Every Java biome and every Bedrock identifier can only be registered once, across JSON mappings and extensions
+together. Mappings files are read in sorted order, and the biomes in a file in sorted order, before the API event fires.
+The first registration wins and later ones are rejected.
+
+---
+
+<details>
+    <summary>Changing vanilla biomes</summary>
+    Vanilla Java biomes can be mapped too, which replaces the Bedrock biome Geyser would otherwise use for them. The
+    Bedrock identifier must still be a custom one, since the `minecraft` namespace is reserved.
+
+    ```json
+    {
+      "format_version": 1,
+      "biomes": {
+        "minecraft:swamp": {
+          "effects": {
+            "water_color": "#617b64",
+            "grass_color": "#4c763c"
+          },
+          "geyser": {
+            "bedrock_identifier": "my_pack:swamp"
+          }
+        }
+      }
+    }
+    ```
+</details>
+
+<details>
+    <summary>Providing the visuals yourself</summary>
+    Instead of having Geyser generate the visuals, a mappings file can name a resource pack that already contains
+    them. Set `mapping_options.biomes.pack_uuid` to the `header.uuid` of that pack's manifest, and add the pack to
+    Geyser as described on the [resource packs](/wiki/geyser/packs) page. This applies to every biome in that file.
+
+    ```json
+    {
+      "format_version": 1,
+      "mapping_options": {
+        "biomes": {
+          "pack_uuid": "8caa1b2a-0b23-4d55-9b46-8a3c2d9f0e11"
+        }
+      },
+      "biomes": {
+        "my_datapack:crystal_caves": {
+          "geyser": {
+            "bedrock_identifier": "my_datapack:crystal_caves",
+            "tags": ["overworld"]
+          }
+        }
+      }
+    }
+    ```
+
+    The biomes in such a file cannot have visual values, including particles and water opacity; a biome that has them
+    is rejected. A `pack_uuid` that is not a valid UUID keeps every biome in the file from loading. When no pack with
+    that UUID is registered, Geyser logs a warning on startup, but the biomes are still registered.
+
+    Define the biome in the pack in a `biomes/<name>.client_biome.json` file whose
+    `minecraft:client_biome.description.identifier` is the Bedrock identifier from the mapping. Use this for visuals
+    Geyser cannot generate, such as fog settings of your own or Vibrant Visuals atmospherics.
+</details>
+
+## The generated resource pack
+
+Geyser writes the generated visuals to `cache/custom_biomes.mcpack` in its config folder. It contains a client biome
+definition per biome and, when needed, fog, atmosphere and water settings. The pack is registered with low priority, so
+a resource pack you add yourself takes precedence over it. Its manifest declares a minimum engine version of `1.26.0`.
+
+A registered mapping can still fall back to the vanilla biome during a session. Bedrock's biome definition list holds at
+most 1,024 unique names and tags, vanilla ones included, so servers with very many custom biomes and tags can run out.
+A biome is also not applied when a later backend server sends it with a different climate than the one already sent to
+the client. Geyser logs a warning when mappings could not be applied to a player.
+
+## Vibrant Visuals
+
+The generated resource pack works with both the classic renderer and Vibrant Visuals, but the two renderers do not use
+every value the same way. As of Bedrock 1.26.44, Vibrant Visuals:
+
+- uses the sky color as the daytime zenith tint; the horizon and the vanilla night colors remain,
+- mixes the water surface color into the water rather than applying it directly, so the rendered color can differ,
+- does not apply the air fog color or the water surface opacity,
+- does not tint the underwater haze with the underwater fog color, though nearby submerged surfaces still pick it up.
+
+The classic renderer supports all of the values listed above.
