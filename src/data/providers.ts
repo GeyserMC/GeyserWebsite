@@ -105,6 +105,14 @@ export const providersData: Providers = {
             })
         },
         {
+            name: 'Flux',
+            url: 'https://runonflux.com/games/minecraft',
+            description: translate({
+                id: 'providers.provider.flux.description',
+                message: "On a Paper, Purpur, Spigot, Fabric or NeoForge server, install Geyser from the Mods tab (Floodgate is installed with it) and restart. Geyser is preconfigured to share the Java port, so Bedrock players connect with the same domain and port as Java players, shown in the dashboard. Servers created before October 2026 first apply the 'Bedrock crossplay (Geyser)' setting in Deployment Settings. See [Flux's guide](https://runonflux.com/games/minecraft/java-vs-bedrock) for more details."
+            })
+        },
+        {
             name: 'FreeMcServer.net',
             url: 'https://freemcserver.net',
             description: translate({
