@@ -36,6 +36,9 @@ jobs:
       commit: ${{ steps.commit.outputs.commit-hash == '' && steps.commit.outputs.commit-hash || github.sha }}
     permissions:
       contents: write
+    env:
+      # Forks have no Crowdin secrets: skip the translation sync there, and deploy the pushed commit as is
+      CROWDIN_ENABLED: ${{ secrets.CROWDIN_TOKEN != '' }}
     steps:
       - uses: actions/setup-node@2028fbc5c25fe9cf00d9f06a71cc4710d4507903
         with:
@@ -59,12 +62,14 @@ jobs:
         run: yarn install --immutable
 
       - name: Sync Translations
+        if: env.CROWDIN_ENABLED == 'true'
         run: yarn crowdin-sync
         env:
           CROWDIN_TOKEN: ${{ secrets.CROWDIN_TOKEN }}
           CROWDIN_ORGANIZATION: ${{ secrets.CROWDIN_ORGANIZATION }}
 
       - name: Commit Changes
+        if: env.CROWDIN_ENABLED == 'true'
         id: commit
         # See https://github.com/planetscale/ghcommit-action/releases
         uses: planetscale/ghcommit-action@f24050e41f8694750427d111b52f4ef9ca81a32d # v0.2.18
