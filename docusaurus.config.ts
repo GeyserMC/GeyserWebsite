@@ -31,7 +31,9 @@ const config: Config = {
         }
     },
 
-    markdown: process.env.DOCUSAURUS_CURRENT_LOCALE === 'crp' ? {
+    markdown: {
+        mermaid: true,
+        ...(process.env.DOCUSAURUS_CURRENT_LOCALE === 'crp' ? {
         preprocessor: ({ fileContent }) => {
             const lines = fileContent.split('\n');
 
@@ -48,7 +50,8 @@ const config: Config = {
 
             return lines.join('\n');
         }
-    } : {},
+        } : {})
+    },
 
     presets: [
         [
@@ -122,7 +125,7 @@ const config: Config = {
         './src/plugins/output-locales.ts',
         './src/plugins/modify-webpack.ts',
     ],
-    themes: ["docusaurus-theme-openapi-docs"],
+    themes: ["docusaurus-theme-openapi-docs", "@docusaurus/theme-mermaid"],
 
     headTags: process.env.DOCUSAURUS_CURRENT_LOCALE === 'crp' ? [
         {

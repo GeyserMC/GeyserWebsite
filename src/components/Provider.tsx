@@ -380,7 +380,7 @@ const HostNotice = ({ provider }: { provider: HostingProvider }) => {
         return null;
     }
     return (
-        <Admonition type="caution" title={unconfirmed ? <MDXTranslatable.setup.unconfirmed_title /> : undefined}>
+        <Admonition type="caution" title={unconfirmed ? <MDXTranslatable.setup.unconfirmed_title /> : <MDXTranslatable.setup.warning_title />}>
             {unconfirmed && (
                 <p>
                     <MDXTranslatable.setup.unconfirmed name={provider.name} />

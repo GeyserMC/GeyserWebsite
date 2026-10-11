@@ -119,6 +119,7 @@ export const MDXTranslatable = {
         badge_silver: () => <Translate id="mdx.setup.badge.silver">Silver supporter</Translate>,
 
         unconfirmed_title: () => <Translate id="mdx.setup.unconfirmed_title">Not checked for NetherNet yet</Translate>,
+        warning_title: () => <Translate id="mdx.setup.warning_title">Warning</Translate>,
         unconfirmed: ({ name }: { name: string }) => (
             <Translate id="mdx.setup.unconfirmed_reach_out_update" values={{ name, discord: <Link to="https://discord.gg/geysermc">Discord</Link> }}>
                 {"These instructions have not been checked for NetherNet yet. If Bedrock players can't join, reach out to {name} to get instructions on how to use Geyser, and let us know on {discord} so we can update this guide."}

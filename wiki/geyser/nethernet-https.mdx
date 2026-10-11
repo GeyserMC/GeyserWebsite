@@ -23,7 +23,7 @@ This page only matters if you use Geyser's **built-in signaling**: `mode` in the
 
 1. **A domain name** that points to your server, like `play.example.com`.
    Players must connect with this name, not with an IP address, because the certificate is made for the name.
-   If you do not have a domain, you could use [DuckDNS](https://www.duckdns.org) to obtain a free one, like `myserver.duckdns.org`.
+   If you do not have a domain, you could use a DDNS provider such as [DuckDNS](https://www.duckdns.org) to obtain a free one, like `myserver.duckdns.org`.
 2. **A working NetherNet setup** without HTTPS. Make sure players can join first, then add HTTPS.
 3. **A certificate for that domain.** If you already have one, you can use it as is.
    Otherwise, you could use [Let's Encrypt](https://letsencrypt.org) to obtain one for free. The steps below do this with Caddy, certbot or win-acme,
@@ -144,9 +144,15 @@ Geyser reads the certificate when it starts. After a renewal, restart the server
 A reverse proxy sits in front of Geyser. It handles HTTPS, and passes signaling on to Geyser.
 Gameplay (UDP) still goes straight to Geyser.
 
-```text
-Player ──TCP 19132 (HTTPS)──▶ Caddy / nginx ──TCP 19133 (HTTP)──▶ Geyser
-Player ──UDP 19132 (playing)─────────────────────────────────────▶ Geyser
+```mermaid
+flowchart LR
+    Player([Player])
+    Proxy[Caddy / nginx]
+    Geyser[Geyser]
+
+    Player -- "TCP 19132 (HTTPS)" --> Proxy
+    Proxy -- "TCP 19133 (HTTP)" --> Geyser
+    Player -. "UDP 19132 (playing)" .-> Geyser
 ```
 
 **1. Prepare Geyser**
