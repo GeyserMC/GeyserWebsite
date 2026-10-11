@@ -47,7 +47,11 @@ const sidebars: SidebarsConfig = {
                 id: 'geyser/setup'
             },
             items: [
-                'geyser/supported-hosting-providers',
+                {
+                    type: 'link',
+                    label: 'Hosting Providers',
+                    href: '/hosting'
+                },
                 'geyser/using-geyser-with-consoles',
                 'geyser/playit-gg',
                 'geyser/creating-a-startup-script',

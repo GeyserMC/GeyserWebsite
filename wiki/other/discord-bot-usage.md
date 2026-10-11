@@ -30,7 +30,7 @@ If the bot returns `Unable to find Java/Bedrock server at the requested address`
 
 ## Provider List {#provider-list}
 
-Some hosting providers have unique setup methods for Geyser. If you do not know how to setup Geyser on your provider you can either checkout the [Geyser Host Provider List](/wiki/geyser/supported-hosting-providers/) manually, or use our bot command `/provider "providername"` as seen below.
+Some hosting providers have unique setup methods for Geyser. If you do not know how to setup Geyser on your provider you can either select your provider in the [setup guide](/wiki/geyser/setup/), or use our bot command `/provider "providername"` as seen below.
 
 ![Example of the provider command](/img/wiki/discord-bot/provider.png)
 

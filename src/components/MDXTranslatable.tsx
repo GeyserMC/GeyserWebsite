@@ -18,6 +18,7 @@ export const MDXTranslatable = {
         viaproxy: () => <Translate id="mdx.setup.viaproxy">ViaProxy</Translate>,
         standalone: () => <Translate id="mdx.setup.standalone">Standalone</Translate>,
 
+        checking_server_version: () => <Translate id="mdx.setup.checking_server_version">Checking your server version</Translate>,
         installing_geyser: () => <Translate id="mdx.setup.installing_geyser">Installing Geyser</Translate>,
         download_jar: ({ jarName }: { jarName: string }) => (
             <Translate id="mdx.setup.download_jar" values={{
@@ -43,26 +44,110 @@ export const MDXTranslatable = {
             </Translate>
         ),
         restart_server: () => <Translate id="mdx.setup.restart_server">Restart the server.</Translate>,
+        restart_geyser: () => <Translate id="mdx.setup.restart_geyser">Restart Geyser.</Translate>,
+        https_note: () => (
+            <Translate id="mdx.setup.https_note" values={{ https: <Link to="/wiki/geyser/nethernet-https">HTTPS</Link> }}>
+                {"Unless signaling runs over {https}, Minecraft asks players    whether they trust the server the first time they join."}
+            </Translate>
+        ),
 
-        geyser_config_changes: () => <Translate id="mdx.setup.geyser_config_changes">Geyser Config Changes</Translate>,
-        open_config: ({ configLocation }: { configLocation: string }) => (
-            <Translate id="mdx.setup.open_config" values={{ configLocation: <InlineCode>{configLocation}</InlineCode> }}>
-                {"Open your Geyser config located at {configLocation} and make these changes:"}
+        configuring_geyser: () => <Translate id="mdx.setup.configuring_geyser">Configuring Geyser</Translate>,
+        open_config_match: ({ configLocation }: { configLocation: string }) => (
+            <Translate id="mdx.setup.open_config_simple" values={{ configLocation: <InlineCode>{configLocation}</InlineCode>, bedrock: <InlineCode>bedrock:</InlineCode> }}>
+                {"Now open the file {configLocation}. Find the part that starts with {bedrock}, and change the lines shown below."}
             </Translate>
         ),
-        change_address: ({ address }: { address: string }) => (
-            <Translate id="mdx.setup.change_address" values={{ address: <InlineCode>{address}</InlineCode>, addressText: <InlineCode>address</InlineCode> }}>
-                {"Change the {addressText} value to {address}."}
+        preconfigured: ({ name }: { name: string }) => (
+            <Translate id="mdx.setup.preconfigured" values={{ name }}>
+                {"No changes needed. {name} automatically configures Geyser."}
             </Translate>
         ),
-        change_port: ({ port }: { port: string }) => (
-            <Translate id="mdx.setup.change_port" values={{ port: <InlineCode>{port}</InlineCode>, portText: <InlineCode>port</InlineCode> }}>
-                {"Change the {portText} value to {port}."}
+        transport_nethernet: () => <Translate id="mdx.setup.transport_nethernet">NetherNet</Translate>,
+        transport_both: () => <Translate id="mdx.setup.transport_both">NetherNet and RakNet</Translate>,
+        transport_nethernet_explainer: () => (
+            <Translate id="mdx.setup.transport_nethernet_simple">
+                NetherNet is supported fully by 26.50+. If you'd like to also have working MOTD and player count for older versions, you will need to set up both NetherNet and Raknet.
             </Translate>
         ),
-        change_clone_remote_port: ({ port }: { port: string }) => (
-            <Translate id="mdx.setup.change_clone_remote_port" values={{ port: <InlineCode>{port}</InlineCode>, portText: <InlineCode>clone-remote-port</InlineCode> }}>
-                {"Change the {portText} value to {port}."}
+        transport_both_explainer: () => (
+            <Translate id="mdx.setup.transport_both_compat">
+                Also accepts RakNet, for additional compatibility: some Bedrock versions, such as 26.40, fetch the server's MOTD and player count over RakNet. This option needs one more UDP port.
+            </Translate>
+        ),
+        placeholder: () => <Translate id="mdx.setup.placeholder_word">Replace this</Translate>,
+        replace_with: () => <Translate id="mdx.setup.replace_with_simple">With this</Translate>,
+        placeholder_java_port: () => <Translate id="mdx.setup.placeholder_java_port">The port of the Java server.</Translate>,
+        placeholder_java_port_udp: () => (
+            <Translate id="mdx.setup.placeholder_java_port_udp">
+                A second UDP port, different from the port above. This can be the port of the Java server: the Java server only uses it over TCP, so Geyser can use it over UDP for NetherNet. Any other free UDP port works too.
+            </Translate>
+        ),
+        placeholder_second_free_port: () => (
+            <Translate id="mdx.setup.placeholder_second_free_port">
+                A second free port, different from the port above. Open it for UDP.
+            </Translate>
+        ),
+        placeholder_second_udp_port: () => (
+            <Translate id="mdx.setup.placeholder_second_udp_port">
+                A second port, open for UDP, that is different from the port above. Ask your host for one if you only have one port.
+            </Translate>
+        ),
+        raknet_on_port: () => (
+            <Translate id="mdx.setup.raknet_on_port" values={{ port: <InlineCode>port</InlineCode> }}>
+                {"RakNet uses {port} over UDP, so that port has to be open for UDP as well."}
+            </Translate>
+        ),
+
+        summary_builtin_signaling: () => <Translate id="mdx.setup.summary.builtin_signaling">Built-in signaling</Translate>,
+        summary_external_signaling: () => <Translate id="mdx.setup.summary.external_signaling">External signaling</Translate>,
+        summary_supported: () => <Translate id="mdx.setup.summary.supported">Supported</Translate>,
+        summary_not_supported: () => <Translate id="mdx.setup.summary.not_supported">Not supported</Translate>,
+        summary_warden: () => (
+            <Translate id="mdx.setup.summary.warden" values={{ warden: <Link to='https://warden.cloud'>Warden</Link> }}>
+                {"Supported, via {warden}"}
+            </Translate>
+        ),
+        summary_host_endpoint: () => <Translate id="mdx.setup.summary.host_endpoint">Supported, via the host's own service</Translate>,
+        summary_nethernet_reported: () => <Translate id="mdx.setup.summary.nethernet_reported_generic">Reported to work with NetherNet</Translate>,
+        summary_supporter_configures: ({ name }: { name: string }) => (
+            <Translate id="mdx.setup.summary.supporter_configures" values={{ name }}>{"{name} installs and configures Geyser for you, including NetherNet."}</Translate>
+        ),
+        summary_updated: ({ date }: { date: string }) => (
+            <Translate id="mdx.setup.summary.updated" values={{ date }}>{"Instructions last updated on {date}"}</Translate>
+        ),
+        badge_gold: () => <Translate id="mdx.setup.badge.gold">Gold supporter</Translate>,
+        badge_silver: () => <Translate id="mdx.setup.badge.silver">Silver supporter</Translate>,
+
+        unconfirmed_title: () => <Translate id="mdx.setup.unconfirmed_title">Not checked for NetherNet yet</Translate>,
+        unconfirmed: ({ name }: { name: string }) => (
+            <Translate id="mdx.setup.unconfirmed_reach_out_update" values={{ name, discord: <Link to="https://discord.gg/geysermc">Discord</Link> }}>
+                {"These instructions have not been checked for NetherNet yet. If Bedrock players can't join, reach out to {name} to get instructions on how to use Geyser, and let us know on {discord} so we can update this guide."}
+            </Translate>
+        ),
+        try_not_listed: ({ link }: { link: string }) => (
+            <Translate id="mdx.setup.try_not_listed" values={{ notListed: <a href={link}><Translate id="mdx.setup.try_not_listed.link">"Not listed" guide</Translate></a> }}>
+                {"If these instructions don't work, you can follow the {notListed} instead."}
+            </Translate>
+        ),
+        no_signaling: ({ name }: { name: string }) => (
+            <Translate id="mdx.setup.no_signaling" values={{ name }}>
+                {"{name} supports neither built-in nor external signaling, so Bedrock players cannot connect over NetherNet."}
+            </Translate>
+        ),
+
+        connect_same_as_java: () => (
+            <Translate id="mdx.setup.connect_same_as_java">
+                Connect with the same address and port as the Java server.
+            </Translate>
+        ),
+        connect_java_address_port: ({ port }: { port: string }) => (
+            <Translate id="mdx.setup.connect_java_address_port" values={{ port: <InlineCode>{port}</InlineCode> }}>
+                {"Connect with the address of the Java server, and {port} as the port."}
+            </Translate>
+        ),
+        connect_config_port: () => (
+            <Translate id="mdx.setup.connect_config_port" values={{ port: <InlineCode>port</InlineCode> }}>
+                {"Connect with the address of the Java server, and the {port} you set above."}
             </Translate>
         ),
 
@@ -70,8 +155,8 @@ export const MDXTranslatable = {
         connecting_on_bedrock: () => <Translate id="mdx.setup.connecting_on_bedrock">Connecting on Bedrock</Translate>,
         more_information: () => <Translate id="mdx.setup.more_information">More Information</Translate>,
 
-        hosting_provider_article: () => <Translate id="mdx.setup.hosting_provider_article">Hosting provider article</Translate>,
-        hosting_provider_support: () => <Translate id="mdx.setup.hosting_provider_support">Hosting provider support</Translate>,
-        hosting_provider_discord: () => <Translate id="mdx.setup.hosting_provider_discord">Hosting provider Discord</Translate>,
+        hosting_provider_article: () => <Translate id="mdx.setup.hosting_provider_article_short">Host's Geyser guide</Translate>,
+        hosting_provider_support: () => <Translate id="mdx.setup.hosting_provider_support_short">Support</Translate>,
+        hosting_provider_discord: () => <Translate id="mdx.setup.hosting_provider_discord_short">Discord</Translate>,
     }
 }

@@ -45,7 +45,7 @@ export const SetupGuide = () => {
                 <ProviderSelector setProvider={setProvider} />
                 {provider ? (
                     <>
-                        {provider.connect_instructions ? (
+                        {!provider.notices?.unsupported ? (
                             <Tabs queryString='platform'>
                                 <TabItem value='paper-spigot' label={<PlatformIcon img={PaperSpigotIcon} text={<MDXTranslatable.setup.paper_spigot/>} />} default>
                                     <PaperSpigot provider={provider} />
@@ -67,7 +67,7 @@ export const SetupGuide = () => {
                                     </TabItem>
                                 )}
                             </Tabs>
-                        ) : (<Admonition type="warning" title={<Translate id='components.provider.no_support'>Not supported</Translate>}>{provider.warn}</Admonition>)}
+                        ) : (<Admonition type="warning" title={<Translate id='components.provider.no_support'>Not supported</Translate>}>{provider.notices.unsupported}</Admonition>)}
                     </>
                 ) : null}
             </TabItem>

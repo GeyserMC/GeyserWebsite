@@ -26,14 +26,50 @@ The Geyser specific properties are prioritized over the plugin properties!
   - ```-1``` means UDP is not supported and will forcibly stop Geyser.
   - ```server``` means to match the port of the TCP server.
   - any other number means to use that specific port
+  - This sets the Bedrock `port`, used as the RakNet port, the built-in signaling (TCP) port, and/or the NetherNet (WebRTC) port.
+    With `server`, the signaling port is the Java server's port, so built-in signaling cannot run and Geyser uses external signaling instead, unless `-DgeyserSignalingPort` sets a separate port.
 
 - ```-DgeyserUdpAddress=server``` or ```-DpluginUdpAddress=server```
   - ```server``` means to match the bind address of the TCP server
   - any other string will be used as-is for the bind address.
+  - This address is also used for built-in signaling and NetherNet. NetherNet does not work on a loopback address such as `127.0.0.1`.
+
+- `-DgeyserTransport=nethernet`
+  - One of: `nethernet`, `both` (NetherNet and RakNet), or `raknet`. Overrides `transport` in the `bedrock` section.
+  - With `both`, RakNet and NetherNet each need their own UDP port, so also set `-DgeyserWebrtcPort` (or `-DgeyserRaknetPort`).
+
+- `-DgeyserSignalingMode=builtin`
+  - One of: `builtin` (Geyser runs signaling itself, over TCP), `nxs` (an external signaling service, Warden by default), `hybrid` (both), or `none`. Overrides `mode` in the `signaling` section.
+  - If the built-in signaling port is the Java server's port, Geyser uses external signaling instead.
+
+- `-DgeyserWebrtcPort=19133`
+  - The UDP port NetherNet (WebRTC) connections use. Overrides `webrtc-port`.
+  - When not set, and the transport is `nethernet`, the NetherNet port follows `-DgeyserUdpPort`. With `both`, RakNet keeps that port, so this has to be set to a different port.
+
+- `-DgeyserSignalingPort=19134`
+  - The TCP port built-in signaling (HTTP, and HTTPS if configured) listens on.
+  - Use this to give signaling its own TCP port, for example when the Bedrock port is the Java server's port.
+  - When not set, and the transport is `nethernet`, the NetherNet port follows `-DgeyserUdpPort`. With `both`, RakNet keeps that port, so this has to be set to a different port.
+
+- `-DgeyserAdvertiseAddresses=203.0.113.5,198.51.100.7`
+  - A comma-separated list of public addresses that built-in signaling tells players to connect to, for servers behind a NAT or in a container without a public address. Without a port, the NetherNet (WebRTC) port is used; add one (e.g. `203.0.113.5:19133`) if players reach it on a different port number. Port forwarding is not set up for you.
+  - Overrides `advertise-addresses` in the `builtin` part of the `signaling` section. For external signaling, use `advertise-addresses` in the `nxs` section of the config.
+
+Upstream:
+
+- `-Dorg.cloudburstmc.netty.trustedProxies.fetch=true`
+  - Whether `http(s)://` entries in `haproxy-protocol-whitelisted-ips` are downloaded as lists of trusted proxies. Set to `false` to only allow addresses written in the config. This list is used by both RakNet and built-in signaling.
+
+
+No longer relevant with Nethernet, and due for removal:
 
 - ```-DgeyserBroadcastPort=19132```
-    - This can be used in cases where the port Geyser runs on does not match the port players use to connect to (e.g. due to port forwarding routings).
-    - When not set or set to 0, it defaults to the same port that Geyser runs on
+  - This can be used in cases where the port Geyser runs on does not match the port players use to connect to (e.g. due to port forwarding routings).
+  - When not set, it defaults to the same port that Geyser runs on.
+  - This system property is RakNet only, and will be removed once RakNet is no longer supported by any version supported by Geyser
+
+- `-DgeyserRaknetPort=19132`
+  - The UDP port RakNet listens on. Defaults to the Bedrock `port` (or `-DgeyserUdpPort`), which stays the port players connect with.
 
 ## Disabling warnings and advanced configuration {#disabling-warnings-and-advanced-configuration}
 You may disable some warnings that may be printed to the console by using the following command line arguments. The values shown are the defaults used by Geyser, unless otherwise noted.

@@ -18,42 +18,48 @@ Small changes can be made directly in the GitHub interface, but larger changes s
 
 ## Adding a Supported Hosting Provider
 
-Supported hosting providers are listed in `src/data/providers.ts`. Hosting providers are grouped into three subcategories:
+Hosting providers are listed in `src/data/providers.ts`, in alphabetical order. The setup guide generates the Geyser config changes and connection instructions from each entry. 
+Set `updated` to the date you add or edit an entry (`'YYYY-MM-DD'`); the setup guide shows it as "Instructions last updated on". 
+See `src/types/providers.ts` for all fields. They are grouped in the order the setup guide shows them: `links` to the host's own help pages, `install` (step 1), `config` (step 2), `extra_step` (step 3), `connect` (step 4), and `notices` shown around the guide.
 
-- `built_in`: Providers that have fully automatic Geyser installation.
-- `supported`: Providers that work with Geyser but require manual installation.
-- `no_support`: Providers that do not work with Geyser.
+Geyser uses NetherNet for Bedrock connections, which needs:
 
-To add a new provider, add an object to the appropriate subcategory in alphabetical order. For example, to add a provider named `Example Hosting Provider` to the `supported` subcategory, edit the `providers.ts` file as follows:
+- **UDP** for game traffic flowing over WebRTC (`config.udp`), and
+- **TCP** for signaling, which is how Bedrock players find the server. Geyser can do this itself ("built-in" signaling, which needs a **TCP** port that is not the Java server's port), or through an external signaling service ([Warden](https://warden.cloud) by default), which needs no extra port.
+
+Ports (`udp` and `builtin_signaling`) can be:
+
+- `'java'`: the Java server's port (UDP only; built-in signaling cannot share the Java server's TCP port),
+- a number, e.g. `19132`, if it is always the same,
+- `{ obtain: translate({...}) }` with how to get one, e.g. "Open an allocation in the Network tab.". The guide adds which config option to set it as.
+
+Prefer a single port: use `builtin_signaling: 'same_as_udp'` when the UDP port is also open on TCP (e.g. Pterodactyl allocations), so users only need one port. Only give `builtin_signaling` its own port if the host really hands out TCP and UDP separately. Leave `builtin_signaling` out if your servers only support external signaling, and set `external_signaling` if you run your own signaling service (or `false` if external signaling is blocked).
+
+Anything else users need to change in the config, such as which Bedrock address to use, goes in `config.notes`, which are shown below the generated config.
+
+If the host has not confirmed these details yet, set `config.confirmed: false`, and the guide shows a warning. Remove it once the host confirms them.
 
 ```diff
-  {
-      name: 'Cubes Hosting',
-      url: 'https://www.cubes.host/',
-      description: translate({
-          id: 'providers.provider.cubes_hosting.description',
-          message: "Install Geyser using the plugin manager. Then restart the server and Geyser will run on an additional port - you can check it in the server console. Geyser-Standalone can be set up through a support ticket."
-      })
-  },
 + {
-+    name: 'Example Hosting Provider',
-+    url: 'https://example.com/',
-+    description: translate({
-+        id: 'providers.provider.example_hosting_provider.description',
-+        message: "Add a description of how to install Geyser on this hosting provider."
-+    })
++     name: 'Example Hosting Provider',
++     url: 'https://example.com/',
++     updated: '2026-10-11',
++     links: { article: 'https://example.com/docs/geyser' },
++     config: {
++         udp: {
++             obtain: translate({
++                 id: 'providers.provider.example_hosting_provider.port',
++                 message: "Open an additional port in the Network tab."
++             })
++         },
++         builtin_signaling: 'same_as_udp'
++     }
 + },
-  {
-      name: 'exaroton',
-      url: 'https://exaroton.com/',
-      description: translate({
-          id: 'providers.provider.exaroton.description',
-          message: descriptionTemplates.default
-      })
-  },
 ```
 
-If possible, use one of the templates listed at the top of the file, such as `descriptionTemplates.default`.
+Hosts that support Geyser through Open Collaboration also get an `open_collaboration` entry with their `tier` (`bronze`, `silver` or `gold`), and an optional `logo` (placed in `static/img/hosts`) and `description`. Silver and gold hosts are listed on the [Hosting Providers](https://geysermc.org/hosting) page, and pinned at the top of the setup guide; bronze hosts are listed like any other host.
+
+If Geyser is installed and configured by the host, use `config: { preconfigured: true, port }` instead, where `port` is the port players connect with, and explain the installation in `install`. Hosts can configure Geyser without config changes using [system properties](https://geysermc.org/wiki/geyser/geyser-command-line-arguments-and-system-properties), such as `-DgeyserTransport`, `-DgeyserSignalingMode`, `-DgeyserWebrtcPort` and `-DgeyserSignalingPort`.
 
 ## Creating a New Page
 

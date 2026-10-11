@@ -108,7 +108,6 @@ const config: Config = {
         ],
         'docusaurus-plugin-sass',
         './src/plugins/create-versions-json.ts',
-        './src/plugins/create-providers-json.ts',
         [
             './src/plugins/crowdin-sync.ts',
             {
@@ -211,6 +210,12 @@ const config: Config = {
                     label: 'Download',
                     position: 'left',
                     className: 'header-download-link'
+                },
+                {
+                    to: 'hosting',
+                    label: 'Hosting',
+                    position: 'left',
+                    className: 'header-hosting-link'
                 },
                 { // Name on mobile sidebar specified in custom.scss
                     href: 'https://github.com/GeyserMC/Geyser',

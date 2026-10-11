@@ -1,51 +1,15 @@
 ---
 title: Supported Hosting Providers
-description: A list of hosting providers and their support for Geyser.
+description: This page has moved to /hosting.
+unlisted: true
 crowdin_page_id: 44b3ae0c-1863-472d-bae8-d69a3d9b5ed6
 ---
 
-import { Provider } from "@site/src/components/Provider";
+import { Redirect } from '@docusaurus/router';
+import useBaseUrl from '@docusaurus/useBaseUrl';
 
-:::caution
+export const ToHosting = () => <Redirect to={useBaseUrl('/hosting')} />;
 
-These providers are not verified by the Geyser team, and the server providers below are reported as working by members of the community.
+<ToHosting />
 
-:::
-
-:::info
-
-Using a <i>"Free Host"</i> may not give you the best experience <i>at all</i>. If you want better support, more freedom to control your server, and learn how to run one, PLEASE pay for a server.
-
-:::
-
-:::info
-
-The below information is for the plugin versions of Geyser unless otherwise specified
-
-:::
-
-<br/>
-
-:::info PLEASE NOTE
-
-This list is incomplete. Please open a [PR](https://github.com/GeyserMC/GeyserWebsite/pulls) or contact us on [Discord](https://discord.gg/geysermc) if the information is incorrect, or you want to add a new hosting provider!
-
-::: 
-
-## Built-in Geyser \{#built-in-geyser}
-
-````mdx-code-block
-<Provider type="built_in" />
-````
-
-## Support for Geyser \{#support-for-geyser}
-
-````mdx-code-block
-<Provider type="support" />
-````
-
-## Does not support Geyser \{#does-not-support-geyser}
-
-````mdx-code-block
-<Provider type="no_support" />
-````
+This page has moved to [Hosting Providers](/hosting). Setup instructions for individual hosts are part of the [setup guide](/wiki/geyser/setup/).

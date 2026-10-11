@@ -1,0 +1,186 @@
+$gold: #d4af37;
+$silver: #a8a9ad;
+
+.summary {
+    margin: 1rem 0;
+    padding: 0.5rem 0.75rem;
+    border: 1px solid var(--ifm-color-emphasis-300);
+    border-radius: var(--ifm-global-radius);
+    font-size: 0.875rem;
+
+    // Supporting hosts get the tier color on the whole border, like their cards on the hosting page
+    &.gold {
+        border: 2px solid $gold;
+    }
+
+    &.silver {
+        border: 2px solid $silver;
+    }
+}
+
+.summaryRow {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.25rem 0.5rem;
+}
+
+.summaryName {
+    font-size: 1rem;
+}
+
+// Logos sit on a dark plate in both themes, like on the hosting page
+.summaryLogo {
+    display: flex;
+    align-items: center;
+    height: 1.5rem;
+    padding: 0.15rem 0.3rem;
+    border-radius: 0.25rem;
+    background-color: #1b1b1d;
+
+    img {
+        height: 100%;
+        width: auto;
+    }
+}
+
+.tierBadge {
+    color: #1c1e21;
+
+    &:hover {
+        color: #1c1e21;
+        text-decoration: none;
+    }
+
+    &.gold {
+        background-color: $gold;
+    }
+
+    &.silver {
+        background-color: $silver;
+    }
+}
+
+.summaryLinks {
+    margin-left: auto;
+}
+
+.summaryMeta {
+    margin-top: 0.25rem;
+    color: var(--ifm-color-emphasis-700);
+}
+
+.hostNote {
+    font-size: 0.875rem;
+    color: var(--ifm-color-emphasis-700);
+
+    p:last-child {
+        margin-bottom: 0;
+    }
+}
+
+// Numbered steps with a line connecting them
+.steps {
+    list-style: none;
+    counter-reset: step;
+    padding-left: 0;
+    margin: 2rem 0;
+}
+
+.step {
+    counter-increment: step;
+    position: relative;
+    padding-left: 3rem;
+    padding-bottom: 1.5rem;
+
+    &::before {
+        content: counter(step);
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 2rem;
+        height: 2rem;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-weight: var(--ifm-font-weight-bold);
+        color: var(--ifm-color-white);
+        background-color: var(--ifm-color-primary);
+    }
+
+    &:not(:last-child)::after {
+        content: '';
+        position: absolute;
+        left: calc(1rem - 1px);
+        top: 2.25rem;
+        bottom: 0.25rem;
+        width: 2px;
+        background-color: var(--ifm-color-emphasis-300);
+    }
+}
+
+.stepTitle {
+    margin: 0.2rem 0 0.75rem;
+}
+
+.stepBody {
+    > :last-child {
+        margin-bottom: 0;
+    }
+}
+
+.transportExplainer {
+    color: var(--ifm-color-emphasis-700);
+}
+
+.placeholders {
+    display: table;
+    width: 100%;
+
+    td:first-child {
+        white-space: nowrap;
+    }
+}
+
+// Readable status pills (the default warning badge has too little contrast)
+.pill {
+    display: inline-block;
+    padding: 0.1rem 0.55rem;
+    border-radius: 999px;
+    font-size: 0.8rem;
+    font-weight: var(--ifm-font-weight-semibold);
+    line-height: 1.5;
+    white-space: nowrap;
+}
+
+// A mock of Bedrock's "Add Server" screen
+.addServer {
+    max-width: 22rem;
+    padding: 0.75rem 1rem 1rem;
+    border: 2px solid #1e1e1f;
+    background-color: #48494a;
+    color: #fff;
+    font-family: var(--ifm-font-family-base);
+    box-shadow: inset 0 -4px 0 #313233;
+
+    label {
+        display: block;
+        margin-top: 0.5rem;
+        font-size: 0.8rem;
+        color: #d0d1d4;
+    }
+}
+
+.addServerTitle {
+    text-align: center;
+    font-weight: var(--ifm-font-weight-bold);
+}
+
+.addServerField {
+    margin-top: 0.2rem;
+    padding: 0.35rem 0.6rem;
+    border: 2px solid #1e1e1f;
+    background-color: #313233;
+    font-size: 0.9rem;
+}

@@ -1,22 +1,4 @@
 {
-  "components.provider.instructions": {
-    "message": "Provider Instructions"
-  },
-  "components.provider.select": {
-    "message": "Select a provider to see specific installation instructions"
-  },
-  "providers.templates.default": {
-    "message": "Enable `clone-remote-port` (or manually set `bedrock port` to the Java port), and connect with the Java IP and port."
-  },
-  "providers.templates.ip_and_port": {
-    "message": "Enable `clone-remote-port` (or manually set `bedrock port` to the Java port) and change `bedrock address` from `0.0.0.0` to your Java server's IP. Connect with the Java IP and port."
-  },
-  "providers.templates.forwarding_option": {
-    "message": "Offers a working port forwarding option."
-  },
-  "providers.templates.java_ip": {
-    "message": "Change `bedrock address` from `0.0.0.0` to your Java server's IP."
-  },
   "pages.main.title": {
     "message": "Revolutionize Your Minecraft Server"
   },
@@ -674,21 +656,6 @@
   "mdx.setup.restart_server": {
     "message": "Restart the server."
   },
-  "mdx.setup.geyser_config_changes": {
-    "message": "Geyser Config Changes"
-  },
-  "mdx.setup.open_config": {
-    "message": "Open your Geyser config located at {configLocation} and make these changes:"
-  },
-  "mdx.setup.change_address": {
-    "message": "Change the {addressText} value to {address}."
-  },
-  "mdx.setup.change_port": {
-    "message": "Change the {portText} value to {port}."
-  },
-  "mdx.setup.change_clone_remote_port": {
-    "message": "Change the {portText} value to {port}."
-  },
   "mdx.setup.additional_steps": {
     "message": "Additional Steps"
   },
@@ -698,44 +665,14 @@
   "mdx.setup.more_information": {
     "message": "More Information"
   },
-  "mdx.setup.hosting_provider_article": {
-    "message": "Hosting provider article"
-  },
-  "mdx.setup.hosting_provider_support": {
-    "message": "Hosting provider support"
-  },
-  "providers.connect.templates.java_ip_port": {
-    "message": "Connect with the Java server IP and Java server port."
-  },
-  "providers.connecting.templates.default": {
-    "message": "Connect with the address of the Java server, and the port set in your Geyser config."
-  },
-  "providers.connecting.templates.default_bedrock_port": {
-    "message": "Connect with the address of the Java server and 19132 as the port (default Bedrock port)."
-  },
-  "providers.connecting.templates.java_ip_port": {
-    "message": "Connect with the same address and port of the Java server."
-  },
   "providers.connecting.templates.provided_by_host": {
     "message": "Instructions to connect with Bedrock edition are provided by the host."
   },
   "providers.config.templates.java_address": {
     "message": "Set `address` in the `bedrock` section to the public address of the Java server."
   },
-  "providers.config.templates.ask_host_for_port": {
-    "message": "Contact your server hosting provider and ask for a UDP port. Then, set `port` in the `bedrock` section to the provided port."
-  },
-  "providers.config.templates.assign_port": {
-    "message": "Assign a UDP port in the panel provided by the server host. Then, set `port` in the `bedrock` section to that port."
-  },
-  "providers.config.templates.allocated_port": {
-    "message": "Set `port` in the `bedrock` section to one of the ports allocated to you."
-  },
   "providers.config.templates.alternative_support": {
     "message": "Alternatively to running Geyser on the same port as the Java server, contact the server host to get a custom port."
-  },
-  "providers.config.templates.alternative_allocation": {
-    "message": "Alternatively, disable `clone-remote-port`, and allocate a new port in the control panel. Set `port` in the `bedrock` section to that port."
   },
   "providers.config.templates.custom_port_dedicated_ip": {
     "message": "If you have a dedicated IP, you can contact the support of the server host to get a custom port."

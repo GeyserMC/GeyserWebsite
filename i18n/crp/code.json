@@ -1,22 +1,4 @@
 {
-  "components.provider.instructions": {
-    "message": "crwdns27849:0crwdne27849:0"
-  },
-  "components.provider.select": {
-    "message": "crwdns27851:0crwdne27851:0"
-  },
-  "providers.templates.default": {
-    "message": "crwdns27853:0`clone-remote-port`crwdnd27853:0`bedrock port`crwdne27853:0"
-  },
-  "providers.templates.ip_and_port": {
-    "message": "crwdns29190:0`clone-remote-port`crwdnd29190:0`bedrock port`crwdnd29190:0`bedrock address`crwdnd29190:0`0.0.0.0`crwdne29190:0"
-  },
-  "providers.templates.forwarding_option": {
-    "message": "crwdns27857:0crwdne27857:0"
-  },
-  "providers.templates.java_ip": {
-    "message": "crwdns29192:0`bedrock address`crwdnd29192:0`0.0.0.0`crwdne29192:0"
-  },
   "pages.main.title": {
     "message": "crwdns27987:0crwdne27987:0"
   },
@@ -674,21 +656,6 @@
   "mdx.setup.restart_server": {
     "message": "crwdns29238:0crwdne29238:0"
   },
-  "mdx.setup.geyser_config_changes": {
-    "message": "crwdns29240:0crwdne29240:0"
-  },
-  "mdx.setup.open_config": {
-    "message": "crwdns29242:0{configLocation}crwdne29242:0"
-  },
-  "mdx.setup.change_address": {
-    "message": "crwdns29244:0{addressText}crwdnd29244:0{address}crwdne29244:0"
-  },
-  "mdx.setup.change_port": {
-    "message": "crwdns29246:0{portText}crwdnd29246:0{port}crwdne29246:0"
-  },
-  "mdx.setup.change_clone_remote_port": {
-    "message": "crwdns29248:0{portText}crwdnd29248:0{port}crwdne29248:0"
-  },
   "mdx.setup.additional_steps": {
     "message": "crwdns29250:0crwdne29250:0"
   },
@@ -698,44 +665,14 @@
   "mdx.setup.more_information": {
     "message": "crwdns29254:0crwdne29254:0"
   },
-  "mdx.setup.hosting_provider_article": {
-    "message": "crwdns29256:0crwdne29256:0"
-  },
-  "mdx.setup.hosting_provider_support": {
-    "message": "crwdns29258:0crwdne29258:0"
-  },
-  "providers.connect.templates.java_ip_port": {
-    "message": "crwdns29260:0crwdne29260:0"
-  },
-  "providers.connecting.templates.default": {
-    "message": "crwdns29262:0crwdne29262:0"
-  },
-  "providers.connecting.templates.default_bedrock_port": {
-    "message": "crwdns29264:0crwdne29264:0"
-  },
-  "providers.connecting.templates.java_ip_port": {
-    "message": "crwdns29266:0crwdne29266:0"
-  },
   "providers.connecting.templates.provided_by_host": {
     "message": "crwdns29268:0crwdne29268:0"
   },
   "providers.config.templates.java_address": {
     "message": "crwdns29270:0`address`crwdnd29270:0`bedrock`crwdne29270:0"
   },
-  "providers.config.templates.ask_host_for_port": {
-    "message": "crwdns29272:0`port`crwdnd29272:0`bedrock`crwdne29272:0"
-  },
-  "providers.config.templates.assign_port": {
-    "message": "crwdns29274:0`port`crwdnd29274:0`bedrock`crwdne29274:0"
-  },
-  "providers.config.templates.allocated_port": {
-    "message": "crwdns29276:0`port`crwdnd29276:0`bedrock`crwdne29276:0"
-  },
   "providers.config.templates.alternative_support": {
     "message": "crwdns29278:0crwdne29278:0"
-  },
-  "providers.config.templates.alternative_allocation": {
-    "message": "crwdns29280:0`clone-remote-port`crwdnd29280:0`port`crwdnd29280:0`bedrock`crwdne29280:0"
   },
   "providers.config.templates.custom_port_dedicated_ip": {
     "message": "crwdns29282:0crwdne29282:0"
