@@ -55,7 +55,8 @@ const sidebars: SidebarsConfig = {
                 'geyser/using-geyser-with-consoles',
                 'geyser/playit-gg',
                 'geyser/creating-a-startup-script',
-                'geyser/port-forwarding'
+                'geyser/port-forwarding',
+                'geyser/nethernet-https'
             ]
         },
         {
