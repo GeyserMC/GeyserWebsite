@@ -194,7 +194,7 @@ export const providersData: Providers = {
             url: 'https://pixly.gg/',
             description: translate({
                 id: 'providers.provider.pixly.description',
-                message: "Full auto installation on Paper, Fabric, Quilt and NeoForge servers. Go to the server's Settings tab, turn on 'Bedrock crossplay' and restart the server; Geyser and Floodgate are installed automatically. Bedrock players connect with the Bedrock address and port shown on the server's connection card."
+                message: "Full auto installation on Paper, Fabric, Quilt and NeoForge servers. Go to the Settings tab of your server, turn on 'Bedrock crossplay' and restart; Geyser and Floodgate are installed automatically. Then connect with the Bedrock address and port shown on your server's page. If Geyser and Floodgate ever need installing by hand, keep 'Bedrock crossplay' on and add both from the server's Content tab."
             })
         },
         {
