@@ -81,6 +81,14 @@ export const providersData: Providers = {
             })
         },
         {
+            name: 'CraftLands Hosting',
+            url: 'https://craftlands.host/minecraft-servers',
+            description: translate({
+                id: 'providers.provider.craftlands_hosting.description',
+                message: "Full auto installation. Go to the Versions page in the panel and click 'Enable' in the 'Bedrock Crossplay' box. This installs Geyser and Floodgate and assigns a Bedrock port. Then restart and connect with the Bedrock address and port shown in the box. See [CraftLands' guide](https://craftlands.host/docs/minecraft/how-to-setup-geyser-on-your-minecraft-server) for more details."
+            })
+        },
+        {
             name: 'CreeperHost',
             url: 'https://www.creeperhost.net/',
             description: translate({
