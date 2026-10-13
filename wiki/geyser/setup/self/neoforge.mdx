@@ -1,8 +1,9 @@
 ---
-title: Geyser Self-Hosted Modded Setup
-description: Learn how to set up Geyser on your self-hosted Fabric or NeoForge server.
+title: Geyser Self-Hosted NeoForge Setup
+description: Learn how to set up Geyser on your self-hosted NeoForge server.
 hide_title: true
-crowdin_page_id: 819cc5c5-b015-445b-aefe-840b30e46166
+crowdin_page_id: b4ccc289-4cbe-425f-9080-3a8e3c2f1f59
+crowdin_sync: true
 ---
 
 import { Versions } from '@site/src/components/Versions'
@@ -10,33 +11,33 @@ import { MDXTranslatable } from '@site/src/components/MDXTranslatable'
 import { SetupSteps, Step, SelfHostConfig } from '@site/src/components/Provider'
 
 :::caution
-Geyser-Fabric and Geyser-NeoForge run  **only** on a <Versions.java/> server.
+Geyser-NeoForge runs **only** on a <Versions.java/> server, and only works alongside **server-side** mods. Mods that players also need to install on their client will not work.
 See [this page](/wiki/geyser/supported-versions#using-geyser-on-fabric-neoforge-servers-not-on-the-latest-minecraft-version) for more details.
 :::
 
-:::info
-Geyser only works with **server-side** mods. Mods that require a client-side install will not work!
-:::
-
 <SetupSteps>
-<Step id="installing-geyser" title={<MDXTranslatable.setup.installing_geyser />}>
+<Step>
 
-- Download the mod from [the download page](/download).
-- Place the Geyser mod jar in the `mods` folder. **For Fabric, you will also need [FabricAPI](https://modrinth.com/mod/fabric-api).**
+#### Installing Geyser \{#installing-geyser}
+
+- Download Geyser-NeoForge from [the download page](/download).
+- Place the Geyser-NeoForge.jar in the `mods` folder.
 - Restart the server.
 
 </Step>
-<Step id="configuring-geyser" title={<MDXTranslatable.setup.configuring_geyser />}>
+<Step>
 
-<SelfHostConfig configLocation="/config/Geyser-Fabric/config.yml" />
+#### Configuring Geyser \{#configuring-geyser}
 
-On NeoForge, the config is located in `/config/Geyser-NeoForge/config.yml` instead.
+<SelfHostConfig configLocation="/config/Geyser-NeoForge/config.yml" />
 
 Since you are self-hosting, you can choose the port freely - the default port is 19132. Geyser uses it over both TCP and UDP, so it cannot be the Java server's port.
 **Important**: Other services/mods that rely on UDP ports, such as Voice Chats or Query, cannot share the port with Geyser.
 
 </Step>
-<Step id="connecting-on-bedrock" title={<MDXTranslatable.setup.connecting_on_bedrock />}>
+<Step>
+
+#### Connecting on Bedrock \{#connecting-on-bedrock}
 
 **Connecting locally in the same network**  
 On the same device as the server, you can connect using `localhost`, or `127.0.0.1` as the address.
@@ -47,7 +48,7 @@ You will need to expose the port Geyser runs on to the Internet if you want play
 
 :::caution
 The Geyser port has to be forwarded for **both TCP and UDP**. Before NetherNet, forwarding UDP was enough. Now, players use TCP to find your server, and UDP to play on it, so without TCP your server will not show up.
-If you use the "NetherNet and RakNet" option, also forward the second port (`webrtc-port`) for UDP.
+If you use the "NetherNet and RakNet" option, also forward the `webrtc-port` for UDP.
 :::
 
 To achieve that, you have two options:

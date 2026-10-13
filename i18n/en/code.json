@@ -641,12 +641,6 @@
   "mdx.setup.neoforge": {
     "message": "NeoForge"
   },
-  "mdx.setup.velocity": {
-    "message": "Velocity"
-  },
-  "mdx.setup.bungeecord": {
-    "message": "BungeeCord"
-  },
   "mdx.setup.installing_geyser": {
     "message": "Installing Geyser"
   },
@@ -656,9 +650,6 @@
   "mdx.setup.place_jar": {
     "message": "Place the {jarName} in the {jarDirectory} folder."
   },
-  "mdx.setup.fabric_dependency": {
-    "message": "If it is not already installed, download  and install the {fabricApiLink} mod to the same folder."
-  },
   "mdx.setup.restart_server": {
     "message": "Restart the server."
   },
@@ -667,9 +658,6 @@
   },
   "mdx.setup.connecting_on_bedrock": {
     "message": "Connecting on Bedrock"
-  },
-  "mdx.setup.more_information": {
-    "message": "More Information"
   },
   "providers.connecting.templates.provided_by_host": {
     "message": "Instructions to connect with Bedrock edition are provided by the host."
@@ -690,7 +678,7 @@
     "message": "To fix random `Unable to Connect` issues, see [here](https://wiki.geysermc.org/geyser/port-forwarding/#ovh-and-soyoustart)."
   },
   "providers.config.templates.install_location.plugin_list": {
-    "message": "Install Geyser through the plugin / mod list provided by the host"
+    "message": "Install Geyser through the plugin / mod list provided by the host."
   },
   "providers.config.templates.install_location.enable_bedrock_crossplay": {
     "message": "Select the 'Enable Bedrock crossplay?' option when changing your server software to automatically install and configure Geyser and Floodgate."
@@ -769,5 +757,248 @@
   },
   "providers.provider.nfoservers.info": {
     "message": "You can also run Geyser-Standalone separately on an Unmanaged VDS."
+  },
+  "mdx.setup.checking_server_version": {
+    "message": "Checking your server version"
+  },
+  "mdx.setup.restart_geyser": {
+    "message": "Restart Geyser."
+  },
+  "mdx.setup.https_note": {
+    "message": "Unless signaling runs over {https}, Minecraft asks players    whether they trust the server the first time they join."
+  },
+  "mdx.setup.configuring_geyser": {
+    "message": "Configuring Geyser"
+  },
+  "mdx.setup.open_config_simple": {
+    "message": "Now open the file {configLocation}. Find the part that starts with {bedrock}, and change the lines shown below."
+  },
+  "mdx.setup.preconfigured": {
+    "message": "No changes needed. {name} automatically configures Geyser."
+  },
+  "mdx.setup.transport_nethernet_simple": {
+    "message": "NetherNet is supported fully by 26.50+. If you'd like to also have working MOTD and player count for older versions, you will need to set up both NetherNet and Raknet."
+  },
+  "mdx.setup.transport_both_compat": {
+    "message": "Also accepts RakNet, for additional compatibility: some Bedrock versions, such as 26.40, fetch the server's MOTD and player count over RakNet. This option needs a separate UDP port for NetherNet."
+  },
+  "mdx.setup.placeholder_word": {
+    "message": "Replace this"
+  },
+  "mdx.setup.replace_with_simple": {
+    "message": "With this"
+  },
+  "mdx.setup.placeholder_java_port": {
+    "message": "The port of the Java server."
+  },
+  "mdx.setup.placeholder_java_port_udp": {
+    "message": "A UDP port for NetherNet, other than {port}. This can be the Java server's port: the Java server only uses it over TCP, so Geyser can use it over UDP. Any other free UDP port works too."
+  },
+  "mdx.setup.placeholder_second_free_port": {
+    "message": "A free UDP port for NetherNet, other than {port}. Open it for UDP."
+  },
+  "mdx.setup.placeholder_second_udp_port": {
+    "message": "A UDP port for NetherNet, other than the Java server's port. Ask your host for one if you only have the Java server's port."
+  },
+  "mdx.setup.raknet_on_port": {
+    "message": "RakNet uses {port} over UDP, so that port has to be open for UDP as well."
+  },
+  "mdx.setup.summary.nethernet_reported_generic": {
+    "message": "Reported to work with NetherNet"
+  },
+  "mdx.setup.summary.supporter_configures": {
+    "message": "{name} installs and configures Geyser for you, including NetherNet."
+  },
+  "mdx.setup.summary.updated": {
+    "message": "Instructions last updated on {date}"
+  },
+  "mdx.setup.badge.gold": {
+    "message": "Gold supporter"
+  },
+  "mdx.setup.badge.silver": {
+    "message": "Silver supporter"
+  },
+  "mdx.setup.unconfirmed_title": {
+    "message": "Not checked for NetherNet yet"
+  },
+  "mdx.setup.warning_title": {
+    "message": "Warning"
+  },
+  "mdx.setup.unconfirmed_reach_out_update": {
+    "message": "These instructions have not been checked for NetherNet yet. If Bedrock players can't join, reach out to {name} to get instructions on how to use Geyser, and let us know on {discord} so we can update this guide."
+  },
+  "mdx.setup.try_not_listed": {
+    "message": "If these instructions don't work, you can follow the {notListed} instead."
+  },
+  "mdx.setup.try_not_listed.link": {
+    "message": "\"Not listed\" guide"
+  },
+  "mdx.setup.no_signaling": {
+    "message": "{name} supports neither built-in nor external signaling, so Bedrock players cannot connect over NetherNet."
+  },
+  "mdx.setup.hosting_provider_article_short": {
+    "message": "Host's Geyser guide"
+  },
+  "mdx.setup.hosting_provider_website_short": {
+    "message": "Website"
+  },
+  "mdx.setup.hosting_provider_support_short": {
+    "message": "Support"
+  },
+  "mdx.setup.hosting_provider_discord_short": {
+    "message": "Discord"
+  },
+  "providers.provider.not_listed.allocate_port": {
+    "message": "Allocate a port in your server panel, open for both TCP and UDP."
+  },
+  "providers.provider.not_listed.info": {
+    "message": "For VPS/KVM servers, please follow the self-hosting steps."
+  },
+  "mdx.setup.not_listed.tab_allocated": {
+    "message": "I can allocate ports"
+  },
+  "mdx.setup.not_listed.tab_java_only": {
+    "message": "I only have the Java server port"
+  },
+  "providers.provider.not_listed.java_only_connect": {
+    "message": "Players do not connect with the Java server's address. After Geyser starts, it shows the address and port to use in the console, provided by the external signaling service. Share these with your players."
+  },
+  "components.provider.open_collaboration_group": {
+    "message": "Hosts that support Geyser development"
+  },
+  "components.provider.other_group": {
+    "message": "Other providers"
+  },
+  "mdx.setup.connect.port_java": {
+    "message": "Your Java server's port"
+  },
+  "mdx.setup.connect.port_config_step": {
+    "message": "The port you set in \"Configuring Geyser\""
+  },
+  "mdx.setup.connect.intro": {
+    "message": "In Minecraft: Bedrock Edition, go to Play, then Servers, and select Add Server. Fill it in like this:"
+  },
+  "mdx.setup.connect.add_server": {
+    "message": "Add Server"
+  },
+  "mdx.setup.connect.server_name": {
+    "message": "Server Name"
+  },
+  "mdx.setup.connect.server_name_value": {
+    "message": "Anything you like"
+  },
+  "mdx.setup.connect.server_address": {
+    "message": "Server Address"
+  },
+  "mdx.setup.connect.server_address_value": {
+    "message": "Your Java server's address"
+  },
+  "mdx.setup.connect.port": {
+    "message": "Port"
+  },
+  "mdx.setup.transport_nethernet_tab": {
+    "message": "NetherNet"
+  },
+  "mdx.setup.transport_both_tab": {
+    "message": "NetherNet and RakNet"
+  },
+  "providers.ports.assign": {
+    "message": "Assign a port in the panel provided by the server host."
+  },
+  "providers.ports.allocated": {
+    "message": "Pick one of the ports allocated to you that is not in use."
+  },
+  "providers.ports.ask_host": {
+    "message": "Contact your server hosting provider and ask for a port."
+  },
+  "providers.config.templates.alternative_allocation": {
+    "message": "Alternatively to running Geyser on the same port as the Java server, allocate a new port in the control panel and use that instead."
+  },
+  "providers.provider.aternos.connect": {
+    "message": "Connect with your server address (`*.aternos.me`) and port `19132`."
+  },
+  "providers.provider.birdflop.config.port": {
+    "message": "Open an allocation in the Network tab."
+  },
+  "providers.provider.bisecthosting.udp_port": {
+    "message": "In the Network tab, pick a free port that is not in use by other mods."
+  },
+  "providers.provider.bisecthosting.warn": {
+    "message": "If you cannot connect after following these instructions, contact Bisect Support, as they reportedly have UDP disabled on some nodes."
+  },
+  "providers.provider.cloud_nord.description": {
+    "message": "Servers from the [Crossplay Server](https://cloudnord.net/minecraftcrossplay-server-hosting/) hosting section do not need further configuration."
+  },
+  "providers.provider.exaroton.connect": {
+    "message": "Connect with your server address (`*.exaroton.me`) and port `19132`."
+  },
+  "providers.provider.feather.description": {
+    "message": "Feather does not support UDP traffic. Therefore, Geyser cannot be used with this provider. As an alternative, set up a paper server with e.g. playit.gg instead of port forwarding."
+  },
+  "providers.provider.gportal.description": {
+    "message": "Pick a port based on your query port. Scheme: Query port: xxx65. The ports from xxx66 to xxx70 are available. For example, if your query port is 12365, then Geyser can only run under the port range 12366-12370."
+  },
+  "providers.provider.gportal.address": {
+    "message": "Set 'bedrock address' to the Java server address."
+  },
+  "providers.provider.hostez.config.port": {
+    "message": "Add 1 to the port you were assigned (e.g. 25565 -> 25566)."
+  },
+  "providers.provider.nicraft.description": {
+    "message": "Nicraft does not provide Bedrock support, and is affected by a [firewall configuration issue](https://wiki.geysermc.org/geyser/port-forwarding/#ovh-and-soyoustart), which prohibits most players from joining."
+  },
+  "providers.provider.nitrado.config.port": {
+    "message": "Get Geyser as a plugin, and add 4 to the port of the Java server."
+  },
+  "providers.provider.simplegamehosting.config.port": {
+    "message": "Contact live chat support to open a port, and check out the [help center guide](https://help.simplegamehosting.com/how-to-enable-crossplay-with-geyser-on-your-minecraft-server/) for how to install and configure Geyser on your server."
+  },
+  "providers.provider.skynode.pro.config.port": {
+    "message": "Go to 'Server Details' and add a new port."
+  },
+  "providers.provider.vemox_hosting.description": {
+    "message": "Full automatic installation. Open the panel options and select the option to enable GeyserMC."
+  },
+  "pages.hosting.tier.gold": {
+    "message": "Gold supporters"
+  },
+  "pages.hosting.tier.silver": {
+    "message": "Silver supporters"
+  },
+  "pages.hosting.tier.bronze": {
+    "message": "Bronze supporters"
+  },
+  "pages.hosting.card.website": {
+    "message": "Website"
+  },
+  "pages.hosting.card.setup": {
+    "message": "Setup guide"
+  },
+  "pages.hosting.title": {
+    "message": "Hosting Providers"
+  },
+  "pages.hosting.subheading": {
+    "message": "Hosting providers that support the development of Geyser."
+  },
+  "pages.hosting.intro": {
+    "message": "The hosts below support Geyser and related projects through {openCollaboration}. Their support helps fund work on Geyser, such as keeping up with major changes to Bedrock Edition, like the switch to NetherNet. All hosts listed below also configure Geyser automatically when installed, making using Geyser easier than ever. We'd like to thank them all for their support."
+  },
+  "pages.hosting.empty": {
+    "message": "No hosting providers are listed yet."
+  },
+  "pages.hosting.other.title": {
+    "message": "Using another host?"
+  },
+  "pages.hosting.other.text": {
+    "message": "Hosts not being listed here does not mean Geyser won't run there. The {setupGuide} includes community collected notes for many other hosts, and general instructions for those not listed."
+  },
+  "pages.hosting.other.setup_guide": {
+    "message": "setup guide"
+  },
+  "pages.hosting.meta.title": {
+    "message": "Hosting Providers"
+  },
+  "pages.hosting.meta.description": {
+    "message": "Hosting providers that support the development of Geyser through Open Collaboration."
   }
 }

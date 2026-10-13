@@ -1,5 +1,5 @@
 import type { GeyserConfig, HostingProvider, OpenCollaborationTier, PortSource } from "@site/src/types/providers";
-import React, { useEffect, useState } from 'react';
+import React, { createContext, useContext, useEffect, useState } from 'react';
 import Translate, { translate } from "@docusaurus/Translate";
 import { providersData } from "../data/providers";
 import Admonition from '@theme/Admonition';
@@ -197,22 +197,22 @@ const buildConfig = (provider: HostingProvider, transport: Transport, selfHost: 
     if (bedrockPort === 'java') {
         lines.push('  clone-remote-port: true');
     } else {
-        lines.push(`  port: ${portValue(bedrockPort, separateTcp ? 'FIND_PORT' : 'YOUR_PORT')}`);
+        lines.push(`  port: ${portValue(bedrockPort, separateTcp ? 'TCP_PORT' : 'TCP_UDP_PORT')}`);
     }
 
     if (separateTcp) {
-        lines.push(`  webrtc-port: ${portValue(udp, 'PLAY_PORT')}`);
+        lines.push(`  webrtc-port: ${portValue(udp, 'UDP_PORT')}`);
         if (transport === 'both') {
             notes.push({ text: <MDXTranslatable.setup.raknet_on_port /> });
         }
     } else if (transport === 'both' && !selfHost && udp !== 'java') {
         // RakNet stays on `port`. The Java server only uses its port over TCP, so NetherNet can use it over UDP
         // without the user having to get another port.
-        lines.push('  webrtc-port: SECOND_PLAY_PORT');
-        notes.push({ placeholder: 'SECOND_PLAY_PORT', text: <MDXTranslatable.setup.placeholder_java_port_udp /> });
+        lines.push('  webrtc-port: UDP_PORT');
+        notes.push({ placeholder: 'UDP_PORT', text: <MDXTranslatable.setup.placeholder_java_port_udp /> });
     } else if (transport === 'both') {
-        lines.push('  webrtc-port: SECOND_PLAY_PORT');
-        notes.push({ placeholder: 'SECOND_PLAY_PORT', text: selfHost ? <MDXTranslatable.setup.placeholder_second_free_port /> : <MDXTranslatable.setup.placeholder_second_udp_port /> });
+        lines.push('  webrtc-port: UDP_PORT');
+        notes.push({ placeholder: 'UDP_PORT', text: selfHost ? <MDXTranslatable.setup.placeholder_second_free_port /> : <MDXTranslatable.setup.placeholder_second_udp_port /> });
     }
 
     lines.push(`  transport: ${transport}`);
@@ -368,13 +368,30 @@ const HostSummary = ({ provider }: { provider: HostingProvider }) => {
 }
 
 /**
- * The one notice shown above the steps, if any: host-specific warnings, and what to ask the host if NetherNet is not confirmed.
+ * Shown first, above the host summary: the steps below may not work if NetherNet is not confirmed for this host.
+ */
+const UnconfirmedNotice = ({ provider }: { provider: HostingProvider }) => {
+    const notListedLink = useBaseUrl(providerSetupLink(notListed));
+    // "Not listed" has no instructions to check, so it gets no notice; its steps cover both options instead
+    if (isConfirmed(provider) || provider === notListed) {
+        return null;
+    }
+    return (
+        <Admonition type="caution" title={<MDXTranslatable.setup.unconfirmed_title />}>
+            <p>
+                <MDXTranslatable.setup.unconfirmed name={provider.name} />
+            </p>
+            {/* A plain link, so the page reloads and the selector picks up the provider from the URL */}
+            <p><MDXTranslatable.setup.try_not_listed link={notListedLink} /></p>
+        </Admonition>
+    );
+}
+
+/**
+ * Host-specific warnings, shown below the host summary with the platform notices.
  */
 const HostNotice = ({ provider }: { provider: HostingProvider }) => {
-    const notListedLink = useBaseUrl(providerSetupLink(notListed));
     const { builtin, external } = signalingSetup(provider);
-    // "Not listed" has no instructions to check, so it gets no notice; its steps cover both options instead
-    const unconfirmed = !isConfirmed(provider) && provider !== notListed;
     if (!builtin && !external) {
         return (
             <Admonition type="danger">
@@ -383,21 +400,12 @@ const HostNotice = ({ provider }: { provider: HostingProvider }) => {
         );
     }
     const warn = provider.notices?.warn;
-    if (!unconfirmed && !warn) {
+    if (!warn) {
         return null;
     }
     return (
-        <Admonition type="caution" title={unconfirmed ? <MDXTranslatable.setup.unconfirmed_title /> : <MDXTranslatable.setup.warning_title />}>
-            {unconfirmed && (
-                <p>
-                    <MDXTranslatable.setup.unconfirmed name={provider.name} />
-                </p>
-            )}
-            {unconfirmed && (
-                // A plain link, so the page reloads and the selector picks up the provider from the URL
-                <p><MDXTranslatable.setup.try_not_listed link={notListedLink} /></p>
-            )}
-            {warn && <ReactMarkdown>{warn}</ReactMarkdown>}
+        <Admonition type="caution" title={<MDXTranslatable.setup.warning_title />}>
+            <ReactMarkdown>{warn}</ReactMarkdown>
         </Admonition>
     );
 }
@@ -407,9 +415,11 @@ export const SetupSteps = ({ children }: { children: React.ReactNode }) => (
     <ol className={styles.steps}>{children}</ol>
 );
 
-export const Step = ({ title, id, children }: { title: React.ReactNode, id: string, children: React.ReactNode }) => (
+// Markdown pages leave out the title and start the step with a `#### Title \{#id}` heading instead, so Crowdin can
+// translate it. Level 4 keeps step titles out of the table of contents, which only lists levels 2 and 3.
+export const Step = ({ title, id, children }: { title?: React.ReactNode, id?: string, children: React.ReactNode }) => (
     <li className={styles.step}>
-        <Heading as="h3" id={id} className={styles.stepTitle}>{title}</Heading>
+        {title && <Heading as="h4" id={id} className={styles.stepTitle}>{title}</Heading>}
         <div className={styles.stepBody}>{children}</div>
     </li>
 );
@@ -449,23 +459,44 @@ const ConnectStep = ({ provider }: { provider: HostingProvider }) => (
     </>
 );
 
+// The provider picked in the setup guide. Platform pages read it from here rather than through props,
+// so they only need simple JSX that survives translation on Crowdin.
+export const SelectedProvider = createContext<HostingProvider>(null);
+
+// Parts of the hosted guide that platform pages write in Markdown, as children of ProviderGeyserSetup.
+// The first step, e.g. which plugin older server versions need:
+export const VersionStep = ({ children }: { children: React.ReactNode }) => <>{children}</>;
+// An extra item in the install step, e.g. a required dependency:
+export const InstallNote = ({ children }: { children: React.ReactNode }) => <>{children}</>;
+
 interface ProviderGeyserSetupProps {
-    provider: HostingProvider;
     jarName: string;
     jarDirectory: string;
     configLocation: string;
-    dependencyTranslation?: () => React.JSX.Element;
-    versionStep?: React.ReactNode; // Shown as the first step, e.g. which plugin older server versions need
+    // Platform notices, shown below the host summary so the host comes first, plus an optional VersionStep and InstallNote
+    children?: React.ReactNode;
 }
 
-export const ProviderGeyserSetup: React.FC<ProviderGeyserSetupProps> = ({ provider, jarName, jarDirectory, configLocation, dependencyTranslation, versionStep }) => {
+export const ProviderGeyserSetup: React.FC<ProviderGeyserSetupProps> = ({ jarName, jarDirectory, configLocation, children }) => {
+    const provider = useContext(SelectedProvider);
     if (!provider) {
         return null;
     }
 
+    const parts = React.Children.toArray(children);
+    const slot = (type: React.FC<{ children: React.ReactNode }>) =>
+        parts.find(part => React.isValidElement(part) && part.type === type);
+    const versionStep = slot(VersionStep);
+    const installNote = slot(InstallNote);
+    const notices = parts.filter(part => part !== versionStep && part !== installNote);
+
     return (
         <>
+            <UnconfirmedNotice provider={provider} />
+
             {provider.url && <HostSummary provider={provider} />}
+
+            {notices}
 
             <HostNotice provider={provider} />
 
@@ -483,7 +514,7 @@ export const ProviderGeyserSetup: React.FC<ProviderGeyserSetupProps> = ({ provid
                         <ul>
                             <li><MDXTranslatable.setup.download_jar jarName={jarName} /></li>
                             <li><MDXTranslatable.setup.place_jar jarName={jarName} jarDirectory={jarDirectory} /></li>
-                            {dependencyTranslation && <li>{dependencyTranslation()}</li>}
+                            {installNote && <li className={styles.installNote}>{installNote}</li>}
                             <li><MDXTranslatable.setup.restart_server /></li>
                         </ul>
                     )}

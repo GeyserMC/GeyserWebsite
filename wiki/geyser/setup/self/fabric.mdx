@@ -1,0 +1,72 @@
+---
+title: Geyser Self-Hosted Fabric Setup
+description: Learn how to set up Geyser on your self-hosted Fabric server.
+hide_title: true
+crowdin_page_id: 819cc5c5-b015-445b-aefe-840b30e46166
+crowdin_sync: true
+---
+
+import { Versions } from '@site/src/components/Versions'
+import { MDXTranslatable } from '@site/src/components/MDXTranslatable'
+import { SetupSteps, Step, SelfHostConfig } from '@site/src/components/Provider'
+
+:::caution
+Geyser-Fabric runs **only** on a <Versions.java/> server, and only works alongside **server-side** mods. Mods that players also need to install on their client will not work.
+See [this page](/wiki/geyser/supported-versions#using-geyser-on-fabric-neoforge-servers-not-on-the-latest-minecraft-version) for more details.
+:::
+
+<SetupSteps>
+<Step>
+
+#### Installing Geyser \{#installing-geyser}
+
+- Download Geyser-Fabric from [the download page](/download).
+- Place the Geyser-Fabric.jar in the `mods` folder.
+- Download [Fabric API](https://modrinth.com/mod/fabric-api) and place it in the `mods` folder as well, if it is not installed already.
+- Restart the server.
+
+</Step>
+<Step>
+
+#### Configuring Geyser \{#configuring-geyser}
+
+<SelfHostConfig configLocation="/config/Geyser-Fabric/config.yml" />
+
+Since you are self-hosting, you can choose the port freely - the default port is 19132. Geyser uses it over both TCP and UDP, so it cannot be the Java server's port.
+**Important**: Other services/mods that rely on UDP ports, such as Voice Chats or Query, cannot share the port with Geyser.
+
+</Step>
+<Step>
+
+#### Connecting on Bedrock \{#connecting-on-bedrock}
+
+**Connecting locally in the same network**  
+On the same device as the server, you can connect using `localhost`, or `127.0.0.1` as the address.
+Other devices in the same local network can use your local IPv4 to connect - it starts with `10.` or `192.168.`.
+
+**Connecting from a different network**  
+You will need to expose the port Geyser runs on to the Internet if you want players from outside your network to join.
+
+:::caution
+The Geyser port has to be forwarded for **both TCP and UDP**. Before NetherNet, forwarding UDP was enough. Now, players use TCP to find your server, and UDP to play on it, so without TCP your server will not show up.
+If you use the "NetherNet and RakNet" option, also forward the `webrtc-port` for UDP.
+:::
+
+To achieve that, you have two options:
+
+- Port forwarding: Open the Geyser port (e.g. 19132) for **both TCP and UDP** in your router/modem, and in the Windows/Linux firewall.
+  [Our port forwarding guide](/wiki/geyser/port-forwarding) explains how to do this in detail.
+  Then, players can connect with your public IPv4 + port to your server.
+- playit.gg: Instead of opening a port (which might not be an option/if you do not want to expose your home ip), you can use
+  the playit.gg service to create a tunnel for you to route the traffic through. See our [playit.gg guide](/wiki/geyser/playit-gg).
+  With NetherNet, the tunnel has to carry both TCP and UDP, and its public address has to be listed under `advertise-addresses` in the `builtin` part of the `signaling` section.
+  Ngrok will not work since it does not support UDP.
+
+<MDXTranslatable.setup.https_note />
+
+</Step>
+</SetupSteps>
+
+:::info
+To allow Bedrock Edition players to join your server without needing to log in to a paid Java Edition account, you can use [Floodgate](/wiki/floodgate/setup/).
+:::

@@ -3,13 +3,21 @@ title: Geyser ViaProxy Setup
 description: Learn how to set up Geyser with ViaProxy.
 hide_title: true
 crowdin_page_id: 6e9be886-118a-4f11-8c98-94b5d47fee29
+crowdin_sync: true
 ---
 
 import { MDXTranslatable } from '@site/src/components/MDXTranslatable'
 import { SetupSteps, Step, SelfHostConfig } from '@site/src/components/Provider'
 
+:::warning[ViaProxy is not a plugin or mod]
+ViaProxy is a standalone program that runs separately from your Minecraft server. Do **not** put the ViaProxy jar into your server's `plugins` or `mods` folder.
+To run Geyser as a plugin or mod on your server instead, pick your server software in the tabs above.
+:::
+
 <SetupSteps>
-<Step id="installing-geyser" title={<MDXTranslatable.setup.installing_geyser />}>
+<Step>
+
+#### Installing Geyser \{#installing-geyser}
 
 - [Setup ViaProxy](https://github.com/ViaVersion/ViaProxy?tab=readme-ov-file#usage-for-players-gui).
 - Download the plugin from [the download page](/download).
@@ -17,7 +25,9 @@ import { SetupSteps, Step, SelfHostConfig } from '@site/src/components/Provider'
 - Restart ViaProxy.
 
 </Step>
-<Step id="configuring-geyser" title={<MDXTranslatable.setup.configuring_geyser />}>
+<Step>
+
+#### Configuring Geyser \{#configuring-geyser}
 
 <SelfHostConfig configLocation="/plugins/Geyser/config.yml" />
 
@@ -29,7 +39,9 @@ If you use the ViaProxy GUI you can use its account management system to join on
 NOTE: The value of the `auth-type` field is ignored and managed by ViaProxy automatically.
 
 </Step>
-<Step id="connecting-on-bedrock" title={<MDXTranslatable.setup.connecting_on_bedrock />}>
+<Step>
+
+#### Connecting on Bedrock \{#connecting-on-bedrock}
 
 **Connecting locally in the same network**  
 On the same device as the server, you can connect using `localhost`, or `127.0.0.1` as the address.
@@ -40,7 +52,7 @@ You will need to expose the port Geyser runs on to the Internet if you want play
 
 :::caution
 The Geyser port has to be forwarded for **both TCP and UDP**. Before NetherNet, forwarding UDP was enough. Now, players use TCP to find your server, and UDP to play on it, so without TCP your server will not show up.
-If you use the "NetherNet and RakNet" option, also forward the second port (`webrtc-port`) for UDP.
+If you use the "NetherNet and RakNet" option, also forward the `webrtc-port` for UDP.
 :::
 
 To achieve that, you have two options:

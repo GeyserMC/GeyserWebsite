@@ -13,8 +13,6 @@ export const MDXTranslatable = {
         fabric: () => <Translate id="mdx.setup.fabric">Fabric</Translate>,
         neoforge: () => <Translate id="mdx.setup.neoforge">NeoForge</Translate>,
         proxy_servers: () => <Translate id="mdx.setup.proxy_servers">Proxy Servers</Translate>,
-        velocity: () => <Translate id="mdx.setup.velocity">Velocity</Translate>,
-        bungeecord: () => <Translate id="mdx.setup.bungeecord">BungeeCord</Translate>,
         viaproxy: () => <Translate id="mdx.setup.viaproxy">ViaProxy</Translate>,
         standalone: () => <Translate id="mdx.setup.standalone">Standalone</Translate>,
 
@@ -36,13 +34,6 @@ export const MDXTranslatable = {
                 {"Place the {jarName} in the {jarDirectory} folder."}
             </Translate>
         ),
-        fabric_dependency: () => (
-            <Translate id="mdx.setup.fabric_dependency" values={{
-                fabricApiLink: <Link to='https://modrinth.com/mod/fabric-api'>FabricAPI</Link>,
-            }}>
-                {"If it is not already installed, download  and install the {fabricApiLink} mod to the same folder."}
-            </Translate>
-        ),
         restart_server: () => <Translate id="mdx.setup.restart_server">Restart the server.</Translate>,
         restart_geyser: () => <Translate id="mdx.setup.restart_geyser">Restart Geyser.</Translate>,
         https_note: () => (
@@ -62,8 +53,6 @@ export const MDXTranslatable = {
                 {"No changes needed. {name} automatically configures Geyser."}
             </Translate>
         ),
-        transport_nethernet: () => <Translate id="mdx.setup.transport_nethernet">NetherNet</Translate>,
-        transport_both: () => <Translate id="mdx.setup.transport_both">NetherNet and RakNet</Translate>,
         transport_nethernet_explainer: () => (
             <Translate id="mdx.setup.transport_nethernet_simple">
                 NetherNet is supported fully by 26.50+. If you'd like to also have working MOTD and player count for older versions, you will need to set up both NetherNet and Raknet.
@@ -71,25 +60,25 @@ export const MDXTranslatable = {
         ),
         transport_both_explainer: () => (
             <Translate id="mdx.setup.transport_both_compat">
-                Also accepts RakNet, for additional compatibility: some Bedrock versions, such as 26.40, fetch the server's MOTD and player count over RakNet. This option needs one more UDP port.
+                Also accepts RakNet, for additional compatibility: some Bedrock versions, such as 26.40, fetch the server's MOTD and player count over RakNet. This option needs a separate UDP port for NetherNet.
             </Translate>
         ),
         placeholder: () => <Translate id="mdx.setup.placeholder_word">Replace this</Translate>,
         replace_with: () => <Translate id="mdx.setup.replace_with_simple">With this</Translate>,
         placeholder_java_port: () => <Translate id="mdx.setup.placeholder_java_port">The port of the Java server.</Translate>,
         placeholder_java_port_udp: () => (
-            <Translate id="mdx.setup.placeholder_java_port_udp">
-                A second UDP port, different from the port above. This can be the port of the Java server: the Java server only uses it over TCP, so Geyser can use it over UDP for NetherNet. Any other free UDP port works too.
+            <Translate id="mdx.setup.placeholder_java_port_udp" values={{ port: <InlineCode>port</InlineCode> }}>
+                {"A UDP port for NetherNet, other than {port}. This can be the Java server's port: the Java server only uses it over TCP, so Geyser can use it over UDP. Any other free UDP port works too."}
             </Translate>
         ),
         placeholder_second_free_port: () => (
-            <Translate id="mdx.setup.placeholder_second_free_port">
-                A second free port, different from the port above. Open it for UDP.
+            <Translate id="mdx.setup.placeholder_second_free_port" values={{ port: <InlineCode>port</InlineCode> }}>
+                {"A free UDP port for NetherNet, other than {port}. Open it for UDP."}
             </Translate>
         ),
         placeholder_second_udp_port: () => (
             <Translate id="mdx.setup.placeholder_second_udp_port">
-                A second port, open for UDP, that is different from the port above. Ask your host for one if you only have one port.
+                A UDP port for NetherNet, other than the Java server's port. Ask your host for one if you only have the Java server's port.
             </Translate>
         ),
         raknet_on_port: () => (
@@ -98,16 +87,6 @@ export const MDXTranslatable = {
             </Translate>
         ),
 
-        summary_builtin_signaling: () => <Translate id="mdx.setup.summary.builtin_signaling">Built-in signaling</Translate>,
-        summary_external_signaling: () => <Translate id="mdx.setup.summary.external_signaling">External signaling</Translate>,
-        summary_supported: () => <Translate id="mdx.setup.summary.supported">Supported</Translate>,
-        summary_not_supported: () => <Translate id="mdx.setup.summary.not_supported">Not supported</Translate>,
-        summary_warden: () => (
-            <Translate id="mdx.setup.summary.warden" values={{ warden: <Link to='https://warden.cloud'>Warden</Link> }}>
-                {"Supported, via {warden}"}
-            </Translate>
-        ),
-        summary_host_endpoint: () => <Translate id="mdx.setup.summary.host_endpoint">Supported, via the host's own service</Translate>,
         summary_nethernet_reported: () => <Translate id="mdx.setup.summary.nethernet_reported_generic">Reported to work with NetherNet</Translate>,
         summary_supporter_configures: ({ name }: { name: string }) => (
             <Translate id="mdx.setup.summary.supporter_configures" values={{ name }}>{"{name} installs and configures Geyser for you, including NetherNet."}</Translate>
@@ -136,25 +115,8 @@ export const MDXTranslatable = {
             </Translate>
         ),
 
-        connect_same_as_java: () => (
-            <Translate id="mdx.setup.connect_same_as_java">
-                Connect with the same address and port as the Java server.
-            </Translate>
-        ),
-        connect_java_address_port: ({ port }: { port: string }) => (
-            <Translate id="mdx.setup.connect_java_address_port" values={{ port: <InlineCode>{port}</InlineCode> }}>
-                {"Connect with the address of the Java server, and {port} as the port."}
-            </Translate>
-        ),
-        connect_config_port: () => (
-            <Translate id="mdx.setup.connect_config_port" values={{ port: <InlineCode>port</InlineCode> }}>
-                {"Connect with the address of the Java server, and the {port} you set above."}
-            </Translate>
-        ),
-
         additional_steps: () => <Translate id="mdx.setup.additional_steps">Additional Steps</Translate>,
         connecting_on_bedrock: () => <Translate id="mdx.setup.connecting_on_bedrock">Connecting on Bedrock</Translate>,
-        more_information: () => <Translate id="mdx.setup.more_information">More Information</Translate>,
 
         hosting_provider_article: () => <Translate id="mdx.setup.hosting_provider_article_short">Host's Geyser guide</Translate>,
         hosting_provider_website: () => <Translate id="mdx.setup.hosting_provider_website_short">Website</Translate>,

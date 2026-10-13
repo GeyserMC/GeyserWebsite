@@ -123,7 +123,7 @@ export const providersData: HostingProvider[] = [
     {
         name: 'Aternos',
         url: 'https://aternos.org/',
-        updated: '2026-07-10',
+        updated: '2026-10-13',
         links: {
             article: "https://support.aternos.org/hc/en-us/articles/39155890785053-NetherNet-protocol-Minecraft-Bedrock-Edition",
             support: 'https://support.aternos.org/',
@@ -134,7 +134,7 @@ export const providersData: HostingProvider[] = [
         config: { preconfigured: true, port: 19132 },
         connect: translate({
             id: 'providers.provider.aternos.connect',
-            message: "Connect with your server address (`*.aternos.me`) and port `19132`. Players who still have the old port saved connect over RakNet until it is removed, so ask them to change the port to `19132`."
+            message: "Connect with your server address (`*.aternos.me`) and port `19132`."
         }),
         notices: {
             info: translate({
@@ -356,13 +356,18 @@ export const providersData: HostingProvider[] = [
     {
         name: 'exaroton',
         url: 'https://exaroton.com/',
-        updated: '2026-07-10',
+        updated: '2026-10-13',
         links: {
-            article: "https://support.exaroton.com/hc/en-us/articles/360019857918-Geyser",
+            article: "https://support.exaroton.com/hc/en-us/articles/39157467467165-NetherNet-protocol-Minecraft-Bedrock-Edition",
             discord: 'https://discord.gg/exaroton'
         },
         install: customInstallLocations.plugin_list,
-        config: { preconfigured: true, port: 'java', confirmed: false }
+        // Same setup as Aternos: NetherNet runs on 19132 for all servers
+        config: { preconfigured: true, port: 19132 },
+        connect: translate({
+            id: 'providers.provider.exaroton.connect',
+            message: "Connect with your server address (`*.exaroton.me`) and port `19132`."
+        })
     },
     {
         name: 'ExtraVM',

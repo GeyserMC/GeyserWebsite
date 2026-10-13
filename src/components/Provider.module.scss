@@ -130,14 +130,22 @@ $silver: #a8a9ad;
     }
 }
 
-.stepTitle {
+// Step titles are h4 headings (see Step), shown at h3 size. Markdown steps write theirs as the first heading in the body.
+.stepTitle,
+.stepBody > h4:first-child {
     margin: 0.2rem 0 0.75rem;
+    font-size: var(--ifm-h3-font-size);
 }
 
 .stepBody {
     > :last-child {
         margin-bottom: 0;
     }
+}
+
+// The install note is Markdown, so it arrives wrapped in a paragraph
+.installNote > p {
+    margin: 0;
 }
 
 .transportExplainer {

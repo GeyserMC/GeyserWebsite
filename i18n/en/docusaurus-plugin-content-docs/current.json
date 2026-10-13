@@ -186,5 +186,9 @@
   "sidebar.geyserSidebar.category.Custom Resource Packs": {
     "message": "Custom Resource Packs",
     "description": "The label for category Custom Resource Packs in sidebar geyserSidebar"
+  },
+  "sidebar.geyserSidebar.link.Hosting Providers": {
+    "message": "Hosting Providers",
+    "description": "The label for link Hosting Providers in sidebar geyserSidebar, linking to /hosting"
   }
 }

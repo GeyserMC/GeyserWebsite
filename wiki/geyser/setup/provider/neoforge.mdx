@@ -2,23 +2,17 @@
 title: Geyser Provider Hosted NeoForge Setup
 hide_title: true
 crowdin_page_id: d902afa3-0454-4140-a4e2-ed2dac617fda
+crowdin_sync: true
 ---
 
 import { Versions } from '@site/src/components/Versions'
 import { ProviderGeyserSetup } from '@site/src/components/Provider'
 
+<ProviderGeyserSetup jarName="Geyser-NeoForge.jar" jarDirectory="mods" configLocation="/config/Geyser-NeoForge/config.yml">
+
 :::caution
-Geyser-NeoForge runs **only** on a <Versions.java/> server.
+Geyser-NeoForge runs **only** on a <Versions.java/> server, and only works alongside **server-side** mods. Mods that players also need to install on their client will not work.
 See [this page](/wiki/geyser/supported-versions#using-geyser-on-fabric-neoforge-servers-not-on-the-latest-minecraft-version) for more details.
 :::
 
-:::info
-Geyser only works with **server-side** mods. Mods that require a client-side install will not work!
-:::
-
-<ProviderGeyserSetup 
-    provider={props.provider} 
-    jarName={'Geyser-NeoForge.jar'}
-    jarDirectory={'mods'}
-    configLocation={'/config/Geyser-NeoForge/config.yml'}
-/>
+</ProviderGeyserSetup>

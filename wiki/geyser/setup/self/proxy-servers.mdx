@@ -5,6 +5,7 @@ description: >-
   server.
 hide_title: true
 crowdin_page_id: d1262b08-b171-4694-a8c3-866e66246cd6
+crowdin_sync: true
 ---
 
 
@@ -13,19 +14,29 @@ import { MDXTranslatable } from '@site/src/components/MDXTranslatable'
 import { SetupSteps, Step, SelfHostConfig } from '@site/src/components/Provider'
 
 :::info
-- Install Geyser **only** on the proxy server! You can install Floodgate on all servers for better skin support & network-wide Floodgate API availability for other plugins.   
-- All servers on the network must accept <Versions.java/> Java clients, as Geyser imitates one.  
+Install Geyser **only** on the proxy server! You can install Floodgate on all servers for better skin support & network-wide Floodgate API availability for other plugins.
 :::
 
 <SetupSteps>
-<Step id="installing-geyser" title={<MDXTranslatable.setup.installing_geyser />}>
+<Step>
+
+#### Checking your server version \{#checking-server-version}
+
+All servers on the network must accept <Versions.java/> Java clients, as Geyser imitates one.
+
+</Step>
+<Step>
+
+#### Installing Geyser \{#installing-geyser}
 
 - Download the plugin for your proxy software from [the download page](/download).
 - Place the Geyser jar in the `plugins` folder.
 - Restart the server.
 
 </Step>
-<Step id="configuring-geyser" title={<MDXTranslatable.setup.configuring_geyser />}>
+<Step>
+
+#### Configuring Geyser \{#configuring-geyser}
 
 <SelfHostConfig configLocation="/plugins/Geyser-xyz/config.yml" />
 
@@ -33,7 +44,9 @@ Since you are self-hosting, you can choose the port freely - the default port is
 **Important**: Other services/plugins that rely on UDP ports, such as Voice Chats or Query, cannot share the port with Geyser.
 
 </Step>
-<Step id="connecting-on-bedrock" title={<MDXTranslatable.setup.connecting_on_bedrock />}>
+<Step>
+
+#### Connecting on Bedrock \{#connecting-on-bedrock}
 
 **Connecting locally in the same network**  
 On the same device as the server, you can connect using `localhost`, or `127.0.0.1` as the address.
@@ -44,7 +57,7 @@ You will need to expose the port Geyser runs on to the Internet if you want play
 
 :::caution
 The Geyser port has to be forwarded for **both TCP and UDP**. Before NetherNet, forwarding UDP was enough. Now, players use TCP to find your server, and UDP to play on it, so without TCP your server will not show up.
-If you use the "NetherNet and RakNet" option, also forward the second port (`webrtc-port`) for UDP.
+If you use the "NetherNet and RakNet" option, also forward the `webrtc-port` for UDP.
 :::
 
 To achieve that, you have two options:
