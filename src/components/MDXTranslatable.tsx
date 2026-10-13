@@ -13,6 +13,8 @@ export const MDXTranslatable = {
         fabric: () => <Translate id="mdx.setup.fabric">Fabric</Translate>,
         neoforge: () => <Translate id="mdx.setup.neoforge">NeoForge</Translate>,
         proxy_servers: () => <Translate id="mdx.setup.proxy_servers">Proxy Servers</Translate>,
+        velocity: () => <Translate id="mdx.setup.velocity">Velocity</Translate>,
+        bungeecord: () => <Translate id="mdx.setup.bungeecord">BungeeCord</Translate>,
         viaproxy: () => <Translate id="mdx.setup.viaproxy">ViaProxy</Translate>,
         standalone: () => <Translate id="mdx.setup.standalone">Standalone</Translate>,
 

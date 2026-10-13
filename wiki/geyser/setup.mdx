@@ -13,12 +13,14 @@ import Translate from "@docusaurus/Translate";
 
 import Fabric from './setup/provider/fabric.mdx'
 import NeoForge from './setup/provider/neoforge.mdx'
-import ProxyServers from './setup/provider/proxy-servers.mdx'
+import Velocity from './setup/provider/velocity.mdx'
+import BungeeCord from './setup/provider/bungeecord.mdx'
 import PaperSpigot from './setup/provider/paper-spigot.mdx'
 
 import FabricSelf from './setup/self/fabric.mdx'
 import NeoForgeSelf from './setup/self/neoforge.mdx'
-import ProxyServersSelf from './setup/self/proxy-servers.mdx'
+import VelocitySelf from './setup/self/velocity.mdx'
+import BungeeCordSelf from './setup/self/bungeecord.mdx'
 import PaperSpigotSelf from './setup/self/paper-spigot.mdx'
 import ViaProxy from './setup/self/viaproxy.mdx'
 import Standalone from './setup/self/standalone.mdx'
@@ -27,6 +29,7 @@ import PlatformIcon from '@site/src/components/PlatformIcon'
 import FabricIcon from '@site/static/img/icons/fabric.png'
 import NeoForgeIcon from '@site/static/img/icons/neoforge.png'
 import VelocityIcon from '@site/static/img/icons/velocity.png'
+import BungeeCordIcon from '@site/static/img/icons/bungeecord.png'
 import PaperSpigotIcon from '@site/static/img/icons/paper.png'
 import ViaProxyIcon from '@site/static/img/icons/viaproxy.png'
 import StandaloneIcon from '@site/static/img/icons/geyser.png'
@@ -57,8 +60,13 @@ export const SetupGuide = () => {
                                     <NeoForge />
                                 </TabItem>
                                 {!provider.proxies_banned && (
-                                    <TabItem value='proxy-servers' label={<PlatformIcon img={VelocityIcon} text={<MDXTranslatable.setup.proxy_servers/>} />}>
-                                        <ProxyServers />
+                                    <TabItem value='velocity' label={<PlatformIcon img={VelocityIcon} text={<MDXTranslatable.setup.velocity/>} />}>
+                                        <Velocity />
+                                    </TabItem>
+                                )}
+                                {!provider.proxies_banned && (
+                                    <TabItem value='bungeecord' label={<PlatformIcon img={BungeeCordIcon} text={<MDXTranslatable.setup.bungeecord/>} />}>
+                                        <BungeeCord />
                                     </TabItem>
                                 )}
                             </Tabs>
@@ -77,8 +85,11 @@ export const SetupGuide = () => {
                     <TabItem value='neoforge' label={<PlatformIcon img={NeoForgeIcon} text={<MDXTranslatable.setup.neoforge/>} />}>
                         <NeoForgeSelf />
                     </TabItem>
-                    <TabItem value='proxy-servers' label={<PlatformIcon img={VelocityIcon} text={<MDXTranslatable.setup.proxy_servers/>} />}>
-                        <ProxyServersSelf />
+                    <TabItem value='velocity' label={<PlatformIcon img={VelocityIcon} text={<MDXTranslatable.setup.velocity/>} />}>
+                        <VelocitySelf />
+                    </TabItem>
+                    <TabItem value='bungeecord' label={<PlatformIcon img={BungeeCordIcon} text={<MDXTranslatable.setup.bungeecord/>} />}>
+                        <BungeeCordSelf />
                     </TabItem>
                     <TabItem value='viaproxy' label={<PlatformIcon img={ViaProxyIcon} text={<MDXTranslatable.setup.viaproxy/>} />}>
                         <ViaProxy />

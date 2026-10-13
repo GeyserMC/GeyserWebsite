@@ -1,8 +1,6 @@
 ---
-title: Geyser Self-Hosted Proxy Servers Setup
-description: >-
-  Learn how to set up Geyser on your self-hosted Bungee, Waterfall, or Velocity
-  server.
+title: Geyser Self-Hosted Velocity Setup
+description: Learn how to set up Geyser on your self-hosted Velocity server.
 hide_title: true
 crowdin_page_id: d1262b08-b171-4694-a8c3-866e66246cd6
 crowdin_sync: true
@@ -14,7 +12,7 @@ import { MDXTranslatable } from '@site/src/components/MDXTranslatable'
 import { SetupSteps, Step, SelfHostConfig } from '@site/src/components/Provider'
 
 :::info
-Install Geyser **only** on the proxy server! You can install Floodgate on all servers for better skin support & network-wide Floodgate API availability for other plugins.
+Install Geyser **only** on the Velocity server! You can install Floodgate on all servers for better skin support & network-wide Floodgate API availability for other plugins.
 :::
 
 <SetupSteps>
@@ -29,8 +27,8 @@ All servers on the network must accept <Versions.java/> Java clients, as Geyser 
 
 #### Installing Geyser \{#installing-geyser}
 
-- Download the plugin for your proxy software from [the download page](/download).
-- Place the Geyser jar in the `plugins` folder.
+- Download Geyser-Velocity.jar from [the download page](/download).
+- Place the Geyser-Velocity.jar in the `plugins` folder.
 - Restart the server.
 
 </Step>
@@ -38,9 +36,9 @@ All servers on the network must accept <Versions.java/> Java clients, as Geyser 
 
 #### Configuring Geyser \{#configuring-geyser}
 
-<SelfHostConfig configLocation="/plugins/Geyser-xyz/config.yml" />
+<SelfHostConfig configLocation="/plugins/Geyser-Velocity/config.yml" />
 
-Since you are self-hosting, you can choose the port freely - the default port is 19132. Geyser uses it over both TCP and UDP, so it cannot be the proxy's port.
+Since you are self-hosting, you can choose the port freely - the default port is 19132. Geyser uses it over both TCP and UDP, so it cannot be the Velocity server's port.
 **Important**: Other services/plugins that rely on UDP ports, such as Voice Chats or Query, cannot share the port with Geyser.
 
 </Step>

@@ -1000,5 +1000,11 @@
   },
   "pages.hosting.meta.description": {
     "message": "Hosting providers that support the development of Geyser through Open Collaboration."
+  },
+  "mdx.setup.velocity": {
+    "message": "Velocity"
+  },
+  "mdx.setup.bungeecord": {
+    "message": "BungeeCord"
   }
 }
