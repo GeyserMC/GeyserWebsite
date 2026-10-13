@@ -61,8 +61,18 @@ $silver: #a8a9ad;
     }
 }
 
+// Link buttons below the description, in the site's primary green
 .summaryLinks {
-    margin-left: auto;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-top: 0.75rem;
+
+    :global(.button) {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.4rem;
+    }
 }
 
 .summaryMeta {

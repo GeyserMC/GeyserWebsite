@@ -14,6 +14,9 @@ import clsx from 'clsx';
 import styles from './Provider.module.scss';
 import useBaseUrl from '@docusaurus/useBaseUrl';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faBook, faGlobe, faHeadset } from '@fortawesome/free-solid-svg-icons';
+import { faDiscord } from '@fortawesome/free-brands-svg-icons';
 
 export const noP = (props: { children: any; }) => {
     const { children } = props;
@@ -308,10 +311,12 @@ const HostSummary = ({ provider }: { provider: HostingProvider }) => {
     const confirmed = isConfirmed(provider);
     const tier = isHighlighted(provider) ? provider.open_collaboration.tier : null;
     const logo = useBaseUrl(provider.open_collaboration?.logo ?? '');
+    // The host's own guide is the main action, so it is the filled button
     const links = [
-        provider.links?.article && { to: provider.links.article, label: <MDXTranslatable.setup.hosting_provider_article /> },
-        provider.links?.support && { to: provider.links.support, label: <MDXTranslatable.setup.hosting_provider_support /> },
-        provider.links?.discord && { to: provider.links.discord, label: <MDXTranslatable.setup.hosting_provider_discord /> },
+        provider.links?.article && { to: provider.links.article, icon: faBook, primary: true, label: <MDXTranslatable.setup.hosting_provider_article /> },
+        { to: provider.url, icon: faGlobe, label: <MDXTranslatable.setup.hosting_provider_website /> },
+        provider.links?.support && { to: provider.links.support, icon: faHeadset, label: <MDXTranslatable.setup.hosting_provider_support /> },
+        provider.links?.discord && { to: provider.links.discord, icon: faDiscord, label: <MDXTranslatable.setup.hosting_provider_discord /> },
     ].filter(Boolean);
 
     // The provider list is crowd-sourced, so this is worded as a report rather than a guarantee
@@ -333,16 +338,6 @@ const HostSummary = ({ provider }: { provider: HostingProvider }) => {
                         {tier === 'gold' ? <MDXTranslatable.setup.badge_gold /> : <MDXTranslatable.setup.badge_silver />}
                     </Link>
                 )}
-                {links.length > 0 && (
-                    <span className={styles.summaryLinks}>
-                        {links.map((link, i) => (
-                            <React.Fragment key={link.to}>
-                                {i > 0 && ' · '}
-                                <Link to={link.to}>{link.label}</Link>
-                            </React.Fragment>
-                        ))}
-                    </span>
-                )}
             </div>
             {tier ? (
                 // Supporting hosts configure Geyser for their users, so the crowd-sourced details do not apply
@@ -356,6 +351,18 @@ const HostSummary = ({ provider }: { provider: HostingProvider }) => {
                     {reported}
                 </div>
             )}
+            <div className={styles.summaryLinks}>
+                {links.map(link => (
+                    <Link
+                        key={link.to}
+                        to={link.to}
+                        className={clsx('button button--sm button--primary', !link.primary && 'button--outline')}
+                    >
+                        <FontAwesomeIcon icon={link.icon} fixedWidth />
+                        {link.label}
+                    </Link>
+                ))}
+            </div>
         </div>
     );
 }
@@ -415,7 +422,7 @@ const ConfigTabs = ({ provider, configLocation, selfHost = false, standalone = f
         <>
             <p><MDXTranslatable.setup.open_config_match configLocation={configLocation} /></p>
             <Tabs groupId="geyser-transport">
-                <TabItem value="nethernet" label={translate({ id: 'mdx.setup.transport_nethernet_tab', message: 'NetherNet only (26.40+)' })} default>
+                <TabItem value="nethernet" label={translate({ id: 'mdx.setup.transport_nethernet_tab', message: 'NetherNet' })} default>
                     <ConfigSnippet provider={provider} transport="nethernet" configLocation={configLocation} selfHost={selfHost} />
                 </TabItem>
                 <TabItem value="both" label={translate({ id: 'mdx.setup.transport_both_tab', message: 'NetherNet and RakNet' })}>

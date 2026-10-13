@@ -33,7 +33,7 @@ const HostCard = ({ provider }: { provider: HostingProvider }) => (
             <Link className="button button--primary" to={provider.url}>
                 <Translate id="pages.hosting.card.website">Website</Translate>
             </Link>
-            <Link className="button button--secondary" to={providerSetupLink(provider)}>
+            <Link className="button button--outline button--primary" to={providerSetupLink(provider)}>
                 <Translate id="pages.hosting.card.setup">Setup guide</Translate>
             </Link>
         </div>

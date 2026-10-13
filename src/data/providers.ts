@@ -66,7 +66,7 @@ const warnings = {
 const customInstallLocations = {
     plugin_list: translate({
         id: 'providers.config.templates.install_location.plugin_list',
-        message: "Install Geyser through the plugin / mod list provided by the host"
+        message: "Install Geyser through the plugin / mod list provided by the host."
     }),
     enable_bedrock_crossplay_option: translate({
         id: 'providers.config.templates.install_location.enable_bedrock_crossplay',

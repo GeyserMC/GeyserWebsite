@@ -18,18 +18,20 @@
     }
 }
 
+// Flex rather than grid, so a row that is not full stays centered
 .grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(16rem, 1fr));
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
     gap: 1.5rem;
+
+    > .card {
+        flex: 0 1 18rem;
+    }
 }
 
-.goldGrid {
-    grid-template-columns: repeat(auto-fill, minmax(22rem, 1fr));
-
-    @media (max-width: 576px) {
-        grid-template-columns: 1fr;
-    }
+.goldGrid > .card {
+    flex-basis: 26rem;
 }
 
 .card {
@@ -40,6 +42,7 @@
     border: 1px solid var(--ifm-color-emphasis-300);
     border-radius: var(--ifm-card-border-radius, 0.5rem);
     background: var(--ifm-card-background-color);
+    text-align: center;
 
     h3 {
         margin: 0;
@@ -84,8 +87,16 @@
     }
 }
 
+// Both buttons share one row: they split the width evenly, with less padding than usual so they fit narrow cards.
+// Long translations wrap inside the button instead of pushing it onto a new line.
 .links {
     display: flex;
-    flex-wrap: wrap;
     gap: 0.5rem;
+
+    > :global(.button) {
+        flex: 1 1 0;
+        min-width: 0;
+        padding-inline: 0.75rem;
+        white-space: normal;
+    }
 }
