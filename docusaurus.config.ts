@@ -321,7 +321,11 @@ const config: Config = {
                         },
                         {
                             label: 'Global Linking',
-                            to: 'https://link.geysermc.org/',
+                            href: 'https://link.geysermc.org/',
+                        },
+                        {
+                            label: 'Privacy Policy',
+                            href: 'https://ziax.com/terms/privacy-policy/',
                         },
                     ],
                 },
