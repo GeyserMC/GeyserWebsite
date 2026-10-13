@@ -107,8 +107,11 @@ export const MDXTranslatable = {
             </Translate>
         ),
         try_not_listed: ({ link }: { link: string }) => (
-            <Translate id="mdx.setup.try_not_listed" values={{ notListed: <a href={link}><Translate id="mdx.setup.try_not_listed.link">"Not listed" guide</Translate></a> }}>
-                {"If these instructions don't work, you can follow the {notListed} instead."}
+            <Translate id="mdx.setup.try_not_listed" values={{
+                notListed: <a href={link}><Translate id="mdx.setup.try_not_listed.link">"Not listed" guide for using only the Java server's port</Translate></a>,
+                warden: <Link to="https://warden.cloud">Warden</Link>
+            }}>
+                {"If your host cannot give you a separate port, follow the {notListed} instead. Players then join through {warden}, an external signaling service."}
             </Translate>
         ),
         no_signaling: ({ name }: { name: string }) => (

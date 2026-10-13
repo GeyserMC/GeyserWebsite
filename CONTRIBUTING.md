@@ -37,6 +37,8 @@ Prefer a single port: use `builtin_signaling: 'same_as_udp'` when the UDP port i
 
 Anything else users need to change in the config, such as which Bedrock address to use, goes in `config.notes`, which are shown below the generated config.
 
+Every string is translated, so keep them few: use the templates at the top of `src/data/providers.ts` (such as `ports.assign` or `customInstallLocations.plugin_list`) where they fit, and only set `install`, `connect` or notes when the generated steps are not enough.
+
 If the host has not confirmed these details yet, set `config.confirmed: false`, and the guide shows a warning. Remove it once the host confirms them.
 
 ```diff

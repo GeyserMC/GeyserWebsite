@@ -14,6 +14,7 @@ import clsx from 'clsx';
 import styles from './Provider.module.scss';
 import useBaseUrl from '@docusaurus/useBaseUrl';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
+import { useLocation } from '@docusaurus/router';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBook, faGlobe, faHeadset } from '@fortawesome/free-solid-svg-icons';
 import { faDiscord } from '@fortawesome/free-brands-svg-icons';
@@ -63,15 +64,7 @@ const notListedVariants = [
     {
         value: 'java-only',
         label: translate({ id: 'mdx.setup.not_listed.tab_java_only', message: 'I only have the Java server port' }),
-        provider: {
-            ...notListed,
-            config: notListedPorts.javaOnly,
-            // External signaling gives the server its own address, so players do not use the Java server's
-            connect: translate({
-                id: 'providers.provider.not_listed.java_only_connect',
-                message: "Players do not connect with the Java server's address. After Geyser starts, it shows the address and port to use in the console, provided by the external signaling service. Share these with your players."
-            })
-        }
+        provider: { ...notListed, config: notListedPorts.javaOnly }
     }
 ];
 
@@ -197,6 +190,10 @@ const buildConfig = (provider: HostingProvider, transport: Transport, selfHost: 
     if (bedrockPort === 'java') {
         lines.push('  clone-remote-port: true');
     } else {
+        // Many hosts used to preset clone-remote-port, which makes Geyser ignore `port`
+        if (!selfHost) {
+            lines.push('  clone-remote-port: false');
+        }
         lines.push(`  port: ${portValue(bedrockPort, separateTcp ? 'TCP_PORT' : 'TCP_UDP_PORT')}`);
     }
 
@@ -275,11 +272,26 @@ const ConnectInstructions = ({ provider }: { provider: HostingProvider }) => {
         return <ReactMarkdown>{provider.connect}</ReactMarkdown>;
     }
     const { bedrockPort } = signalingSetup(provider);
+    const preconfigured = isPreconfigured(provider.config);
+    // Sharing the Java server's port leaves no TCP port for built-in signaling, so Geyser switches to external signaling,
+    // which gives the server its own address. Hosts that configure Geyser themselves may run signaling another way.
+    if (bedrockPort === 'java' && !preconfigured) {
+        return (
+            <p>
+                <Translate id="providers.provider.not_listed.java_only_connect" values={{ warden: <Link to="https://warden.cloud">Warden</Link> }}>
+                    {"Players do not connect with the Java server's address. After Geyser starts, it shows the address and port to use in the console, provided by the external signaling service ({warden} by default). Share these with your players."}
+                </Translate>
+            </p>
+        );
+    }
     let port: React.ReactNode;
     if (bedrockPort === 'java') {
         port = <Translate id="mdx.setup.connect.port_java">Your Java server's port</Translate>;
     } else if (typeof bedrockPort === 'number') {
         port = String(bedrockPort);
+    } else if (preconfigured) {
+        // There is no config step to refer to, so show where the port comes from
+        port = <ReactMarkdown components={{ p: noP }}>{bedrockPort.obtain}</ReactMarkdown>;
     } else {
         port = <Translate id="mdx.setup.connect.port_config_step">The port you set in "Configuring Geyser"</Translate>;
     }
@@ -371,7 +383,10 @@ const HostSummary = ({ provider }: { provider: HostingProvider }) => {
  * Shown first, above the host summary: the steps below may not work if NetherNet is not confirmed for this host.
  */
 const UnconfirmedNotice = ({ provider }: { provider: HostingProvider }) => {
-    const notListedLink = useBaseUrl(providerSetupLink(notListed));
+    // The fallback is "Not listed" with only the Java server's port, which uses external signaling (Warden).
+    // Keep the platform the user is on.
+    const platform = new URLSearchParams(useLocation().search).get('platform');
+    const notListedLink = useBaseUrl(`${providerSetupLink(notListed)}&ports=java-only${platform ? `&platform=${encodeURIComponent(platform)}` : ''}`);
     // "Not listed" has no instructions to check, so it gets no notice; its steps cover both options instead
     if (isConfirmed(provider) || provider === notListed) {
         return null;
@@ -452,8 +467,9 @@ export const SelfHostConfig = ({ configLocation, standalone }: { configLocation:
 const ConnectStep = ({ provider }: { provider: HostingProvider }) => (
     <>
         <ConnectInstructions provider={provider} />
-        {/* Unconfirmed hosts get the default built-in signaling, which is the one that can use HTTPS */}
-        {!provider.config.preconfigured && (signalingSetup(provider).builtin || !isConfirmed(provider)) && (
+        {/* Unconfirmed hosts get the default built-in signaling, which is the one that can use HTTPS,
+            unless they share the Java server's port, where Geyser uses external signaling instead */}
+        {!isPreconfigured(provider.config) && provider.config.udp !== 'java' && (signalingSetup(provider).builtin || !isConfirmed(provider)) && (
             <p><MDXTranslatable.setup.https_note /></p>
         )}
     </>
@@ -522,7 +538,7 @@ export const ProviderGeyserSetup: React.FC<ProviderGeyserSetupProps> = ({ jarNam
 
                 <Step id="configuring-geyser" title={<MDXTranslatable.setup.configuring_geyser />}>
                     {provider === notListed ? (
-                        <Tabs groupId="not-listed-ports">
+                        <Tabs groupId="not-listed-ports" queryString="ports">
                             {notListedVariants.map((variant, i) => (
                                 <TabItem key={variant.value} value={variant.value} label={variant.label} default={i === 0}>
                                     <ConfigTabs provider={variant.provider} configLocation={configLocation} />
@@ -545,7 +561,7 @@ export const ProviderGeyserSetup: React.FC<ProviderGeyserSetupProps> = ({ jarNam
                 <Step id="connecting-on-bedrock" title={<MDXTranslatable.setup.connecting_on_bedrock />}>
                     {provider === notListed ? (
                         // Same groupId as the config step, so both switch together
-                        <Tabs groupId="not-listed-ports">
+                        <Tabs groupId="not-listed-ports" queryString="ports">
                             {notListedVariants.map((variant, i) => (
                                 <TabItem key={variant.value} value={variant.value} label={variant.label} default={i === 0}>
                                     <ConnectStep provider={variant.provider} />

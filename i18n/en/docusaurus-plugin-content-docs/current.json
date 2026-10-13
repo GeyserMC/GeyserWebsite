@@ -190,5 +190,9 @@
   "sidebar.geyserSidebar.link.Hosting Providers": {
     "message": "Hosting Providers",
     "description": "The label for link Hosting Providers in sidebar geyserSidebar, linking to /hosting"
+  },
+  "sidebar.geyserSidebar.category.Custom Content": {
+    "message": "Custom Content",
+    "description": "The label for category Custom Content in sidebar geyserSidebar"
   }
 }

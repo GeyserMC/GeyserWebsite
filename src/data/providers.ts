@@ -2,11 +2,13 @@ import { translate } from "@docusaurus/Translate"
 import { HostingProvider, PortSource } from "../types/providers"
 
 // See CONTRIBUTING.md for how to add or update a hosting provider.
+// Only add strings where the generated steps are not enough: the setup guide already covers downloading and placing
+// the jar, the config changes for the given ports, and what players enter to connect.
 
 const connectionTemplates = {
     providedByHost: translate({
         id: 'providers.connecting.templates.provided_by_host',
-        message: "Instructions to connect with Bedrock edition are provided by the host."
+        message: "Instructions to connect with Bedrock Edition are provided by the host."
     })
 }
 
@@ -15,19 +17,33 @@ const ports: Record<string, PortSource> = {
     assign: {
         obtain: translate({
             id: 'providers.ports.assign',
-            message: "Assign a port in the panel provided by the server host."
+            message: "Assign a port in your host's panel, open for both TCP and UDP."
         })
     },
     allocated: {
         obtain: translate({
             id: 'providers.ports.allocated',
-            message: "Pick one of the ports allocated to you that is not in use."
+            message: "Pick a free port from the ports allocated to your server, open for both TCP and UDP."
         })
     },
     askHost: {
         obtain: translate({
             id: 'providers.ports.ask_host',
-            message: "Contact your server hosting provider and ask for a port."
+            message: "Ask your host for a port that is open for both TCP and UDP."
+        })
+    },
+    // For hosts we have no NetherNet details on, which used to share the Java server's port
+    newPort: {
+        obtain: translate({
+            id: 'providers.ports.new_port',
+            message: "Open a new port in your server panel, open for both TCP and UDP, or ask your host for one if the panel has no option for it."
+        })
+    },
+    // For hosts that configure Geyser themselves: the port players connect with
+    fromHost: {
+        obtain: translate({
+            id: 'providers.ports.from_host',
+            message: "The Bedrock port your host shows you."
         })
     }
 }
@@ -38,35 +54,23 @@ const javaAddressInstruction = translate({
 });
 
 const otherInstructions = {
-    alternativeSupport: translate({
-        id: 'providers.config.templates.alternative_support',
-        message: "Alternatively to running Geyser on the same port as the Java server, contact the server host to get a custom port."
-    }),
-    alternativeAllocation: translate({
-        id: 'providers.config.templates.alternative_allocation',
-        message: "Alternatively to running Geyser on the same port as the Java server, allocate a new port in the control panel and use that instead."
-    }),
     dedicatedIp: translate({
         id: 'providers.config.templates.custom_port_dedicated_ip',
-        message: "If you have a dedicated IP, you can contact the support of the server host to get a custom port."
-    }),
-    askOrDedicatedIp: translate({
-        id: 'providers.config.templates.askOrPay',
-        message: "Alternatively, request an additional port, or buy a dedicated IP address."
+        message: "This host may only give out a separate port with a dedicated IP address."
     })
 }
 
 const warnings = {
     ovhFirewallMisconfiguration: translate({
         id: 'providers.warnings.ovh_firewall_misconfig',
-        message: "To fix random `Unable to Connect` issues, see [here](https://wiki.geysermc.org/geyser/port-forwarding/#ovh-and-soyoustart)."
+        message: "To fix random `Unable to Connect` issues, see [here](/wiki/geyser/port-forwarding/#ovh-and-soyoustart)."
     })
 }
 
 const customInstallLocations = {
     plugin_list: translate({
         id: 'providers.config.templates.install_location.plugin_list',
-        message: "Install Geyser through the plugin / mod list provided by the host."
+        message: "Install Geyser through the plugin or mod list provided by the host."
     }),
     enable_bedrock_crossplay_option: translate({
         id: 'providers.config.templates.install_location.enable_bedrock_crossplay',
@@ -80,6 +84,11 @@ const infos = {
         message: "Geyser is installed and configured on all servers by default."
     })
 }
+
+const onlyServesRegion = (region: string) => translate({
+    id: 'providers.config.templates.info.only_serves_region',
+    message: "This host only provides service in {region}."
+}, { region });
 
 export const providersData: HostingProvider[] = [
     {
@@ -101,7 +110,7 @@ export const providersData: HostingProvider[] = [
             id: 'providers.provider.apex_hosting.install',
             message: "Go to the Customizations tab in the panel and select 'Enabled' under the 'Geyser Auto Installer' option."
         }),
-        config: { preconfigured: true, port: 'java', confirmed: false }
+        config: { udp: ports.newPort, confirmed: false }
     },
     {
         name: 'Aquatis',
@@ -114,16 +123,13 @@ export const providersData: HostingProvider[] = [
         url: 'https://arthmc.xyz/',
         updated: '2026-07-10',
         links: { discord: 'https://discord.com/invite/jUeNm7UvKy' },
-        install: translate({
-            id: 'providers.provider.arth_hosting.install',
-            message: "Geyser is installed and configured on all servers by default. You can disable it in the 'Manage Plugins' menu."
-        }),
-        config: { preconfigured: true, port: ports.askHost, confirmed: false }
+        install: infos.installed_by_default,
+        config: { preconfigured: true, port: ports.fromHost, confirmed: false }
     },
     {
         name: 'Aternos',
         url: 'https://aternos.org/',
-        updated: '2026-10-13',
+        updated: '2026-07-10',
         links: {
             article: "https://support.aternos.org/hc/en-us/articles/39155890785053-NetherNet-protocol-Minecraft-Bedrock-Edition",
             support: 'https://support.aternos.org/',
@@ -132,10 +138,6 @@ export const providersData: HostingProvider[] = [
         install: customInstallLocations.plugin_list,
         // Aternos runs NetherNet on 19132 for all servers, and keeps RakNet on the old port while it exists
         config: { preconfigured: true, port: 19132 },
-        connect: translate({
-            id: 'providers.provider.aternos.connect',
-            message: "Connect with your server address (`*.aternos.me`) and port `19132`."
-        }),
         notices: {
             info: translate({
                 id: 'providers.provider.aternos.info',
@@ -148,8 +150,15 @@ export const providersData: HostingProvider[] = [
         name: 'AxentHost',
         url: 'https://axenthost.com/games/minecraft/',
         updated: '2026-07-10',
-        links: { discord: 'https://discord.axenthost.com/' },
-        config: { udp: 'java', confirmed: false }
+        links: {
+            article: 'https://axenthost.com/knowledgebase/categories/minecraft/create-a-crossplay-server-with-geyser/',
+            discord: 'https://discord.axenthost.com/'
+        },
+        install: translate({
+            id: 'providers.provider.axenthost.install',
+            message: "Select GeyserMC in the Variants tab. This reinstalls the server with Paper and Geyser."
+        }),
+        config: { udp: ports.newPort, confirmed: false }
     },
     {
         name: 'BedrockBetter',
@@ -172,46 +181,30 @@ export const providersData: HostingProvider[] = [
         name: 'BedrockHost',
         url: 'https://bedrockhost.pl/',
         updated: '2026-07-10',
-        links: { support: 'https://bedrockhost.pl/kontakt' },
-        config: { udp: 'java', confirmed: false }
+        links: {
+            article: 'https://bedrockhost.pl/w/geyser-czyli-serwer-minecraft-java-i-bedrock-w-jednym',
+            support: 'https://bedrockhost.pl/kontakt'
+        },
+        install: translate({
+            id: 'providers.provider.bedrockhost.install',
+            message: "In the hosting panel, go to install new engine > Ready-made solutions and select Geyser. This installs Paper and Geyser."
+        }),
+        config: { udp: ports.newPort, confirmed: false }
     },
     {
         name: 'Birdflop',
         url: 'https://birdflop.com/',
         updated: '2025-03-22',
-        config: {
-            udp: {
-                obtain: translate({
-                    id: 'providers.provider.birdflop.config.port',
-                    message: "Open an allocation in the Network tab."
-                })
-            },
-            confirmed: false,
-            notes: [
-                translate({
-                    id: 'providers.provider.birdflop.other',
-                    message: "If you have a dedicated IP, you can open a ticket to request allocation of the default Bedrock port (19132)"
-                })
-            ]
-        }
+        config: { udp: ports.assign, confirmed: false }
     },
     {
         name: 'BisectHosting',
         url: 'https://www.bisecthosting.com/',
         updated: '2026-03-03',
         links: {
-            support: 'https://www.bisecthosting.com/clients/index.php?rp=/knowledgebase/193/How-to-install-Geyser-and-Floodgate-on-a-Minecraft-Java-server.html'
+            article: 'https://www.bisecthosting.com/clients/index.php?rp=/knowledgebase/193/How-to-install-Geyser-and-Floodgate-on-a-Minecraft-Java-server.html'
         },
-        // TODO example data: assumes Bisect's Network tab ports are open for both TCP and UDP
-        config: {
-            udp: {
-                obtain: translate({
-                    id: 'providers.provider.bisecthosting.udp_port',
-                    message: "In the Network tab, pick a free port that is not in use by other mods."
-                })
-            },
-            builtin_signaling: 'same_as_udp'
-        },
+        config: { udp: ports.allocated, confirmed: false },
         notices: {
             warn: translate({
                 id: 'providers.provider.bisecthosting.warn',
@@ -239,8 +232,8 @@ export const providersData: HostingProvider[] = [
     {
         name: 'Bloom.Host',
         url: 'https://www.bloom.host/',
-        updated: '2025-10-29',
-        links: { article: 'https://docs.bloom.host/plugins/geysermc/' },
+        updated: '2026-05-25',
+        links: { article: 'https://docs.bloom.host/multiplatform/geysermc' },
         config: { udp: ports.assign, confirmed: false }
     },
     {
@@ -268,16 +261,22 @@ export const providersData: HostingProvider[] = [
         }
     },
     {
-        name: 'Consulhosting',
-        url: 'https://consulhosting.nl/',
-        updated: '2024-12-23',
-        config: { udp: 'java', confirmed: false }
+        name: 'ConsulHosting',
+        url: 'https://consulhosting.com/minecraft-server-hosting/',
+        updated: '2026-08-08',
+        links: { article: 'https://consulhosting.com/help/install-geysermc/' },
+        install: translate({
+            id: 'providers.provider.consulhosting.install',
+            message: "Install GeyserMC from the Software section of your server panel."
+        }),
+        config: { preconfigured: true, port: ports.fromHost, confirmed: false }
     },
     {
         name: 'Craft-Hosting',
         url: 'https://craft-hosting.ru/',
         updated: '2025-03-22',
-        config: { udp: 'java', confirmed: false }
+        config: { udp: ports.newPort, confirmed: false },
+        notices: { info: onlyServesRegion('Russia') }
     },
     {
         name: 'CreeperHost',
@@ -288,7 +287,7 @@ export const providersData: HostingProvider[] = [
             id: 'providers.provider.creeperhost.install',
             message: "Enable Geyser in the control panel."
         }),
-        config: { preconfigured: true, port: ports.askHost, confirmed: false },
+        config: { preconfigured: true, port: ports.fromHost, confirmed: false },
         connect: connectionTemplates.providedByHost
     },
     {
@@ -314,11 +313,16 @@ export const providersData: HostingProvider[] = [
         updated: '2026-07-10',
         links: { support: 'https://cubes.host/client/submitticket.php', discord: 'https://discord.gg/K8XzK4RqUH' },
         install: customInstallLocations.plugin_list,
-        config: { preconfigured: true, port: ports.askHost, confirmed: false },
-        connect: translate({
-            id: 'providers.provider.cubes_hosting.connect',
-            message: "Connect with the address of the Java server and the port shown in the server console."
-        }),
+        config: {
+            preconfigured: true,
+            port: {
+                obtain: translate({
+                    id: 'providers.provider.cubes_hosting.port',
+                    message: "The port shown in the server console."
+                })
+            },
+            confirmed: false
+        },
         notices: {
             info: translate({
                 id: 'providers.provider.cubes_hosting.info',
@@ -327,15 +331,23 @@ export const providersData: HostingProvider[] = [
         }
     },
     {
+        name: 'Dawn',
+        url: 'https://dawn.gg/',
+        updated: '2026-08-15',
+        config: { udp: 'java', confirmed: false },
+        notices: {
+            unsupported: translate({
+                id: 'providers.provider.dawn.description',
+                message: "Their proxy network does not support UDP. Therefore, Geyser is not supported. As an alternative, set up a paper server with e.g. playit.gg instead of port forwarding."
+            })
+        }
+    },
+    {
         name: 'DedicatedMC',
         url: 'https://dedicatedmc.io/',
         updated: '2024-12-23',
         links: { article: 'https://docs.dedicatedmc.io/plugins-mods/how-to-install-geysermc/' },
-        config: {
-            udp: 'java',
-            confirmed: false,
-            notes: [otherInstructions.alternativeSupport]
-        }
+        config: { udp: ports.askHost, confirmed: false }
     },
     {
         name: 'ElfIDC',
@@ -345,29 +357,26 @@ export const providersData: HostingProvider[] = [
             id: 'providers.provider.elfidc.custom',
             message: "When placing an order, choose Paper/Spigot + Geyser, which will automatically install the Geyser plugin."
         }),
-        config: { preconfigured: true, port: 'java', confirmed: false }
+        config: { udp: ports.newPort, confirmed: false },
+        notices: { info: onlyServesRegion('China') }
     },
     {
         name: 'EnviroMC',
         url: 'https://enviromc.host/',
         updated: '2024-12-23',
-        config: { udp: 'java', confirmed: false }
+        config: { udp: ports.newPort, confirmed: false }
     },
     {
         name: 'exaroton',
         url: 'https://exaroton.com/',
-        updated: '2026-10-13',
+        updated: '2026-07-10',
         links: {
             article: "https://support.exaroton.com/hc/en-us/articles/39157467467165-NetherNet-protocol-Minecraft-Bedrock-Edition",
             discord: 'https://discord.gg/exaroton'
         },
         install: customInstallLocations.plugin_list,
         // Same setup as Aternos: NetherNet runs on 19132 for all servers
-        config: { preconfigured: true, port: 19132 },
-        connect: translate({
-            id: 'providers.provider.exaroton.connect',
-            message: "Connect with your server address (`*.exaroton.me`) and port `19132`."
-        })
+        config: { preconfigured: true, port: 19132 }
     },
     {
         name: 'ExtraVM',
@@ -384,7 +393,7 @@ export const providersData: HostingProvider[] = [
         url: 'https://fadehost.com/',
         updated: '2024-12-23',
         config: {
-            udp: 'java',
+            udp: ports.askHost,
             confirmed: false,
             notes: [otherInstructions.dedicatedIp]
         }
@@ -393,33 +402,13 @@ export const providersData: HostingProvider[] = [
         name: 'FakaHeda',
         url: 'https://fakaheda.eu/',
         updated: '2025-03-22',
-        config: {
-            udp: 'java',
-            confirmed: false,
-            notes: [otherInstructions.alternativeAllocation]
-        }
+        config: { udp: ports.allocated, confirmed: false }
     },
     {
         name: 'FalixNodes',
         url: 'https://falixnodes.net/',
         updated: '2026-07-09',
-        config: {
-            udp: 'java',
-            confirmed: false,
-            notes: [otherInstructions.alternativeAllocation]
-        }
-    },
-    {
-        name: 'Feather',
-        url: 'https://feathermc.com/',
-        updated: '2025-10-29',
-        config: { udp: 'java', confirmed: false },
-        notices: {
-            unsupported: translate({
-                id: 'providers.provider.feather.description',
-                message: "Feather does not support UDP traffic. Therefore, Geyser cannot be used with this provider. As an alternative, set up a paper server with e.g. playit.gg instead of port forwarding."
-            })
-        }
+        config: { udp: ports.assign, confirmed: false }
     },
     {
         name: 'Ferox Hosting',
@@ -432,31 +421,26 @@ export const providersData: HostingProvider[] = [
         name: 'Fluctis Hosting',
         url: 'https://fluctishosting.com',
         updated: '2024-12-23',
-        config: { udp: 'java', confirmed: false }
+        config: { udp: ports.newPort, confirmed: false }
     },
     {
         name: 'FREAKHOSTING',
         url: 'https://freakhosting.com/',
         updated: '2024-12-23',
-        config: { udp: 'java', confirmed: false }
+        config: { udp: ports.newPort, confirmed: false }
     },
     {
         name: 'FreeMcServer.net',
         url: 'https://freemcserver.net',
-        updated: '2024-12-23',
-        config: { udp: 'java', confirmed: false }
+        updated: '2025-12-14',
+        install: customInstallLocations.plugin_list,
+        config: { udp: ports.newPort, confirmed: false }
     },
     {
         name: 'GameHosting.it',
         url: 'https://www.gamehosting.it/',
         updated: '2024-12-23',
-        config: { udp: 'java', confirmed: false }
-    },
-    {
-        name: 'GameProHost',
-        url: 'https://gameprohost.com/',
-        updated: '2024-12-23',
-        config: { udp: 'java', confirmed: false }
+        config: { udp: ports.newPort, confirmed: false }
     },
     {
         name: 'GeyserHost',
@@ -487,7 +471,7 @@ export const providersData: HostingProvider[] = [
             id: 'providers.provider.ggservers.install',
             message: "Install Geyser in the auto plugin setups section."
         }),
-        config: { preconfigured: true, port: ports.askHost, confirmed: false },
+        config: { preconfigured: true, port: ports.fromHost, confirmed: false },
         connect: connectionTemplates.providedByHost
     },
     {
@@ -502,28 +486,7 @@ export const providersData: HostingProvider[] = [
                 })
             },
             confirmed: false,
-            notes: [
-                translate({
-                    id: 'providers.provider.gportal.address',
-                    message: "Set 'bedrock address' to the Java server address."
-                })
-            ]
-        }
-    },
-    {
-        name: 'Heavynode',
-        url: 'https://www.heavynode.com/',
-        updated: '2025-10-29',
-        config: { udp: ports.assign, confirmed: false },
-        notices: {
-            info: translate({
-                id: 'providers.provider.heavynode.info',
-                message: "The default bedrock port `19132` is available with a dedicated IP (contact support)."
-            }),
-            warn: translate({
-                id: "providers.provider.heavynode.warn",
-                message: "To resolve further connection issues for servers located in Canada and the UK, contact the support with the info found [here](https://wiki.geysermc.org/geyser/port-forwarding/#ovh-and-soyoustart)."
-            })
+            notes: [javaAddressInstruction]
         }
     },
     {
@@ -536,17 +499,13 @@ export const providersData: HostingProvider[] = [
         name: 'Host Havoc',
         url: 'https://hosthavoc.com/minecraft',
         updated: '2024-12-23',
-        config: { udp: 'java', confirmed: false }
+        config: { udp: ports.newPort, confirmed: false }
     },
     {
         name: 'Hosterfy',
         url: 'https://www.hosterfy.com/',
         updated: '2024-12-23',
-        config: {
-            udp: 'java',
-            confirmed: false,
-            notes: [otherInstructions.alternativeSupport]
-        }
+        config: { udp: ports.askHost, confirmed: false }
     },
     {
         name: 'HostEZ',
@@ -566,12 +525,6 @@ export const providersData: HostingProvider[] = [
                     message: "Different ports can be set in the Allocations tab. Premium products with a dedicated IP can use the default port (19132)."
                 })
             ]
-        },
-        notices: {
-            info: translate({
-                id: 'providers.provider.hostez.info',
-                message: "Most MC plans also include UDP DDoS protection, which can be used with Geyser."
-            })
         }
     },
     {
@@ -584,20 +537,7 @@ export const providersData: HostingProvider[] = [
         name: 'HumbleServers',
         url: 'https://humbleservers.com/',
         updated: '2025-10-29',
-        config: {
-            udp: 'java',
-            confirmed: false,
-            notes: [
-                translate({
-                    id: 'providers.provider.humbleservers.config.other',
-                    message: "Alternatively to using the Java server port, use one of the two extra ports."
-                })
-            ]
-        },
-        connect: translate({
-            id: 'providers.provider.humbleservers.connect',
-            message: "Connect with the Java server address and Java server port. If the subdomain doesn't work, use your regular numbered IP address."
-        })
+        config: { udp: ports.allocated, confirmed: false }
     },
     {
         name: 'KaasHosting',
@@ -607,13 +547,8 @@ export const providersData: HostingProvider[] = [
             article: 'https://www.kaashosting.nl/help/nl/minecraft/hoe-maak-ik-mijn-minecraft-server-crossplay-met-geysermc',
             discord: 'https://kaas.gg/discord'
         },
-        config: { udp: 'java', confirmed: false },
-        notices: {
-            info: translate({
-                id: 'providers.provider.kaashosting.description',
-                message: "When installing Geyser through the `Plugin Installer` tab and clicking `Install Automatically`, no extra configuration is required."
-            })
-        }
+        install: customInstallLocations.plugin_list,
+        config: { udp: ports.newPort, confirmed: false }
     },
     {
         name: 'KeKsHost',
@@ -626,11 +561,7 @@ export const providersData: HostingProvider[] = [
         url: 'https://kinetichosting.net/',
         updated: '2025-10-29',
         links: { article: 'https://www.kinetichosting.net/articles/minecraft-java/plugins/geyser' },
-        config: {
-            udp: 'java',
-            confirmed: false,
-            notes: [otherInstructions.alternativeAllocation]
-        }
+        config: { udp: ports.assign, confirmed: false }
     },
     {
         name: 'Lilypad',
@@ -638,7 +569,7 @@ export const providersData: HostingProvider[] = [
         updated: '2026-07-10',
         links: { article: "https://lilypad.gg/bedrock", discord: "https://lilypad.gg/discord" },
         install: customInstallLocations.enable_bedrock_crossplay_option,
-        config: { preconfigured: true, port: ports.askHost, confirmed: false },
+        config: { preconfigured: true, port: ports.fromHost, confirmed: false },
         connect: connectionTemplates.providedByHost
     },
     {
@@ -646,7 +577,7 @@ export const providersData: HostingProvider[] = [
         url: 'https://mc-host24.de/',
         updated: '2024-12-23',
         config: {
-            udp: 'java',
+            udp: ports.newPort,
             confirmed: false,
             notes: [javaAddressInstruction]
         }
@@ -659,33 +590,36 @@ export const providersData: HostingProvider[] = [
     },
     {
         name: 'MCServerHost',
-        url: 'https://mcserverhost.com/',
-        updated: '2026-07-10',
+        url: 'https://www.mcserverhost.com/',
+        updated: '2026-09-25',
         links: {
             article: 'https://www.mcserverhost.com/community/tutorials/how-to-set-up-a-minecraft-java-and-bedrock-crossplay-server-with-mcserverhost',
             discord: 'https://discord.gg/mcserverhost'
         },
-        config: { udp: 'java', confirmed: false }
+        install: translate({
+            id: 'providers.provider.mcserverhost.install',
+            message: "In the Software tab of the server panel, turn on 'Bedrock crossplay' and restart the server."
+        }),
+        config: { preconfigured: true, port: 19132, confirmed: false }
     },
     {
         name: 'Meloncube',
         url: 'https://www.meloncube.net/',
         updated: '2024-12-23',
-        config: { udp: ports.askHost, confirmed: false },
-        connect: connectionTemplates.providedByHost
+        config: { udp: ports.askHost, confirmed: false }
     },
     {
         name: 'Minecraft-Hosting.pro',
         url: 'https://www.minecraft-hosting.pro/',
         updated: '2024-12-23',
-        config: { udp: 'java', confirmed: false }
+        config: { udp: ports.newPort, confirmed: false }
     },
     {
         name: 'Minefort',
         url: 'https://minefort.com/',
         updated: '2026-07-10',
         links: { support: 'https://minefort.com/support', discord: 'https://discord.minefort.com/' },
-        config: { preconfigured: true, port: ports.askHost, confirmed: false },
+        config: { preconfigured: true, port: ports.fromHost, confirmed: false },
         extra_step: translate({
             id: 'providers.provider.minefort.additional_step',
             message: "Go to the server dashboard under 'Connect Support', and enable the 'Allow Bedrock' option."
@@ -696,11 +630,21 @@ export const providersData: HostingProvider[] = [
         })
     },
     {
+        name: 'Minehost',
+        url: 'https://www.minehost.com/',
+        updated: '2026-09-25',
+        install: translate({
+            id: 'providers.provider.minehost.install',
+            message: "In the Software tab of the server panel, turn on 'Minecraft Bedrock support' and restart the server."
+        }),
+        config: { preconfigured: true, port: 19132, confirmed: false }
+    },
+    {
         name: 'Minehut',
         url: 'https://minehut.com/',
         updated: '2026-07-10',
         links: { discord: 'https://discord.gg/cCyEeUs' },
-        config: { preconfigured: true, port: ports.askHost, confirmed: false },
+        config: { preconfigured: true, port: ports.fromHost, confirmed: false },
         connect: translate({
             id: 'providers.provider.minehut.connect_instructions',
             message: "Connect via `bedrock.minehut.com` and do `/join [servername]`, or connect directly via `[servername].bedrock.minehut.gg`."
@@ -710,26 +654,31 @@ export const providersData: HostingProvider[] = [
         name: 'MineStrator',
         url: 'https://minestrator.com/',
         updated: '2024-12-23',
-        config: { udp: 'java', confirmed: false }
+        config: { udp: ports.newPort, confirmed: false }
     },
     {
-        name: 'Modrinth Servers',
-        url: 'https://modrinth.com/servers',
-        updated: '2025-10-25',
+        name: 'Modrinth Hosting',
+        url: 'https://modrinth.com/hosting',
+        updated: '2026-03-07',
         links: { article: 'https://support.modrinth.com/en/articles/10986613-adding-geyser-to-your-server' },
         config: { udp: ports.assign, confirmed: false }
     },
     {
-        name: 'Netbela',
-        url: 'https://netbela.nl/store/minecraft',
-        updated: '2025-10-29',
-        install: customInstallLocations.plugin_list,
-        config: { udp: 'java', confirmed: false }
+        name: 'MyArena',
+        url: 'https://www.myarena.ru/',
+        updated: '2024-03-03',
+        config: { udp: 'java', confirmed: false },
+        notices: {
+            unsupported: translate({
+                id: 'providers.provider.myarena.description',
+                message: "Does seem to be working, but the Java version is too old in order for Geyser to run properly."
+            })
+        }
     },
     {
         name: 'NFOservers',
         url: 'https://nfoservers.com/',
-        updated: '2024-12-23',
+        updated: '2025-11-17',
         config: {
             udp: 19132,
             confirmed: false,
@@ -750,7 +699,7 @@ export const providersData: HostingProvider[] = [
         notices: {
             unsupported: translate({
                 id: 'providers.provider.nicraft.description',
-                message: "Nicraft does not provide Bedrock support, and is affected by a [firewall configuration issue](https://wiki.geysermc.org/geyser/port-forwarding/#ovh-and-soyoustart), which prohibits most players from joining."
+                message: "Nicraft does not provide Bedrock support, and is affected by a [firewall configuration issue](/wiki/geyser/port-forwarding/#ovh-and-soyoustart), which prohibits most players from joining."
             })
         }
     },
@@ -763,7 +712,7 @@ export const providersData: HostingProvider[] = [
             udp: {
                 obtain: translate({
                     id: 'providers.provider.nitrado.config.port',
-                    message: "Get Geyser as a plugin, and add 4 to the port of the Java server."
+                    message: "Add 4 to the port of the Java server."
                 })
             },
             confirmed: false
@@ -779,7 +728,8 @@ export const providersData: HostingProvider[] = [
         name: 'NolimitHost',
         url: 'https://nolimithost.cc',
         updated: '2026-07-09',
-        config: { udp: 'java', confirmed: false }
+        links: { article: 'https://nolimithost.cc/docs/minecraft/geyser' },
+        config: { udp: ports.newPort, confirmed: false }
     },
     {
         name: 'OMGServ',
@@ -790,23 +740,17 @@ export const providersData: HostingProvider[] = [
             // TODO imgur? RIP the brits
             message: "Automatic Geyser install can be done in the [Install Menu](https://i.imgur.com/Gewpsrq.png). You can enable floodgate in the [server properties on the dashboard](https://i.imgur.com/jg5mzNj.png)."
         }),
-        config: { preconfigured: true, port: ports.askHost, confirmed: false },
+        config: { preconfigured: true, port: ports.fromHost, confirmed: false },
         connect: connectionTemplates.providedByHost
-    },
-    {
-        name: 'OrionNodes',
-        url: 'https://orionnodes.com',
-        updated: '2025-10-26',
-        config: { udp: ports.assign, confirmed: false }
     },
     {
         name: 'PaperNodes',
         url: 'https://papernodes.com/',
         updated: '2024-12-23',
         config: {
-            udp: 'java',
+            udp: ports.askHost,
             confirmed: false,
-            notes: [otherInstructions.alternativeSupport]
+            notes: [otherInstructions.dedicatedIp]
         }
     },
     {
@@ -814,21 +758,21 @@ export const providersData: HostingProvider[] = [
         url: 'https://pebblehost.com/',
         updated: '2024-12-23',
         links: { article: 'https://youtu.be/v9lC80UBZF4' },
-        config: { udp: 'java', confirmed: false }
+        config: { udp: ports.newPort, confirmed: false }
     },
     {
         name: 'Physgun',
         url: 'https://physgun.com/',
         updated: '2026-07-10',
         links: { discord: 'https://physgun.com/discord' },
-        config: { udp: 'java', confirmed: false }
+        config: { udp: ports.newPort, confirmed: false }
     },
     {
         name: 'PiglinHost',
         url: 'https://piglinhost.com/',
         updated: '2026-07-10',
         links: { support: 'https://billing.piglinhost.com/submitticket.php', discord: 'https://discord.gg/piglinhost' },
-        config: { preconfigured: true, port: ports.askHost, confirmed: false },
+        config: { preconfigured: true, port: ports.fromHost, confirmed: false },
         connect: connectionTemplates.providedByHost,
         notices: {
             info: translate({
@@ -841,7 +785,7 @@ export const providersData: HostingProvider[] = [
         name: 'PlanetNode',
         url: 'https://planetnode.net',
         updated: '2024-12-23',
-        config: { udp: 'java', confirmed: false }
+        config: { udp: ports.newPort, confirmed: false }
     },
     {
         name: 'Play Hosting',
@@ -852,7 +796,7 @@ export const providersData: HostingProvider[] = [
             discord: 'https://discord.com/invite/PmXc62p4PN'
         },
         install: customInstallLocations.enable_bedrock_crossplay_option,
-        config: { preconfigured: true, port: ports.askHost, confirmed: false },
+        config: { preconfigured: true, port: ports.fromHost, confirmed: false },
         connect: connectionTemplates.providedByHost
     },
     {
@@ -860,7 +804,7 @@ export const providersData: HostingProvider[] = [
         url: 'https://pubcs.com',
         updated: '2024-12-23',
         config: {
-            udp: 'java',
+            udp: ports.askHost,
             confirmed: false,
             notes: [otherInstructions.dedicatedIp]
         }
@@ -874,40 +818,26 @@ export const providersData: HostingProvider[] = [
             discord: 'https://discord.gg/reZw4vQV9H'
         },
         install: infos.installed_by_default,
-        config: { preconfigured: true, port: ports.askHost, confirmed: false },
+        config: { preconfigured: true, port: ports.fromHost, confirmed: false },
         connect: connectionTemplates.providedByHost
     },
     {
         name: 'RackGenius',
-        url: 'https://rackgenius.com/game-hosting/',
-        updated: '2026-07-10',
-        install: translate({
-            id: 'providers.provider.rackgenius.install',
-            message: "Select 'Paper + Geyser with Floodgate' under the Jar Type at checkout to install the Geyser plugin."
-        }),
-        config: { preconfigured: true, port: 'java', confirmed: false }
-    },
-    {
-        name: 'RamShard',
-        url: 'https://ramshard.com/',
-        updated: '2024-12-23',
-        config: { udp: 'java', confirmed: false }
+        url: 'https://rackgenius.com/',
+        updated: '2026-08-08',
+        config: { udp: ports.newPort, confirmed: false }
     },
     {
         name: 'Redline Hosting',
         url: 'https://redlinehosting.net/',
         updated: '2024-12-23',
-        config: { udp: 'java', confirmed: false }
+        config: { udp: ports.newPort, confirmed: false }
     },
     {
         name: 'Revivenode',
         url: 'https://revivenode.com/',
         updated: '2025-03-22',
-        config: {
-            udp: 'java',
-            confirmed: false,
-            notes: [otherInstructions.alternativeAllocation]
-        },
+        config: { udp: ports.assign, confirmed: false },
         notices: {
             warn: warnings.ovhFirewallMisconfiguration
         }
@@ -917,16 +847,17 @@ export const providersData: HostingProvider[] = [
         url: 'https://scalacube.com/',
         updated: '2024-12-23',
         config: {
-            udp: 'java',
+            udp: ports.newPort,
             confirmed: false,
             notes: [javaAddressInstruction]
         }
     },
     {
-        name: 'Server.pro (Gaming plans)',
+        name: 'Server.pro',
         url: 'https://server.pro',
         updated: '2026-07-10',
         links: { support: 'https://server.pro/support', discord: 'https://server.pro/discord' },
+        // PRO and VPS plans can open more ports in the Firewall tab; Free and Premium plans fall back to "Not listed"
         config: { udp: ports.assign, confirmed: false }
     },
     {
@@ -938,13 +869,8 @@ export const providersData: HostingProvider[] = [
             support: 'https://serverprism.com/tickets/create',
             discord: 'https://serverprism.com/discord'
         },
-        config: { udp: 'java', confirmed: false },
-        notices: {
-            info: translate({
-                id: 'providers.provider.serverprism.description',
-                message: "Geyser is automatically configured when installing through the panel's plugin installer."
-            })
-        }
+        install: customInstallLocations.plugin_list,
+        config: { udp: ports.newPort, confirmed: false }
     },
     {
         name: 'Shockbyte',
@@ -953,41 +879,26 @@ export const providersData: HostingProvider[] = [
         links: {
             article: 'https://shockbyte.com/billing/knowledgebase/173/Introduction-to-GeyserMCorDragonProxy-How-GeyserMC-Works.html'
         },
-        config: { preconfigured: true, port: 'java', confirmed: false }
+        config: { udp: ports.newPort, confirmed: false }
     },
     {
         name: 'SimpleGameHosting',
         url: 'https://simplegamehosting.com/',
         updated: '2026-07-09',
-        config: {
-            udp: {
-                obtain: translate({
-                    id: 'providers.provider.simplegamehosting.config.port',
-                    message: "Contact live chat support to open a port, and check out the [help center guide](https://help.simplegamehosting.com/how-to-enable-crossplay-with-geyser-on-your-minecraft-server/) for how to install and configure Geyser on your server."
-                })
-            },
-            confirmed: false
-        }
+        links: { article: 'https://help.simplegamehosting.com/how-to-enable-crossplay-with-geyser-on-your-minecraft-server/' },
+        config: { udp: ports.askHost, confirmed: false }
     },
     {
         name: 'Skynode.pro',
         url: 'https://skynode.pro/',
         updated: '2025-03-22',
-        config: {
-            udp: {
-                obtain: translate({
-                    id: 'providers.provider.skynode.pro.config.port',
-                    message: "Go to 'Server Details' and add a new port."
-                })
-            },
-            confirmed: false
-        }
+        config: { udp: ports.assign, confirmed: false }
     },
     {
         name: 'Sparked Host',
         url: 'https://sparkedhost.com',
         updated: '2024-12-23',
-        config: { udp: 'java', confirmed: false }
+        config: { udp: ports.newPort, confirmed: false }
     },
     {
         name: 'SRKHOST',
@@ -997,48 +908,27 @@ export const providersData: HostingProvider[] = [
             id: 'providers.provider.srkhost.install',
             message: "Enable Geyser on the version changer page. Geyser will run on the given port by the host."
         }),
-        config: { preconfigured: true, port: ports.askHost, confirmed: false },
+        config: { preconfigured: true, port: ports.fromHost, confirmed: false },
         connect: connectionTemplates.providedByHost
     },
     {
         name: 'STIPE',
         url: 'https://stipe.com.au/',
         updated: '2025-10-29',
-        config: { udp: 'java', confirmed: false }
-    },
-    {
-        name: 'SyntexHosting',
-        url: 'https://syntexhosting.com/',
-        updated: '2025-10-29',
-        config: {
-            udp: 'java',
-            confirmed: false,
-            notes: [otherInstructions.alternativeSupport]
-        }
+        config: { udp: ports.newPort, confirmed: false },
+        notices: { info: onlyServesRegion('Australia') }
     },
     {
         name: 'The Minecraft Hosting',
         url: 'https://theminecrafthosting.com/',
         updated: '2024-12-23',
-        config: { udp: 'java', confirmed: false }
+        config: { udp: ports.newPort, confirmed: false }
     },
     {
         name: 'TNAHosting',
         url: 'https://tnahosting.net/',
         updated: '2024-12-23',
-        config: { udp: 'java', confirmed: false }
-    },
-    {
-        name: 'TurboHost',
-        url: 'https://turbohost.nl/',
-        updated: '2024-12-23',
-        config: { udp: 'java', confirmed: false }
-    },
-    {
-        name: 'UltimateSRV',
-        url: 'https://ultimatesrv.com/',
-        updated: '2024-12-23',
-        config: { udp: 'java', confirmed: false }
+        config: { udp: ports.newPort, confirmed: false }
     },
     {
         name: 'UltraServers',
@@ -1049,7 +939,11 @@ export const providersData: HostingProvider[] = [
             support: 'https://ultraservers.com/contact',
             discord: 'https://discord.ultraservers.com/'
         },
-        config: { udp: 'java', confirmed: false }
+        install: translate({
+            id: 'providers.provider.ultraservers.install',
+            message: "Select 'Paper + Geyser' in the Change version tab. On existing servers, install Geyser from the Plugins/Minecraft mods tab instead."
+        }),
+        config: { udp: ports.newPort, confirmed: false }
     },
     {
         name: 'VemoxHost',
@@ -1063,7 +957,7 @@ export const providersData: HostingProvider[] = [
             id: 'providers.provider.vemox_hosting.description',
             message: "Full automatic installation. Open the panel options and select the option to enable GeyserMC."
         }),
-        config: { preconfigured: true, port: 'java', confirmed: false }
+        config: { udp: ports.newPort, confirmed: false }
     },
     {
         name: 'VeryCoolHost',
@@ -1086,13 +980,7 @@ export const providersData: HostingProvider[] = [
         name: 'VexyHost',
         url: 'https://vexyhost.com/',
         updated: '2024-12-23',
-        config: { udp: 'java', confirmed: false }
-    },
-    {
-        name: 'Volcano Hosting',
-        url: 'https://www.volcanohosting.net/',
-        updated: '2024-12-23',
-        config: { udp: 'java', confirmed: false }
+        config: { udp: ports.newPort, confirmed: false }
     },
     {
         name: 'VoltHosting',
@@ -1100,31 +988,27 @@ export const providersData: HostingProvider[] = [
         updated: '2025-10-29',
         links: { support: 'https://volthosting.co.uk/contact.html' },
         config: {
-            udp: 'java',
+            udp: ports.askHost,
             confirmed: false,
-            notes: [otherInstructions.askOrDedicatedIp]
+            notes: [otherInstructions.dedicatedIp]
         }
     },
     {
         name: 'Vultam',
         url: 'https://vultam.net/',
-        updated: '2025-03-22',
+        updated: '2025-11-17',
         links: { support: 'https://clients.vultam.net/submitticket.php?step=2&deptid=1' },
-        config: {
-            udp: 'java',
-            confirmed: false,
-            notes: [otherInstructions.alternativeAllocation]
-        }
+        config: { udp: ports.assign, confirmed: false }
     },
     {
         name: 'Wasabi Hosting',
         url: 'https://wasabihosting.com',
         updated: '2025-10-29',
         install: customInstallLocations.plugin_list,
-        config: { udp: 'java', confirmed: false }
+        config: { udp: ports.newPort, confirmed: false }
     },
     {
-        name: "Wepwawet",
+        name: 'Wepwawet',
         url: "https://wepwawet.net/",
         updated: '2025-03-22',
         config: { udp: ports.assign, confirmed: false }
@@ -1134,9 +1018,9 @@ export const providersData: HostingProvider[] = [
         url: 'https://winternode.com',
         updated: '2025-10-29',
         config: {
-            udp: 'java',
+            udp: ports.askHost,
             confirmed: false,
-            notes: [otherInstructions.askOrDedicatedIp]
+            notes: [otherInstructions.dedicatedIp]
         }
     },
     {
@@ -1144,27 +1028,23 @@ export const providersData: HostingProvider[] = [
         url: 'https://wisehosting.com',
         updated: '2026-07-10',
         links: {
-            article: 'https://help.wisehosting.com/en/articles/13-how-to-install-geysermc-java-bedrock-crossplay-to-your-server',
+            article: 'https://wisehosting.com/help/how-to-install-geysermc-to-your-minecraft-server',
             support: 'https://wisehosting.com/billing/supporttickets.php',
             discord: 'https://discord.gg/9NSbNnTN3J'
         },
         install: translate({
             id: 'providers.provider.wisehosting.install',
-            message: "For auto installation: Find the GeyserMC presets from the `Properties` tab in the Game Panel. There, click `Install` and restart your server."
+            message: "Install the GeyserMC preset from the `Addons` tab in the Game Panel, then restart your server."
         }),
-        config: { preconfigured: true, port: ports.askHost, confirmed: false },
+        config: { preconfigured: true, port: ports.fromHost, confirmed: false },
         connect: connectionTemplates.providedByHost
     },
     {
         name: 'WitherHosting',
         url: 'https://witherhosting.com/',
-        updated: '2025-03-22',
-        links: { article: 'https://support.witherhosting.com/en/article/how-to-install-and-use-geysermc-1xn5l6v' },
-        config: {
-            udp: 'java',
-            confirmed: false,
-            notes: [otherInstructions.alternativeAllocation]
-        }
+        updated: '2026-04-26',
+        links: { article: 'https://my.witherhosting.com/kb/how-to-install-and-use-geysermc-java' },
+        config: { udp: ports.assign, confirmed: false }
     },
     {
         name: 'ZapHosting',
@@ -1172,6 +1052,6 @@ export const providersData: HostingProvider[] = [
         updated: '2026-07-10',
         links: { support: 'https://zap-hosting.com/en/customer/support/', discord: 'https://discord.gg/zaphosting' },
         install: customInstallLocations.plugin_list,
-        config: { preconfigured: true, port: 'java', confirmed: false }
+        config: { udp: ports.newPort, confirmed: false }
     }
 ]
