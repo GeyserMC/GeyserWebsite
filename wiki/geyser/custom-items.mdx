@@ -192,7 +192,13 @@ when there are multiple custom item definitions.
                             {
                                 "bedrock_identifier": "geyser_mc:another_test_item",
                                 "bedrock_options": {
-                                    "icon": "carrot"
+                                    "icons": {
+                                        "default": "carrot",
+                                        "dyed": "dyed_carrot"
+                                    },
+                                    "dyeable": {
+                                        "default_color": "#bebebe"
+                                    }
                                 },
                                 "components": {
                                     "minecraft:consumable": {
@@ -260,6 +266,13 @@ This value corresponds to icon shorthands defined in the `item_texture.json` fil
    - `/` with `_`
 
    Example: `geyser_mc:a_cool_item` -> `geyser_mc.a_cool_item`.
+- `icons`: Alternatively to `icon`, you can use the `icons` object to specify an icon to use by default, and an icon to use when the item is dyeable and has been dyed.
+Like `icon`, these values correspond to icon shorthands defined in the `item_texture.json` file. If `default` is unset,
+the same fallback as with `icon` is used. If `dyed` is unset, `default` is used (or its fallback).
+
+    Note that you cannot specify both `icon` and `icons`, you must specify one or the other. When specifying a `dyed` icon,
+    marking the item as `dyeable` is required.
+
 - `allow_offhand`: Whether the custom item may be held / put into the offhand. Defaults to `true`.
 - `display_handheld`: Whether the item should be displayed handheld (e.g. for tools or weapons). Defaults to `false`.
 - `protection_value`: Determines how many armor protection points should be shown when this item is worn. This is purely visual,
@@ -269,6 +282,8 @@ and only has an effect if the item is equippable. Defaults to `0`.
 - `creative_group`: Sets the item's creative group (for the recipe book). See [here](https://wiki.bedrock.dev/documentation/menu-categories#list-of-vanilla-groups)
 for a list of possible values. Creating custom creative groups is not currently supported by Geyser.
 - `tags`: Sets tags that an item has. These can be used for Molang expressions in resource packs.
+- `dyeable`: Marks the item as dyeable, and sets the default colour of the item. On Java Edition, the dyeing of items is
+implemented through crafting recipes, however Bedrock Edition requires the item to be explicitly marked in mappings.
 
 :::info
 A `creative_category` (and optionally `creative_group`) must be set if you have crafting recipes
@@ -364,11 +379,13 @@ The following Java item components are supported (some with limitations):
     - Due to Bedrock limitations, only has an effect in combination with the `minecraft:kinetic_weapon` or `minecraft:piercing_weapon` components.
 - `minecraft:kinetic_weapon`
 - `minecraft:piercing_weapon`
-- `minecraft:swing_animation`
+- `minecraft:attack_animation`
     - Due to Bedrock limitations, the actual animation played is hardcoded, only the duration of the animation can be changed.
 - `minecraft:use_effects`
     - Due to Bedrock limitations, the `can_sprint` property cannot be translated. Further, this component will only be translated
         when the base item is either able to shoot arrows, throw projectiles, or is edible (or made edible with the food component).
+- `minecraft:compostable`
+- `minecraft:cooking_fuel`
 
 Some components, like `minecraft:rarity` and `minecraft:attribute_modifiers`, are already automatically translated and should not be listed.
 
