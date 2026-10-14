@@ -1,6 +1,9 @@
 ---
 title: Geyser Entity API
-description: Geyser extensions can register custom Bedrock entity definitions, modify existing entities, and replace built-in types in entity spawning events.
+description: >-
+  Geyser extensions can register custom Bedrock entity definitions, modify
+  existing entities, and replace built-in types in entity spawning events.
+crowdin_page_id: b7d6246b-1821-48ee-9f97-a1f56f42efd7
 ---
 
 :::warning Experimental API

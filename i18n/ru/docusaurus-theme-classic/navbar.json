@@ -42,5 +42,9 @@
   "item.label.Dump Viewer": {
     "message": "Dump Viewer",
     "description": "Navbar item with label Dump Viewer"
+  },
+  "item.label.Hosting": {
+    "message": "Hosting",
+    "description": "Navbar item with label Hosting"
   }
 }

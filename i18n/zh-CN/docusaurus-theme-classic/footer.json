@@ -63,6 +63,10 @@
     "message": "Global Linking",
     "description": "The label of footer link with label=Global Linking linking to https://link.geysermc.org/"
   },
+  "link.item.label.Privacy Policy": {
+    "message": "Privacy Policy",
+    "description": "The label of footer link with label=Privacy Policy linking to https://ziax.com/terms/privacy-policy/"
+  },
   "logo.alt": {
     "message": "GeyserMC logo",
     "description": "The alt text of footer logo"

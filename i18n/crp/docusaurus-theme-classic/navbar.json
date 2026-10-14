@@ -42,5 +42,9 @@
   "item.label.Dump Viewer": {
     "message": "crwdns28877:0crwdne28877:0",
     "description": "crwdns28879:0crwdne28879:0"
+  },
+  "item.label.Hosting": {
+    "message": "crwdns29530:0crwdne29530:0",
+    "description": "crwdns29532:0crwdne29532:0"
   }
 }

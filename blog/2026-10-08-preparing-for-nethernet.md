@@ -3,7 +3,11 @@ title: Preparing Your Geyser Server for NetherNet
 slug: preparing-for-nethernet
 authors: Chris
 hide_table_of_contents: false
-description: Minecraft Bedrock Edition 26.60 fully switches over to a new networking layer, NetherNet. This blog post explains how you can also switch over, so your crossplay server will continue to work.
+description: >-
+  Minecraft Bedrock Edition 26.60 fully switches over to a new networking layer,
+  NetherNet. This blog post explains how you can also switch over, so your
+  crossplay server will continue to work.
+crowdin_page_id: 54c391d9-7dfb-4b06-a7a0-d20628cb2b18
 ---
 
 With Minecraft: Bedrock Edition 26.60, [planned for October 27th, 2026](https://minecraft.wiki/w/Bedrock_Edition_26.60), 

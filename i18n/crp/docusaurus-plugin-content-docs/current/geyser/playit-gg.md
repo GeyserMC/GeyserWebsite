@@ -32,14 +32,14 @@ crwdns27477:0crwdne27477:0 crwdns27479:0crwdne27479:0
    crwdns29128:0![crwdnd29128:0](/img/wiki/playit-gg/playit_tunnel_type.png)crwdne29128:0
 8. crwdns29130:0crwdne29130:0
    crwdns29132:0![crwdnd29132:0](/img/wiki/playit-gg/playit_select_network.png)crwdnd29132:0`config.yml`crwdnd29132:0`config.yml`crwdne29132:0 crwdns29134:0crwdne29134:0 crwdns29136:0crwdne29136:0 crwdns29138:0`19132`crwdnd29138:0`clone-remote-port`crwdnd29138:0`false`crwdne29138:0
-9. crwdns29140:0`127.0.0.1`crwdne29140:0  
+9. crwdns29298:0`127.0.0.1`crwdne29298:0  
    crwdns29142:0![crwdnd29142:0](/img/wiki/playit-gg/playit_set_ipandport.png)crwdne29142:0
 10. crwdns29144:0`proxy-protocol-v2`crwdne29144:0
-11. crwdns29146:0`advanced:`crwdnd29146:0`bedrock:`crwdnd29146:0`use-haproxy-protocol`crwdnd29146:0`true`crwdne29146:0
+11. crwdns29300:0`advanced:`crwdnd29300:0`bedrock:`crwdnd29300:0`use-haproxy-protocol`crwdnd29300:0`true`crwdne29300:0
 12. crwdns29148:0crwdne29148:0
     crwdns29150:0![crwdnd29150:0](/img/wiki/playit-gg/playit_create_tunnel.png)crwdne29150:0
 13. crwdns29152:0crwdne29152:0 crwdns29154:0`visiting-phone.gl.at.ply.gg:6695`crwdnd29154:0`6695`crwdne29154:0
-14. crwdns29156:0`advanced:`crwdnd29156:0`bedrock:`crwdnd29156:0`broadcast-port`crwdnd29156:0`6695`crwdne29156:0
+14. crwdns29302:0`advanced:`crwdnd29302:0`bedrock:`crwdnd29302:0`broadcast-port`crwdnd29302:0`6695`crwdne29302:0
 15. crwdns29158:0crwdne29158:0 crwdns29160:0crwdne29160:0
 16. crwdns27515:0crwdne27515:0 crwdns27517:0crwdne27517:0 crwdns27519:0crwdne27519:0
     crwdns27521:0[crwdnd27521:0](#troubleshooting)crwdne27521:0

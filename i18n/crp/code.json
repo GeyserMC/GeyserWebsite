@@ -33,7 +33,7 @@
     "message": "crwdns28003:0crwdne28003:0"
   },
   "pages.download.description.geyserconnect": {
-    "message": "crwdns28005:0crwdne28005:0"
+    "message": "crwdns29378:0crwdne29378:0"
   },
   "pages.download.description.thirdpartycosmetics": {
     "message": "crwdns28009:0crwdne28009:0"
@@ -624,12 +624,6 @@
   "mdx.setup.neoforge": {
     "message": "crwdns29224:0crwdne29224:0"
   },
-  "mdx.setup.velocity": {
-    "message": "crwdns29226:0crwdne29226:0"
-  },
-  "mdx.setup.bungeecord": {
-    "message": "crwdns29228:0crwdne29228:0"
-  },
   "mdx.setup.installing_geyser": {
     "message": "crwdns29230:0crwdne29230:0"
   },
@@ -649,24 +643,225 @@
     "message": "crwdns29252:0crwdne29252:0"
   },
   "providers.connecting.templates.provided_by_host": {
-    "message": "crwdns29268:0crwdne29268:0"
+    "message": "crwdns29380:0crwdne29380:0"
   },
   "providers.config.templates.java_address": {
     "message": "crwdns29270:0`address`crwdnd29270:0`bedrock`crwdne29270:0"
   },
   "providers.config.templates.custom_port_dedicated_ip": {
-    "message": "crwdns29282:0crwdne29282:0"
+    "message": "crwdns29382:0crwdne29382:0"
   },
   "providers.warnings.ovh_firewall_misconfig": {
-    "message": "crwdns29286:0`Unable to Connect`crwdnd29286:0[crwdnd29286:0](https://wiki.geysermc.org/geyser/port-forwarding/#ovh-and-soyoustart)crwdne29286:0"
+    "message": "crwdns29384:0`Unable to Connect`crwdnd29384:0[crwdnd29384:0](/wiki/geyser/port-forwarding/#ovh-and-soyoustart)crwdne29384:0"
   },
   "providers.config.templates.install_location.plugin_list": {
-    "message": "crwdns29288:0crwdne29288:0"
+    "message": "crwdns29386:0crwdne29386:0"
   },
   "providers.config.templates.install_location.enable_bedrock_crossplay": {
     "message": "crwdns29290:0crwdne29290:0"
   },
   "providers.config.templates.info.geyser_installed_by_default": {
     "message": "crwdns29292:0crwdne29292:0"
+  },
+  "mdx.setup.checking_server_version": {
+    "message": "crwdns29388:0crwdne29388:0"
+  },
+  "mdx.setup.restart_geyser": {
+    "message": "crwdns29390:0crwdne29390:0"
+  },
+  "mdx.setup.https_note": {
+    "message": "crwdns29392:0{https}crwdne29392:0"
+  },
+  "mdx.setup.configuring_geyser": {
+    "message": "crwdns29394:0crwdne29394:0"
+  },
+  "mdx.setup.open_config_simple": {
+    "message": "crwdns29396:0{configLocation}crwdnd29396:0{bedrock}crwdne29396:0"
+  },
+  "mdx.setup.preconfigured": {
+    "message": "crwdns29398:0{name}crwdne29398:0"
+  },
+  "mdx.setup.transport_nethernet_simple": {
+    "message": "crwdns29400:0crwdne29400:0"
+  },
+  "mdx.setup.transport_both_compat": {
+    "message": "crwdns29402:0crwdne29402:0"
+  },
+  "mdx.setup.placeholder_word": {
+    "message": "crwdns29404:0crwdne29404:0"
+  },
+  "mdx.setup.replace_with_simple": {
+    "message": "crwdns29406:0crwdne29406:0"
+  },
+  "mdx.setup.placeholder_java_port": {
+    "message": "crwdns29408:0crwdne29408:0"
+  },
+  "mdx.setup.placeholder_java_port_udp": {
+    "message": "crwdns29410:0{port}crwdne29410:0"
+  },
+  "mdx.setup.placeholder_second_free_port": {
+    "message": "crwdns29412:0{port}crwdne29412:0"
+  },
+  "mdx.setup.raknet_on_port": {
+    "message": "crwdns29414:0{port}crwdne29414:0"
+  },
+  "mdx.setup.summary.nethernet_reported_generic": {
+    "message": "crwdns29416:0crwdne29416:0"
+  },
+  "mdx.setup.summary.supporter_configures": {
+    "message": "crwdns29418:0{name}crwdne29418:0"
+  },
+  "mdx.setup.summary.updated": {
+    "message": "crwdns29420:0{date}crwdne29420:0"
+  },
+  "mdx.setup.badge.gold": {
+    "message": "crwdns29422:0crwdne29422:0"
+  },
+  "mdx.setup.badge.silver": {
+    "message": "crwdns29424:0crwdne29424:0"
+  },
+  "mdx.setup.unconfirmed_title": {
+    "message": "crwdns29426:0crwdne29426:0"
+  },
+  "mdx.setup.warning_title": {
+    "message": "crwdns29428:0crwdne29428:0"
+  },
+  "mdx.setup.unconfirmed_reach_out_update": {
+    "message": "crwdns29430:0{name}crwdnd29430:0{discord}crwdne29430:0"
+  },
+  "mdx.setup.try_not_listed": {
+    "message": "crwdns29432:0{notListed}crwdnd29432:0{warden}crwdne29432:0"
+  },
+  "mdx.setup.try_not_listed.link": {
+    "message": "crwdns29434:0crwdne29434:0"
+  },
+  "mdx.setup.no_signaling": {
+    "message": "crwdns29436:0{name}crwdne29436:0"
+  },
+  "mdx.setup.hosting_provider_article_short": {
+    "message": "crwdns29438:0crwdne29438:0"
+  },
+  "mdx.setup.hosting_provider_website_short": {
+    "message": "crwdns29440:0crwdne29440:0"
+  },
+  "mdx.setup.hosting_provider_support_short": {
+    "message": "crwdns29442:0crwdne29442:0"
+  },
+  "mdx.setup.hosting_provider_discord_short": {
+    "message": "crwdns29444:0crwdne29444:0"
+  },
+  "mdx.setup.not_listed.tab_allocated": {
+    "message": "crwdns29446:0crwdne29446:0"
+  },
+  "mdx.setup.not_listed.tab_java_only": {
+    "message": "crwdns29448:0crwdne29448:0"
+  },
+  "components.provider.open_collaboration_group": {
+    "message": "crwdns29450:0crwdne29450:0"
+  },
+  "components.provider.other_group": {
+    "message": "crwdns29452:0crwdne29452:0"
+  },
+  "mdx.setup.connect.port_java": {
+    "message": "crwdns29454:0crwdne29454:0"
+  },
+  "mdx.setup.connect.port_config_step": {
+    "message": "crwdns29456:0crwdne29456:0"
+  },
+  "mdx.setup.connect.intro": {
+    "message": "crwdns29458:0crwdne29458:0"
+  },
+  "mdx.setup.connect.add_server": {
+    "message": "crwdns29460:0crwdne29460:0"
+  },
+  "mdx.setup.connect.server_name": {
+    "message": "crwdns29462:0crwdne29462:0"
+  },
+  "mdx.setup.connect.server_name_value": {
+    "message": "crwdns29464:0crwdne29464:0"
+  },
+  "mdx.setup.connect.server_address": {
+    "message": "crwdns29466:0crwdne29466:0"
+  },
+  "mdx.setup.connect.server_address_value": {
+    "message": "crwdns29468:0crwdne29468:0"
+  },
+  "mdx.setup.connect.port": {
+    "message": "crwdns29470:0crwdne29470:0"
+  },
+  "mdx.setup.transport_nethernet_tab": {
+    "message": "crwdns29472:0crwdne29472:0"
+  },
+  "mdx.setup.transport_both_tab": {
+    "message": "crwdns29474:0crwdne29474:0"
+  },
+  "providers.ports.assign": {
+    "message": "crwdns29476:0crwdne29476:0"
+  },
+  "providers.ports.allocated": {
+    "message": "crwdns29478:0crwdne29478:0"
+  },
+  "providers.ports.ask_host": {
+    "message": "crwdns29480:0crwdne29480:0"
+  },
+  "pages.hosting.tier.gold": {
+    "message": "crwdns29482:0crwdne29482:0"
+  },
+  "pages.hosting.tier.silver": {
+    "message": "crwdns29484:0crwdne29484:0"
+  },
+  "pages.hosting.tier.bronze": {
+    "message": "crwdns29486:0crwdne29486:0"
+  },
+  "pages.hosting.card.website": {
+    "message": "crwdns29488:0crwdne29488:0"
+  },
+  "pages.hosting.card.setup": {
+    "message": "crwdns29490:0crwdne29490:0"
+  },
+  "pages.hosting.title": {
+    "message": "crwdns29492:0crwdne29492:0"
+  },
+  "pages.hosting.subheading": {
+    "message": "crwdns29494:0crwdne29494:0"
+  },
+  "pages.hosting.intro": {
+    "message": "crwdns29496:0{openCollaboration}crwdne29496:0"
+  },
+  "pages.hosting.empty": {
+    "message": "crwdns29498:0crwdne29498:0"
+  },
+  "pages.hosting.other.title": {
+    "message": "crwdns29500:0crwdne29500:0"
+  },
+  "pages.hosting.other.text": {
+    "message": "crwdns29502:0{setupGuide}crwdne29502:0"
+  },
+  "pages.hosting.other.setup_guide": {
+    "message": "crwdns29504:0crwdne29504:0"
+  },
+  "pages.hosting.meta.title": {
+    "message": "crwdns29506:0crwdne29506:0"
+  },
+  "pages.hosting.meta.description": {
+    "message": "crwdns29508:0crwdne29508:0"
+  },
+  "pages.download.description.floodgatedatabases": {
+    "message": "crwdns29510:0crwdne29510:0"
+  },
+  "providers.ports.from_host": {
+    "message": "crwdns29512:0crwdne29512:0"
+  },
+  "providers.config.templates.info.only_serves_region": {
+    "message": "crwdns29514:0{region}crwdne29514:0"
+  },
+  "mdx.setup.velocity": {
+    "message": "crwdns29226:0crwdne29226:0"
+  },
+  "mdx.setup.bungeecord": {
+    "message": "crwdns29228:0crwdne29228:0"
+  },
+  "providers.ports.new_port": {
+    "message": "crwdns29516:0crwdne29516:0"
   }
 }

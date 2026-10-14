@@ -182,5 +182,13 @@
   "sidebar.geyserSidebar.category.Geyser API": {
     "message": "crwdns28753:0crwdne28753:0",
     "description": "crwdns28755:0crwdne28755:0"
+  },
+  "sidebar.geyserSidebar.link.Hosting Providers": {
+    "message": "crwdns29518:0crwdne29518:0",
+    "description": "crwdns29520:0crwdne29520:0"
+  },
+  "sidebar.geyserSidebar.category.Custom Content": {
+    "message": "crwdns29522:0crwdne29522:0",
+    "description": "crwdns29524:0crwdne29524:0"
   }
 }
