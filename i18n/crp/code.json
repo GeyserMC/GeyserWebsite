@@ -38,9 +38,6 @@
   "pages.download.description.thirdpartycosmetics": {
     "message": "crwdns28009:0crwdne28009:0"
   },
-  "pages.download.description.emoteoffhand": {
-    "message": "crwdns29204:0crwdne29204:0"
-  },
   "pages.dumpviewer.title": {
     "message": "crwdns28025:0crwdne28025:0"
   },
@@ -541,14 +538,6 @@
     "message": "crwdns28489:0crwdne28489:0",
     "description": "crwdns28491:0crwdne28491:0"
   },
-  "theme.unlistedContent.title": {
-    "message": "crwdns28493:0crwdne28493:0",
-    "description": "crwdns28495:0crwdne28495:0"
-  },
-  "theme.unlistedContent.message": {
-    "message": "crwdns28497:0crwdne28497:0",
-    "description": "crwdns28499:0crwdne28499:0"
-  },
   "pages.download.description.hurricane": {
     "message": "crwdns28505:0crwdne28505:0"
   },
@@ -650,9 +639,6 @@
   "mdx.setup.place_jar": {
     "message": "crwdns29234:0{jarName}crwdnd29234:0{jarDirectory}crwdne29234:0"
   },
-  "mdx.setup.fabric_dependency": {
-    "message": "crwdns29236:0{fabricApiLink}crwdne29236:0"
-  },
   "mdx.setup.restart_server": {
     "message": "crwdns29238:0crwdne29238:0"
   },
@@ -662,23 +648,14 @@
   "mdx.setup.connecting_on_bedrock": {
     "message": "crwdns29252:0crwdne29252:0"
   },
-  "mdx.setup.more_information": {
-    "message": "crwdns29254:0crwdne29254:0"
-  },
   "providers.connecting.templates.provided_by_host": {
     "message": "crwdns29268:0crwdne29268:0"
   },
   "providers.config.templates.java_address": {
     "message": "crwdns29270:0`address`crwdnd29270:0`bedrock`crwdne29270:0"
   },
-  "providers.config.templates.alternative_support": {
-    "message": "crwdns29278:0crwdne29278:0"
-  },
   "providers.config.templates.custom_port_dedicated_ip": {
     "message": "crwdns29282:0crwdne29282:0"
-  },
-  "providers.config.templates.askOrPay": {
-    "message": "crwdns29284:0crwdne29284:0"
   },
   "providers.warnings.ovh_firewall_misconfig": {
     "message": "crwdns29286:0`Unable to Connect`crwdnd29286:0[crwdnd29286:0](https://wiki.geysermc.org/geyser/port-forwarding/#ovh-and-soyoustart)crwdne29286:0"

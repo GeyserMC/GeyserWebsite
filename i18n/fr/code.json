@@ -38,9 +38,6 @@
   "pages.download.description.thirdpartycosmetics": {
     "message": "An extension that adds support for loading ears and other third party cosmetics on java players"
   },
-  "pages.download.description.emoteoffhand": {
-    "message": "An extension that allows Bedrock players to switch their offhand and mainhand item by emoting."
-  },
   "pages.dumpviewer.title": {
     "message": "Dump Viewer"
   },
@@ -541,14 +538,6 @@
     "message": "Tags",
     "description": "The title of the tag list page"
   },
-  "theme.unlistedContent.title": {
-    "message": "Unlisted page",
-    "description": "The unlisted content banner title"
-  },
-  "theme.unlistedContent.message": {
-    "message": "This page is unlisted. Search engines will not index it, and only users having a direct link can access it.",
-    "description": "The unlisted content banner message"
-  },
   "pages.download.description.hurricane": {
     "message": "A plugin with various workarounds for Geyser players that modify the server in order to achieve their goal."
   },
@@ -650,9 +639,6 @@
   "mdx.setup.place_jar": {
     "message": "Place the {jarName} in the {jarDirectory} folder."
   },
-  "mdx.setup.fabric_dependency": {
-    "message": "If it is not already installed, download  and install the {fabricApiLink} mod to the same folder."
-  },
   "mdx.setup.restart_server": {
     "message": "Restart the server."
   },
@@ -662,23 +648,14 @@
   "mdx.setup.connecting_on_bedrock": {
     "message": "Connecting on Bedrock"
   },
-  "mdx.setup.more_information": {
-    "message": "More Information"
-  },
   "providers.connecting.templates.provided_by_host": {
     "message": "Instructions to connect with Bedrock edition are provided by the host."
   },
   "providers.config.templates.java_address": {
     "message": "Set `address` in the `bedrock` section to the public address of the Java server."
   },
-  "providers.config.templates.alternative_support": {
-    "message": "Alternatively to running Geyser on the same port as the Java server, contact the server host to get a custom port."
-  },
   "providers.config.templates.custom_port_dedicated_ip": {
     "message": "If you have a dedicated IP, you can contact the support of the server host to get a custom port."
-  },
-  "providers.config.templates.askOrPay": {
-    "message": "Alternatively, request an additional port, or buy a dedicated IP address."
   },
   "providers.warnings.ovh_firewall_misconfig": {
     "message": "To fix random `Unable to Connect` issues, see [here](https://wiki.geysermc.org/geyser/port-forwarding/#ovh-and-soyoustart)."
