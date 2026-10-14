@@ -1,6 +1,14 @@
 import AdmZip from 'adm-zip';
 import { I18nConfig, LoadContext, Plugin, PluginOptions } from '@docusaurus/types';
-import crowdin, { Credentials, ResponseObject, SourceFiles, SourceFilesModel, UploadStorage } from '@crowdin/crowdin-api-client';
+import crowdin, {
+    Credentials,
+    ResponseObject,
+    SourceFiles,
+    SourceFilesModel,
+    SourceStrings,
+    SourceStringsModel,
+    UploadStorage,
+} from '@crowdin/crowdin-api-client';
 import path from 'path';
 import fs from 'fs';
 import logger from '@docusaurus/logger';
@@ -77,7 +85,7 @@ const uploadAction = async (inp: {
     markdownFolders: MarkdownFolders,
 }) => {
     const { context, options, crowdinClient, projectId, pluginDir, locales, markdownFolders } = inp;
-    const { uploadStorageApi, sourceFilesApi } = crowdinClient;
+    const { uploadStorageApi, sourceFilesApi, sourceStringsApi } = crowdinClient;
 
     const unprocessedFiles = new Set<string>();
 
@@ -134,7 +142,7 @@ const uploadAction = async (inp: {
         exportOptions: SourceFilesModel.ExportOptions,
     } = {
         importOptions: {
-            excludedFrontMatterElements: ['permalink', 'page_sidebar', 'hide_title'],
+            excludedFrontMatterElements: ['permalink', 'page_sidebar', 'hide_title', 'crowdin_page_id', 'crowdin_sync'],
             excludeCodeBlocks: true,
         },
         exportOptions: {
@@ -199,6 +207,8 @@ const uploadAction = async (inp: {
                 if (!data.crowdin_page_id) throw new Error(`Missing crowdin_page_id in MD/MDX frontmatter for ${filePath}`);
 
                 const synced = markdownSyncedMap.get(data.crowdin_page_id);
+                if (!synced) throw new Error(`No synced file found for crowdin_page_id ${data.crowdin_page_id} in ${filePath}`);
+
                 unprocessedFiles.delete(synced.file);
 
                 if (!synced) {
@@ -228,6 +238,12 @@ const uploadAction = async (inp: {
                     uploadStorageApi,
                     ...markdownOptions,
                 });
+
+                await hideInlineCodeStrings({
+                    projectId,
+                    sourceStringsApi,
+                    fileId: file.data.id,
+                });
         }
 
         if (remove) {
@@ -247,7 +263,7 @@ const uploadAction = async (inp: {
         let content: string;
         switch (path.extname(file)) {
             case '.json':
-                fileOptions.type = 'json';
+                fileOptions.type = 'chrome';
                 content = processJsonContent(fs.readFileSync(filePath, 'utf8'), options.jsonKeyExclusions as string[]);
                 break;
 
@@ -264,6 +280,9 @@ const uploadAction = async (inp: {
                 fileOptions.exportOptions = markdownOptions.exportOptions;
                 content = fs.readFileSync(filePath, 'utf8');
                 break;
+            default:
+                logger.warn(`Skipping unsupported file type for ${file}`);
+                continue;
         }
 
         const directoryId = await createCrowdinDirectory({
@@ -273,14 +292,24 @@ const uploadAction = async (inp: {
             finalDir: path.dirname(file),
         });
 
+        if (directoryId === null) throw new Error(`Failed to create directory for ${file}`);
+
         const storage = await uploadStorageApi.addStorage(path.basename(file), content);
 
-        await sourceFilesApi.createFile(projectId, {
+        const createdFile = await sourceFilesApi.createFile(projectId, {
             storageId: storage.data.id,
             name: path.basename(file),
             directoryId,
             ...fileOptions,
         });
+
+        if (path.extname(file) === '.md' || path.extname(file) === '.mdx') {
+            await hideInlineCodeStrings({
+                projectId,
+                sourceStringsApi,
+                fileId: createdFile.data.id,
+            });
+        }
     }
 };
 
@@ -393,6 +422,9 @@ const processJsonContent = (content: string, exclusions: string[]): string => {
     const jsonContent: TranslationJson = JSON.parse(content);
     const includedContent: TranslationJson = {};
     nextKey: for (const key in jsonContent) {
+        if (!jsonContent[key]?.message?.trim()) {
+            continue;
+        }
         for (const exclusion of exclusions) {
             if (key.startsWith(exclusion)) {
                 continue nextKey;
@@ -495,7 +527,7 @@ const createCrowdinDirectory = async (inp: {
 
     const pathArr = finalDir.split('/');
     const remainingDirs: string[] = [];
-    let parentDirId: number = null;
+    let parentDirId: number | null = null;
 
     for (let i = pathArr.length; i > 0; i--) {
         const dirPath = path.join('/', pathArr.slice(0, i).join('/'));
@@ -524,5 +556,37 @@ const createCrowdinDirectory = async (inp: {
 
     return parentDirId;
 }
+
+// Matches strings consisting only of `inline code`, whitespace, or Crowdin inline tags like <0/>
+const INLINE_CODE_ONLY_REGEX = /^(?:`[^`]+`|\s|<[0-9]+\/>)+$/;
+
+const hideInlineCodeStrings = async (inp: {
+    projectId: number,
+    sourceStringsApi: SourceStrings,
+    fileId: number,
+}) => {
+    const { projectId, sourceStringsApi, fileId } = inp;
+
+    const strings = await fetchPaginatedCrowdinData<ResponseObject<SourceStringsModel.String>>(
+        (projId, params) => sourceStringsApi.listProjectStrings(projId, { fileId, ...params }),
+        projectId
+    );
+
+    for (const str of strings) {
+        if (
+            typeof str.data.text === 'string' &&
+            !str.data.isHidden &&
+            INLINE_CODE_ONLY_REGEX.test(str.data.text.trim())
+        ) {
+            await sourceStringsApi.editString(projectId, str.data.id, [
+                {
+                    op: 'replace',
+                    path: '/isHidden',
+                    value: true,
+                },
+            ]);
+        }
+    }
+};
 
 export default crowdinSyncPlugin;
