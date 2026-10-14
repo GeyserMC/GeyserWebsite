@@ -55,10 +55,6 @@ The Geyser specific properties are prioritized over the plugin properties!
   - A comma-separated list of public addresses that built-in signaling tells players to connect to, for servers behind a NAT or in a container without a public address. Without a port, the NetherNet (WebRTC) port is used; add one (e.g. `203.0.113.5:19133`) if players reach it on a different port number. Port forwarding is not set up for you.
   - Overrides `advertise-addresses` in the `builtin` part of the `signaling` section. For external signaling, use `advertise-addresses` in the `nxs` section of the config.
 
-Upstream:
-
-- `-Dorg.cloudburstmc.netty.trustedProxies.fetch=true`
-  - Whether `http(s)://` entries in `haproxy-protocol-whitelisted-ips` are downloaded as lists of trusted proxies. Set to `false` to only allow addresses written in the config. This list is used by both RakNet and built-in signaling.
 
 
 No longer relevant with Nethernet, and due for removal:
