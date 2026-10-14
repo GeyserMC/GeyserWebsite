@@ -129,7 +129,7 @@ export const providersData: HostingProvider[] = [
     {
         name: 'Aternos',
         url: 'https://aternos.org/',
-        updated: '2026-07-10',
+        updated: '2026-10-14',
         links: {
             article: "https://support.aternos.org/hc/en-us/articles/39155890785053-NetherNet-protocol-Minecraft-Bedrock-Edition",
             support: 'https://support.aternos.org/',
@@ -331,18 +331,6 @@ export const providersData: HostingProvider[] = [
         }
     },
     {
-        name: 'Dawn',
-        url: 'https://dawn.gg/',
-        updated: '2026-08-15',
-        config: { udp: 'java', confirmed: false },
-        notices: {
-            unsupported: translate({
-                id: 'providers.provider.dawn.description',
-                message: "Their proxy network does not support UDP. Therefore, Geyser is not supported. As an alternative, set up a paper server with e.g. playit.gg instead of port forwarding."
-            })
-        }
-    },
-    {
         name: 'DedicatedMC',
         url: 'https://dedicatedmc.io/',
         updated: '2024-12-23',
@@ -369,7 +357,7 @@ export const providersData: HostingProvider[] = [
     {
         name: 'exaroton',
         url: 'https://exaroton.com/',
-        updated: '2026-07-10',
+        updated: '2026-10-14',
         links: {
             article: "https://support.exaroton.com/hc/en-us/articles/39157467467165-NetherNet-protocol-Minecraft-Bedrock-Edition",
             discord: 'https://discord.gg/exaroton'

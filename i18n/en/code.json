@@ -956,9 +956,6 @@
   "providers.provider.cubes_hosting.port": {
     "message": "The port shown in the server console."
   },
-  "providers.provider.dawn.description": {
-    "message": "Their proxy network does not support UDP. Therefore, Geyser is not supported. As an alternative, set up a paper server with e.g. playit.gg instead of port forwarding."
-  },
   "providers.provider.mcserverhost.install": {
     "message": "In the Software tab of the server panel, turn on 'Bedrock crossplay' and restart the server."
   },
