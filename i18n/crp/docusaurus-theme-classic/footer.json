@@ -1,78 +1,78 @@
 {
   "link.title.Wiki": {
-    "message": "crwdns28765:0crwdne28765:0",
-    "description": "crwdns28767:0crwdne28767:0"
+    "message": "crwdns32092:0crwdne32092:0",
+    "description": "The title of the footer links column with title=Wiki in the footer"
   },
   "link.title.Downloads": {
-    "message": "crwdns28769:0crwdne28769:0",
-    "description": "crwdns28771:0crwdne28771:0"
+    "message": "crwdns32094:0crwdne32094:0",
+    "description": "The title of the footer links column with title=Downloads in the footer"
   },
   "link.title.Community": {
-    "message": "crwdns28773:0crwdne28773:0",
-    "description": "crwdns28775:0crwdne28775:0"
+    "message": "crwdns32096:0crwdne32096:0",
+    "description": "The title of the footer links column with title=Community in the footer"
   },
   "link.title.More": {
-    "message": "crwdns28777:0crwdne28777:0",
-    "description": "crwdns28779:0crwdne28779:0"
+    "message": "crwdns32098:0crwdne32098:0",
+    "description": "The title of the footer links column with title=More in the footer"
   },
   "link.item.label.Geyser": {
-    "message": "crwdns28781:0crwdne28781:0",
-    "description": "crwdns28783:0crwdne28783:0"
+    "message": "crwdns32100:0crwdne32100:0",
+    "description": "The label of footer link with label=Geyser linking to download?project=geyser"
   },
   "link.item.label.Floodgate": {
-    "message": "crwdns28785:0crwdne28785:0",
-    "description": "crwdns28787:0crwdne28787:0"
+    "message": "crwdns32102:0crwdne32102:0",
+    "description": "The label of footer link with label=Floodgate linking to download?project=floodgate"
   },
   "link.item.label.REST APIs": {
-    "message": "crwdns28789:0crwdne28789:0",
-    "description": "crwdns28791:0crwdne28791:0"
+    "message": "crwdns32104:0crwdne32104:0",
+    "description": "The label of footer link with label=REST APIs linking to wiki/api/api.geysermc.org/global-api"
   },
   "link.item.label.Other": {
-    "message": "crwdns28793:0crwdne28793:0",
-    "description": "crwdns28795:0crwdne28795:0"
+    "message": "crwdns32106:0crwdne32106:0",
+    "description": "The label of footer link with label=Other linking to download?project=other-projects"
   },
   "link.item.label.Crowdin": {
-    "message": "crwdns28797:0crwdne28797:0",
-    "description": "crwdns28799:0crwdne28799:0"
+    "message": "crwdns32108:0crwdne32108:0",
+    "description": "The label of footer link with label=Crowdin linking to https://translate.geysermc.org/"
   },
   "link.item.label.Discord": {
-    "message": "crwdns28801:0crwdne28801:0",
-    "description": "crwdns28803:0crwdne28803:0"
+    "message": "crwdns32110:0crwdne32110:0",
+    "description": "The label of footer link with label=Discord linking to https://discord.gg/geysermc"
   },
   "link.item.label.GitHub": {
-    "message": "crwdns28805:0crwdne28805:0",
-    "description": "crwdns28807:0crwdne28807:0"
+    "message": "crwdns32112:0crwdne32112:0",
+    "description": "The label of footer link with label=GitHub linking to https://github.com/GeyserMC/Geyser"
   },
   "link.item.label.Reddit": {
-    "message": "crwdns28809:0crwdne28809:0",
-    "description": "crwdns28811:0crwdne28811:0"
+    "message": "crwdns32114:0crwdne32114:0",
+    "description": "The label of footer link with label=Reddit linking to https://www.reddit.com/r/GeyserMC/"
   },
   "link.item.label.Twitter": {
-    "message": "crwdns28813:0crwdne28813:0",
-    "description": "crwdns28815:0crwdne28815:0"
+    "message": "crwdns32116:0crwdne32116:0",
+    "description": "The label of footer link with label=Twitter linking to https://twitter.com/Geyser_MC"
   },
   "link.item.label.Blog": {
-    "message": "crwdns28817:0crwdne28817:0",
-    "description": "crwdns28819:0crwdne28819:0"
+    "message": "crwdns32118:0crwdne32118:0",
+    "description": "The label of footer link with label=Blog linking to blog"
   },
   "link.item.label.Donate": {
-    "message": "crwdns28821:0crwdne28821:0",
-    "description": "crwdns28823:0crwdne28823:0"
+    "message": "crwdns32120:0crwdne32120:0",
+    "description": "The label of footer link with label=Donate linking to https://opencollective.com/geysermc"
   },
   "link.item.label.Global Linking": {
-    "message": "crwdns28825:0crwdne28825:0",
-    "description": "crwdns28827:0crwdne28827:0"
+    "message": "crwdns32122:0crwdne32122:0",
+    "description": "The label of footer link with label=Global Linking linking to https://link.geysermc.org/"
   },
   "link.item.label.Privacy Policy": {
-    "message": "crwdns29526:0crwdne29526:0",
-    "description": "crwdns29528:0crwdne29528:0"
+    "message": "crwdns32124:0crwdne32124:0",
+    "description": "The label of footer link with label=Privacy Policy linking to https://ziax.com/terms/privacy-policy/"
   },
   "logo.alt": {
-    "message": "crwdns28829:0crwdne28829:0",
-    "description": "crwdns28831:0crwdne28831:0"
+    "message": "crwdns32126:0crwdne32126:0",
+    "description": "The alt text of footer logo"
   },
   "copyright": {
-    "message": "crwdns29294:0crwdne29294:0",
-    "description": "crwdns29296:0crwdne29296:0"
+    "message": "crwdns32128:0crwdne32128:0",
+    "description": "The footer copyright"
   }
 }

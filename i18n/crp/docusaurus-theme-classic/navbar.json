@@ -1,50 +1,50 @@
 {
   "title": {
-    "message": "crwdns28833:0crwdne28833:0",
-    "description": "crwdns28835:0crwdne28835:0"
+    "message": "crwdns32130:0crwdne32130:0",
+    "description": "The title in the navbar"
   },
   "logo.alt": {
-    "message": "crwdns28837:0crwdne28837:0",
-    "description": "crwdns28839:0crwdne28839:0"
+    "message": "crwdns32132:0crwdne32132:0",
+    "description": "The alt text of navbar logo"
   },
   "item.label.Wiki": {
-    "message": "crwdns28841:0crwdne28841:0",
-    "description": "crwdns28843:0crwdne28843:0"
+    "message": "crwdns32134:0crwdne32134:0",
+    "description": "Navbar item with label Wiki"
   },
   "item.label.Blog": {
-    "message": "crwdns28845:0crwdne28845:0",
-    "description": "crwdns28847:0crwdne28847:0"
+    "message": "crwdns32136:0crwdne32136:0",
+    "description": "Navbar item with label Blog"
   },
   "item.label.Utilities": {
-    "message": "crwdns28849:0crwdne28849:0",
-    "description": "crwdns28851:0crwdne28851:0"
+    "message": "crwdns32138:0crwdne32138:0",
+    "description": "Navbar item with label Utilities"
   },
   "item.label.Download": {
-    "message": "crwdns28853:0crwdne28853:0",
-    "description": "crwdns28855:0crwdne28855:0"
+    "message": "crwdns32140:0crwdne32140:0",
+    "description": "Navbar item with label Download"
   },
   "item.label.Geyser": {
-    "message": "crwdns28857:0crwdne28857:0",
-    "description": "crwdns28859:0crwdne28859:0"
+    "message": "crwdns32142:0crwdne32142:0",
+    "description": "Navbar item with label Geyser"
   },
   "item.label.Floodgate": {
-    "message": "crwdns28861:0crwdne28861:0",
-    "description": "crwdns28863:0crwdne28863:0"
+    "message": "crwdns32144:0crwdne32144:0",
+    "description": "Navbar item with label Floodgate"
   },
   "item.label.REST APIs": {
-    "message": "crwdns28865:0crwdne28865:0",
-    "description": "crwdns28867:0crwdne28867:0"
+    "message": "crwdns32146:0crwdne32146:0",
+    "description": "Navbar item with label REST APIs"
   },
   "item.label.Other": {
-    "message": "crwdns28869:0crwdne28869:0",
-    "description": "crwdns28871:0crwdne28871:0"
+    "message": "crwdns32148:0crwdne32148:0",
+    "description": "Navbar item with label Other"
   },
   "item.label.Dump Viewer": {
-    "message": "crwdns28877:0crwdne28877:0",
-    "description": "crwdns28879:0crwdne28879:0"
+    "message": "crwdns32150:0crwdne32150:0",
+    "description": "Navbar item with label Dump Viewer"
   },
   "item.label.Hosting": {
-    "message": "crwdns29530:0crwdne29530:0",
-    "description": "crwdns29532:0crwdne29532:0"
+    "message": "crwdns32152:0crwdne32152:0",
+    "description": "Navbar item with label Hosting"
   }
 }

@@ -1,77 +1,77 @@
 ---
-title: crwdns27289:0crwdne27289:0
-description: crwdns27291:0crwdne27291:0
+title: crwdns30218:0crwdne30218:0
+description: crwdns30220:0crwdne30220:0
 crowdin_sync: true
-crowdin_page_id: crwdns27293:0crwdne27293:0
+crowdin_page_id: cd92ff4f-9105-46a2-8696-8b0e2f8b9d31
 ---
 
-# crwdns27295:0crwdne27295:0
+# crwdns30222:0crwdne30222:0
 
-crwdns27297:0crwdne27297:0
+crwdns30224:0crwdne30224:0
 
 :::info
 
-crwdns27299:0[crwdnd27299:0](https://luckperms.net/)crwdne27299:0 crwdns27301:0crwdne27301:0
+crwdns30226:0[crwdnd30226:0](https://luckperms.net/)crwdne30226:0 crwdns30228:0crwdne30228:0
 
 :::
 
-## crwdns27303:0{#geyser-commands--their-permissions}crwdne27303:0
+## crwdns30230:0{#geyser-commands--their-permissions}crwdne30230:0
 
-|                               crwdns27305:0crwdne27305:0                              |                crwdns27307:0crwdne27307:0               |                               crwdns27309:0crwdne27309:0                              |
-| :-------------------------------------------------------------------------------------------------------------------: | :-------------------------------------------------------------------------------------: | :-------------------------------------------------------------------------------------------------------------------: |
-|                           crwdns27311:0`geyser`crwdne27311:0                          |        crwdns27313:0`geyser.command`crwdne27313:0       |                               crwdns27315:0crwdne27315:0                              |
-|     crwdns27317:0`geyser help`crwdnd27317:0`geyser ?`crwdne27317:0    |     crwdns27319:0`geyser.command.help`crwdne27319:0     |                               crwdns27321:0crwdne27321:0                              |
-|                    crwdns27323:0`geyser advancements`crwdne27323:0                    | crwdns27325:0`geyser.command.advancements`crwdne27325:0 |                               crwdns27327:0crwdne27327:0                              |
-|                        crwdns27329:0`geyser dump`crwdne27329:0                        |     crwdns27331:0`geyser.command.dump`crwdne27331:0     |                               crwdns27333:0crwdne27333:0                              |
-|                        crwdns27335:0`geyser list`crwdne27335:0                        |     crwdns27337:0`geyser.command.list`crwdne27337:0     |                               crwdns27339:0crwdne27339:0                              |
-|                       crwdns27341:0`geyser offhand`crwdne27341:0                      |    crwdns27343:0`geyser.command.offhand`crwdne27343:0   |                               crwdns27345:0crwdne27345:0                              |
-|                       crwdns27347:0`geyser reload`crwdne27347:0                       |    crwdns27349:0`geyser.command.reload`crwdne27349:0    | crwdns27351:0crwdne27351:0 crwdns27353:0crwdne27353:0 |
-|                      crwdns27355:0`geyser settings`crwdne27355:0                      |   crwdns27357:0`geyser.command.settings`crwdne27357:0   |                               crwdns27359:0crwdne27359:0                              |
-| crwdns27361:0`geyser shutdown`crwdnd27361:0`geyser stop`crwdne27361:0 |   crwdns27363:0`geyser.command.shutdown`crwdne27363:0   |                               crwdns27365:0crwdne27365:0                              |
-|                     crwdns27367:0`geyser statistics`crwdne27367:0                     |  crwdns27369:0`geyser.command.statistics`crwdne27369:0  |                               crwdns27371:0crwdne27371:0                              |
-|                       crwdns27373:0`geyser version`crwdne27373:0                      |    crwdns27375:0`geyser.command.version`crwdne27375:0   |                               crwdns27377:0crwdne27377:0                              |
-|                      crwdns27379:0`geyser tooltips`crwdne27379:0                      |   crwdns27381:0`geyser.command.tooltips`crwdne27381:0   |                               crwdns27383:0crwdne27383:0                              |
-|                     crwdns27385:0`geyser extensions`crwdne27385:0                     |  crwdns27387:0`geyser.command.extensions`crwdne27387:0  | crwdns27389:0crwdne27389:0 crwdns27391:0crwdne27391:0 |
-|                        crwdns29086:0`geyser ping`crwdne29086:0                        |     crwdns29088:0`geyser.command.ping`crwdne29088:0     |                               crwdns29090:0crwdne29090:0                              |
-|                       crwdns29092:0`geyser options`crwdne29092:0                      |    crwdns29094:0`geyser.command.options`crwdne29094:0   |                               crwdns29096:0crwdne29096:0                              |
-|                    crwdns29098:0`geyser quickactions`crwdne29098:0                    | crwdns29100:0`geyser.command.quickactions`crwdne29100:0 |                               crwdns29102:0crwdne29102:0                              |
+|                               crwdns30232:0crwdne30232:0                              | crwdns30234:0crwdne30234:0 |                               crwdns30236:0crwdne30236:0                              |
+| :-------------------------------------------------------------------------------------------------------------------: | :--------------------------------------------------------: | :-------------------------------------------------------------------------------------------------------------------: |
+|                           crwdns30238:0`geyser`crwdne30238:0                          |                      `geyser.command`                      |                               crwdns30242:0crwdne30242:0                              |
+|     crwdns30244:0`geyser help`crwdnd30244:0`geyser ?`crwdne30244:0    |                    `geyser.command.help`                   |                               crwdns30248:0crwdne30248:0                              |
+|                                                 `geyser advancements`                                                 |                `geyser.command.advancements`               |                               crwdns30254:0crwdne30254:0                              |
+|                                                     `geyser dump`                                                     |                    `geyser.command.dump`                   |                               crwdns30260:0crwdne30260:0                              |
+|                                                     `geyser list`                                                     |                    `geyser.command.list`                   |                               crwdns30266:0crwdne30266:0                              |
+|                                                    `geyser offhand`                                                   |                  `geyser.command.offhand`                  |                               crwdns30272:0crwdne30272:0                              |
+|                                                    `geyser reload`                                                    |                   `geyser.command.reload`                  | crwdns30278:0crwdne30278:0 crwdns30280:0crwdne30280:0 |
+|                                                   `geyser settings`                                                   |                  `geyser.command.settings`                 |                               crwdns30286:0crwdne30286:0                              |
+| crwdns30288:0`geyser shutdown`crwdnd30288:0`geyser stop`crwdne30288:0 |                  `geyser.command.shutdown`                 |  crwdns30292:0crwdne30292:0crwdns30294:0crwdne30294:0 |
+|                                                  `geyser statistics`                                                  |                 `geyser.command.statistics`                |                               crwdns30300:0crwdne30300:0                              |
+|                                                    `geyser version`                                                   |                  `geyser.command.version`                  |                               crwdns30306:0crwdne30306:0                              |
+|                                                   `geyser tooltips`                                                   |                  `geyser.command.tooltips`                 |                               crwdns30312:0crwdne30312:0                              |
+|                                                  `geyser extensions`                                                  |                 `geyser.command.extensions`                | crwdns30318:0crwdne30318:0 crwdns30320:0crwdne30320:0 |
+|                                                     `geyser ping`                                                     |                    `geyser.command.ping`                   |                               crwdns30326:0crwdne30326:0                              |
+|                                                    `geyser options`                                                   |                  `geyser.command.options`                  |                               crwdns30332:0crwdne30332:0                              |
+|                                                 `geyser quickactions`                                                 |                `geyser.command.quickactions`               |                               crwdns30338:0crwdne30338:0                              |
 
-## crwdns27393:0{#extension-permissions}crwdne27393:0
+## crwdns30340:0{#extension-permissions}crwdne30340:0
 
-crwdns27395:0`<id>`crwdne27395:0
+crwdns30342:0`<id>`crwdne30342:0
 
-| crwdns27397:0crwdne27397:0                                                 | crwdns27399:0crwdne27399:0                              | crwdns27401:0crwdne27401:0 |
-| :--------------------------------------------------------------------------------------------------------- | :-------------------------------------------------------------------------------------- | :--------------------------------------------------------- |
-| crwdns27403:0`<id> help`crwdnd27403:0`<id> ?`crwdne27403:0 | crwdns27405:0`geyser.command.exthelp.<id>`crwdne27405:0 | crwdns27407:0crwdne27407:0 |
+| crwdns30344:0crwdne30344:0                                                 | crwdns30346:0crwdne30346:0                                                           | crwdns30348:0crwdne30348:0 |
+| :--------------------------------------------------------------------------------------------------------- | :------------------------------------------------------------------------------------------------------------------- | :--------------------------------------------------------- |
+| crwdns30350:0`<id> help`crwdnd30350:0`<id> ?`crwdne30350:0 | crwdns30352:0crwdne30352:0crwdns30354:0crwdne30354:0 | crwdns30356:0crwdne30356:0 |
 
-## crwdns27409:0{#other-permissions}crwdne27409:0
+## crwdns30358:0{#other-permissions}crwdne30358:0
 
-crwdns27411:0crwdne27411:0
+crwdns30360:0crwdne30360:0
 
-| crwdns27413:0crwdne27413:0                            | crwdns27415:0crwdne27415:0                                                                                                                    |
-| ------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| crwdns27417:0`geyser.settings.server`crwdne27417:0    | crwdns27419:0[crwdnd27419:0](/img/wiki/game_menu.png)crwdne27419:0 crwdns27421:0crwdne27421:0 |
-| crwdns27423:0`geyser.settings.gamerules`crwdne27423:0 | crwdns27425:0[crwdnd27425:0](/img/wiki/game_menu.png)crwdne27425:0 crwdns27427:0crwdne27427:0 |
-| crwdns27429:0`geyser.update`crwdne27429:0             | crwdns27431:0crwdne27431:0                                                                                                                    |
+| crwdns30362:0crwdne30362:0 | crwdns30364:0crwdne30364:0                                                                                                                    |
+| ---------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `geyser.settings.server`                                   | crwdns30368:0[crwdnd30368:0](/img/wiki/game_menu.png)crwdne30368:0 crwdns30370:0crwdne30370:0 |
+| `geyser.settings.gamerules`                                | crwdns30374:0[crwdnd30374:0](/img/wiki/game_menu.png)crwdne30374:0 crwdns30376:0crwdne30376:0 |
+| `geyser.update`                                            | crwdns30380:0crwdne30380:0                                                                                                                    |
 
-## crwdns27433:0{#standalone-viaproxy-permissions}crwdne27433:0
+## crwdns30382:0{#standalone-viaproxy-permissions}crwdne30382:0
 
-crwdns27435:0crwdne27435:0 crwdns27437:0`permissions.yml`crwdne27437:0
-crwdns27439:0crwdne27439:0
+crwdns30384:0crwdne30384:0 crwdns30386:0`permissions.yml`crwdne30386:0
+crwdns30388:0crwdne30388:0
 
-crwdns27441:0[crwdnd27441:0](/wiki/geyser/extensions/)crwdne27441:0
+crwdns30390:0[crwdnd30390:0](/wiki/geyser/extensions/)crwdne30390:0
 
-## crwdns27443:0{#permissions-platforms-no-permission-handlers}crwdne27443:0
+## crwdns30392:0{#permissions-platforms-no-permission-handlers}crwdne30392:0
 
-crwdns27445:0crwdne27445:0
-crwdns27447:0crwdne27447:0 crwdns27449:0[crwdnd27449:0](https://luckperms.net/)crwdne27449:0 crwdns27451:0crwdne27451:0 crwdns27453:0crwdne27453:0
+crwdns30394:0crwdne30394:0
+crwdns30396:0crwdne30396:0 crwdns30398:0[crwdnd30398:0](https://luckperms.net/)crwdne30398:0 crwdns30400:0crwdne30400:0 crwdns30402:0crwdne30402:0
 
-crwdns27455:0[crwdnd27455:0](https://github.com/onebeastchris/LuckLink)crwdnd27455:0[crwdnd27455:0](https://luckperms.net/)crwdne27455:0
+crwdns30404:0[crwdnd30404:0](https://github.com/onebeastchris/LuckLink)crwdnd30404:0[crwdnd30404:0](https://luckperms.net/)crwdne30404:0
 
-- crwdns27457:0[crwdnd27457:0](https://luckperms.net/)crwdne27457:0
-- crwdns27459:0[crwdnd27459:0](https://github.com/onebeastchris/LuckLink)crwdnd27459:0`LuckLink.jar`crwdnd27459:0`extensions`crwdne27459:0
-- crwdns27461:0crwdne27461:0
+- crwdns30406:0[crwdnd30406:0](https://luckperms.net/)crwdne30406:0
+- crwdns30408:0[crwdnd30408:0](https://github.com/onebeastchris/LuckLink)crwdnd30408:0`LuckLink.jar`crwdnd30408:0`extensions`crwdne30408:0
+- crwdns30410:0crwdne30410:0
 
-## crwdns27463:0{#floodgate-commands-and-permissions}crwdne27463:0
+## crwdns30412:0{#floodgate-commands-and-permissions}crwdne30412:0
 
-crwdns27465:0[crwdnd27465:0](/wiki/floodgate/commands/)crwdne27465:0
+crwdns30414:0[crwdnd30414:0](/wiki/floodgate/commands/)crwdne30414:0

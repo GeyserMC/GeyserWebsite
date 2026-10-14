@@ -1,194 +1,194 @@
 {
   "version.label": {
-    "message": "crwdns28573:0crwdne28573:0",
-    "description": "crwdns28575:0crwdne28575:0"
+    "message": "crwdns31996:0crwdne31996:0",
+    "description": "The label for version current"
   },
   "sidebar.apiSidebar.category.api.geysermc.org": {
-    "message": "crwdns28577:0crwdne28577:0",
-    "description": "crwdns28579:0crwdne28579:0"
+    "message": "crwdns31998:0crwdne31998:0",
+    "description": "The label for category api.geysermc.org in sidebar apiSidebar"
   },
   "sidebar.apiSidebar.category.api.geysermc.org.link.generated-index.title": {
-    "message": "crwdns28581:0crwdne28581:0",
-    "description": "crwdns28583:0crwdne28583:0"
+    "message": "crwdns32000:0crwdne32000:0",
+    "description": "The generated-index page title for category api.geysermc.org in sidebar apiSidebar"
   },
   "sidebar.apiSidebar.category.api.geysermc.org.link.generated-index.description": {
-    "message": "crwdns28585:0crwdne28585:0",
-    "description": "crwdns28587:0crwdne28587:0"
+    "message": "crwdns32002:0crwdne32002:0",
+    "description": "The generated-index page description for category api.geysermc.org in sidebar apiSidebar"
   },
   "sidebar.apiSidebar.category.health": {
-    "message": "crwdns28589:0crwdne28589:0",
-    "description": "crwdns28591:0crwdne28591:0"
+    "message": "crwdns32004:0crwdne32004:0",
+    "description": "The label for category health in sidebar apiSidebar"
   },
   "sidebar.apiSidebar.category.link": {
-    "message": "crwdns28593:0crwdne28593:0",
-    "description": "crwdns28595:0crwdne28595:0"
+    "message": "crwdns32006:0crwdne32006:0",
+    "description": "The label for category link in sidebar apiSidebar"
   },
   "sidebar.apiSidebar.category.stats": {
-    "message": "crwdns28597:0crwdne28597:0",
-    "description": "crwdns28599:0crwdne28599:0"
+    "message": "crwdns32008:0crwdne32008:0",
+    "description": "The label for category stats in sidebar apiSidebar"
   },
   "sidebar.apiSidebar.category.xbox": {
-    "message": "crwdns28601:0crwdne28601:0",
-    "description": "crwdns28603:0crwdne28603:0"
+    "message": "crwdns32010:0crwdne32010:0",
+    "description": "The label for category xbox in sidebar apiSidebar"
   },
   "sidebar.apiSidebar.category.skin": {
-    "message": "crwdns28605:0crwdne28605:0",
-    "description": "crwdns28607:0crwdne28607:0"
+    "message": "crwdns32012:0crwdne32012:0",
+    "description": "The label for category skin in sidebar apiSidebar"
   },
   "sidebar.apiSidebar.category.utils": {
-    "message": "crwdns28609:0crwdne28609:0",
-    "description": "crwdns28611:0crwdne28611:0"
+    "message": "crwdns32014:0crwdne32014:0",
+    "description": "The label for category utils in sidebar apiSidebar"
   },
   "sidebar.apiSidebar.category.UNTAGGED": {
-    "message": "crwdns28613:0crwdne28613:0",
-    "description": "crwdns28615:0crwdne28615:0"
+    "message": "crwdns32016:0crwdne32016:0",
+    "description": "The label for category UNTAGGED in sidebar apiSidebar"
   },
   "sidebar.apiSidebar.category.download.geysermc.org": {
-    "message": "crwdns28617:0crwdne28617:0",
-    "description": "crwdns28619:0crwdne28619:0"
+    "message": "crwdns32018:0crwdne32018:0",
+    "description": "The label for category download.geysermc.org in sidebar apiSidebar"
   },
   "sidebar.apiSidebar.category.download.geysermc.org.link.generated-index.title": {
-    "message": "crwdns28621:0crwdne28621:0",
-    "description": "crwdns28623:0crwdne28623:0"
+    "message": "crwdns32020:0crwdne32020:0",
+    "description": "The generated-index page title for category download.geysermc.org in sidebar apiSidebar"
   },
   "sidebar.apiSidebar.category.download.geysermc.org.link.generated-index.description": {
-    "message": "crwdns28625:0crwdne28625:0",
-    "description": "crwdns28627:0crwdne28627:0"
+    "message": "crwdns32022:0crwdne32022:0",
+    "description": "The generated-index page description for category download.geysermc.org in sidebar apiSidebar"
   },
   "sidebar.apiSidebar.category.projects-controller": {
-    "message": "crwdns28629:0crwdne28629:0",
-    "description": "crwdns28631:0crwdne28631:0"
+    "message": "crwdns32024:0crwdne32024:0",
+    "description": "The label for category projects-controller in sidebar apiSidebar"
   },
   "sidebar.apiSidebar.category.project-controller": {
-    "message": "crwdns28633:0crwdne28633:0",
-    "description": "crwdns28635:0crwdne28635:0"
+    "message": "crwdns32026:0crwdne32026:0",
+    "description": "The label for category project-controller in sidebar apiSidebar"
   },
   "sidebar.apiSidebar.category.version-controller": {
-    "message": "crwdns28637:0crwdne28637:0",
-    "description": "crwdns28639:0crwdne28639:0"
+    "message": "crwdns32028:0crwdne32028:0",
+    "description": "The label for category version-controller in sidebar apiSidebar"
   },
   "sidebar.apiSidebar.category.version-builds-controller": {
-    "message": "crwdns28641:0crwdne28641:0",
-    "description": "crwdns28643:0crwdne28643:0"
+    "message": "crwdns32030:0crwdne32030:0",
+    "description": "The label for category version-builds-controller in sidebar apiSidebar"
   },
   "sidebar.apiSidebar.category.version-build-controller": {
-    "message": "crwdns28645:0crwdne28645:0",
-    "description": "crwdns28647:0crwdne28647:0"
+    "message": "crwdns32032:0crwdne32032:0",
+    "description": "The label for category version-build-controller in sidebar apiSidebar"
   },
   "sidebar.apiSidebar.category.download-controller": {
-    "message": "crwdns28649:0crwdne28649:0",
-    "description": "crwdns28651:0crwdne28651:0"
+    "message": "crwdns32034:0crwdne32034:0",
+    "description": "The label for category download-controller in sidebar apiSidebar"
   },
   "sidebar.apiSidebar.doc.Simple server online check": {
-    "message": "crwdns28653:0crwdne28653:0",
-    "description": "crwdns28655:0crwdne28655:0"
+    "message": "crwdns32036:0crwdne32036:0",
+    "description": "The label for the doc item Simple server online check in sidebar apiSidebar, linking to the doc api/api.geysermc.org/global-api-web-api-health-controller-health"
   },
   "sidebar.apiSidebar.doc.GlobalApiWeb.Api.LinkController.get_bedrock_link_v1": {
-    "message": "crwdns28657:0crwdne28657:0",
-    "description": "crwdns28659:0crwdne28659:0"
+    "message": "crwdns32038:0crwdne32038:0",
+    "description": "The label for the doc item GlobalApiWeb.Api.LinkController.get_bedrock_link_v1 in sidebar apiSidebar, linking to the doc api/api.geysermc.org/global-api-web-api-link-controller-get-bedrock-link-v-1"
   },
   "sidebar.apiSidebar.doc.GlobalApiWeb.Api.LinkController.get_java_link_v1": {
-    "message": "crwdns28661:0crwdne28661:0",
-    "description": "crwdns28663:0crwdne28663:0"
+    "message": "crwdns32040:0crwdne32040:0",
+    "description": "The label for the doc item GlobalApiWeb.Api.LinkController.get_java_link_v1 in sidebar apiSidebar, linking to the doc api/api.geysermc.org/global-api-web-api-link-controller-get-java-link-v-1"
   },
   "sidebar.apiSidebar.doc.Get linked Java account from Bedrock xuid": {
-    "message": "crwdns28665:0crwdne28665:0",
-    "description": "crwdns28667:0crwdne28667:0"
+    "message": "crwdns32042:0crwdne32042:0",
+    "description": "The label for the doc item Get linked Java account from Bedrock xuid in sidebar apiSidebar, linking to the doc api/api.geysermc.org/global-api-web-api-link-controller-get-bedrock-link-v-2"
   },
   "sidebar.apiSidebar.doc.Get linked Bedrock account from Java UUID": {
-    "message": "crwdns28669:0crwdne28669:0",
-    "description": "crwdns28671:0crwdne28671:0"
+    "message": "crwdns32044:0crwdne32044:0",
+    "description": "The label for the doc item Get linked Bedrock account from Java UUID in sidebar apiSidebar, linking to the doc api/api.geysermc.org/global-api-web-api-link-controller-get-java-link-v-2"
   },
   "sidebar.apiSidebar.doc.Get all publicly available Global Api statistics": {
-    "message": "crwdns28673:0crwdne28673:0",
-    "description": "crwdns28675:0crwdne28675:0"
+    "message": "crwdns32046:0crwdne32046:0",
+    "description": "The label for the doc item Get all publicly available Global Api statistics in sidebar apiSidebar, linking to the doc api/api.geysermc.org/global-api-web-api-stats-controller-get-all-stats-2"
   },
   "sidebar.apiSidebar.doc.GlobalApiWeb.Api.XboxController.get_gamertag_v1": {
-    "message": "crwdns28677:0crwdne28677:0",
-    "description": "crwdns28679:0crwdne28679:0"
+    "message": "crwdns32048:0crwdne32048:0",
+    "description": "The label for the doc item GlobalApiWeb.Api.XboxController.get_gamertag_v1 in sidebar apiSidebar, linking to the doc api/api.geysermc.org/global-api-web-api-xbox-controller-get-gamertag-v-1"
   },
   "sidebar.apiSidebar.doc.GlobalApiWeb.Api.XboxController.get_xuid_v1": {
-    "message": "crwdns28681:0crwdne28681:0",
-    "description": "crwdns28683:0crwdne28683:0"
+    "message": "crwdns32050:0crwdne32050:0",
+    "description": "The label for the doc item GlobalApiWeb.Api.XboxController.get_xuid_v1 in sidebar apiSidebar, linking to the doc api/api.geysermc.org/global-api-web-api-xbox-controller-get-xuid-v-1"
   },
   "sidebar.apiSidebar.doc.Get the gamertag from a xuid": {
-    "message": "crwdns28685:0crwdne28685:0",
-    "description": "crwdns28687:0crwdne28687:0"
+    "message": "crwdns32052:0crwdne32052:0",
+    "description": "The label for the doc item Get the gamertag from a xuid in sidebar apiSidebar, linking to the doc api/api.geysermc.org/global-api-web-api-xbox-controller-get-gamertag-v-2"
   },
   "sidebar.apiSidebar.doc.Get the xuid from a gamertag": {
-    "message": "crwdns28689:0crwdne28689:0",
-    "description": "crwdns28691:0crwdne28691:0"
+    "message": "crwdns32054:0crwdne32054:0",
+    "description": "The label for the doc item Get the xuid from a gamertag in sidebar apiSidebar, linking to the doc api/api.geysermc.org/global-api-web-api-xbox-controller-get-xuid-v-2"
   },
   "sidebar.apiSidebar.doc.Get a list of the most recently uploaded skins": {
-    "message": "crwdns28693:0crwdne28693:0",
-    "description": "crwdns28695:0crwdne28695:0"
+    "message": "crwdns32056:0crwdne32056:0",
+    "description": "The label for the doc item Get a list of the most recently uploaded skins in sidebar apiSidebar, linking to the doc api/api.geysermc.org/global-api-web-api-skin-controller-get-recent-uploads"
   },
   "sidebar.apiSidebar.doc.Get the most recently converted skin of a Bedrock player": {
-    "message": "crwdns28697:0crwdne28697:0",
-    "description": "crwdns28699:0crwdne28699:0"
+    "message": "crwdns32058:0crwdne32058:0",
+    "description": "The label for the doc item Get the most recently converted skin of a Bedrock player in sidebar apiSidebar, linking to the doc api/api.geysermc.org/global-api-web-api-skin-controller-get-skin"
   },
   "sidebar.apiSidebar.doc.Utility endpoint to get either a Java UUID or a Bedrock xuid": {
-    "message": "crwdns28701:0crwdne28701:0",
-    "description": "crwdns28703:0crwdne28703:0"
+    "message": "crwdns32060:0crwdne32060:0",
+    "description": "The label for the doc item Utility endpoint to get either a Java UUID or a Bedrock xuid in sidebar apiSidebar, linking to the doc api/api.geysermc.org/global-api-web-api-utils-controller-get-bedrock-or-java-uuid"
   },
   "sidebar.apiSidebar.doc.GlobalApiWeb.Api.RenderController.get_front_texture": {
-    "message": "crwdns28705:0crwdne28705:0",
-    "description": "crwdns28707:0crwdne28707:0"
+    "message": "crwdns32062:0crwdne32062:0",
+    "description": "The label for the doc item GlobalApiWeb.Api.RenderController.get_front_texture in sidebar apiSidebar, linking to the doc api/api.geysermc.org/global-api-web-api-render-controller-get-front-texture"
   },
   "sidebar.apiSidebar.doc.GlobalApiWeb.Api.RenderController.get_raw_texture": {
-    "message": "crwdns28709:0crwdne28709:0",
-    "description": "crwdns28711:0crwdne28711:0"
+    "message": "crwdns32064:0crwdne32064:0",
+    "description": "The label for the doc item GlobalApiWeb.Api.RenderController.get_raw_texture in sidebar apiSidebar, linking to the doc api/api.geysermc.org/global-api-web-api-render-controller-get-raw-texture"
   },
   "sidebar.apiSidebar.doc.Gets a list of all available projects.": {
-    "message": "crwdns28713:0crwdne28713:0",
-    "description": "crwdns28715:0crwdne28715:0"
+    "message": "crwdns32066:0crwdne32066:0",
+    "description": "The label for the doc item Gets a list of all available projects. in sidebar apiSidebar, linking to the doc api/downloads.geysermc.org/projects"
   },
   "sidebar.apiSidebar.doc.Gets information about a project.": {
-    "message": "crwdns28717:0crwdne28717:0",
-    "description": "crwdns28719:0crwdne28719:0"
+    "message": "crwdns32068:0crwdne32068:0",
+    "description": "The label for the doc item Gets information about a project. in sidebar apiSidebar, linking to the doc api/downloads.geysermc.org/project"
   },
   "sidebar.apiSidebar.doc.Gets information about a version.": {
-    "message": "crwdns28721:0crwdne28721:0",
-    "description": "crwdns28723:0crwdne28723:0"
+    "message": "crwdns32070:0crwdne32070:0",
+    "description": "The label for the doc item Gets information about a version. in sidebar apiSidebar, linking to the doc api/downloads.geysermc.org/version"
   },
   "sidebar.apiSidebar.doc.Gets all available builds for a project's version.": {
-    "message": "crwdns28725:0crwdne28725:0",
-    "description": "crwdns28727:0crwdne28727:0"
+    "message": "crwdns32072:0crwdne32072:0",
+    "description": "The label for the doc item Gets all available builds for a project's version. in sidebar apiSidebar, linking to the doc api/downloads.geysermc.org/builds"
   },
   "sidebar.apiSidebar.doc.Gets information related to a specific build.": {
-    "message": "crwdns28729:0crwdne28729:0",
-    "description": "crwdns28731:0crwdne28731:0"
+    "message": "crwdns32074:0crwdne32074:0",
+    "description": "The label for the doc item Gets information related to a specific build. in sidebar apiSidebar, linking to the doc api/downloads.geysermc.org/build-latest"
   },
   "sidebar.apiSidebar.doc.Downloads the given file from a build's data.": {
-    "message": "crwdns28733:0crwdne28733:0",
-    "description": "crwdns28735:0crwdne28735:0"
+    "message": "crwdns32076:0crwdne32076:0",
+    "description": "The label for the doc item Downloads the given file from a build's data. in sidebar apiSidebar, linking to the doc api/downloads.geysermc.org/download-latest"
   },
   "sidebar.geyserSidebar.category.Setup": {
-    "message": "crwdns28737:0crwdne28737:0",
-    "description": "crwdns28739:0crwdne28739:0"
+    "message": "crwdns32078:0crwdne32078:0",
+    "description": "The label for category Setup in sidebar geyserSidebar"
   },
   "sidebar.geyserSidebar.category.Common Issues": {
-    "message": "crwdns28741:0crwdne28741:0",
-    "description": "crwdns28743:0crwdne28743:0"
+    "message": "crwdns32080:0crwdne32080:0",
+    "description": "The label for category Common Issues in sidebar geyserSidebar"
   },
   "sidebar.geyserSidebar.category.Configuring Geyser": {
-    "message": "crwdns28745:0crwdne28745:0",
-    "description": "crwdns28747:0crwdne28747:0"
+    "message": "crwdns32082:0crwdne32082:0",
+    "description": "The label for category Configuring Geyser in sidebar geyserSidebar"
   },
   "sidebar.geyserSidebar.category.FAQ": {
-    "message": "crwdns28749:0crwdne28749:0",
-    "description": "crwdns28751:0crwdne28751:0"
+    "message": "crwdns32084:0crwdne32084:0",
+    "description": "The label for category FAQ in sidebar geyserSidebar"
   },
   "sidebar.geyserSidebar.category.Geyser API": {
-    "message": "crwdns28753:0crwdne28753:0",
-    "description": "crwdns28755:0crwdne28755:0"
+    "message": "crwdns32086:0crwdne32086:0",
+    "description": "The label for category Geyser API in sidebar geyserSidebar"
   },
   "sidebar.geyserSidebar.link.Hosting Providers": {
-    "message": "crwdns29518:0crwdne29518:0",
-    "description": "crwdns29520:0crwdne29520:0"
+    "message": "crwdns32088:0crwdne32088:0",
+    "description": "The label for link Hosting Providers in sidebar geyserSidebar, linking to /hosting"
   },
   "sidebar.geyserSidebar.category.Custom Content": {
-    "message": "crwdns29522:0crwdne29522:0",
-    "description": "crwdns29524:0crwdne29524:0"
+    "message": "crwdns32090:0crwdne32090:0",
+    "description": "The label for category Custom Content in sidebar geyserSidebar"
   }
 }
