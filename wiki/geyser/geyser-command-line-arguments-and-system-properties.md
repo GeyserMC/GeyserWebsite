@@ -39,7 +39,7 @@ The Geyser specific properties are prioritized over the plugin properties!
   - With `both`, RakNet and NetherNet each need their own UDP port, so also set `-DgeyserWebrtcPort` (or `-DgeyserRaknetPort`).
 
 - `-DgeyserSignalingMode=builtin`
-  - One of: `builtin` (Geyser runs signaling itself, over TCP), `nxs` (an external signaling service, Warden by default), `hybrid` (both), or `none`. Overrides `mode` in the `signaling` section.
+  - One of: `builtin` (Geyser runs signaling itself, over TCP), `nxs` (an external signaling service, Warden by default), or `hybrid` (both). Overrides `mode` in the `signaling` section.
   - If the built-in signaling port is the Java server's port, Geyser uses external signaling instead.
 
 - `-DgeyserWebrtcPort=19133`
@@ -47,9 +47,9 @@ The Geyser specific properties are prioritized over the plugin properties!
   - When not set, and the transport is `nethernet`, the NetherNet port follows `-DgeyserUdpPort`. With `both`, RakNet keeps that port, so this has to be set to a different port.
 
 - `-DgeyserSignalingPort=19134`
-  - The TCP port built-in signaling (HTTP, and HTTPS if configured) listens on.
+  - The TCP port built-in signaling (HTTP, or HTTPS if configured) listens on.
   - Use this to give signaling its own TCP port, for example when the Bedrock port is the Java server's port.
-  - When not set, and the transport is `nethernet`, the NetherNet port follows `-DgeyserUdpPort`. With `both`, RakNet keeps that port, so this has to be set to a different port.
+  - When not set, built-in signaling uses the Bedrock port (`-DgeyserUdpPort`).
 
 - `-DgeyserAdvertiseAddresses=203.0.113.5,198.51.100.7`
   - A comma-separated list of public addresses that built-in signaling tells players to connect to, for servers behind a NAT or in a container without a public address. Without a port, the NetherNet (WebRTC) port is used; add one (e.g. `203.0.113.5:19133`) if players reach it on a different port number. Port forwarding is not set up for you.

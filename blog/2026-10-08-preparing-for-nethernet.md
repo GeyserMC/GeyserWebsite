@@ -113,7 +113,7 @@ If you would also like to support Geyser's development and be featured on our se
 Built-in signaling uses plain HTTP by default. That works, but over plain HTTP, players see a "trust on first use" prompt the first time they join your server. 
 Serving signaling over HTTPS removes the prompt.
 
-There are three ways to get there. You can point Geyser to a TLS certificate in its built-in signaling settings, and it will serve HTTP and HTTPS on the same port. 
+There are three ways to get there. You can point Geyser to a TLS certificate in its built-in signaling settings, and it will serve HTTPS instead of HTTP on the same port. 
 You can put a reverse proxy in front of the signaling port and let it handle HTTPS. Or you can use an external signaling service that provides HTTPS, such as Warden. 
 Our [HTTPS guide](/wiki/geyser/nethernet-https) walks you through the first two on Windows, Linux and macOS.
 
@@ -127,7 +127,7 @@ since Geyser reports most NetherNet problems there. The table below covers the m
 | Server missing from the list, or no MOTD | The TCP signaling port is not reachable | Open the Bedrock port for TCP, or use external signaling |
 | Server shows up, but joining times out | The UDP gameplay port is not reachable | Open the UDP port. Behind a NAT, list your public address in `advertise-addresses` |
 | Console: "Built-in signaling cannot use port … because the Java server already uses it" | Bedrock and Java share a port, e.g. with `clone-remote-port` | Ask your host for a separate port, or keep using external signaling, which Geyser switches to automatically |
-| Console: "RakNet and NetherNet each need their own UDP port" | `both` is set, but `webrtc-port` equals the Bedrock port | Set `webrtc-port` to a different free port |
+| Console: "RakNet and NetherNet each need their own UDP port" | `both` is set, but `webrtc-port` equals the Bedrock port | Set `webrtc-port` to a different available port |
 | Console: "… is a loopback address" | The Bedrock `address` is set to 127.0.0.1 or similar | Set `address` to 0.0.0.0 |
 | Players get a "trust on first use" prompt | Signaling runs over plain HTTP | Set up HTTPS, see above |
 
