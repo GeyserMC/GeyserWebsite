@@ -78,11 +78,6 @@ export const MDXTranslatable = {
                 {"A free UDP port for NetherNet, other than {port}. Open it for UDP."}
             </Translate>
         ),
-        placeholder_second_udp_port: () => (
-            <Translate id="mdx.setup.placeholder_second_udp_port">
-                A UDP port for NetherNet, other than the Java server's port. Ask your host for one if you only have the Java server's port.
-            </Translate>
-        ),
         raknet_on_port: () => (
             <Translate id="mdx.setup.raknet_on_port" values={{ port: <InlineCode>port</InlineCode> }}>
                 {"RakNet uses {port} over UDP, so that port has to be open for UDP as well."}

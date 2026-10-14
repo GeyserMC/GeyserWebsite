@@ -202,14 +202,14 @@ const buildConfig = (provider: HostingProvider, transport: Transport, selfHost: 
         if (transport === 'both') {
             notes.push({ text: <MDXTranslatable.setup.raknet_on_port /> });
         }
-    } else if (transport === 'both' && !selfHost && udp !== 'java') {
+    } else if (transport === 'both' && !selfHost) {
         // RakNet stays on `port`. The Java server only uses its port over TCP, so NetherNet can use it over UDP
         // without the user having to get another port.
         lines.push('  webrtc-port: UDP_PORT');
         notes.push({ placeholder: 'UDP_PORT', text: <MDXTranslatable.setup.placeholder_java_port_udp /> });
     } else if (transport === 'both') {
         lines.push('  webrtc-port: UDP_PORT');
-        notes.push({ placeholder: 'UDP_PORT', text: selfHost ? <MDXTranslatable.setup.placeholder_second_free_port /> : <MDXTranslatable.setup.placeholder_second_udp_port /> });
+        notes.push({ placeholder: 'UDP_PORT', text: <MDXTranslatable.setup.placeholder_second_free_port /> });
     }
 
     lines.push(`  transport: ${transport}`);
@@ -233,16 +233,18 @@ const buildConfig = (provider: HostingProvider, transport: Transport, selfHost: 
     return { yaml: lines.join('\n'), notes };
 }
 
-const ConfigSnippet = ({ provider, transport, configLocation, selfHost }: { provider: HostingProvider, transport: Transport, configLocation: string, selfHost: boolean }) => {
+const ConfigSnippet = ({ provider, transport, configLocation, selfHost, explain = true }: { provider: HostingProvider, transport: Transport, configLocation: string, selfHost: boolean, explain?: boolean }) => {
     const { yaml, notes } = buildConfig(provider, transport, selfHost);
     const placeholders = notes.filter(note => note.placeholder);
     const others = notes.filter(note => !note.placeholder);
     return (
         <>
-            <p className={styles.transportExplainer}>
-                {transport === 'nethernet' && <MDXTranslatable.setup.transport_nethernet_explainer />}
-                {transport === 'both' && <MDXTranslatable.setup.transport_both_explainer />}
-            </p>
+            {explain && (
+                <p className={styles.transportExplainer}>
+                    {transport === 'nethernet' && <MDXTranslatable.setup.transport_nethernet_explainer />}
+                    {transport === 'both' && <MDXTranslatable.setup.transport_both_explainer />}
+                </p>
+            )}
             <CodeBlock language="yaml" title={configLocation}>{yaml}</CodeBlock>
             {placeholders.length > 0 && (
                 <table className={styles.placeholders}>
@@ -443,6 +445,16 @@ export const Step = ({ title, id, children }: { title?: React.ReactNode, id?: st
  * The config changes for a server, with a tab for NetherNet only and one that also accepts RakNet.
  */
 const ConfigTabs = ({ provider, configLocation, selfHost = false, standalone = false }: { provider: HostingProvider, configLocation: string, selfHost?: boolean, standalone?: boolean }) => {
+    // With only the Java server's port, there is no second UDP port for RakNet, so only NetherNet is possible
+    if (!isPreconfigured(provider.config) && provider.config.udp === 'java') {
+        return (
+            <>
+                <p><MDXTranslatable.setup.open_config_match configLocation={configLocation} /></p>
+                <ConfigSnippet provider={provider} transport="nethernet" configLocation={configLocation} selfHost={selfHost} explain={false} />
+                <p>{standalone ? <MDXTranslatable.setup.restart_geyser /> : <MDXTranslatable.setup.restart_server />}</p>
+            </>
+        );
+    }
     return (
         <>
             <p><MDXTranslatable.setup.open_config_match configLocation={configLocation} /></p>

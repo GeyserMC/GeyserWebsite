@@ -747,9 +747,6 @@
   "mdx.setup.placeholder_second_free_port": {
     "message": "A free UDP port for NetherNet, other than {port}. Open it for UDP."
   },
-  "mdx.setup.placeholder_second_udp_port": {
-    "message": "A UDP port for NetherNet, other than the Java server's port. Ask your host for one if you only have the Java server's port."
-  },
   "mdx.setup.raknet_on_port": {
     "message": "RakNet uses {port} over UDP, so that port has to be open for UDP as well."
   },
