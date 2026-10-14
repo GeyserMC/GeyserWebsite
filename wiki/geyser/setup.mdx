@@ -3,7 +3,6 @@ title: Setup
 page_sidebar: false
 description: Guides to setup Geyser on all supported platforms
 crowdin_page_id: c0450f30-546a-4420-a3a6-5ff077a6a924
-crowdin_sync: true
 ---
 
 import Tabs from '@theme/Tabs'
@@ -11,19 +10,7 @@ import TabItem from '@theme/TabItem'
 import Admonition from '@theme/Admonition';
 import Translate from "@docusaurus/Translate";
 
-import Fabric from './setup/provider/fabric.mdx'
-import NeoForge from './setup/provider/neoforge.mdx'
-import Velocity from './setup/provider/velocity.mdx'
-import BungeeCord from './setup/provider/bungeecord.mdx'
-import PaperSpigot from './setup/provider/paper-spigot.mdx'
-
-import FabricSelf from './setup/self/fabric.mdx'
-import NeoForgeSelf from './setup/self/neoforge.mdx'
-import VelocitySelf from './setup/self/velocity.mdx'
-import BungeeCordSelf from './setup/self/bungeecord.mdx'
-import PaperSpigotSelf from './setup/self/paper-spigot.mdx'
-import ViaProxy from './setup/self/viaproxy.mdx'
-import Standalone from './setup/self/standalone.mdx'
+import { HostedGuide, SelfHostGuide } from '@site/src/components/SetupGuide'
 
 import PlatformIcon from '@site/src/components/PlatformIcon'
 import FabricIcon from '@site/static/img/icons/fabric.png'
@@ -51,22 +38,22 @@ export const SetupGuide = () => {
                         {!provider.notices?.unsupported ? (
                             <Tabs queryString='platform'>
                                 <TabItem value='paper-spigot' label={<PlatformIcon img={PaperSpigotIcon} text={<MDXTranslatable.setup.paper_spigot/>} />} default>
-                                    <PaperSpigot />
+                                    <HostedGuide platform="paper-spigot" />
                                 </TabItem>
                                 <TabItem value='fabric' label={<PlatformIcon img={FabricIcon} text={<MDXTranslatable.setup.fabric/>} />}>
-                                    <Fabric />
+                                    <HostedGuide platform="fabric" />
                                 </TabItem>
                                 <TabItem value='neoforge' label={<PlatformIcon img={NeoForgeIcon} text={<MDXTranslatable.setup.neoforge/>} />}>
-                                    <NeoForge />
+                                    <HostedGuide platform="neoforge" />
                                 </TabItem>
                                 {!provider.proxies_banned && (
                                     <TabItem value='velocity' label={<PlatformIcon img={VelocityIcon} text={<MDXTranslatable.setup.velocity/>} />}>
-                                        <Velocity />
+                                        <HostedGuide platform="velocity" />
                                     </TabItem>
                                 )}
                                 {!provider.proxies_banned && (
                                     <TabItem value='bungeecord' label={<PlatformIcon img={BungeeCordIcon} text={<MDXTranslatable.setup.bungeecord/>} />}>
-                                        <BungeeCord />
+                                        <HostedGuide platform="bungeecord" />
                                     </TabItem>
                                 )}
                             </Tabs>
@@ -77,25 +64,25 @@ export const SetupGuide = () => {
             <TabItem value='self' label={<MDXTranslatable.setup.self_host/>}>
                 <Tabs queryString='platform'>
                     <TabItem value='paper-spigot' label={<PlatformIcon img={PaperSpigotIcon} text={<MDXTranslatable.setup.paper_spigot/>} />} default>
-                        <PaperSpigotSelf />
+                        <SelfHostGuide platform="paper-spigot" />
                     </TabItem>
                     <TabItem value='fabric' label={<PlatformIcon img={FabricIcon} text={<MDXTranslatable.setup.fabric/>} />}>
-                        <FabricSelf />
+                        <SelfHostGuide platform="fabric" />
                     </TabItem>
                     <TabItem value='neoforge' label={<PlatformIcon img={NeoForgeIcon} text={<MDXTranslatable.setup.neoforge/>} />}>
-                        <NeoForgeSelf />
+                        <SelfHostGuide platform="neoforge" />
                     </TabItem>
                     <TabItem value='velocity' label={<PlatformIcon img={VelocityIcon} text={<MDXTranslatable.setup.velocity/>} />}>
-                        <VelocitySelf />
+                        <SelfHostGuide platform="velocity" />
                     </TabItem>
                     <TabItem value='bungeecord' label={<PlatformIcon img={BungeeCordIcon} text={<MDXTranslatable.setup.bungeecord/>} />}>
-                        <BungeeCordSelf />
+                        <SelfHostGuide platform="bungeecord" />
                     </TabItem>
                     <TabItem value='viaproxy' label={<PlatformIcon img={ViaProxyIcon} text={<MDXTranslatable.setup.viaproxy/>} />}>
-                        <ViaProxy />
+                        <SelfHostGuide platform="viaproxy" />
                     </TabItem>
                     <TabItem value='standalone' label={<PlatformIcon img={StandaloneIcon} text={<MDXTranslatable.setup.standalone/>} />}>
-                        <Standalone />
+                        <SelfHostGuide platform="standalone" />
                     </TabItem>
                 </Tabs>
             </TabItem>

@@ -23,7 +23,7 @@ const ports: Record<string, PortSource> = {
     allocated: {
         obtain: translate({
             id: 'providers.ports.allocated',
-            message: "Pick a free port from the ports allocated to your server, open for both TCP and UDP."
+            message: "Pick an available port from the ports allocated to your server, open for both TCP and UDP."
         })
     },
     askHost: {

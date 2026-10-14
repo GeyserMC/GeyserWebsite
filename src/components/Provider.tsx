@@ -209,13 +209,14 @@ const buildConfig = (provider: HostingProvider, transport: Transport, selfHost: 
         notes.push({ placeholder: 'UDP_PORT', text: <MDXTranslatable.setup.placeholder_java_port_udp /> });
     } else if (transport === 'both') {
         lines.push('  webrtc-port: UDP_PORT');
-        notes.push({ placeholder: 'UDP_PORT', text: <MDXTranslatable.setup.placeholder_second_free_port /> });
+        notes.push({ placeholder: 'UDP_PORT', text: <MDXTranslatable.setup.placeholder_second_available_port /> });
     }
 
     lines.push(`  transport: ${transport}`);
 
-    // Built-in signaling is the default, so the signaling section only needs changes for hosts that confirmed something else
-    if (isConfirmed(provider) && !builtin) {
+    // Built-in signaling is the default, so the signaling section only needs changes for hosts that confirmed something else.
+    // Sharing the Java server's port always ends up on external signaling, so say so instead of relying on Geyser's fallback.
+    if ((isConfirmed(provider) || udp === 'java') && !builtin) {
         lines.push('  signaling:', '    mode: nxs');
         if (external_signaling) {
             lines.push('    nxs:', `      endpoint: ${external_signaling.endpoint}`);
@@ -432,11 +433,10 @@ export const SetupSteps = ({ children }: { children: React.ReactNode }) => (
     <ol className={styles.steps}>{children}</ol>
 );
 
-// Markdown pages leave out the title and start the step with a `#### Title \{#id}` heading instead, so Crowdin can
-// translate it. Level 4 keeps step titles out of the table of contents, which only lists levels 2 and 3.
-export const Step = ({ title, id, children }: { title?: React.ReactNode, id?: string, children: React.ReactNode }) => (
+// Level 4 keeps step titles out of the table of contents, which only lists levels 2 and 3
+export const Step = ({ title, id, children }: { title: React.ReactNode, id: string, children: React.ReactNode }) => (
     <li className={styles.step}>
-        {title && <Heading as="h4" id={id} className={styles.stepTitle}>{title}</Heading>}
+        <Heading as="h4" id={id} className={styles.stepTitle}>{title}</Heading>
         <div className={styles.stepBody}>{children}</div>
     </li>
 );
@@ -487,36 +487,23 @@ const ConnectStep = ({ provider }: { provider: HostingProvider }) => (
     </>
 );
 
-// The provider picked in the setup guide. Platform pages read it from here rather than through props,
-// so they only need simple JSX that survives translation on Crowdin.
+// The provider picked in the setup guide
 export const SelectedProvider = createContext<HostingProvider>(null);
 
-// Parts of the hosted guide that platform pages write in Markdown, as children of ProviderGeyserSetup.
-// The first step, e.g. which plugin older server versions need:
-export const VersionStep = ({ children }: { children: React.ReactNode }) => <>{children}</>;
-// An extra item in the install step, e.g. a required dependency:
-export const InstallNote = ({ children }: { children: React.ReactNode }) => <>{children}</>;
-
-interface ProviderGeyserSetupProps {
+export interface ProviderGeyserSetupProps {
     jarName: string;
     jarDirectory: string;
     configLocation: string;
-    // Platform notices, shown below the host summary so the host comes first, plus an optional VersionStep and InstallNote
-    children?: React.ReactNode;
+    notice?: React.ReactNode; // Platform notice, shown below the host summary so the host comes first
+    versionStep?: React.ReactNode; // Shown as the first step, e.g. which plugin older server versions need
+    installNote?: React.ReactNode; // An extra item in the install step, e.g. a required dependency
 }
 
-export const ProviderGeyserSetup: React.FC<ProviderGeyserSetupProps> = ({ jarName, jarDirectory, configLocation, children }) => {
+export const ProviderGeyserSetup: React.FC<ProviderGeyserSetupProps> = ({ jarName, jarDirectory, configLocation, notice, versionStep, installNote }) => {
     const provider = useContext(SelectedProvider);
     if (!provider) {
         return null;
     }
-
-    const parts = React.Children.toArray(children);
-    const slot = (type: React.FC<{ children: React.ReactNode }>) =>
-        parts.find(part => React.isValidElement(part) && part.type === type);
-    const versionStep = slot(VersionStep);
-    const installNote = slot(InstallNote);
-    const notices = parts.filter(part => part !== versionStep && part !== installNote);
 
     return (
         <>
@@ -524,14 +511,14 @@ export const ProviderGeyserSetup: React.FC<ProviderGeyserSetupProps> = ({ jarNam
 
             {provider.url && <HostSummary provider={provider} />}
 
-            {notices}
+            {notice}
 
             <HostNotice provider={provider} />
 
             <SetupSteps>
                 {versionStep && (
                     <Step id="checking-server-version" title={<MDXTranslatable.setup.checking_server_version />}>
-                        {versionStep}
+                        <p>{versionStep}</p>
                     </Step>
                 )}
 
@@ -542,7 +529,7 @@ export const ProviderGeyserSetup: React.FC<ProviderGeyserSetupProps> = ({ jarNam
                         <ul>
                             <li><MDXTranslatable.setup.download_jar jarName={jarName} /></li>
                             <li><MDXTranslatable.setup.place_jar jarName={jarName} jarDirectory={jarDirectory} /></li>
-                            {installNote && <li className={styles.installNote}>{installNote}</li>}
+                            {installNote && <li>{installNote}</li>}
                             <li><MDXTranslatable.setup.restart_server /></li>
                         </ul>
                     )}
