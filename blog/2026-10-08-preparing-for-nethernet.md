@@ -67,7 +67,7 @@ When Geyser sees that the Java server already uses its port, it switches to exte
 a free service run by Ziax, the creators of CubeCraft, and the console shows where players can join. 
 If your host has no notes in our [setup guide](/wiki/geyser/setup/), pick "Not listed": it covers both options, including keeping a single port with `clone-remote-port` and Warden. 
 Keep in mind that with this setup, players no longer join with your Java server's address, but with the address and port Geyser shows in the console. 
-External signaling also takes care of HTTPS for you, so users will not see a trust on first use prompt.
+Warden also takes care of HTTPS for you, so users will not see a trust on first use prompt.
 
 You may also notice that the "Supported hosting providers" list is gone from our website. We have replaced it with a [list of hosts that support our work through the Open Collaboration programme](/hosting). 
 A host's absence from that list does not mean Geyser won't run there. The hosts listed there already set Geyser up for NetherNet, so their users have nothing to configure.
@@ -79,7 +79,7 @@ so you need to open or forward that port for both TCP and UDP. If you run in `bo
 Keep in mind that the signaling port cannot be the same as your Java server's port.
 
 Alternatively, you can use external signaling. This is the way to go if you cannot open a TCP port, for example behind certain 
-routers or tunnels, but it can also be worth it for the signaling service's routing, or to get HTTPS without managing a certificate yourself. 
+routers or tunnels, but it can also be worth it for the signaling service's routing, or to get HTTPS without managing a certificate yourself, if the service provides it, as Warden does. 
 To do so, set `signaling.mode` to `nxs`. Geyser then registers with an external signaling service: [Warden](https://warden.cloud) by default, 
 or another one you configure. Players then find your server through that service. You no longer need a TCP port or a certificate, but you still need to open a UDP port, 
 as gameplay always goes directly to your server. The `hybrid` mode runs built-in and external signaling at the same time.
@@ -110,7 +110,7 @@ Built-in signaling uses plain HTTP by default. That works, but over plain HTTP, 
 Serving signaling over HTTPS removes the prompt.
 
 There are three ways to get there. You can point Geyser to a TLS certificate in its built-in signaling settings, and it will serve HTTP and HTTPS on the same port. 
-You can put a reverse proxy in front of the signaling port and let it handle HTTPS. Or you can use external signaling, where the signaling service takes care of HTTPS for you. 
+You can put a reverse proxy in front of the signaling port and let it handle HTTPS. Or you can use an external signaling service that provides HTTPS, such as Warden. 
 Our [HTTPS guide](/wiki/geyser/nethernet-https) walks you through the first two on Windows, Linux and macOS.
 
 ## Checking That It Works

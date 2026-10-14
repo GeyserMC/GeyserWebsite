@@ -8,7 +8,6 @@ crowdin_sync: true
 
 
 import { Versions } from '@site/src/components/Versions'
-import { MDXTranslatable } from '@site/src/components/MDXTranslatable'
 import { SetupSteps, Step, SelfHostConfig } from '@site/src/components/Provider'
 
 :::info
@@ -68,7 +67,14 @@ To achieve that, you have two options:
   With NetherNet, the tunnel has to carry both TCP and UDP, and its public address has to be listed under `advertise-addresses` in the `builtin` part of the `signaling` section.
   Ngrok will not work since it does not support UDP.
 
-<MDXTranslatable.setup.https_note />
+</Step>
+<Step>
+
+#### Recommended: Set up HTTPS for signaling \{#setting-up-https}
+
+Geyser's built-in signaling server uses plain HTTP by default, so Minecraft shows players a "Trust on First Use?" prompt the first time they join.
+To avoid this prompt, serve signaling over HTTPS, as explained in [HTTPS for NetherNet](/wiki/geyser/nethernet-https).
+Some external signaling services, such as [Warden](https://warden.cloud), provide HTTPS as well.
 
 </Step>
 </SetupSteps>

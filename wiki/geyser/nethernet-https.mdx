@@ -33,7 +33,7 @@ This page only matters if you use Geyser's **built-in signaling**: `mode` in the
 ## Setting up HTTPS {#setting-up-https}
 
 Geyser can serve HTTPS itself with a certificate set in its config. Alternatively, a reverse proxy such as Caddy or nginx can handle HTTPS in front of Geyser.
-If you would rather not manage a certificate at all, [external signaling](/wiki/geyser/geyser-command-line-arguments-and-system-properties#nethernet-system-properties) (`mode: nxs`) is an option as well: the signaling service, such as [Warden](https://warden.cloud), handles HTTPS for you.
+If you would rather not manage a certificate at all, [external signaling](/wiki/geyser/geyser-command-line-arguments-and-system-properties#nethernet-system-properties) (`mode: nxs`) is an option as well, if the signaling service provides HTTPS: [Warden](https://warden.cloud) does, but not every service does.
 
 <Tabs groupId="https-method" queryString="method">
 <TabItem value="geyser" label="Certificate in the Geyser config" default>
