@@ -51,13 +51,7 @@ Otherwise, you could use [Let's Encrypt](https://letsencrypt.org) to obtain one,
 <Tabs groupId="operating-system">
 <TabItem value="linux" label="Linux" default>
 
-```bash
-sudo snap install --classic certbot
-sudo ln -s /snap/bin/certbot /usr/local/bin/certbot
-sudo certbot certonly --standalone -d play.example.com
-```
-
-The certificate is now in `/etc/letsencrypt/live/play.example.com/`. Certbot renews it automatically.
+On Linux, certbot is the recommended way to obtain certificates from Let's Encrypt. Follow the instructions over at [certbot's website](https://certbot.eff.org/instructions) to see how.
 
 </TabItem>
 <TabItem value="windows" label="Windows">
@@ -74,50 +68,12 @@ This creates `play.example.com-chain.pem` and `play.example.com-key.pem` directl
 </TabItem>
 <TabItem value="macos" label="macOS">
 
-```bash
-brew install certbot
-sudo certbot certonly --standalone -d play.example.com
-```
-
-The certificate is now in `/etc/letsencrypt/live/play.example.com/`.
+On macOS, certbot is the recommended way to obtain certificates from Let's Encrypt. Follow the instructions over at [certbot's website](https://certbot.eff.org/instructions) to see how.
 
 </TabItem>
 </Tabs>
 
-**2. Copy the certificate to Geyser**
-
-Copy the certificate and its private key into Geyser's config folder (next to `config.yml`).
-
-<Tabs groupId="operating-system">
-<TabItem value="linux" label="Linux" default>
-
-Certbot's files are only readable by root, so copy them and give your server's user access.
-Replace `/path/to/Geyser` and `minecraft` with your config folder and user:
-
-```bash
-sudo cp /etc/letsencrypt/live/play.example.com/fullchain.pem /etc/letsencrypt/live/play.example.com/privkey.pem /path/to/Geyser/
-sudo chown minecraft /path/to/Geyser/fullchain.pem /path/to/Geyser/privkey.pem
-```
-
-Certbot renews certificates every few weeks. Put the same two lines in a file in `/etc/letsencrypt/renewal-hooks/deploy/` so the copy happens after every renewal.
-
-</TabItem>
-<TabItem value="windows" label="Windows">
-
-With win-acme as above, the files are already in Geyser's config folder.
-
-</TabItem>
-<TabItem value="macos" label="macOS">
-
-```bash
-sudo cp /etc/letsencrypt/live/play.example.com/fullchain.pem /etc/letsencrypt/live/play.example.com/privkey.pem /path/to/Geyser/
-sudo chown $(whoami) /path/to/Geyser/fullchain.pem /path/to/Geyser/privkey.pem
-```
-
-</TabItem>
-</Tabs>
-
-**3. Configure Geyser**
+**2. Configure Geyser**
 
 Set the files in the `signaling` section of the Geyser config. With win-acme, use the `-chain.pem` and `-key.pem` files instead.
 
@@ -126,12 +82,12 @@ bedrock:
   signaling:
     builtin:
       https:
-        certificate: fullchain.pem
-        private-key: privkey.pem
+        certificate: /path/to/fullchain.pem
+        private-key: /path/to/privkey.pem
         password: ''
 ```
 
-- Paths are relative to Geyser's config folder. Full paths work too.
+- Paths can be relative to Geyser's config folder, or absolute.
 - A PKCS12 file (`.p12` or `.pfx`) works as well: put it in `certificate`, leave `private-key` empty, and set its `password`.
   Use `file:/path/to/password.txt` to keep the password out of the config.
 
@@ -162,7 +118,7 @@ flowchart LR
 
 The proxy now uses TCP port 19132, so Geyser's signaling has to move to another port, like 19133. Players keep using port 19132.
 
-Set these in the `bedrock` section of the Geyser config:
+Set these values in the `bedrock` section of the Geyser config:
 
 ```yaml
 bedrock:
@@ -170,7 +126,7 @@ bedrock:
   webrtc-port: 19132
 ```
 
-`port` is now the port signaling uses behind the proxy, and `webrtc-port` keeps gameplay on UDP 19132.
+`port` is now the port signaling used behind the proxy, and `webrtc-port` keeps gameplay on UDP 19132.
 
 Then tell Geyser to trust the proxy, so it sees each player's real address. Add this to the `advanced` section of the config:
 
@@ -190,53 +146,11 @@ Leave `address` in the `bedrock` section at `0.0.0.0`. NetherNet does not work i
 
 Caddy can obtain and renew certificates from Let's Encrypt by itself.
 
-*Install Caddy*
+**2.1. Install Caddy**
 
-<Tabs groupId="operating-system">
-<TabItem value="linux" label="Linux" default>
+You can install Caddy by following its [installation guide](https://caddyserver.com/docs/install).
 
-On Debian or Ubuntu, add Caddy's official package source and install it:
-
-```bash
-sudo apt install -y debian-keyring debian-archive-keyring apt-transport-https curl
-curl -1sLf 'https://dl.cloudsmith.io/public/caddy/stable/gpg.key' | sudo gpg --dearmor -o /usr/share/keyrings/caddy-stable-archive-keyring.gpg
-curl -1sLf 'https://dl.cloudsmith.io/public/caddy/stable/debian.deb.txt' | sudo tee /etc/apt/sources.list.d/caddy-stable.list
-sudo chmod o+r /usr/share/keyrings/caddy-stable-archive-keyring.gpg /etc/apt/sources.list.d/caddy-stable.list
-sudo apt update && sudo apt install caddy
-```
-
-For other distributions, see [Caddy's install page](https://caddyserver.com/docs/install).
-Your config file is `/etc/caddy/Caddyfile`.
-
-</TabItem>
-<TabItem value="windows" label="Windows">
-
-Install it with [Scoop](https://scoop.sh) or [Chocolatey](https://chocolatey.org):
-
-```powershell
-scoop install caddy
-# or
-choco install caddy
-```
-
-Or download `caddy.exe` from [caddyserver.com/download](https://caddyserver.com/download) and put it in a folder like `C:\caddy`.
-Create a file called `Caddyfile` (no extension) in that folder.
-
-</TabItem>
-<TabItem value="macos" label="macOS">
-
-Install it with [Homebrew](https://brew.sh):
-
-```bash
-brew install caddy
-```
-
-Your config file is `$(brew --prefix)/etc/Caddyfile`.
-
-</TabItem>
-</Tabs>
-
-*Write the Caddyfile*
+**2.2. Write the Caddyfile**
 
 Replace `play.example.com` with your domain:
 
@@ -253,10 +167,10 @@ play.example.com:19132 {
 }
 ```
 
-On its first start, Caddy obtains a certificate for your domain, and renews it automatically. This needs port 80 to be reachable.
+On its first start, Caddy will attempt to obtain a certificate for your domain, and will renew it automatically when necessary. This requires port 80 to be reachable.
 To use an existing certificate instead, add `tls /path/to/fullchain.pem /path/to/privkey.pem` inside the `play.example.com:19132` block.
 
-*Start Caddy*
+**2.3. Start Caddy**
 
 <Tabs groupId="operating-system">
 <TabItem value="linux" label="Linux" default>
@@ -266,7 +180,7 @@ sudo systemctl enable --now caddy
 # after changing the Caddyfile:
 sudo systemctl reload caddy
 # to see what Caddy is doing:
-journalctl -u caddy --no-pager | less +G
+journalctl -xb -u caddy
 ```
 
 </TabItem>
@@ -302,32 +216,14 @@ brew services restart caddy
 
 nginx does not obtain certificates by itself. If you do not have one yet, you could use certbot or win-acme to obtain one from Let's Encrypt.
 
-*Install nginx, and obtain a certificate*
+**2.1. Install nginx, and obtain a certificate**
 
 <Tabs groupId="operating-system">
 <TabItem value="linux" label="Linux" default>
 
-```bash
-sudo apt install nginx
-```
+Follow nginx's [installation guide](https://nginx.org/en/docs/install.html), you likely want to install nginx from a package using your distribution's package manager.
 
-If you need a certificate, install certbot and obtain one. Certbot briefly uses port 80, so stop nginx while it runs:
-
-```bash
-sudo snap install --classic certbot
-sudo ln -s /snap/bin/certbot /usr/local/bin/certbot
-sudo systemctl stop nginx
-sudo certbot certonly --standalone -d play.example.com
-sudo systemctl start nginx
-```
-
-The certificate is now in `/etc/letsencrypt/live/play.example.com/`. Certbot renews it automatically.
-To reload nginx after every renewal, run once:
-
-```bash
-echo -e '#!/bin/sh\nsystemctl reload nginx' | sudo tee /etc/letsencrypt/renewal-hooks/deploy/reload-nginx.sh
-sudo chmod +x /etc/letsencrypt/renewal-hooks/deploy/reload-nginx.sh
-```
+If you need a certificate, certbot is the recommended way to obtain certificates from Let's Encrypt on Linux. Follow the instructions over at [certbot's website](https://certbot.eff.org/instructions) to see how. Select "Nginx" as software.
 
 </TabItem>
 <TabItem value="windows" label="Windows">
@@ -348,24 +244,17 @@ After a renewal, reload nginx with `C:\nginx\nginx.exe -s reload`.
 </TabItem>
 <TabItem value="macos" label="macOS">
 
-```bash
-brew install nginx
+Install nginx on macOS using the Homebrew package manager:
+
 ```
 
-If you need a certificate, install certbot and obtain one:
-
-```bash
-brew install certbot
-sudo certbot certonly --standalone -d play.example.com
-```
-
-The certificate is now in `/etc/letsencrypt/live/play.example.com/`.
+If you need a certificate, certbot is the recommended way to obtain certificates from Let's Encrypt on macOS. Follow the instructions over at [certbot's website](https://certbot.eff.org/instructions) to see how. Select "Nginx" as software.
 Your nginx config folder is `$(brew --prefix)/etc/nginx/servers/`.
 
 </TabItem>
 </Tabs>
 
-*Configure nginx*
+**2.2. Configure nginx**
 
 Create a file called `geyser.conf`: on Linux in `/etc/nginx/conf.d/`, on macOS in `$(brew --prefix)/etc/nginx/servers/`,
 and on Windows in `C:\nginx\conf\`, then add `include geyser.conf;` inside the `http { }` block of `C:\nginx\conf\nginx.conf`.
@@ -392,7 +281,9 @@ server {
 
 Do not add `quic` or `http3` to the `listen` line: Geyser needs UDP 19132 for playing.
 
-*Start nginx*
+**2.3. Reload nginx**
+
+Use the following commands to reload nginx and activate the new configuration:
 
 <Tabs groupId="operating-system">
 <TabItem value="linux" label="Linux" default>
@@ -407,7 +298,7 @@ sudo nginx -t && sudo systemctl reload nginx
 ```powershell
 cd C:\nginx
 .\nginx.exe -t
-start nginx
+.\nginx.exe -s reload
 ```
 
 </TabItem>
@@ -453,6 +344,8 @@ With `firewalld`:
 sudo firewall-cmd --permanent --add-port=80/tcp --add-port=19132/tcp --add-port=19132/udp && sudo firewall-cmd --reload
 ```
 
+If you use `nftables` or `iptables` directly, you probably know how to do this by yourself anyway.
+
 </TabItem>
 <TabItem value="windows" label="Windows">
 
@@ -477,7 +370,7 @@ See [port forwarding](/wiki/geyser/port-forwarding) for help with your router.
 ## Checking that it works {#checking}
 
 1. Look at the Geyser console. With a certificate in the Geyser config, it says `Built-in signaling started on https:// and http://`.
-   With a proxy, it says `Built-in signaling started on http://` with port 19133.
+   When using a reverse proxy, it says `Built-in signaling started on http://` with port 19133.
 2. On Bedrock, add the server with your **domain name** and port `19132`. Join it: Minecraft should not ask whether you trust the server.
 
 | What you see | What to do |
