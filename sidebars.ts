@@ -56,6 +56,19 @@ const sidebars: SidebarsConfig = {
         },
         {
             type: 'category',
+            label: 'Nethernet',
+            link: {
+                type: "generated-index",
+                title: "Nethernet",
+                description: "An explanation of Nethernet",
+                slug: "/geyser/nethernet",
+            },
+            items: [
+                'geyser/nethernet/setup'
+            ],
+        },
+        {
+            type: 'category',
             label: 'Common Issues',
             link: {
                 type: 'doc',

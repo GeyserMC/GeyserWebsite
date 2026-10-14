@@ -23,7 +23,9 @@ description: Learn how to set up Geyser with ViaProxy.
       clone-remote-port: false
     ```
     The vital part is the port. This is the port that Bedrock players will use to connect to your server!
-    If you enable `clone-remote-port`, the port will be overridden and the ViaProxy port is used.
+    If you enable `clone-remote-port`, the port will be overridden and the ViaProxy port is used, but be careful,
+    as this only works when using [Nethernet External Signalling](/wiki/geyser/nethernet/setup#nethernet-external-signalling)
+    as the Nethernet TCP port cannot collide with the Java one.
     Since you are self-hosting, you can choose the port freely - the default port is 19132.
 
     **Important**: Other services/plugins that rely on ports with UDP, such as Voice Chats or Query, cannot share the port with Geyser.

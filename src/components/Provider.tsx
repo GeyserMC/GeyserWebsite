@@ -52,7 +52,7 @@ export const ProviderSelector = () => {
         name: 'Not listed',
         description: translate({
             id: 'providers.provider.not_listed.description',
-            message: "If your hosting provider is not listed, try enabling the `clone-remote-port` option in the config. Then, restart the server, and try connecting with the same IP and port as on Java Edition. <br> If this does not work, ask your server hosting provider for a UDP port, and use that. For VPS/KVM servers please follow the self-hosting steps."
+            message: "If your hosting provider is not listed, try using [Warden Signalling](/wiki/geyser/nethernet/setup#warden-signalling). If this doesn't work, ask your hosting provider for a TCP and UDP port and use that. For VPS/KVM servers please follow the self-hosting steps.",
         })
     } as HostingProvider);
 
