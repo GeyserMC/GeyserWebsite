@@ -417,20 +417,20 @@ const populateLocales = (inp: { i18n: I18nConfig }): Locales => {
     }
 };
 
-const processJsonContent = (content: string, exclusions: string[]): string => {
+const processJsonContent = (content: string, exclusions: string[] = []): string => {
     const jsonContent: TranslationJson = JSON.parse(content);
     const includedContent: TranslationJson = {};
-    nextKey: for (const key in jsonContent) {
+
+    for (const key in jsonContent) {
         if (!jsonContent[key]?.message?.trim()) {
             continue;
         }
-        for (const exclusion of exclusions) {
-            if (key.startsWith(exclusion)) {
-                continue nextKey;
-            }
-            includedContent[key] = jsonContent[key];
+        if (exclusions.some(exclusion => key.startsWith(exclusion))) {
+            continue;
         }
+        includedContent[key] = jsonContent[key];
     }
+
     return JSON.stringify(includedContent, null, 2);
 };
 
