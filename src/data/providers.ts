@@ -85,7 +85,7 @@ export const providersData: Providers = {
             url: 'https://craftlands.host/minecraft-servers',
             description: translate({
                 id: 'providers.provider.craftlands_hosting.description',
-                message: "Full auto installation. Go to the Versions page in the panel and click 'Enable' in the 'Bedrock Crossplay' box. This installs Geyser and Floodgate, assigns a dedicated Bedrock port (TCP and UDP) and sets up NetherNet. Then restart and connect with the Bedrock address and port shown in the box. For a manual setup, add a port on the Network page, set it as `bedrock port`, set `transport` to `nethernet`, and add your server's public IP to `advertise-addresses` under `signaling` > `builtin`. See [CraftLands' guide](https://craftlands.host/docs/minecraft/how-to-setup-geyser-on-your-minecraft-server) for both setups."
+                message: "Full auto installation. Go to the Versions page in the panel and click 'Enable' in the 'Bedrock Crossplay' box. This installs Geyser and Floodgate, assigns a dedicated Bedrock port (TCP and UDP) and sets up NetherNet. Then restart and connect with the Bedrock address and port shown in the box. For manual setup steps, see [CraftLands' guide](https://craftlands.host/docs/minecraft/how-to-setup-geyser-on-your-minecraft-server)."
             })
         },
         {
