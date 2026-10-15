@@ -119,7 +119,20 @@ const config: Config = {
                     { path: 'wiki', destination: 'docusaurus-plugin-content-docs/current' },
                     { path: 'blog', destination: 'docusaurus-plugin-content-blog' },
                 ],
-                jsonKeyExclusions: [ 'providers.provider.' ]
+                jsonKeyExclusions: [ 
+                    'providers.provider.', 
+                    'sidebar.apiSidebar.',
+                    'link.item.label.Geyser',
+                    'link.item.label.Floodgate',
+                    'link.item.label.Crowdin',
+                    'link.item.label.Discord',
+                    'link.item.label.GitHub',
+                    'link.item.label.Reddit',
+                    'link.item.label.Twitter',
+                    'title',
+                    'item.label.Geyser',
+                    'item.label.Floodgate'
+                ]
             }
         ],
         './src/plugins/output-locales.ts',

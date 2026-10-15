@@ -12,14 +12,14 @@ export const MDXTranslatable = {
     setup: {
         host_provider: () => <Translate id="mdx.setup.host_provider">Host Provider</Translate>,
         self_host: () => <Translate id="mdx.setup.self_host">Self Host</Translate>,
-        paper_spigot: () => <Translate id="mdx.setup.paper_spigot">Paper / Spigot</Translate>,
+        paper_spigot: () => <>Paper / Spigot</>,
         modded_servers: () => <Translate id="mdx.setup.modded_servers">Modded Servers</Translate>,
-        fabric: () => <Translate id="mdx.setup.fabric">Fabric</Translate>,
-        neoforge: () => <Translate id="mdx.setup.neoforge">NeoForge</Translate>,
+        fabric: () => <>Fabric</>,
+        neoforge: () => <>NeoForge</>,
         proxy_servers: () => <Translate id="mdx.setup.proxy_servers">Proxy Servers</Translate>,
-        velocity: () => <Translate id="mdx.setup.velocity">Velocity</Translate>,
-        bungeecord: () => <Translate id="mdx.setup.bungeecord">BungeeCord</Translate>,
-        viaproxy: () => <Translate id="mdx.setup.viaproxy">ViaProxy</Translate>,
+        velocity: () => <>Velocity</>,
+        bungeecord: () => <>BungeeCord</>,
+        viaproxy: () => <>ViaProxy</>,
         standalone: () => <Translate id="mdx.setup.standalone">Standalone</Translate>,
 
         checking_server_version: () => <Translate id="mdx.setup.checking_server_version">Checking your server version</Translate>,
@@ -325,6 +325,6 @@ export const MDXTranslatable = {
         hosting_provider_article: () => <Translate id="mdx.setup.hosting_provider_article_short">Host's Geyser guide</Translate>,
         hosting_provider_website: () => <Translate id="mdx.setup.hosting_provider_website_short">Website</Translate>,
         hosting_provider_support: () => <Translate id="mdx.setup.hosting_provider_support_short">Support</Translate>,
-        hosting_provider_discord: () => <Translate id="mdx.setup.hosting_provider_discord_short">Discord</Translate>,
+        hosting_provider_discord: () => <>Discord</>,
     }
 }

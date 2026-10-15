@@ -207,14 +207,13 @@ const uploadAction = async (inp: {
                 if (!data.crowdin_page_id) throw new Error(`Missing crowdin_page_id in MD/MDX frontmatter for ${filePath}`);
 
                 const synced = markdownSyncedMap.get(data.crowdin_page_id);
-                if (!synced) throw new Error(`No synced file found for crowdin_page_id ${data.crowdin_page_id} in ${filePath}`);
-
-                unprocessedFiles.delete(synced.file);
 
                 if (!synced) {
                     remove = true;
                     break;
                 }
+
+                unprocessedFiles.delete(synced.file);
 
                 await updateCrowdinFileDirectory({
                     projectId,
