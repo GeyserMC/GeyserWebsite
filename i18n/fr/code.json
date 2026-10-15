@@ -706,7 +706,7 @@
     "message": "Reported to work with NetherNet"
   },
   "mdx.setup.summary.supporter_configures": {
-    "message": "{name} installs and configures Geyser for you, including NetherNet."
+    "message": "{name} configures Geyser for you automatically, including NetherNet."
   },
   "mdx.setup.summary.updated": {
     "message": "Instructions last updated on {date}"
@@ -716,6 +716,9 @@
   },
   "mdx.setup.badge.silver": {
     "message": "Silver supporter"
+  },
+  "mdx.setup.badge.bronze": {
+    "message": "Bronze supporter"
   },
   "mdx.setup.unconfirmed_title": {
     "message": "Not checked for NetherNet yet"
@@ -754,7 +757,7 @@
     "message": "I only have the Java server port"
   },
   "components.provider.open_collaboration_group": {
-    "message": "Hosts that support Geyser development"
+    "message": "Hosts that support Geyser's development"
   },
   "components.provider.other_group": {
     "message": "Other providers"
