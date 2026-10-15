@@ -19,7 +19,7 @@ This page is for people who **host Geyser themselves**. When using a hosting pro
 To learn what signaling is, read [Preparing your Geyser server for NetherNet](/blog/preparing-for-nethernet).
 
 :::info Only for built-in signaling
-This page only matters if you use Geyser's **built-in signaling**: `mode` in the `signaling` section is `builtin` (the default) or `hybrid`.
+This page only matters if Geyser is configured to use **built-in signaling**: `mode` in the `signaling` section is `builtin` (the default) or `hybrid`.
 :::
 
 ## What you need {#what-you-need}
@@ -33,6 +33,54 @@ This page only matters if you use Geyser's **built-in signaling**: `mode` in the
    which need TCP port 80 to be reachable from the internet while obtaining and renewing certificates.
    Forward it in your router like your Geyser port. Let's Encrypt's DNS challenge works without port 80, but is not covered here.
 
+## Opening ports {#opening-ports}
+
+Forward these in your router, and allow them in your firewall:
+
+- **TCP 80**: only if you do not already have certificates, and will obtain them from Let's Encrypt as described below
+- **TCP 19132**: signaling (HTTPS)
+- **UDP 19132**: playing
+
+With a reverse proxy, port 19133 stays inside your machine. Do not open it.
+
+<Tabs groupId="operating-system">
+<TabItem value="linux" label="Linux" default>
+
+With `ufw`:
+
+```bash
+sudo ufw allow 80/tcp && sudo ufw allow 19132/tcp && sudo ufw allow 19132/udp
+```
+
+With `firewalld`:
+
+```bash
+sudo firewall-cmd --permanent --add-port=80/tcp --add-port=19132/tcp --add-port=19132/udp && sudo firewall-cmd --reload
+```
+
+If you use `nftables` or `iptables` directly, you probably know how to do this by yourself anyway.
+
+</TabItem>
+<TabItem value="windows" label="Windows">
+
+In a PowerShell window opened with **Run as administrator**:
+
+```powershell
+New-NetFirewallRule -DisplayName "Geyser TCP" -Direction Inbound -Protocol TCP -LocalPort 80,19132 -Action Allow
+New-NetFirewallRule -DisplayName "Geyser UDP" -Direction Inbound -Protocol UDP -LocalPort 19132 -Action Allow
+```
+
+</TabItem>
+<TabItem value="macos" label="macOS">
+
+The macOS firewall is off by default. If you turned it on, allow incoming connections for `java` and `caddy` or `nginx` when macOS asks,
+or in **System Settings → Network → Firewall → Options**.
+
+</TabItem>
+</Tabs>
+
+See [port forwarding](/wiki/geyser/port-forwarding) for help with your router.
+
 ## Setting up HTTPS {#setting-up-https}
 
 Geyser can serve HTTPS itself with a certificate set in its config. Alternatively, a reverse proxy such as Caddy or nginx can handle HTTPS in front of Geyser.
@@ -41,7 +89,7 @@ If you would rather not manage a certificate at all, [external signaling](/wiki/
 <Tabs groupId="https-method" queryString="method">
 <TabItem value="geyser" label="Certificate in the Geyser config" default>
 
-Geyser serves HTTPS on the same port as HTTP, so no extra program is needed. Geyser reads the certificate when it starts, so it needs a restart after every renewal.
+Geyser serves HTTPS on the same port as HTTP, so no extra port is needed. Geyser reads the certificate when it starts, so it needs a restart or run of `geyser reload` after every renewal.
 
 **1. Obtain a certificate**
 
@@ -91,9 +139,9 @@ bedrock:
 - A PKCS12 file (`.p12` or `.pfx`) works as well: put it in `certificate`, leave `private-key` empty, and set its `password`.
   Use `file:/path/to/password.txt` to keep the password out of the config.
 
-:::caution Restart after renewing
+:::caution Restart or reload after renewing
 
-Geyser reads the certificate when it starts. After a renewal, restart the server or run `geyser reload`, or players will get an expired certificate.
+After a renewal, restart the server or run `geyser reload`, or players will get an expired certificate.
 
 :::
 
@@ -246,28 +294,32 @@ After a renewal, reload nginx with `C:\nginx\nginx.exe -s reload`.
 
 Install nginx on macOS using the Homebrew package manager:
 
-```
+```bash
 brew install nginx
 ```
 
 If you need a certificate, certbot is the recommended way to obtain certificates from Let's Encrypt on macOS. Follow the instructions over at [certbot's website](https://certbot.eff.org/instructions) to see how. Select "Nginx" as software.
-Your nginx config folder is `$(brew --prefix)/etc/nginx/servers/`.
+Your nginx config folder can be found by running:
+
+```bash
+echo "$(brew --prefix)/etc/nginx/servers/"
+```
 
 </TabItem>
 </Tabs>
 
 **2.2. Configure nginx**
 
-Create a file called `geyser.conf`: on Linux in `/etc/nginx/conf.d/`, on macOS in `$(brew --prefix)/etc/nginx/servers/`,
-and on Windows in `C:\nginx\conf\`, then add `include geyser.conf;` inside the `http { }` block of `C:\nginx\conf\nginx.conf`.
-If you already have a certificate, point `ssl_certificate` and `ssl_certificate_key` to its files.
+<Tabs groupId="operating-system">
+<TabItem value="linux" label="Linux" default>
+
+Create a file called `geyser.conf` in `/etc/nginx/conf.d/`. If you already have a certificate, point `ssl_certificate` and `ssl_certificate_key` to its files.
 
 ```nginx title="geyser.conf"
 server {
     listen 19132 ssl;
     server_name play.example.com;
 
-    # On Windows: C:/nginx/certs/play.example.com-chain.pem and C:/nginx/certs/play.example.com-key.pem
     ssl_certificate     /etc/letsencrypt/live/play.example.com/fullchain.pem;
     ssl_certificate_key /etc/letsencrypt/live/play.example.com/privkey.pem;
 
@@ -280,6 +332,55 @@ server {
     }
 }
 ```
+
+</TabItem>
+<TabItem value="windows" label="Windows">
+
+Create a file called `geyser.conf` in `C:\nginx\conf\`, then add `include geyser.conf;` inside the `http { }` block of `C:\nginx\conf\nginx.conf`. If you already have a certificate, point `ssl_certificate` and `ssl_certificate_key` to its files.
+
+```nginx title="geyser.conf"
+server {
+    listen 19132 ssl;
+    server_name play.example.com;
+
+    ssl_certificate     C:/nginx/certs/play.example.com-chain.pem;
+    ssl_certificate_key C:/nginx/certs/play.example.com-key.pem;
+
+    location / {
+        proxy_pass http://127.0.0.1:19133;
+        proxy_http_version 1.1;
+        proxy_set_header Host $host;
+        proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+        proxy_set_header X-Forwarded-Proto $scheme;
+    }
+}
+```
+
+</TabItem>
+<TabItem value="macos" label="macOS">
+
+Create a file called `geyser.conf` in `$(brew --prefix)/etc/nginx/servers/`. If you already have a certificate, point `ssl_certificate` and `ssl_certificate_key` to its files.
+
+```nginx title="geyser.conf"
+server {
+    listen 19132 ssl;
+    server_name play.example.com;
+
+    ssl_certificate     /etc/letsencrypt/live/play.example.com/fullchain.pem;
+    ssl_certificate_key /etc/letsencrypt/live/play.example.com/privkey.pem;
+
+    location / {
+        proxy_pass http://127.0.0.1:19133;
+        proxy_http_version 1.1;
+        proxy_set_header Host $host;
+        proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+        proxy_set_header X-Forwarded-Proto $scheme;
+    }
+}
+```
+
+</TabItem>
+</Tabs>
 
 Do not add `quic` or `http3` to the `listen` line: Geyser needs UDP 19132 for playing.
 
@@ -318,56 +419,6 @@ nginx -t && brew services restart nginx
 
 </TabItem>
 </Tabs>
-
-Then [open your ports](#opening-ports), restart your Minecraft server, and [check that it works](#checking).
-
-## Opening ports {#opening-ports}
-
-Forward these in your router, and allow them in your firewall:
-
-- **TCP 80**: only if you obtain certificates through Let's Encrypt as described above
-- **TCP 19132**: signaling (HTTPS)
-- **UDP 19132**: playing
-
-With a reverse proxy, port 19133 stays inside your machine. Do not open it.
-
-<Tabs groupId="operating-system">
-<TabItem value="linux" label="Linux" default>
-
-With `ufw`:
-
-```bash
-sudo ufw allow 80/tcp && sudo ufw allow 19132/tcp && sudo ufw allow 19132/udp
-```
-
-With `firewalld`:
-
-```bash
-sudo firewall-cmd --permanent --add-port=80/tcp --add-port=19132/tcp --add-port=19132/udp && sudo firewall-cmd --reload
-```
-
-If you use `nftables` or `iptables` directly, you probably know how to do this by yourself anyway.
-
-</TabItem>
-<TabItem value="windows" label="Windows">
-
-In a PowerShell window opened with **Run as administrator**:
-
-```powershell
-New-NetFirewallRule -DisplayName "Geyser TCP" -Direction Inbound -Protocol TCP -LocalPort 80,19132 -Action Allow
-New-NetFirewallRule -DisplayName "Geyser UDP" -Direction Inbound -Protocol UDP -LocalPort 19132 -Action Allow
-```
-
-</TabItem>
-<TabItem value="macos" label="macOS">
-
-The macOS firewall is off by default. If you turned it on, allow incoming connections for `java` and `caddy` or `nginx` when macOS asks,
-or in **System Settings → Network → Firewall → Options**.
-
-</TabItem>
-</Tabs>
-
-See [port forwarding](/wiki/geyser/port-forwarding) for help with your router.
 
 ## Checking that it works {#checking}
 
