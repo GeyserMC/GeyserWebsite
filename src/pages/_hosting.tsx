@@ -1,3 +1,4 @@
+// TODO: the hosting page is hidden until it launches. Rename this file back to hosting.tsx, and restore the links to /hosting.
 import React from 'react';
 import Layout from '@theme/Layout';
 import Link from '@docusaurus/Link';
@@ -6,7 +7,7 @@ import ReactMarkdown from 'react-markdown';
 import useBaseUrl from '@docusaurus/useBaseUrl';
 import HeroBanner from '@site/src/components/HeroBanner';
 import HeroBackground from '@site/static/img/site/split-background.webp';
-import { highlightedTiers, openCollaborationProviders, providerSetupLink } from '@site/src/components/Provider';
+import { hostingPageTiers, openCollaborationProviders, providerSetupLink } from '@site/src/components/Provider';
 import type { HostingProvider, OpenCollaborationTier } from '@site/src/types/providers';
 import styles from './hosting.module.scss';
 
@@ -60,7 +61,7 @@ const HostingPage: React.FC = () => (
             </p>
         </section>
 
-        {openCollaborationProviders.length > 0 ? highlightedTiers.map(tier => {
+        {openCollaborationProviders.some(p => hostingPageTiers.includes(p.open_collaboration.tier)) ? hostingPageTiers.map(tier => {
             const hosts = openCollaborationProviders.filter(p => p.open_collaboration.tier === tier);
             return hosts.length > 0 && (
                 <section key={tier} className={styles.tier}>

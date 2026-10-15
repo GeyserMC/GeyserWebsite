@@ -1,6 +1,6 @@
 ---
 title: Supported Hosting Providers
-description: This page has moved to /hosting.
+description: Setup instructions for individual hosts are now part of the setup guide.
 unlisted: true
 crowdin_page_id: 44b3ae0c-1863-472d-bae8-d69a3d9b5ed6
 ---
@@ -8,8 +8,9 @@ crowdin_page_id: 44b3ae0c-1863-472d-bae8-d69a3d9b5ed6
 import { Redirect } from '@docusaurus/router';
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-export const ToHosting = () => <Redirect to={useBaseUrl('/hosting')} />;
+{/* TODO: redirect to /hosting again once the hosting page launches */}
+export const ToSetup = () => <Redirect to={useBaseUrl('/wiki/geyser/setup/')} />;
 
-<ToHosting />
+<ToSetup />
 
-This page has moved to [Hosting Providers](/hosting). Setup instructions for individual hosts are part of the [setup guide](/wiki/geyser/setup/).
+Setup instructions for individual hosts are now part of the [setup guide](/wiki/geyser/setup/).

@@ -75,8 +75,10 @@ const selfHosted: HostingProvider = {
     config: { udp: 19132, builtin_signaling: 'same_as_udp' }
 }
 
-// Open Collaboration tiers that are highlighted, highest first. Bronze hosts are listed like any other host.
-export const highlightedTiers: OpenCollaborationTier[] = ['gold', 'silver'];
+// Open Collaboration tiers that are highlighted in the setup guide, highest first
+export const highlightedTiers: OpenCollaborationTier[] = ['gold', 'silver', 'bronze'];
+// Tiers that get an entry on the hosting page
+export const hostingPageTiers: OpenCollaborationTier[] = ['gold', 'silver'];
 export const isHighlighted = (provider: HostingProvider) => highlightedTiers.includes(provider.open_collaboration?.tier);
 
 const byName = (a: HostingProvider, b: HostingProvider) => a.name.localeCompare(b.name);
@@ -124,7 +126,7 @@ export const ProviderSelector = ({ setProvider }) => {
                 <option value="none">Select a provider</option>
                 {option(notListed)}
                 {openCollaborationProviders.length > 0 && (
-                    <optgroup label={translate({ id: 'components.provider.open_collaboration_group', message: 'Hosts that support Geyser development' })}>
+                    <optgroup label={translate({ id: 'components.provider.open_collaboration_group', message: "Hosts that support Geyser's development" })}>
                         {openCollaborationProviders.map(option)}
                     </optgroup>
                 )}
@@ -318,6 +320,12 @@ const ConnectInstructions = ({ provider }: { provider: HostingProvider }) => {
     );
 }
 
+const tierBadges: Record<OpenCollaborationTier, React.ReactNode> = {
+    gold: <MDXTranslatable.setup.badge_gold />,
+    silver: <MDXTranslatable.setup.badge_silver />,
+    bronze: <MDXTranslatable.setup.badge_bronze />,
+};
+
 /**
  * A compact bar at the top of the guide: who the host is, and what it supports.
  */
@@ -348,10 +356,11 @@ const HostSummary = ({ provider }: { provider: HostingProvider }) => {
                     <span className={styles.summaryLogo}><img src={logo} alt="" /></span>
                 )}
                 <strong className={styles.summaryName}>{provider.name}</strong>
+                {/* TODO: link the badge to /hosting again once the hosting page launches */}
                 {tier && (
-                    <Link to="/hosting" className={clsx(styles.pill, styles.tierBadge, styles[tier])}>
-                        {tier === 'gold' ? <MDXTranslatable.setup.badge_gold /> : <MDXTranslatable.setup.badge_silver />}
-                    </Link>
+                    <span className={clsx(styles.pill, styles.tierBadge, styles[tier])}>
+                        {tierBadges[tier]}
+                    </span>
                 )}
             </div>
             {tier ? (

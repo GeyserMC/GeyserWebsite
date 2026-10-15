@@ -227,12 +227,13 @@ const config: Config = {
                     position: 'left',
                     className: 'header-download-link'
                 },
-                {
-                    to: 'hosting',
-                    label: 'Hosting',
-                    position: 'left',
-                    className: 'header-hosting-link'
-                },
+                // TODO: hidden until the hosting page launches
+                // {
+                //     to: 'hosting',
+                //     label: 'Hosting',
+                //     position: 'left',
+                //     className: 'header-hosting-link'
+                // },
                 { // Name on mobile sidebar specified in custom.scss
                     href: 'https://github.com/GeyserMC/Geyser',
                     position: 'right',

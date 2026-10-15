@@ -297,6 +297,7 @@ export const MDXTranslatable = {
         ),
         badge_gold: () => <Translate id="mdx.setup.badge.gold">Gold supporter</Translate>,
         badge_silver: () => <Translate id="mdx.setup.badge.silver">Silver supporter</Translate>,
+        badge_bronze: () => <Translate id="mdx.setup.badge.bronze">Bronze supporter</Translate>,
 
         unconfirmed_title: () => <Translate id="mdx.setup.unconfirmed_title">Not checked for NetherNet yet</Translate>,
         warning_title: () => <Translate id="mdx.setup.warning_title">Warning</Translate>,

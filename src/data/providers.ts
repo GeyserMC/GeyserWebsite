@@ -129,11 +129,13 @@ export const providersData: HostingProvider[] = [
     {
         name: 'Aternos',
         url: 'https://aternos.org/',
-        updated: '2026-10-14',
         links: {
             article: "https://support.aternos.org/hc/en-us/articles/39155890785053-NetherNet-protocol-Minecraft-Bedrock-Edition",
             support: 'https://support.aternos.org/',
             discord: "https://discord.aternos.org/"
+        },
+        open_collaboration: {
+            tier: 'bronze'
         },
         install: customInstallLocations.plugin_list,
         // Aternos runs NetherNet on 19132 for all servers, and keeps RakNet on the old port while it exists
@@ -159,23 +161,6 @@ export const providersData: HostingProvider[] = [
             message: "Select GeyserMC in the Variants tab. This reinstalls the server with Paper and Geyser."
         }),
         config: { udp: ports.newPort, confirmed: false }
-    },
-    {
-        name: 'BedrockBetter',
-        url: 'https://example.com/bedrockbetter',
-        updated: '2026-10-11',
-        links: {
-            article: 'https://example.com/bedrockbetter/docs/geyser',
-            support: 'https://example.com/bedrockbetter/support',
-            discord: 'https://discord.gg/bedrockbetter'
-        },
-        // TODO placeholder host for previewing the hosting page, remove before release
-        open_collaboration: {
-            tier: 'gold',
-            logo: '/img/hosts/bedrockbetter.svg',
-            description: "Servers tuned for crossplay, with Geyser and Floodgate preinstalled and NetherNet ready out of the box."
-        },
-        config: { preconfigured: true, port: 19132 }
     },
     {
         name: 'BedrockHost',
@@ -211,23 +196,6 @@ export const providersData: HostingProvider[] = [
                 message: "If you cannot connect after following these instructions, contact Bisect Support, as they reportedly have UDP disabled on some nodes."
             })
         }
-    },
-    {
-        name: 'BlockBarn',
-        url: 'https://example.com/blockbarn',
-        updated: '2026-10-11',
-        links: {
-            article: 'https://example.com/blockbarn/docs/geyser',
-            support: 'https://example.com/blockbarn/support',
-            discord: 'https://discord.gg/blockbarn'
-        },
-        // TODO placeholder host for previewing the hosting page, remove before release
-        open_collaboration: {
-            tier: 'silver',
-            logo: '/img/hosts/blockbarn.svg',
-            description: "Budget friendly Minecraft hosting with one click Geyser installs."
-        },
-        config: { preconfigured: true, port: 19132 }
     },
     {
         name: 'Bloom.Host',
@@ -291,23 +259,6 @@ export const providersData: HostingProvider[] = [
         connect: connectionTemplates.providedByHost
     },
     {
-        name: 'CrossplayCloud',
-        url: 'https://example.com/crossplaycloud',
-        updated: '2026-10-11',
-        links: {
-            article: 'https://example.com/crossplaycloud/docs/geyser',
-            support: 'https://example.com/crossplaycloud/support',
-            discord: 'https://discord.gg/crossplaycloud'
-        },
-        // TODO placeholder host for previewing the hosting page, remove before release
-        open_collaboration: {
-            tier: 'silver',
-            logo: '/img/hosts/crossplaycloud.svg',
-            description: "Cloud servers with UDP ports available on every plan."
-        },
-        config: { preconfigured: true, port: 19132 }
-    },
-    {
         name: 'Cubes Hosting',
         url: 'https://www.cubes.host/',
         updated: '2026-07-10',
@@ -357,10 +308,12 @@ export const providersData: HostingProvider[] = [
     {
         name: 'exaroton',
         url: 'https://exaroton.com/',
-        updated: '2026-10-14',
         links: {
             article: "https://support.exaroton.com/hc/en-us/articles/39157467467165-NetherNet-protocol-Minecraft-Bedrock-Edition",
             discord: 'https://discord.gg/exaroton'
+        },
+        open_collaboration: {
+            tier: 'bronze'
         },
         install: customInstallLocations.plugin_list,
         // Same setup as Aternos: NetherNet runs on 19132 for all servers
@@ -429,23 +382,6 @@ export const providersData: HostingProvider[] = [
         url: 'https://www.gamehosting.it/',
         updated: '2024-12-23',
         config: { udp: ports.newPort, confirmed: false }
-    },
-    {
-        name: 'GeyserHost',
-        url: 'https://example.com/geyserhost',
-        updated: '2026-10-11',
-        links: {
-            article: 'https://example.com/geyserhost/docs/geyser',
-            support: 'https://example.com/geyserhost/support',
-            discord: 'https://discord.gg/geyserhost'
-        },
-        // TODO placeholder host for previewing the hosting page, remove before release
-        open_collaboration: {
-            tier: 'gold',
-            logo: '/img/hosts/geyserhost.svg',
-            description: "Minecraft hosting built around Geyser, so Java and Bedrock players can join from day one."
-        },
-        config: { preconfigured: true, port: 19132 }
     },
     {
         name: 'GGServers',
@@ -946,23 +882,6 @@ export const providersData: HostingProvider[] = [
             message: "Full automatic installation. Open the panel options and select the option to enable GeyserMC."
         }),
         config: { udp: ports.newPort, confirmed: false }
-    },
-    {
-        name: 'VeryCoolHost',
-        url: 'https://example.com/verycoolhost',
-        updated: '2026-10-11',
-        links: {
-            article: 'https://example.com/verycoolhost/docs/geyser',
-            support: 'https://example.com/verycoolhost/support',
-            discord: 'https://discord.gg/verycoolhost'
-        },
-        // TODO placeholder host for previewing the hosting page, remove before release
-        open_collaboration: {
-            tier: 'silver',
-            logo: '/img/hosts/verycoolhost.svg',
-            description: "A very cool host. Geyser is available from the plugin installer."
-        },
-        config: { preconfigured: true, port: 19132 }
     },
     {
         name: 'VexyHost',

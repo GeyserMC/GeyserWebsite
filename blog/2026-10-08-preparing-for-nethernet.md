@@ -73,8 +73,9 @@ If your host has no notes in our [setup guide](/wiki/geyser/setup/), pick "Not l
 Keep in mind that with this setup, players no longer join with your Java server's address, but with the address and port Geyser shows in the console. 
 Warden also takes care of HTTPS for you, so users will not see a trust on first use prompt.
 
-You may also notice that the "Supported hosting providers" list is gone from our website. We have replaced it with a [list of hosts that support our work through the Open Collaboration programme](/hosting). 
-A host's absence from that list does not mean Geyser won't run there. The hosts listed there already set Geyser up for NetherNet, so their users have nothing to configure.
+You may also notice that the "Supported hosting providers" list is gone from our website. Soon, it will be replaced with a list of hosts that support our work through the Open Collaboration program. 
+The hosts listed there already set Geyser up for NetherNet, so their users have nothing to configure. However, a host's absence from that list will not mean Geyser won't run there,
+and the setup guide will continue to include community collected setup notes.
 
 ## If You Host the Server Yourself
 
@@ -106,7 +107,7 @@ The most important ones are:
 
 Once you have set this up, please let us know by [opening a pull request](https://github.com/GeyserMC/GeyserWebsite) or 
 reaching out on [Discord](https://discord.gg/geysermc), so our setup guide can tell your users that there is nothing for them to do. 
-If you would also like to support Geyser's development and be featured on our server hosting list, have a look at [our hosting page](/hosting).
+If you would also like to support Geyser's development and be featured on our upcoming hosting page, have a look at [Open Collaboration](https://opencollaboration.dev/).
 
 ## HTTPS and the Trust Prompt
 

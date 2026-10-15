@@ -47,11 +47,12 @@ const sidebars: SidebarsConfig = {
                 id: 'geyser/setup'
             },
             items: [
-                {
-                    type: 'link',
-                    label: 'Hosting Providers',
-                    href: '/hosting'
-                },
+                // TODO: hidden until the hosting page launches
+                // {
+                //     type: 'link',
+                //     label: 'Hosting Providers',
+                //     href: '/hosting'
+                // },
                 'geyser/using-geyser-with-consoles',
                 'geyser/playit-gg',
                 'geyser/creating-a-startup-script',

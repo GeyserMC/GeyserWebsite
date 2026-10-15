@@ -1,5 +1,6 @@
 $gold: #d4af37;
 $silver: #a8a9ad;
+$bronze: #cd7f32;
 
 .summary {
     margin: 1rem 0;
@@ -15,6 +16,10 @@ $silver: #a8a9ad;
 
     &.silver {
         border: 2px solid $silver;
+    }
+
+    &.bronze {
+        border: 2px solid $bronze;
     }
 }
 
@@ -58,6 +63,10 @@ $silver: #a8a9ad;
 
     &.silver {
         background-color: $silver;
+    }
+
+    &.bronze {
+        background-color: $bronze;
     }
 }
 

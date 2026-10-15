@@ -762,6 +762,9 @@
   "mdx.setup.badge.silver": {
     "message": "Silver supporter"
   },
+  "mdx.setup.badge.bronze": {
+    "message": "Bronze supporter"
+  },
   "mdx.setup.unconfirmed_title": {
     "message": "Not checked for NetherNet yet"
   },
@@ -808,7 +811,7 @@
     "message": "Players do not connect with the Java server's address. After Geyser starts, it shows the address and port to use in the console, provided by the external signaling service ({warden} by default). Share these with your players."
   },
   "components.provider.open_collaboration_group": {
-    "message": "Hosts that support Geyser development"
+    "message": "Hosts that support Geyser's development"
   },
   "components.provider.other_group": {
     "message": "Other providers"
