@@ -112,7 +112,7 @@ Command command = Command.builder(this) // "this" is the extension's main class
         .source(CommandSource.class)
         .aliases(List.of("example", "ex"))
         .description("An example command")
-        .executableOnConsole(false) 
+        .isPlayerOnly(false) 
         .suggestedOpOnly(false)
         .permission("example.command")
         .executor((source, cmd, args) -> {
