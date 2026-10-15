@@ -56,14 +56,9 @@ On Linux, certbot is the recommended way to obtain certificates from Let's Encry
 </TabItem>
 <TabItem value="windows" label="Windows">
 
-Certbot no longer supports Windows, so use [win-acme](https://www.win-acme.com) instead.
-In a PowerShell window opened with **Run as administrator**, from the win-acme folder, replacing `C:\path\to\Geyser` with Geyser's config folder:
-
-```powershell
-.\wacs.exe --source manual --host play.example.com --validation selfhosting --store pemfiles --pemfilespath C:\path\to\Geyser
-```
-
-This creates `play.example.com-chain.pem` and `play.example.com-key.pem` directly in Geyser's config folder, and renews them automatically.
+Certbot [no longer supports Windows](https://community.letsencrypt.org/t/certbot-discontinuing-windows-beta-support-in-2024/208101), so use win-acme instead.
+Follow the instructions over at [win-acme's website](https://www.win-acme.com) to see how.
+Store the certificate as PEM encoded files, so Geyser can read them.
 
 </TabItem>
 <TabItem value="macos" label="macOS">
@@ -229,18 +224,10 @@ If you need a certificate, certbot is the recommended way to obtain certificates
 </TabItem>
 <TabItem value="windows" label="Windows">
 
-Download nginx from [nginx.org](https://nginx.org/en/download.html) and unzip it to `C:\nginx`.
-nginx on Windows is [less polished](https://nginx.org/en/docs/windows.html) than on Linux, but works for this.
+Follow nginx's [guide for Windows](https://nginx.org/en/docs/windows.html) to install it. The steps below assume it is in `C:\nginx`.
 
-If you need a certificate, certbot no longer supports Windows, so use [win-acme](https://www.win-acme.com) instead.
-In a PowerShell window opened with **Run as administrator**, from the win-acme folder:
-
-```powershell
-.\wacs.exe --source manual --host play.example.com --validation selfhosting --store pemfiles --pemfilespath C:\nginx\certs
-```
-
-This creates `play.example.com-chain.pem` and `play.example.com-key.pem` in `C:\nginx\certs`, and renews them automatically.
-After a renewal, reload nginx with `C:\nginx\nginx.exe -s reload`.
+If you need a certificate, certbot no longer supports Windows, so use win-acme instead. Follow the instructions over at [win-acme's website](https://www.win-acme.com) to see how,
+and store the certificate as PEM encoded files in `C:\nginx\certs`. After a renewal, reload nginx with `C:\nginx\nginx.exe -s reload`.
 
 </TabItem>
 <TabItem value="macos" label="macOS">
