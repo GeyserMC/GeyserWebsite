@@ -54,10 +54,10 @@ const sidebars: SidebarsConfig = {
                 //     href: '/hosting'
                 // },
                 'geyser/using-geyser-with-consoles',
-                'geyser/playit-gg',
-                'geyser/creating-a-startup-script',
+                'geyser/nethernet-https',
                 'geyser/port-forwarding',
-                'geyser/nethernet-https'
+                'geyser/creating-a-startup-script',
+                'geyser/playit-gg'
             ]
         },
         {
