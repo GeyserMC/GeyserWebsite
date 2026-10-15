@@ -8,41 +8,68 @@ import { Grid } from '@site/src/components/Grid';
 import CodeBlock from '@theme/CodeBlock';
 import clsx from 'clsx';
 
-const PluginList = ({plugins}, {}) => {
-    const [activePlugin, setActivePlugin] = useState<any>({});
-    const pluginPopoverRef = useRef<any>(null);
+interface Plugin {
+    main: string;
+    name: string;
+    version: string;
+    enabled: boolean;
+    authors: string[];
+}
+
+interface PluginListProps {
+    plugins: Plugin[];
+}
+
+const PluginList = ({ plugins }: PluginListProps) => {
+    const [activePlugin, setActivePlugin] = useState<Partial<Plugin>>({});
+    const pluginPopoverRef = useRef<HTMLDivElement>(null);
 
     useEffect(() => {
-        const handleClickOutside = (event) => setActivePlugin({});
+        const handleClickOutside = (event: MouseEvent) => {
+            if (
+                pluginPopoverRef.current && 
+                !pluginPopoverRef.current.contains(event.target as Node)
+            ) {
+                setActivePlugin({});
+            }
+        };
+        
         document.addEventListener("mousedown", handleClickOutside);
 
         return () => {
             document.removeEventListener("mousedown", handleClickOutside);
         };
-    }, [pluginPopoverRef]);
+    }, []);
 
-    return <Grid elementsPerRow={5}>
-        {plugins.map(plugin => (
-            <div key={plugin.main}>
-                <div onClick={() => setActivePlugin(plugin)} className={styles.pluginName}>
-                    <b>{plugin.name}</b> <div className={styles.pluginEnabledIndicator} style={{ backgroundColor: plugin.enabled ? "green" : "red" }} />
-                </div>
-
-                {activePlugin?.main === plugin.main ? (
-                    <div ref={pluginPopoverRef} className={styles.pluginInfoPopover}>
-                        <p className={styles.pluginNamePopover}>{plugin.name}</p>
-                        <p>{plugin.version}</p>
-                        <p className={styles.pluginEnabled} style={{ backgroundColor: plugin.enabled ? "green" : "red" }}>{plugin.enabled ? "Enabled" : "Disabled"}</p>
-
-                        <p className={styles.pluginAuthorsLabel}>Authors:</p>
-                        <ul>
-                            {plugin.authors.map(author => <li>{author}</li>)}
-                        </ul>
+    return (
+        <Grid elementsPerRow={5}>
+            {plugins.map((plugin: Plugin) => (
+                <div key={plugin.main}>
+                    <div onClick={() => setActivePlugin(plugin)} className={styles.pluginName}>
+                        <b>{plugin.name}</b> 
+                        <div className={styles.pluginEnabledIndicator} style={{ backgroundColor: plugin.enabled ? "green" : "red" }} />
                     </div>
-                ) : undefined}
-            </div>
-        ))}
-    </Grid>
+
+                    {activePlugin?.main === plugin.main ? (
+                        <div ref={pluginPopoverRef} className={styles.pluginInfoPopover}>
+                            <p className={styles.pluginNamePopover}>{plugin.name}</p>
+                            <p>{plugin.version}</p>
+                            <p className={styles.pluginEnabled} style={{ backgroundColor: plugin.enabled ? "green" : "red" }}>
+                                {plugin.enabled ? "Enabled" : "Disabled"}
+                            </p>
+
+                            <p className={styles.pluginAuthorsLabel}>Authors:</p>
+                            <ul>
+                                {plugin.authors.map((author: string, index: number) => (
+                                    <li key={index}>{author}</li>
+                                ))}
+                            </ul>
+                        </div>
+                    ) : undefined}
+                </div>
+            ))}
+        </Grid>
+    );
 };
 
 const DumpViewerPage: React.FC = () => {
@@ -53,12 +80,15 @@ const DumpViewerPage: React.FC = () => {
     const urlReg = /^(https?:\/\/)?dump\.geysermc\.org/;
 
     useEffect(() => {
-        // Get the ID from the URL
-        let id = window.location.href.includes('?') ? window.location.href.split('?').pop() : '';
-        if (id === '' || id === undefined) {
+        // Get the ID from the URL with a fallback for undefined pop results
+        const queryPart = window.location.href.includes('?') ? window.location.href.split('?').pop() : '';
+        let id = queryPart ?? '';
+        
+        if (id === '') {
             id = window.location.hash.slice(1);
         }
-        if (id !== undefined && id !== '') {
+        
+        if (id !== '') {
             setDumpId(id);
             handleLoad(id);
         }
@@ -72,13 +102,14 @@ const DumpViewerPage: React.FC = () => {
         let id = dumpId;
 
         if (dumpId.match(urlReg)) {
-            id = dumpId.split('/').pop();
+            id = dumpId.split('/').pop() ?? dumpId;
         }
+        
         setDumpId(id);
         handleLoad(id);
     }
 
-    const handleLoad = async (dumpId) => {
+    const handleLoad = async (dumpId: string) => {
         try {
             // Construct the raw dump URL
             const url = 'https://dump.geysermc.org/raw/' + dumpId;
@@ -97,7 +128,7 @@ const DumpViewerPage: React.FC = () => {
         }
     }
 
-    const capitalizeFirstLetter = (string) => {
+    const capitalizeFirstLetter = (string: string) => {
         return string.charAt(0).toUpperCase() + string.slice(1)
     }
 

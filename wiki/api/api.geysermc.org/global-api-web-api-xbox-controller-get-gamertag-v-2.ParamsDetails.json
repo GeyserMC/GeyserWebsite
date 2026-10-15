@@ -1,0 +1,1 @@
+{"parameters":[{"description":"The xuid of the Bedrock player","in":"path","name":"xuid","required":true,"schema":{"type":"string"}}]}

@@ -15,7 +15,6 @@ const config: Config = {
     projectName: 'GeyserWebsite',
 
     onBrokenLinks: 'throw',
-    onBrokenMarkdownLinks: 'warn',
 
     i18n: {
         defaultLocale: 'en',
@@ -33,6 +32,9 @@ const config: Config = {
 
     markdown: {
         mermaid: true,
+        hooks: {
+            onBrokenMarkdownLinks: 'warn'
+        },
         ...(process.env.DOCUSAURUS_CURRENT_LOCALE === 'crp' ? {
         preprocessor: ({ fileContent }) => {
             const lines = fileContent.split('\n');

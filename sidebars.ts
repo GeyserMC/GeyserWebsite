@@ -1,4 +1,5 @@
 import type { SidebarsConfig } from '@docusaurus/plugin-content-docs';
+import type { SidebarItemConfig } from "@docusaurus/plugin-content-docs/src/sidebars/types.js";
 
 /**
  * Creating a sidebar enables you to:
@@ -12,7 +13,7 @@ import type { SidebarsConfig } from '@docusaurus/plugin-content-docs';
  */
 const sidebars: SidebarsConfig = {
     // By default, Docusaurus generates a sidebar from the docs folder structure
-    apiSidebar: [
+    apiSidebar: withUniqueKeys([
         "api/index",
         {
             type: "category",
@@ -36,7 +37,7 @@ const sidebars: SidebarsConfig = {
             },
             items: require("./wiki/api/downloads.geysermc.org/sidebar.ts"),
         },
-    ],
+    ]),
     geyserSidebar: [
         'geyser/index',
         {
@@ -151,5 +152,18 @@ const sidebars: SidebarsConfig = {
         'other/discord-bot-usage'
     ]
 };
+
+function withUniqueKeys(items: SidebarItemConfig[]): SidebarItemConfig[] {
+    return items.map((item) => {
+        if (typeof item === "string") return item;
+        if (item.type === "doc") {
+            return { ...item, key: item.key ?? item.id };
+        }
+        if (item.type === "category" && Array.isArray(item.items)) {
+            return { ...item, items: withUniqueKeys(item.items) };
+        }
+        return item;
+    });
+}
 
 export default sidebars;
