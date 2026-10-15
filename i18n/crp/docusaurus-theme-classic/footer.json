@@ -1,78 +1,78 @@
 {
   "link.title.Wiki": {
-    "message": "crwdns32092:0crwdne32092:0",
+    "message": "crwdns33482:0crwdne33482:0",
     "description": "The title of the footer links column with title=Wiki in the footer"
   },
   "link.title.Downloads": {
-    "message": "crwdns32094:0crwdne32094:0",
+    "message": "crwdns33484:0crwdne33484:0",
     "description": "The title of the footer links column with title=Downloads in the footer"
   },
   "link.title.Community": {
-    "message": "crwdns32096:0crwdne32096:0",
+    "message": "crwdns33486:0crwdne33486:0",
     "description": "The title of the footer links column with title=Community in the footer"
   },
   "link.title.More": {
-    "message": "crwdns32098:0crwdne32098:0",
+    "message": "crwdns33488:0crwdne33488:0",
     "description": "The title of the footer links column with title=More in the footer"
   },
   "link.item.label.Geyser": {
-    "message": "crwdns32100:0crwdne32100:0",
+    "message": "crwdns33490:0crwdne33490:0",
     "description": "The label of footer link with label=Geyser linking to download?project=geyser"
   },
   "link.item.label.Floodgate": {
-    "message": "crwdns32102:0crwdne32102:0",
+    "message": "crwdns33492:0crwdne33492:0",
     "description": "The label of footer link with label=Floodgate linking to download?project=floodgate"
   },
   "link.item.label.REST APIs": {
-    "message": "crwdns32104:0crwdne32104:0",
+    "message": "crwdns33494:0crwdne33494:0",
     "description": "The label of footer link with label=REST APIs linking to wiki/api/api.geysermc.org/global-api"
   },
   "link.item.label.Other": {
-    "message": "crwdns32106:0crwdne32106:0",
+    "message": "crwdns33496:0crwdne33496:0",
     "description": "The label of footer link with label=Other linking to download?project=other-projects"
   },
   "link.item.label.Crowdin": {
-    "message": "crwdns32108:0crwdne32108:0",
+    "message": "crwdns33498:0crwdne33498:0",
     "description": "The label of footer link with label=Crowdin linking to https://translate.geysermc.org/"
   },
   "link.item.label.Discord": {
-    "message": "crwdns32110:0crwdne32110:0",
+    "message": "crwdns33500:0crwdne33500:0",
     "description": "The label of footer link with label=Discord linking to https://discord.gg/geysermc"
   },
   "link.item.label.GitHub": {
-    "message": "crwdns32112:0crwdne32112:0",
+    "message": "crwdns33502:0crwdne33502:0",
     "description": "The label of footer link with label=GitHub linking to https://github.com/GeyserMC/Geyser"
   },
   "link.item.label.Reddit": {
-    "message": "crwdns32114:0crwdne32114:0",
+    "message": "crwdns33504:0crwdne33504:0",
     "description": "The label of footer link with label=Reddit linking to https://www.reddit.com/r/GeyserMC/"
   },
   "link.item.label.Twitter": {
-    "message": "crwdns32116:0crwdne32116:0",
+    "message": "crwdns33506:0crwdne33506:0",
     "description": "The label of footer link with label=Twitter linking to https://twitter.com/Geyser_MC"
   },
   "link.item.label.Blog": {
-    "message": "crwdns32118:0crwdne32118:0",
+    "message": "crwdns33508:0crwdne33508:0",
     "description": "The label of footer link with label=Blog linking to blog"
   },
   "link.item.label.Donate": {
-    "message": "crwdns32120:0crwdne32120:0",
+    "message": "crwdns33510:0crwdne33510:0",
     "description": "The label of footer link with label=Donate linking to https://opencollective.com/geysermc"
   },
   "link.item.label.Global Linking": {
-    "message": "crwdns32122:0crwdne32122:0",
+    "message": "crwdns33512:0crwdne33512:0",
     "description": "The label of footer link with label=Global Linking linking to https://link.geysermc.org/"
   },
   "link.item.label.Privacy Policy": {
-    "message": "crwdns32124:0crwdne32124:0",
+    "message": "crwdns33514:0crwdne33514:0",
     "description": "The label of footer link with label=Privacy Policy linking to https://ziax.com/terms/privacy-policy/"
   },
   "logo.alt": {
-    "message": "crwdns32126:0crwdne32126:0",
+    "message": "crwdns33516:0crwdne33516:0",
     "description": "The alt text of footer logo"
   },
   "copyright": {
-    "message": "crwdns32128:0crwdne32128:0",
+    "message": "crwdns33518:0crwdne33518:0",
     "description": "The footer copyright"
   }
 }

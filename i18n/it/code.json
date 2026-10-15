@@ -615,9 +615,6 @@
   "pages.dumpviewer.extensions.helptext": {
     "message": "Click on an extension to view more information."
   },
-  "mdx.setup.downloads_page": {
-    "message": "downloads page"
-  },
   "mdx.setup.fabric": {
     "message": "Fabric"
   },
@@ -628,7 +625,7 @@
     "message": "Installing Geyser"
   },
   "mdx.setup.download_jar": {
-    "message": "Download {jarName} from the {downloadsPage}."
+    "message": "Download {jarName}."
   },
   "mdx.setup.place_jar": {
     "message": "Place the {jarName} in the {jarDirectory} folder."
@@ -697,10 +694,10 @@
     "message": "The port of the Java server."
   },
   "mdx.setup.placeholder_java_port_udp": {
-    "message": "A UDP port for NetherNet, other than {port}. This can be the Java server's port: the Java server only uses it over TCP, so Geyser can use it over UDP. Any other free UDP port works too."
+    "message": "A UDP port for NetherNet, other than {port}. This can be the Java server's port: the Java server only uses it over TCP, so Geyser can use it over UDP. Any other available UDP port works too."
   },
-  "mdx.setup.placeholder_second_free_port": {
-    "message": "A free UDP port for NetherNet, other than {port}. Open it for UDP."
+  "mdx.setup.placeholder_second_available_port": {
+    "message": "An available UDP port for NetherNet, other than {port}. Open it for UDP."
   },
   "mdx.setup.raknet_on_port": {
     "message": "RakNet uses {port} over UDP, so that port has to be open for UDP as well."
@@ -799,7 +796,7 @@
     "message": "Assign a port in your host's panel, open for both TCP and UDP."
   },
   "providers.ports.allocated": {
-    "message": "Pick a free port from the ports allocated to your server, open for both TCP and UDP."
+    "message": "Pick an available port from the ports allocated to your server, open for both TCP and UDP."
   },
   "providers.ports.ask_host": {
     "message": "Ask your host for a port that is open for both TCP and UDP."
@@ -863,5 +860,164 @@
   },
   "providers.ports.new_port": {
     "message": "Open a new port in your server panel, open for both TCP and UDP, or ask your host for one if the panel has no option for it."
+  },
+  "mdx.setup.supported_versions": {
+    "message": "Supported versions"
+  },
+  "mdx.setup.restart_velocity": {
+    "message": "Restart Velocity."
+  },
+  "mdx.setup.restart_bungeecord": {
+    "message": "Restart BungeeCord."
+  },
+  "mdx.setup.restart_viaproxy": {
+    "message": "Restart ViaProxy."
+  },
+  "mdx.setup.fabric_dependency": {
+    "message": "If it is not installed already, download {fabricApi} and place it in the same folder."
+  },
+  "mdx.setup.version_step_viaversion": {
+    "message": "If your server is not running {version}, you will need to install {viaVersion}. For more information, see {supportedVersions}."
+  },
+  "mdx.setup.version_step_proxy": {
+    "message": "All servers on the network must accept {version} Java clients, as Geyser imitates one."
+  },
+  "mdx.setup.proxy_install_only": {
+    "message": "Install Geyser only on the {proxy} server! You can install Floodgate on all servers for better skin support and network-wide Floodgate API availability for other plugins."
+  },
+  "mdx.setup.modded_requirements": {
+    "message": "{jarName} runs only on a {version} server, and only works alongside server-side mods. Mods that players also need to install on their client will not work. See {supportedVersions} for more details."
+  },
+  "mdx.setup.self_port_choice": {
+    "message": "Since you are self-hosting, you can choose the port freely; the default is 19132. Geyser uses it over both TCP and UDP, so it cannot be the port of the {platform} server."
+  },
+  "mdx.setup.self_port_choice_standalone": {
+    "message": "Since you are self-hosting, you can choose the port freely; the default is 19132. Geyser uses it over both TCP and UDP."
+  },
+  "mdx.setup.self_port_sharing": {
+    "message": "{important}: No other program can use the Geyser port, over either protocol. This includes programs that use UDP, such as voice chat mods or Query, and programs that use TCP, such as another server, a web map, or a website."
+  },
+  "mdx.setup.self_port_sharing.important": {
+    "message": "Important"
+  },
+  "mdx.setup.connect_local_title": {
+    "message": "Connecting from the same network"
+  },
+  "mdx.setup.connect_local": {
+    "message": "On the same device as the server, connect with {localhost} or {loopback} as the address. Other devices in the same local network can use your local IPv4 address, which starts with {ten} or {oneNineTwo}."
+  },
+  "mdx.setup.connect_lan": {
+    "message": "Alternatively, open Minecraft: Bedrock Edition and join the LAN server in the {friends} tab."
+  },
+  "mdx.setup.connect_lan.friends": {
+    "message": "Friends"
+  },
+  "mdx.setup.connect_remote_title": {
+    "message": "Connecting from a different network"
+  },
+  "mdx.setup.connect_remote": {
+    "message": "To let players from outside your network join, you need to make the Geyser port reachable from the internet."
+  },
+  "mdx.setup.connect_tcp_udp": {
+    "message": "The Geyser port has to be forwarded for both TCP and UDP. Before NetherNet, forwarding UDP was enough. Now, players use TCP to find your server and UDP to play on it, so without TCP your server will not show up. If you use the \"NetherNet and RakNet\" option, also forward the {webrtcPort} for UDP."
+  },
+  "mdx.setup.connect_options": {
+    "message": "You have two options:"
+  },
+  "mdx.setup.connect_port_forwarding": {
+    "message": "{portForwarding}: open the Geyser port (e.g. 19132) for both TCP and UDP in your router and in your firewall. Players then connect with your public IPv4 address and the port. For detailed steps, see {guide}."
+  },
+  "mdx.setup.connect_port_forwarding.title": {
+    "message": "Port forwarding"
+  },
+  "mdx.setup.connect_port_forwarding.guide": {
+    "message": "Port forwarding"
+  },
+  "mdx.setup.connect_playit": {
+    "message": "{playit}: if you cannot open a port, or do not want to expose your home IP address, playit.gg can create a tunnel for you. See {guide}. That guide was written for RakNet. For NetherNet, see {status}. Ngrok does not work, since it does not support UDP."
+  },
+  "mdx.setup.connect_playit.guide": {
+    "message": "playit.gg Setup"
+  },
+  "mdx.setup.connect_playit.status": {
+    "message": "NetherNet support on playit.gg"
+  },
+  "mdx.setup.https_step_title": {
+    "message": "Recommended: Set up HTTPS for signaling"
+  },
+  "mdx.setup.https_step": {
+    "message": "Geyser's built-in signaling server uses plain HTTP by default, so Minecraft shows players a \"Trust on First Use?\" prompt the first time they join. To avoid this prompt, serve signaling over HTTPS, as explained in {httpsGuide}. Some external signaling services, such as {warden}, provide HTTPS as well."
+  },
+  "mdx.setup.https_step.guide": {
+    "message": "HTTPS for NetherNet"
+  },
+  "mdx.setup.floodgate_info": {
+    "message": "To allow Bedrock Edition players to join your server without a paid Java Edition account, you can use {floodgate}."
+  },
+  "mdx.setup.viaproxy_not_plugin.title": {
+    "message": "ViaProxy is not a plugin or mod"
+  },
+  "mdx.setup.viaproxy_not_plugin": {
+    "message": "ViaProxy is a standalone program that runs separately from your Minecraft server. Do not put the ViaProxy jar into your server's {plugins} or {mods} folder. To run Geyser as a plugin or mod on your server instead, pick your server software in the tabs above."
+  },
+  "mdx.setup.viaproxy_setup": {
+    "message": "Set up {viaProxy}."
+  },
+  "mdx.setup.viaproxy_accounts": {
+    "message": "If you use the ViaProxy GUI, you can use its account management to join online mode servers with Bedrock Edition. If you use the ViaProxy CLI and want Bedrock players to join your online mode server, install and set up {floodgate}."
+  },
+  "mdx.setup.viaproxy_auth_type": {
+    "message": "ViaProxy manages the {authType} setting itself, so its value in the config is ignored."
+  },
+  "mdx.setup.standalone_java": {
+    "message": "You need Java 21 or newer to run Geyser. To run Geyser Standalone on Android, see the end of this page."
+  },
+  "mdx.setup.standalone_not_plugin": {
+    "message": "Geyser Standalone is not a plugin or mod. It is a separate Java program that runs alongside your Java Edition server."
+  },
+  "mdx.setup.standalone_download": {
+    "message": "Download {standalone}."
+  },
+  "mdx.setup.standalone_folder": {
+    "message": "Create a new folder for Geyser, and put the jar in it."
+  },
+  "mdx.setup.standalone_start": {
+    "message": "Start Geyser Standalone:"
+  },
+  "mdx.setup.standalone_gui": {
+    "message": "{gui} (recommended): double-click the jar file. Geyser creates all the files it needs."
+  },
+  "mdx.setup.standalone_console": {
+    "message": "{console}: create a startup script, like the one you would use for a Paper server. See {startupScript} for what to put into it. Run it, and Geyser creates all the files it needs."
+  },
+  "mdx.setup.standalone_console.console": {
+    "message": "Console"
+  },
+  "mdx.setup.standalone_console.startup_script": {
+    "message": "Creating a Startup Script"
+  },
+  "mdx.setup.standalone_remote_intro": {
+    "message": "To choose which Java Edition server Geyser Standalone sends players to, find the {java} section:"
+  },
+  "mdx.setup.standalone_remote": {
+    "message": "Change {address} to the Java server's address, or leave it as it is if the server runs on the same machine as Geyser. Then change {port} to the Java server's port. Set {authType} to {floodgate} if you set up Floodgate on the Java server, otherwise to {online} for an online mode server or {offline} for an offline mode server. To use Floodgate with Geyser Standalone, see {floodgateSetup}."
+  },
+  "mdx.setup.standalone_remote.floodgate_setup": {
+    "message": "Floodgate Setup"
+  },
+  "mdx.setup.standalone_android_title": {
+    "message": "Running Geyser Standalone on Android"
+  },
+  "mdx.setup.standalone_android_caution": {
+    "message": "Apps such as Termux can run Geyser on Android, but how well this works depends on how powerful your device is. Do so at your own risk."
+  },
+  "mdx.setup.standalone_termux_install": {
+    "message": "Download and install {termux}."
+  },
+  "mdx.setup.run_command": {
+    "message": "Run {command}."
+  },
+  "mdx.setup.standalone_termux_script": {
+    "message": "Alternatively, there is an automated setup script for clean Termux installs. It might not work for everyone, so try it if the steps above do not work:"
   }
 }

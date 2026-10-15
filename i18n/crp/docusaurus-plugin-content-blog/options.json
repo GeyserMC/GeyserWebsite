@@ -1,14 +1,14 @@
 {
   "title": {
-    "message": "crwdns31990:0crwdne31990:0",
+    "message": "crwdns33380:0crwdne33380:0",
     "description": "The title for the blog used in SEO"
   },
   "description": {
-    "message": "crwdns31992:0crwdne31992:0",
+    "message": "crwdns33382:0crwdne33382:0",
     "description": "The description for the blog used in SEO"
   },
   "sidebar.title": {
-    "message": "crwdns31994:0crwdne31994:0",
+    "message": "crwdns33384:0crwdne33384:0",
     "description": "The label for the left sidebar"
   }
 }

@@ -15,6 +15,10 @@ You must be able to connect to your Geyser instance locally!
 The playit.gg Minecraft server plugin does not support UDP tunnels. You will need to use the program agent instead!
 :::
 
+:::caution
+This guide was written for RakNet, and does not cover NetherNet. For NetherNet, see [playit.gg's progress on NetherNet support](https://status.playit.gg/3/adding-nethernet-support).
+:::
+
 ## Setup {#setup}
 
 1. Head over to [playit.gg's website](https://playit.gg/) - download the program & run it.
