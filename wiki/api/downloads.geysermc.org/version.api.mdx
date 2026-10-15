@@ -1,13 +1,12 @@
 ---
 id: version
-title: Gets information about a version.
-description: Gets information about a version.
-sidebar_label: Gets information about a version.
+title: "Gets information about a version."
+description: "Gets information about a version."
+sidebar_label: "Gets information about a version."
 hide_title: true
 hide_table_of_contents: true
-api: >-
-  eJytVE1v2zAM/SsGTw2q2Gl2mi9BgA1dMWAt2m6XwBgUm4nV2ZYq0Vkz1/+9oC27KfqBotjJMimSj3xPbIDk1kG8gh1ap3Q1TXVFVhcFWkgEaINWktLVWQbxcAcEGGlliYSWYxuoZIkQg7H6BlMCAariX0k5CMjQpVYZzgIxXOcY+HuByrAitVFoQxBg8bZWFjOIydYowKU5lhLihhMRWo5eyem/5BgE0N5wRUdWVVtoBeCdLE3Bti3uHVpoxYjrEffruJaBvxXoTUCPIN+L7GgRF5LQ0f1qNv0cJsfTxdEiNhbvr34sL66+nV9P2OCdk8Vk8byLNuFazujKoeP089mMP0+Rnn8HAUwTVsReaUyh0o6l6MbxleYAoS+h154ZY5lTUn0B3+Rvlb1rzi+OeUzST7t5I+Z0jBko+d8zPKw2D0/CGRdb16rI3AE0aa3csxwIy0O7qgi3aEHARttSUm/6NIe2bQWQoi7vrx77pWeKnex+ytIpkgtU1edhWcm1rimQg8xYVyVSrrNulh01rMsYot088iN1UeNPbeTjXNT4UwsCHNrd8AhrW0AMOZFxcRRl+m9VaJmFPU9lGmq7BVYYg+p69u188TddsLw4gwNq4CSc9QM02lEpO7b8k3pPe08GMs6Y8I4iU0hVceYOdONbX8FuDqOeHAiIH1fK0D9bB4iJgFw74simWUuHP23Rtmy+rdHuIV4lAnbSKrnmVlcNZMrxOYN4IwuHz0CO7wqOLv2rnwSv76wXexpEVrHEdrKo+Q8E/MH9wZLk/fQhNG9tqg/gGWbZJq2AHGWGtptU712mKRo6iHu2bVhSo5BPv15D2z4AzkkjVQ==
-sidebar_class_name: get api-method
+api: eJytVE1v2zAM/SsGTw2q2Gl2mi9BgA1dMWAt2m6XwBgUm4nV2ZYq0Vkz1/+9oC27KfqBotjJMimSj3xPbIDk1kG8gh1ap3Q1TXVFVhcFWkgEaINWktLVWQbxcAcEGGlliYSWYxuoZIkQg7H6BlMCAariX0k5CMjQpVYZzgIxXOcY+HuByrAitVFoQxBg8bZWFjOIydYowKU5lhLihhMRWo5eyem/5BgE0N5wRUdWVVtoBeCdLE3Bti3uHVpoxYjrEffruJaBvxXoTUCPIN+L7GgRF5LQ0f1qNv0cJsfTxdEiNhbvr34sL66+nV9P2OCdk8Vk8byLNuFazujKoeP089mMP0+Rnn8HAUwTVsReaUyh0o6l6MbxleYAoS+h154ZY5lTUn0B3+Rvlb1rzi+OeUzST7t5I+Z0jBko+d8zPKw2D0/CGRdb16rI3AE0aa3csxwIy0O7qgi3aEHARttSUm/6NIe2bQWQoi7vrx77pWeKnex+ytIpkgtU1edhWcm1rimQg8xYVyVSrrNulh01rMsYot088iN1UeNPbeTjXNT4UwsCHNrd8AhrW0AMOZFxcRRl+m9VaJmFPU9lGmq7BVYYg+p69u188TddsLw4gwNq4CSc9QM02lEpO7b8k3pPe08GMs6Y8I4iU0hVceYOdONbX8FuDqOeHAiIH1fK0D9bB4iJgFw74simWUuHP23Rtmy+rdHuIV4lAnbSKrnmVlcNZMrxOYN4IwuHz0CO7wqOLv2rnwSv76wXexpEVrHEdrKo+Q8E/MH9wZLk/fQhNG9tqg/gGWbZJq2AHGWGtptU712mKRo6iHu2bVhSo5BPv15D2z4AzkkjVQ==
+sidebar_class_name: "get api-method"
 info_path: wiki/api/downloads.geysermc.org/downloads-api
 custom_edit_url: null
 crowdin_page_id: 93c4860b-a22b-4b2c-975c-2d5f388d0301
@@ -20,6 +19,7 @@ import StatusCodes from "@theme/StatusCodes";
 import OperationTabs from "@theme/OperationTabs";
 import TabItem from "@theme/TabItem";
 import Heading from "@theme/Heading";
+import Translate from "@docusaurus/Translate";
 
 <Heading
   as={"h1"}
@@ -44,27 +44,24 @@ Gets information about a version.
   id={"request"}
   as={"h2"}
   className={"openapi-tabs__heading"}
-  children={"Request"}
 >
+  <Translate id="theme.openapi.request.title">Request</Translate>
 </Heading>
 
 <ParamsDetails
-  parameters={[{"name":"project","in":"path","description":"The project identifier.","required":true,"schema":{"pattern":"[a-z]+","type":"string"},"example":"geyser"},{"name":"version","in":"path","description":"A version of the project.","required":true,"schema":{"pattern":"(?:latest|[0-9.]+-?(?:pre|SNAPSHOT)?(?:[0-9.]+)?)?","type":"string"}}]}
+  {...require("./version.ParamsDetails.json")}
 >
   
 </ParamsDetails>
 
 <RequestSchema
-  title={"Body"}
-  body={undefined}
+  {...require("./version.RequestSchema.json")}
 >
   
 </RequestSchema>
 
 <StatusCodes
-  id={undefined}
-  label={undefined}
-  responses={{"200":{"description":"OK","content":{"application/json":{"schema":{"type":"object","properties":{"project_id":{"pattern":"[a-z]+","type":"string","example":"geyser"},"project_name":{"type":"string","example":"Geyser"},"version":{"pattern":"(?:latest|[0-9.]+-?(?:pre|SNAPSHOT)?(?:[0-9.]+)?)?","type":"string","example":"2.1.0"},"builds":{"type":"array","items":{"type":"integer","format":"int32"}}},"title":"VersionResponse"}}}}}}
+  {...require("./version.StatusCodes.json")}
 >
   
 </StatusCodes>

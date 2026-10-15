@@ -34,7 +34,7 @@ export type OpenCollaborationTier = 'bronze' | 'silver' | 'gold';
 // Properties are grouped in the order the setup guide shows them.
 export type HostingProvider = {
     name: string;
-    url: string;
+    url: string | null;
     updated?: string; // When these instructions were last added or edited, as 'YYYY-MM-DD'. Shown at the top of the setup guide.
     links?: { // All optional
         article?: string; // host article for Geyser

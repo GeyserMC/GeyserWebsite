@@ -1,0 +1,1 @@
+{"responses":{"200":{"description":"OK","content":{"application/json":{"schema":{"type":"object","properties":{"projects":{"type":"array","items":{"type":"string"}}},"title":"ProjectsResponse"}}}}}}

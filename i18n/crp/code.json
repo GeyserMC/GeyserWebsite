@@ -706,7 +706,7 @@
     "message": "crwdns33168:0crwdne33168:0"
   },
   "mdx.setup.summary.supporter_configures": {
-    "message": "crwdns33170:0{name}crwdne33170:0"
+    "message": "crwdns33544:0{name}crwdne33544:0"
   },
   "mdx.setup.summary.updated": {
     "message": "crwdns33172:0{date}crwdne33172:0"
@@ -716,6 +716,9 @@
   },
   "mdx.setup.badge.silver": {
     "message": "crwdns33176:0crwdne33176:0"
+  },
+  "mdx.setup.badge.bronze": {
+    "message": "crwdns33546:0crwdne33546:0"
   },
   "mdx.setup.unconfirmed_title": {
     "message": "crwdns33178:0crwdne33178:0"
@@ -754,7 +757,7 @@
     "message": "crwdns33200:0crwdne33200:0"
   },
   "components.provider.open_collaboration_group": {
-    "message": "crwdns33202:0crwdne33202:0"
+    "message": "crwdns33548:0crwdne33548:0"
   },
   "components.provider.other_group": {
     "message": "crwdns33204:0crwdne33204:0"

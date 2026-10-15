@@ -19,7 +19,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBook, faGlobe, faHeadset } from '@fortawesome/free-solid-svg-icons';
 import { faDiscord } from '@fortawesome/free-brands-svg-icons';
 
-export const noP = (props: { children: any; }) => {
+export const noP = (props: { children?: any; }) => {
     const { children } = props;
     return children;
 }
@@ -79,11 +79,17 @@ const selfHosted: HostingProvider = {
 export const highlightedTiers: OpenCollaborationTier[] = ['gold', 'silver', 'bronze'];
 // Tiers that get an entry on the hosting page
 export const hostingPageTiers: OpenCollaborationTier[] = ['gold', 'silver'];
-export const isHighlighted = (provider: HostingProvider) => highlightedTiers.includes(provider.open_collaboration?.tier);
+export const isHighlighted = (provider: HostingProvider) => 
+    provider.open_collaboration?.tier ? highlightedTiers.includes(provider.open_collaboration.tier) : false;
 
 const byName = (a: HostingProvider, b: HostingProvider) => a.name.localeCompare(b.name);
-const byTierThenName = (a: HostingProvider, b: HostingProvider) =>
-    highlightedTiers.indexOf(a.open_collaboration.tier) - highlightedTiers.indexOf(b.open_collaboration.tier) || byName(a, b);
+const byTierThenName = (a: HostingProvider, b: HostingProvider) => {
+    const tierA = a.open_collaboration?.tier;
+    const tierB = b.open_collaboration?.tier;
+    const indexA = tierA ? highlightedTiers.indexOf(tierA) : Infinity;
+    const indexB = tierB ? highlightedTiers.indexOf(tierB) : Infinity;
+    return indexA - indexB || byName(a, b);
+};
 export const openCollaborationProviders: HostingProvider[] = providersData.filter(isHighlighted).sort(byTierThenName);
 const otherProviders: HostingProvider[] = providersData.filter(p => !isHighlighted(p)).sort(byName);
 
@@ -96,10 +102,14 @@ export const isConfirmed = (provider: HostingProvider) => provider.config.confir
 // Links to the setup guide with a provider selected
 export const providerSetupLink = (provider: HostingProvider) => `/wiki/geyser/setup/?provider=${encodeURIComponent(provider.name)}`;
 
-export const ProviderSelector = ({ setProvider }) => {
+interface ProviderSelectorProps {
+    setProvider: (provider: HostingProvider | null) => void;
+}
+
+export const ProviderSelector = ({ setProvider }: ProviderSelectorProps) => {
     const providers: HostingProvider[] = [notListed, ...openCollaborationProviders, ...otherProviders];
 
-    const [selectedProvider, setSelectedProvider] = useState<HostingProvider>(null);
+    const [selectedProvider, setSelectedProvider] = useState<HostingProvider | null>(null);
 
     const select = (name: string) => {
         const provider = providers.find(p => p.name === name) ?? null;
@@ -332,15 +342,15 @@ const tierBadges: Record<OpenCollaborationTier, React.ReactNode> = {
 const HostSummary = ({ provider }: { provider: HostingProvider }) => {
     const { i18n } = useDocusaurusContext();
     const confirmed = isConfirmed(provider);
-    const tier = isHighlighted(provider) ? provider.open_collaboration.tier : null;
+    const tier = isHighlighted(provider) ? provider.open_collaboration?.tier : null;
     const logo = useBaseUrl(provider.open_collaboration?.logo ?? '');
     // The host's own guide is the main action, so it is the filled button
     const links = [
-        provider.links?.article && { to: provider.links.article, icon: faBook, primary: true, label: <MDXTranslatable.setup.hosting_provider_article /> },
-        { to: provider.url, icon: faGlobe, label: <MDXTranslatable.setup.hosting_provider_website /> },
-        provider.links?.support && { to: provider.links.support, icon: faHeadset, label: <MDXTranslatable.setup.hosting_provider_support /> },
-        provider.links?.discord && { to: provider.links.discord, icon: faDiscord, label: <MDXTranslatable.setup.hosting_provider_discord /> },
-    ].filter(Boolean);
+        provider.links?.article ? { to: provider.links.article, icon: faBook, primary: true, label: <MDXTranslatable.setup.hosting_provider_article /> } : undefined,
+        provider.url ? { to: provider.url, icon: faGlobe, label: <MDXTranslatable.setup.hosting_provider_website /> } : undefined,
+        provider.links?.support ? { to: provider.links.support, icon: faHeadset, label: <MDXTranslatable.setup.hosting_provider_support /> } : undefined,
+        provider.links?.discord ? { to: provider.links.discord, icon: faDiscord, label: <MDXTranslatable.setup.hosting_provider_discord /> } : undefined,
+    ].filter((link): link is NonNullable<typeof link> => link !== undefined);
 
     // The provider list is crowd-sourced, so this is worded as a report rather than a guarantee
     const reported = confirmed && <MDXTranslatable.setup.summary_nethernet_reported />;
@@ -352,7 +362,7 @@ const HostSummary = ({ provider }: { provider: HostingProvider }) => {
     return (
         <div className={clsx(styles.summary, tier && styles[tier])}>
             <div className={styles.summaryRow}>
-                {tier && provider.open_collaboration.logo && (
+                {tier && provider.open_collaboration?.logo && (
                     <span className={styles.summaryLogo}><img src={logo} alt="" /></span>
                 )}
                 <strong className={styles.summaryName}>{provider.name}</strong>
@@ -378,12 +388,12 @@ const HostSummary = ({ provider }: { provider: HostingProvider }) => {
             <div className={styles.summaryLinks}>
                 {links.map(link => (
                     <Link
-                        key={link.to}
-                        to={link.to}
-                        className={clsx('button button--sm button--primary', !link.primary && 'button--outline')}
+                        key={link?.to}
+                        to={link?.to}
+                        className={clsx('button button--sm button--primary', !link?.primary && 'button--outline')}
                     >
-                        <FontAwesomeIcon icon={link.icon} fixedWidth />
-                        {link.label}
+                        <FontAwesomeIcon icon={link?.icon} fixedWidth />
+                        {link?.label}
                     </Link>
                 ))}
             </div>
@@ -497,7 +507,7 @@ const ConnectStep = ({ provider }: { provider: HostingProvider }) => (
 );
 
 // The provider picked in the setup guide
-export const SelectedProvider = createContext<HostingProvider>(null);
+export const SelectedProvider = createContext<HostingProvider | null>(null);
 
 export interface ProviderGeyserSetupProps {
     jarName: string;

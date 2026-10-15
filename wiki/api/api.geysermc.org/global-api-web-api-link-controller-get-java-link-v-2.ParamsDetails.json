@@ -1,0 +1,1 @@
+{"parameters":[{"description":"Java UUID","example":"d34eb447-6e90-4c78-9281-600df88aef1d","in":"path","name":"uuid","required":true,"schema":{"type":"string"}}]}

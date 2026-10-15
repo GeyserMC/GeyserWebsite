@@ -1,13 +1,12 @@
 ---
 id: global-api-web-api-stats-controller-get-all-stats-2
-title: Get all publicly available Global Api statistics
-description: Get all publicly available Global Api statistics
-sidebar_label: Get all publicly available Global Api statistics
+title: "Get all publicly available Global Api statistics"
+description: "Get all publicly available Global Api statistics"
+sidebar_label: "Get all publicly available Global Api statistics"
 hide_title: true
 hide_table_of_contents: true
-api: >-
-  eJydU8Fu2zAM/RWBl26A52Q5+hYMRbBzO+xQBAEtM7YaWVIlOlhg+N8H2nGbJsWA9WT5mdbje3zsQaO1JepDgqIfMvCBIrLx7mcFBWysL9Gug/lNZb4OJn9g5PTDO47eWop5TbxDa3dJcPVl9RUyCBixJaaYoHjaZhApBe8SCQOslkt5aO+YHMsRQ7BGj5yL5+SdYEk31KKcKko6miBfoYC1tSp0pTXanhQe0VgsLSlhN4mNTkIfRQObiS9E2nXBeqx2Lx11NGGXFZZczc0t12NDClvfOVZ+r9LBuKSMU9yQCpG+TZeq6dIM+BQICjCOqaYIw/AK+fKZNMOQwb/7oMSmRaZqV3XTCG57up9r1Fyj2KtzK3eTkrvrriGDvY8tMhRQkTYt2reGXdeW0m/2GR/+2wNBDFuBHi5ndl02ZFdNXFSPl2At4YIxdrC9rt4QK/w4KlOi1TqY96lpiRsvka+JxwyLFbA4rhYTRwaJ4nHKdA9dtFBAwxxSsVhgMHlNp0Sx1bmPNWRwxGiEb9yqYSt/6y4aPk0rYdzei9OzGW9dyb8U06Tje77MVzKb4BO3OAbCYUufk/jOo372nOkPL4JF48aIirD+LP8JjisRPpvc+MSC9n2JiX5FOwwCv3QUz7pm2fI2ZNAQVhRHxw50kv3VmgKP/ljZgdvlF69eZ7G5f4Rh+AsJ0582
-sidebar_class_name: get api-method
+api: eJydU8Fu2zAM/RWBl26A52Q5+hYMRbBzO+xQBAEtM7YaWVIlOlhg+N8H2nGbJsWA9WT5mdbje3zsQaO1JepDgqIfMvCBIrLx7mcFBWysL9Gug/lNZb4OJn9g5PTDO47eWop5TbxDa3dJcPVl9RUyCBixJaaYoHjaZhApBe8SCQOslkt5aO+YHMsRQ7BGj5yL5+SdYEk31KKcKko6miBfoYC1tSp0pTXanhQe0VgsLSlhN4mNTkIfRQObiS9E2nXBeqx2Lx11NGGXFZZczc0t12NDClvfOVZ+r9LBuKSMU9yQCpG+TZeq6dIM+BQICjCOqaYIw/AK+fKZNMOQwb/7oMSmRaZqV3XTCG57up9r1Fyj2KtzK3eTkrvrriGDvY8tMhRQkTYt2reGXdeW0m/2GR/+2wNBDFuBHi5ndl02ZFdNXFSPl2At4YIxdrC9rt4QK/w4KlOi1TqY96lpiRsvka+JxwyLFbA4rhYTRwaJ4nHKdA9dtFBAwxxSsVhgMHlNp0Sx1bmPNWRwxGiEb9yqYSt/6y4aPk0rYdzei9OzGW9dyb8U06Tje77MVzKb4BO3OAbCYUufk/jOo372nOkPL4JF48aIirD+LP8JjisRPpvc+MSC9n2JiX5FOwwCv3QUz7pm2fI2ZNAQVhRHxw50kv3VmgKP/ljZgdvlF69eZ7G5f4Rh+AsJ0582
+sidebar_class_name: "get api-method"
 info_path: wiki/api/api.geysermc.org/global-api
 custom_edit_url: null
 crowdin_page_id: d53b7919-26d6-41d1-84ff-17bb639b5d91
@@ -20,6 +19,7 @@ import StatusCodes from "@theme/StatusCodes";
 import OperationTabs from "@theme/OperationTabs";
 import TabItem from "@theme/TabItem";
 import Heading from "@theme/Heading";
+import Translate from "@docusaurus/Translate";
 
 <Heading
   as={"h1"}
@@ -44,27 +44,24 @@ Get all publicly available Global Api statistics
   id={"request"}
   as={"h2"}
   className={"openapi-tabs__heading"}
-  children={"Request"}
 >
+  <Translate id="theme.openapi.request.title">Request</Translate>
 </Heading>
 
 <ParamsDetails
-  parameters={[]}
+  {...require("./global-api-web-api-stats-controller-get-all-stats-2.ParamsDetails.json")}
 >
   
 </ParamsDetails>
 
 <RequestSchema
-  title={"Body"}
-  body={undefined}
+  {...require("./global-api-web-api-stats-controller-get-all-stats-2.RequestSchema.json")}
 >
   
 </RequestSchema>
 
 <StatusCodes
-  id={undefined}
-  label={undefined}
-  responses={{"200":{"content":{"application/json":{"schema":{"description":"All publicly available statistics","properties":{"pre_upload_queue":{"properties":{"length":{"description":"The amount of skins in the pre-upload queue","type":"integer"}},"type":"object"},"upload_queue":{"properties":{"estimated_duration":{"description":"Estimated duration to upload 'length' amount of skins","format":"decimal","type":"number"},"length":{"description":"The amount of skins in the upload queue","type":"integer"}},"type":"object"}},"title":"Statistics","type":"object"}}},"description":"Statistics"}}}
+  {...require("./global-api-web-api-stats-controller-get-all-stats-2.StatusCodes.json")}
 >
   
 </StatusCodes>

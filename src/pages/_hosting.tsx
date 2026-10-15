@@ -18,22 +18,24 @@ const tierNames: Partial<Record<OpenCollaborationTier, string>> = {
 };
 
 const HostCard = ({ provider }: { provider: HostingProvider }) => (
-    <div className={`${styles.card} ${styles[provider.open_collaboration.tier]}`}>
-        {provider.open_collaboration.logo && (
+    <div className={`${styles.card} ${styles[provider.open_collaboration!.tier]}`}>
+        {provider.open_collaboration!.logo && (
             <div className={styles.logoPlate}>
-                <img className={styles.logo} src={useBaseUrl(provider.open_collaboration.logo)} alt={provider.name} loading="lazy" />
+                <img className={styles.logo} src={useBaseUrl(provider.open_collaboration!.logo)} alt={provider.name} loading="lazy" />
             </div>
         )}
         <h3>{provider.name}</h3>
-        {provider.open_collaboration.description && (
+        {provider.open_collaboration!.description && (
             <div className={styles.description}>
-                <ReactMarkdown>{provider.open_collaboration.description}</ReactMarkdown>
+                <ReactMarkdown>{provider.open_collaboration!.description}</ReactMarkdown>
             </div>
         )}
         <div className={styles.links}>
-            <Link className="button button--primary" to={provider.url}>
-                <Translate id="pages.hosting.card.website">Website</Translate>
-            </Link>
+            {provider.url && (
+                <Link className="button button--primary" to={provider.url}>
+                    <Translate id="pages.hosting.card.website">Website</Translate>
+                </Link>
+            )}
             <Link className="button button--outline button--primary" to={providerSetupLink(provider)}>
                 <Translate id="pages.hosting.card.setup">Setup guide</Translate>
             </Link>
@@ -61,8 +63,8 @@ const HostingPage: React.FC = () => (
             </p>
         </section>
 
-        {openCollaborationProviders.some(p => hostingPageTiers.includes(p.open_collaboration.tier)) ? hostingPageTiers.map(tier => {
-            const hosts = openCollaborationProviders.filter(p => p.open_collaboration.tier === tier);
+        {openCollaborationProviders.some(p => hostingPageTiers.includes(p.open_collaboration!.tier)) ? hostingPageTiers.map(tier => {
+            const hosts = openCollaborationProviders.filter(p => p.open_collaboration!.tier === tier);
             return hosts.length > 0 && (
                 <section key={tier} className={styles.tier}>
                     <h2>{tierNames[tier]}</h2>

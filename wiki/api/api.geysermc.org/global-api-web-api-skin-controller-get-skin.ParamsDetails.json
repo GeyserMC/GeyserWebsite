@@ -1,0 +1,1 @@
+{"parameters":[{"description":"Bedrock xuid","example":"2535432196048835","in":"path","name":"xuid","required":true,"schema":{"type":"string"}}]}

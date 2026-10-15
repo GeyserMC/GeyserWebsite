@@ -1,13 +1,12 @@
 ---
 id: download-latest
-title: Downloads the given file from a build's data.
-description: Downloads the given file from a build's data.
-sidebar_label: Downloads the given file from a build's data.
+title: "Downloads the given file from a build's data."
+description: "Downloads the given file from a build's data."
+sidebar_label: "Downloads the given file from a build's data."
 hide_title: true
 hide_table_of_contents: true
-api: >-
-  eJylVMtu2zAQ/BVhL40R2nLTU3kxDPQVoGiDJr3UEApaWltMKZIhKTeuon8vVqZkp3m0SX0xtVxyZ2aH20AQaw98AYX5qZURxTg3OjijFDrIGBiLTgRp9GkBfEj6KAL6AAyscKLCgI7uaECLCoGDdeYSc9qXmj5FKIFBgT530tJlwOGixCTmJbJAHeRKopsAA4dXtXRYAA+uRgY+L7ESwBu6KKCj0wsx/pUdA4OwtVTRByf1GloGeC0qqyi2xq1HBy0bcG3Qear+GK55ErMSs0rCHuS/IjuacdWpc7OYjl9PsuPx7GjGrcOb80/zs/MPny9GFIibo9lodpfFAeRe8b9g7tN60MtaquIpYs7H3wjR9/F9qrYZXeSt0R49nX01PaG/2yjemVoTTjIQ6kAJwlol884/6aWnrOYAQaxilp1ZWvr9yexN5OU7Vmu5QZ2spMJk5UyViB3PFz4pRBBEt8JQmqJr/s6eoQQO6eYkjW30aRNXbRob7dMmrtq0u8+nuw6mvao+bfplCww8uk3v+Nop4FCGYD1PhwOTnfeqfGLcGkg+qVem4yxDZ849sfnZKbDBmhxeTqaTKTnZGh8q0WkWzfBUNW5pOegd8DqkVgmpqUpHoIlKLWBzQrJFrYAB37/lXi6K7l/STjFgoPqZMKhGiYN/Mwal8YFqNM1SePzqVNtS+KpGtwW+yBhshJNiSQItGiikp3UBfCWUxzt0Bp/B0Zfo8lHy8Fi5l30MCr0lgkLV9AUMfuD2YI7Re3wWmseGyTPw9Kr/B54HB8Uz4Ay9bbOWQYmiQNd1brc9z3O04eDgnWlAD2N4se/fXkDb/gZOgTrb
-sidebar_class_name: get api-method
+api: eJylVMtu2zAQ/BVhL40R2nLTU3kxDPQVoGiDJr3UEApaWltMKZIhKTeuon8vVqZkp3m0SX0xtVxyZ2aH20AQaw98AYX5qZURxTg3OjijFDrIGBiLTgRp9GkBfEj6KAL6AAyscKLCgI7uaECLCoGDdeYSc9qXmj5FKIFBgT530tJlwOGixCTmJbJAHeRKopsAA4dXtXRYAA+uRgY+L7ESwBu6KKCj0wsx/pUdA4OwtVTRByf1GloGeC0qqyi2xq1HBy0bcG3Qear+GK55ErMSs0rCHuS/IjuacdWpc7OYjl9PsuPx7GjGrcOb80/zs/MPny9GFIibo9lodpfFAeRe8b9g7tN60MtaquIpYs7H3wjR9/F9qrYZXeSt0R49nX01PaG/2yjemVoTTjIQ6kAJwlol884/6aWnrOYAQaxilp1ZWvr9yexN5OU7Vmu5QZ2spMJk5UyViB3PFz4pRBBEt8JQmqJr/s6eoQQO6eYkjW30aRNXbRob7dMmrtq0u8+nuw6mvao+bfplCww8uk3v+Nop4FCGYD1PhwOTnfeqfGLcGkg+qVem4yxDZ849sfnZKbDBmhxeTqaTKTnZGh8q0WkWzfBUNW5pOegd8DqkVgmpqUpHoIlKLWBzQrJFrYAB37/lXi6K7l/STjFgoPqZMKhGiYN/Mwal8YFqNM1SePzqVNtS+KpGtwW+yBhshJNiSQItGiikp3UBfCWUxzt0Bp/B0Zfo8lHy8Fi5l30MCr0lgkLV9AUMfuD2YI7Re3wWmseGyTPw9Kr/B54HB8Uz4Ay9bbOWQYmiQNd1brc9z3O04eDgnWlAD2N4se/fXkDb/gZOgTrb
+sidebar_class_name: "get api-method"
 info_path: wiki/api/downloads.geysermc.org/downloads-api
 custom_edit_url: null
 crowdin_page_id: a01a47e6-1905-43e4-a05b-660ed379f07c
@@ -20,6 +19,7 @@ import StatusCodes from "@theme/StatusCodes";
 import OperationTabs from "@theme/OperationTabs";
 import TabItem from "@theme/TabItem";
 import Heading from "@theme/Heading";
+import Translate from "@docusaurus/Translate";
 
 <Heading
   as={"h1"}
@@ -44,27 +44,24 @@ Downloads the given file from a build's data.
   id={"request"}
   as={"h2"}
   className={"openapi-tabs__heading"}
-  children={"Request"}
 >
+  <Translate id="theme.openapi.request.title">Request</Translate>
 </Heading>
 
 <ParamsDetails
-  parameters={[{"name":"project","in":"path","description":"The project identifier.","required":true,"schema":{"pattern":"[a-z]+","type":"string"},"example":"geyser"},{"name":"version","in":"path","description":"A version of the project.","required":true,"schema":{"pattern":"(?:latest|[0-9.]+-?(?:pre|SNAPSHOT)?(?:[0-9.]+)?)?","type":"string"}},{"name":"download","in":"path","description":"A download of the build.","required":true,"schema":{"pattern":"[a-zA-Z0-9._-]+","type":"string"}}]}
+  {...require("./download-latest.ParamsDetails.json")}
 >
   
 </ParamsDetails>
 
 <RequestSchema
-  title={"Body"}
-  body={undefined}
+  {...require("./download-latest.RequestSchema.json")}
 >
   
 </RequestSchema>
 
 <StatusCodes
-  id={undefined}
-  label={undefined}
-  responses={{"302":{"description":"Found","content":{"application/json":{"schema":{"type":"object"}}}}}}
+  {...require("./download-latest.StatusCodes.json")}
 >
   
 </StatusCodes>
