@@ -1,50 +1,38 @@
 {
-  "title": {
-    "message": "crwdns33520:0crwdne33520:0",
-    "description": "The title in the navbar"
-  },
   "logo.alt": {
-    "message": "crwdns33522:0crwdne33522:0",
+    "message": "crwdns34818:0crwdne34818:0",
     "description": "The alt text of navbar logo"
   },
   "item.label.Wiki": {
-    "message": "crwdns33524:0crwdne33524:0",
+    "message": "crwdns34820:0crwdne34820:0",
     "description": "Navbar item with label Wiki"
   },
   "item.label.Blog": {
-    "message": "crwdns33526:0crwdne33526:0",
+    "message": "crwdns34822:0crwdne34822:0",
     "description": "Navbar item with label Blog"
   },
   "item.label.Utilities": {
-    "message": "crwdns33528:0crwdne33528:0",
+    "message": "crwdns34824:0crwdne34824:0",
     "description": "Navbar item with label Utilities"
   },
   "item.label.Download": {
-    "message": "crwdns33530:0crwdne33530:0",
+    "message": "crwdns34826:0crwdne34826:0",
     "description": "Navbar item with label Download"
   },
-  "item.label.Geyser": {
-    "message": "crwdns33532:0crwdne33532:0",
-    "description": "Navbar item with label Geyser"
-  },
-  "item.label.Floodgate": {
-    "message": "crwdns33534:0crwdne33534:0",
-    "description": "Navbar item with label Floodgate"
-  },
   "item.label.REST APIs": {
-    "message": "crwdns33536:0crwdne33536:0",
+    "message": "crwdns34828:0crwdne34828:0",
     "description": "Navbar item with label REST APIs"
   },
   "item.label.Other": {
-    "message": "crwdns33538:0crwdne33538:0",
+    "message": "crwdns34830:0crwdne34830:0",
     "description": "Navbar item with label Other"
   },
   "item.label.Dump Viewer": {
-    "message": "crwdns33540:0crwdne33540:0",
+    "message": "crwdns34832:0crwdne34832:0",
     "description": "Navbar item with label Dump Viewer"
   },
   "item.label.Hosting": {
-    "message": "crwdns33542:0crwdne33542:0",
+    "message": "crwdns34834:0crwdne34834:0",
     "description": "Navbar item with label Hosting"
   }
 }
