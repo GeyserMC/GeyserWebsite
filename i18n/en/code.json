@@ -751,7 +751,7 @@
     "message": "Reported to work with NetherNet"
   },
   "mdx.setup.summary.supporter_configures": {
-    "message": "{name} installs and configures Geyser for you, including NetherNet."
+    "message": "{name} configures Geyser for you automatically, including NetherNet."
   },
   "mdx.setup.summary.updated": {
     "message": "Instructions last updated on {date}"

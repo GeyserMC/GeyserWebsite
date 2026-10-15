@@ -290,7 +290,7 @@ export const MDXTranslatable = {
 
         summary_nethernet_reported: () => <Translate id="mdx.setup.summary.nethernet_reported_generic">Reported to work with NetherNet</Translate>,
         summary_supporter_configures: ({ name }: { name: string }) => (
-            <Translate id="mdx.setup.summary.supporter_configures" values={{ name }}>{"{name} installs and configures Geyser for you, including NetherNet."}</Translate>
+            <Translate id="mdx.setup.summary.supporter_configures" values={{ name }}>{"{name} configures Geyser for you automatically, including NetherNet."}</Translate>
         ),
         summary_updated: ({ date }: { date: string }) => (
             <Translate id="mdx.setup.summary.updated" values={{ date }}>{"Instructions last updated on {date}"}</Translate>
