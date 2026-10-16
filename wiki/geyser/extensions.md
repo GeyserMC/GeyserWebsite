@@ -1,6 +1,11 @@
 ---
 title: Geyser Extensions
-description: Geyser Extensions are the equivalent of "plugins", but specifically for the Geyser platform. This brings the advantage of them being platform-agnostic, meaning that you won't have to worry about supporting all platforms individually.
+description: >-
+  Geyser Extensions are the equivalent of "plugins", but specifically for the
+  Geyser platform. This brings the advantage of them being platform-agnostic,
+  meaning that you won't have to worry about supporting all platforms
+  individually.
+crowdin_page_id: 72a25d96-4c07-49d4-a661-56d65f68188d
 ---
 
 # Geyser Extensions
@@ -112,7 +117,7 @@ Command command = Command.builder(this) // "this" is the extension's main class
         .source(CommandSource.class)
         .aliases(List.of("example", "ex"))
         .description("An example command")
-        .executableOnConsole(false) 
+        .isPlayerOnly(false) 
         .suggestedOpOnly(false)
         .permission("example.command")
         .executor((source, cmd, args) -> {

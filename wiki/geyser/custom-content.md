@@ -1,6 +1,7 @@
 ---
 title: Custom Content
 description: How to use custom content (requiring resource packs) with Geyser.
+crowdin_page_id: 13c1e818-62db-4e39-9791-f865cabae693
 ---
 
 Geyser supports mapping various custom additions to the game via resource packs and mappings, such as custom items, blocks, and skulls. See:

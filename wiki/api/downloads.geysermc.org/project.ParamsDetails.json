@@ -1,0 +1,1 @@
+{"parameters":[{"name":"project","in":"path","description":"The project identifier.","required":true,"schema":{"pattern":"[a-z]+","type":"string"},"example":"geyser"}]}

@@ -1,7 +1,13 @@
 import React from 'react';
 import styles from './styles.module.scss';
 
-const HeroBanner = ({ title, subheading, backgroundImage }) => {
+interface HeroBannerProps {
+    title: React.ReactNode;
+    subheading: React.ReactNode;
+    backgroundImage: string;
+}
+
+const HeroBanner = ({ title, subheading, backgroundImage }: HeroBannerProps) => {
     return (
         <div
             className={styles.heroBanner}

@@ -1,0 +1,1 @@
+{"parameters":[{"description":"Java texture id","example":"a90790c57e181ed13aded14c47ee2f7c8de3533e017ba957af7bdf9df1bde94f","in":"path","name":"texture_id","required":true,"schema":{"type":"string"}}]}

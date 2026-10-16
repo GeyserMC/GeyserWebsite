@@ -1,6 +1,8 @@
 ---
 title: playit.gg Setup
 description: How to set up playit.gg to use Geyser without port forwarding.
+crowdin_sync: true
+crowdin_page_id: 3aee52d0-b943-4e37-8797-4a83ef55e42a
 ---
 
 ## Prerequisites {#prerequisites}
@@ -11,6 +13,10 @@ You must be able to connect to your Geyser instance locally!
 
 :::warning
 The playit.gg Minecraft server plugin does not support UDP tunnels. You will need to use the program agent instead!
+:::
+
+:::caution
+This guide was written for RakNet, and does not cover NetherNet. For NetherNet, see [playit.gg's progress on NetherNet support](https://status.playit.gg/3/adding-nethernet-support).
 :::
 
 ## Setup {#setup}

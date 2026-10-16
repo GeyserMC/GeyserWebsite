@@ -1,0 +1,1 @@
+{"responses":{"200":{"description":"OK","content":{"application/json":{"schema":{"type":"object","properties":{"project_id":{"pattern":"[a-z]+","type":"string","example":"geyser"},"project_name":{"type":"string","example":"Geyser"},"versions":{"type":"array","items":{"type":"string"}}},"title":"ProjectResponse"}}}}}}

@@ -1,6 +1,7 @@
 ---
 title: Rainbow
 description: A tool to convert custom content to Bedrock.
+crowdin_page_id: 36ba71a2-79ae-41ba-aba7-3e95609afbec
 ---
 
 Rainbow is a client-sided Minecraft mod to convert resource packs with custom content created for Java Edition to

@@ -5,7 +5,7 @@ const useQuery = () => {
     return new URLSearchParams(useLocation().search);
 };
 
-export const Collapsibles = ({ children }) => {
+export const Collapsibles = ({ children }: { children: React.ReactNode }) => {
     return (
         <div className="collapsible">
             {children}
