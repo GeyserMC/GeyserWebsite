@@ -120,6 +120,17 @@ export const providersData: HostingProvider[] = [
         config: { preconfigured: true, port: ports.fromHost, confirmed: false }
     },
     {
+        name: 'Astrol Nodes',
+        url: 'https://astrolnodes.net/',
+        updated: '2026-10-16',
+        links: {
+            support: 'https://astrolnodes.net/en/kb',
+            discord: 'https://discord.gg/4CkBtDpTYq'
+        },
+        install: customInstallLocations.plugin_list,
+        config: { udp: 'java', confirmed: false }
+    },
+    {
         name: 'Aternos',
         url: 'https://aternos.org/',
         links: {
