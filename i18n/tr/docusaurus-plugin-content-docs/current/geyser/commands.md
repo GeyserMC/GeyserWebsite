@@ -25,6 +25,7 @@ on the proxy server to assign permissions to players. Assigning permissions on t
 |         `geyser advancements`         | `geyser.command.advancements` |                                           Open the Java advancements menu.                                           |
 |             `geyser dump`             |     `geyser.command.dump`     |                                    Dumps Geyser debug information for bug reports.                                   |
 |             `geyser list`             |     `geyser.command.list`     |                                      List all players connected through Geyser.                                      |
+|           `geyser nethernet`          |   `geyser.command.nethernet`  |                  Shows NetherNet signaling status and diagnostics, for use with external signaling.                  |
 |            `geyser offhand`           |    `geyser.command.offhand`   |                                             Puts an item in your offhand.                                            |
 |            `geyser reload`            |    `geyser.command.reload`    |                            Reloads the Geyser configurations. Kicks all players when used!                           |
 |           `geyser settings`           |   `geyser.command.settings`   |                          Opens a settings menu allowing you to modify aspects of the world.                          |
