@@ -631,9 +631,13 @@ export const providersData: HostingProvider[] = [
     },
     {
         name: 'Nodecraft',
-        url: 'https://nodecraft.com',
-        updated: '2025-10-29',
-        config: { udp: 19132, confirmed: false }
+        url: 'https://nodecraft.com/',
+        updated: '2026-10-16',
+        links: {
+            article: 'https://nodecraft.com/support/games/minecraft/setup/setting-up-geyser-and-floodgate-for-java-bedrock-crossplay',
+            support: 'https://nodecraft.com/support'
+        },
+        config: { preconfigured: true, port: ports.fromHost }
     },
     {
         name: 'NolimitHost',
