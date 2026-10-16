@@ -1,5 +1,5 @@
 import type { GeyserConfig, HostingProvider, OpenCollaborationTier, PortSource } from "@site/src/types/providers";
-import React, { createContext, useContext, useEffect, useState } from 'react';
+import React, { createContext, useContext, useEffect, useRef, useState } from 'react';
 import Translate, { translate } from "@docusaurus/Translate";
 import { providersData } from "../data/providers";
 import Admonition from '@theme/Admonition';
@@ -14,7 +14,7 @@ import clsx from 'clsx';
 import styles from './Provider.module.scss';
 import useBaseUrl from '@docusaurus/useBaseUrl';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
-import { useLocation } from '@docusaurus/router';
+import { useHistory, useLocation } from '@docusaurus/router';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBook, faGlobe, faHeadset } from '@fortawesome/free-solid-svg-icons';
 import { faDiscord } from '@fortawesome/free-brands-svg-icons';
@@ -100,7 +100,7 @@ export const isPreconfigured = (config: GeyserConfig): config is Extract<GeyserC
 export const isConfirmed = (provider: HostingProvider) => provider.config.confirmed !== false;
 
 // Links to the setup guide with a provider selected
-export const providerSetupLink = (provider: HostingProvider) => `/wiki/geyser/setup/?provider=${encodeURIComponent(provider.name)}`;
+export const providerSetupLink = (provider: HostingProvider) => `/wiki/geyser/setup/?host=provider&provider=${encodeURIComponent(provider.name)}`;
 
 interface ProviderSelectorProps {
     setProvider: (provider: HostingProvider | null) => void;
@@ -110,19 +110,61 @@ export const ProviderSelector = ({ setProvider }: ProviderSelectorProps) => {
     const providers: HostingProvider[] = [notListed, ...openCollaborationProviders, ...otherProviders];
 
     const [selectedProvider, setSelectedProvider] = useState<HostingProvider | null>(null);
+    const history = useHistory();
+    const location = useLocation();
 
     const select = (name: string) => {
-        const provider = providers.find(p => p.name === name) ?? null;
+        const provider = providers.find(p => p.name.toLowerCase() === name.toLowerCase()) ?? null;
         setSelectedProvider(provider);
         setProvider(provider);
     }
 
+    // The "Not listed" ports tab, kept while the self host tab is open so it can be restored
+    const hiddenPorts = useRef<string | null>(null);
+
+    // Keep the selected host in the URL, so the guide for a host can be linked
+    const linkProvider = (name: string | null, ports: string | null = null) => {
+        const params = new URLSearchParams(location.search);
+        // Only the "Not listed" guide uses the ports tabs
+        if (name !== notListed.name) {
+            params.delete('ports');
+        } else if (ports) {
+            params.set('ports', ports);
+        }
+        if (name === null) {
+            params.delete('provider');
+        } else {
+            params.set('host', 'provider');
+            params.set('provider', name);
+        }
+        const query = params.toString();
+        history.replace({ search: query ? `?${query}` : '', hash: location.hash });
+    }
+
+    const selectAndLink = (name: string) => {
+        select(name);
+        linkProvider(name === 'none' ? null : name);
+    }
+
     useEffect(() => {
-        const name = new URLSearchParams(window.location.search).get('provider');
+        const name = new URLSearchParams(location.search).get('provider');
         if (name) {
             select(name);
         }
     }, []);
+
+    // The host only belongs in the URL while the hosting provider tab is open
+    useEffect(() => {
+        const params = new URLSearchParams(location.search);
+        const onProviderTab = (params.get('host') ?? 'provider') === 'provider';
+        if (!onProviderTab && params.has('provider')) {
+            hiddenPorts.current = params.get('ports');
+            linkProvider(null);
+        } else if (onProviderTab && selectedProvider && !params.has('provider')) {
+            linkProvider(selectedProvider.name, hiddenPorts.current);
+            hiddenPorts.current = null;
+        }
+    }, [location.search]);
 
     const option = (provider: HostingProvider) => (
         <option key={provider.name} value={provider.name}>
@@ -132,7 +174,7 @@ export const ProviderSelector = ({ setProvider }: ProviderSelectorProps) => {
 
     return (
         <div className="host-select">
-            <select value={selectedProvider?.name ?? 'none'} onChange={event => select(event.target.value)}>
+            <select value={selectedProvider?.name ?? 'none'} onChange={event => selectAndLink(event.target.value)}>
                 <option value="none">Select a provider</option>
                 {option(notListed)}
                 {openCollaborationProviders.length > 0 && (

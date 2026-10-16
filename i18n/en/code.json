@@ -685,7 +685,7 @@
     "message": "Connect via `bedrock.minehut.com` and do `/join [servername]`, or connect directly via `[servername].bedrock.minehut.gg`."
   },
   "providers.provider.omgserv.install": {
-    "message": "Automatic Geyser install can be done in the [Install Menu](https://i.imgur.com/Gewpsrq.png). You can enable floodgate in the [server properties on the dashboard](https://i.imgur.com/jg5mzNj.png)."
+    "message": "Select Geyser in the Install Menu to install it automatically. You can enable Floodgate in the server properties on the dashboard."
   },
   "providers.provider.config.other": {
     "message": "If you did not order the server from the [cross-platform servers page](https://piglinhost.com/minecraft-java-hosting.html), contact the support for help with Geyser setup."

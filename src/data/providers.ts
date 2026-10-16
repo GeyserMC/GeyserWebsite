@@ -661,8 +661,7 @@ export const providersData: HostingProvider[] = [
         updated: '2026-07-10',
         install: translate({
             id: 'providers.provider.omgserv.install',
-            // TODO imgur? RIP the brits
-            message: "Automatic Geyser install can be done in the [Install Menu](https://i.imgur.com/Gewpsrq.png). You can enable floodgate in the [server properties on the dashboard](https://i.imgur.com/jg5mzNj.png)."
+            message: "Select Geyser in the Install Menu to install it automatically. You can enable Floodgate in the server properties on the dashboard."
         }),
         config: { preconfigured: true, port: ports.fromHost, confirmed: false },
         connect: connectionTemplates.providedByHost
@@ -695,7 +694,7 @@ export const providersData: HostingProvider[] = [
         name: 'PiglinHost',
         url: 'https://piglinhost.com/',
         updated: '2026-07-10',
-        links: { support: 'https://billing.piglinhost.com/submitticket.php', discord: 'https://discord.gg/piglinhost' },
+        links: { support: 'https://billing.piglinhost.com/submitticket.php?step=2&deptid=5', discord: 'https://discord.gg/piglinhost' },
         config: { preconfigured: true, port: ports.fromHost, confirmed: false },
         connect: connectionTemplates.providedByHost,
         notices: {
