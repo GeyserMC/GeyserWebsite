@@ -11,6 +11,24 @@ crowdin_page_id: 20df42ef-b997-4185-9408-f1188333b504
 Geyser offers a few command line arguments/system properties to allow you to configure Geyser without editing the config files.
 Additionally, you can suppress some warnings that may be printed to the console.
 
+## Environment variables {#environment-variables}
+
+Every system property on this page can also be set as an environment variable, named after the property in upper snake case.
+This helps where the start command is fixed but the environment is not, such as containers.
+
+| System property | Environment variable |
+|---|---|
+| `-DgeyserUdpPort` | `GEYSER_UDP_PORT` |
+| `-DgeyserTransport` | `GEYSER_TRANSPORT` |
+| `-DgeyserAdvertiseAddresses` | `GEYSER_ADVERTISE_ADDRESSES` |
+| `-DGeyser.ShowScoreboardLogs` | `GEYSER_SHOW_SCOREBOARD_LOGS` |
+
+When both are set, the system property is used.
+
+A value, from either one, may refer to other environment variables as `${NAME}`, which Geyser fills in.
+For example, a host that gives each container its public address in an environment variable can use the same start command for every server:
+`-DgeyserAdvertiseAddresses=${NODE_PUBLIC_IP}`. A reference to a variable that is not set is kept as written.
+
 ## Configuration system properties {#configuration-system-properties}
 
 You can set Geyser to automatically bind to a specific address and port by using the following command line arguments.   
@@ -54,6 +72,7 @@ The Geyser specific properties are prioritized over the plugin properties!
 - `-DgeyserAdvertiseAddresses=203.0.113.5,198.51.100.7`
   - A comma-separated list of public addresses that built-in signaling tells players to connect to, for servers behind a NAT or in a container without a public address. Without a port, the NetherNet (WebRTC) port is used; add one (e.g. `203.0.113.5:19133`) if players reach it on a different port number. Port forwarding is not set up for you.
   - Overrides `advertise-addresses` in the `builtin` part of the `signaling` section. For external signaling, use `advertise-addresses` in the `nxs` section of the config.
+  - Where each container receives its public address in an environment variable, refer to it: `-DgeyserAdvertiseAddresses=${NODE_PUBLIC_IP}` (see [Environment variables](#environment-variables)).
 
 
 
