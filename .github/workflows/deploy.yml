@@ -4,8 +4,6 @@ on:
   push:
     branches:
       - master
-      # Remove before merging 
-      - feature/i18n
     paths-ignore:
       - '.github/CODEOWNERS'
       - '.github/workflows/pr.yml'
