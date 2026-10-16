@@ -24,6 +24,7 @@ crwdns33558:0[crwdnd33558:0](https://luckperms.net/)crwdne33558:0 crwdns33560:0c
 |                                                 `geyser advancements`                                                 |                `geyser.command.advancements`               |                               crwdns33586:0crwdne33586:0                              |
 |                                                     `geyser dump`                                                     |                    `geyser.command.dump`                   |                               crwdns33592:0crwdne33592:0                              |
 |                                                     `geyser list`                                                     |                    `geyser.command.list`                   |                               crwdns33598:0crwdne33598:0                              |
+|                                                   `geyser nethernet`                                                  |                 `geyser.command.nethernet`                 |                               crwdns34840:0crwdne34840:0                              |
 |                                                    `geyser offhand`                                                   |                  `geyser.command.offhand`                  |                               crwdns33604:0crwdne33604:0                              |
 |                                                    `geyser reload`                                                    |                   `geyser.command.reload`                  | crwdns33610:0crwdne33610:0 crwdns33612:0crwdne33612:0 |
 |                                                   `geyser settings`                                                   |                  `geyser.command.settings`                 |                               crwdns33618:0crwdne33618:0                              |
@@ -51,7 +52,7 @@ crwdns33692:0crwdne33692:0
 | crwdns33694:0crwdne33694:0 | crwdns33696:0crwdne33696:0                                                                                                                    |
 | ---------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | `geyser.settings.server`                                   | crwdns33700:0[crwdnd33700:0](/img/wiki/game_menu.png)crwdne33700:0 crwdns33702:0crwdne33702:0 |
-| `geyser.settings.gamerules`                                | crwdns33706:0[crwdnd33706:0](/img/wiki/game_menu.png)crwdne33706:0 crwdns33708:0crwdne33708:0 |
+| `geyser.settings.gamerules`                                | crwdns33706:0[crwdnd33706:0](/img/wiki/game_menu.png)crwdne33706:0 crwdns34842:0crwdne34842:0 |
 | `geyser.update`                                            | crwdns33712:0crwdne33712:0                                                                                                                    |
 
 ## crwdns33714:0{#standalone-viaproxy-permissions}crwdne33714:0
