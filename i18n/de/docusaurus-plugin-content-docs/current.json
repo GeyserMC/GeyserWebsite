@@ -4,7 +4,7 @@
     "description": "The label for version current"
   },
   "sidebar.geyserSidebar.category.Setup": {
-    "message": "Setup",
+    "message": "Einrichtung",
     "description": "The label for category Setup in sidebar geyserSidebar"
   },
   "sidebar.geyserSidebar.category.Common Issues": {
