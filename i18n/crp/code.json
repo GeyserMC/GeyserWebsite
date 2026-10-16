@@ -639,9 +639,6 @@
   "mdx.setup.connecting_on_bedrock": {
     "message": "crwdns34516:0crwdne34516:0"
   },
-  "providers.connecting.templates.provided_by_host": {
-    "message": "crwdns34518:0crwdne34518:0"
-  },
   "providers.config.templates.java_address": {
     "message": "crwdns34520:0`address`crwdnd34520:0`bedrock`crwdne34520:0"
   },

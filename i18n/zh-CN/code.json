@@ -639,9 +639,6 @@
   "mdx.setup.connecting_on_bedrock": {
     "message": "Connecting on Bedrock"
   },
-  "providers.connecting.templates.provided_by_host": {
-    "message": "Instructions to connect with Bedrock Edition are provided by the host."
-  },
   "providers.config.templates.java_address": {
     "message": "Set `address` in the `bedrock` section to the public address of the Java server."
   },
