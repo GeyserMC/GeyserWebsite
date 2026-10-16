@@ -71,6 +71,7 @@ On macOS, certbot is the recommended way to obtain certificates from Let's Encry
 **2. Configure Geyser**
 
 Set the files in the `signaling` section of the Geyser config. With win-acme, use the `-chain.pem` and `-key.pem` files instead.
+Make sure Geyser can read these files. On Linux, certbot's files in `/etc/letsencrypt` can only be read by root, so if Geyser runs as another user, give it access to them, or copy them somewhere Geyser can read them after every renewal.
 
 ```yaml
 bedrock:
@@ -148,6 +149,7 @@ You can install Caddy by following its [installation guide](https://caddyserver.
 
 **2.2. Write the Caddyfile**
 
+Save this as `/etc/caddy/Caddyfile` on Linux, as `$(brew --prefix)/etc/Caddyfile` on macOS, or as `C:\caddy\Caddyfile` next to `caddy.exe` on Windows.
 Replace `play.example.com` with your domain:
 
 ```caddyfile title="Caddyfile"
