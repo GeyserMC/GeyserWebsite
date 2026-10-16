@@ -71,8 +71,7 @@ There are two ways to enable HTTPS signaling. You can point Geyser to a TLS cert
 and it will serve HTTPS instead of HTTP on the same port. Alternatively, you can put a reverse proxy in front of the signaling
 port and let it handle HTTPS. See our [HTTPS guide](/wiki/geyser/nethernet-https) for detailed information. 
 
-If neither option is available, you can use an external signaling service that provides HTTPS, such as Warden.
-However, using an external signaling service will require players to use a different address to connect to your server.
+If neither option is available, you can use an external signaling service that provides HTTPS, such as [Warden](https://warden.cloud).
 
 ## Checking That It Works
 
@@ -97,8 +96,8 @@ you have two options: ask your host for a separate port for Geyser that is open 
 When Geyser detects that the Java server already uses its port, it falls back to external signaling through [Warden](https://warden.cloud), 
 a free service run by Ziax, the creators of CubeCraft, and the console shows where players can join. 
 If your host has no notes in our [setup guide](/wiki/geyser/setup/), pick "Not listed": it covers both options, including keeping a single port with `clone-remote-port` and Warden. 
-Keep in mind that with this setup, players no longer join with your Java server's address, but with the address and port Geyser shows in the console. 
-Warden also takes care of HTTPS for you, so users will not see a "trust on first use" prompt.
+Keep in mind that with this setup, players no longer join with your Java server's address, but with the address and port Geyser shows in the console unless
+a custom domain is registered on [Warden](https://warden.cloud). It also takes care of HTTPS for you, so users will not see a "trust on first use" prompt.
 
 You may also notice that the "Supported hosting providers" list is gone from our website. Soon, it will be replaced with
 a list of hosts that support our work through the Open Collaboration program, and work with us to automatically configure Geyser
