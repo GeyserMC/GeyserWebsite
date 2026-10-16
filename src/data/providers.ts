@@ -729,13 +729,13 @@ export const providersData: HostingProvider[] = [
     {
         name: 'Pufferfish Host',
         url: 'https://pufferfish.host/',
-        updated: '2026-07-10',
+        updated: '2026-10-16',
         links: {
             article: 'https://docs.pufferfish.host/plugins/how-to-allow-bedrock-and-java-crossplay/',
             discord: 'https://discord.gg/reZw4vQV9H'
         },
         install: infos.installed_by_default,
-        config: { preconfigured: true, port: ports.fromHost, confirmed: false }
+        config: { preconfigured: true, port: ports.fromHost }
     },
     {
         name: 'RackGenius',
