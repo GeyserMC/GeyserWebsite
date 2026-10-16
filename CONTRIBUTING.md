@@ -18,6 +18,8 @@ Small changes can be made directly in the GitHub interface, but larger changes s
 
 ## Adding a Supported Hosting Provider
 
+If you run a hosting service, see [HOSTING_PROVIDERS.md](HOSTING_PROVIDERS.md) for what to fill in, and which pre-configured strings to use.
+
 Hosting providers are listed in `src/data/providers.ts`, in alphabetical order. The setup guide generates the Geyser config changes and connection instructions from each entry. 
 Set `updated` to the date you add or edit an entry (`'YYYY-MM-DD'`); the setup guide shows it as "Instructions last updated on". 
 See `src/types/providers.ts` for all fields. They are grouped in the order the setup guide shows them: `links` to the host's own help pages, `install` (step 1), `config` (step 2), `extra_step` (step 3), `connect` (step 4), and `notices` shown around the guide.

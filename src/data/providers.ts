@@ -1,16 +1,9 @@
 import { translate } from "@docusaurus/Translate"
 import { HostingProvider, PortSource } from "../types/providers"
 
-// See CONTRIBUTING.md for how to add or update a hosting provider.
+// See HOSTING_PROVIDERS.md for how to add or update a hosting provider.
 // Only add strings where the generated steps are not enough: the setup guide already covers downloading and placing
 // the jar, the config changes for the given ports, and what players enter to connect.
-
-const connectionTemplates = {
-    providedByHost: translate({
-        id: 'providers.connecting.templates.provided_by_host',
-        message: "Instructions to connect with Bedrock Edition are provided by the host."
-    })
-}
 
 // Ways to get a port. The setup guide adds which config option to set it as.
 const ports: Record<string, PortSource> = {
@@ -255,8 +248,7 @@ export const providersData: HostingProvider[] = [
             id: 'providers.provider.creeperhost.install',
             message: "Enable Geyser in the control panel."
         }),
-        config: { preconfigured: true, port: ports.fromHost, confirmed: false },
-        connect: connectionTemplates.providedByHost
+        config: { preconfigured: true, port: ports.fromHost, confirmed: false }
     },
     {
         name: 'Cubes Hosting',
@@ -391,12 +383,8 @@ export const providersData: HostingProvider[] = [
             article: 'https://ggservers.com/knowledgebase/article/how-to-set-up-and-use-geyser-plugin/',
             discord: 'https://discord.gg/ggservers'
         },
-        install: translate({
-            id: 'providers.provider.ggservers.install',
-            message: "Install Geyser in the auto plugin setups section."
-        }),
-        config: { preconfigured: true, port: ports.fromHost, confirmed: false },
-        connect: connectionTemplates.providedByHost
+        install: customInstallLocations.plugin_list,
+        config: { udp: ports.newPort, confirmed: false }
     },
     {
         name: 'GPortal',
@@ -493,8 +481,7 @@ export const providersData: HostingProvider[] = [
         updated: '2026-07-10',
         links: { article: "https://lilypad.gg/bedrock", discord: "https://lilypad.gg/discord" },
         install: customInstallLocations.enable_bedrock_crossplay_option,
-        config: { preconfigured: true, port: ports.fromHost, confirmed: false },
-        connect: connectionTemplates.providedByHost
+        config: { preconfigured: true, port: ports.fromHost, confirmed: false }
     },
     {
         name: 'MC-HOST24.de',
@@ -663,24 +650,18 @@ export const providersData: HostingProvider[] = [
             id: 'providers.provider.omgserv.install',
             message: "Select Geyser in the Install Menu to install it automatically. You can enable Floodgate in the server properties on the dashboard."
         }),
-        config: { preconfigured: true, port: ports.fromHost, confirmed: false },
-        connect: connectionTemplates.providedByHost
+        config: { preconfigured: true, port: ports.fromHost, confirmed: false }
     },
     {
         name: 'PaperNodes',
         url: 'https://papernodes.com/',
         updated: '2024-12-23',
-        config: {
-            udp: ports.askHost,
-            confirmed: false,
-            notes: [otherInstructions.dedicatedIp]
-        }
+        config: { udp: ports.askHost, confirmed: false }
     },
     {
         name: 'Pebblehost',
         url: 'https://pebblehost.com/',
         updated: '2024-12-23',
-        links: { article: 'https://youtu.be/v9lC80UBZF4' },
         config: { udp: ports.newPort, confirmed: false }
     },
     {
@@ -696,7 +677,6 @@ export const providersData: HostingProvider[] = [
         updated: '2026-07-10',
         links: { support: 'https://billing.piglinhost.com/submitticket.php?step=2&deptid=5', discord: 'https://discord.gg/piglinhost' },
         config: { preconfigured: true, port: ports.fromHost, confirmed: false },
-        connect: connectionTemplates.providedByHost,
         notices: {
             info: translate({
                 id: 'providers.provider.config.other',
@@ -719,8 +699,7 @@ export const providersData: HostingProvider[] = [
             discord: 'https://discord.com/invite/PmXc62p4PN'
         },
         install: customInstallLocations.enable_bedrock_crossplay_option,
-        config: { preconfigured: true, port: ports.fromHost, confirmed: false },
-        connect: connectionTemplates.providedByHost
+        config: { preconfigured: true, port: ports.fromHost, confirmed: false }
     },
     {
         name: 'PUBCS',
@@ -741,8 +720,7 @@ export const providersData: HostingProvider[] = [
             discord: 'https://discord.gg/reZw4vQV9H'
         },
         install: infos.installed_by_default,
-        config: { preconfigured: true, port: ports.fromHost, confirmed: false },
-        connect: connectionTemplates.providedByHost
+        config: { preconfigured: true, port: ports.fromHost, confirmed: false }
     },
     {
         name: 'RackGenius',
@@ -780,8 +758,16 @@ export const providersData: HostingProvider[] = [
         url: 'https://server.pro',
         updated: '2026-07-10',
         links: { support: 'https://server.pro/support', discord: 'https://server.pro/discord' },
-        // PRO and VPS plans can open more ports in the Firewall tab; Free and Premium plans fall back to "Not listed"
-        config: { udp: ports.assign, confirmed: false }
+        config: {
+            udp: ports.assign,
+            confirmed: false,
+            notes: [
+                translate({
+                    id: 'providers.provider.server.pro.config.plans',
+                    message: "Only PRO and VPS plans can open additional ports, in the Firewall tab. On other plans, contact the host for help."
+                })
+            ]
+        }
     },
     {
         name: 'ServerPrism',
@@ -828,11 +814,10 @@ export const providersData: HostingProvider[] = [
         url: 'https://www.srkhost.eu/',
         updated: '2025-03-22',
         install: translate({
-            id: 'providers.provider.srkhost.install',
-            message: "Enable Geyser on the version changer page. Geyser will run on the given port by the host."
+            id: 'providers.provider.srkhost.enable',
+            message: "Enable Geyser on the version changer page."
         }),
-        config: { preconfigured: true, port: ports.fromHost, confirmed: false },
-        connect: connectionTemplates.providedByHost
+        config: { preconfigured: true, port: ports.fromHost, confirmed: false }
     },
     {
         name: 'STIPE',
@@ -877,8 +862,8 @@ export const providersData: HostingProvider[] = [
             discord: 'https://discord.com/invite/NWv4KyQDzg'
         },
         install: translate({
-            id: 'providers.provider.vemox_hosting.description',
-            message: "Full automatic installation. Open the panel options and select the option to enable GeyserMC."
+            id: 'providers.provider.vemox_hosting.install',
+            message: "Open the panel options and select the option to enable GeyserMC."
         }),
         config: { udp: ports.newPort, confirmed: false }
     },
@@ -893,11 +878,7 @@ export const providersData: HostingProvider[] = [
         url: 'https://www.volthosting.co.uk/',
         updated: '2025-10-29',
         links: { support: 'https://volthosting.co.uk/contact.html' },
-        config: {
-            udp: ports.askHost,
-            confirmed: false,
-            notes: [otherInstructions.dedicatedIp]
-        }
+        config: { udp: ports.askHost, confirmed: false }
     },
     {
         name: 'Vultam',
@@ -923,11 +904,7 @@ export const providersData: HostingProvider[] = [
         name: 'WinterNode',
         url: 'https://winternode.com',
         updated: '2025-10-29',
-        config: {
-            udp: ports.askHost,
-            confirmed: false,
-            notes: [otherInstructions.dedicatedIp]
-        }
+        config: { udp: ports.askHost, confirmed: false }
     },
     {
         name: 'WiseHosting',
@@ -942,8 +919,7 @@ export const providersData: HostingProvider[] = [
             id: 'providers.provider.wisehosting.install',
             message: "Install the GeyserMC preset from the `Addons` tab in the Game Panel, then restart your server."
         }),
-        config: { preconfigured: true, port: ports.fromHost, confirmed: false },
-        connect: connectionTemplates.providedByHost
+        config: { udp: ports.newPort, confirmed: false }
     },
     {
         name: 'WitherHosting',
