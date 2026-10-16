@@ -21,13 +21,13 @@ or the [Public GeyserConnect](https://www.geyserconnect.net) which allows connec
 
 :::
 
-## Xbox One {#xbox-one}
+## Xbox One {/* #xbox-one */}
 
 (Video linked below)
 
 [![Xbox One BedrockConnect](https://img.youtube.com/vi/g8mHvasVHMs/0.jpg)](https://www.youtube.com/watch?v=g8mHvasVHMs)
 
-## Nintendo Switch {#nintendo-switch}
+## Nintendo Switch {/* #nintendo-switch */}
 
 (Video linked below)
 
@@ -44,7 +44,7 @@ Text directions:
 8.  Select "Secondary DNS" with the A Button, and then hold down the B Button to delete the existing DNS.
 9.  Enter a secondary DNS. Google's or Cloudfare's IP (8.8.8.8 or 1.1.1.1) are recommended.
 
-## PlayStation 4 {#playstation-4}
+## PlayStation 4 {/* #playstation-4 */}
 
 1. Go to your PS4 Home screen.
 2. Go to Settings.
@@ -57,13 +57,13 @@ Text directions:
 9. Under DNS Settings, select Manual.
 10. Enter the BedrockConnect IP for the preferred Primary DNS (Multiple options depending on region can be found on the [BedrockConnect GitHub Page](https://github.com/Pugmatt/BedrockConnect)) and something like Google or Cloudflare's IP for the Secondary DNS (8.8.8.8 or 1.1.1.1).
 
-## Alternative Methods {#alternative-methods}
+## Alternative Methods {/* #alternative-methods */}
 
 If you'd rather try emulating a LAN game on your network on another device, here's how you'd do that.
 
-### MultiPlatform {#multiplatform}
+### MultiPlatform {/* #multiplatform */}
 
-#### MCCompanion — free and ad-free.
+#### MCCompanion — free and ad-free. {/* #mccompanion--free-and-ad-free */}
 
 - iOS (iOS 12.0 or later): [Download on the App Store](https://apps.apple.com/be/app/netherlink/id6747323142?l=en)  
 - Android: [Download on the Play Store](https://play.google.com/store/apps/details?id=net.netherdev.netherLink)  
@@ -71,16 +71,16 @@ If you'd rather try emulating a LAN game on your network on another device, here
 - Windows: [Download on the Microsoft Store](https://apps.microsoft.com/detail/9NSFPT6D8PTR)
 
 
-### Using a PC {#using-a-pc}
+### Using a PC {/* #using-a-pc */}
 *Note that this method will not work with the Nintendo Switch.*
 - [Phantom](https://github.com/jhead/phantom).
 
-### Using an Android Device {#using-an-android-device}
+### Using an Android Device {/* #using-an-android-device */}
 If you have an Android device, you have several options:
 - [BedrockTogether](https://play.google.com/store/apps/details?id=pl.extollite.bedrocktogetherapp)
 - [MC Lan Proxy (Trial)](https://play.google.com/store/apps/details?id=com.luzenna.mineproxydroidtrial)
 - [MC Lan Proxy (Paid)](https://play.google.com/store/apps/details?id=com.luzenna.mineproxydroid)
 - [MC Server Connector](https://play.google.com/store/apps/details?id=com.smokiem.mcserverconnector)
 
-### Using an iOS device {#using-an-ios-device}
+### Using an iOS device {/* #using-an-ios-device */}
 If you have an iOS 14+ device, you can use [BedrockTogether](https://apps.apple.com/app/bedrocktogether/id1534593376).

@@ -13,7 +13,7 @@ This is a community-compiled list and does not indicate any endorsement from Gey
 
 :::
 
-### AntiCheat compatibility reports {#anticheat-compatibility-reports}
+### AntiCheat compatibility reports {/* #anticheat-compatibility-reports */}
 
 Full Compatibility (Checks Bedrock Players Accurately)
 

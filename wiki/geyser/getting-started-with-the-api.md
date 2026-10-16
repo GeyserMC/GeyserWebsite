@@ -24,7 +24,7 @@ repositories {
 }
 ```
 
-## Using Geyser {#using-geyser}
+## Using Geyser {/* #using-geyser */}
 
 Add Geyser's API codebase as a dependency:
 
@@ -57,7 +57,7 @@ GeyserConnection connection = GeyserApi.api().connectionByUuid(uuid);
 
 For more information on the Geyser API, see [here](/wiki/geyser/api/).
 
-## Using Floodgate {#using-floodgate}
+## Using Floodgate {/* #using-floodgate */}
 This page has a very simple primer for the Floodgate API. For a full breakdown, see [here](/wiki/floodgate/api/).
 
 Add Floodgate's API as a dependency:

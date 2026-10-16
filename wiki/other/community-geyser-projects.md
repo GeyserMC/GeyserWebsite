@@ -17,7 +17,7 @@ Please check the linked pages for their support systems.
 
 If you wish to add your own plugin to this list, please reach out in the #development channel of Geyser first!
 
-## BedrockFormShop {#bedrockformshop}
+## BedrockFormShop {/* #bedrockformshop */}
 
 A Spigot shop plugin that uses Bedrock forms.
 
@@ -25,21 +25,21 @@ A Spigot shop plugin that uses Bedrock forms.
 
 Creator: [KejonaMC](https://github.com/kejonaMC)
 
-## Bedrock Player Manager for Floodgate {#bedrock-player-manager-for-floodgate}
+## Bedrock Player Manager for Floodgate {/* #bedrock-player-manager-for-floodgate */}
 A Spigot plugin that is able to run certain commands when a Bedrock player joins, or have Bedrock players able to bypass the anticheat, etc. 
 
 - [Spigot page](https://www.spigotmc.org/resources/82278/)
 
 Creator: ofunny
 
-## BedrockSkinUtility {#bedrockskinutility}
+## BedrockSkinUtility {/* #bedrockskinutility */}
 This is a Fabric mod that allows you to view Bedrock capes from Java.
 
 - [GitHub](https://github.com/Camotoy/BedrockSkinUtility)
 
 Creator: [Camotoy](https://github.com/Camotoy)
 
-## CreeperNation Skin API {#creepernation-skin-api}
+## CreeperNation Skin API {/* #creepernation-skin-api */}
 
 A SkinAPI that displays Java or Bedrock skins based on the UUID or username.
 
@@ -47,14 +47,14 @@ A SkinAPI that displays Java or Bedrock skins based on the UUID or username.
 
 Creators: [creeperz653](https://github.com/creeperz653), [BlueTree242](https://github.com/BlueTree242)
 
-## CrossplatForms {#crossplatforms}
+## CrossplatForms {/* #crossplatforms */}
 A Spigot, BungeeCord, and Velocity plugin to create custom Bedrock Edition forms and inventory menus through configurations.
 - [Spigot page](https://www.spigotmc.org/resources/101043/)
 - [GitHub](https://github.com/kejonaMC/CrossplatForms)
 
 Creators: [Konicai](https://github.com/Konicai), [Jens](https://github.com/Jens-Co)
 
-## CustomCommandPrefix {#customcommandprefix}
+## CustomCommandPrefix {/* #customcommandprefix */}
 A Spigot plugin that allows users to enter commands starting with `.`, to work around Xbox achievements being disabled.
 
 - [Spigot page](https://www.spigotmc.org/resources/87224/)
@@ -62,7 +62,7 @@ A Spigot plugin that allows users to enter commands starting with `.`, to work a
 
 Creator: [Chew](https://github.com/Chew)
 
-## Emotecraft {#emotecraft}
+## Emotecraft {/* #emotecraft */}
 A mod (NeoForge, Fabric), plugin (Paper), and Geyser extension that allows Java players to view Bedrock emotes, and for both Java and Bedrock players to be able to play custom emotes.
 
 :::note
@@ -81,7 +81,7 @@ You need both the extension, and the mod or plugin for your server.
 
 Creators: [dima_dencep](https://github.com/dima-dencep), [Zigy](https://github.com/ZigyTheBird), [KosmX](https://github.com/KosmX)
 
-## FloodgatePlaceholders {#floodgateplaceholders}
+## FloodgatePlaceholders {/* #floodgateplaceholders */}
 Placeholders support for Floodgate.
 
 - [GitHub](https://github.com/rtm516/FloodgatePlaceholders)
@@ -89,21 +89,21 @@ Placeholders support for Floodgate.
 
 Creator: [rtm516](https://github.com/rtm516)
 
-## Floodgate-Skript {#floodgate-skript}
+## Floodgate-Skript {/* #floodgate-skript */}
 Floodgate support for Skript.
 
 - [GitHub](https://github.com/kejonaMC/floodgate-skript)
 
 Creator: [Camotoy](https://github.com/Camotoy)
 
-## GeyserBlockJavaPlayers {#geyserblockjavaplayers}
+## GeyserBlockJavaPlayers {/* #geyserblockjavaplayers */}
 Plugin that blocks Java players from joining your Geyser server, so you can have a Bedrock only server that can use Spigot plugins.
 
 - [GitHub](https://github.com/kejonaMC/GeyserBlockJavaPlayers)
 
 Creator: [Camotoy](https://github.com/Camotoy)
 
-## GeyserExtras {#geyserextras}
+## GeyserExtras {/* #geyserextras */}
 A Geyser extension / plugin which attempts to unify features for Bedrock Edition players, including features like a cleaner looking combat cooldown, combat sounds and other helpful features and workarounds.
 
 - [Modrinth](https://modrinth.com/plugin/geyserextras)
@@ -112,20 +112,20 @@ A Geyser extension / plugin which attempts to unify features for Bedrock Edition
 
 Creator: [LetsGoAway](https://github.com/letsgoawaydev)
 
-## GeyserPreventServerSwitch {#geyserpreventserverswitch}
+## GeyserPreventServerSwitch {/* #geyserpreventserverswitch */}
 Prevent Bedrock players from joining specific sub-servers on a proxy
 
 - [GitHub](https://github.com/kejonaMC/GeyserPreventServerSwitch)
 
 Creator: [Camotoy](https://github.com/Camotoy)
 
-## GeyserSkinManager {#geyserskinmanager}
+## GeyserSkinManager {/* #geyserskinmanager */}
 Spigot and Bungee plugin to make Bedrock skins work; requires Geyser to be installed on the server.
 - [GitHub](https://github.com/Camotoy/GeyserSkinManager)
 
 Creator: [Camotoy](https://github.com/Camotoy)
 
-## GeyserUpdater {#geyserupdater}
+## GeyserUpdater {/* #geyserupdater */}
 This is a Spigot/BungeeCord/Velocity plugin that can be used to automatically update Geyser.
 
 - [GitHub](https://github.com/kejonaMC/GeyserUpdater)
@@ -133,7 +133,7 @@ This is a Spigot/BungeeCord/Velocity plugin that can be used to automatically up
 
 Creators: [Jens](https://github.com/Jens-Co), [YHDiamond](https://github.com/YHDiamond), [Konicai](https://github.com/Konicai)
 
-## Junction {#junction}
+## Junction {/* #junction */}
 A modern Geyser and Floodgate management solution for Paper, Purpur, and Folia servers. It automates Bedrock player management by executing platform-specific commands and handling LuckPerms or Vault group assignments.
 
 * [Modrinth](https://modrinth.com/plugin/junction)
@@ -143,13 +143,13 @@ A modern Geyser and Floodgate management solution for Paper, Purpur, and Folia s
 
 Creator: [muhdfdeen](https://github.com/muhdfdeen)
 
-## SleepingServerStarter {#sleepingserverstarter}
+## SleepingServerStarter {/* #sleepingserverstarter */}
 Small application that waits for a player to connect before launching actual minecraft server.
 - [GitHub](https://github.com/vincss/mcsleepingserverstarter)
 
 Creator: [Vincss](https://github.com/vincss)
 
-## Starlight Skin API {#starlight-skin-api}
+## Starlight Skin API {/* #starlight-skin-api */}
 An API that makes it easier for Bedrock Skins to be outputted. 
 * [Website](https://lunareclipse.studio/creations/starlight-skinapi)
 
