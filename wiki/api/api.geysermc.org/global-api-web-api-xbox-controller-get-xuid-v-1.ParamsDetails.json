@@ -1,0 +1,1 @@
+{"parameters":[{"description":"The gamertag of the Bedrock player","in":"path","name":"gamertag","required":true,"schema":{"type":"string"}}]}

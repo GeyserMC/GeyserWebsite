@@ -1,0 +1,1 @@
+{"parameters":[{"description":"The username of the Minecraft player","examples":{"bedrock":{"value":".Tim203"},"java":{"value":"Tim203"}},"in":"path","name":"username","required":true,"schema":{"type":"string"}},{"description":"The prefix used in your Floodgate config","example":".","in":"query","name":"prefix","required":true,"schema":{"type":"string"}}]}

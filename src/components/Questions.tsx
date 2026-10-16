@@ -1,6 +1,6 @@
 import React, { useEffect, useRef, useState } from 'react';
 
-export const Questions = ({ children }) => {
+export const Questions = ({ children }: { children: React.ReactNode }) => {
     return (
         <div className="questions">
             {children}
@@ -8,9 +8,9 @@ export const Questions = ({ children }) => {
     );
 };
 
-export const Q = ({ children }) => {
+export const Q = ({ children }: { children: React.ReactNode }) => {
     const [isAnswerVisible, setIsAnswerVisible] = useState(false);
-    const answerRef = useRef(null);
+    const answerRef = useRef<HTMLDivElement>(null);
     const [answerHeight, setAnswerHeight] = useState(0);
 
     useEffect(() => {
@@ -19,8 +19,9 @@ export const Q = ({ children }) => {
         }
     }, [isAnswerVisible]);
 
-    const questionText = children[0];
-    const answerComponent = React.Children.toArray(children)[1];
+    const childArray = React.Children.toArray(children);
+    const questionText = childArray[0];
+    const answerComponent = childArray[1];
 
     const arrowClass = isAnswerVisible ? 'collapsible-arrow expanded' : 'collapsible-arrow';
 
@@ -38,7 +39,7 @@ export const Q = ({ children }) => {
     );
 };
 
-export const A = ({ children }) => {
+export const A = ({ children }: { children: React.ReactNode }) => {
     return (
         <div className="answer">
             {children}

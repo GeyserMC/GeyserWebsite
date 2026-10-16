@@ -1,6 +1,8 @@
 ---
 title: Commands and Permissions
 description: Commands and their associated permission nodes for Geyser.
+crowdin_sync: true
+crowdin_page_id: cd92ff4f-9105-46a2-8696-8b0e2f8b9d31
 ---
 
 # Commands and Permissions
@@ -9,7 +11,7 @@ Geyser features many built-in commands that can be used by players or server own
 
 :::info
 
-When using BungeeCord and Velocity, you will need to use a permission plugin such as <a href="https://luckperms.net/">LuckPerms</a>
+When using BungeeCord and Velocity, you will need to use a permission plugin such as [LuckPerms](https://luckperms.net/)
 on the proxy server to assign permissions to players. Assigning permissions on the backend servers will not work.
 
 :::
@@ -23,6 +25,7 @@ on the proxy server to assign permissions to players. Assigning permissions on t
 |         `geyser advancements`         | `geyser.command.advancements` |                                   Open the Java advancements menu.                                   |
 |             `geyser dump`             |     `geyser.command.dump`     |                           Dumps Geyser debug information for bug reports.                            |
 |             `geyser list`             |     `geyser.command.list`     |                              List all players connected through Geyser.                              |
+|          `geyser nethernet`           |  `geyser.command.nethernet`   |          Shows NetherNet signaling status and diagnostics, for use with external signaling.          |
 |           `geyser offhand`            |   `geyser.command.offhand`    |                                    Puts an item in your offhand.                                     |
 |            `geyser reload`            |    `geyser.command.reload`    |                   Reloads the Geyser configurations. Kicks all players when used!                    |
 |           `geyser settings`           |   `geyser.command.settings`   |                  Opens a settings menu allowing you to modify aspects of the world.                  |

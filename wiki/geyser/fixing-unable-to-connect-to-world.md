@@ -1,6 +1,7 @@
 ---
 title: Fixing 'Unable to Connect to World'
 description: Common issues and solutions for the 'Unable to Connect to World' error.
+crowdin_page_id: e55f0045-e209-470e-8b24-222418e46756
 ---
 
 ## Fixing 'Unable to Connect to World' errors {#fixing-unable-to-connect-to-world-errors}
@@ -52,7 +53,7 @@ You should be connecting with the Java server IP and the Bedrock port (set in th
 
 ### I'm using a hosting provider or VPS! {#im-using-a-hosting-provider-or-vps}
 
-Please read [this page on supported hosting providers](/wiki/geyser/supported-hosting-providers/) to see if there are extra configuration steps required for your hosting or server provider.
+Please select your hosting provider in the [setup guide](/wiki/geyser/setup/) to see if there are extra configuration steps required for your hosting or server provider.
 Some VPS/KVM providers may require further setup, such as OVH, SoYouStart, and Oracle Cloud. Please read this [note](/wiki/geyser/port-forwarding#issues-with-specific-vpskvm-providers) for more information.
 
 ### Issues using Docker or Pterodactyl {#issues-using-docker-or-pterodactyl}

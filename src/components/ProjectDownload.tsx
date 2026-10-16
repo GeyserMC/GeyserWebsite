@@ -135,7 +135,7 @@ export const ProjectDownload: React.FC<ProjectDownloadProps> = ({ projectId, des
     );
 };
 
-function LinkedCommitMessage({ message, repo }) {
+function LinkedCommitMessage({ message, repo }: { message: string, repo: string }) {
     const regex = /#(\d+)/g;
     const parts = message.split(/(#\d+)/).filter((part: string) => part);
 

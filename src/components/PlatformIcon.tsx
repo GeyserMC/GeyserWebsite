@@ -1,6 +1,14 @@
 import React from 'react';
 
-const PlatformIcon = ({ img = null, svg: SvgComponent = null, text="", width = '20px', height = '20px' }) => {
+type PlatformIconProps = {
+    img?: string | null;
+    svg?: React.ComponentType<React.SVGProps<SVGSVGElement>> | null;
+    text: string;
+    width?: string;
+    height?: string;
+};
+
+const PlatformIcon = ({ img = null, svg: SvgComponent = null, text="", width = '20px', height = '20px' }: PlatformIconProps) => {
     return (
         img != null ?
             <>

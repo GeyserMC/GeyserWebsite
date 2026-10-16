@@ -15,11 +15,44 @@ const config: Config = {
     projectName: 'GeyserWebsite',
 
     onBrokenLinks: 'throw',
-    onBrokenMarkdownLinks: 'warn',
 
     i18n: {
         defaultLocale: 'en',
-        locales: ['en'],
+        locales: ['en', 'ar','crp', 'cs', 'de', 'fr', 'it', 'ja', 'ru', 'tr', 'uk', 'zh-CN'],
+        localeConfigs: {
+            crp: {
+                label: 'Crowdin',
+                direction: 'ltr',
+                htmlLang: 'crp',
+                calendar: 'gregory',
+                path: 'crp',
+            }
+        }
+    },
+
+    markdown: {
+        mermaid: true,
+        hooks: {
+            onBrokenMarkdownLinks: 'warn'
+        },
+        ...(process.env.DOCUSAURUS_CURRENT_LOCALE === 'crp' ? {
+        preprocessor: ({ fileContent }) => {
+            const lines = fileContent.split('\n');
+
+            for (let i = 0; i < lines.length; i++) {
+                if (lines[i].startsWith('#')) {
+                    const lastOpenCurly = lines[i].lastIndexOf('{');
+                    const lastCloseCurly = lines[i].lastIndexOf('}');
+                    if (lastCloseCurly !== -1 && lastOpenCurly !== -1 && lastCloseCurly > lastOpenCurly) {
+                        const curly = lines[i].substring(lastOpenCurly, lastCloseCurly + 1);
+                        lines[i] = lines[i].replace(curly, '').replace('\\', '') + ' ' + curly;
+                    }
+                }
+            }
+
+            return lines.join('\n');
+        }
+        } : {})
     },
 
     presets: [
@@ -80,9 +113,58 @@ const config: Config = {
         ],
         'docusaurus-plugin-sass',
         './src/plugins/create-versions-json.ts',
-        './src/plugins/create-providers-json.ts'
+        [
+            './src/plugins/crowdin-sync.ts',
+            {
+                projectId: 11,
+                markdownFolders: [
+                    { path: 'wiki', destination: 'docusaurus-plugin-content-docs/current' },
+                    { path: 'blog', destination: 'docusaurus-plugin-content-blog' },
+                ],
+                jsonKeyExclusions: [ 
+                    'providers.provider.', 
+                    'sidebar.apiSidebar.',
+                    'link.item.label.Geyser',
+                    'link.item.label.Floodgate',
+                    'link.item.label.Crowdin',
+                    'link.item.label.Discord',
+                    'link.item.label.GitHub',
+                    'link.item.label.Reddit',
+                    'link.item.label.Twitter',
+                    'title',
+                    'item.label.Geyser',
+                    'item.label.Floodgate'
+                ]
+            }
+        ],
+        './src/plugins/output-locales.ts',
+        './src/plugins/modify-webpack.ts',
     ],
-    themes: ["docusaurus-theme-openapi-docs"],
+    themes: ["docusaurus-theme-openapi-docs", "@docusaurus/theme-mermaid"],
+
+    headTags: process.env.DOCUSAURUS_CURRENT_LOCALE === 'crp' ? [
+        {
+            tagName: 'script',
+            attributes: {
+              type: 'text/javascript',
+            },
+            innerHTML: `
+                var _jipt = [];
+                _jipt.push(['project', '88ac5ea17501f26d48048e17e149fee3']);
+                _jipt.push(['domain', 'geysermc']);
+                _jipt.push(['before_dom_insert', function(text, node, attribute) {
+                    return text.replace(/.?\{#[^}]+\}/g, '');
+                }]);
+            `
+        },
+        {
+            tagName: 'script',
+            attributes: {
+              type: 'text/javascript',
+              src: '//cdn.crowdin.com/jipt/jipt.js'
+            }
+        }
+    ] : [],
 
     themeConfig: {
         image: 'img/site/geyser.png',
@@ -147,6 +229,13 @@ const config: Config = {
                     position: 'left',
                     className: 'header-download-link'
                 },
+                // TODO: hidden until the hosting page launches
+                // {
+                //     to: 'hosting',
+                //     label: 'Hosting',
+                //     position: 'left',
+                //     className: 'header-hosting-link'
+                // },
                 { // Name on mobile sidebar specified in custom.scss
                     href: 'https://github.com/GeyserMC/Geyser',
                     position: 'right',
@@ -157,10 +246,10 @@ const config: Config = {
                     position: 'right',
                     className: 'header-discord-link'
                 },
-                // {
-                //     type: 'localeDropdown',
-                //     position: 'right',
-                // },
+                {
+                    type: 'localeDropdown',
+                    position: 'right',
+                },
             ],
         },
         footer: {
