@@ -120,6 +120,17 @@ export const providersData: HostingProvider[] = [
         config: { preconfigured: true, port: ports.fromHost, confirmed: false }
     },
     {
+        name: 'Astrol Nodes',
+        url: 'https://astrolnodes.net/',
+        updated: '2026-10-16',
+        links: {
+            support: 'https://astrolnodes.net/en/kb',
+            discord: 'https://discord.gg/4CkBtDpTYq'
+        },
+        install: customInstallLocations.plugin_list,
+        config: { udp: 'java', confirmed: false }
+    },
+    {
         name: 'Aternos',
         url: 'https://aternos.org/',
         links: {
@@ -631,9 +642,13 @@ export const providersData: HostingProvider[] = [
     },
     {
         name: 'Nodecraft',
-        url: 'https://nodecraft.com',
-        updated: '2025-10-29',
-        config: { udp: 19132, confirmed: false }
+        url: 'https://nodecraft.com/',
+        updated: '2026-10-16',
+        links: {
+            article: 'https://nodecraft.com/support/games/minecraft/setup/setting-up-geyser-and-floodgate-for-java-bedrock-crossplay',
+            support: 'https://nodecraft.com/support'
+        },
+        config: { preconfigured: true, port: ports.fromHost }
     },
     {
         name: 'NolimitHost',
