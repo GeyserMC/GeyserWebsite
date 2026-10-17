@@ -267,12 +267,6 @@ const uploadAction = async (inp: {
                 break;
 
             case '.md':
-                fileOptions.type = 'md';
-                fileOptions.importOptions = markdownOptions.importOptions;
-                fileOptions.exportOptions = markdownOptions.exportOptions;
-                content = fs.readFileSync(filePath, 'utf8');
-                break;
-
             case '.mdx':
                 fileOptions.type = 'mdx_v2' as SourceFilesModel.FileType;
                 fileOptions.importOptions = markdownOptions.importOptions;
