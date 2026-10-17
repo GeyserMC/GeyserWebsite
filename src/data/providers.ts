@@ -674,10 +674,22 @@ export const providersData: HostingProvider[] = [
         config: { udp: ports.askHost, confirmed: false }
     },
     {
-        name: 'Pebblehost',
+        name: 'PebbleHost',
         url: 'https://pebblehost.com/',
-        updated: '2024-12-23',
-        config: { udp: ports.newPort, confirmed: false }
+        updated: '2026-10-17',
+        links: {
+            article: 'https://help.pebblehost.com/en/minecraft/how-to-install-geyser-and-floodgate-onto-your-minecraft-server',
+            discord: 'https://pebblehost.com/r/discord'
+        },
+        config: {
+            udp: ports.assign,
+            notes: [
+                translate({
+                    id: 'providers.provider.pebblehost.config.other',
+                    message: "Servers with a Dedicated IP (port 25565) can use port 19132 instead of needing to add an additional port. All ports are UDP and TCP enabled by default."
+                })
+            ]
+        }
     },
     {
         name: 'Physgun',
@@ -729,13 +741,13 @@ export const providersData: HostingProvider[] = [
     {
         name: 'Pufferfish Host',
         url: 'https://pufferfish.host/',
-        updated: '2026-07-10',
+        updated: '2026-10-16',
         links: {
             article: 'https://docs.pufferfish.host/plugins/how-to-allow-bedrock-and-java-crossplay/',
             discord: 'https://discord.gg/reZw4vQV9H'
         },
         install: infos.installed_by_default,
-        config: { preconfigured: true, port: ports.fromHost, confirmed: false }
+        config: { preconfigured: true, port: ports.fromHost }
     },
     {
         name: 'RackGenius',
