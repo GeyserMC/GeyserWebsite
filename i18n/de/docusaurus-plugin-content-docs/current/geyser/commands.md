@@ -40,11 +40,11 @@ on the proxy server to assign permissions to players. Assigning permissions on t
 
 ## Permissions for Geyser extensions {/* #extension-permissions */}
 
-For the following, `\<id>` refers to the extensions' id.
+For the following, `<id>` refers to the extensions' id.
 
 | Command                                                         | Permission                                      | Description                                               |
 | :-------------------------------------------------------------- | :---------------------------------------------- | :-------------------------------------------------------- |
-| `\<id> help` <br /> `\<id> ?` | `geyser.command.exthelp.\<id>` | Shows help for all commands registered by this extension. |
+| `<id> help` <br /> `<id> ?` | `geyser.command.exthelp.<id>` | Shows help for all commands registered by this extension. |
 
 ## Other Permissions {/* #other-permissions */}
 
