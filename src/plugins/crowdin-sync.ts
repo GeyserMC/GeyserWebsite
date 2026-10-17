@@ -144,6 +144,7 @@ const uploadAction = async (inp: {
         importOptions: {
             excludedFrontMatterElements: ['permalink', 'page_sidebar', 'hide_title', 'crowdin_page_id', 'crowdin_sync'],
             excludeCodeBlocks: true,
+            contentSegmentation: false,
         },
         exportOptions: {
             strongMarker: 'asterisk',
