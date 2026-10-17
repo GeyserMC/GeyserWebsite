@@ -1,38 +1,34 @@
 {
   "logo.alt": {
-    "message": "crwdns34818:0crwdne34818:0",
+    "message": "crwdns36158:0crwdne36158:0",
     "description": "The alt text of navbar logo"
   },
   "item.label.Wiki": {
-    "message": "crwdns34820:0crwdne34820:0",
+    "message": "crwdns36160:0crwdne36160:0",
     "description": "Navbar item with label Wiki"
   },
   "item.label.Blog": {
-    "message": "crwdns34822:0crwdne34822:0",
+    "message": "crwdns36162:0crwdne36162:0",
     "description": "Navbar item with label Blog"
   },
   "item.label.Utilities": {
-    "message": "crwdns34824:0crwdne34824:0",
+    "message": "crwdns36164:0crwdne36164:0",
     "description": "Navbar item with label Utilities"
   },
   "item.label.Download": {
-    "message": "crwdns34826:0crwdne34826:0",
+    "message": "crwdns36166:0crwdne36166:0",
     "description": "Navbar item with label Download"
   },
   "item.label.REST APIs": {
-    "message": "crwdns34828:0crwdne34828:0",
+    "message": "crwdns36168:0crwdne36168:0",
     "description": "Navbar item with label REST APIs"
   },
   "item.label.Other": {
-    "message": "crwdns34830:0crwdne34830:0",
+    "message": "crwdns36170:0crwdne36170:0",
     "description": "Navbar item with label Other"
   },
   "item.label.Dump Viewer": {
-    "message": "crwdns34832:0crwdne34832:0",
+    "message": "crwdns36172:0crwdne36172:0",
     "description": "Navbar item with label Dump Viewer"
-  },
-  "item.label.Hosting": {
-    "message": "crwdns34834:0crwdne34834:0",
-    "description": "Navbar item with label Hosting"
   }
 }

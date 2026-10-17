@@ -1,61 +1,61 @@
 ---
-title: crwdns33748:0crwdne33748:0
-description: crwdns33750:0crwdne33750:0
+title: crwdns35048:0crwdne35048:0
+description: crwdns35050:0crwdne35050:0
 crowdin_sync: true
 crowdin_page_id: 3aee52d0-b943-4e37-8797-4a83ef55e42a
 ---
 
-## crwdns33752:0{#prerequisites}crwdne33752:0
+## crwdns35052:0{/\* #prerequisites \*/}crwdne35052:0
 
 :::info
-crwdns33754:0crwdne33754:0
+crwdns35054:0crwdne35054:0
 :::
 
 :::warning
-crwdns33756:0crwdne33756:0 crwdns33758:0crwdne33758:0
+crwdns35056:0crwdne35056:0 crwdns35058:0crwdne35058:0
 :::
 
 :::caution
-crwdns33760:0crwdne33760:0 crwdns33762:0[crwdnd33762:0](https://status.playit.gg/3/adding-nethernet-support)crwdne33762:0
+crwdns35060:0crwdne35060:0 crwdns35062:0[crwdnd35062:0](https://status.playit.gg/3/adding-nethernet-support)crwdne35062:0
 :::
 
-## crwdns33764:0{#setup}crwdne33764:0
+## crwdns35064:0{/\* #setup \*/}crwdne35064:0
 
-1. crwdns33766:0[crwdnd33766:0](https://playit.gg/)crwdne33766:0
-2. crwdns33768:0crwdne33768:0 crwdns33770:0crwdne33770:0
-   crwdns33772:0![crwdnd33772:0](/img/wiki/playit-gg/playit_claim.png)crwdne33772:0
-3. crwdns33774:0crwdne33774:0
-   crwdns33776:0![crwdnd33776:0](/img/wiki/playit-gg/playit_claim_confirm.png)crwdne33776:0
-4. crwdns33778:0crwdne33778:0
-   crwdns33780:0![crwdnd33780:0](/img/wiki/playit-gg/playit_add_agent.png)crwdne33780:0
-5. crwdns33782:0crwdne33782:0
-   crwdns33784:0![crwdnd33784:0](/img/wiki/playit-gg/playit_add_tunnel.png)crwdne33784:0
-6. crwdns33786:0crwdne33786:0
-   crwdns33788:0![crwdnd33788:0](/img/wiki/playit-gg/playit_name_tunnel.png)crwdne33788:0
-7. crwdns33790:0crwdne33790:0
-   crwdns33792:0![crwdnd33792:0](/img/wiki/playit-gg/playit_tunnel_type.png)crwdne33792:0
-8. crwdns33794:0crwdne33794:0
-   crwdns33796:0![crwdnd33796:0](/img/wiki/playit-gg/playit_select_network.png)crwdnd33796:0`config.yml`crwdnd33796:0`config.yml`crwdne33796:0 crwdns33798:0crwdne33798:0 crwdns33800:0crwdne33800:0 crwdns33802:0`19132`crwdnd33802:0`clone-remote-port`crwdnd33802:0`false`crwdne33802:0
-9. crwdns33804:0`127.0.0.1`crwdne33804:0  
-   crwdns33806:0![crwdnd33806:0](/img/wiki/playit-gg/playit_set_ipandport.png)crwdne33806:0
-10. crwdns33808:0`proxy-protocol-v2`crwdne33808:0
-11. crwdns33810:0`advanced:`crwdnd33810:0`bedrock:`crwdnd33810:0`use-haproxy-protocol`crwdnd33810:0`true`crwdne33810:0
-12. crwdns33812:0crwdne33812:0
-    crwdns33814:0![crwdnd33814:0](/img/wiki/playit-gg/playit_create_tunnel.png)crwdne33814:0
-13. crwdns33816:0crwdne33816:0 crwdns33818:0`visiting-phone.gl.at.ply.gg:6695`crwdnd33818:0`6695`crwdne33818:0
-14. crwdns33820:0`advanced:`crwdnd33820:0`bedrock:`crwdnd33820:0`broadcast-port`crwdnd33820:0`6695`crwdne33820:0
-15. crwdns33822:0crwdne33822:0 crwdns33824:0crwdne33824:0
-16. crwdns33826:0crwdne33826:0 crwdns33828:0crwdne33828:0 crwdns33830:0crwdne33830:0
-    crwdns33832:0[crwdnd33832:0](#troubleshooting)crwdne33832:0
+1. crwdns35066:0[crwdnd35066:0](https://playit.gg/)crwdne35066:0
+2. crwdns35068:0crwdne35068:0 crwdns35070:0crwdne35070:0
+   crwdns35072:0![crwdnd35072:0](/img/wiki/playit-gg/playit_claim.png)crwdne35072:0
+3. crwdns35074:0crwdne35074:0
+   crwdns35076:0![crwdnd35076:0](/img/wiki/playit-gg/playit_claim_confirm.png)crwdne35076:0
+4. crwdns35078:0crwdne35078:0
+   crwdns35080:0![crwdnd35080:0](/img/wiki/playit-gg/playit_add_agent.png)crwdne35080:0
+5. crwdns35082:0crwdne35082:0
+   crwdns35084:0![crwdnd35084:0](/img/wiki/playit-gg/playit_add_tunnel.png)crwdne35084:0
+6. crwdns35086:0crwdne35086:0
+   crwdns35088:0![crwdnd35088:0](/img/wiki/playit-gg/playit_name_tunnel.png)crwdne35088:0
+7. crwdns35090:0crwdne35090:0
+   crwdns35092:0![crwdnd35092:0](/img/wiki/playit-gg/playit_tunnel_type.png)crwdne35092:0
+8. crwdns35094:0crwdne35094:0
+   crwdns35096:0![crwdnd35096:0](/img/wiki/playit-gg/playit_select_network.png)crwdnd35096:0`config.yml`crwdnd35096:0`config.yml`crwdne35096:0 crwdns35098:0crwdne35098:0 crwdns35100:0crwdne35100:0 crwdns35102:0`19132`crwdnd35102:0`clone-remote-port`crwdnd35102:0`false`crwdne35102:0
+9. crwdns35104:0`127.0.0.1`crwdne35104:0  
+   crwdns35106:0![crwdnd35106:0](/img/wiki/playit-gg/playit_set_ipandport.png)crwdne35106:0
+10. crwdns35108:0`proxy-protocol-v2`crwdne35108:0
+11. crwdns35110:0`advanced:`crwdnd35110:0`bedrock:`crwdnd35110:0`use-haproxy-protocol`crwdnd35110:0`true`crwdne35110:0
+12. crwdns35112:0crwdne35112:0
+    crwdns35114:0![crwdnd35114:0](/img/wiki/playit-gg/playit_create_tunnel.png)crwdne35114:0
+13. crwdns35116:0crwdne35116:0 crwdns35118:0`visiting-phone.gl.at.ply.gg:6695`crwdnd35118:0`6695`crwdne35118:0
+14. crwdns35120:0`advanced:`crwdnd35120:0`bedrock:`crwdnd35120:0`broadcast-port`crwdnd35120:0`6695`crwdne35120:0
+15. crwdns35122:0crwdne35122:0 crwdns35124:0crwdne35124:0
+16. crwdns35126:0crwdne35126:0 crwdns35128:0crwdne35128:0 crwdns35130:0crwdne35130:0
+    crwdns35132:0[crwdnd35132:0](#troubleshooting)crwdne35132:0
 
-## crwdns33834:0{#troubleshooting}crwdne33834:0
+## crwdns35134:0{/\* #troubleshooting \*/}crwdne35134:0
 
-### crwdns33836:0crwdne33836:0 crwdns33838:0{#i-cant-connect-to-my-server}crwdne33838:0
+### crwdns35136:0crwdne35136:0 crwdns35138:0{/\* #i-cant-connect-to-my-server \*/}crwdne35138:0
 
-- crwdns33840:0crwdne33840:0 crwdns33842:0crwdne33842:0
-- crwdns33844:0crwdne33844:0
-- crwdns33846:0`19132`crwdnd33846:0`clone-remote-port`crwdnd33846:0`false`crwdne33846:0
-- crwdns33848:0`bedrock-port`crwdnd33848:0`clone-remote-port`crwdnd33848:0`true`crwdne33848:0 crwdns33850:0crwdne33850:0
-- crwdns33852:0crwdne33852:0
-- crwdns33854:0crwdne33854:0
-- crwdns33856:0[crwdnd33856:0](/wiki/geyser/fixing-unable-to-connect-to-world/)crwdne33856:0
+- crwdns35140:0crwdne35140:0 crwdns35142:0crwdne35142:0
+- crwdns35144:0crwdne35144:0
+- crwdns35146:0`19132`crwdnd35146:0`clone-remote-port`crwdnd35146:0`false`crwdne35146:0
+- crwdns35148:0`bedrock-port`crwdnd35148:0`clone-remote-port`crwdnd35148:0`true`crwdne35148:0 crwdns35150:0crwdne35150:0
+- crwdns35152:0crwdne35152:0
+- crwdns35154:0crwdne35154:0
+- crwdns35156:0[crwdnd35156:0](/wiki/geyser/fixing-unable-to-connect-to-world/)crwdne35156:0

@@ -1,50 +1,50 @@
 {
   "link.title.Wiki": {
-    "message": "crwdns34794:0crwdne34794:0",
+    "message": "crwdns36134:0crwdne36134:0",
     "description": "The title of the footer links column with title=Wiki in the footer"
   },
   "link.title.Downloads": {
-    "message": "crwdns34796:0crwdne34796:0",
+    "message": "crwdns36136:0crwdne36136:0",
     "description": "The title of the footer links column with title=Downloads in the footer"
   },
   "link.title.Community": {
-    "message": "crwdns34798:0crwdne34798:0",
+    "message": "crwdns36138:0crwdne36138:0",
     "description": "The title of the footer links column with title=Community in the footer"
   },
   "link.title.More": {
-    "message": "crwdns34800:0crwdne34800:0",
+    "message": "crwdns36140:0crwdne36140:0",
     "description": "The title of the footer links column with title=More in the footer"
   },
   "link.item.label.REST APIs": {
-    "message": "crwdns34802:0crwdne34802:0",
+    "message": "crwdns36142:0crwdne36142:0",
     "description": "The label of footer link with label=REST APIs linking to wiki/api/api.geysermc.org/global-api"
   },
   "link.item.label.Other": {
-    "message": "crwdns34804:0crwdne34804:0",
+    "message": "crwdns36144:0crwdne36144:0",
     "description": "The label of footer link with label=Other linking to download?project=other-projects"
   },
   "link.item.label.Blog": {
-    "message": "crwdns34806:0crwdne34806:0",
+    "message": "crwdns36146:0crwdne36146:0",
     "description": "The label of footer link with label=Blog linking to blog"
   },
   "link.item.label.Donate": {
-    "message": "crwdns34808:0crwdne34808:0",
+    "message": "crwdns36148:0crwdne36148:0",
     "description": "The label of footer link with label=Donate linking to https://opencollective.com/geysermc"
   },
   "link.item.label.Global Linking": {
-    "message": "crwdns34810:0crwdne34810:0",
+    "message": "crwdns36150:0crwdne36150:0",
     "description": "The label of footer link with label=Global Linking linking to https://link.geysermc.org/"
   },
   "link.item.label.Privacy Policy": {
-    "message": "crwdns34812:0crwdne34812:0",
+    "message": "crwdns36152:0crwdne36152:0",
     "description": "The label of footer link with label=Privacy Policy linking to https://ziax.com/terms/privacy-policy/"
   },
-  "logo.alt": {
-    "message": "crwdns34814:0crwdne34814:0",
-    "description": "The alt text of footer logo"
-  },
   "copyright": {
-    "message": "crwdns34816:0crwdne34816:0",
+    "message": "crwdns36154:0crwdne36154:0",
     "description": "The footer copyright"
+  },
+  "logo.alt": {
+    "message": "crwdns36156:0crwdne36156:0",
+    "description": "The alt text of footer logo"
   }
 }

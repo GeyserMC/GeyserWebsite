@@ -22,7 +22,7 @@ If you use the "NetherNet and RakNet" option, also open the `webrtc-port` for UD
 With external signaling, such as [Warden](https://warden.cloud), only UDP for WebRTC is needed.
 :::
 
-## Port forwarding on Linux/Windows/macOS {#port-forwarding-on-linuxwindowsmacos}
+## Port forwarding on Linux/Windows/macOS {/\* #port-forwarding-on-linuxwindowsmacos \*/}
 
 To allow others to play on your server, you will need to set up port forwarding on the device hosting Geyser.
 Additionally, you will need to port forward the port on your router/modem (in other words, allow and route traffic on that port to the proper machine) if you want the server to be accessible outside your own home network.
@@ -38,7 +38,7 @@ As an alternative to port forwarding, you can use [playit.gg](/wiki/geyser/playi
 
 :::
 
-### Windows {#windows}
+### Windows {/\* #windows \*/}
 
 To open a port on Windows, you will need to open the port through the Windows Firewall. There are multiple ways to do this:
 
@@ -64,7 +64,7 @@ To open a port on Windows, you will need to open the port through the Windows Fi
   8. Enter a name for the rule (e.g. "Geyser (UDP)"), and click "Finish". ([Image](/img/wiki/port-forwarding/windows-7.png))
   9. Repeat these steps, selecting "TCP" in step 5 and naming the rule e.g. "Geyser (TCP)".
 
-### Linux {#linux}
+### Linux {/\* #linux \*/}
 
 Different Linux distributions, even different VPS providers ship and configure different firewalls. In the following examples, we will use `19132` as the port to open, but you should replace this with the port you are using for Geyser.
 
@@ -92,17 +92,17 @@ Different Linux distributions, even different VPS providers ship and configure d
   Then, save the firewall with `sudo iptables-save`, and see all open rules with `sudo iptables -L`.  
   Further helpful guides for iptables: [DigitalOcean](https://www.digitalocean.com/community/tutorials/how-to-set-up-a-firewall-using-iptables-on-ubuntu-14-04), [Ubuntu](https://help.ubuntu.com/community/IptablesHowTo)
 
-### macOS {#macos}
+### macOS {/\* #macos \*/}
 
 You will need to disable `Block all incoming connections` in your Firewall settings, as that will block any connections and won't allow you to make exceptions.
 To allow incoming connections, click `Allow` when getting [these prompts](/img/wiki/port-forwarding/macos_warning.png).
 If you are still facing issues, see Apple's official guide [here](https://support.apple.com/guide/mac-help/MH11783) to open a port on macOS.
 
-## Using Docker or Pterodactyl {#using-docker-or-pterodactyl}
+## Using Docker or Pterodactyl {/\* #using-docker-or-pterodactyl \*/}
 
 In addition to port forwarding the port in your server's firewall (and, if applicable, your router/modem), you will need to assign the port in Docker/Pterodactyl.
 
-### Pterodactyl {#pterodactyl}
+### Pterodactyl {/\* #pterodactyl \*/}
 
 Make sure to allocate the port(s) to the server in the Pterodactyl panel's `Network` tab, additionally to port forwarding the port(s).
 See [here](https://pterodactyl.io/community/games/minecraft.html#allocations-in-the-panel) for more information.
@@ -117,7 +117,7 @@ If you are not able to allocate ports in the Pterodactyl panel, you will need to
 
 :::
 
-### Docker {#docker}
+### Docker {/\* #docker \*/}
 
 For Geyser to work under Docker (e.g. using [Itzg's Docker image](https://github.com/itzg/docker-minecraft-server)), you will need to add the Geyser port on TCP and UDP to the docker-compose file. This is done by adding the following to the `ports` section:
 
@@ -131,11 +131,11 @@ ports:
 Without a suffix, Docker exposes the port on TCP. The additional `/udp` suffix exposes it on UDP.
 Alternatively, add the ports with the `-p 19132:19132 -p 19132:19132/udp` flags to the docker run command.
 
-## Issues with specific VPS/KVM providers {#issues-with-specific-vpskvm-providers}
+## Issues with specific VPS/KVM providers {/\* #issues-with-specific-vpskvm-providers \*/}
 
 Some providers, such as OVH, Oracle Cloud, and SoYouStart, have a firewall that blocks the ports Geyser needs by default/in most cases.
 
-### OVH and SoYouStart {#ovh-and-soyoustart}
+### OVH and SoYouStart {/\* #ovh-and-soyoustart \*/}
 
 OVH's GAME firewall filters traffic with rules made for specific games. The Minecraft Bedrock and Minecraft Pocket Edition rules currently only support RakNet, the protocol Bedrock used before NetherNet.
 With NetherNet, players find the server over HTTP (TCP) and play over WebRTC (UDP), which these rules currently do not support.
@@ -164,7 +164,7 @@ SoYouStart (subsidiary of OVH):
 4. Select "Other" in the dropdown list and enter the Geyser port. If you use the "NetherNet and RakNet" option, add the `webrtc-port` as well.
 5. Save and wait a few seconds for the changes to come into effect.
 
-### Oracle Cloud/OCI {#oracle-cloudoci}
+### Oracle Cloud/OCI {/\* #oracle-cloudoci \*/}
 
 By default, Oracle Cloud will block all incoming traffic except for SSH and RDP. This must be resolved within Oracle Cloud itself and the Compute Instance running Geyser.
 
@@ -186,7 +186,7 @@ The steps below assume that you are using the default ports for the Java server 
    - Select "Another Ingress Rule", and repeat with "IP Protocol" set to UDP
 8. Select "Add Ingress Rules"
 
-#### Oracle Linux {#oracle-linux}
+#### Oracle Linux {/\* #oracle-linux \*/}
 
 Run the following commands to allow Minecraft and Geyser through the OS firewall:
 
@@ -197,7 +197,7 @@ sudo firewall-cmd --add-port=19132/udp --permanent
 sudo firewall-cmd --reload
 ```
 
-#### Ubuntu {#ubuntu}
+#### Ubuntu {/\* #ubuntu \*/}
 
 Run the following commands to allow Minecraft and Geyser through the OS firewall:
 
