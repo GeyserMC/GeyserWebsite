@@ -4,7 +4,7 @@ on:
   pull_request:
 
 jobs:
-  build: 
+  build:
     name: Build PR
     runs-on: ubuntu-latest
     steps:
@@ -37,6 +37,9 @@ jobs:
             ${{ runner.os }}-docusaurus-en-${{ hashFiles('**/yarn.lock') }}-${{ hashFiles('**.[jt]s', '**.[jt]sx') }}
           restore-keys: |
             ${{ runner.os }}-docusaurus-en-${{ hashFiles('**/yarn.lock') }}
+
+      - name: Typecheck
+        run: yarn typecheck
 
       - name: Build website
         run: yarn build --locale en
