@@ -251,6 +251,21 @@ export const providersData: HostingProvider[] = [
         notices: { info: onlyServesRegion('Russia') }
     },
     {
+        name: 'CraftLands Hosting',
+        url: 'https://craftlands.host/minecraft-servers',
+        updated: '2026-10-16',
+        links: {
+            article: 'https://craftlands.host/docs/minecraft/how-to-setup-geyser-on-your-minecraft-server',
+            support: 'https://craftlands.host/contact',
+            discord: 'https://discord.craftlands.host'
+        },
+        install: translate({
+            id: 'providers.provider.craftlands_hosting.install',
+            message: "Click Versions in the sidebar of your server panel, then click 'Enable' in the 'Bedrock Crossplay' box and restart the server. This installs Geyser and Floodgate and sets up NetherNet on a dedicated Bedrock port."
+        }),
+        config: { preconfigured: true, port: ports.fromHost }
+    },
+    {
         name: 'CreeperHost',
         url: 'https://www.creeperhost.net/',
         updated: '2026-07-10',
