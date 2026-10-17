@@ -5,7 +5,7 @@ crowdin_sync: true
 crowdin_page_id: 3aee52d0-b943-4e37-8797-4a83ef55e42a
 ---
 
-## Prerequisites {/\* #prerequisites \*/}
+## Prerequisites {/* #prerequisites */}
 
 :::info
 You must be able to connect to your Geyser instance locally!
@@ -19,7 +19,7 @@ The playit.gg Minecraft server plugin does not support UDP tunnels. You will nee
 This guide was written for RakNet, and does not cover NetherNet. For NetherNet, see [playit.gg's progress on NetherNet support](https://status.playit.gg/3/adding-nethernet-support).
 :::
 
-## Setup {/\* #setup \*/}
+## Einrichtung {/* #setup */}
 
 1. Head over to [playit.gg's website](https://playit.gg/) - download the program & run it.
 2. The program will provide a claiming link. Visit that link, log in.
@@ -37,7 +37,7 @@ This guide was written for RakNet, and does not cover NetherNet. For NetherNet, 
 8. Select the Free Network and click Next.
    ![img](/img/wiki/playit-gg/playit_select_network.png)
    **Do not change your Geyser port in `config.yml` unless you have a reason (for example, hosting another Geyser server on the same machine).** The Bedrock (Geyser) port in `config.yml` and the playit.gg ports are separate. playit.gg will forward its port to the default Geyser port and should work as-is. Changing it can cause errors. If you have changed your config port, set the Bedrock port back to the default `19132` and ensure `clone-remote-port` is `false`.
-9. If the playit.gg agent and Geyser are running on the same device, leave the IP as `127.0.0.1` and set the port to whatever you configured in Geyser's config.  
+9. If the playit.gg agent and Geyser are running on the same device, leave the IP as `127.0.0.1` and set the port to whatever you configured in Geyser's config.\
    ![img](/img/wiki/playit-gg/playit_set_ipandport.png)
 10. Select `proxy-protocol-v2` for the Proxy Protocol section and click Next.
 11. In the Geyser config, under `advanced:` `bedrock:`, set `use-haproxy-protocol` to `true`.
@@ -49,9 +49,9 @@ This guide was written for RakNet, and does not cover NetherNet. For NetherNet, 
 16. If you join successfully, then you are done! Make sure to leave the playit.gg program running as closing it will close the tunnel. You also may want to ratelimit individual connections - use the "Per Connection Rate Limit" option to do so.
     (If you failed to join, check out the [troubleshooting](#troubleshooting) section of the page.)
 
-## Troubleshooting {/\* #troubleshooting \*/}
+## Troubleshooting {/* #troubleshooting */}
 
-### I can't connect to my server! {/\* #i-cant-connect-to-my-server \*/}
+### I can't connect to my server! {/* #i-cant-connect-to-my-server */}
 
 - *Try going to the Agents page, set your agent to IPv4 only, and change the region. You may need to switch regions a few times before you can connect.*
 - *Are there errors in your minecraft server console?*
