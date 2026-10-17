@@ -379,12 +379,12 @@ const downloadAction = async (inp: {
                 entryPath.slice(markdownFolder.path.length)
             );
 
-            const destinationDir = path.dirname(destinationPath);
-            if (!fs.existsSync(destinationDir)) {
-                fs.mkdirSync(destinationDir, { recursive: true });
-            }
+            const rawContent = entry.getData().toString('utf8');
+            const cleanContent = rawContent
+                // Unescape \< inside inline code spans (e.g. `\<id>` -> `<id>`)
+                .replace(/`([^`\n]+)`/g, (match) => match.replace(/\\</g, '<'))
 
-            zip.extractEntryTo(entry, destinationDir, false, true);
+            fs.writeFileSync(destinationPath, cleanContent, 'utf8');
             continue;
         }
     }
