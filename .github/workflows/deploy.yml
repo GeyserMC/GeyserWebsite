@@ -31,7 +31,7 @@ jobs:
     runs-on: ubuntu-latest
     outputs:
       locales: ${{ steps.locales.outputs.locales }}
-      commit: ${{ steps.commit.outputs.commit-hash == '' && steps.commit.outputs.commit-hash || github.sha }}
+      commit: ${{ steps.commit.outputs.commit-hash || github.sha }}
     permissions:
       contents: write
     env:
@@ -70,7 +70,7 @@ jobs:
         if: env.CROWDIN_ENABLED == 'true'
         id: commit
         # See https://github.com/planetscale/ghcommit-action/releases
-        uses: planetscale/ghcommit-action@f24050e41f8694750427d111b52f4ef9ca81a32d # v0.2.18
+        uses: planetscale/ghcommit-action@a6b150b81dca5dd027baa898604418eec9e11465 # v0.2.22
         with:
           commit_message: "Sync translations with Crowdin"
           repo: ${{ github.repository }}
