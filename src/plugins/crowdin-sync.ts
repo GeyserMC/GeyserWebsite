@@ -379,6 +379,7 @@ const downloadAction = async (inp: {
                 entryPath.slice(markdownFolder.path.length)
             );
 
+            // Manual fixes for Crowdin mdx export issues
             const rawContent = entry.getData().toString('utf8');
             const cleanContent = rawContent
                 // Unescape \< inside inline code spans (e.g. `\<id>` -> `<id>`)
