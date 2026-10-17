@@ -1,125 +1,110 @@
 ---
-title: crwdns36486:0crwdne36486:0
-description: crwdns36488:0crwdne36488:0
+title: crwdns37744:0crwdne37744:0
+description: crwdns37746:0crwdne37746:0
 crowdin_sync: true
 crowdin_page_id: be7c5a22-1e8e-4ffe-8d13-7d763dd75886
 ---
 
-# crwdns36490:0crwdne36490:0 {#port-forwarding}
+# crwdns37748:0crwdne37748:0 {#port-forwarding}
 
-crwdns36492:0crwdne36492:0
-crwdns36494:0crwdne36494:0
+crwdns37750:0crwdne37750:0
 
 :::caution
 
-crwdns36496:0[crwdnd36496:0](/wiki/geyser/setup)crwdne36496:0
+crwdns37752:0[crwdnd37752:0](/wiki/geyser/setup)crwdne37752:0
 
 :::
 
-:::info crwdns36498:0crwdne36498:0
-crwdns36500:0crwdne36500:0
-crwdns36502:0`webrtc-port`crwdne36502:0
-crwdns36504:0[crwdnd36504:0](https://warden.cloud)crwdne36504:0
+:::info crwdns37754:0crwdne37754:0
+crwdns37756:0`webrtc-port`crwdnd37756:0[crwdnd37756:0](https://warden.cloud)crwdne37756:0
 :::
 
-## crwdns36506:0crwdne36506:0 {/* #port-forwarding-on-linuxwindowsmacos */}
+## crwdns37758:0crwdne37758:0 {/* #port-forwarding-on-linuxwindowsmacos */}
 
-crwdns36508:0crwdne36508:0
-crwdns36510:0crwdne36510:0
-crwdns36512:0crwdne36512:0
-crwdns36514:0[crwdnd36514:0](https://www.howtogeek.com/66214/how-to-forward-ports-on-your-router/)crwdnd36514:0[crwdnd36514:0](https://www.lifewire.com/how-to-port-forward-4163829)crwdne36514:0
-crwdns36516:0crwdne36516:0
+crwdns37760:0[crwdnd37760:0](https://www.howtogeek.com/66214/how-to-forward-ports-on-your-router/)crwdnd37760:0[crwdnd37760:0](https://www.lifewire.com/how-to-port-forward-4163829)crwdne37760:0
 
 :::info
 
-crwdns36518:0crwdne36518:0
-crwdns36520:0crwdne36520:0\
-crwdns36522:0[crwdnd36522:0](/wiki/geyser/playit-gg/)crwdne36522:0
+crwdns37762:0[crwdnd37762:0](/wiki/geyser/playit-gg/)crwdne37762:0
 
 :::
 
-### crwdns36524:0crwdne36524:0 {/* #windows */}
+### crwdns37764:0crwdne37764:0 {/* #windows */}
 
-crwdns36526:0crwdne36526:0 crwdns36528:0crwdne36528:0
+crwdns37766:0crwdne37766:0
 
-- crwdns36530:0`Powershell`crwdne36530:0
+- crwdns37768:0`Powershell`crwdne37768:0
 
-  crwdns36532:0crwdne36532:0
+  crwdns37770:0crwdne37770:0
 
   ```powershell
   New-NetFirewallRule -DisplayName "Geyser (TCP)" -Direction Inbound -Protocol TCP -LocalPort 19132 -Action Allow
   New-NetFirewallRule -DisplayName "Geyser (UDP)" -Direction Inbound -Protocol UDP -LocalPort 19132 -Action Allow
   ```
 
-  crwdns36534:0crwdne36534:0
+  crwdns37772:0crwdne37772:0
 
-- crwdns36536:0crwdne36536:0
-  1. crwdns36538:0crwdne36538:0 crwdns36540:0[crwdnd36540:0](/img/wiki/port-forwarding/windows-1.png)crwdne36540:0
-  2. crwdns36542:0crwdne36542:0 crwdns36544:0[crwdnd36544:0](/img/wiki/port-forwarding/windows-2.png)crwdne36544:0
-  3. crwdns36546:0crwdne36546:0 crwdns36548:0[crwdnd36548:0](/img/wiki/port-forwarding/windows-2.png)crwdne36548:0
-  4. crwdns36550:0crwdne36550:0 crwdns36552:0[crwdnd36552:0](/img/wiki/port-forwarding/windows-3.png)crwdne36552:0
-  5. crwdns36554:0crwdne36554:0 crwdns36556:0crwdne36556:0 crwdns36558:0[crwdnd36558:0](/img/wiki/port-forwarding/windows-4.png)crwdne36558:0
-  6. crwdns36560:0crwdne36560:0 crwdns36562:0[crwdnd36562:0](/img/wiki/port-forwarding/windows-5.png)crwdne36562:0
-  7. crwdns36564:0crwdne36564:0 crwdns36566:0[crwdnd36566:0](/img/wiki/port-forwarding/windows-6.png)crwdne36566:0
-  8. crwdns36568:0crwdne36568:0 crwdns36570:0[crwdnd36570:0](/img/wiki/port-forwarding/windows-7.png)crwdne36570:0
-  9. crwdns36572:0crwdne36572:0
+- crwdns37774:0crwdne37774:0
+  1. crwdns37776:0[crwdnd37776:0](/img/wiki/port-forwarding/windows-1.png)crwdne37776:0
+  2. crwdns37778:0[crwdnd37778:0](/img/wiki/port-forwarding/windows-2.png)crwdne37778:0
+  3. crwdns37780:0[crwdnd37780:0](/img/wiki/port-forwarding/windows-2.png)crwdne37780:0
+  4. crwdns37782:0[crwdnd37782:0](/img/wiki/port-forwarding/windows-3.png)crwdne37782:0
+  5. crwdns37784:0[crwdnd37784:0](/img/wiki/port-forwarding/windows-4.png)crwdne37784:0
+  6. crwdns37786:0[crwdnd37786:0](/img/wiki/port-forwarding/windows-5.png)crwdne37786:0
+  7. crwdns37788:0[crwdnd37788:0](/img/wiki/port-forwarding/windows-6.png)crwdne37788:0
+  8. crwdns37790:0[crwdnd37790:0](/img/wiki/port-forwarding/windows-7.png)crwdne37790:0
+  9. crwdns37792:0crwdne37792:0
 
-### crwdns36574:0crwdne36574:0 {/* #linux */}
+### crwdns37794:0crwdne37794:0 {/* #linux */}
 
-crwdns36576:0crwdne36576:0 crwdns36578:0`19132`crwdne36578:0
+crwdns37796:0`19132`crwdne37796:0
 
-- crwdns36580:0`ufw`crwdne36580:0 crwdns36582:0crwdne36582:0
+- crwdns37798:0`ufw`crwdne37798:0
   ```bash
   sudo ufw allow 19132/tcp
   sudo ufw allow 19132/udp
   ```
-  crwdns36584:0`sudo ufw reload`crwdnd36584:0`sudo ufw status`crwdne36584:0\
-  crwdns36586:0[crwdnd36586:0](https://www.digitalocean.com/community/tutorials/how-to-setup-a-firewall-with-ufw-on-an-ubuntu-and-debian-cloud-server)crwdnd36586:0[crwdnd36586:0](https://www.baeldung.com/linux/uncomplicated-firewall)crwdne36586:0
+  crwdns37800:0`sudo ufw reload`crwdnd37800:0`sudo ufw status`crwdnd37800:0[crwdnd37800:0](https://www.digitalocean.com/community/tutorials/how-to-setup-a-firewall-with-ufw-on-an-ubuntu-and-debian-cloud-server)crwdnd37800:0[crwdnd37800:0](https://www.baeldung.com/linux/uncomplicated-firewall)crwdne37800:0
 
-- crwdns36588:0`firewalld`crwdne36588:0
+- crwdns37802:0`firewalld`crwdne37802:0
   ```bash
   sudo firewall-cmd --zone=public --permanent --add-port=19132/tcp
   sudo firewall-cmd --zone=public --permanent --add-port=19132/udp
   ```
-  crwdns36590:0`sudo firewall-cmd --reload`crwdnd36590:0`sudo firewall-cmd --list-all`crwdne36590:0\
-  crwdns36592:0[crwdnd36592:0](https://www.digitalocean.com/community/tutorials/how-to-set-up-a-firewall-using-firewalld-on-centos-7)crwdne36592:0
+  crwdns37804:0`sudo firewall-cmd --reload`crwdnd37804:0`sudo firewall-cmd --list-all`crwdnd37804:0[crwdnd37804:0](https://www.digitalocean.com/community/tutorials/how-to-set-up-a-firewall-using-firewalld-on-centos-7)crwdne37804:0
 
-- crwdns36594:0`iptables`crwdne36594:0 crwdns36596:0crwdne36596:0
+- crwdns37806:0`iptables`crwdne37806:0
   ```bash
   sudo iptables -A INPUT -p tcp --dport 19132 -j ACCEPT
   sudo iptables -A INPUT -p udp --dport 19132 -j ACCEPT
   ```
-  crwdns36598:0`sudo iptables-save`crwdnd36598:0`sudo iptables -L`crwdne36598:0\
-  crwdns36600:0[crwdnd36600:0](https://www.digitalocean.com/community/tutorials/how-to-set-up-a-firewall-using-iptables-on-ubuntu-14-04)crwdnd36600:0[crwdnd36600:0](https://help.ubuntu.com/community/IptablesHowTo)crwdne36600:0
+  crwdns37808:0`sudo iptables-save`crwdnd37808:0`sudo iptables -L`crwdnd37808:0[crwdnd37808:0](https://www.digitalocean.com/community/tutorials/how-to-set-up-a-firewall-using-iptables-on-ubuntu-14-04)crwdnd37808:0[crwdnd37808:0](https://help.ubuntu.com/community/IptablesHowTo)crwdne37808:0
 
-### crwdns36602:0crwdne36602:0 {/* #macos */}
+### crwdns37810:0crwdne37810:0 {/* #macos */}
 
-crwdns36604:0`Block all incoming connections`crwdne36604:0
-crwdns36606:0`Allow`crwdnd36606:0[crwdnd36606:0](/img/wiki/port-forwarding/macos_warning.png)crwdne36606:0
-crwdns36608:0[crwdnd36608:0](https://support.apple.com/guide/mac-help/MH11783)crwdne36608:0
+crwdns37812:0`Block all incoming connections`crwdnd37812:0`Allow`crwdnd37812:0[crwdnd37812:0](/img/wiki/port-forwarding/macos_warning.png)crwdnd37812:0[crwdnd37812:0](https://support.apple.com/guide/mac-help/MH11783)crwdne37812:0
 
-## crwdns36610:0crwdne36610:0 {/* #using-docker-or-pterodactyl */}
+## crwdns37814:0crwdne37814:0 {/* #using-docker-or-pterodactyl */}
 
-crwdns36612:0crwdne36612:0
+crwdns37816:0crwdne37816:0
 
-### crwdns36614:0crwdne36614:0 {/* #pterodactyl */}
+### crwdns37818:0crwdne37818:0 {/* #pterodactyl */}
 
-crwdns36616:0`Network`crwdne36616:0
-crwdns36618:0[crwdnd36618:0](https://pterodactyl.io/community/games/minecraft.html#allocations-in-the-panel)crwdne36618:0
+crwdns37820:0`Network`crwdnd37820:0[crwdnd37820:0](https://pterodactyl.io/community/games/minecraft.html#allocations-in-the-panel)crwdne37820:0
 
-crwdns36620:0![crwdnd36620:0](/img/wiki/port-forwarding/pterodactyl-1.png)crwdne36620:0
+crwdns37822:0![crwdnd37822:0](/img/wiki/port-forwarding/pterodactyl-1.png)crwdne37822:0
 
-crwdns36622:0[crwdnd36622:0](https://github.com/GeyserMC/pterodactyl-stuff)crwdne36622:0
+crwdns37824:0[crwdnd37824:0](https://github.com/GeyserMC/pterodactyl-stuff)crwdne37824:0
 
 :::caution
 
-crwdns36624:0crwdne36624:0
+crwdns37826:0crwdne37826:0
 
 :::
 
-### crwdns36626:0crwdne36626:0 {/* #docker */}
+### crwdns37828:0crwdne37828:0 {/* #docker */}
 
-crwdns36628:0[crwdnd36628:0](https://github.com/itzg/docker-minecraft-server)crwdne36628:0 crwdns36630:0`ports`crwdne36630:0
+crwdns37830:0[crwdnd37830:0](https://github.com/itzg/docker-minecraft-server)crwdnd37830:0`ports`crwdne37830:0
 
 ```yaml
 ports:
@@ -128,67 +113,64 @@ ports:
     - "19132:19132/udp"
 ```
 
-crwdns36632:0crwdne36632:0 crwdns36634:0`/udp`crwdne36634:0
-crwdns36636:0`-p 19132:19132 -p 19132:19132/udp`crwdne36636:0
+crwdns37832:0`/udp`crwdnd37832:0`-p 19132:19132 -p 19132:19132/udp`crwdne37832:0
 
-## crwdns36638:0crwdne36638:0 {/* #issues-with-specific-vpskvm-providers */}
+## crwdns37834:0crwdne37834:0 {/* #issues-with-specific-vpskvm-providers */}
 
-crwdns36640:0crwdne36640:0
+crwdns37836:0crwdne37836:0
 
-### crwdns36642:0crwdne36642:0 {/* #ovh-and-soyoustart */}
+### crwdns37838:0crwdne37838:0 {/* #ovh-and-soyoustart */}
 
-crwdns36644:0crwdne36644:0 crwdns36646:0crwdne36646:0
-crwdns36648:0crwdne36648:0
-crwdns36650:0`Other`crwdne36650:0
+crwdns37840:0`Other`crwdne37840:0
 
 :::caution
 
-crwdns36652:0crwdne36652:0
+crwdns37842:0crwdne37842:0
 
 :::
 
-crwdns36654:0crwdne36654:0
+crwdns37844:0crwdne37844:0
 
-crwdns36656:0crwdne36656:0
+crwdns37846:0crwdne37846:0
 
-1. crwdns36658:0`Network interfaces`crwdne36658:0
-2. crwdns36660:0`...`crwdnd36660:0`...`crwdnd36660:0`Configure the GAME firewall`crwdnd36660:0`Add rule`crwdnd36660:0`Other protocol`crwdne36660:0
-3. crwdns36662:0`outgoing port`crwdne36662:0 crwdns36664:0`webrtc-port`crwdne36664:0
-4. crwdns36666:0crwdne36666:0
+1. crwdns37848:0`Network interfaces`crwdne37848:0
+2. crwdns37850:0`...`crwdnd37850:0`...`crwdnd37850:0`Configure the GAME firewall`crwdnd37850:0`Add rule`crwdnd37850:0`Other protocol`crwdne37850:0
+3. crwdns37852:0`outgoing port`crwdnd37852:0`webrtc-port`crwdne37852:0
+4. crwdns37854:0crwdne37854:0
 
-crwdns36668:0crwdne36668:0
+crwdns37856:0crwdne37856:0
 
-1. crwdns36670:0crwdne36670:0
-2. crwdns36672:0crwdne36672:0
-3. crwdns36674:0crwdne36674:0
-4. crwdns36676:0crwdne36676:0 crwdns36678:0`webrtc-port`crwdne36678:0
-5. crwdns36680:0crwdne36680:0
+1. crwdns37858:0crwdne37858:0
+2. crwdns37860:0crwdne37860:0
+3. crwdns37862:0crwdne37862:0
+4. crwdns37864:0`webrtc-port`crwdne37864:0
+5. crwdns37866:0crwdne37866:0
 
-### crwdns36682:0crwdne36682:0 {/* #oracle-cloudoci */}
+### crwdns37868:0crwdne37868:0 {/* #oracle-cloudoci */}
 
-crwdns36684:0crwdne36684:0 crwdns36686:0crwdne36686:0
+crwdns37870:0crwdne37870:0
 
-crwdns36688:0crwdne36688:0
+crwdns37872:0crwdne37872:0
 
-1. crwdns36690:0crwdne36690:0
-2. crwdns36692:0crwdne36692:0
-3. crwdns36694:0crwdne36694:0
-4. crwdns36696:0crwdne36696:0 crwdns36698:0crwdne36698:0 crwdns36700:0crwdne36700:0
-5. crwdns36702:0crwdne36702:0
-6. crwdns36704:0crwdne36704:0
-   - crwdns36706:0`0.0.0.0/0`crwdne36706:0
-   - crwdns36708:0`25565-25565`crwdne36708:0
-   - crwdns36710:0crwdne36710:0
-7. crwdns36712:0crwdne36712:0
-   - crwdns36714:0`0.0.0.0/0`crwdne36714:0
-   - crwdns36716:0`19132-19132`crwdne36716:0
-   - crwdns36718:0crwdne36718:0
-   - crwdns36720:0crwdne36720:0
-8. crwdns36722:0crwdne36722:0
+1. crwdns37874:0crwdne37874:0
+2. crwdns37876:0crwdne37876:0
+3. crwdns37878:0crwdne37878:0
+4. crwdns37880:0crwdne37880:0
+5. crwdns37882:0crwdne37882:0
+6. crwdns37884:0crwdne37884:0
+   - crwdns37886:0`0.0.0.0/0`crwdne37886:0
+   - crwdns37888:0`25565-25565`crwdne37888:0
+   - crwdns37890:0crwdne37890:0
+7. crwdns37892:0crwdne37892:0
+   - crwdns37894:0`0.0.0.0/0`crwdne37894:0
+   - crwdns37896:0`19132-19132`crwdne37896:0
+   - crwdns37898:0crwdne37898:0
+   - crwdns37900:0crwdne37900:0
+8. crwdns37902:0crwdne37902:0
 
-#### crwdns36724:0crwdne36724:0 {/* #oracle-linux */}
+#### crwdns37904:0crwdne37904:0 {/* #oracle-linux */}
 
-crwdns36726:0crwdne36726:0
+crwdns37906:0crwdne37906:0
 
 ```bash
 sudo firewall-cmd --add-port=25565/tcp --permanent
@@ -197,9 +179,9 @@ sudo firewall-cmd --add-port=19132/udp --permanent
 sudo firewall-cmd --reload
 ```
 
-#### crwdns36728:0crwdne36728:0 {/* #ubuntu */}
+#### crwdns37908:0crwdne37908:0 {/* #ubuntu */}
 
-crwdns36730:0crwdne36730:0
+crwdns37910:0crwdne37910:0
 
 ```bash
 sudo ufw allow 25565/tcp

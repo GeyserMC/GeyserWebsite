@@ -1,30 +1,30 @@
 {
   "version.label": {
-    "message": "crwdns37448:0crwdne37448:0",
+    "message": "crwdns38604:0crwdne38604:0",
     "description": "The label for version current"
   },
   "sidebar.geyserSidebar.category.Setup": {
-    "message": "crwdns37450:0crwdne37450:0",
+    "message": "crwdns38606:0crwdne38606:0",
     "description": "The label for category 'Setup' in sidebar 'geyserSidebar'"
   },
   "sidebar.geyserSidebar.category.Common Issues": {
-    "message": "crwdns37452:0crwdne37452:0",
+    "message": "crwdns38608:0crwdne38608:0",
     "description": "The label for category 'Common Issues' in sidebar 'geyserSidebar'"
   },
   "sidebar.geyserSidebar.category.Configuring Geyser": {
-    "message": "crwdns37454:0crwdne37454:0",
+    "message": "crwdns38610:0crwdne38610:0",
     "description": "The label for category 'Configuring Geyser' in sidebar 'geyserSidebar'"
   },
   "sidebar.geyserSidebar.category.FAQ": {
-    "message": "crwdns37456:0crwdne37456:0",
+    "message": "crwdns38612:0crwdne38612:0",
     "description": "The label for category 'FAQ' in sidebar 'geyserSidebar'"
   },
   "sidebar.geyserSidebar.category.Custom Content": {
-    "message": "crwdns37458:0crwdne37458:0",
+    "message": "crwdns38614:0crwdne38614:0",
     "description": "The label for category 'Custom Content' in sidebar 'geyserSidebar'"
   },
   "sidebar.geyserSidebar.category.Geyser API": {
-    "message": "crwdns37460:0crwdne37460:0",
+    "message": "crwdns38616:0crwdne38616:0",
     "description": "The label for category 'Geyser API' in sidebar 'geyserSidebar'"
   }
 }
