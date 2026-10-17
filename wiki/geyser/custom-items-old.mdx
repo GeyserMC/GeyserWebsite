@@ -7,13 +7,13 @@ crowdin_page_id: 85965b69-f5a7-4436-9b6e-93d91d321b23
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-### Format version 1 (legacy)
+### Format version 1 (legacy) {/* #format-version-1-legacy */}
 
 :::warning
 `format_version: 1` is no longer receiving updates. New features will only be added to format version 2.
 :::
 
-## JSON mappings (v1)
+## JSON mappings (v1) {/* #json-mappings-v1 */}
 
 1. Start your server, and you should have a folder called `custom_mappings` that is created. That would be with the folder of `Geyser.jar` file for standalone and inside your Geyser data folder for a plugin.
 2. Create a `.json` file, it can be any name you like and as many files as you like. You don't need to make one file per item. Here is the structure of the file:
@@ -82,9 +82,9 @@ import TabItem from '@theme/TabItem';
     }
     ```
 
-## Geyser extensions (v1)
+## Geyser extensions (v1) {/* #geyser-extensions-v1 */}
 
-### Extending a vanilla item (v1)
+### Extending a vanilla item (v1) {/* #extending-a-vanilla-item-v1 */}
 
 1. Create your custom item options or registrations, to which you can add any of the following. They can be stacked, so that all of the specified types need to match, but you **do NOT need all of them.**
 ```java
@@ -117,7 +117,7 @@ public void onGeyserPreInitializeEvent(GeyserDefineCustomItemsEvent event) {
 }
 ```
 
-### Non vanilla (modded) items with Geyser extensions (for example to use with Fabric) (v1)
+### Non vanilla (modded) items with Geyser extensions (for example to use with Fabric) (v1) {/* #non-vanilla-modded-items-with-geyser-extensions-for-example-to-use-with-fabric-v1 */}
 
 1. Create your item data:
 ```java

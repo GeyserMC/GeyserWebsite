@@ -34,7 +34,7 @@
         "@fortawesome/free-regular-svg-icons": "7.3.1",
         "@fortawesome/free-solid-svg-icons": "7.3.1",
         "@fortawesome/react-fontawesome": "3.5.0",
-        "@kas-tle/docusaurus-og": "github:Kas-tle/docusaurus-og#5f91196240d02442fc8bf507f753a8e288b048fd",
+        "@kas-tle/docusaurus-og": "github:Kas-tle/docusaurus-og#baf5ffe3e73e9da92d8970fba93af7a4f1d8b8e8",
         "@mdx-js/react": "3.0.0",
         "adm-zip": "0.6.1",
         "clsx": "2.1.1",

@@ -17,7 +17,7 @@ Geyser does not convert resource packs from Java Edition automatically.
 However, you can use automatic tools such as [Rainbow](/wiki/other/rainbow/) or [Thunder](/wiki/other/thunder) to make converting custom content simpler.
 :::
 
-## JSON mappings {#json-mappings}
+## JSON mappings {/* #json-mappings */}
 
 Various custom additions to the game will require writing custom JSON mappings for Geyser. These mappings are placed
 within the `custom_mappings` folder in Geyser's config directory. To enable the usage of custom JSON mappings, ensure

@@ -6,7 +6,7 @@ description: >-
 crowdin_page_id: 34a0347b-bc2a-4239-a663-1a831e503ad6
 ---
 
-## What is Global Linking? {#what-is-global-linking}
+## What is Global Linking? {/* #what-is-global-linking */}
 
 Instructions and information about how to link can also be found here: [https://link.geysermc.org/](https://link.geysermc.org/)
 
@@ -41,7 +41,7 @@ Once you saved the config and restarted your server you should be using Global L
 
 If you don't want to use Global Linking, you can disable `enable-global-linking` in the Floodgate config.
 
-## Local Linking {#local-linking}
+## Local Linking {/* #local-linking */}
 You can also set up a local linking database on your server. Local linking can work with Global Linking at the same time. Link entries in your local database will override entries in the Global Linking Server.
 
 Note that you only have to follow these steps on your proxy (BungeeCord or Velocity), if you have one.

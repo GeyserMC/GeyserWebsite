@@ -4946,9 +4946,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@kas-tle/docusaurus-og@github:Kas-tle/docusaurus-og#5f91196240d02442fc8bf507f753a8e288b048fd":
+"@kas-tle/docusaurus-og@github:Kas-tle/docusaurus-og#baf5ffe3e73e9da92d8970fba93af7a4f1d8b8e8":
   version: 1.0.0-alpha.132
-  resolution: "@kas-tle/docusaurus-og@https://github.com/Kas-tle/docusaurus-og.git#commit=5f91196240d02442fc8bf507f753a8e288b048fd"
+  resolution: "@kas-tle/docusaurus-og@https://github.com/Kas-tle/docusaurus-og.git#commit=baf5ffe3e73e9da92d8970fba93af7a4f1d8b8e8"
   dependencies:
     "@docusaurus/core": "npm:^3.4.0"
     "@docusaurus/module-type-aliases": "npm:^3.4.0"
@@ -4964,7 +4964,7 @@ __metadata:
     node-html-parser: "npm:^6.1.5"
     object-hash: "npm:^3.0.0"
     satori: "npm:^0.10.13"
-  checksum: 10c0/519a9d4402b8318c42f954f9137bc59e24520b96929bf8a6af37b22e1df3edbe827a4af495c36df6185886267209eb1197b52272b1393133a2194bcfda4809b7
+  checksum: 10c0/d70f239e16ddf25850688e8b670edb369feb1381ab0235775f7c88fc58ec02eaba074b70815b474b5a88bf32dc78ddc8d01fd6500892e5064876980251faa918
   languageName: node
   linkType: hard
 
@@ -10958,7 +10958,7 @@ __metadata:
     "@fortawesome/free-regular-svg-icons": "npm:7.3.1"
     "@fortawesome/free-solid-svg-icons": "npm:7.3.1"
     "@fortawesome/react-fontawesome": "npm:3.5.0"
-    "@kas-tle/docusaurus-og": "github:Kas-tle/docusaurus-og#5f91196240d02442fc8bf507f753a8e288b048fd"
+    "@kas-tle/docusaurus-og": "github:Kas-tle/docusaurus-og#baf5ffe3e73e9da92d8970fba93af7a4f1d8b8e8"
     "@mdx-js/react": "npm:3.0.0"
     "@types/adm-zip": "npm:0.6.0"
     adm-zip: "npm:0.6.1"

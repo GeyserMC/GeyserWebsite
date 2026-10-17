@@ -22,7 +22,7 @@ To learn what signaling is, read [Preparing your Geyser server for NetherNet](/b
 This page only matters if Geyser is configured to use **built-in signaling**: `mode` in the `signaling` section is `builtin` (the default) or `hybrid`.
 :::
 
-## What you need {#what-you-need}
+## What you need {/* #what-you-need */}
 
 1. **A domain name** that points to your server, like `play.example.com`.
    Players must connect with this name, not with an IP address, because the certificate is made for the name.
@@ -33,7 +33,7 @@ This page only matters if Geyser is configured to use **built-in signaling**: `m
    which need TCP port 80 to be reachable from the internet while obtaining and renewing certificates.
    Forward it in your router like your Geyser port. Let's Encrypt's DNS challenge works without port 80, but is not covered here.
 
-## Setting up HTTPS {#setting-up-https}
+## Setting up HTTPS {/* #setting-up-https */}
 
 Geyser can serve HTTPS itself with a certificate set in its config. Alternatively, a reverse proxy such as Caddy or nginx can handle HTTPS in front of Geyser.
 If you would rather not manage a certificate at all, [external signaling](/wiki/geyser/geyser-command-line-arguments-and-system-properties#nethernet-system-properties) (`mode: nxs`) is an option as well, if the signaling service provides HTTPS: [Warden](https://warden.cloud) does, but not every service does.
@@ -362,7 +362,7 @@ nginx -t && brew services restart nginx
 </TabItem>
 </Tabs>
 
-## Checking that it works {#checking}
+## Checking that it works {/* #checking */}
 
 1. Look at the Geyser console. With a certificate in the Geyser config, it says `Built-in signaling started on https://`.
    When using a reverse proxy, it says `Built-in signaling started on http://` with port 19133.

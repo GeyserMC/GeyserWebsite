@@ -1,1023 +1,1118 @@
 {
-  "pages.main.title": {
-    "message": "crwdns34164:0crwdne34164:0"
+  "mdx.setup.supported_versions": {
+    "message": "crwdns39104:0crwdne39104:0"
   },
-  "pages.main.subtitle": {
-    "message": "crwdns34166:0crwdne34166:0"
+  "mdx.setup.host_provider": {
+    "message": "crwdns39106:0crwdne39106:0"
   },
-  "components.homepage_features.1.line1": {
-    "message": "crwdns34168:0crwdne34168:0"
+  "mdx.setup.self_host": {
+    "message": "crwdns39108:0crwdne39108:0"
   },
-  "components.homepage_features.1.line2": {
-    "message": "crwdns34170:0crwdne34170:0"
+  "mdx.setup.modded_servers": {
+    "message": "crwdns39110:0crwdne39110:0"
   },
-  "components.homepage_features.2": {
-    "message": "crwdns34172:0crwdne34172:0"
+  "mdx.setup.proxy_servers": {
+    "message": "crwdns39112:0crwdne39112:0"
   },
-  "components.homepage_features.3.line1": {
-    "message": "crwdns34174:0crwdne34174:0"
+  "mdx.setup.standalone": {
+    "message": "crwdns39114:0crwdne39114:0"
   },
-  "components.homepage_features.3.line2": {
-    "message": "crwdns34176:0crwdne34176:0"
+  "mdx.setup.checking_server_version": {
+    "message": "crwdns39116:0crwdne39116:0"
+  },
+  "mdx.setup.installing_geyser": {
+    "message": "crwdns39118:0crwdne39118:0"
+  },
+  "mdx.setup.download_jar": {
+    "message": "crwdns39120:0{jarName}crwdne39120:0"
+  },
+  "mdx.setup.place_jar": {
+    "message": "crwdns39122:0{jarName}crwdnd39122:0{jarDirectory}crwdne39122:0"
+  },
+  "mdx.setup.restart_server": {
+    "message": "crwdns39124:0crwdne39124:0"
+  },
+  "mdx.setup.restart_geyser": {
+    "message": "crwdns39126:0crwdne39126:0"
+  },
+  "mdx.setup.restart_velocity": {
+    "message": "crwdns39128:0crwdne39128:0"
+  },
+  "mdx.setup.restart_bungeecord": {
+    "message": "crwdns39130:0crwdne39130:0"
+  },
+  "mdx.setup.restart_viaproxy": {
+    "message": "crwdns39132:0crwdne39132:0"
+  },
+  "mdx.setup.fabric_dependency": {
+    "message": "crwdns39134:0{fabricApi}crwdne39134:0"
+  },
+  "mdx.setup.version_step_viaversion": {
+    "message": "crwdns39136:0{version}crwdnd39136:0{viaVersion}crwdnd39136:0{supportedVersions}crwdne39136:0"
+  },
+  "mdx.setup.version_step_proxy": {
+    "message": "crwdns39138:0{version}crwdne39138:0"
+  },
+  "mdx.setup.proxy_install_only": {
+    "message": "crwdns39140:0{proxy}crwdne39140:0"
+  },
+  "mdx.setup.modded_requirements": {
+    "message": "crwdns39142:0{jarName}crwdnd39142:0{version}crwdnd39142:0{supportedVersions}crwdne39142:0"
+  },
+  "mdx.setup.self_port_choice": {
+    "message": "crwdns39144:0{platform}crwdne39144:0"
+  },
+  "mdx.setup.self_port_choice_standalone": {
+    "message": "crwdns39146:0crwdne39146:0"
+  },
+  "mdx.setup.self_port_sharing": {
+    "message": "crwdns39148:0{important}crwdne39148:0"
+  },
+  "mdx.setup.self_port_sharing.important": {
+    "message": "crwdns39150:0crwdne39150:0"
+  },
+  "mdx.setup.connect_local_title": {
+    "message": "crwdns39152:0crwdne39152:0"
+  },
+  "mdx.setup.connect_local": {
+    "message": "crwdns39154:0{localhost}crwdnd39154:0{loopback}crwdnd39154:0{ten}crwdnd39154:0{oneNineTwo}crwdne39154:0"
+  },
+  "mdx.setup.connect_lan": {
+    "message": "crwdns39156:0{friends}crwdne39156:0"
+  },
+  "mdx.setup.connect_lan.friends": {
+    "message": "crwdns39158:0crwdne39158:0"
+  },
+  "mdx.setup.connect_remote_title": {
+    "message": "crwdns39160:0crwdne39160:0"
+  },
+  "mdx.setup.connect_remote": {
+    "message": "crwdns39162:0crwdne39162:0"
+  },
+  "mdx.setup.connect_tcp_udp": {
+    "message": "crwdns39164:0{webrtcPort}crwdne39164:0"
+  },
+  "mdx.setup.connect_options": {
+    "message": "crwdns39166:0crwdne39166:0"
+  },
+  "mdx.setup.connect_port_forwarding": {
+    "message": "crwdns39168:0{portForwarding}crwdnd39168:0{guide}crwdne39168:0"
+  },
+  "mdx.setup.connect_port_forwarding.title": {
+    "message": "crwdns39170:0crwdne39170:0"
+  },
+  "mdx.setup.connect_port_forwarding.guide": {
+    "message": "crwdns39172:0crwdne39172:0"
+  },
+  "mdx.setup.connect_playit": {
+    "message": "crwdns39174:0{playit}crwdnd39174:0{guide}crwdnd39174:0{status}crwdne39174:0"
+  },
+  "mdx.setup.connect_playit.guide": {
+    "message": "crwdns39176:0crwdne39176:0"
+  },
+  "mdx.setup.connect_playit.status": {
+    "message": "crwdns39178:0crwdne39178:0"
+  },
+  "mdx.setup.https_step_title": {
+    "message": "crwdns39180:0crwdne39180:0"
+  },
+  "mdx.setup.https_step": {
+    "message": "crwdns39182:0{httpsGuide}crwdnd39182:0{warden}crwdne39182:0"
+  },
+  "mdx.setup.https_step.guide": {
+    "message": "crwdns39184:0crwdne39184:0"
+  },
+  "mdx.setup.floodgate_info": {
+    "message": "crwdns39186:0{floodgate}crwdne39186:0"
+  },
+  "mdx.setup.viaproxy_not_plugin.title": {
+    "message": "crwdns39188:0crwdne39188:0"
+  },
+  "mdx.setup.viaproxy_not_plugin": {
+    "message": "crwdns39190:0{plugins}crwdnd39190:0{mods}crwdne39190:0"
+  },
+  "mdx.setup.viaproxy_setup": {
+    "message": "crwdns39192:0{viaProxy}crwdne39192:0"
+  },
+  "mdx.setup.viaproxy_accounts": {
+    "message": "crwdns39194:0{floodgate}crwdne39194:0"
+  },
+  "mdx.setup.viaproxy_auth_type": {
+    "message": "crwdns39196:0{authType}crwdne39196:0"
+  },
+  "mdx.setup.standalone_java": {
+    "message": "crwdns39198:0crwdne39198:0"
+  },
+  "mdx.setup.standalone_not_plugin": {
+    "message": "crwdns39200:0crwdne39200:0"
+  },
+  "mdx.setup.standalone_download": {
+    "message": "crwdns39202:0{standalone}crwdne39202:0"
+  },
+  "mdx.setup.standalone_folder": {
+    "message": "crwdns39204:0crwdne39204:0"
+  },
+  "mdx.setup.standalone_start": {
+    "message": "crwdns39206:0crwdne39206:0"
+  },
+  "mdx.setup.standalone_gui": {
+    "message": "crwdns39208:0{gui}crwdne39208:0"
+  },
+  "mdx.setup.standalone_console": {
+    "message": "crwdns39210:0{console}crwdnd39210:0{startupScript}crwdne39210:0"
+  },
+  "mdx.setup.standalone_console.console": {
+    "message": "crwdns39212:0crwdne39212:0"
+  },
+  "mdx.setup.standalone_console.startup_script": {
+    "message": "crwdns39214:0crwdne39214:0"
+  },
+  "mdx.setup.standalone_remote_intro": {
+    "message": "crwdns39216:0{java}crwdne39216:0"
+  },
+  "mdx.setup.standalone_remote": {
+    "message": "crwdns39218:0{address}crwdnd39218:0{port}crwdnd39218:0{authType}crwdnd39218:0{floodgate}crwdnd39218:0{online}crwdnd39218:0{offline}crwdnd39218:0{floodgateSetup}crwdne39218:0"
+  },
+  "mdx.setup.standalone_remote.floodgate_setup": {
+    "message": "crwdns39220:0crwdne39220:0"
+  },
+  "mdx.setup.standalone_android_title": {
+    "message": "crwdns39222:0crwdne39222:0"
+  },
+  "mdx.setup.standalone_android_caution": {
+    "message": "crwdns39224:0crwdne39224:0"
+  },
+  "mdx.setup.standalone_termux_install": {
+    "message": "crwdns39226:0{termux}crwdne39226:0"
+  },
+  "mdx.setup.run_command": {
+    "message": "crwdns39228:0{command}crwdne39228:0"
+  },
+  "mdx.setup.standalone_termux_script": {
+    "message": "crwdns39230:0crwdne39230:0"
+  },
+  "mdx.setup.https_note": {
+    "message": "crwdns39232:0{https}crwdne39232:0"
+  },
+  "mdx.setup.configuring_geyser": {
+    "message": "crwdns39234:0crwdne39234:0"
+  },
+  "mdx.setup.open_config_simple": {
+    "message": "crwdns39236:0{configLocation}crwdnd39236:0{bedrock}crwdne39236:0"
+  },
+  "mdx.setup.preconfigured": {
+    "message": "crwdns39238:0{name}crwdne39238:0"
+  },
+  "mdx.setup.transport_nethernet_simple": {
+    "message": "crwdns39240:0crwdne39240:0"
+  },
+  "mdx.setup.transport_both_compat": {
+    "message": "crwdns39242:0crwdne39242:0"
+  },
+  "mdx.setup.placeholder_word": {
+    "message": "crwdns39244:0crwdne39244:0"
+  },
+  "mdx.setup.replace_with_simple": {
+    "message": "crwdns39246:0crwdne39246:0"
+  },
+  "mdx.setup.placeholder_java_port": {
+    "message": "crwdns39248:0crwdne39248:0"
+  },
+  "mdx.setup.placeholder_java_port_udp": {
+    "message": "crwdns39250:0{port}crwdne39250:0"
+  },
+  "mdx.setup.placeholder_second_available_port": {
+    "message": "crwdns39252:0{port}crwdne39252:0"
+  },
+  "mdx.setup.raknet_on_port": {
+    "message": "crwdns39254:0{port}crwdne39254:0"
+  },
+  "mdx.setup.summary.nethernet_reported_generic": {
+    "message": "crwdns39256:0crwdne39256:0"
+  },
+  "mdx.setup.summary.supporter_configures": {
+    "message": "crwdns39258:0{name}crwdne39258:0"
+  },
+  "mdx.setup.summary.updated": {
+    "message": "crwdns39260:0{date}crwdne39260:0"
+  },
+  "mdx.setup.badge.gold": {
+    "message": "crwdns39262:0crwdne39262:0"
+  },
+  "mdx.setup.badge.silver": {
+    "message": "crwdns39264:0crwdne39264:0"
+  },
+  "mdx.setup.badge.bronze": {
+    "message": "crwdns39266:0crwdne39266:0"
+  },
+  "mdx.setup.unconfirmed_title": {
+    "message": "crwdns39268:0crwdne39268:0"
+  },
+  "mdx.setup.warning_title": {
+    "message": "crwdns39270:0crwdne39270:0"
+  },
+  "mdx.setup.unconfirmed_reach_out_update": {
+    "message": "crwdns39272:0{name}crwdnd39272:0{discord}crwdne39272:0"
+  },
+  "mdx.setup.try_not_listed": {
+    "message": "crwdns39274:0{notListed}crwdnd39274:0{warden}crwdne39274:0"
+  },
+  "mdx.setup.try_not_listed.link": {
+    "message": "crwdns39276:0crwdne39276:0"
+  },
+  "mdx.setup.no_signaling": {
+    "message": "crwdns39278:0{name}crwdne39278:0"
+  },
+  "mdx.setup.additional_steps": {
+    "message": "crwdns39280:0crwdne39280:0"
+  },
+  "mdx.setup.connecting_on_bedrock": {
+    "message": "crwdns39282:0crwdne39282:0"
+  },
+  "mdx.setup.hosting_provider_article_short": {
+    "message": "crwdns39284:0crwdne39284:0"
+  },
+  "mdx.setup.hosting_provider_website_short": {
+    "message": "crwdns39286:0crwdne39286:0"
+  },
+  "mdx.setup.hosting_provider_support_short": {
+    "message": "crwdns39288:0crwdne39288:0"
+  },
+  "mdx.setup.not_listed.tab_allocated": {
+    "message": "crwdns39290:0crwdne39290:0"
+  },
+  "mdx.setup.not_listed.tab_java_only": {
+    "message": "crwdns39292:0crwdne39292:0"
+  },
+  "components.provider.open_collaboration_group": {
+    "message": "crwdns39294:0crwdne39294:0"
+  },
+  "components.provider.other_group": {
+    "message": "crwdns39296:0crwdne39296:0"
+  },
+  "mdx.setup.connect.port_java": {
+    "message": "crwdns39298:0crwdne39298:0"
+  },
+  "mdx.setup.connect.port_config_step": {
+    "message": "crwdns39300:0crwdne39300:0"
+  },
+  "mdx.setup.connect.intro": {
+    "message": "crwdns39302:0crwdne39302:0"
+  },
+  "mdx.setup.connect.add_server": {
+    "message": "crwdns39304:0crwdne39304:0"
+  },
+  "mdx.setup.connect.server_name": {
+    "message": "crwdns39306:0crwdne39306:0"
+  },
+  "mdx.setup.connect.server_name_value": {
+    "message": "crwdns39308:0crwdne39308:0"
+  },
+  "mdx.setup.connect.server_address": {
+    "message": "crwdns39310:0crwdne39310:0"
+  },
+  "mdx.setup.connect.server_address_value": {
+    "message": "crwdns39312:0crwdne39312:0"
+  },
+  "mdx.setup.connect.port": {
+    "message": "crwdns39314:0crwdne39314:0"
+  },
+  "mdx.setup.transport_nethernet_tab": {
+    "message": "crwdns39316:0crwdne39316:0"
+  },
+  "mdx.setup.transport_both_tab": {
+    "message": "crwdns39318:0crwdne39318:0"
+  },
+  "providers.ports.assign": {
+    "message": "crwdns39320:0crwdne39320:0"
+  },
+  "providers.ports.allocated": {
+    "message": "crwdns39322:0crwdne39322:0"
+  },
+  "providers.ports.ask_host": {
+    "message": "crwdns39324:0crwdne39324:0"
+  },
+  "providers.ports.new_port": {
+    "message": "crwdns39326:0crwdne39326:0"
+  },
+  "providers.ports.from_host": {
+    "message": "crwdns39328:0crwdne39328:0"
+  },
+  "providers.config.templates.java_address": {
+    "message": "crwdns39330:0`address`crwdnd39330:0`bedrock`crwdne39330:0"
+  },
+  "providers.config.templates.custom_port_dedicated_ip": {
+    "message": "crwdns39332:0crwdne39332:0"
+  },
+  "providers.warnings.ovh_firewall_misconfig": {
+    "message": "crwdns39334:0`Unable to Connect`crwdnd39334:0[crwdnd39334:0](/wiki/geyser/port-forwarding/#ovh-and-soyoustart)crwdne39334:0"
+  },
+  "providers.config.templates.install_location.plugin_list": {
+    "message": "crwdns39336:0crwdne39336:0"
+  },
+  "providers.config.templates.install_location.enable_bedrock_crossplay": {
+    "message": "crwdns39338:0crwdne39338:0"
+  },
+  "providers.config.templates.info.geyser_installed_by_default": {
+    "message": "crwdns39340:0crwdne39340:0"
+  },
+  "providers.config.templates.info.only_serves_region": {
+    "message": "crwdns39342:0{region}crwdne39342:0"
+  },
+  "pages.hosting.tier.gold": {
+    "message": "crwdns39344:0crwdne39344:0"
+  },
+  "pages.hosting.tier.silver": {
+    "message": "crwdns39346:0crwdne39346:0"
+  },
+  "pages.hosting.tier.bronze": {
+    "message": "crwdns39348:0crwdne39348:0"
+  },
+  "pages.hosting.card.website": {
+    "message": "crwdns39350:0crwdne39350:0"
+  },
+  "pages.hosting.card.setup": {
+    "message": "crwdns39352:0crwdne39352:0"
+  },
+  "pages.hosting.title": {
+    "message": "crwdns39354:0crwdne39354:0"
+  },
+  "pages.hosting.subheading": {
+    "message": "crwdns39356:0crwdne39356:0"
+  },
+  "pages.hosting.intro": {
+    "message": "crwdns39358:0{openCollaboration}crwdne39358:0"
+  },
+  "pages.hosting.empty": {
+    "message": "crwdns39360:0crwdne39360:0"
+  },
+  "pages.hosting.other.title": {
+    "message": "crwdns39362:0crwdne39362:0"
+  },
+  "pages.hosting.other.text": {
+    "message": "crwdns39364:0{setupGuide}crwdne39364:0"
+  },
+  "pages.hosting.other.setup_guide": {
+    "message": "crwdns39366:0crwdne39366:0"
+  },
+  "pages.hosting.meta.title": {
+    "message": "crwdns39368:0crwdne39368:0"
+  },
+  "pages.hosting.meta.description": {
+    "message": "crwdns39370:0crwdne39370:0"
   },
   "pages.download.title": {
-    "message": "crwdns34178:0crwdne34178:0"
+    "message": "crwdns39372:0crwdne39372:0"
   },
   "pages.download.subheading": {
-    "message": "crwdns34180:0crwdne34180:0"
+    "message": "crwdns39374:0crwdne39374:0"
   },
   "pages.download.description.geyser": {
-    "message": "crwdns34182:0crwdne34182:0"
+    "message": "crwdns39376:0crwdne39376:0"
   },
   "pages.download.description.floodgate": {
-    "message": "crwdns34184:0crwdne34184:0"
+    "message": "crwdns39378:0crwdne39378:0"
   },
-  "pages.download.description.geyserconnect": {
-    "message": "crwdns34186:0crwdne34186:0"
+  "pages.download.description.floodgatedatabases": {
+    "message": "crwdns39380:0crwdne39380:0"
   },
   "pages.download.description.thirdpartycosmetics": {
-    "message": "crwdns34188:0crwdne34188:0"
+    "message": "crwdns39382:0crwdne39382:0"
+  },
+  "pages.download.description.offhandextension": {
+    "message": "crwdns39384:0crwdne39384:0"
+  },
+  "pages.download.description.hurricane": {
+    "message": "crwdns39386:0crwdne39386:0"
+  },
+  "pages.download.description.geyserconnect": {
+    "message": "crwdns39388:0crwdne39388:0"
+  },
+  "pages.download.description.rainbow": {
+    "message": "crwdns39390:0crwdne39390:0"
+  },
+  "pages.download.description.hydraulic": {
+    "message": "crwdns39392:0crwdne39392:0"
+  },
+  "pages.download.description.thunder": {
+    "message": "crwdns39394:0crwdne39394:0"
+  },
+  "pages.main.title": {
+    "message": "crwdns39396:0crwdne39396:0"
+  },
+  "pages.main.subtitle": {
+    "message": "crwdns39398:0crwdne39398:0"
+  },
+  "components.homepage_features.1.line1": {
+    "message": "crwdns39400:0crwdne39400:0"
+  },
+  "components.homepage_features.1.line2": {
+    "message": "crwdns39402:0crwdne39402:0"
+  },
+  "components.homepage_features.2": {
+    "message": "crwdns39404:0crwdne39404:0"
+  },
+  "components.homepage_features.3.line1": {
+    "message": "crwdns39406:0crwdne39406:0"
+  },
+  "components.homepage_features.3.line2": {
+    "message": "crwdns39408:0crwdne39408:0"
   },
   "pages.dumpviewer.title": {
-    "message": "crwdns34190:0crwdne34190:0"
+    "message": "crwdns39410:0crwdne39410:0"
   },
   "pages.dumpviewer.subheading": {
-    "message": "crwdns34192:0crwdne34192:0"
+    "message": "crwdns39412:0crwdne39412:0"
   },
   "pages.dumpviewer.enterdumpid": {
-    "message": "crwdns34194:0crwdne34194:0"
+    "message": "crwdns39414:0crwdne39414:0"
   },
   "pages.dumpviewer.button.load": {
-    "message": "crwdns34196:0crwdne34196:0"
+    "message": "crwdns39416:0crwdne39416:0"
   },
   "pages.dumpviewer.versions": {
-    "message": "crwdns34198:0crwdne34198:0"
+    "message": "crwdns39418:0crwdne39418:0"
   },
   "pages.dumpviewer.versions.geyserver": {
-    "message": "crwdns34200:0crwdne34200:0"
+    "message": "crwdns39420:0crwdne39420:0"
   },
   "pages.dumpviewer.versions.javaver": {
-    "message": "crwdns34202:0crwdne34202:0"
+    "message": "crwdns39422:0crwdne39422:0"
   },
   "pages.dumpviewer.versions.os": {
-    "message": "crwdns34204:0crwdne34204:0"
+    "message": "crwdns39424:0crwdne39424:0"
   },
   "pages.dumpviewer.geyserver": {
-    "message": "crwdns34206:0crwdne34206:0"
+    "message": "crwdns39426:0crwdne39426:0"
   },
   "pages.dumpviewer.geyserver.build": {
-    "message": "crwdns34208:0crwdne34208:0"
+    "message": "crwdns39428:0crwdne39428:0"
   },
   "pages.dumpviewer.geyserver.commit": {
-    "message": "crwdns34210:0crwdne34210:0"
+    "message": "crwdns39430:0crwdne39430:0"
   },
   "pages.dumpviewer.geyserver.branch": {
-    "message": "crwdns34212:0crwdne34212:0"
+    "message": "crwdns39432:0crwdne39432:0"
   },
   "pages.dumpviewer.platform": {
-    "message": "crwdns34214:0crwdne34214:0"
+    "message": "crwdns39434:0crwdne39434:0"
   },
   "pages.dumpviewer.platform.id": {
-    "message": "crwdns34216:0crwdne34216:0"
+    "message": "crwdns39436:0crwdne39436:0"
   },
   "pages.dumpviewer.platform.name": {
-    "message": "crwdns34218:0crwdne34218:0"
+    "message": "crwdns39438:0crwdne39438:0"
   },
   "pages.dumpviewer.platform.version": {
-    "message": "crwdns34220:0crwdne34220:0"
+    "message": "crwdns39440:0crwdne39440:0"
   },
   "pages.dumpviewer.platform.apiver": {
-    "message": "crwdns34222:0crwdne34222:0"
+    "message": "crwdns39442:0crwdne39442:0"
   },
   "pages.dumpviewer.platform.onlinemode": {
-    "message": "crwdns34224:0crwdne34224:0"
+    "message": "crwdns39444:0crwdne39444:0"
   },
   "pages.dumpviewer.sysinfo": {
-    "message": "crwdns34226:0crwdne34226:0"
+    "message": "crwdns39446:0crwdne39446:0"
   },
   "pages.dumpviewer.cpucount": {
-    "message": "crwdns34228:0crwdne34228:0"
+    "message": "crwdns39448:0crwdne39448:0"
   },
   "pages.dumpviewer.cpuname": {
-    "message": "crwdns34230:0crwdne34230:0"
+    "message": "crwdns39450:0crwdne39450:0"
   },
   "pages.dumpviewer.ram": {
-    "message": "crwdns34232:0crwdne34232:0"
+    "message": "crwdns39452:0crwdne39452:0"
   },
   "pages.dumpviewer.javaname": {
-    "message": "crwdns34234:0crwdne34234:0"
+    "message": "crwdns39454:0crwdne39454:0"
   },
   "pages.dumpviewer.javavendor": {
-    "message": "crwdns34236:0crwdne34236:0"
+    "message": "crwdns39456:0crwdne39456:0"
   },
   "pages.dumpviewer.dockercheck": {
-    "message": "crwdns34238:0crwdne34238:0"
+    "message": "crwdns39458:0crwdne39458:0"
   },
   "pages.dumpviewer.plugins": {
-    "message": "crwdns34240:0crwdne34240:0"
+    "message": "crwdns39460:0crwdne39460:0"
   },
   "pages.dumpviewer.plugins.noplugins": {
-    "message": "crwdns34242:0crwdne34242:0"
+    "message": "crwdns39462:0crwdne39462:0"
   },
   "pages.dumpviewer.plugins.helptext": {
-    "message": "crwdns34244:0crwdne34244:0"
+    "message": "crwdns39464:0crwdne39464:0"
+  },
+  "pages.dumpviewer.extensions": {
+    "message": "crwdns39466:0crwdne39466:0"
+  },
+  "pages.dumpviewer.extensions.noextensions": {
+    "message": "crwdns39468:0crwdne39468:0"
+  },
+  "pages.dumpviewer.extensions.helptext": {
+    "message": "crwdns39470:0crwdne39470:0"
   },
   "pages.dumpviewer.config": {
-    "message": "crwdns34246:0crwdne34246:0"
+    "message": "crwdns39472:0crwdne39472:0"
   },
   "pages.dumpviewer.viewsource": {
-    "message": "crwdns34248:0crwdne34248:0"
+    "message": "crwdns39474:0crwdne39474:0"
   },
   "theme.ErrorPageContent.title": {
-    "message": "crwdns34250:0crwdne34250:0",
+    "message": "crwdns39476:0crwdne39476:0",
     "description": "The title of the fallback page when the page crashed"
   },
   "theme.BackToTopButton.buttonAriaLabel": {
-    "message": "crwdns34252:0crwdne34252:0",
+    "message": "crwdns39478:0crwdne39478:0",
     "description": "The ARIA label for the back to top button"
   },
   "theme.blog.archive.title": {
-    "message": "crwdns34254:0crwdne34254:0",
+    "message": "crwdns39480:0crwdne39480:0",
     "description": "The page & hero title of the blog archive page"
   },
   "theme.blog.archive.description": {
-    "message": "crwdns34256:0crwdne34256:0",
+    "message": "crwdns39482:0crwdne39482:0",
     "description": "The page & hero description of the blog archive page"
   },
   "theme.blog.paginator.navAriaLabel": {
-    "message": "crwdns34258:0crwdne34258:0",
+    "message": "crwdns39484:0crwdne39484:0",
     "description": "The ARIA label for the blog pagination"
   },
   "theme.blog.paginator.newerEntries": {
-    "message": "crwdns34260:0crwdne34260:0",
+    "message": "crwdns39486:0crwdne39486:0",
     "description": "The label used to navigate to the newer blog posts page (previous page)"
   },
   "theme.blog.paginator.olderEntries": {
-    "message": "crwdns34262:0crwdne34262:0",
+    "message": "crwdns39488:0crwdne39488:0",
     "description": "The label used to navigate to the older blog posts page (next page)"
   },
   "theme.blog.post.paginator.navAriaLabel": {
-    "message": "crwdns34264:0crwdne34264:0",
+    "message": "crwdns39490:0crwdne39490:0",
     "description": "The ARIA label for the blog posts pagination"
   },
   "theme.blog.post.paginator.newerPost": {
-    "message": "crwdns34266:0crwdne34266:0",
+    "message": "crwdns39492:0crwdne39492:0",
     "description": "The blog post button label to navigate to the newer/previous post"
   },
   "theme.blog.post.paginator.olderPost": {
-    "message": "crwdns34268:0crwdne34268:0",
+    "message": "crwdns39494:0crwdne39494:0",
     "description": "The blog post button label to navigate to the older/next post"
   },
-  "theme.blog.post.plurals": {
-    "message": "crwdns34270:0{count}crwdne34270:0",
-    "description": "Pluralized label for \"{count} posts\". Use as much plural forms (separated by \"|\") as your language support (see https://www.unicode.org/cldr/cldr-aux/charts/34/supplemental/language_plural_rules.html)"
-  },
-  "theme.blog.tagTitle": {
-    "message": "crwdns34272:0{nPosts}crwdnd34272:0{tagName}crwdne34272:0",
-    "description": "The title of the page for a blog tag"
-  },
   "theme.tags.tagsPageLink": {
-    "message": "crwdns34274:0crwdne34274:0",
+    "message": "crwdns39496:0crwdne39496:0",
     "description": "The label of the link targeting the tag list page"
   },
-  "theme.colorToggle.ariaLabel": {
-    "message": "crwdns34276:0{mode}crwdne34276:0",
-    "description": "The ARIA label for the navbar color mode toggle"
-  },
-  "theme.colorToggle.ariaLabel.mode.dark": {
-    "message": "crwdns34278:0crwdne34278:0",
-    "description": "The name for the dark color mode"
+  "theme.colorToggle.ariaLabel.mode.system": {
+    "message": "crwdns39498:0crwdne39498:0",
+    "description": "The name for the system color mode"
   },
   "theme.colorToggle.ariaLabel.mode.light": {
-    "message": "crwdns34280:0crwdne34280:0",
+    "message": "crwdns39500:0crwdne39500:0",
     "description": "The name for the light color mode"
   },
-  "theme.docs.DocCard.categoryDescription.plurals": {
-    "message": "crwdns34282:0{count}crwdne34282:0",
-    "description": "The default description for a category card in the generated index about how many items this category includes"
+  "theme.colorToggle.ariaLabel.mode.dark": {
+    "message": "crwdns39502:0crwdne39502:0",
+    "description": "The name for the dark color mode"
+  },
+  "theme.colorToggle.ariaLabel": {
+    "message": "crwdns39504:0{mode}crwdne39504:0",
+    "description": "The ARIA label for the color mode toggle"
   },
   "theme.docs.breadcrumbs.navAriaLabel": {
-    "message": "crwdns34284:0crwdne34284:0",
+    "message": "crwdns39506:0crwdne39506:0",
     "description": "The ARIA label for the breadcrumbs"
   },
   "theme.docs.paginator.navAriaLabel": {
-    "message": "crwdns34286:0crwdne34286:0",
+    "message": "crwdns39508:0crwdne39508:0",
     "description": "The ARIA label for the docs pagination"
   },
   "theme.docs.paginator.previous": {
-    "message": "crwdns34288:0crwdne34288:0",
+    "message": "crwdns39510:0crwdne39510:0",
     "description": "The label used to navigate to the previous doc"
   },
   "theme.docs.paginator.next": {
-    "message": "crwdns34290:0crwdne34290:0",
+    "message": "crwdns39512:0crwdne39512:0",
     "description": "The label used to navigate to the next doc"
   },
   "theme.docs.tagDocListPageTitle.nDocsTagged": {
-    "message": "crwdns34292:0{count}crwdne34292:0",
+    "message": "crwdns39514:0{count}crwdne39514:0",
     "description": "Pluralized label for \"{count} docs tagged\". Use as much plural forms (separated by \"|\") as your language support (see https://www.unicode.org/cldr/cldr-aux/charts/34/supplemental/language_plural_rules.html)"
   },
   "theme.docs.tagDocListPageTitle": {
-    "message": "crwdns34294:0{nDocsTagged}crwdnd34294:0{tagName}crwdne34294:0",
+    "message": "crwdns39516:0{nDocsTagged}crwdnd39516:0{tagName}crwdne39516:0",
     "description": "The title of the page for a docs tag"
   },
   "theme.docs.versionBadge.label": {
-    "message": "crwdns34296:0{versionLabel}crwdne34296:0"
+    "message": "crwdns39518:0{versionLabel}crwdne39518:0"
   },
   "theme.docs.versions.unreleasedVersionLabel": {
-    "message": "crwdns34298:0{siteTitle}crwdnd34298:0{versionLabel}crwdne34298:0",
+    "message": "crwdns39520:0{siteTitle}crwdnd39520:0{versionLabel}crwdne39520:0",
     "description": "The label used to tell the user that he's browsing an unreleased doc version"
   },
   "theme.docs.versions.unmaintainedVersionLabel": {
-    "message": "crwdns34300:0{siteTitle}crwdnd34300:0{versionLabel}crwdne34300:0",
+    "message": "crwdns39522:0{siteTitle}crwdnd39522:0{versionLabel}crwdne39522:0",
     "description": "The label used to tell the user that he's browsing an unmaintained doc version"
   },
   "theme.docs.versions.latestVersionSuggestionLabel": {
-    "message": "crwdns34302:0{latestVersionLink}crwdnd34302:0{versionLabel}crwdne34302:0",
+    "message": "crwdns39524:0{latestVersionLink}crwdnd39524:0{versionLabel}crwdne39524:0",
     "description": "The label used to tell the user to check the latest version"
   },
   "theme.docs.versions.latestVersionLinkLabel": {
-    "message": "crwdns34304:0crwdne34304:0",
+    "message": "crwdns39526:0crwdne39526:0",
     "description": "The label used for the latest version suggestion link label"
   },
   "theme.common.editThisPage": {
-    "message": "crwdns34306:0crwdne34306:0",
+    "message": "crwdns39528:0crwdne39528:0",
     "description": "The link label to edit the current page"
   },
   "theme.common.headingLinkTitle": {
-    "message": "crwdns34308:0{heading}crwdne34308:0",
+    "message": "crwdns39530:0{heading}crwdne39530:0",
     "description": "Title for link to heading"
   },
   "theme.lastUpdated.atDate": {
-    "message": "crwdns34310:0{date}crwdne34310:0",
+    "message": "crwdns39532:0{date}crwdne39532:0",
     "description": "The words used to describe on which date a page has been last updated"
   },
   "theme.lastUpdated.byUser": {
-    "message": "crwdns34312:0{user}crwdne34312:0",
+    "message": "crwdns39534:0{user}crwdne39534:0",
     "description": "The words used to describe by who the page has been last updated"
   },
   "theme.lastUpdated.lastUpdatedAtBy": {
-    "message": "crwdns34314:0{atDate}crwdnd34314:0{byUser}crwdne34314:0",
+    "message": "crwdns39536:0{atDate}crwdnd39536:0{byUser}crwdne39536:0",
     "description": "The sentence used to display when a page has been last updated, and by who"
   },
-  "theme.NotFound.title": {
-    "message": "crwdns34316:0crwdne34316:0",
-    "description": "The title of the 404 page"
-  },
   "theme.navbar.mobileVersionsDropdown.label": {
-    "message": "crwdns34318:0crwdne34318:0",
+    "message": "crwdns39538:0crwdne39538:0",
     "description": "The label for the navbar versions dropdown on mobile view"
   },
+  "theme.NotFound.title": {
+    "message": "crwdns39540:0crwdne39540:0",
+    "description": "The title of the 404 page"
+  },
   "theme.tags.tagsListLabel": {
-    "message": "crwdns34320:0crwdne34320:0",
+    "message": "crwdns39542:0crwdne39542:0",
     "description": "The label alongside a tag list"
   },
   "theme.AnnouncementBar.closeButtonAriaLabel": {
-    "message": "crwdns34322:0crwdne34322:0",
+    "message": "crwdns39544:0crwdne39544:0",
     "description": "The ARIA label for close button of announcement bar"
   },
   "theme.admonition.caution": {
-    "message": "crwdns34324:0crwdne34324:0",
+    "message": "crwdns39546:0crwdne39546:0",
     "description": "The default label used for the Caution admonition (:::caution)"
   },
   "theme.admonition.danger": {
-    "message": "crwdns34326:0crwdne34326:0",
+    "message": "crwdns39548:0crwdne39548:0",
     "description": "The default label used for the Danger admonition (:::danger)"
   },
   "theme.admonition.info": {
-    "message": "crwdns34328:0crwdne34328:0",
+    "message": "crwdns39550:0crwdne39550:0",
     "description": "The default label used for the Info admonition (:::info)"
   },
   "theme.admonition.note": {
-    "message": "crwdns34330:0crwdne34330:0",
+    "message": "crwdns39552:0crwdne39552:0",
     "description": "The default label used for the Note admonition (:::note)"
   },
   "theme.admonition.tip": {
-    "message": "crwdns34332:0crwdne34332:0",
+    "message": "crwdns39554:0crwdne39554:0",
     "description": "The default label used for the Tip admonition (:::tip)"
   },
   "theme.admonition.warning": {
-    "message": "crwdns34334:0crwdne34334:0",
+    "message": "crwdns39556:0crwdne39556:0",
     "description": "The default label used for the Warning admonition (:::warning)"
   },
   "theme.blog.sidebar.navAriaLabel": {
-    "message": "crwdns34336:0crwdne34336:0",
+    "message": "crwdns39558:0crwdne39558:0",
     "description": "The ARIA label for recent posts in the blog sidebar"
   },
-  "theme.CodeBlock.copied": {
-    "message": "crwdns34338:0crwdne34338:0",
-    "description": "The copied button label on code blocks"
-  },
-  "theme.CodeBlock.copyButtonAriaLabel": {
-    "message": "crwdns34340:0crwdne34340:0",
-    "description": "The ARIA label for copy code blocks button"
-  },
-  "theme.CodeBlock.copy": {
-    "message": "crwdns34342:0crwdne34342:0",
-    "description": "The copy button label on code blocks"
-  },
-  "theme.CodeBlock.wordWrapToggle": {
-    "message": "crwdns34344:0crwdne34344:0",
-    "description": "The title attribute for toggle word wrapping button of code block lines"
-  },
   "theme.DocSidebarItem.expandCategoryAriaLabel": {
-    "message": "crwdns34346:0{label}crwdne34346:0",
+    "message": "crwdns39560:0{label}crwdne39560:0",
     "description": "The ARIA label to expand the sidebar category"
   },
   "theme.DocSidebarItem.collapseCategoryAriaLabel": {
-    "message": "crwdns34348:0{label}crwdne34348:0",
+    "message": "crwdns39562:0{label}crwdne39562:0",
     "description": "The ARIA label to collapse the sidebar category"
   },
+  "theme.IconExternalLink.ariaLabel": {
+    "message": "crwdns39564:0crwdne39564:0",
+    "description": "The ARIA label for the external link icon"
+  },
   "theme.NavBar.navAriaLabel": {
-    "message": "crwdns34350:0crwdne34350:0",
+    "message": "crwdns39566:0crwdne39566:0",
     "description": "The ARIA label for the main navigation"
   },
-  "theme.NotFound.p1": {
-    "message": "crwdns34352:0crwdne34352:0",
-    "description": "The first paragraph of the 404 page"
-  },
-  "theme.NotFound.p2": {
-    "message": "crwdns34354:0crwdne34354:0",
-    "description": "The 2nd paragraph of the 404 page"
-  },
   "theme.navbar.mobileLanguageDropdown.label": {
-    "message": "crwdns34356:0crwdne34356:0",
+    "message": "crwdns39568:0crwdne39568:0",
     "description": "The label for the mobile language switcher dropdown"
   },
   "theme.TOCCollapsible.toggleButtonLabel": {
-    "message": "crwdns34358:0crwdne34358:0",
+    "message": "crwdns39570:0crwdne39570:0",
     "description": "The label used by the button on the collapsible TOC component"
   },
+  "theme.NotFound.p1": {
+    "message": "crwdns39572:0crwdne39572:0",
+    "description": "The first paragraph of the 404 page"
+  },
+  "theme.NotFound.p2": {
+    "message": "crwdns39574:0crwdne39574:0",
+    "description": "The 2nd paragraph of the 404 page"
+  },
+  "theme.blog.post.readingTime.plurals": {
+    "message": "crwdns39576:0{readingTime}crwdne39576:0",
+    "description": "Pluralized label for \"{readingTime} min read\". Use as much plural forms (separated by \"|\") as your language support (see https://www.unicode.org/cldr/cldr-aux/charts/34/supplemental/language_plural_rules.html)"
+  },
   "theme.blog.post.readMore": {
-    "message": "crwdns34360:0crwdne34360:0",
+    "message": "crwdns39578:0crwdne39578:0",
     "description": "The label used in blog post item excerpts to link to full blog posts"
   },
   "theme.blog.post.readMoreLabel": {
-    "message": "crwdns34362:0{title}crwdne34362:0",
+    "message": "crwdns39580:0{title}crwdne39580:0",
     "description": "The ARIA label for the link to full blog posts from excerpts"
   },
-  "theme.blog.post.readingTime.plurals": {
-    "message": "crwdns34364:0{readingTime}crwdne34364:0",
-    "description": "Pluralized label for \"{readingTime} min read\". Use as much plural forms (separated by \"|\") as your language support (see https://www.unicode.org/cldr/cldr-aux/charts/34/supplemental/language_plural_rules.html)"
+  "theme.CodeBlock.copy": {
+    "message": "crwdns39582:0crwdne39582:0",
+    "description": "The copy button label on code blocks"
+  },
+  "theme.CodeBlock.copied": {
+    "message": "crwdns39584:0crwdne39584:0",
+    "description": "The copied button label on code blocks"
+  },
+  "theme.CodeBlock.copyButtonAriaLabel": {
+    "message": "crwdns39586:0crwdne39586:0",
+    "description": "The ARIA label for copy code blocks button"
+  },
+  "theme.CodeBlock.wordWrapToggle": {
+    "message": "crwdns39588:0crwdne39588:0",
+    "description": "The title attribute for toggle word wrapping button of code block lines"
   },
   "theme.docs.breadcrumbs.home": {
-    "message": "crwdns34366:0crwdne34366:0",
+    "message": "crwdns39590:0crwdne39590:0",
     "description": "The ARIA label for the home page in the breadcrumbs"
   },
   "theme.docs.sidebar.collapseButtonTitle": {
-    "message": "crwdns34368:0crwdne34368:0",
+    "message": "crwdns39592:0crwdne39592:0",
     "description": "The title attribute for collapse button of doc sidebar"
   },
   "theme.docs.sidebar.collapseButtonAriaLabel": {
-    "message": "crwdns34370:0crwdne34370:0",
+    "message": "crwdns39594:0crwdne39594:0",
     "description": "The title attribute for collapse button of doc sidebar"
   },
   "theme.docs.sidebar.navAriaLabel": {
-    "message": "crwdns34372:0crwdne34372:0",
+    "message": "crwdns39596:0crwdne39596:0",
     "description": "The ARIA label for the sidebar navigation"
   },
   "theme.docs.sidebar.closeSidebarButtonAriaLabel": {
-    "message": "crwdns34374:0crwdne34374:0",
+    "message": "crwdns39598:0crwdne39598:0",
     "description": "The ARIA label for close button of mobile sidebar"
   },
-  "theme.docs.sidebar.expandButtonTitle": {
-    "message": "crwdns34376:0crwdne34376:0",
-    "description": "The ARIA label and title attribute for expand button of doc sidebar"
-  },
-  "theme.docs.sidebar.expandButtonAriaLabel": {
-    "message": "crwdns34378:0crwdne34378:0",
-    "description": "The ARIA label and title attribute for expand button of doc sidebar"
-  },
   "theme.navbar.mobileSidebarSecondaryMenu.backButtonLabel": {
-    "message": "crwdns34380:0crwdne34380:0",
+    "message": "crwdns39600:0crwdne39600:0",
     "description": "The label of the back button to return to main menu, inside the mobile navbar sidebar secondary menu (notably used to display the docs sidebar)"
   },
   "theme.docs.sidebar.toggleSidebarButtonAriaLabel": {
-    "message": "crwdns34382:0crwdne34382:0",
+    "message": "crwdns39602:0crwdne39602:0",
     "description": "The ARIA label for hamburger menu button of mobile navigation"
   },
-  "theme.SearchBar.seeAll": {
-    "message": "crwdns34384:0{count}crwdne34384:0"
+  "theme.navbar.mobileDropdown.collapseButton.expandAriaLabel": {
+    "message": "crwdns39604:0crwdne39604:0",
+    "description": "The ARIA label of the button to expand the mobile dropdown navbar item"
+  },
+  "theme.navbar.mobileDropdown.collapseButton.collapseAriaLabel": {
+    "message": "crwdns39606:0crwdne39606:0",
+    "description": "The ARIA label of the button to collapse the mobile dropdown navbar item"
+  },
+  "theme.docs.sidebar.expandButtonTitle": {
+    "message": "crwdns39608:0crwdne39608:0",
+    "description": "The ARIA label and title attribute for expand button of doc sidebar"
+  },
+  "theme.docs.sidebar.expandButtonAriaLabel": {
+    "message": "crwdns39610:0crwdne39610:0",
+    "description": "The ARIA label and title attribute for expand button of doc sidebar"
   },
   "theme.SearchPage.documentsFound.plurals": {
-    "message": "crwdns34386:0{count}crwdne34386:0",
+    "message": "crwdns39612:0{count}crwdne39612:0",
     "description": "Pluralized label for \"{count} documents found\". Use as much plural forms (separated by \"|\") as your language support (see https://www.unicode.org/cldr/cldr-aux/charts/34/supplemental/language_plural_rules.html)"
   },
   "theme.SearchPage.existingResultsTitle": {
-    "message": "crwdns34388:0{query}crwdne34388:0",
+    "message": "crwdns39614:0{query}crwdne39614:0",
     "description": "The search page title for non-empty query"
   },
   "theme.SearchPage.emptyResultsTitle": {
-    "message": "crwdns34390:0crwdne34390:0",
+    "message": "crwdns39616:0crwdne39616:0",
     "description": "The search page title for empty query"
   },
   "theme.SearchPage.inputPlaceholder": {
-    "message": "crwdns34392:0crwdne34392:0",
+    "message": "crwdns39618:0crwdne39618:0",
     "description": "The placeholder for search page input"
   },
   "theme.SearchPage.inputLabel": {
-    "message": "crwdns34394:0crwdne34394:0",
+    "message": "crwdns39620:0crwdne39620:0",
     "description": "The ARIA label for search page input"
   },
   "theme.SearchPage.algoliaLabel": {
-    "message": "crwdns34396:0crwdne34396:0",
-    "description": "The ARIA label for Algolia mention"
+    "message": "crwdns39622:0crwdne39622:0",
+    "description": "The description label for Algolia mention"
   },
   "theme.SearchPage.noResultsText": {
-    "message": "crwdns34398:0crwdne34398:0",
+    "message": "crwdns39624:0crwdne39624:0",
     "description": "The paragraph for empty search result"
   },
   "theme.SearchPage.fetchingNewResults": {
-    "message": "crwdns34400:0crwdne34400:0",
+    "message": "crwdns39626:0crwdne39626:0",
     "description": "The paragraph for fetching new search results"
   },
+  "theme.SearchBar.seeAll": {
+    "message": "crwdns39628:0{count}crwdne39628:0"
+  },
   "theme.SearchBar.label": {
-    "message": "crwdns34402:0crwdne34402:0",
+    "message": "crwdns39630:0crwdne39630:0",
     "description": "The ARIA label and placeholder for search button"
   },
   "theme.SearchModal.searchBox.resetButtonTitle": {
-    "message": "crwdns34404:0crwdne34404:0",
+    "message": "crwdns39632:0crwdne39632:0",
     "description": "The label and ARIA label for search box reset button"
   },
   "theme.SearchModal.searchBox.cancelButtonText": {
-    "message": "crwdns34406:0crwdne34406:0",
+    "message": "crwdns39634:0crwdne39634:0",
     "description": "The label and ARIA label for search box cancel button"
   },
+  "theme.SearchModal.searchBox.placeholderText": {
+    "message": "crwdns39636:0crwdne39636:0",
+    "description": "The placeholder text for the main search input field"
+  },
+  "theme.SearchModal.searchBox.placeholderTextAskAi": {
+    "message": "crwdns39638:0crwdne39638:0",
+    "description": "The placeholder text when in AI question mode"
+  },
+  "theme.SearchModal.searchBox.placeholderTextAskAiStreaming": {
+    "message": "crwdns39640:0crwdne39640:0",
+    "description": "The placeholder text for search box when AI is streaming an answer"
+  },
+  "theme.SearchModal.searchBox.enterKeyHint": {
+    "message": "crwdns39642:0crwdne39642:0",
+    "description": "The hint for the search box enter key text"
+  },
+  "theme.SearchModal.searchBox.enterKeyHintAskAi": {
+    "message": "crwdns39644:0crwdne39644:0",
+    "description": "The hint for the Ask AI search box enter key text"
+  },
+  "theme.SearchModal.searchBox.searchInputLabel": {
+    "message": "crwdns39646:0crwdne39646:0",
+    "description": "The ARIA label for search input"
+  },
+  "theme.SearchModal.searchBox.backToKeywordSearchButtonText": {
+    "message": "crwdns39648:0crwdne39648:0",
+    "description": "The text for back to keyword search button"
+  },
+  "theme.SearchModal.searchBox.backToKeywordSearchButtonAriaLabel": {
+    "message": "crwdns39650:0crwdne39650:0",
+    "description": "The ARIA label for back to keyword search button"
+  },
   "theme.SearchModal.startScreen.recentSearchesTitle": {
-    "message": "crwdns34408:0crwdne34408:0",
+    "message": "crwdns39652:0crwdne39652:0",
     "description": "The title for recent searches"
   },
   "theme.SearchModal.startScreen.noRecentSearchesText": {
-    "message": "crwdns34410:0crwdne34410:0",
-    "description": "The text when no recent searches"
+    "message": "crwdns39654:0crwdne39654:0",
+    "description": "The text when there are no recent searches"
   },
   "theme.SearchModal.startScreen.saveRecentSearchButtonTitle": {
-    "message": "crwdns34412:0crwdne34412:0",
-    "description": "The label for save recent search button"
+    "message": "crwdns39656:0crwdne39656:0",
+    "description": "The title for save recent search button"
   },
   "theme.SearchModal.startScreen.removeRecentSearchButtonTitle": {
-    "message": "crwdns34414:0crwdne34414:0",
-    "description": "The label for remove recent search button"
+    "message": "crwdns39658:0crwdne39658:0",
+    "description": "The title for remove recent search button"
   },
   "theme.SearchModal.startScreen.favoriteSearchesTitle": {
-    "message": "crwdns34416:0crwdne34416:0",
+    "message": "crwdns39660:0crwdne39660:0",
     "description": "The title for favorite searches"
   },
   "theme.SearchModal.startScreen.removeFavoriteSearchButtonTitle": {
-    "message": "crwdns34418:0crwdne34418:0",
-    "description": "The label for remove favorite search button"
+    "message": "crwdns39662:0crwdne39662:0",
+    "description": "The title for remove favorite search button"
+  },
+  "theme.SearchModal.startScreen.recentConversationsTitle": {
+    "message": "crwdns39664:0crwdne39664:0",
+    "description": "The title for recent conversations"
+  },
+  "theme.SearchModal.startScreen.removeRecentConversationButtonTitle": {
+    "message": "crwdns39666:0crwdne39666:0",
+    "description": "The title for remove recent conversation button"
   },
   "theme.SearchModal.errorScreen.titleText": {
-    "message": "crwdns34420:0crwdne34420:0",
-    "description": "The title for error screen of search modal"
+    "message": "crwdns39668:0crwdne39668:0",
+    "description": "The title for error screen"
   },
   "theme.SearchModal.errorScreen.helpText": {
-    "message": "crwdns34422:0crwdne34422:0",
-    "description": "The help text for error screen of search modal"
+    "message": "crwdns39670:0crwdne39670:0",
+    "description": "The help text for error screen"
+  },
+  "theme.SearchModal.resultsScreen.askAiPlaceholder": {
+    "message": "crwdns39672:0crwdne39672:0",
+    "description": "The placeholder text for Ask AI input"
+  },
+  "theme.SearchModal.askAiScreen.disclaimerText": {
+    "message": "crwdns39674:0crwdne39674:0",
+    "description": "The disclaimer text for AI answers"
+  },
+  "theme.SearchModal.askAiScreen.relatedSourcesText": {
+    "message": "crwdns39676:0crwdne39676:0",
+    "description": "The text for related sources"
+  },
+  "theme.SearchModal.askAiScreen.thinkingText": {
+    "message": "crwdns39678:0crwdne39678:0",
+    "description": "The text when AI is thinking"
+  },
+  "theme.SearchModal.askAiScreen.copyButtonText": {
+    "message": "crwdns39680:0crwdne39680:0",
+    "description": "The text for copy button"
+  },
+  "theme.SearchModal.askAiScreen.copyButtonCopiedText": {
+    "message": "crwdns39682:0crwdne39682:0",
+    "description": "The text for copy button when copied"
+  },
+  "theme.SearchModal.askAiScreen.copyButtonTitle": {
+    "message": "crwdns39684:0crwdne39684:0",
+    "description": "The title for copy button"
+  },
+  "theme.SearchModal.askAiScreen.likeButtonTitle": {
+    "message": "crwdns39686:0crwdne39686:0",
+    "description": "The title for like button"
+  },
+  "theme.SearchModal.askAiScreen.dislikeButtonTitle": {
+    "message": "crwdns39688:0crwdne39688:0",
+    "description": "The title for dislike button"
+  },
+  "theme.SearchModal.askAiScreen.thanksForFeedbackText": {
+    "message": "crwdns39690:0crwdne39690:0",
+    "description": "The text for thanks for feedback"
+  },
+  "theme.SearchModal.askAiScreen.preToolCallText": {
+    "message": "crwdns39692:0crwdne39692:0",
+    "description": "The text before tool call"
+  },
+  "theme.SearchModal.askAiScreen.duringToolCallText": {
+    "message": "crwdns39694:0crwdne39694:0",
+    "description": "The text during tool call"
+  },
+  "theme.SearchModal.askAiScreen.afterToolCallText": {
+    "message": "crwdns39696:0crwdne39696:0",
+    "description": "The text after tool call"
   },
   "theme.SearchModal.footer.selectText": {
-    "message": "crwdns34424:0crwdne34424:0",
-    "description": "The explanatory text of the action for the enter key"
+    "message": "crwdns39698:0crwdne39698:0",
+    "description": "The select text for footer"
+  },
+  "theme.SearchModal.footer.submitQuestionText": {
+    "message": "crwdns39700:0crwdne39700:0",
+    "description": "The submit question text for footer"
   },
   "theme.SearchModal.footer.selectKeyAriaLabel": {
-    "message": "crwdns34426:0crwdne34426:0",
-    "description": "The ARIA label for the Enter key button that makes the selection"
+    "message": "crwdns39702:0crwdne39702:0",
+    "description": "The ARIA label for select key in footer"
   },
   "theme.SearchModal.footer.navigateText": {
-    "message": "crwdns34428:0crwdne34428:0",
-    "description": "The explanatory text of the action for the Arrow up and Arrow down key"
+    "message": "crwdns39704:0crwdne39704:0",
+    "description": "The navigate text for footer"
   },
   "theme.SearchModal.footer.navigateUpKeyAriaLabel": {
-    "message": "crwdns34430:0crwdne34430:0",
-    "description": "The ARIA label for the Arrow up key button that makes the navigation"
+    "message": "crwdns39706:0crwdne39706:0",
+    "description": "The ARIA label for navigate up key in footer"
   },
   "theme.SearchModal.footer.navigateDownKeyAriaLabel": {
-    "message": "crwdns34432:0crwdne34432:0",
-    "description": "The ARIA label for the Arrow down key button that makes the navigation"
+    "message": "crwdns39708:0crwdne39708:0",
+    "description": "The ARIA label for navigate down key in footer"
   },
   "theme.SearchModal.footer.closeText": {
-    "message": "crwdns34434:0crwdne34434:0",
-    "description": "The explanatory text of the action for Escape key"
+    "message": "crwdns39710:0crwdne39710:0",
+    "description": "The close text for footer"
   },
   "theme.SearchModal.footer.closeKeyAriaLabel": {
-    "message": "crwdns34436:0crwdne34436:0",
-    "description": "The ARIA label for the Escape key button that close the modal"
+    "message": "crwdns39712:0crwdne39712:0",
+    "description": "The ARIA label for close key in footer"
   },
   "theme.SearchModal.footer.searchByText": {
-    "message": "crwdns34438:0crwdne34438:0",
-    "description": "The text explain that the search is making by Algolia"
+    "message": "crwdns39714:0crwdne39714:0",
+    "description": "The 'Powered by' text for footer"
+  },
+  "theme.SearchModal.footer.backToSearchText": {
+    "message": "crwdns39716:0crwdne39716:0",
+    "description": "The back to search text for footer"
   },
   "theme.SearchModal.noResultsScreen.noResultsText": {
-    "message": "crwdns34440:0crwdne34440:0",
-    "description": "The text explains that there are no results for the following search"
+    "message": "crwdns39718:0crwdne39718:0",
+    "description": "The text when there are no results"
   },
   "theme.SearchModal.noResultsScreen.suggestedQueryText": {
-    "message": "crwdns34442:0crwdne34442:0",
-    "description": "The text for the suggested query when no results are found for the following search"
+    "message": "crwdns39720:0crwdne39720:0",
+    "description": "The text for suggested query"
   },
   "theme.SearchModal.noResultsScreen.reportMissingResultsText": {
-    "message": "crwdns34444:0crwdne34444:0",
-    "description": "The text for the question where the user thinks there are missing results"
+    "message": "crwdns39722:0crwdne39722:0",
+    "description": "The text for reporting missing results"
   },
   "theme.SearchModal.noResultsScreen.reportMissingResultsLinkText": {
-    "message": "crwdns34446:0crwdne34446:0",
-    "description": "The text for the link to report missing results"
+    "message": "crwdns39724:0crwdne39724:0",
+    "description": "The link text for reporting missing results"
   },
   "theme.SearchModal.placeholder": {
-    "message": "crwdns34448:0crwdne34448:0",
+    "message": "crwdns39726:0crwdne39726:0",
     "description": "The placeholder of the input of the DocSearch pop-up modal"
   },
-  "theme.ErrorPageContent.tryAgain": {
-    "message": "crwdns34450:0crwdne34450:0",
-    "description": "The label of the button to try again rendering when the React error boundary captures an error"
+  "theme.blog.post.plurals": {
+    "message": "crwdns39728:0{count}crwdne39728:0",
+    "description": "Pluralized label for \"{count} posts\". Use as much plural forms (separated by \"|\") as your language support (see https://www.unicode.org/cldr/cldr-aux/charts/34/supplemental/language_plural_rules.html)"
   },
-  "theme.common.skipToMainContent": {
-    "message": "crwdns34452:0crwdne34452:0",
-    "description": "The skip to content label used for accessibility, allowing to rapidly navigate to main content with keyboard tab/enter navigation"
-  },
-  "theme.tags.tagsPageTitle": {
-    "message": "crwdns34454:0crwdne34454:0",
-    "description": "The title of the tag list page"
-  },
-  "pages.download.description.hurricane": {
-    "message": "crwdns34456:0crwdne34456:0"
+  "theme.blog.tagTitle": {
+    "message": "crwdns39730:0{nPosts}crwdnd39730:0{tagName}crwdne39730:0",
+    "description": "The title of the page for a blog tag"
   },
   "theme.blog.author.pageTitle": {
-    "message": "crwdns34458:0{authorName}crwdnd34458:0{nPosts}crwdne34458:0",
+    "message": "crwdns39732:0{authorName}crwdnd39732:0{nPosts}crwdne39732:0",
     "description": "The title of the page for a blog author"
   },
   "theme.blog.authorsList.pageTitle": {
-    "message": "crwdns34460:0crwdne34460:0",
+    "message": "crwdns39734:0crwdne39734:0",
     "description": "The title of the authors page"
   },
   "theme.blog.authorsList.viewAll": {
-    "message": "crwdns34462:0crwdne34462:0",
+    "message": "crwdns39736:0crwdne39736:0",
     "description": "The label of the link targeting the blog authors page"
   },
   "theme.blog.author.noPosts": {
-    "message": "crwdns34464:0crwdne34464:0",
+    "message": "crwdns39738:0crwdne39738:0",
     "description": "The text for authors with 0 blog post"
   },
   "theme.contentVisibility.unlistedBanner.title": {
-    "message": "crwdns34466:0crwdne34466:0",
+    "message": "crwdns39740:0crwdne39740:0",
     "description": "The unlisted content banner title"
   },
   "theme.contentVisibility.unlistedBanner.message": {
-    "message": "crwdns34468:0crwdne34468:0",
+    "message": "crwdns39742:0crwdne39742:0",
     "description": "The unlisted content banner message"
   },
   "theme.contentVisibility.draftBanner.title": {
-    "message": "crwdns34470:0crwdne34470:0",
+    "message": "crwdns39744:0crwdne39744:0",
     "description": "The draft content banner title"
   },
   "theme.contentVisibility.draftBanner.message": {
-    "message": "crwdns34472:0crwdne34472:0",
+    "message": "crwdns39746:0crwdne39746:0",
     "description": "The draft content banner message"
   },
-  "mdx.setup.host_provider": {
-    "message": "crwdns34474:0crwdne34474:0"
-  },
-  "mdx.setup.self_host": {
-    "message": "crwdns34476:0crwdne34476:0"
-  },
-  "mdx.setup.paper_spigot": {
-    "message": "crwdns34478:0crwdne34478:0"
-  },
-  "mdx.setup.modded_servers": {
-    "message": "crwdns34480:0crwdne34480:0"
-  },
-  "mdx.setup.proxy_servers": {
-    "message": "crwdns34482:0crwdne34482:0"
-  },
-  "mdx.setup.viaproxy": {
-    "message": "crwdns34484:0crwdne34484:0"
-  },
-  "mdx.setup.standalone": {
-    "message": "crwdns34486:0crwdne34486:0"
-  },
-  "pages.download.description.offhandextension": {
-    "message": "crwdns34488:0crwdne34488:0"
-  },
-  "pages.download.description.rainbow": {
-    "message": "crwdns34490:0crwdne34490:0"
-  },
-  "pages.download.description.hydraulic": {
-    "message": "crwdns34492:0crwdne34492:0"
-  },
-  "pages.download.description.thunder": {
-    "message": "crwdns34494:0crwdne34494:0"
-  },
-  "pages.dumpviewer.extensions": {
-    "message": "crwdns34496:0crwdne34496:0"
-  },
-  "pages.dumpviewer.extensions.noextensions": {
-    "message": "crwdns34498:0crwdne34498:0"
-  },
-  "pages.dumpviewer.extensions.helptext": {
-    "message": "crwdns34500:0crwdne34500:0"
-  },
-  "mdx.setup.fabric": {
-    "message": "crwdns34502:0crwdne34502:0"
-  },
-  "mdx.setup.neoforge": {
-    "message": "crwdns34504:0crwdne34504:0"
-  },
-  "mdx.setup.installing_geyser": {
-    "message": "crwdns34506:0crwdne34506:0"
-  },
-  "mdx.setup.download_jar": {
-    "message": "crwdns34508:0{jarName}crwdne34508:0"
-  },
-  "mdx.setup.place_jar": {
-    "message": "crwdns34510:0{jarName}crwdnd34510:0{jarDirectory}crwdne34510:0"
-  },
-  "mdx.setup.restart_server": {
-    "message": "crwdns34512:0crwdne34512:0"
-  },
-  "mdx.setup.additional_steps": {
-    "message": "crwdns34514:0crwdne34514:0"
-  },
-  "mdx.setup.connecting_on_bedrock": {
-    "message": "crwdns34516:0crwdne34516:0"
-  },
-  "providers.config.templates.java_address": {
-    "message": "crwdns34520:0`address`crwdnd34520:0`bedrock`crwdne34520:0"
-  },
-  "providers.config.templates.custom_port_dedicated_ip": {
-    "message": "crwdns34522:0crwdne34522:0"
-  },
-  "providers.warnings.ovh_firewall_misconfig": {
-    "message": "crwdns34524:0`Unable to Connect`crwdnd34524:0[crwdnd34524:0](/wiki/geyser/port-forwarding/#ovh-and-soyoustart)crwdne34524:0"
-  },
-  "providers.config.templates.install_location.plugin_list": {
-    "message": "crwdns34526:0crwdne34526:0"
-  },
-  "providers.config.templates.install_location.enable_bedrock_crossplay": {
-    "message": "crwdns34528:0crwdne34528:0"
-  },
-  "providers.config.templates.info.geyser_installed_by_default": {
-    "message": "crwdns34530:0crwdne34530:0"
-  },
-  "mdx.setup.checking_server_version": {
-    "message": "crwdns34532:0crwdne34532:0"
-  },
-  "mdx.setup.restart_geyser": {
-    "message": "crwdns34534:0crwdne34534:0"
-  },
-  "mdx.setup.https_note": {
-    "message": "crwdns34536:0{https}crwdne34536:0"
-  },
-  "mdx.setup.configuring_geyser": {
-    "message": "crwdns34538:0crwdne34538:0"
-  },
-  "mdx.setup.open_config_simple": {
-    "message": "crwdns34540:0{configLocation}crwdnd34540:0{bedrock}crwdne34540:0"
-  },
-  "mdx.setup.preconfigured": {
-    "message": "crwdns34542:0{name}crwdne34542:0"
-  },
-  "mdx.setup.transport_nethernet_simple": {
-    "message": "crwdns34544:0crwdne34544:0"
-  },
-  "mdx.setup.transport_both_compat": {
-    "message": "crwdns34546:0crwdne34546:0"
-  },
-  "mdx.setup.placeholder_word": {
-    "message": "crwdns34548:0crwdne34548:0"
-  },
-  "mdx.setup.replace_with_simple": {
-    "message": "crwdns34550:0crwdne34550:0"
-  },
-  "mdx.setup.placeholder_java_port": {
-    "message": "crwdns34552:0crwdne34552:0"
-  },
-  "mdx.setup.placeholder_java_port_udp": {
-    "message": "crwdns34554:0{port}crwdne34554:0"
-  },
-  "mdx.setup.placeholder_second_available_port": {
-    "message": "crwdns34556:0{port}crwdne34556:0"
-  },
-  "mdx.setup.raknet_on_port": {
-    "message": "crwdns34558:0{port}crwdne34558:0"
-  },
-  "mdx.setup.summary.nethernet_reported_generic": {
-    "message": "crwdns34560:0crwdne34560:0"
-  },
-  "mdx.setup.summary.supporter_configures": {
-    "message": "crwdns34562:0{name}crwdne34562:0"
-  },
-  "mdx.setup.summary.updated": {
-    "message": "crwdns34564:0{date}crwdne34564:0"
-  },
-  "mdx.setup.badge.gold": {
-    "message": "crwdns34566:0crwdne34566:0"
-  },
-  "mdx.setup.badge.silver": {
-    "message": "crwdns34568:0crwdne34568:0"
-  },
-  "mdx.setup.badge.bronze": {
-    "message": "crwdns34570:0crwdne34570:0"
-  },
-  "mdx.setup.unconfirmed_title": {
-    "message": "crwdns34572:0crwdne34572:0"
-  },
-  "mdx.setup.warning_title": {
-    "message": "crwdns34574:0crwdne34574:0"
-  },
-  "mdx.setup.unconfirmed_reach_out_update": {
-    "message": "crwdns34576:0{name}crwdnd34576:0{discord}crwdne34576:0"
-  },
-  "mdx.setup.try_not_listed": {
-    "message": "crwdns34578:0{notListed}crwdnd34578:0{warden}crwdne34578:0"
-  },
-  "mdx.setup.try_not_listed.link": {
-    "message": "crwdns34580:0crwdne34580:0"
-  },
-  "mdx.setup.no_signaling": {
-    "message": "crwdns34582:0{name}crwdne34582:0"
-  },
-  "mdx.setup.hosting_provider_article_short": {
-    "message": "crwdns34584:0crwdne34584:0"
-  },
-  "mdx.setup.hosting_provider_website_short": {
-    "message": "crwdns34586:0crwdne34586:0"
-  },
-  "mdx.setup.hosting_provider_support_short": {
-    "message": "crwdns34588:0crwdne34588:0"
-  },
-  "mdx.setup.hosting_provider_discord_short": {
-    "message": "crwdns34590:0crwdne34590:0"
-  },
-  "mdx.setup.not_listed.tab_allocated": {
-    "message": "crwdns34592:0crwdne34592:0"
-  },
-  "mdx.setup.not_listed.tab_java_only": {
-    "message": "crwdns34594:0crwdne34594:0"
-  },
-  "components.provider.open_collaboration_group": {
-    "message": "crwdns34596:0crwdne34596:0"
-  },
-  "components.provider.other_group": {
-    "message": "crwdns34598:0crwdne34598:0"
-  },
-  "mdx.setup.connect.port_java": {
-    "message": "crwdns34600:0crwdne34600:0"
-  },
-  "mdx.setup.connect.port_config_step": {
-    "message": "crwdns34602:0crwdne34602:0"
-  },
-  "mdx.setup.connect.intro": {
-    "message": "crwdns34604:0crwdne34604:0"
-  },
-  "mdx.setup.connect.add_server": {
-    "message": "crwdns34606:0crwdne34606:0"
-  },
-  "mdx.setup.connect.server_name": {
-    "message": "crwdns34608:0crwdne34608:0"
-  },
-  "mdx.setup.connect.server_name_value": {
-    "message": "crwdns34610:0crwdne34610:0"
-  },
-  "mdx.setup.connect.server_address": {
-    "message": "crwdns34612:0crwdne34612:0"
-  },
-  "mdx.setup.connect.server_address_value": {
-    "message": "crwdns34614:0crwdne34614:0"
-  },
-  "mdx.setup.connect.port": {
-    "message": "crwdns34616:0crwdne34616:0"
-  },
-  "mdx.setup.transport_nethernet_tab": {
-    "message": "crwdns34618:0crwdne34618:0"
-  },
-  "mdx.setup.transport_both_tab": {
-    "message": "crwdns34620:0crwdne34620:0"
-  },
-  "providers.ports.assign": {
-    "message": "crwdns34622:0crwdne34622:0"
-  },
-  "providers.ports.allocated": {
-    "message": "crwdns34624:0crwdne34624:0"
-  },
-  "providers.ports.ask_host": {
-    "message": "crwdns34626:0crwdne34626:0"
-  },
-  "pages.hosting.tier.gold": {
-    "message": "crwdns34628:0crwdne34628:0"
-  },
-  "pages.hosting.tier.silver": {
-    "message": "crwdns34630:0crwdne34630:0"
-  },
-  "pages.hosting.tier.bronze": {
-    "message": "crwdns34632:0crwdne34632:0"
-  },
-  "pages.hosting.card.website": {
-    "message": "crwdns34634:0crwdne34634:0"
-  },
-  "pages.hosting.card.setup": {
-    "message": "crwdns34636:0crwdne34636:0"
-  },
-  "pages.hosting.title": {
-    "message": "crwdns34638:0crwdne34638:0"
-  },
-  "pages.hosting.subheading": {
-    "message": "crwdns34640:0crwdne34640:0"
-  },
-  "pages.hosting.intro": {
-    "message": "crwdns34642:0{openCollaboration}crwdne34642:0"
-  },
-  "pages.hosting.empty": {
-    "message": "crwdns34644:0crwdne34644:0"
-  },
-  "pages.hosting.other.title": {
-    "message": "crwdns34646:0crwdne34646:0"
-  },
-  "pages.hosting.other.text": {
-    "message": "crwdns34648:0{setupGuide}crwdne34648:0"
-  },
-  "pages.hosting.other.setup_guide": {
-    "message": "crwdns34650:0crwdne34650:0"
-  },
-  "pages.hosting.meta.title": {
-    "message": "crwdns34652:0crwdne34652:0"
-  },
-  "pages.hosting.meta.description": {
-    "message": "crwdns34654:0crwdne34654:0"
-  },
-  "pages.download.description.floodgatedatabases": {
-    "message": "crwdns34656:0crwdne34656:0"
-  },
-  "providers.ports.from_host": {
-    "message": "crwdns34658:0crwdne34658:0"
-  },
-  "providers.config.templates.info.only_serves_region": {
-    "message": "crwdns34660:0{region}crwdne34660:0"
-  },
-  "mdx.setup.velocity": {
-    "message": "crwdns34662:0crwdne34662:0"
-  },
-  "mdx.setup.bungeecord": {
-    "message": "crwdns34664:0crwdne34664:0"
-  },
-  "providers.ports.new_port": {
-    "message": "crwdns34666:0crwdne34666:0"
-  },
-  "mdx.setup.supported_versions": {
-    "message": "crwdns34668:0crwdne34668:0"
-  },
-  "mdx.setup.restart_velocity": {
-    "message": "crwdns34670:0crwdne34670:0"
-  },
-  "mdx.setup.restart_bungeecord": {
-    "message": "crwdns34672:0crwdne34672:0"
-  },
-  "mdx.setup.restart_viaproxy": {
-    "message": "crwdns34674:0crwdne34674:0"
-  },
-  "mdx.setup.fabric_dependency": {
-    "message": "crwdns34676:0{fabricApi}crwdne34676:0"
-  },
-  "mdx.setup.version_step_viaversion": {
-    "message": "crwdns34678:0{version}crwdnd34678:0{viaVersion}crwdnd34678:0{supportedVersions}crwdne34678:0"
-  },
-  "mdx.setup.version_step_proxy": {
-    "message": "crwdns34680:0{version}crwdne34680:0"
-  },
-  "mdx.setup.proxy_install_only": {
-    "message": "crwdns34682:0{proxy}crwdne34682:0"
-  },
-  "mdx.setup.modded_requirements": {
-    "message": "crwdns34684:0{jarName}crwdnd34684:0{version}crwdnd34684:0{supportedVersions}crwdne34684:0"
-  },
-  "mdx.setup.self_port_choice": {
-    "message": "crwdns34686:0{platform}crwdne34686:0"
-  },
-  "mdx.setup.self_port_choice_standalone": {
-    "message": "crwdns34688:0crwdne34688:0"
-  },
-  "mdx.setup.self_port_sharing": {
-    "message": "crwdns34690:0{important}crwdne34690:0"
-  },
-  "mdx.setup.self_port_sharing.important": {
-    "message": "crwdns34692:0crwdne34692:0"
-  },
-  "mdx.setup.connect_local_title": {
-    "message": "crwdns34694:0crwdne34694:0"
-  },
-  "mdx.setup.connect_local": {
-    "message": "crwdns34696:0{localhost}crwdnd34696:0{loopback}crwdnd34696:0{ten}crwdnd34696:0{oneNineTwo}crwdne34696:0"
-  },
-  "mdx.setup.connect_lan": {
-    "message": "crwdns34698:0{friends}crwdne34698:0"
-  },
-  "mdx.setup.connect_lan.friends": {
-    "message": "crwdns34700:0crwdne34700:0"
-  },
-  "mdx.setup.connect_remote_title": {
-    "message": "crwdns34702:0crwdne34702:0"
-  },
-  "mdx.setup.connect_remote": {
-    "message": "crwdns34704:0crwdne34704:0"
-  },
-  "mdx.setup.connect_tcp_udp": {
-    "message": "crwdns34706:0{webrtcPort}crwdne34706:0"
-  },
-  "mdx.setup.connect_options": {
-    "message": "crwdns34708:0crwdne34708:0"
-  },
-  "mdx.setup.connect_port_forwarding": {
-    "message": "crwdns34710:0{portForwarding}crwdnd34710:0{guide}crwdne34710:0"
-  },
-  "mdx.setup.connect_port_forwarding.title": {
-    "message": "crwdns34712:0crwdne34712:0"
-  },
-  "mdx.setup.connect_port_forwarding.guide": {
-    "message": "crwdns34714:0crwdne34714:0"
-  },
-  "mdx.setup.connect_playit": {
-    "message": "crwdns34716:0{playit}crwdnd34716:0{guide}crwdnd34716:0{status}crwdne34716:0"
-  },
-  "mdx.setup.connect_playit.guide": {
-    "message": "crwdns34718:0crwdne34718:0"
-  },
-  "mdx.setup.connect_playit.status": {
-    "message": "crwdns34720:0crwdne34720:0"
-  },
-  "mdx.setup.https_step_title": {
-    "message": "crwdns34722:0crwdne34722:0"
-  },
-  "mdx.setup.https_step": {
-    "message": "crwdns34724:0{httpsGuide}crwdnd34724:0{warden}crwdne34724:0"
-  },
-  "mdx.setup.https_step.guide": {
-    "message": "crwdns34726:0crwdne34726:0"
-  },
-  "mdx.setup.floodgate_info": {
-    "message": "crwdns34728:0{floodgate}crwdne34728:0"
-  },
-  "mdx.setup.viaproxy_not_plugin.title": {
-    "message": "crwdns34730:0crwdne34730:0"
-  },
-  "mdx.setup.viaproxy_not_plugin": {
-    "message": "crwdns34732:0{plugins}crwdnd34732:0{mods}crwdne34732:0"
-  },
-  "mdx.setup.viaproxy_setup": {
-    "message": "crwdns34734:0{viaProxy}crwdne34734:0"
-  },
-  "mdx.setup.viaproxy_accounts": {
-    "message": "crwdns34736:0{floodgate}crwdne34736:0"
-  },
-  "mdx.setup.viaproxy_auth_type": {
-    "message": "crwdns34738:0{authType}crwdne34738:0"
-  },
-  "mdx.setup.standalone_java": {
-    "message": "crwdns34740:0crwdne34740:0"
-  },
-  "mdx.setup.standalone_not_plugin": {
-    "message": "crwdns34742:0crwdne34742:0"
-  },
-  "mdx.setup.standalone_download": {
-    "message": "crwdns34744:0{standalone}crwdne34744:0"
-  },
-  "mdx.setup.standalone_folder": {
-    "message": "crwdns34746:0crwdne34746:0"
-  },
-  "mdx.setup.standalone_start": {
-    "message": "crwdns34748:0crwdne34748:0"
-  },
-  "mdx.setup.standalone_gui": {
-    "message": "crwdns34750:0{gui}crwdne34750:0"
-  },
-  "mdx.setup.standalone_console": {
-    "message": "crwdns34752:0{console}crwdnd34752:0{startupScript}crwdne34752:0"
-  },
-  "mdx.setup.standalone_console.console": {
-    "message": "crwdns34754:0crwdne34754:0"
-  },
-  "mdx.setup.standalone_console.startup_script": {
-    "message": "crwdns34756:0crwdne34756:0"
-  },
-  "mdx.setup.standalone_remote_intro": {
-    "message": "crwdns34758:0{java}crwdne34758:0"
-  },
-  "mdx.setup.standalone_remote": {
-    "message": "crwdns34760:0{address}crwdnd34760:0{port}crwdnd34760:0{authType}crwdnd34760:0{floodgate}crwdnd34760:0{online}crwdnd34760:0{offline}crwdnd34760:0{floodgateSetup}crwdne34760:0"
-  },
-  "mdx.setup.standalone_remote.floodgate_setup": {
-    "message": "crwdns34762:0crwdne34762:0"
-  },
-  "mdx.setup.standalone_android_title": {
-    "message": "crwdns34764:0crwdne34764:0"
-  },
-  "mdx.setup.standalone_android_caution": {
-    "message": "crwdns34766:0crwdne34766:0"
-  },
-  "mdx.setup.standalone_termux_install": {
-    "message": "crwdns34768:0{termux}crwdne34768:0"
-  },
-  "mdx.setup.run_command": {
-    "message": "crwdns34770:0{command}crwdne34770:0"
-  },
-  "mdx.setup.standalone_termux_script": {
-    "message": "crwdns34772:0crwdne34772:0"
+  "theme.docs.DocCard.categoryDescription.plurals": {
+    "message": "crwdns39748:0{count}crwdne39748:0",
+    "description": "The default description for a category card in the generated index about how many items this category includes"
+  },
+  "theme.ErrorPageContent.tryAgain": {
+    "message": "crwdns39750:0crwdne39750:0",
+    "description": "The label of the button to try again rendering when the React error boundary captures an error"
+  },
+  "theme.common.skipToMainContent": {
+    "message": "crwdns39752:0crwdne39752:0",
+    "description": "The skip to content label used for accessibility, allowing to rapidly navigate to main content with keyboard tab/enter navigation"
+  },
+  "theme.tags.tagsPageTitle": {
+    "message": "crwdns39754:0crwdne39754:0",
+    "description": "The title of the tag list page"
   }
 }
