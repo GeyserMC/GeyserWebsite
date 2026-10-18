@@ -194,7 +194,7 @@ const config: Config = {
     ] : [],
 
     themeConfig: {
-        image: 'img/site/geyser.png',
+        image: 'img/site/geyser.webp',
         navbar: {
             title: 'GeyserMC',
             logo: {

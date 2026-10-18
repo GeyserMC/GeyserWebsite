@@ -1,10 +1,10 @@
 import clsx from 'clsx';
 import Layout from '@theme/Layout';
-import Crossplatform0Img from '@site/static/img/site/crossplatform_0.png';
-import Crossplatform1Img from '@site/static/img/site/crossplatform_1.png';
-import Crossplatform2Img from '@site/static/img/site/crossplatform_2.png';
+import Crossplatform0Img from '@site/static/img/site/crossplatform_0.webp';
+import Crossplatform1Img from '@site/static/img/site/crossplatform_1.webp';
+import Crossplatform2Img from '@site/static/img/site/crossplatform_2.webp';
 import Heading from '@theme/Heading';
-import HeroImage from '@site/static/img/site/geyser.png';
+import HeroImage from '@site/static/img/site/geyser.webp';
 
 import styles from './index.module.scss';
 import Translate from '@docusaurus/Translate';
