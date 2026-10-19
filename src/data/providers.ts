@@ -248,10 +248,7 @@ export const providersData: HostingProvider[] = [
             support: 'https://craftlands.host/contact',
             discord: 'https://discord.craftlands.host'
         },
-        install: translate({
-            id: 'providers.provider.craftlands_hosting.install',
-            message: "Click Versions in the sidebar of your server panel, then click 'Enable' in the 'Bedrock Crossplay' box and restart the server. This installs Geyser and Floodgate and sets up NetherNet on a dedicated Bedrock port."
-        }),
+        install: customInstallLocations.enable_bedrock_crossplay_option,
         config: { preconfigured: true, port: ports.fromHost }
     },
     {
