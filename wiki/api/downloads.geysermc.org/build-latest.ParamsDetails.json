@@ -1,0 +1,1 @@
+{"parameters":[{"name":"project","in":"path","description":"The project identifier.","required":true,"schema":{"pattern":"[a-z]+","type":"string"},"example":"geyser"},{"name":"version","in":"path","description":"A version of the project.","required":true,"schema":{"pattern":"(?:latest|[0-9.]+-?(?:pre|SNAPSHOT)?(?:[0-9.]+)?)?","type":"string"}}]}

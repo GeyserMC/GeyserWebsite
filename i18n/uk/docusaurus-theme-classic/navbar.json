@@ -1,0 +1,38 @@
+{
+  "logo.alt": {
+    "message": "GeyserMC logo",
+    "description": "The alt text of navbar logo"
+  },
+  "item.label.Wiki": {
+    "message": "Wiki",
+    "description": "Navbar item with label Wiki"
+  },
+  "item.label.Blog": {
+    "message": "Blog",
+    "description": "Navbar item with label Blog"
+  },
+  "item.label.Utilities": {
+    "message": "Utilities",
+    "description": "Navbar item with label Utilities"
+  },
+  "item.label.Download": {
+    "message": "Download",
+    "description": "Navbar item with label Download"
+  },
+  "item.label.REST APIs": {
+    "message": "REST APIs",
+    "description": "Navbar item with label REST APIs"
+  },
+  "item.label.Other": {
+    "message": "Other",
+    "description": "Navbar item with label Other"
+  },
+  "item.label.Dump Viewer": {
+    "message": "Dump Viewer",
+    "description": "Navbar item with label Dump Viewer"
+  },
+  "item.label.Hosting": {
+    "message": "Hosting",
+    "description": "Navbar item with label Hosting"
+  }
+}

@@ -1,9 +1,12 @@
 ---
-title: "Bedrock Early Packet Handling DoS Attack Summary and Response"
-slug: "early-packet-handling-attack"
+title: Bedrock Early Packet Handling DoS Attack Summary and Response
+slug: early-packet-handling-attack
 authors: Kas-tle
 hide_table_of_contents: false
-description: "A summary of how we addressed a series of exploits targeting Geyser's early handling of Bedrock game packets"
+description: >-
+  A summary of how we addressed a series of exploits targeting Geyser's early
+  handling of Bedrock game packets
+crowdin_page_id: 7573bcfd-c352-458c-b052-c4d74568453c
 ---
 
 Back in July, we received reports of multiple Geyser instances experiencing targeted Denial of Service (DoS) attacks exhibiting similar characteristics. Out of an abundance of caution, we delayed making this post to ensure that users had adequate time to upgrade. The bugs that allowed for this string of attacks were patched on Geyser builds numbered 897 and later. In the unlikely event you are still running an outdated build of Geyser from many months ago, you should update immediately by downloading the latest build from [https://geysermc.org/download](https://geysermc.org/download). The original [security advisory](https://github.com/GeyserMC/Geyser/security/advisories/GHSA-m2q6-2hwr-643w) for this vulnerability was published on the [GeyserMC/Geyser](https://github.com/GeyserMC/Geyser) repository. This response will detail the timeline, attack vectors, how they were patched, and additional measures we took to prevent future attacks.

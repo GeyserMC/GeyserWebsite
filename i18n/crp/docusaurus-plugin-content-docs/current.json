@@ -1,0 +1,34 @@
+{
+  "version.label": {
+    "message": "crwdns34778:0crwdne34778:0",
+    "description": "The label for version current"
+  },
+  "sidebar.geyserSidebar.category.Setup": {
+    "message": "crwdns34780:0crwdne34780:0",
+    "description": "The label for category Setup in sidebar geyserSidebar"
+  },
+  "sidebar.geyserSidebar.category.Common Issues": {
+    "message": "crwdns34782:0crwdne34782:0",
+    "description": "The label for category Common Issues in sidebar geyserSidebar"
+  },
+  "sidebar.geyserSidebar.category.Configuring Geyser": {
+    "message": "crwdns34784:0crwdne34784:0",
+    "description": "The label for category Configuring Geyser in sidebar geyserSidebar"
+  },
+  "sidebar.geyserSidebar.category.FAQ": {
+    "message": "crwdns34786:0crwdne34786:0",
+    "description": "The label for category FAQ in sidebar geyserSidebar"
+  },
+  "sidebar.geyserSidebar.category.Geyser API": {
+    "message": "crwdns34788:0crwdne34788:0",
+    "description": "The label for category Geyser API in sidebar geyserSidebar"
+  },
+  "sidebar.geyserSidebar.link.Hosting Providers": {
+    "message": "crwdns34790:0crwdne34790:0",
+    "description": "The label for link Hosting Providers in sidebar geyserSidebar, linking to /hosting"
+  },
+  "sidebar.geyserSidebar.category.Custom Content": {
+    "message": "crwdns34792:0crwdne34792:0",
+    "description": "The label for category Custom Content in sidebar geyserSidebar"
+  }
+}

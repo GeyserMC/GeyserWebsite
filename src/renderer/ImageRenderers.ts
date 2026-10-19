@@ -7,7 +7,7 @@ import { faDownload, faHouse, faBlog, faBook, IconDefinition } from '@fortawesom
 const geyserLogo = join(__dirname, '../../static/img/icons/geyser.png');
 const geyserLogoBase64 = `data:image/png;base64,${readFileSync(geyserLogo).toString('base64')}`;
 
-const titleElement = ({ children }) => React.createElement(
+const titleElement = ({ children }: { children: React.ReactNode }) => React.createElement(
     'label',
     {
         style: {
@@ -109,7 +109,7 @@ export const blogOgRenderer: ImageRenderer<BlogPageData> = async (data, context)
         const authorImages = data.data.metadata.authors.map(async author => React.createElement(
             'img',
             {
-                src: await encodeRemoteImage(author.imageURL),
+                src: await encodeRemoteImage(author.imageURL || geyserLogoBase64),
                 style: {
                     width: 112.5,
                     height: 112.5,
@@ -154,8 +154,15 @@ export const pageOgRenderer: ImageRenderer<PageData> = async (data, context) => 
     const extraTitleLength = (' ' + context.siteConfig.titleDelimiter + ' ' + context.siteConfig.title).length;
     await data.document.load();
 
-    const title = (data.document.loaded && data.document.root.querySelector('title')?.textContent).slice(0, -extraTitleLength) || context.siteConfig.title;
-    const description = (data.document.loaded && data.document.root.querySelector('meta[name="description"]').getAttribute('content')) || context.siteConfig.tagline;
+    const root = data?.document?.loaded ? data.document.root : null;
+
+    const title =
+        root?.querySelector('title')?.textContent?.slice(0, -extraTitleLength) ||
+        context?.siteConfig?.title;
+
+    const description =
+        root?.querySelector('meta[name="description"]')?.getAttribute('content') ||
+        context?.siteConfig?.tagline;
 
     const element = React.createElement(
         'div',
@@ -235,6 +242,8 @@ async function getTtfFont(family: string, axes: string[], value: number[]): Prom
 
     const css = await cssCall.text();
     const ttfUrl = css.match(/url\(([^)]+)\)/)?.[1];
+
+    if (!ttfUrl) throw new Error("Could not find TTF URL in CSS");
 
     return await fetch(ttfUrl).then(res => res.arrayBuffer());
 }
