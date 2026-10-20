@@ -837,8 +837,8 @@ export const providersData: HostingProvider[] = [
         },
         notices: {
             info: translate({
-                id: 'providers.provider.server_prism.nethernet_info',
-                message: "Minecraft Crossplay servers created from 19 October 2026 are set up for NetherNet automatically. If your crossplay server is older, or you installed Geyser yourself, contact support and we will set it up for you."
+                id: 'providers.provider.server_prism.nethernet_info_all',
+                message: "All ServerPrism Minecraft Crossplay servers are set up for NetherNet automatically: new servers when they are created, and existing servers were set up on 20 October 2026 and switch over at their next restart. If you installed Geyser yourself on another server type, contact support and we will set it up for you, or follow the NetherNet steps in our [crossplay guide](https://serverprism.com/docs/minecraft/crossplay-getting-started)."
             })
         }
     },
