@@ -100,7 +100,7 @@ export const providersData: HostingProvider[] = [
         },
         install: translate({
             id: 'providers.provider.anvil_mc.install',
-            message: "In the Anvil-MC app, open your server's settings, go to the Network section and turn on 'Bedrock Support'. Geyser and Floodgate are installed and configured on the next server start."
+            message: "In the Anvil-MC app, open your server's settings, go to the Network section and turn on 'Bedrock Support'. Geyser and Floodgate are installed and configured on the next server start. If automatic setup every fails, open your server's file explorer and upload the Geyser JAR file in the mods / plugins folder."
         }),
         config: { preconfigured: true, port: ports.fromHost },
         // Bedrock players use a different address than Java players
