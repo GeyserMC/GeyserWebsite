@@ -251,6 +251,18 @@ export const providersData: HostingProvider[] = [
         notices: { info: onlyServesRegion('Russia') }
     },
     {
+        name: 'CraftLands Hosting',
+        url: 'https://craftlands.host/minecraft-servers',
+        updated: '2026-10-16',
+        links: {
+            article: 'https://craftlands.host/docs/minecraft/how-to-setup-geyser-on-your-minecraft-server',
+            support: 'https://craftlands.host/contact',
+            discord: 'https://discord.craftlands.host'
+        },
+        install: customInstallLocations.enable_bedrock_crossplay_option,
+        config: { preconfigured: true, port: ports.fromHost }
+    },
+    {
         name: 'CreeperHost',
         url: 'https://www.creeperhost.net/',
         updated: '2026-07-10',
