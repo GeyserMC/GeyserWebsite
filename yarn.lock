@@ -3863,7 +3863,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@docusaurus/faster@npm:^3.10.2":
+"@docusaurus/faster@npm:3.10.2":
   version: 3.10.2
   resolution: "@docusaurus/faster@npm:3.10.2"
   dependencies:
@@ -11494,7 +11494,7 @@ __metadata:
   dependencies:
     "@crowdin/crowdin-api-client": "npm:1.59.1"
     "@docusaurus/core": "npm:3.10.2"
-    "@docusaurus/faster": "npm:^3.10.2"
+    "@docusaurus/faster": "npm:3.10.2"
     "@docusaurus/module-type-aliases": "npm:3.10.2"
     "@docusaurus/preset-classic": "npm:3.10.2"
     "@docusaurus/theme-mermaid": "npm:3.10.2"
