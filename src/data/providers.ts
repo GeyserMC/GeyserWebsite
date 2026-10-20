@@ -814,14 +814,33 @@ export const providersData: HostingProvider[] = [
     {
         name: 'ServerPrism',
         url: 'https://serverprism.com/',
-        updated: '2026-07-10',
+        updated: '2026-10-20',
         links: {
             article: 'https://serverprism.com/docs/minecraft/crossplay-getting-started',
-            support: 'https://serverprism.com/tickets/create',
+            support: 'https://serverprism.com/contact',
             discord: 'https://serverprism.com/discord'
         },
-        install: customInstallLocations.plugin_list,
-        config: { udp: ports.newPort, confirmed: false }
+        install: translate({
+            id: 'providers.provider.server_prism.install',
+            message: "Order a Minecraft Crossplay server, or switch your server to Minecraft Crossplay in the Change Runtime tab of the client area. Geyser and Floodgate are installed and set up for you."
+        }),
+        config: {
+            preconfigured: true,
+            port: ports.fromHost,
+            confirmed: false,
+            notes: [
+                translate({
+                    id: 'providers.provider.server_prism.config.bedrock_port',
+                    message: "The Bedrock address and port are shown in the Overview tab of your server in the client area."
+                })
+            ]
+        },
+        notices: {
+            info: translate({
+                id: 'providers.provider.server_prism.nethernet_info',
+                message: "Minecraft Crossplay servers created from 19 October 2026 are set up for NetherNet automatically. If your crossplay server is older, or you installed Geyser yourself, contact support and we will set it up for you."
+            })
+        }
     },
     {
         name: 'Shockbyte',
