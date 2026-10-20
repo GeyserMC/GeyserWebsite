@@ -5,7 +5,8 @@ crowdin_sync: true
 crowdin_page_id: be7c5a22-1e8e-4ffe-8d13-7d763dd75886
 ---
 
-# Port forwarding {#port-forwarding}
+# Port forwarding {/* #port-forwarding */}
+
 This page contains information on how to set up port forwarding required for Geyser to work when self-hosting.
 There are also guides for specific configurations, such as Docker/Pterodactyl, or on specific VPS/KVM providers, such as OVH or Oracle Cloud. 
 

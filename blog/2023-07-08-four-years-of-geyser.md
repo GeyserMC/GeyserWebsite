@@ -13,7 +13,7 @@ Today is a super special day - it's Geyser's birthday 🥳. Geyser is now four y
 
 Not only is this a special day because it's our birthday, but we have some exiting news and sneak peeks to share with you all, alongside general updates on our project development. Continue reading for more information!
 
-<!-- truncate -->
+{/* truncate */}
 
 ## Project Statistics {/* #project-statistics */}
 - Since the start of the project, there have been 3,337 commits contributed by 105 contributors
