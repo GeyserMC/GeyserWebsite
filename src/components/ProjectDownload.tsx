@@ -4,6 +4,7 @@ import React, { useState, useEffect } from 'react';
 import { Downloads } from '../types/downloads';
 import { Column, Columns } from './Columns';
 import { Grid } from './Grid';
+import { Versions } from './Versions';
 
 interface ProjectDownloadProps {
     projectId: string;
@@ -78,7 +79,7 @@ export const ProjectDownload: React.FC<ProjectDownloadProps> = ({ projectId, des
             <p>{description}</p>
             <Columns>
                 <Column>
-                    <h3>Build #{latestBuild.build} · {new Date(latestBuild.time).toLocaleDateString()}:</h3>
+                    <h3>Build #{latestBuild.build} · {new Date(latestBuild.time).toLocaleDateString()}{projectId === 'geyser' && ` (Java ${Versions.java()} · Bedrock ${Versions.bedrock()})`}:</h3>
                     <Grid elementsPerRow={gridColumns || 2} gap="8px">
                         { warning && 
                             <div className='warning-box'>

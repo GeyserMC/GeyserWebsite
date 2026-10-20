@@ -505,6 +505,21 @@ export const providersData: HostingProvider[] = [
         }
     },
     {
+        name: 'MCHosts',
+        url: 'https://mchosts.com.au/',
+        updated: '2026-10-18',
+        links: {
+            article: 'https://mchosts.com.au/knowledgebase/bedrock-edition-geyser-mc',
+            support: 'https://mchosts.com.au/support'
+        },
+        install: translate({
+            id: 'providers.provider.mchosts.install',
+            message: "Open the Connections tab of the control panel, expand 'Bedrock Edition' and click 'Enable Bedrock Support'. The server restarts with Geyser and Floodgate installed and configured."
+        }),
+        config: { preconfigured: true, port: 19132 },
+        notices: { info: onlyServesRegion('Australia') }
+    },
+    {
         name: 'MCPEhost.ru',
         url: 'https://mcpehost.ru',
         updated: '2025-10-29',
