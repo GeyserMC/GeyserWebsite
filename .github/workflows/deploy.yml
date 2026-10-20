@@ -60,14 +60,16 @@ jobs:
         run: yarn install --immutable
 
       - name: Sync Translations
+        id: sync-translations
         if: env.CROWDIN_ENABLED == 'true'
+        continue-on-error: true
         run: yarn crowdin-sync
         env:
           CROWDIN_TOKEN: ${{ secrets.CROWDIN_TOKEN }}
           CROWDIN_ORGANIZATION: ${{ secrets.CROWDIN_ORGANIZATION }}
 
       - name: Commit Changes
-        if: env.CROWDIN_ENABLED == 'true'
+        if: env.CROWDIN_ENABLED == 'true' && steps.sync-translations.outcome == 'success'
         id: commit
         # See https://github.com/planetscale/ghcommit-action/releases
         uses: planetscale/ghcommit-action@a6b150b81dca5dd027baa898604418eec9e11465 # v0.2.22
