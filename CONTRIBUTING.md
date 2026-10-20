@@ -77,6 +77,8 @@ title: Page title
 description: A short description of the page.
 ---
 
+This is an example lead.
+
 ## Page Subheading One {#page-subheading-1}
 
 This is an example page.
@@ -85,6 +87,8 @@ This is an example page.
 
 This is more of an example page.
 ```
+
+Note that you do not need a `# title header` as this is provided by the `title` field in the frontmatter.
 
 ### Adding a Page to the Sidebar
 
