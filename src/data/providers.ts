@@ -223,8 +223,8 @@ export const providersData: HostingProvider[] = [
             builtin_signaling: 'same_as_udp',
             notes: [
                 translate({
-                    id: 'providers.provider.cloud_nord.config.advertise_addresses',
-                    message: "Servers run in containers, so also set `advertise-addresses` under `signaling` and `builtin` in the `bedrock` section to your server's IP address, as shown in the Network tab."
+                    id: 'providers.provider.cloud_nord.config.advertise_addresses_signaling',
+                    message: "Servers run in containers, so also set `advertise-addresses` under `signaling` in the `bedrock` section to your server's IP address, as shown in the Network tab."
                 })
             ]
         },
