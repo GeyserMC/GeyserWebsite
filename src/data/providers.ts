@@ -91,6 +91,25 @@ export const providersData: HostingProvider[] = [
         config: { udp: ports.assign, confirmed: false }
     },
     {
+        name: 'Anvil-MC',
+        url: 'https://anvil-mc.com/',
+        updated: '2026-10-20',
+        links: {
+            article: 'https://anvil-mc.com/blog/minecraft-java-bedrock-crossplay-geyser',
+            discord: 'https://discord.gg/3gQW23CXkM'
+        },
+        install: translate({
+            id: 'providers.provider.anvil_mc.install',
+            message: "In the Anvil-MC app, open your server's settings, go to the Network section and turn on 'Bedrock Support'. Geyser and Floodgate are installed and configured on the next server start."
+        }),
+        config: { preconfigured: true, port: ports.fromHost },
+        // Bedrock players use a different address than Java players
+        connect: translate({
+            id: 'providers.provider.anvil_mc.connect',
+            message: "In Minecraft: Bedrock Edition, go to Play, then Servers, and select Add Server. Enter the address and port shown next to 'BEDROCK IP' on your server in the Anvil-MC app. This is a different address from the Java server's."
+        })
+    },
+    {
         name: 'Apex Hosting',
         url: 'https://apexminecrafthosting.com/',
         updated: '2026-07-10',
