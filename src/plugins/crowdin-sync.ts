@@ -144,6 +144,7 @@ const uploadAction = async (inp: {
         importOptions: {
             excludedFrontMatterElements: ['permalink', 'page_sidebar', 'hide_title', 'crowdin_page_id', 'crowdin_sync'],
             excludeCodeBlocks: true,
+            contentSegmentation: false,
         },
         exportOptions: {
             strongMarker: 'asterisk',
@@ -267,12 +268,6 @@ const uploadAction = async (inp: {
                 break;
 
             case '.md':
-                fileOptions.type = 'md';
-                fileOptions.importOptions = markdownOptions.importOptions;
-                fileOptions.exportOptions = markdownOptions.exportOptions;
-                content = fs.readFileSync(filePath, 'utf8');
-                break;
-
             case '.mdx':
                 fileOptions.type = 'mdx_v2' as SourceFilesModel.FileType;
                 fileOptions.importOptions = markdownOptions.importOptions;
@@ -384,12 +379,13 @@ const downloadAction = async (inp: {
                 entryPath.slice(markdownFolder.path.length)
             );
 
-            const destinationDir = path.dirname(destinationPath);
-            if (!fs.existsSync(destinationDir)) {
-                fs.mkdirSync(destinationDir, { recursive: true });
-            }
+            // Manual fixes for Crowdin mdx export issues
+            const rawContent = entry.getData().toString('utf8');
+            const cleanContent = rawContent
+                // Unescape \< inside inline code spans (e.g. `\<id>` -> `<id>`)
+                .replace(/`([^`\n]+)`/g, (match) => match.replace(/\\</g, '<'))
 
-            zip.extractEntryTo(entry, destinationDir, false, true);
+            fs.writeFileSync(destinationPath, cleanContent, 'utf8');
             continue;
         }
     }

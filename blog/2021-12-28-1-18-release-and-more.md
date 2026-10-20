@@ -14,22 +14,22 @@ Welcome to the new Geyser blog! We’ll be posting new content here periodically
 
 <!-- truncate -->
 
-## Introduction: {#introduction}
+## Introduction: {/* #introduction */}
 In this post, we will be covering all the changes that led up to the 1.18 release. With 1.18 came a huge set of changes for Geyser which although may not be visible to the end user, were a massive feat internally. This resulted in not only multiple project refactors of Geyser along with surrounding projects (PacketLib, MCProtocolLib, etc.) but many additional optimizations and improvements to how the code operated and ran. For the latter half of 2021 especially, we’ve been putting in a lot more time to ensure Geyser runs more smoothly and to optimize poorly performing parts of the code, so much of these changes were a direct result of that initiative.
 
-## Writing a New Java Edition Protocol Library: {#writing-a-new-java-edition-protocol-library}
+## Writing a New Java Edition Protocol Library: {/* #writing-a-new-java-edition-protocol-library */}
 To preface, we were not initially planning to do this big refactor all at once, but one thing led to another and here we are. Our initial plans were actually quite a bit different, with us initially planning to deprecate and remove MCProtocolLib from our codebase, [and instead implement support for Java Edition](https://github.com/GeyserMC/Protocol/tree/feature/java-3.0) inside of [Protocol](https://github.com/CloudburstMC/Protocol), our Bedrock Edition protocol library. We actually got it to a point where you could join and properly send/receive packets quite well!
 
 ![Java Edition Lib](https://user-images.githubusercontent.com/29153871/144722769-88a6701f-4478-4608-96ae-a5c855b752b7.png)
 
 This was inline with our plans to continually improve performance and maintainability with Geyser, since using a library where much of the code is the same across both the Java & Bedrock protocol libraries would reduce much of the additional work we need to do in. A good example of this is inside our [ItemTranslator](https://github.com/GeyserMC/Geyser/blob/master/core/src/main/java/org/geysermc/geyser/translator/inventory/item/ItemTranslator.java#L295-L357) class, where we translate NBT objects from that used inside of MCProtocolLib, to that used inside of our Bedrock protocol library. We were intending to have this done with 1.18 since the update itself was not too drastic, meaning we could spend much more time on Geyser itself, rather than trying to update to the protocol.
 
-## Taking over MCProtocolLib: {#taking-over-mcprotocollib}
+## Taking over MCProtocolLib: {/* #taking-over-mcprotocollib */}
 However our plans completely changed when Steveice10, the maintainer of MCProtocolLib at the time, reached out [and asked if we wanted to take over the project](https://github.com/GeyserMC/MCProtocolLib/issues/659). At first we were a bit hesitant as we had already put in quite a bit of work to our new library, but as MCProtocolLib was already an integral part of Geyser from [the very beginning](https://github.com/GeyserMC/Geyser/commit/17b99a80fe910ba7147aa4f3cd2669b5538422c7) and we had essentially been maintaining the library for the past year or so, we all came to the consensus that scrapping the library would be a poor idea, both for us as well as the wider community who was also using this library. We decided to take over it.
 
 With us now being in full control of MCProtocolLib, that gave us much more freedom to update and improve the project that we previously were unable to do. Rather than go on with a new library altogether, we felt it would be better to gradually port over much of our work into MCProtocolLib. With the release of 1.18 still lingering, we decided to jump the gun and start on a massive refactor of packets, with us adopting Mojang-mapped packet names. This is something we were doing inside of Protocol for Java Edition and with more and more projects adopting these names and for the sake of unity across the board, we felt now was the best time to make this decision. 
 
-## Improving Performance in MCProtocolLib: {#improving-performance-in-mcprotocollib}
+## Improving Performance in MCProtocolLib: {/* #improving-performance-in-mcprotocollib */}
 During the process of renaming packets to use Mojmap names, we found that most of the performance bottlenecks with MCProtocolLib & Geyser did not particularly lie with object translation, since it's relatively cheap in the grand scheme of things, but just the ways in which the library operated itself.
 
 ![Slow Packets](https://user-images.githubusercontent.com/29153871/144722843-4bef937f-b393-487d-99fc-cc56a8eece58.PNG)
@@ -74,12 +74,12 @@ We also identified other areas where code was running poorly - previously, every
 
 With all these changes consolidated into an individual codec, it also opens the door for multi-version compatibility - something we were initially planning to do with our Java Edition work in Protocol. Although not officially supported yet nor something we have fully committed to, these changes will allow that capability in the future, and implementing projects technically could implement the capability to do so if they please.
 
-## Refactoring Geyser: {#refactoring-geyser}
+## Refactoring Geyser: {/* #refactoring-geyser */}
 With the massive changes inside MCProtocolLib already lining up, we already foresaw the changes in Geyser being quite drastic. With plans for extensions and a more streamlined API being in the plans for over a year, we felt that now was the best time to start moving along with that. This initially started with a massive refactor of the packages inside of Geyser. Previously, everything involved with the work Geyser did with packet translation and whatnot lied in the `connector` module of the project. This name was slightly confusing for many as Geyser does much more than just "connecting you to a server." With that being said, we decided to rename the module to `core` and update the packaging for it from `org.geysermc.connector` to `org.geysermc.geyser`. 
 
 Along with the package name changes, we decided to start implementing a new API. At the time of writing, this is still something that is very much a work in progress, however this will make it much easier to write projects that interop with Geyser & Floodgate in a much more streamlined fashion, and allow for extensions to have a solid base to build off of.
 
-## Improving Code in Geyser: {#improving-code-in-geyser}
+## Improving Code in Geyser: {/* #improving-code-in-geyser */}
 As mentioned earlier in this post, one of our plans was to eventually move away from MCProtocolLib due to the additional translation we have to do between MCProtocolLib and Protocol objects. However, as we continued working on both the MCProtocolLib changes and the Geyser refactor, we identified that these translations were not the sources of most performance bottlenecks inside of Geyser itself. This led to us refactoring our entity system inside of Geyser, not solely for the sake of performance, but also for the sake of better usability and understanding.
 
 ```java
@@ -157,7 +157,7 @@ All that code shown earlier has been condensed into the following. Now, if Mojan
 
 In regards to performance, previously all the entity data had been held in an EntityType enum, which was not the best for constructing more complex entity objects. This meant we had to use reflection for constructing entities which as mentioned earlier, was used inside of MCProtocolLib, and was slower than what we wanted. This too was replaced with an entity factory, and can be seen in the above code snippet.
 
-## New API, Extensions, and Looking Onward: {#new-api-extensions-and-looking-onward}
+## New API, Extensions, and Looking Onward: {/* #new-api-extensions-and-looking-onward */}
 As brought up multiple times throughout this post, we have been spending time working up a new API. We eventually want to bring in extensions to Geyser, which act as plugins on their own except they are loaded from Geyser itself. With more and more people and larger servers adopting Geyser, many more unique and niche usecases have popped up which don’t particularly fit inside of Geyser itself, but would still benefit users as a whole. As Geyser is capable of running on 6 platforms at this point in time (Spigot, Sponge, Standalone, Velocity, Fabric and BungeeCord, with Forge likely on the way), as a developer, creating a separate addon capable of running on all these platforms is far less than ideal. We’ve opted to get around this by creating a new extension system, allowing developers to create an extension one time for Geyser, and it being capable of running on any of these platforms.
 
 This extension API has not been created yet however, and plans for the base API inside of Geyser are still being finalized. We also intend to start moving most of Floodgate into Geyser itself, so unless you are running Floodgate independently from Geyser (e.g. you use Geyser Standalone but run Floodgate on the proxy), in the near future you will only need to install Geyser, and Floodgate’s functions will all be handled automatically in Geyser.

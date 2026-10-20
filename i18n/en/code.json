@@ -1,577 +1,6 @@
 {
-  "pages.main.title": {
-    "message": "Revolutionize Your Minecraft Server"
-  },
-  "pages.main.subtitle": {
-    "message": "Enable clients from Minecraft Bedrock Edition to join your Minecraft Java server"
-  },
-  "components.homepage_features.1.line1": {
-    "message": "Geyser is a program that allows Minecraft: Bedrock Edition clients to join Minecraft: Java Edition servers, allowing for true crossplay between both editions of the game."
-  },
-  "components.homepage_features.1.line2": {
-    "message": "The ultimate goal of this project is to allow Minecraft: Bedrock Edition users to join Minecraft: Java Edition servers as seamlessly as possible."
-  },
-  "components.homepage_features.2": {
-    "message": "Geyser acts as a translator which sits between the Bedrock client and the Java server. It takes data from the Bedrock client and translates it into a format the Java server understands and vice versa. Geyser works with any modern Minecraft version and can be installed either as a plugin or ran as a standalone program."
-  },
-  "components.homepage_features.3.line1": {
-    "message": "Geyser can be joined from Bedrock clients on Windows 10/11, iOS, Android, and even consoles. Geyser works with a wide array of hosting providers, but can also be used as its own standalone proxy to join any Minecraft server!"
-  },
-  "components.homepage_features.3.line2": {
-    "message": "If you are a server owner, you can install our Floodgate plugin which allows Xbox Live authenticated Bedrock users to join without a Java Edition account!"
-  },
-  "pages.download.title": {
-    "message": "Download"
-  },
-  "pages.download.subheading": {
-    "message": "Download the latest versions of our various projects."
-  },
-  "pages.download.description.geyser": {
-    "message": "A bridge/proxy allowing you to connect to Minecraft: Java Edition servers with Minecraft: Bedrock Edition."
-  },
-  "pages.download.description.floodgate": {
-    "message": "Hybrid mode plugin to allow for connections from Geyser to join online mode servers."
-  },
-  "pages.download.description.geyserconnect": {
-    "message": "A Geyser extension allowing players to connect to different Java or Geyser servers."
-  },
-  "pages.download.description.thirdpartycosmetics": {
-    "message": "An extension that adds support for loading ears and other third party cosmetics on java players"
-  },
-  "pages.dumpviewer.title": {
-    "message": "Dump Viewer"
-  },
-  "pages.dumpviewer.subheading": {
-    "message": "View the breakdown of your Geyser dump."
-  },
-  "pages.dumpviewer.enterdumpid": {
-    "message": "Enter Dump ID or URL below and click load."
-  },
-  "pages.dumpviewer.button.load": {
-    "message": "Load"
-  },
-  "pages.dumpviewer.versions": {
-    "message": "Versions"
-  },
-  "pages.dumpviewer.versions.geyserver": {
-    "message": "Geyser Version"
-  },
-  "pages.dumpviewer.versions.javaver": {
-    "message": "Java Version"
-  },
-  "pages.dumpviewer.versions.os": {
-    "message": "Operating System"
-  },
-  "pages.dumpviewer.geyserver": {
-    "message": "Geyser Version"
-  },
-  "pages.dumpviewer.geyserver.build": {
-    "message": "Build"
-  },
-  "pages.dumpviewer.geyserver.commit": {
-    "message": "Commit Hash"
-  },
-  "pages.dumpviewer.geyserver.branch": {
-    "message": "Branch"
-  },
-  "pages.dumpviewer.platform": {
-    "message": "Platform Info"
-  },
-  "pages.dumpviewer.platform.id": {
-    "message": "Platform Identifier"
-  },
-  "pages.dumpviewer.platform.name": {
-    "message": "Platform Name"
-  },
-  "pages.dumpviewer.platform.version": {
-    "message": "Platform Version"
-  },
-  "pages.dumpviewer.platform.apiver": {
-    "message": "Platform API Version"
-  },
-  "pages.dumpviewer.platform.onlinemode": {
-    "message": "Online Mode"
-  },
-  "pages.dumpviewer.sysinfo": {
-    "message": "System Info"
-  },
-  "pages.dumpviewer.cpucount": {
-    "message": "CPU Count"
-  },
-  "pages.dumpviewer.cpuname": {
-    "message": "CPU Name"
-  },
-  "pages.dumpviewer.ram": {
-    "message": "RAM"
-  },
-  "pages.dumpviewer.javaname": {
-    "message": "Java Name"
-  },
-  "pages.dumpviewer.javavendor": {
-    "message": "Java Vendor"
-  },
-  "pages.dumpviewer.dockercheck": {
-    "message": "Uses Docker?"
-  },
-  "pages.dumpviewer.plugins": {
-    "message": "Plugins"
-  },
-  "pages.dumpviewer.plugins.noplugins": {
-    "message": "No plugins to show."
-  },
-  "pages.dumpviewer.plugins.helptext": {
-    "message": "Click on a plugin to view more information."
-  },
-  "pages.dumpviewer.config": {
-    "message": "Config"
-  },
-  "pages.dumpviewer.viewsource": {
-    "message": "View dump source"
-  },
-  "theme.ErrorPageContent.title": {
-    "message": "This page crashed.",
-    "description": "The title of the fallback page when the page crashed"
-  },
-  "theme.BackToTopButton.buttonAriaLabel": {
-    "message": "Scroll back to top",
-    "description": "The ARIA label for the back to top button"
-  },
-  "theme.blog.archive.title": {
-    "message": "Archive",
-    "description": "The page & hero title of the blog archive page"
-  },
-  "theme.blog.archive.description": {
-    "message": "Archive",
-    "description": "The page & hero description of the blog archive page"
-  },
-  "theme.blog.paginator.navAriaLabel": {
-    "message": "Blog list page navigation",
-    "description": "The ARIA label for the blog pagination"
-  },
-  "theme.blog.paginator.newerEntries": {
-    "message": "Newer Entries",
-    "description": "The label used to navigate to the newer blog posts page (previous page)"
-  },
-  "theme.blog.paginator.olderEntries": {
-    "message": "Older Entries",
-    "description": "The label used to navigate to the older blog posts page (next page)"
-  },
-  "theme.blog.post.paginator.navAriaLabel": {
-    "message": "Blog post page navigation",
-    "description": "The ARIA label for the blog posts pagination"
-  },
-  "theme.blog.post.paginator.newerPost": {
-    "message": "Newer Post",
-    "description": "The blog post button label to navigate to the newer/previous post"
-  },
-  "theme.blog.post.paginator.olderPost": {
-    "message": "Older Post",
-    "description": "The blog post button label to navigate to the older/next post"
-  },
-  "theme.blog.post.plurals": {
-    "message": "One post|{count} posts",
-    "description": "Pluralized label for \"{count} posts\". Use as much plural forms (separated by \"|\") as your language support (see https://www.unicode.org/cldr/cldr-aux/charts/34/supplemental/language_plural_rules.html)"
-  },
-  "theme.blog.tagTitle": {
-    "message": "{nPosts} tagged with \"{tagName}\"",
-    "description": "The title of the page for a blog tag"
-  },
-  "theme.tags.tagsPageLink": {
-    "message": "View All Tags",
-    "description": "The label of the link targeting the tag list page"
-  },
-  "theme.colorToggle.ariaLabel": {
-    "message": "Switch between dark and light mode (currently {mode})",
-    "description": "The ARIA label for the navbar color mode toggle"
-  },
-  "theme.colorToggle.ariaLabel.mode.dark": {
-    "message": "dark mode",
-    "description": "The name for the dark color mode"
-  },
-  "theme.colorToggle.ariaLabel.mode.light": {
-    "message": "light mode",
-    "description": "The name for the light color mode"
-  },
-  "theme.docs.DocCard.categoryDescription.plurals": {
-    "message": "1 item|{count} items",
-    "description": "The default description for a category card in the generated index about how many items this category includes"
-  },
-  "theme.docs.breadcrumbs.navAriaLabel": {
-    "message": "Breadcrumbs",
-    "description": "The ARIA label for the breadcrumbs"
-  },
-  "theme.docs.paginator.navAriaLabel": {
-    "message": "Docs pages",
-    "description": "The ARIA label for the docs pagination"
-  },
-  "theme.docs.paginator.previous": {
-    "message": "Previous",
-    "description": "The label used to navigate to the previous doc"
-  },
-  "theme.docs.paginator.next": {
-    "message": "Next",
-    "description": "The label used to navigate to the next doc"
-  },
-  "theme.docs.tagDocListPageTitle.nDocsTagged": {
-    "message": "One doc tagged|{count} docs tagged",
-    "description": "Pluralized label for \"{count} docs tagged\". Use as much plural forms (separated by \"|\") as your language support (see https://www.unicode.org/cldr/cldr-aux/charts/34/supplemental/language_plural_rules.html)"
-  },
-  "theme.docs.tagDocListPageTitle": {
-    "message": "{nDocsTagged} with \"{tagName}\"",
-    "description": "The title of the page for a docs tag"
-  },
-  "theme.docs.versionBadge.label": {
-    "message": "Version: {versionLabel}"
-  },
-  "theme.docs.versions.unreleasedVersionLabel": {
-    "message": "This is unreleased documentation for {siteTitle} {versionLabel} version.",
-    "description": "The label used to tell the user that he's browsing an unreleased doc version"
-  },
-  "theme.docs.versions.unmaintainedVersionLabel": {
-    "message": "This is documentation for {siteTitle} {versionLabel}, which is no longer actively maintained.",
-    "description": "The label used to tell the user that he's browsing an unmaintained doc version"
-  },
-  "theme.docs.versions.latestVersionSuggestionLabel": {
-    "message": "For up-to-date documentation, see the {latestVersionLink} ({versionLabel}).",
-    "description": "The label used to tell the user to check the latest version"
-  },
-  "theme.docs.versions.latestVersionLinkLabel": {
-    "message": "latest version",
-    "description": "The label used for the latest version suggestion link label"
-  },
-  "theme.common.editThisPage": {
-    "message": "Edit this page",
-    "description": "The link label to edit the current page"
-  },
-  "theme.common.headingLinkTitle": {
-    "message": "Direct link to {heading}",
-    "description": "Title for link to heading"
-  },
-  "theme.lastUpdated.atDate": {
-    "message": " on {date}",
-    "description": "The words used to describe on which date a page has been last updated"
-  },
-  "theme.lastUpdated.byUser": {
-    "message": " by {user}",
-    "description": "The words used to describe by who the page has been last updated"
-  },
-  "theme.lastUpdated.lastUpdatedAtBy": {
-    "message": "Last updated{atDate}{byUser}",
-    "description": "The sentence used to display when a page has been last updated, and by who"
-  },
-  "theme.NotFound.title": {
-    "message": "Page Not Found",
-    "description": "The title of the 404 page"
-  },
-  "theme.navbar.mobileVersionsDropdown.label": {
-    "message": "Versions",
-    "description": "The label for the navbar versions dropdown on mobile view"
-  },
-  "theme.tags.tagsListLabel": {
-    "message": "Tags:",
-    "description": "The label alongside a tag list"
-  },
-  "theme.AnnouncementBar.closeButtonAriaLabel": {
-    "message": "Close",
-    "description": "The ARIA label for close button of announcement bar"
-  },
-  "theme.admonition.caution": {
-    "message": "caution",
-    "description": "The default label used for the Caution admonition (:::caution)"
-  },
-  "theme.admonition.danger": {
-    "message": "danger",
-    "description": "The default label used for the Danger admonition (:::danger)"
-  },
-  "theme.admonition.info": {
-    "message": "info",
-    "description": "The default label used for the Info admonition (:::info)"
-  },
-  "theme.admonition.note": {
-    "message": "note",
-    "description": "The default label used for the Note admonition (:::note)"
-  },
-  "theme.admonition.tip": {
-    "message": "tip",
-    "description": "The default label used for the Tip admonition (:::tip)"
-  },
-  "theme.admonition.warning": {
-    "message": "warning",
-    "description": "The default label used for the Warning admonition (:::warning)"
-  },
-  "theme.blog.sidebar.navAriaLabel": {
-    "message": "Blog recent posts navigation",
-    "description": "The ARIA label for recent posts in the blog sidebar"
-  },
-  "theme.CodeBlock.copied": {
-    "message": "Copied",
-    "description": "The copied button label on code blocks"
-  },
-  "theme.CodeBlock.copyButtonAriaLabel": {
-    "message": "Copy code to clipboard",
-    "description": "The ARIA label for copy code blocks button"
-  },
-  "theme.CodeBlock.copy": {
-    "message": "Copy",
-    "description": "The copy button label on code blocks"
-  },
-  "theme.CodeBlock.wordWrapToggle": {
-    "message": "Toggle word wrap",
-    "description": "The title attribute for toggle word wrapping button of code block lines"
-  },
-  "theme.DocSidebarItem.expandCategoryAriaLabel": {
-    "message": "Expand sidebar category '{label}'",
-    "description": "The ARIA label to expand the sidebar category"
-  },
-  "theme.DocSidebarItem.collapseCategoryAriaLabel": {
-    "message": "Collapse sidebar category '{label}'",
-    "description": "The ARIA label to collapse the sidebar category"
-  },
-  "theme.NavBar.navAriaLabel": {
-    "message": "Main",
-    "description": "The ARIA label for the main navigation"
-  },
-  "theme.NotFound.p1": {
-    "message": "We could not find what you were looking for.",
-    "description": "The first paragraph of the 404 page"
-  },
-  "theme.NotFound.p2": {
-    "message": "Please contact the owner of the site that linked you to the original URL and let them know their link is broken.",
-    "description": "The 2nd paragraph of the 404 page"
-  },
-  "theme.navbar.mobileLanguageDropdown.label": {
-    "message": "Languages",
-    "description": "The label for the mobile language switcher dropdown"
-  },
-  "theme.TOCCollapsible.toggleButtonLabel": {
-    "message": "On this page",
-    "description": "The label used by the button on the collapsible TOC component"
-  },
-  "theme.blog.post.readMore": {
-    "message": "Read More",
-    "description": "The label used in blog post item excerpts to link to full blog posts"
-  },
-  "theme.blog.post.readMoreLabel": {
-    "message": "Read more about {title}",
-    "description": "The ARIA label for the link to full blog posts from excerpts"
-  },
-  "theme.blog.post.readingTime.plurals": {
-    "message": "One min read|{readingTime} min read",
-    "description": "Pluralized label for \"{readingTime} min read\". Use as much plural forms (separated by \"|\") as your language support (see https://www.unicode.org/cldr/cldr-aux/charts/34/supplemental/language_plural_rules.html)"
-  },
-  "theme.docs.breadcrumbs.home": {
-    "message": "Home page",
-    "description": "The ARIA label for the home page in the breadcrumbs"
-  },
-  "theme.docs.sidebar.collapseButtonTitle": {
-    "message": "Collapse sidebar",
-    "description": "The title attribute for collapse button of doc sidebar"
-  },
-  "theme.docs.sidebar.collapseButtonAriaLabel": {
-    "message": "Collapse sidebar",
-    "description": "The title attribute for collapse button of doc sidebar"
-  },
-  "theme.docs.sidebar.navAriaLabel": {
-    "message": "Docs sidebar",
-    "description": "The ARIA label for the sidebar navigation"
-  },
-  "theme.docs.sidebar.closeSidebarButtonAriaLabel": {
-    "message": "Close navigation bar",
-    "description": "The ARIA label for close button of mobile sidebar"
-  },
-  "theme.docs.sidebar.expandButtonTitle": {
-    "message": "Expand sidebar",
-    "description": "The ARIA label and title attribute for expand button of doc sidebar"
-  },
-  "theme.docs.sidebar.expandButtonAriaLabel": {
-    "message": "Expand sidebar",
-    "description": "The ARIA label and title attribute for expand button of doc sidebar"
-  },
-  "theme.navbar.mobileSidebarSecondaryMenu.backButtonLabel": {
-    "message": "← Back to main menu",
-    "description": "The label of the back button to return to main menu, inside the mobile navbar sidebar secondary menu (notably used to display the docs sidebar)"
-  },
-  "theme.docs.sidebar.toggleSidebarButtonAriaLabel": {
-    "message": "Toggle navigation bar",
-    "description": "The ARIA label for hamburger menu button of mobile navigation"
-  },
-  "theme.SearchBar.seeAll": {
-    "message": "See all {count} results"
-  },
-  "theme.SearchPage.documentsFound.plurals": {
-    "message": "One document found|{count} documents found",
-    "description": "Pluralized label for \"{count} documents found\". Use as much plural forms (separated by \"|\") as your language support (see https://www.unicode.org/cldr/cldr-aux/charts/34/supplemental/language_plural_rules.html)"
-  },
-  "theme.SearchPage.existingResultsTitle": {
-    "message": "Search results for \"{query}\"",
-    "description": "The search page title for non-empty query"
-  },
-  "theme.SearchPage.emptyResultsTitle": {
-    "message": "Search the documentation",
-    "description": "The search page title for empty query"
-  },
-  "theme.SearchPage.inputPlaceholder": {
-    "message": "Type your search here",
-    "description": "The placeholder for search page input"
-  },
-  "theme.SearchPage.inputLabel": {
-    "message": "Search",
-    "description": "The ARIA label for search page input"
-  },
-  "theme.SearchPage.algoliaLabel": {
-    "message": "Search by Algolia",
-    "description": "The ARIA label for Algolia mention"
-  },
-  "theme.SearchPage.noResultsText": {
-    "message": "No results were found",
-    "description": "The paragraph for empty search result"
-  },
-  "theme.SearchPage.fetchingNewResults": {
-    "message": "Fetching new results...",
-    "description": "The paragraph for fetching new search results"
-  },
-  "theme.SearchBar.label": {
-    "message": "Search",
-    "description": "The ARIA label and placeholder for search button"
-  },
-  "theme.SearchModal.searchBox.resetButtonTitle": {
-    "message": "Clear the query",
-    "description": "The label and ARIA label for search box reset button"
-  },
-  "theme.SearchModal.searchBox.cancelButtonText": {
-    "message": "Cancel",
-    "description": "The label and ARIA label for search box cancel button"
-  },
-  "theme.SearchModal.startScreen.recentSearchesTitle": {
-    "message": "Recent",
-    "description": "The title for recent searches"
-  },
-  "theme.SearchModal.startScreen.noRecentSearchesText": {
-    "message": "No recent searches",
-    "description": "The text when no recent searches"
-  },
-  "theme.SearchModal.startScreen.saveRecentSearchButtonTitle": {
-    "message": "Save this search",
-    "description": "The label for save recent search button"
-  },
-  "theme.SearchModal.startScreen.removeRecentSearchButtonTitle": {
-    "message": "Remove this search from history",
-    "description": "The label for remove recent search button"
-  },
-  "theme.SearchModal.startScreen.favoriteSearchesTitle": {
-    "message": "Favorite",
-    "description": "The title for favorite searches"
-  },
-  "theme.SearchModal.startScreen.removeFavoriteSearchButtonTitle": {
-    "message": "Remove this search from favorites",
-    "description": "The label for remove favorite search button"
-  },
-  "theme.SearchModal.errorScreen.titleText": {
-    "message": "Unable to fetch results",
-    "description": "The title for error screen of search modal"
-  },
-  "theme.SearchModal.errorScreen.helpText": {
-    "message": "You might want to check your network connection.",
-    "description": "The help text for error screen of search modal"
-  },
-  "theme.SearchModal.footer.selectText": {
-    "message": "to select",
-    "description": "The explanatory text of the action for the enter key"
-  },
-  "theme.SearchModal.footer.selectKeyAriaLabel": {
-    "message": "Enter key",
-    "description": "The ARIA label for the Enter key button that makes the selection"
-  },
-  "theme.SearchModal.footer.navigateText": {
-    "message": "to navigate",
-    "description": "The explanatory text of the action for the Arrow up and Arrow down key"
-  },
-  "theme.SearchModal.footer.navigateUpKeyAriaLabel": {
-    "message": "Arrow up",
-    "description": "The ARIA label for the Arrow up key button that makes the navigation"
-  },
-  "theme.SearchModal.footer.navigateDownKeyAriaLabel": {
-    "message": "Arrow down",
-    "description": "The ARIA label for the Arrow down key button that makes the navigation"
-  },
-  "theme.SearchModal.footer.closeText": {
-    "message": "to close",
-    "description": "The explanatory text of the action for Escape key"
-  },
-  "theme.SearchModal.footer.closeKeyAriaLabel": {
-    "message": "Escape key",
-    "description": "The ARIA label for the Escape key button that close the modal"
-  },
-  "theme.SearchModal.footer.searchByText": {
-    "message": "Search by",
-    "description": "The text explain that the search is making by Algolia"
-  },
-  "theme.SearchModal.noResultsScreen.noResultsText": {
-    "message": "No results for",
-    "description": "The text explains that there are no results for the following search"
-  },
-  "theme.SearchModal.noResultsScreen.suggestedQueryText": {
-    "message": "Try searching for",
-    "description": "The text for the suggested query when no results are found for the following search"
-  },
-  "theme.SearchModal.noResultsScreen.reportMissingResultsText": {
-    "message": "Believe this query should return results?",
-    "description": "The text for the question where the user thinks there are missing results"
-  },
-  "theme.SearchModal.noResultsScreen.reportMissingResultsLinkText": {
-    "message": "Let us know.",
-    "description": "The text for the link to report missing results"
-  },
-  "theme.SearchModal.placeholder": {
-    "message": "Search docs",
-    "description": "The placeholder of the input of the DocSearch pop-up modal"
-  },
-  "theme.ErrorPageContent.tryAgain": {
-    "message": "Try again",
-    "description": "The label of the button to try again rendering when the React error boundary captures an error"
-  },
-  "theme.common.skipToMainContent": {
-    "message": "Skip to main content",
-    "description": "The skip to content label used for accessibility, allowing to rapidly navigate to main content with keyboard tab/enter navigation"
-  },
-  "theme.tags.tagsPageTitle": {
-    "message": "Tags",
-    "description": "The title of the tag list page"
-  },
-  "pages.download.description.hurricane": {
-    "message": "A plugin with various workarounds for Geyser players that modify the server in order to achieve their goal."
-  },
-  "theme.blog.author.pageTitle": {
-    "message": "{authorName} - {nPosts}",
-    "description": "The title of the page for a blog author"
-  },
-  "theme.blog.authorsList.pageTitle": {
-    "message": "Authors",
-    "description": "The title of the authors page"
-  },
-  "theme.blog.authorsList.viewAll": {
-    "message": "View all authors",
-    "description": "The label of the link targeting the blog authors page"
-  },
-  "theme.blog.author.noPosts": {
-    "message": "This author has not written any posts yet.",
-    "description": "The text for authors with 0 blog post"
-  },
-  "theme.contentVisibility.unlistedBanner.title": {
-    "message": "Unlisted page",
-    "description": "The unlisted content banner title"
-  },
-  "theme.contentVisibility.unlistedBanner.message": {
-    "message": "This page is unlisted. Search engines will not index it, and only users having a direct link can access it.",
-    "description": "The unlisted content banner message"
-  },
-  "theme.contentVisibility.draftBanner.title": {
-    "message": "Draft page",
-    "description": "The draft content banner title"
-  },
-  "theme.contentVisibility.draftBanner.message": {
-    "message": "This page is a draft. It will only be visible in dev and be excluded from the production build.",
-    "description": "The draft content banner message"
+  "mdx.setup.supported_versions": {
+    "message": "Supported versions"
   },
   "mdx.setup.host_provider": {
     "message": "Host Provider"
@@ -579,47 +8,17 @@
   "mdx.setup.self_host": {
     "message": "Self Host"
   },
-  "mdx.setup.paper_spigot": {
-    "message": "Paper / Spigot"
-  },
   "mdx.setup.modded_servers": {
     "message": "Modded Servers"
   },
   "mdx.setup.proxy_servers": {
     "message": "Proxy Servers"
   },
-  "mdx.setup.viaproxy": {
-    "message": "ViaProxy"
-  },
   "mdx.setup.standalone": {
     "message": "Standalone"
   },
-  "pages.download.description.offhandextension": {
-    "message": "An extension that allows Bedrock players to switch their offhand and mainhand item by emoting."
-  },
-  "pages.download.description.rainbow": {
-    "message": "A Minecraft mod to generate Geyser item mappings and bedrock resourcepacks for use with Geyser's custom item API (v2)."
-  },
-  "pages.download.description.hydraulic": {
-    "message": "A companion mod to Geyser which allows for Bedrock players to join modded Minecraft: Java Edition servers."
-  },
-  "pages.download.description.thunder": {
-    "message": "A java application to convert simple Java Edition resource packs to Bedrock Edition ones."
-  },
-  "pages.dumpviewer.extensions": {
-    "message": "Extensions"
-  },
-  "pages.dumpviewer.extensions.noextensions": {
-    "message": "No extensions to show."
-  },
-  "pages.dumpviewer.extensions.helptext": {
-    "message": "Click on an extension to view more information."
-  },
-  "mdx.setup.fabric": {
-    "message": "Fabric"
-  },
-  "mdx.setup.neoforge": {
-    "message": "NeoForge"
+  "mdx.setup.checking_server_version": {
+    "message": "Checking your server version"
   },
   "mdx.setup.installing_geyser": {
     "message": "Installing Geyser"
@@ -633,335 +32,8 @@
   "mdx.setup.restart_server": {
     "message": "Restart the server."
   },
-  "mdx.setup.additional_steps": {
-    "message": "Additional Steps"
-  },
-  "mdx.setup.connecting_on_bedrock": {
-    "message": "Connecting on Bedrock"
-  },
-  "providers.config.templates.java_address": {
-    "message": "Set `address` in the `bedrock` section to the public address of the Java server."
-  },
-  "providers.config.templates.custom_port_dedicated_ip": {
-    "message": "This host may only give out a separate port with a dedicated IP address."
-  },
-  "providers.warnings.ovh_firewall_misconfig": {
-    "message": "To fix random `Unable to Connect` issues, see [here](/wiki/geyser/port-forwarding/#ovh-and-soyoustart)."
-  },
-  "providers.config.templates.install_location.plugin_list": {
-    "message": "Install Geyser through the plugin or mod list provided by the host."
-  },
-  "providers.config.templates.install_location.enable_bedrock_crossplay": {
-    "message": "Select the 'Enable Bedrock crossplay?' option when changing your server software to automatically install and configure Geyser and Floodgate."
-  },
-  "providers.config.templates.info.geyser_installed_by_default": {
-    "message": "Geyser is installed and configured on all servers by default."
-  },
-  "providers.provider.apex_hosting.install": {
-    "message": "Go to the Customizations tab in the panel and select 'Enabled' under the 'Geyser Auto Installer' option."
-  },
-  "providers.provider.aternos.info": {
-    "message": "Aternos automatically installs the latest version of Geyser and Floodgate, but does not auto update it. To update, reinstall the plugin (no need to uninstall Geyser/deleting the plugin files)."
-  },
-  "providers.provider.creeperhost.install": {
-    "message": "Enable Geyser in the control panel."
-  },
-  "providers.provider.cubes_hosting.info": {
-    "message": "Geyser-Standalone can be set up through a support ticket."
-  },
-  "providers.provider.minefort.additional_step": {
-    "message": "Go to the server dashboard under 'Connect Support', and enable the 'Allow Bedrock' option."
-  },
-  "providers.provider.minefort.connect_instructions": {
-    "message": "Connect via `play.minefort.com` and join using `/server [servername]`, or connect directly via `[servername].minefort.com`."
-  },
-  "providers.provider.minehut.connect_instructions": {
-    "message": "Connect via `bedrock.minehut.com` and do `/join [servername]`, or connect directly via `[servername].bedrock.minehut.gg`."
-  },
-  "providers.provider.omgserv.install": {
-    "message": "Select Geyser in the Install Menu to install it automatically. You can enable Floodgate in the server properties on the dashboard."
-  },
-  "providers.provider.config.other": {
-    "message": "If you did not order the server from the [cross-platform servers page](https://piglinhost.com/minecraft-java-hosting.html), contact the support for help with Geyser setup."
-  },
-  "providers.provider.srkhost.enable": {
-    "message": "Enable Geyser on the version changer page."
-  },
-  "providers.provider.wisehosting.install": {
-    "message": "Install the GeyserMC preset from the `Addons` tab in the Game Panel, then restart your server."
-  },
-  "providers.provider.elfidc.custom": {
-    "message": "When placing an order, choose Paper/Spigot + Geyser, which will automatically install the Geyser plugin."
-  },
-  "providers.provider.hostez.config.other": {
-    "message": "Different ports can be set in the Allocations tab. Premium products with a dedicated IP can use the default port (19132)."
-  },
-  "providers.provider.nfoservers.info": {
-    "message": "You can also run Geyser-Standalone separately on an Unmanaged VDS."
-  },
-  "mdx.setup.checking_server_version": {
-    "message": "Checking your server version"
-  },
   "mdx.setup.restart_geyser": {
     "message": "Restart Geyser."
-  },
-  "mdx.setup.https_note": {
-    "message": "Unless signaling runs over {https}, Minecraft asks players    whether they trust the server the first time they join."
-  },
-  "mdx.setup.configuring_geyser": {
-    "message": "Configuring Geyser"
-  },
-  "mdx.setup.open_config_simple": {
-    "message": "Now open the file {configLocation}. Find the part that starts with {bedrock}, and change the lines shown below."
-  },
-  "mdx.setup.preconfigured": {
-    "message": "No changes needed. {name} automatically configures Geyser."
-  },
-  "mdx.setup.transport_nethernet_simple": {
-    "message": "NetherNet is supported fully by 26.50+. If you'd like to also have working MOTD and player count for older versions, you will need to set up both NetherNet and Raknet."
-  },
-  "mdx.setup.transport_both_compat": {
-    "message": "Also accepts RakNet, for additional compatibility: some Bedrock versions, such as 26.40, fetch the server's MOTD and player count over RakNet. This option needs a separate UDP port for NetherNet."
-  },
-  "mdx.setup.placeholder_word": {
-    "message": "Replace this"
-  },
-  "mdx.setup.replace_with_simple": {
-    "message": "With this"
-  },
-  "mdx.setup.placeholder_java_port": {
-    "message": "The port of the Java server."
-  },
-  "mdx.setup.placeholder_java_port_udp": {
-    "message": "A UDP port for NetherNet, other than {port}. This can be the Java server's port: the Java server only uses it over TCP, so Geyser can use it over UDP. Any other available UDP port works too."
-  },
-  "mdx.setup.placeholder_second_available_port": {
-    "message": "An available UDP port for NetherNet, other than {port}. Open it for UDP."
-  },
-  "mdx.setup.raknet_on_port": {
-    "message": "RakNet uses {port} over UDP, so that port has to be open for UDP as well."
-  },
-  "mdx.setup.summary.nethernet_reported_generic": {
-    "message": "Reported to work with NetherNet"
-  },
-  "mdx.setup.summary.supporter_configures": {
-    "message": "{name} configures Geyser for you automatically, including NetherNet."
-  },
-  "mdx.setup.summary.updated": {
-    "message": "Instructions last updated on {date}"
-  },
-  "mdx.setup.badge.gold": {
-    "message": "Gold supporter"
-  },
-  "mdx.setup.badge.silver": {
-    "message": "Silver supporter"
-  },
-  "mdx.setup.badge.bronze": {
-    "message": "Bronze supporter"
-  },
-  "mdx.setup.unconfirmed_title": {
-    "message": "Not checked for NetherNet yet"
-  },
-  "mdx.setup.warning_title": {
-    "message": "Warning"
-  },
-  "mdx.setup.unconfirmed_reach_out_update": {
-    "message": "These instructions have not been checked for NetherNet yet. If Bedrock players can't join, reach out to {name} to get instructions on how to use Geyser, and let us know on {discord} so we can update this guide."
-  },
-  "mdx.setup.try_not_listed": {
-    "message": "If your host cannot give you a separate port, follow the {notListed} instead. Players then join through {warden}, an external signaling service."
-  },
-  "mdx.setup.try_not_listed.link": {
-    "message": "\"Not listed\" guide for using only the Java server's port"
-  },
-  "mdx.setup.no_signaling": {
-    "message": "{name} supports neither built-in nor external signaling, so Bedrock players cannot connect over NetherNet."
-  },
-  "mdx.setup.hosting_provider_article_short": {
-    "message": "Host's Geyser guide"
-  },
-  "mdx.setup.hosting_provider_website_short": {
-    "message": "Website"
-  },
-  "mdx.setup.hosting_provider_support_short": {
-    "message": "Support"
-  },
-  "mdx.setup.hosting_provider_discord_short": {
-    "message": "Discord"
-  },
-  "providers.provider.not_listed.allocate_port": {
-    "message": "Allocate a port in your server panel, open for both TCP and UDP."
-  },
-  "providers.provider.not_listed.info": {
-    "message": "For VPS/KVM servers, please follow the self-hosting steps."
-  },
-  "mdx.setup.not_listed.tab_allocated": {
-    "message": "I can allocate ports"
-  },
-  "mdx.setup.not_listed.tab_java_only": {
-    "message": "I only have the Java server port"
-  },
-  "providers.provider.not_listed.java_only_connect": {
-    "message": "Players do not connect with the Java server's address. After Geyser starts, it shows the address and port to use in the console, provided by the external signaling service ({warden} by default). Share these with your players."
-  },
-  "components.provider.open_collaboration_group": {
-    "message": "Hosts that support Geyser's development"
-  },
-  "components.provider.other_group": {
-    "message": "Other providers"
-  },
-  "mdx.setup.connect.port_java": {
-    "message": "Your Java server's port"
-  },
-  "mdx.setup.connect.port_config_step": {
-    "message": "The port you set in \"Configuring Geyser\""
-  },
-  "mdx.setup.connect.intro": {
-    "message": "In Minecraft: Bedrock Edition, go to Play, then Servers, and select Add Server. Fill it in like this:"
-  },
-  "mdx.setup.connect.add_server": {
-    "message": "Add Server"
-  },
-  "mdx.setup.connect.server_name": {
-    "message": "Server Name"
-  },
-  "mdx.setup.connect.server_name_value": {
-    "message": "Anything you like"
-  },
-  "mdx.setup.connect.server_address": {
-    "message": "Server Address"
-  },
-  "mdx.setup.connect.server_address_value": {
-    "message": "Your Java server's address"
-  },
-  "mdx.setup.connect.port": {
-    "message": "Port"
-  },
-  "mdx.setup.transport_nethernet_tab": {
-    "message": "NetherNet"
-  },
-  "mdx.setup.transport_both_tab": {
-    "message": "NetherNet and RakNet"
-  },
-  "providers.ports.assign": {
-    "message": "Assign a port in your host's panel, open for both TCP and UDP."
-  },
-  "providers.ports.allocated": {
-    "message": "Pick an available port from the ports allocated to your server, open for both TCP and UDP."
-  },
-  "providers.ports.ask_host": {
-    "message": "Ask your host for a port that is open for both TCP and UDP."
-  },
-  "providers.provider.bisecthosting.warn": {
-    "message": "If you cannot connect after following these instructions, contact Bisect Support, as they reportedly have UDP disabled on some nodes."
-  },
-  "providers.provider.cloud_nord.description": {
-    "message": "Servers from the [Crossplay Server](https://cloudnord.net/minecraftcrossplay-server-hosting/) hosting section do not need further configuration."
-  },
-  "providers.provider.gportal.description": {
-    "message": "Pick a port based on your query port. Scheme: Query port: xxx65. The ports from xxx66 to xxx70 are available. For example, if your query port is 12365, then Geyser can only run under the port range 12366-12370."
-  },
-  "providers.provider.hostez.config.port": {
-    "message": "Add 1 to the port you were assigned (e.g. 25565 -> 25566)."
-  },
-  "providers.provider.nicraft.description": {
-    "message": "Nicraft does not provide Bedrock support, and is affected by a [firewall configuration issue](/wiki/geyser/port-forwarding/#ovh-and-soyoustart), which prohibits most players from joining."
-  },
-  "providers.provider.nitrado.config.port": {
-    "message": "Add 4 to the port of the Java server."
-  },
-  "providers.provider.vemox_hosting.install": {
-    "message": "Open the panel options and select the option to enable GeyserMC."
-  },
-  "pages.hosting.tier.gold": {
-    "message": "Gold supporters"
-  },
-  "pages.hosting.tier.silver": {
-    "message": "Silver supporters"
-  },
-  "pages.hosting.tier.bronze": {
-    "message": "Bronze supporters"
-  },
-  "pages.hosting.card.website": {
-    "message": "Website"
-  },
-  "pages.hosting.card.setup": {
-    "message": "Setup guide"
-  },
-  "pages.hosting.title": {
-    "message": "Hosting Providers"
-  },
-  "pages.hosting.subheading": {
-    "message": "Hosting providers that support the development of Geyser."
-  },
-  "pages.hosting.intro": {
-    "message": "The hosts below support Geyser and related projects through {openCollaboration}. Their support helps fund work on Geyser, such as keeping up with major changes to Bedrock Edition, like the switch to NetherNet. All hosts listed below also configure Geyser automatically when installed, making using Geyser easier than ever. We'd like to thank them all for their support."
-  },
-  "pages.hosting.empty": {
-    "message": "No hosting providers are listed yet."
-  },
-  "pages.hosting.other.title": {
-    "message": "Using another host?"
-  },
-  "pages.hosting.other.text": {
-    "message": "Hosts not being listed here does not mean Geyser won't run there. The {setupGuide} includes community collected notes for many other hosts, and general instructions for those not listed."
-  },
-  "pages.hosting.other.setup_guide": {
-    "message": "setup guide"
-  },
-  "pages.hosting.meta.title": {
-    "message": "Hosting Providers"
-  },
-  "pages.hosting.meta.description": {
-    "message": "Hosting providers that support the development of Geyser through Open Collaboration."
-  },
-  "pages.download.description.floodgatedatabases": {
-    "message": "Database extension jars for Floodgate local linking."
-  },
-  "providers.ports.from_host": {
-    "message": "The Bedrock port your host shows you."
-  },
-  "providers.config.templates.info.only_serves_region": {
-    "message": "This host only provides service in {region}."
-  },
-  "providers.provider.axenthost.install": {
-    "message": "Select GeyserMC in the Variants tab. This reinstalls the server with Paper and Geyser."
-  },
-  "providers.provider.bedrockhost.install": {
-    "message": "In the hosting panel, go to install new engine > Ready-made solutions and select Geyser. This installs Paper and Geyser."
-  },
-  "providers.provider.consulhosting.install": {
-    "message": "Install GeyserMC from the Software section of your server panel."
-  },
-  "providers.provider.cubes_hosting.port": {
-    "message": "The port shown in the server console."
-  },
-  "providers.provider.mcserverhost.install": {
-    "message": "In the Software tab of the server panel, turn on 'Bedrock crossplay' and restart the server."
-  },
-  "providers.provider.minehost.install": {
-    "message": "In the Software tab of the server panel, turn on 'Minecraft Bedrock support' and restart the server."
-  },
-  "providers.provider.myarena.description": {
-    "message": "Does seem to be working, but the Java version is too old in order for Geyser to run properly."
-  },
-  "providers.provider.ultraservers.install": {
-    "message": "Select 'Paper + Geyser' in the Change version tab. On existing servers, install Geyser from the Plugins/Minecraft mods tab instead."
-  },
-  "providers.provider.server.pro.config.plans": {
-    "message": "Only PRO and VPS plans can open additional ports, in the Firewall tab. On other plans, follow the \"Not listed\" guide for using only the Java server's port."
-  },
-  "mdx.setup.velocity": {
-    "message": "Velocity"
-  },
-  "mdx.setup.bungeecord": {
-    "message": "BungeeCord"
-  },
-  "providers.ports.new_port": {
-    "message": "Open a new port in your server panel, open for both TCP and UDP, or ask your host for one if the panel has no option for it."
-  },
-  "mdx.setup.supported_versions": {
-    "message": "Supported versions"
   },
   "mdx.setup.restart_velocity": {
     "message": "Restart Velocity."
@@ -1118,5 +190,1028 @@
   },
   "mdx.setup.standalone_termux_script": {
     "message": "Alternatively, there is an automated setup script for clean Termux installs. It might not work for everyone, so try it if the steps above do not work:"
+  },
+  "mdx.setup.https_note": {
+    "message": "Unless signaling runs over {https}, Minecraft asks players whether they trust the server the first time they join."
+  },
+  "mdx.setup.configuring_geyser": {
+    "message": "Configuring Geyser"
+  },
+  "mdx.setup.open_config_simple": {
+    "message": "Now open the file {configLocation}. Find the part that starts with {bedrock}, and change the lines shown below."
+  },
+  "mdx.setup.preconfigured": {
+    "message": "No changes needed. {name} automatically configures Geyser."
+  },
+  "mdx.setup.transport_nethernet_simple": {
+    "message": "NetherNet is supported fully by 26.50+. If you'd like to also have working MOTD and player count for older versions, you will need to set up both NetherNet and Raknet."
+  },
+  "mdx.setup.transport_both_compat": {
+    "message": "Also accepts RakNet, for additional compatibility: some Bedrock versions, such as 26.40, fetch the server's MOTD and player count over RakNet. This option needs a separate UDP port for NetherNet."
+  },
+  "mdx.setup.placeholder_word": {
+    "message": "Replace this"
+  },
+  "mdx.setup.replace_with_simple": {
+    "message": "With this"
+  },
+  "mdx.setup.placeholder_java_port": {
+    "message": "The port of the Java server."
+  },
+  "mdx.setup.placeholder_java_port_udp": {
+    "message": "A UDP port for NetherNet, other than {port}. This can be the Java server's port: the Java server only uses it over TCP, so Geyser can use it over UDP. Any other available UDP port works too."
+  },
+  "mdx.setup.placeholder_second_available_port": {
+    "message": "An available UDP port for NetherNet, other than {port}. Open it for UDP."
+  },
+  "mdx.setup.raknet_on_port": {
+    "message": "RakNet uses {port} over UDP, so that port has to be open for UDP as well."
+  },
+  "mdx.setup.summary.nethernet_reported_generic": {
+    "message": "Reported to work with NetherNet"
+  },
+  "mdx.setup.summary.supporter_configures": {
+    "message": "{name} configures Geyser for you automatically, including NetherNet."
+  },
+  "mdx.setup.summary.updated": {
+    "message": "Instructions last updated on {date}"
+  },
+  "mdx.setup.badge.gold": {
+    "message": "Gold supporter"
+  },
+  "mdx.setup.badge.silver": {
+    "message": "Silver supporter"
+  },
+  "mdx.setup.badge.bronze": {
+    "message": "Bronze supporter"
+  },
+  "mdx.setup.unconfirmed_title": {
+    "message": "Not checked for NetherNet yet"
+  },
+  "mdx.setup.warning_title": {
+    "message": "Warning"
+  },
+  "mdx.setup.unconfirmed_reach_out_update": {
+    "message": "These instructions have not been checked for NetherNet yet. If Bedrock players can't join, reach out to {name} to get instructions on how to use Geyser, and let us know on {discord} so we can update this guide."
+  },
+  "mdx.setup.try_not_listed": {
+    "message": "If your host cannot give you a separate port, follow the {notListed} instead. Players then join through {warden}, an external signaling service."
+  },
+  "mdx.setup.try_not_listed.link": {
+    "message": "\"Not listed\" guide for using only the Java server's port"
+  },
+  "mdx.setup.no_signaling": {
+    "message": "{name} supports neither built-in nor external signaling, so Bedrock players cannot connect over NetherNet."
+  },
+  "mdx.setup.additional_steps": {
+    "message": "Additional Steps"
+  },
+  "mdx.setup.connecting_on_bedrock": {
+    "message": "Connecting on Bedrock"
+  },
+  "mdx.setup.hosting_provider_article_short": {
+    "message": "Host's Geyser guide"
+  },
+  "mdx.setup.hosting_provider_website_short": {
+    "message": "Website"
+  },
+  "mdx.setup.hosting_provider_support_short": {
+    "message": "Support"
+  },
+  "providers.provider.not_listed.allocate_port": {
+    "message": "Allocate a port in your server panel, open for both TCP and UDP."
+  },
+  "providers.provider.not_listed.info": {
+    "message": "For VPS/KVM servers, please follow the self-hosting steps."
+  },
+  "mdx.setup.not_listed.tab_allocated": {
+    "message": "I can allocate ports"
+  },
+  "mdx.setup.not_listed.tab_java_only": {
+    "message": "I only have the Java server port"
+  },
+  "components.provider.open_collaboration_group": {
+    "message": "Hosts that support Geyser's development"
+  },
+  "components.provider.other_group": {
+    "message": "Other providers"
+  },
+  "providers.provider.not_listed.java_only_connect": {
+    "message": "Players do not connect with the Java server's address. After Geyser starts, it shows the address and port to use in the console, provided by the external signaling service ({warden} by default). Share these with your players."
+  },
+  "mdx.setup.connect.port_java": {
+    "message": "Your Java server's port"
+  },
+  "mdx.setup.connect.port_config_step": {
+    "message": "The port you set in \"Configuring Geyser\""
+  },
+  "mdx.setup.connect.intro": {
+    "message": "In Minecraft: Bedrock Edition, go to Play, then Servers, and select Add Server. Fill it in like this:"
+  },
+  "mdx.setup.connect.add_server": {
+    "message": "Add Server"
+  },
+  "mdx.setup.connect.server_name": {
+    "message": "Server Name"
+  },
+  "mdx.setup.connect.server_name_value": {
+    "message": "Anything you like"
+  },
+  "mdx.setup.connect.server_address": {
+    "message": "Server Address"
+  },
+  "mdx.setup.connect.server_address_value": {
+    "message": "Your Java server's address"
+  },
+  "mdx.setup.connect.port": {
+    "message": "Port"
+  },
+  "mdx.setup.transport_nethernet_tab": {
+    "message": "NetherNet"
+  },
+  "mdx.setup.transport_both_tab": {
+    "message": "NetherNet and RakNet"
+  },
+  "providers.ports.assign": {
+    "message": "Assign a port in your host's panel, open for both TCP and UDP."
+  },
+  "providers.ports.allocated": {
+    "message": "Pick an available port from the ports allocated to your server, open for both TCP and UDP."
+  },
+  "providers.ports.ask_host": {
+    "message": "Ask your host for a port that is open for both TCP and UDP."
+  },
+  "providers.ports.new_port": {
+    "message": "Open a new port in your server panel, open for both TCP and UDP, or ask your host for one if the panel has no option for it."
+  },
+  "providers.ports.from_host": {
+    "message": "The Bedrock port your host shows you."
+  },
+  "providers.config.templates.java_address": {
+    "message": "Set `address` in the `bedrock` section to the public address of the Java server."
+  },
+  "providers.config.templates.custom_port_dedicated_ip": {
+    "message": "This host may only give out a separate port with a dedicated IP address."
+  },
+  "providers.warnings.ovh_firewall_misconfig": {
+    "message": "To fix random `Unable to Connect` issues, see [here](/wiki/geyser/port-forwarding/#ovh-and-soyoustart)."
+  },
+  "providers.config.templates.install_location.plugin_list": {
+    "message": "Install Geyser through the plugin or mod list provided by the host."
+  },
+  "providers.config.templates.install_location.enable_bedrock_crossplay": {
+    "message": "Select the 'Enable Bedrock crossplay?' option when changing your server software to automatically install and configure Geyser and Floodgate."
+  },
+  "providers.config.templates.info.geyser_installed_by_default": {
+    "message": "Geyser is installed and configured on all servers by default."
+  },
+  "providers.config.templates.info.only_serves_region": {
+    "message": "This host only provides service in {region}."
+  },
+  "providers.provider.apex_hosting.install": {
+    "message": "Go to the Customizations tab in the panel and select 'Enabled' under the 'Geyser Auto Installer' option."
+  },
+  "providers.provider.aternos.info": {
+    "message": "Aternos automatically installs the latest version of Geyser and Floodgate, but does not auto update it. To update, reinstall the plugin (no need to uninstall Geyser/deleting the plugin files)."
+  },
+  "providers.provider.axenthost.install": {
+    "message": "Select GeyserMC in the Variants tab. This reinstalls the server with Paper and Geyser."
+  },
+  "providers.provider.bedrockhost.install": {
+    "message": "In the hosting panel, go to install new engine > Ready-made solutions and select Geyser. This installs Paper and Geyser."
+  },
+  "providers.provider.bisecthosting.warn": {
+    "message": "If you cannot connect after following these instructions, contact Bisect Support, as they reportedly have UDP disabled on some nodes."
+  },
+  "providers.provider.cloud_nord.description": {
+    "message": "Servers from the [Crossplay Server](https://cloudnord.net/minecraftcrossplay-server-hosting/) hosting section do not need further configuration."
+  },
+  "providers.provider.consulhosting.install": {
+    "message": "Install GeyserMC from the Software section of your server panel."
+  },
+  "providers.provider.creeperhost.install": {
+    "message": "Enable Geyser in the control panel."
+  },
+  "providers.provider.cubes_hosting.port": {
+    "message": "The port shown in the server console."
+  },
+  "providers.provider.cubes_hosting.info": {
+    "message": "Geyser-Standalone can be set up through a support ticket."
+  },
+  "providers.provider.elfidc.custom": {
+    "message": "When placing an order, choose Paper/Spigot + Geyser, which will automatically install the Geyser plugin."
+  },
+  "providers.provider.gportal.description": {
+    "message": "Pick a port based on your query port. Scheme: Query port: xxx65. The ports from xxx66 to xxx70 are available. For example, if your query port is 12365, then Geyser can only run under the port range 12366-12370."
+  },
+  "providers.provider.hostez.config.port": {
+    "message": "Add 1 to the port you were assigned (e.g. 25565 -> 25566)."
+  },
+  "providers.provider.hostez.config.other": {
+    "message": "Different ports can be set in the Allocations tab. Premium products with a dedicated IP can use the default port (19132)."
+  },
+  "providers.provider.mcserverhost.install": {
+    "message": "In the Software tab of the server panel, turn on 'Bedrock crossplay' and restart the server."
+  },
+  "providers.provider.minefort.additional_step": {
+    "message": "Go to the server dashboard under 'Connect Support', and enable the 'Allow Bedrock' option."
+  },
+  "providers.provider.minefort.connect_instructions": {
+    "message": "Connect via `play.minefort.com` and join using `/server [servername]`, or connect directly via `[servername].minefort.com`."
+  },
+  "providers.provider.minehost.install": {
+    "message": "In the Software tab of the server panel, turn on 'Minecraft Bedrock support' and restart the server."
+  },
+  "providers.provider.minehut.connect_instructions": {
+    "message": "Connect via `bedrock.minehut.com` and do `/join [servername]`, or connect directly via `[servername].bedrock.minehut.gg`."
+  },
+  "providers.provider.myarena.description": {
+    "message": "Does seem to be working, but the Java version is too old in order for Geyser to run properly."
+  },
+  "providers.provider.nfoservers.info": {
+    "message": "You can also run Geyser-Standalone separately on an Unmanaged VDS."
+  },
+  "providers.provider.nicraft.description": {
+    "message": "Nicraft does not provide Bedrock support, and is affected by a [firewall configuration issue](/wiki/geyser/port-forwarding/#ovh-and-soyoustart), which prohibits most players from joining."
+  },
+  "providers.provider.nitrado.config.port": {
+    "message": "Add 4 to the port of the Java server."
+  },
+  "providers.provider.omgserv.install": {
+    "message": "Select Geyser in the Install Menu to install it automatically. You can enable Floodgate in the server properties on the dashboard."
+  },
+  "providers.provider.config.other": {
+    "message": "If you did not order the server from the [cross-platform servers page](https://piglinhost.com/minecraft-java-hosting.html), contact the support for help with Geyser setup."
+  },
+  "providers.provider.server.pro.config.plans": {
+    "message": "Only PRO and VPS plans can open additional ports, in the Firewall tab. On other plans, contact the host for help."
+  },
+  "providers.provider.srkhost.enable": {
+    "message": "Enable Geyser on the version changer page."
+  },
+  "providers.provider.ultraservers.install": {
+    "message": "Select 'Paper + Geyser' in the Change version tab. On existing servers, install Geyser from the Plugins/Minecraft mods tab instead."
+  },
+  "providers.provider.vemox_hosting.install": {
+    "message": "Open the panel options and select the option to enable GeyserMC."
+  },
+  "providers.provider.wisehosting.install": {
+    "message": "Install the GeyserMC preset from the `Addons` tab in the Game Panel, then restart your server."
+  },
+  "pages.hosting.tier.gold": {
+    "message": "Gold supporters"
+  },
+  "pages.hosting.tier.silver": {
+    "message": "Silver supporters"
+  },
+  "pages.hosting.tier.bronze": {
+    "message": "Bronze supporters"
+  },
+  "pages.hosting.card.website": {
+    "message": "Website"
+  },
+  "pages.hosting.card.setup": {
+    "message": "Setup guide"
+  },
+  "pages.hosting.title": {
+    "message": "Hosting Providers"
+  },
+  "pages.hosting.subheading": {
+    "message": "Hosting providers that support the development of Geyser."
+  },
+  "pages.hosting.intro": {
+    "message": "The hosts below support Geyser and related projects through {openCollaboration}. Their support helps fund work on Geyser, such as keeping up with major changes to Bedrock Edition, like the switch to NetherNet. All hosts listed below also configure Geyser automatically when installed, making using Geyser easier than ever. We'd like to thank them all for their support."
+  },
+  "pages.hosting.empty": {
+    "message": "No hosting providers are listed yet."
+  },
+  "pages.hosting.other.title": {
+    "message": "Using another host?"
+  },
+  "pages.hosting.other.text": {
+    "message": "Hosts not being listed here does not mean Geyser won't run there. The {setupGuide} includes community collected notes for many other hosts, and general instructions for those not listed."
+  },
+  "pages.hosting.other.setup_guide": {
+    "message": "setup guide"
+  },
+  "pages.hosting.meta.title": {
+    "message": "Hosting Providers"
+  },
+  "pages.hosting.meta.description": {
+    "message": "Hosting providers that support the development of Geyser through Open Collaboration."
+  },
+  "pages.download.title": {
+    "message": "Download"
+  },
+  "pages.download.subheading": {
+    "message": "Download the latest versions of our various projects."
+  },
+  "pages.download.description.geyser": {
+    "message": "A bridge/proxy allowing you to connect to Minecraft: Java Edition servers with Minecraft: Bedrock Edition."
+  },
+  "pages.download.description.floodgate": {
+    "message": "Hybrid mode plugin to allow for connections from Geyser to join online mode servers."
+  },
+  "pages.download.description.floodgatedatabases": {
+    "message": "Database extension jars for Floodgate local linking."
+  },
+  "pages.download.description.thirdpartycosmetics": {
+    "message": "An extension that adds support for loading ears and other third party cosmetics on java players"
+  },
+  "pages.download.description.offhandextension": {
+    "message": "An extension that allows Bedrock players to switch their offhand and mainhand item by emoting."
+  },
+  "pages.download.description.hurricane": {
+    "message": "A plugin with various workarounds for Geyser players that modify the server in order to achieve their goal."
+  },
+  "pages.download.description.geyserconnect": {
+    "message": "A Geyser extension allowing players to connect to different Java or Geyser servers."
+  },
+  "pages.download.description.rainbow": {
+    "message": "A Minecraft mod to generate Geyser item mappings and bedrock resourcepacks for use with Geyser's custom item API (v2)."
+  },
+  "pages.download.description.hydraulic": {
+    "message": "A companion mod to Geyser which allows for Bedrock players to join modded Minecraft: Java Edition servers."
+  },
+  "pages.download.description.thunder": {
+    "message": "A java application to convert simple Java Edition resource packs to Bedrock Edition ones."
+  },
+  "pages.main.title": {
+    "message": "Revolutionize Your Minecraft Server"
+  },
+  "pages.main.subtitle": {
+    "message": "Enable clients from Minecraft Bedrock Edition to join your Minecraft Java server"
+  },
+  "components.homepage_features.1.line1": {
+    "message": "Geyser is a program that allows Minecraft: Bedrock Edition clients to join Minecraft: Java Edition servers, allowing for true crossplay between both editions of the game."
+  },
+  "components.homepage_features.1.line2": {
+    "message": "The ultimate goal of this project is to allow Minecraft: Bedrock Edition users to join Minecraft: Java Edition servers as seamlessly as possible."
+  },
+  "components.homepage_features.2": {
+    "message": "Geyser acts as a translator which sits between the Bedrock client and the Java server. It takes data from the Bedrock client and translates it into a format the Java server understands and vice versa. Geyser works with any modern Minecraft version and can be installed either as a plugin or ran as a standalone program."
+  },
+  "components.homepage_features.3.line1": {
+    "message": "Geyser can be joined from Bedrock clients on Windows 10/11, iOS, Android, and even consoles. Geyser works with a wide array of hosting providers, but can also be used as its own standalone proxy to join any Minecraft server!"
+  },
+  "components.homepage_features.3.line2": {
+    "message": "If you are a server owner, you can install our Floodgate plugin which allows Xbox Live authenticated Bedrock users to join without a Java Edition account!"
+  },
+  "pages.dumpviewer.title": {
+    "message": "Dump Viewer"
+  },
+  "pages.dumpviewer.subheading": {
+    "message": "View the breakdown of your Geyser dump."
+  },
+  "pages.dumpviewer.enterdumpid": {
+    "message": "Enter Dump ID or URL below and click load."
+  },
+  "pages.dumpviewer.button.load": {
+    "message": "Load"
+  },
+  "pages.dumpviewer.versions": {
+    "message": "Versions"
+  },
+  "pages.dumpviewer.versions.geyserver": {
+    "message": "Geyser Version"
+  },
+  "pages.dumpviewer.versions.javaver": {
+    "message": "Java Version"
+  },
+  "pages.dumpviewer.versions.os": {
+    "message": "Operating System"
+  },
+  "pages.dumpviewer.geyserver": {
+    "message": "Geyser Version"
+  },
+  "pages.dumpviewer.geyserver.build": {
+    "message": "Build"
+  },
+  "pages.dumpviewer.geyserver.commit": {
+    "message": "Commit Hash"
+  },
+  "pages.dumpviewer.geyserver.branch": {
+    "message": "Branch"
+  },
+  "pages.dumpviewer.platform": {
+    "message": "Platform Info"
+  },
+  "pages.dumpviewer.platform.id": {
+    "message": "Platform Identifier"
+  },
+  "pages.dumpviewer.platform.name": {
+    "message": "Platform Name"
+  },
+  "pages.dumpviewer.platform.version": {
+    "message": "Platform Version"
+  },
+  "pages.dumpviewer.platform.apiver": {
+    "message": "Platform API Version"
+  },
+  "pages.dumpviewer.platform.onlinemode": {
+    "message": "Online Mode"
+  },
+  "pages.dumpviewer.sysinfo": {
+    "message": "System Info"
+  },
+  "pages.dumpviewer.cpucount": {
+    "message": "CPU Count"
+  },
+  "pages.dumpviewer.cpuname": {
+    "message": "CPU Name"
+  },
+  "pages.dumpviewer.ram": {
+    "message": "RAM"
+  },
+  "pages.dumpviewer.javaname": {
+    "message": "Java Name"
+  },
+  "pages.dumpviewer.javavendor": {
+    "message": "Java Vendor"
+  },
+  "pages.dumpviewer.dockercheck": {
+    "message": "Uses Docker?"
+  },
+  "pages.dumpviewer.plugins": {
+    "message": "Plugins"
+  },
+  "pages.dumpviewer.plugins.noplugins": {
+    "message": "No plugins to show."
+  },
+  "pages.dumpviewer.plugins.helptext": {
+    "message": "Click on a plugin to view more information."
+  },
+  "pages.dumpviewer.extensions": {
+    "message": "Extensions"
+  },
+  "pages.dumpviewer.extensions.noextensions": {
+    "message": "No extensions to show."
+  },
+  "pages.dumpviewer.extensions.helptext": {
+    "message": "Click on an extension to view more information."
+  },
+  "pages.dumpviewer.config": {
+    "message": "Config"
+  },
+  "pages.dumpviewer.viewsource": {
+    "message": "View dump source"
+  },
+  "theme.ErrorPageContent.title": {
+    "message": "This page crashed.",
+    "description": "The title of the fallback page when the page crashed"
+  },
+  "theme.BackToTopButton.buttonAriaLabel": {
+    "message": "Scroll back to top",
+    "description": "The ARIA label for the back to top button"
+  },
+  "theme.blog.archive.title": {
+    "message": "Archive",
+    "description": "The page & hero title of the blog archive page"
+  },
+  "theme.blog.archive.description": {
+    "message": "Archive",
+    "description": "The page & hero description of the blog archive page"
+  },
+  "theme.blog.paginator.navAriaLabel": {
+    "message": "Blog list page navigation",
+    "description": "The ARIA label for the blog pagination"
+  },
+  "theme.blog.paginator.newerEntries": {
+    "message": "Newer entries",
+    "description": "The label used to navigate to the newer blog posts page (previous page)"
+  },
+  "theme.blog.paginator.olderEntries": {
+    "message": "Older entries",
+    "description": "The label used to navigate to the older blog posts page (next page)"
+  },
+  "theme.blog.post.paginator.navAriaLabel": {
+    "message": "Blog post page navigation",
+    "description": "The ARIA label for the blog posts pagination"
+  },
+  "theme.blog.post.paginator.newerPost": {
+    "message": "Newer post",
+    "description": "The blog post button label to navigate to the newer/previous post"
+  },
+  "theme.blog.post.paginator.olderPost": {
+    "message": "Older post",
+    "description": "The blog post button label to navigate to the older/next post"
+  },
+  "theme.tags.tagsPageLink": {
+    "message": "View all tags",
+    "description": "The label of the link targeting the tag list page"
+  },
+  "theme.colorToggle.ariaLabel.mode.system": {
+    "message": "system mode",
+    "description": "The name for the system color mode"
+  },
+  "theme.colorToggle.ariaLabel.mode.light": {
+    "message": "light mode",
+    "description": "The name for the light color mode"
+  },
+  "theme.colorToggle.ariaLabel.mode.dark": {
+    "message": "dark mode",
+    "description": "The name for the dark color mode"
+  },
+  "theme.colorToggle.ariaLabel": {
+    "message": "Switch between dark and light mode (currently {mode})",
+    "description": "The ARIA label for the color mode toggle"
+  },
+  "theme.docs.breadcrumbs.navAriaLabel": {
+    "message": "Breadcrumbs",
+    "description": "The ARIA label for the breadcrumbs"
+  },
+  "theme.docs.paginator.navAriaLabel": {
+    "message": "Docs pages",
+    "description": "The ARIA label for the docs pagination"
+  },
+  "theme.docs.paginator.previous": {
+    "message": "Previous",
+    "description": "The label used to navigate to the previous doc"
+  },
+  "theme.docs.paginator.next": {
+    "message": "Next",
+    "description": "The label used to navigate to the next doc"
+  },
+  "theme.docs.tagDocListPageTitle.nDocsTagged": {
+    "message": "One doc tagged|{count} docs tagged",
+    "description": "Pluralized label for \"{count} docs tagged\". Use as much plural forms (separated by \"|\") as your language support (see https://www.unicode.org/cldr/cldr-aux/charts/34/supplemental/language_plural_rules.html)"
+  },
+  "theme.docs.tagDocListPageTitle": {
+    "message": "{nDocsTagged} with \"{tagName}\"",
+    "description": "The title of the page for a docs tag"
+  },
+  "theme.docs.versionBadge.label": {
+    "message": "Version: {versionLabel}"
+  },
+  "theme.docs.versions.unreleasedVersionLabel": {
+    "message": "This is unreleased documentation for {siteTitle} {versionLabel} version.",
+    "description": "The label used to tell the user that he's browsing an unreleased doc version"
+  },
+  "theme.docs.versions.unmaintainedVersionLabel": {
+    "message": "This is documentation for {siteTitle} {versionLabel}, which is no longer actively maintained.",
+    "description": "The label used to tell the user that he's browsing an unmaintained doc version"
+  },
+  "theme.docs.versions.latestVersionSuggestionLabel": {
+    "message": "For up-to-date documentation, see the {latestVersionLink} ({versionLabel}).",
+    "description": "The label used to tell the user to check the latest version"
+  },
+  "theme.docs.versions.latestVersionLinkLabel": {
+    "message": "latest version",
+    "description": "The label used for the latest version suggestion link label"
+  },
+  "theme.common.editThisPage": {
+    "message": "Edit this page",
+    "description": "The link label to edit the current page"
+  },
+  "theme.common.headingLinkTitle": {
+    "message": "Direct link to {heading}",
+    "description": "Title for link to heading"
+  },
+  "theme.lastUpdated.atDate": {
+    "message": " on {date}",
+    "description": "The words used to describe on which date a page has been last updated"
+  },
+  "theme.lastUpdated.byUser": {
+    "message": " by {user}",
+    "description": "The words used to describe by who the page has been last updated"
+  },
+  "theme.lastUpdated.lastUpdatedAtBy": {
+    "message": "Last updated{atDate}{byUser}",
+    "description": "The sentence used to display when a page has been last updated, and by who"
+  },
+  "theme.navbar.mobileVersionsDropdown.label": {
+    "message": "Versions",
+    "description": "The label for the navbar versions dropdown on mobile view"
+  },
+  "theme.NotFound.title": {
+    "message": "Page Not Found",
+    "description": "The title of the 404 page"
+  },
+  "theme.tags.tagsListLabel": {
+    "message": "Tags:",
+    "description": "The label alongside a tag list"
+  },
+  "theme.AnnouncementBar.closeButtonAriaLabel": {
+    "message": "Close",
+    "description": "The ARIA label for close button of announcement bar"
+  },
+  "theme.admonition.caution": {
+    "message": "caution",
+    "description": "The default label used for the Caution admonition (:::caution)"
+  },
+  "theme.admonition.danger": {
+    "message": "danger",
+    "description": "The default label used for the Danger admonition (:::danger)"
+  },
+  "theme.admonition.info": {
+    "message": "info",
+    "description": "The default label used for the Info admonition (:::info)"
+  },
+  "theme.admonition.note": {
+    "message": "note",
+    "description": "The default label used for the Note admonition (:::note)"
+  },
+  "theme.admonition.tip": {
+    "message": "tip",
+    "description": "The default label used for the Tip admonition (:::tip)"
+  },
+  "theme.admonition.warning": {
+    "message": "warning",
+    "description": "The default label used for the Warning admonition (:::warning)"
+  },
+  "theme.blog.sidebar.navAriaLabel": {
+    "message": "Blog recent posts navigation",
+    "description": "The ARIA label for recent posts in the blog sidebar"
+  },
+  "theme.DocSidebarItem.expandCategoryAriaLabel": {
+    "message": "Expand sidebar category '{label}'",
+    "description": "The ARIA label to expand the sidebar category"
+  },
+  "theme.DocSidebarItem.collapseCategoryAriaLabel": {
+    "message": "Collapse sidebar category '{label}'",
+    "description": "The ARIA label to collapse the sidebar category"
+  },
+  "theme.IconExternalLink.ariaLabel": {
+    "message": "(opens in new tab)",
+    "description": "The ARIA label for the external link icon"
+  },
+  "theme.NavBar.navAriaLabel": {
+    "message": "Main",
+    "description": "The ARIA label for the main navigation"
+  },
+  "theme.navbar.mobileLanguageDropdown.label": {
+    "message": "Languages",
+    "description": "The label for the mobile language switcher dropdown"
+  },
+  "theme.TOCCollapsible.toggleButtonLabel": {
+    "message": "On this page",
+    "description": "The label used by the button on the collapsible TOC component"
+  },
+  "theme.NotFound.p1": {
+    "message": "We could not find what you were looking for.",
+    "description": "The first paragraph of the 404 page"
+  },
+  "theme.NotFound.p2": {
+    "message": "Please contact the owner of the site that linked you to the original URL and let them know their link is broken.",
+    "description": "The 2nd paragraph of the 404 page"
+  },
+  "theme.blog.post.readingTime.plurals": {
+    "message": "One min read|{readingTime} min read",
+    "description": "Pluralized label for \"{readingTime} min read\". Use as much plural forms (separated by \"|\") as your language support (see https://www.unicode.org/cldr/cldr-aux/charts/34/supplemental/language_plural_rules.html)"
+  },
+  "theme.blog.post.readMore": {
+    "message": "Read more",
+    "description": "The label used in blog post item excerpts to link to full blog posts"
+  },
+  "theme.blog.post.readMoreLabel": {
+    "message": "Read more about {title}",
+    "description": "The ARIA label for the link to full blog posts from excerpts"
+  },
+  "theme.CodeBlock.copy": {
+    "message": "Copy",
+    "description": "The copy button label on code blocks"
+  },
+  "theme.CodeBlock.copied": {
+    "message": "Copied",
+    "description": "The copied button label on code blocks"
+  },
+  "theme.CodeBlock.copyButtonAriaLabel": {
+    "message": "Copy code to clipboard",
+    "description": "The ARIA label for copy code blocks button"
+  },
+  "theme.CodeBlock.wordWrapToggle": {
+    "message": "Toggle word wrap",
+    "description": "The title attribute for toggle word wrapping button of code block lines"
+  },
+  "theme.docs.breadcrumbs.home": {
+    "message": "Home page",
+    "description": "The ARIA label for the home page in the breadcrumbs"
+  },
+  "theme.docs.sidebar.collapseButtonTitle": {
+    "message": "Collapse sidebar",
+    "description": "The title attribute for collapse button of doc sidebar"
+  },
+  "theme.docs.sidebar.collapseButtonAriaLabel": {
+    "message": "Collapse sidebar",
+    "description": "The title attribute for collapse button of doc sidebar"
+  },
+  "theme.docs.sidebar.navAriaLabel": {
+    "message": "Docs sidebar",
+    "description": "The ARIA label for the sidebar navigation"
+  },
+  "theme.docs.sidebar.closeSidebarButtonAriaLabel": {
+    "message": "Close navigation bar",
+    "description": "The ARIA label for close button of mobile sidebar"
+  },
+  "theme.navbar.mobileSidebarSecondaryMenu.backButtonLabel": {
+    "message": "← Back to main menu",
+    "description": "The label of the back button to return to main menu, inside the mobile navbar sidebar secondary menu (notably used to display the docs sidebar)"
+  },
+  "theme.docs.sidebar.toggleSidebarButtonAriaLabel": {
+    "message": "Toggle navigation bar",
+    "description": "The ARIA label for hamburger menu button of mobile navigation"
+  },
+  "theme.navbar.mobileDropdown.collapseButton.expandAriaLabel": {
+    "message": "Expand the dropdown",
+    "description": "The ARIA label of the button to expand the mobile dropdown navbar item"
+  },
+  "theme.navbar.mobileDropdown.collapseButton.collapseAriaLabel": {
+    "message": "Collapse the dropdown",
+    "description": "The ARIA label of the button to collapse the mobile dropdown navbar item"
+  },
+  "theme.docs.sidebar.expandButtonTitle": {
+    "message": "Expand sidebar",
+    "description": "The ARIA label and title attribute for expand button of doc sidebar"
+  },
+  "theme.docs.sidebar.expandButtonAriaLabel": {
+    "message": "Expand sidebar",
+    "description": "The ARIA label and title attribute for expand button of doc sidebar"
+  },
+  "theme.SearchPage.documentsFound.plurals": {
+    "message": "One document found|{count} documents found",
+    "description": "Pluralized label for \"{count} documents found\". Use as much plural forms (separated by \"|\") as your language support (see https://www.unicode.org/cldr/cldr-aux/charts/34/supplemental/language_plural_rules.html)"
+  },
+  "theme.SearchPage.existingResultsTitle": {
+    "message": "Search results for \"{query}\"",
+    "description": "The search page title for non-empty query"
+  },
+  "theme.SearchPage.emptyResultsTitle": {
+    "message": "Search the documentation",
+    "description": "The search page title for empty query"
+  },
+  "theme.SearchPage.inputPlaceholder": {
+    "message": "Type your search here",
+    "description": "The placeholder for search page input"
+  },
+  "theme.SearchPage.inputLabel": {
+    "message": "Search",
+    "description": "The ARIA label for search page input"
+  },
+  "theme.SearchPage.algoliaLabel": {
+    "message": "Powered by Algolia",
+    "description": "The description label for Algolia mention"
+  },
+  "theme.SearchPage.noResultsText": {
+    "message": "No results were found",
+    "description": "The paragraph for empty search result"
+  },
+  "theme.SearchPage.fetchingNewResults": {
+    "message": "Fetching new results...",
+    "description": "The paragraph for fetching new search results"
+  },
+  "theme.SearchBar.seeAll": {
+    "message": "See all {count} results"
+  },
+  "theme.SearchBar.label": {
+    "message": "Search",
+    "description": "The ARIA label and placeholder for search button"
+  },
+  "theme.SearchModal.searchBox.resetButtonTitle": {
+    "message": "Clear the query",
+    "description": "The label and ARIA label for search box reset button"
+  },
+  "theme.SearchModal.searchBox.cancelButtonText": {
+    "message": "Cancel",
+    "description": "The label and ARIA label for search box cancel button"
+  },
+  "theme.SearchModal.searchBox.placeholderText": {
+    "message": "Search docs",
+    "description": "The placeholder text for the main search input field"
+  },
+  "theme.SearchModal.searchBox.placeholderTextAskAi": {
+    "message": "Ask another question...",
+    "description": "The placeholder text when in AI question mode"
+  },
+  "theme.SearchModal.searchBox.placeholderTextAskAiStreaming": {
+    "message": "Answering...",
+    "description": "The placeholder text for search box when AI is streaming an answer"
+  },
+  "theme.SearchModal.searchBox.enterKeyHint": {
+    "message": "search",
+    "description": "The hint for the search box enter key text"
+  },
+  "theme.SearchModal.searchBox.enterKeyHintAskAi": {
+    "message": "enter",
+    "description": "The hint for the Ask AI search box enter key text"
+  },
+  "theme.SearchModal.searchBox.searchInputLabel": {
+    "message": "Search",
+    "description": "The ARIA label for search input"
+  },
+  "theme.SearchModal.searchBox.backToKeywordSearchButtonText": {
+    "message": "Back to keyword search",
+    "description": "The text for back to keyword search button"
+  },
+  "theme.SearchModal.searchBox.backToKeywordSearchButtonAriaLabel": {
+    "message": "Back to keyword search",
+    "description": "The ARIA label for back to keyword search button"
+  },
+  "theme.SearchModal.startScreen.recentSearchesTitle": {
+    "message": "Recent",
+    "description": "The title for recent searches"
+  },
+  "theme.SearchModal.startScreen.noRecentSearchesText": {
+    "message": "No recent searches",
+    "description": "The text when there are no recent searches"
+  },
+  "theme.SearchModal.startScreen.saveRecentSearchButtonTitle": {
+    "message": "Save this search",
+    "description": "The title for save recent search button"
+  },
+  "theme.SearchModal.startScreen.removeRecentSearchButtonTitle": {
+    "message": "Remove this search from history",
+    "description": "The title for remove recent search button"
+  },
+  "theme.SearchModal.startScreen.favoriteSearchesTitle": {
+    "message": "Favorite",
+    "description": "The title for favorite searches"
+  },
+  "theme.SearchModal.startScreen.removeFavoriteSearchButtonTitle": {
+    "message": "Remove this search from favorites",
+    "description": "The title for remove favorite search button"
+  },
+  "theme.SearchModal.startScreen.recentConversationsTitle": {
+    "message": "Recent conversations",
+    "description": "The title for recent conversations"
+  },
+  "theme.SearchModal.startScreen.removeRecentConversationButtonTitle": {
+    "message": "Remove this conversation from history",
+    "description": "The title for remove recent conversation button"
+  },
+  "theme.SearchModal.errorScreen.titleText": {
+    "message": "Unable to fetch results",
+    "description": "The title for error screen"
+  },
+  "theme.SearchModal.errorScreen.helpText": {
+    "message": "You might want to check your network connection.",
+    "description": "The help text for error screen"
+  },
+  "theme.SearchModal.resultsScreen.askAiPlaceholder": {
+    "message": "Ask AI: ",
+    "description": "The placeholder text for Ask AI input"
+  },
+  "theme.SearchModal.askAiScreen.disclaimerText": {
+    "message": "Answers are generated with AI which can make mistakes. Verify responses.",
+    "description": "The disclaimer text for AI answers"
+  },
+  "theme.SearchModal.askAiScreen.relatedSourcesText": {
+    "message": "Related sources",
+    "description": "The text for related sources"
+  },
+  "theme.SearchModal.askAiScreen.thinkingText": {
+    "message": "Thinking...",
+    "description": "The text when AI is thinking"
+  },
+  "theme.SearchModal.askAiScreen.copyButtonText": {
+    "message": "Copy",
+    "description": "The text for copy button"
+  },
+  "theme.SearchModal.askAiScreen.copyButtonCopiedText": {
+    "message": "Copied!",
+    "description": "The text for copy button when copied"
+  },
+  "theme.SearchModal.askAiScreen.copyButtonTitle": {
+    "message": "Copy",
+    "description": "The title for copy button"
+  },
+  "theme.SearchModal.askAiScreen.likeButtonTitle": {
+    "message": "Like",
+    "description": "The title for like button"
+  },
+  "theme.SearchModal.askAiScreen.dislikeButtonTitle": {
+    "message": "Dislike",
+    "description": "The title for dislike button"
+  },
+  "theme.SearchModal.askAiScreen.thanksForFeedbackText": {
+    "message": "Thanks for your feedback!",
+    "description": "The text for thanks for feedback"
+  },
+  "theme.SearchModal.askAiScreen.preToolCallText": {
+    "message": "Searching...",
+    "description": "The text before tool call"
+  },
+  "theme.SearchModal.askAiScreen.duringToolCallText": {
+    "message": "Searching for ",
+    "description": "The text during tool call"
+  },
+  "theme.SearchModal.askAiScreen.afterToolCallText": {
+    "message": "Searched for",
+    "description": "The text after tool call"
+  },
+  "theme.SearchModal.footer.selectText": {
+    "message": "Select",
+    "description": "The select text for footer"
+  },
+  "theme.SearchModal.footer.submitQuestionText": {
+    "message": "Submit question",
+    "description": "The submit question text for footer"
+  },
+  "theme.SearchModal.footer.selectKeyAriaLabel": {
+    "message": "Enter key",
+    "description": "The ARIA label for select key in footer"
+  },
+  "theme.SearchModal.footer.navigateText": {
+    "message": "Navigate",
+    "description": "The navigate text for footer"
+  },
+  "theme.SearchModal.footer.navigateUpKeyAriaLabel": {
+    "message": "Arrow up",
+    "description": "The ARIA label for navigate up key in footer"
+  },
+  "theme.SearchModal.footer.navigateDownKeyAriaLabel": {
+    "message": "Arrow down",
+    "description": "The ARIA label for navigate down key in footer"
+  },
+  "theme.SearchModal.footer.closeText": {
+    "message": "Close",
+    "description": "The close text for footer"
+  },
+  "theme.SearchModal.footer.closeKeyAriaLabel": {
+    "message": "Escape key",
+    "description": "The ARIA label for close key in footer"
+  },
+  "theme.SearchModal.footer.searchByText": {
+    "message": "Powered by",
+    "description": "The 'Powered by' text for footer"
+  },
+  "theme.SearchModal.footer.backToSearchText": {
+    "message": "Back to search",
+    "description": "The back to search text for footer"
+  },
+  "theme.SearchModal.noResultsScreen.noResultsText": {
+    "message": "No results found for",
+    "description": "The text when there are no results"
+  },
+  "theme.SearchModal.noResultsScreen.suggestedQueryText": {
+    "message": "Try searching for",
+    "description": "The text for suggested query"
+  },
+  "theme.SearchModal.noResultsScreen.reportMissingResultsText": {
+    "message": "Believe this query should return results?",
+    "description": "The text for reporting missing results"
+  },
+  "theme.SearchModal.noResultsScreen.reportMissingResultsLinkText": {
+    "message": "Let us know.",
+    "description": "The link text for reporting missing results"
+  },
+  "theme.SearchModal.placeholder": {
+    "message": "Search docs",
+    "description": "The placeholder of the input of the DocSearch pop-up modal"
+  },
+  "theme.blog.post.plurals": {
+    "message": "One post|{count} posts",
+    "description": "Pluralized label for \"{count} posts\". Use as much plural forms (separated by \"|\") as your language support (see https://www.unicode.org/cldr/cldr-aux/charts/34/supplemental/language_plural_rules.html)"
+  },
+  "theme.blog.tagTitle": {
+    "message": "{nPosts} tagged with \"{tagName}\"",
+    "description": "The title of the page for a blog tag"
+  },
+  "theme.blog.author.pageTitle": {
+    "message": "{authorName} - {nPosts}",
+    "description": "The title of the page for a blog author"
+  },
+  "theme.blog.authorsList.pageTitle": {
+    "message": "Authors",
+    "description": "The title of the authors page"
+  },
+  "theme.blog.authorsList.viewAll": {
+    "message": "View all authors",
+    "description": "The label of the link targeting the blog authors page"
+  },
+  "theme.blog.author.noPosts": {
+    "message": "This author has not written any posts yet.",
+    "description": "The text for authors with 0 blog post"
+  },
+  "theme.contentVisibility.unlistedBanner.title": {
+    "message": "Unlisted page",
+    "description": "The unlisted content banner title"
+  },
+  "theme.contentVisibility.unlistedBanner.message": {
+    "message": "This page is unlisted. Search engines will not index it, and only users having a direct link can access it.",
+    "description": "The unlisted content banner message"
+  },
+  "theme.contentVisibility.draftBanner.title": {
+    "message": "Draft page",
+    "description": "The draft content banner title"
+  },
+  "theme.contentVisibility.draftBanner.message": {
+    "message": "This page is a draft. It will only be visible in dev and be excluded from the production build.",
+    "description": "The draft content banner message"
+  },
+  "theme.docs.DocCard.categoryDescription.plurals": {
+    "message": "1 item|{count} items",
+    "description": "The default description for a category card in the generated index about how many items this category includes"
+  },
+  "theme.ErrorPageContent.tryAgain": {
+    "message": "Try again",
+    "description": "The label of the button to try again rendering when the React error boundary captures an error"
+  },
+  "theme.common.skipToMainContent": {
+    "message": "Skip to main content",
+    "description": "The skip to content label used for accessibility, allowing to rapidly navigate to main content with keyboard tab/enter navigation"
+  },
+  "theme.tags.tagsPageTitle": {
+    "message": "Tags",
+    "description": "The title of the tag list page"
   }
 }

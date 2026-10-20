@@ -11,7 +11,7 @@ crowdin_page_id: 20df42ef-b997-4185-9408-f1188333b504
 Geyser offers a few command line arguments/system properties to allow you to configure Geyser without editing the config files.
 Additionally, you can suppress some warnings that may be printed to the console.
 
-## Configuration system properties {#configuration-system-properties}
+## Configuration system properties {/* #configuration-system-properties */}
 
 You can set Geyser to automatically bind to a specific address and port by using the following command line arguments.   
 This is primarily aimed at server hosting providers to automatically configure servers for users.
@@ -67,7 +67,7 @@ No longer relevant with Nethernet, and due for removal:
 - `-DgeyserRaknetPort=19132`
   - The UDP port RakNet listens on. Defaults to the Bedrock `port` (or `-DgeyserUdpPort`), which stays the port players connect with.
 
-## Disabling warnings and advanced configuration {#disabling-warnings-and-advanced-configuration}
+## Disabling warnings and advanced configuration {/* #disabling-warnings-and-advanced-configuration */}
 You may disable some warnings that may be printed to the console by using the following command line arguments. The values shown are the defaults used by Geyser, unless otherwise noted.
 
 :::caution
@@ -106,17 +106,17 @@ Disabling Geyser warnings from being logged will not fix the real issue! Only di
 - `-DGeyser.RakSendCookie=true`
   - Allows you to disable sending and validation of a cookie challenge in [Open Connection Reply 1](https://wiki.vg/Raknet_Protocol#Open_Connection_Reply_1) packet. This should not be set to `false` unless Geyser is running behind a reverse proxy that is also sending a challenge to prevent IP spoofing.
 
-## Geyser-Standalone Specific Options {#geyser-standalone-specific-options}
+## Geyser-Standalone Specific Options {/* #geyser-standalone-specific-options */}
 
-### `--config [file]` {#--config-file}
+### `--config [file]` {/* #--config-file */}
 - **Alias: `-c`**
 - Points to an alternative config file to use.
 
-### `--gui` / `--nogui` {#--gui----nogui}
+### `--gui` / `--nogui` {/* #--gui----nogui */}
 - **Alias: `gui` / `nogui`**:
 - Forces GUI or non-GUI usage, depending on context.
 
-## Overriding specific config values {#overriding-specific-config-values}
+## Overriding specific config values {/* #overriding-specific-config-values */}
 Overriding a standard config option (e.g. `command-suggestions`):
 
 `--command-suggestions=false`

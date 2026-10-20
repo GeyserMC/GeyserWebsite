@@ -3,6 +3,33 @@ import type { Config } from '@docusaurus/types';
 import type * as Preset from '@docusaurus/preset-classic';
 import { docOgRenderer, blogOgRenderer, pageOgRenderer } from './src/renderer/ImageRenderers';
 
+const defaultLocale = 'en';
+
+const locales = [
+    'en',
+    'ar',
+    'crp',
+    'cs',
+    'de',
+    'fr',
+    'it',
+    'ja',
+    'ru',
+    'tr',
+    'uk',
+    'zh-CN',
+];
+
+const customLocaleConfigs: Record<string, Record<string, any>> = {
+    crp: {
+        label: 'Crowdin',
+        direction: 'ltr',
+        htmlLang: 'crp',
+        calendar: 'gregory',
+        path: 'crp',
+    },
+};
+
 const config: Config = {
     title: 'GeyserMC',
     tagline: 'Revolutionize Your Minecraft Server',
@@ -17,17 +44,17 @@ const config: Config = {
     onBrokenLinks: 'throw',
 
     i18n: {
-        defaultLocale: 'en',
-        locales: ['en', 'ar','crp', 'cs', 'de', 'fr', 'it', 'ja', 'ru', 'tr', 'uk', 'zh-CN'],
-        localeConfigs: {
-            crp: {
-                label: 'Crowdin',
-                direction: 'ltr',
-                htmlLang: 'crp',
-                calendar: 'gregory',
-                path: 'crp',
-            }
-        }
+        defaultLocale,
+        locales,
+        localeConfigs: Object.fromEntries(
+            locales.map((locale) => [
+                locale,
+                {
+                    ...customLocaleConfigs[locale],
+                    baseUrl: locale === defaultLocale ? '/' : `/${locale}/`,
+                },
+            ])
+        ),
     },
 
     markdown: {
@@ -167,7 +194,7 @@ const config: Config = {
     ] : [],
 
     themeConfig: {
-        image: 'img/site/geyser.png',
+        image: 'img/site/geyser.webp',
         navbar: {
             title: 'GeyserMC',
             logo: {

@@ -15,7 +15,7 @@ Bedrock clients will stop connecting over RakNet. From then on, every Bedrock se
 Mojang has been rolling out since 26.40. Any Geyser build from 1237 onward supports NetherNet, but it is not enabled by default yet. 
 This post covers what changes with NetherNet, how to switch over on a hosting provider or on your own machine, and how to check that everything works.
 
-## TL;DR
+## TL;DR {/* #tldr */}
 
 - **Update Geyser** by downloading the latest build from [https://geysermc.org/download](https://geysermc.org/download), and turn on NetherNet in your Geyser config.
 - **Your server needs a TCP port** in addition to the usual UDP port, unless you use external signaling. See our [setup guide](/wiki/geyser/setup/) for detailed instructions!
@@ -25,7 +25,7 @@ This post covers what changes with NetherNet, how to switch over on a hosting pr
 
 <!-- truncate -->
 
-## What Changes
+## What Changes {/* #what-changes */}
 
 With RakNet, Bedrock players connected directly to the server over UDP. NetherNet adds a step before that, called signaling. 
 Bedrock clients now send the server a web request over TCP, asking how to connect. The signaling server then responds with
@@ -41,7 +41,7 @@ However, if Geyser previously ran on the same port as your Java server, as it do
 
 Geyser also supports using HTTPS to avoid the "trust on first use" prompt. See the [HTTPS section](#https-and-the-trust-prompt) for details.
 
-## Enabling NetherNet
+## Enabling NetherNet {/* #enabling-nethernet */}
 
 Start by downloading the latest build from [https://geysermc.org/download](https://geysermc.org/download). 
 Any build from 1237 onward supports NetherNet, but newer builds include a number of fixes, so we recommend always using the latest one.
@@ -54,7 +54,7 @@ If you need help with the migration, please join our [Discord](https://discord.g
 - A Geyser dump (get it by running `/geyser dump` in the server console)
 - A description of the issues you are seeing
 
-## Using NetherNet and RakNet Together
+## Using NetherNet and RakNet Together {/* #using-nethernet-and-raknet-together */}
 
 If some of your players are still on versions older than 26.40, you can also set `transport` to `both`. Geyser then accepts NetherNet and RakNet side by side. 
 However, the two transport modes cannot run on the same UDP port, so in this mode you also need to set `webrtc-port` to a separate UDP port for 
@@ -62,7 +62,7 @@ NetherNet and open it. Once 26.60 is out and everyone has updated, you can switc
 
 Note: 26.30 support will be removed once we add support for 26.60, so if you have players on old versions, ask them to update!
 
-## HTTPS and the Trust Prompt
+## HTTPS and the Trust Prompt {/* #https-and-the-trust-prompt */}
 
 Built-in signaling uses plain HTTP by default. While this works, players see a "trust on first use" prompt the first time they join your server.
 Serving signaling over HTTPS removes the prompt. We strongly recommend configuring HTTPS if you can!
@@ -73,7 +73,7 @@ port and let it handle HTTPS. See our [HTTPS guide](/wiki/geyser/nethernet-https
 
 If neither option is available, you can use an external signaling service that provides HTTPS, such as [Warden](https://warden.cloud).
 
-## Checking That It Works
+## Checking That It Works {/* #checking-that-it-works */}
 
 After restarting, try joining from a Bedrock client on version 26.40 or newer. If the connection fails, the Geyser console is the first place to look,
 since Geyser reports most NetherNet problems there. The table below covers the most common ones.
@@ -87,7 +87,7 @@ since Geyser reports most NetherNet problems there. The table below covers the m
 
 If none of these apply, please join our [Discord](https://discord.gg/geysermc) and share a `/geyser dump`, along with any other useful information about your setup.
 
-## Notes For Hosting Provider Users With `clone-remote-port` Enabled
+## Notes For Hosting Provider Users With `clone-remote-port` Enabled {/* #notes-for-hosting-provider-users-with-clone-remote-port-enabled */}
 
 Many hosts have relied on `clone-remote-port`, which makes Geyser use the same port as the Java server. **This does not work with built-in signaling.** 
 Signaling needs a TCP port, and the Java server already uses TCP on that port, so the two cannot share it. If your server only works with `clone-remote-port`, 
@@ -104,7 +104,7 @@ a list of hosts that support our work through the Open Collaboration program, an
 for their users. This is also highlighted in the setup guide. However, a host's absence from that list will not mean Geyser 
 won't run there, and the setup guide will continue to include community-collected setup instructions.
 
-## If You Run a Hosting Provider
+## If You Run a Hosting Provider {/* #if-you-run-a-hosting-provider */}
 
 If you offer Minecraft servers, we recommend automatically configuring Geyser for your users, so NetherNet works without
 them touching the config. For this purpose, Geyser reads [system properties](/wiki/geyser/geyser-command-line-arguments-and-system-properties)
@@ -122,19 +122,19 @@ reaching out on [Discord](https://discord.gg/geysermc), so our setup guide can t
 In case you need further system properties, please reach out to us! If you would also like to support Geyser's
 development and be featured on our upcoming hosting page, have a look at [Open Collaboration](https://opencollaboration.dev/).
 
-## NetherNet External Signaling (NXS)
+## NetherNet External Signaling (NXS) {/* #nethernet-external-signaling-nxs */}
 
 Geyser supports using external signaling providers which follow the NetherNet External Signaling (NXS) standard. It can be useful for
 load-balancing between multiple Geyser instances, central certificate management, or avoiding running multiple built-in signaling servers,
 amongst other benefits. See the [Open Collaboration blog post](https://opencollaboration.dev/articles/nethernet) to find out more about NXS.
 Note that NXS does not support live forwarding of the MOTD and player count. Instead, they are updated periodically.
 
-## HAProxy Support
+## HAProxy Support {/* #haproxy-support */}
 
 HAProxy headers are currently supported for RakNet and for built-in signaling, but not yet for NetherNet gameplay over 
 WebRTC. This feature will be added soon.
 
-## Further Reading
+## Further Reading {/* #further-reading */}
 - [Geyser setup guide](/wiki/geyser/setup/): setup steps, including notes for individual hosts
 - [HTTPS for NetherNet](/wiki/geyser/nethernet-https): removing the trust prompt with a certificate or a reverse proxy
 - [NetherNet HTTP Signaling onboarding guide](https://mojang.github.io/bedrock-protocol-docs/guides/nether-net-onboarding-guide/): Mojang's official documentation
@@ -142,7 +142,7 @@ WebRTC. This feature will be added soon.
 external signaling specification
 - [System properties supported by Geyser](/wiki/geyser/geyser-command-line-arguments-and-system-properties): every NetherNet setting you can set at startup
 
-## Acknowledgements
+## Acknowledgements {/* #acknowledgements */}
 
 We thank Mojang for documenting NetherNet and signaling ahead of the switch, and Ziax for running Warden, a free external 
 signaling service open to every Geyser server. NetherNet support in Geyser would not have been possible without [Kas-tle](https://github.com/Kas-tle), 

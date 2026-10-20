@@ -31,7 +31,7 @@ jobs:
     runs-on: ubuntu-latest
     outputs:
       locales: ${{ steps.locales.outputs.locales }}
-      commit: ${{ steps.commit.outputs.commit-hash == '' && steps.commit.outputs.commit-hash || github.sha }}
+      commit: ${{ steps.commit.outputs.commit-hash || github.sha }}
     permissions:
       contents: write
     env:
@@ -60,17 +60,19 @@ jobs:
         run: yarn install --immutable
 
       - name: Sync Translations
+        id: sync-translations
         if: env.CROWDIN_ENABLED == 'true'
+        continue-on-error: true
         run: yarn crowdin-sync
         env:
           CROWDIN_TOKEN: ${{ secrets.CROWDIN_TOKEN }}
           CROWDIN_ORGANIZATION: ${{ secrets.CROWDIN_ORGANIZATION }}
 
       - name: Commit Changes
-        if: env.CROWDIN_ENABLED == 'true'
+        if: env.CROWDIN_ENABLED == 'true' && steps.sync-translations.outcome == 'success'
         id: commit
         # See https://github.com/planetscale/ghcommit-action/releases
-        uses: planetscale/ghcommit-action@f24050e41f8694750427d111b52f4ef9ca81a32d # v0.2.18
+        uses: planetscale/ghcommit-action@a6b150b81dca5dd027baa898604418eec9e11465 # v0.2.22
         with:
           commit_message: "Sync translations with Crowdin"
           repo: ${{ github.repository }}
@@ -158,14 +160,10 @@ jobs:
         uses: actions/configure-pages@983d7736d9b0ae728b81ab479565c72886d7745b
 
       - name: Download artifacts
-        uses: actions/download-artifact@018cc2cf5baa6db3ef3c5f8a56943fffe632ef53
+        uses: actions/download-artifact@9000827ccba6bdab643e8b6fd33ac0654aef8333
         with:
           path: build
-
-      - name: Move default locale to root build
-        run: |
-          mv build/en/* build/
-          rm -rf build/en
+          merge-multiple: true
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@7b1f4a764d45c48632c6b24a0339c27f5614fb0b
