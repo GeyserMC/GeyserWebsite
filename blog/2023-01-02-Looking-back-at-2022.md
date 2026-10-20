@@ -10,7 +10,7 @@ Hi.
 
 2022 for Geyser was, in comparison to other years, rather unremarkable in terms of new features. Whereas 2021 had Bedrock skin support and complete inventory support, and 2020 had movement fixes, this year felt largely like a maintenance year. I think that’s a good thing; it means we’ve reached the point where the only things left to do are bug fixes, niche features/behavior, or updates. Even so, here are some of the notable points from Geyser in 2022, and what’s next.
 
-<!-- truncate -->
+{/* truncate */}
 
 ## Yearly GitHub Stats {/* #yearly-github-stats */}
 

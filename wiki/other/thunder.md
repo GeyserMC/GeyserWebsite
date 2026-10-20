@@ -27,7 +27,7 @@ Not only is this project in early beta, it does **not** convert custom items! Pl
 5. Once completed, the converter Bedrock edition resource pack will be in the same place as where your Java pack was. 
 You can now either use the pack on the Bedrock client, or place it in the `packs` folder in your Geyser server.
 
-## Download {#download} {/* #download-download */}
+## Download {/* #download */}
 
 You can download Thunder [here](/download/?project=other-projects&thunder=expanded).
 

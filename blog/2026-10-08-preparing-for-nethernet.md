@@ -23,7 +23,7 @@ This post covers what changes with NetherNet, how to switch over on a hosting pr
 - **`clone-remote-port` only works with external signaling.** If you use it, read [this section](#notes-for-hosting-provider-users-with-clone-remote-port-enabled) below.
 - **Do it before October 27th.** After that date, Bedrock players can't join servers that haven't made the switch.
 
-<!-- truncate -->
+{/* truncate */}
 
 ## What Changes {/* #what-changes */}
 

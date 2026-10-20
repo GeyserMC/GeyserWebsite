@@ -34,7 +34,7 @@ const config: Config = {
     title: 'GeyserMC',
     tagline: 'Revolutionize Your Minecraft Server',
     favicon: 'img/favicon.ico',
-    
+
     url: 'https://geysermc.org',
     baseUrl: '/',
 
@@ -148,8 +148,8 @@ const config: Config = {
                     { path: 'wiki', destination: 'docusaurus-plugin-content-docs/current' },
                     { path: 'blog', destination: 'docusaurus-plugin-content-blog' },
                 ],
-                jsonKeyExclusions: [ 
-                    'providers.provider.', 
+                jsonKeyExclusions: [
+                    'providers.provider.',
                     'sidebar.apiSidebar.',
                     'link.item.label.Geyser',
                     'link.item.label.Floodgate',
@@ -403,6 +403,11 @@ const config: Config = {
             { name: 'theme-color', content: '#25c2a0' },
         ],
     } satisfies Preset.ThemeConfig,
+
+    future: {
+        faster: true,
+        v4: true,
+    },
 };
 
 export default config;

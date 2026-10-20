@@ -77,14 +77,20 @@ title: Page title
 description: A short description of the page.
 ---
 
-## Page Subheading One {#page-subheading-1}
+This is an example lead.
+
+## Page Subheading One {/* #page-subheading-1 */}
 
 This is an example page.
 
-## Page Subheading Two {#page-subheading-2}
+## Page Subheading Two {/* #page-subheading-2 */}
 
 This is more of an example page.
 ```
+
+Note that you do not need a `# title header` as this is provided by the `title` field in the frontmatter.
+
+Additionally, be sure to include the `/*` and `*/` around the anchor tag.
 
 ### Adding a Page to the Sidebar
 

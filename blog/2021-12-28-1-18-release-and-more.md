@@ -12,7 +12,7 @@ Hi everyone 👋
 
 Welcome to the new Geyser blog! We’ll be posting new content here periodically about project updates, future plans, project announcements and really just miscellaneous development-related content around the Geyser project(s). These will be linked in our #blog-feed channel on Discord, so if you want to be notified when we make new posts and such, feel free to either follow the channel in your own Discord server, or turn on notifications.
 
-<!-- truncate -->
+{/* truncate */}
 
 ## Introduction: {/* #introduction */}
 In this post, we will be covering all the changes that led up to the 1.18 release. With 1.18 came a huge set of changes for Geyser which although may not be visible to the end user, were a massive feat internally. This resulted in not only multiple project refactors of Geyser along with surrounding projects (PacketLib, MCProtocolLib, etc.) but many additional optimizations and improvements to how the code operated and ran. For the latter half of 2021 especially, we’ve been putting in a lot more time to ensure Geyser runs more smoothly and to optimize poorly performing parts of the code, so much of these changes were a direct result of that initiative.
