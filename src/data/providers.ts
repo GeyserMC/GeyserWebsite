@@ -727,6 +727,21 @@ export const providersData: HostingProvider[] = [
         }
     },
     {
+        name: 'Pixly',
+        url: 'https://pixly.gg/',
+        updated: '2026-10-20',
+        links: {
+            article: 'https://pixly.gg/blog/java-bedrock-crossplay-geyser-floodgate/',
+            discord: 'https://discord.gg/pixly'
+        },
+        install: translate({
+            id: 'providers.provider.pixly.install',
+            message: "Turn on 'Bedrock crossplay' in the Settings tab of your server and restart."
+        }),
+        config: { preconfigured: true, port: 19132 },
+        proxies_banned: true
+    },
+    {
         name: 'PlanetNode',
         url: 'https://planetnode.net',
         updated: '2024-12-23',
