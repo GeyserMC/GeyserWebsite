@@ -9,9 +9,6 @@ crowdin_page_id: 3aee52d0-b943-4e37-8797-4a83ef55e42a
 
 :::info
 You must be able to connect to your Geyser instance locally!
-:::
-
-:::info
 Alternatively playit.gg has created their own setup guide for both PaperMC and Fabric. They have written guides [here](https://playit.gg/support/use-geyser-with-playit/), the Fabric guide also has a video you can watch.
 :::
 
