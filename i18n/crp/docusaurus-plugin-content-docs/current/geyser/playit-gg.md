@@ -8,7 +8,7 @@ crowdin_page_id: 3aee52d0-b943-4e37-8797-4a83ef55e42a
 ## crwdns38840:0crwdne38840:0 {/* #prerequisites */}
 
 :::info
-crwdns38842:0crwdne38842:0
+crwdns39814:0[crwdnd39814:0](https://playit.gg/support/use-geyser-with-playit/)crwdne39814:0
 :::
 
 :::warning
