@@ -1,23 +1,29 @@
 ---
 title: playit.gg Setup
 description: How to set up playit.gg to use Geyser without port forwarding.
+crowdin_sync: true
+crowdin_page_id: 3aee52d0-b943-4e37-8797-4a83ef55e42a
 ---
 
-## Prerequisites {#prerequisites}
+## Prerequisites {/* #prerequisites */}
 
 :::info
 You must be able to connect to your Geyser instance locally!
-:::
-
-:::warning
-The playit.gg Minecraft server plugin does not support UDP tunnels. You will need to use the program agent instead!
 :::
 
 :::info
 Alternatively playit.gg has created their own setup guide for both PaperMC and Fabric. They have written guides [here](https://playit.gg/support/use-geyser-with-playit/), the Fabric guide also has a video you can watch.
 :::
 
-## Setup {#setup}
+:::warning
+The playit.gg Minecraft server plugin does not support UDP tunnels. You will need to use the program agent instead!
+:::
+
+:::caution
+This guide was written for RakNet, and does not cover NetherNet. For NetherNet, see [playit.gg's progress on NetherNet support](https://status.playit.gg/3/adding-nethernet-support).
+:::
+
+## Setup {/* #setup */}
 1. Head over to [playit.gg's website](https://playit.gg/) - download the program & run it.
 2. The program will provide a claiming link. Visit that link, log in.
    ![img](/img/wiki/playit-gg/playit_claim.png)
@@ -46,9 +52,9 @@ Alternatively playit.gg has created their own setup guide for both PaperMC and F
 16. If you join successfully, then you are done! Make sure to leave the playit.gg program running as closing it will close the tunnel. You also may want to ratelimit individual connections - use the "Per Connection Rate Limit" option to do so.
    (If you failed to join, check out the [troubleshooting](#troubleshooting) section of the page.) 
 
-## Troubleshooting {#troubleshooting}
+## Troubleshooting {/* #troubleshooting */}
 
-### I can't connect to my server! {#i-cant-connect-to-my-server}
+### I can't connect to my server! {/* #i-cant-connect-to-my-server */}
 * *Try going to the Agents page, set your agent to IPv4 only, and change the region. You may need to switch regions a few times before you can connect.*
 * *Are there errors in your minecraft server console?*
 * *Unless you manually changed the "Local Port" on the playit.gg website, in Geyser config, ensure that the bedrock port is the default of `19132` and that `clone-remote-port` is `false`.*
