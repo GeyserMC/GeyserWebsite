@@ -19,37 +19,41 @@
         "clean-api-docs:version": "docusaurus clean-api-docs:version",
         "gen-all": "docusaurus gen-api-docs all && docusaurus gen-api-docs:version petstore_versioned:all",
         "clean-all": "docusaurus clean-api-docs all && docusaurus clean-api-docs:version petstore_versioned:all",
+        "crowdin-sync": "docusaurus crowdin-sync",
+        "output-locales": "docusaurus output-locales",
         "re-gen": "yarn clean-all && yarn gen-all",
         "typecheck": "tsc"
     },
     "dependencies": {
-        "@docusaurus/core": "3.6.3",
-        "@docusaurus/preset-classic": "3.6.3",
-        "@fortawesome/fontawesome-svg-core": "6.5.1",
-        "@fortawesome/free-brands-svg-icons": "6.5.1",
-        "@fortawesome/free-regular-svg-icons": "6.5.1",
-        "@fortawesome/free-solid-svg-icons": "6.5.1",
-        "@fortawesome/react-fontawesome": "0.2.0",
-        "@kas-tle/docusaurus-og": "https://github.com/Kas-tle/docusaurus-og",
+        "@crowdin/crowdin-api-client": "1.59.1",
+        "@docusaurus/core": "3.10.2",
+        "@docusaurus/faster": "3.10.2",
+        "@docusaurus/preset-classic": "3.10.2",
+        "@docusaurus/theme-mermaid": "3.10.2",
+        "@fortawesome/fontawesome-svg-core": "7.3.1",
+        "@fortawesome/free-brands-svg-icons": "7.3.1",
+        "@fortawesome/free-regular-svg-icons": "7.3.1",
+        "@fortawesome/free-solid-svg-icons": "7.3.1",
+        "@fortawesome/react-fontawesome": "3.5.0",
+        "@kas-tle/docusaurus-og": "github:Kas-tle/docusaurus-og#baf5ffe3e73e9da92d8970fba93af7a4f1d8b8e8",
         "@mdx-js/react": "3.0.0",
-        "clsx": "1.2.1",
-        "docusaurus-plugin-openapi-docs": "4.3.0",
-        "docusaurus-theme-openapi-docs": "4.3.0",
-        "prism-react-renderer": "2.1.0",
-        "react": "18.3.1",
-        "react-dom": "18.3.1",
-        "react-markdown": "^9.0.0"
+        "adm-zip": "0.6.1",
+        "clsx": "2.1.1",
+        "docusaurus-plugin-openapi-docs": "5.2.0",
+        "docusaurus-theme-openapi-docs": "5.2.0",
+        "prism-react-renderer": "2.4.1",
+        "react": "19.3.1",
+        "react-dom": "19.3.1",
+        "react-markdown": "10.1.0"
     },
     "devDependencies": {
-        "@docusaurus/module-type-aliases": "^3.6.3",
-        "@docusaurus/tsconfig": "^3.6.3",
-        "@docusaurus/types": "^3.6.3",
-        "docusaurus-plugin-sass": "0.2.5",
-        "sass": "1.77.8",
-        "typescript": "5.7.2"
-    },
-    "resolutions": {
-        "postman-code-generators": "1.14.0"
+        "@docusaurus/module-type-aliases": "3.10.2",
+        "@docusaurus/tsconfig": "3.10.2",
+        "@docusaurus/types": "3.10.2",
+        "@types/adm-zip": "0.6.0",
+        "docusaurus-plugin-sass": "0.2.7",
+        "sass": "1.105.1",
+        "typescript": "6.0.3"
     },
     "browserslist": {
         "production": [
@@ -66,5 +70,5 @@
     "engines": {
         "node": ">=22.0"
     },
-    "packageManager": "yarn@4.5.3"
+    "packageManager": "yarn@4.18.1"
 }

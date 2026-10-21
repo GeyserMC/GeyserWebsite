@@ -1,6 +1,7 @@
 ---
 title: Using Resource Packs with Geyser
 description: This page explains how to use resource packs with Geyser.
+crowdin_page_id: 2bdcbcca-710e-4066-aa1f-1938be452783
 ---
 
 # Introduction
@@ -16,7 +17,7 @@ Resource packs offer a range of customization options. Just like on Java, they c
 
 # Using resource packs
 
-### Sending local packs
+### Sending local packs {/* #sending-local-packs */}
 The easiest way to send resource packs to Bedrock players is by putting the Bedrock edition resource pack, either as a `.zip` or `.mcpack` file, into Geyser's `packs` folder.
 
 Location of the 'packs' folder:
@@ -28,7 +29,7 @@ Location of the 'packs' folder:
 After restarting the server (or reloading Geyser), players that connect will receive all packs that are in that folder.
 
 
-### Remote pack urls (accessible using the Geyser API)
+### Remote pack urls (accessible using the Geyser API) {/* #remote-pack-urls-accessible-using-the-geyser-api */}
 As an alternative to sending local packs, you can also send resource packs by sending Bedrock players a link to download the packs from.
 This works similarly to Java edition's pack downloading. However, there are a few key limitations:
 

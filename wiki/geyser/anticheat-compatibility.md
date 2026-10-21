@@ -1,6 +1,9 @@
 ---
 title: Anticheat Compatibility
-description: A list of community compiled list of Anticheats and their compatibility with Geyser.
+description: >-
+  A list of community compiled list of Anticheats and their compatibility with
+  Geyser.
+crowdin_page_id: 9c8e7b0f-1b55-438e-b52f-0f13a26697b6
 ---
 
 :::caution
@@ -10,7 +13,7 @@ This is a community-compiled list and does not indicate any endorsement from Gey
 
 :::
 
-### AntiCheat compatibility reports {#anticheat-compatibility-reports}
+### AntiCheat compatibility reports {/* #anticheat-compatibility-reports */}
 
 Full Compatibility (Checks Bedrock Players Accurately)
 

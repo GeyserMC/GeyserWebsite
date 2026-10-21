@@ -1,6 +1,9 @@
 ---
 title: Geyser Entity API
-description: Geyser extensions can register custom Bedrock entity definitions, modify existing entities, and replace built-in types in entity spawning events.
+description: >-
+  Geyser extensions can register custom Bedrock entity definitions, modify
+  existing entities, and replace built-in types in entity spawning events.
+crowdin_page_id: b7d6246b-1821-48ee-9f97-a1f56f42efd7
 ---
 
 :::warning Experimental API
@@ -20,13 +23,13 @@ entity types in entity spawning events to properly support custom entities for B
 
 Additionally to registering custom entity definitions, you will also need to provide a resource pack to players [defining custom entity textures and animations](https://wiki.bedrock.dev/guide/custom-entity).
 
-## Prerequisites: Vocabulary {#vocabulary}
+## Prerequisites: Vocabulary {/* #vocabulary */}
 
 - **Bedrock Entity Definition** (`GeyserEntityDefinition` / `CustomEntityDefinition`): Identifies the Bedrock entity type to spawn, either a built-in type, or a custom type
 - **Entity Properties**: Bedrock Molang-queryable values (`query.property(...)`) registered per Bedrock entity type. See [here](https://learn.microsoft.com/en-us/minecraft/creator/documents/introductiontoentityproperties?view=minecraft-bedrock-stable) for official documentation.
 - **Entity Data Types**: Properties on entities that can be changed dynamically, such as scale, size, hitboxes, and color.
 
-## Registering a Custom Entity Definition {#registering-entity-definition}
+## Registering a Custom Entity Definition {/* #registering-entity-definition */}
 
 Custom entity definitions are registered using `GeyserDefineEntitiesEvent`, which fires once during Geyser's startup:
 
@@ -42,7 +45,7 @@ Do note:
 - Custom entity definition type identifier must not use the `minecraft` namespace
 - Entity types must have a unique identifier
 
-## Summoning custom entities {#custom-entity-spawning}
+## Summoning custom entities {/* #custom-entity-spawning */}
 
 Whenever the Java server creates a new non-player entity for any connection, a `ServerSpawnEntityEvent` is fired. It can be used to change which Bedrock entity definition is sent to the Bedrock player or cancel the spawn entirely. 
 Each connection has its own entity cache, so different players will never share the same entity instance.
@@ -89,7 +92,7 @@ public void onSpawn(ServerSpawnEntityEvent event) {
 ```
 :::
 
-### Modifying shoulder parrots {#shoulder-parrots}
+### Modifying shoulder parrots {/* #shoulder-parrots */}
 
 `ServerAttachParrotsEvent` fires when a parrot is attached to a player's shoulder. It extends `ServerSpawnEntityEvent`, so definition replacement, cancellation, and setting a pre spawn consumer for the 
 resulting `GeyserEntity` instance are all available.
@@ -101,7 +104,7 @@ public void onParrotAttach(ServerAttachParrotsEvent event) {
 }
 ```
 
-## Modifying entity data {#entity-data}
+## Modifying entity data {/* #entity-data */}
 
 Entity data consists of runtime-modifiable values such as scale, size, and hitboxes. All constants live in `GeyserEntityDataTypes`. Values for these types can be updated on a `GeyserEntity` 
 at any time using `entity.override(type, value)`, or set inside a pre-spawn consumer in the entity spawn events to modify it before the spawn packet is sent.
@@ -127,7 +130,7 @@ Updating any of these values will override the value sent by the server until th
 Hitbox `min`, `max` and `pivot` are absolute world coordinates, not relative to the entity's position.
 :::
 
-## Entity Properties {#entity-properties}
+## Entity Properties {/* #entity-properties */}
 
 Entity properties expose Java-side state to Bedrock resource packs via `query.property('namespace:name')` in Molang. Entity properties can be registered for both custom, and vanilla entity types using the `GeyserDefineEntityPropertiesEvent`, which fires during Geyser startup.
 
@@ -172,7 +175,7 @@ Properties can be updated on a `GeyserEntity` instance at any time:
 entity.updateProperty(aggression, 0.5f);
 ```
 
-## Looking up entities {#looking-up-entities}
+## Looking up entities {/* #looking-up-entities */}
 
 After an entity has spawned it can be looked up through `GeyserConnection#entities()`. All lookup methods are thread-safe.
 
@@ -192,7 +195,7 @@ GeyserEntity entity = entityData.byGeyserId(geyserId);
 All three return `null` if no entity is found. A `GeyserEntity` exposes various properties, such as the entity uuid, current passengers / vehicle if applicable, and it can further be used to update
 entity properties or entity data type values.
 
-## Full Example {#full-example}
+## Full Example {/* #full-example */}
 
 <details>
 <summary>Expand for a full extension example</summary>

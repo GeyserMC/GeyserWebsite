@@ -1,16 +1,17 @@
 ---
-title: "RakNet Amplification Attack Summary and Response"
-slug: "raknet-amplification-attack"
+title: RakNet Amplification Attack Summary and Response
+slug: raknet-amplification-attack
 authors: Kas-tle
 hide_table_of_contents: false
-description: "A look at how we dealt with an exploit in the RakNet protocol"
+description: A look at how we dealt with an exploit in the RakNet protocol
+crowdin_page_id: 4a2c95a7-61af-4d0b-aa13-d034e0e5a0b9
 ---
 
 In March, we were made aware of an exploit in the RakNet networking library used by Geyser, making Geyser instances vulnerable to use in a Distributed Denial of Service (DDoS) amplification attack. This bug was patched on all builds of Geyser numbered 478 and later. If you are still running an outdated build of Geyser, you should update immediately by downloading the latest build from [https://geysermc.org/download](https://geysermc.org/download). The original [security advisory](https://github.com/CloudburstMC/Network/security/advisories/GHSA-6h3m-c6fv-8hvh) for this vulnerability was published on the [CloudburstMC/Network](https://github.com/CloudburstMC/Network) repository. This post will detail the timeline, anatomy of the attack, our response, and additional measures we have taken to prevent similar attacks in the future.
 
-<!-- truncate -->
+{/* truncate */}
 
-## Timeline (UTC)
+## Timeline (UTC) {/* #timeline-utc */}
 
 * **March 24th, 11:00AM**: bStats data begins to show instability in the number of online Geyser instances
 * **March 28th,  5:00AM**: First reported Geyser instance causing server suspension by OVH
@@ -31,7 +32,7 @@ In March, we were made aware of an exploit in the RakNet networking library used
 * **March 30th, 10:31PM**: First @everyone ping in 1 year is made in the Geyser Discord announcing the security advisory and requesting all server owners update their instances as soon as possible
 
 
-## Initial Warning Signs
+## Initial Warning Signs {/* #initial-warning-signs */}
 
 Before the issue was initially detected, a suspicious trend can be seen in Geyser’s bStats data. On March 24th starting at approximately 11:00AM UTC, noticeable dips are seen in the total number of online Geyser instances. Normally, the number of online instances smoothly climbs and falls by about 500 instances, likely correlating with when people have free time to play Minecraft. Beginning on March 24th, frequent hourly swings of as much as 2200 instances online are seen. Given hindsight, this is likely when wide scale exploitation of this attack began.
 
@@ -40,7 +41,7 @@ Before the issue was initially detected, a suspicious trend can be seen in Geyse
 | *bStats chart of servers using Geyser over the month of March. Clear instability in the number of online servers reported is seen at the left starting on March 24th, at least three days before any formal reports of the attack were received.* |
 
 
-## Initial Disclosure
+## Initial Disclosure {/* #initial-disclosure */}
 
 Multiple users in the Geyser Discord first brought the attack to our attention by providing us with notices from their hosting provider that their server instances were suspended due to abuse. This means that their Geyser instances were sending outbound traffic interpreted by their hosting provider interpreted as a denial of service attack. Here is a snippet from one of these notices:
 
@@ -94,7 +95,7 @@ Caused by: java.lang.NullPointerException: Cannot invoke "io.netty.buffer.ByteBu
 *Stacktrace from an attacked server after many hours of connection attempts, showing instability in the ability of Cloudburst Network to process packets.*
 
 
-## Reproduction Attempts
+## Reproduction Attempts {/* #reproduction-attempts */}
 
 Given that the packet spam was occurring without Bedrock login taking place, the vulnerability was likely in the initial establishment of the RakNet connection. Minecraft Bedrock Edition uses a modified version of the RakNet protocol which has gone largely unchanged for many years and is unofficially documented at [https://wiki.vg/Raknet_Protocol](https://wiki.vg/Raknet_Protocol). Before game packets are sent, the connection is established with 7 packets, four of which are sent by the client and three of which are sent by the server. It was likely that one of these three packets was being spammed by the Geyser instance. The initial RakNet connection follows the sequence:
 
@@ -131,7 +132,7 @@ That said, this is at best an amplification factor of two. By now, we had some b
 | *Pterodactyl Panel dashboard of a Paper server running Geyser during an attack, showing a large outbound traffic spike. Within the short attack period, inbound traffic is only 819KiB, while outbound traffic is nearly 300MiB.* |
 
 
-## Live Analysis
+## Live Analysis {/* #live-analysis */}
 
 One thing that worked in our favor, ironically, was the wide scale exploitation of this vulnerability. Since our own official test server, and even some of our personal servers, were actively being attacked at regular intervals, we had ample locations to gather data about the attack. We began taking full raw packet capture of a server actively being attacked, which would ultimately unveil the root cause of the attack.
 
@@ -150,17 +151,17 @@ Since UDP itself does not have an inbuilt handshake like TCP to ensure all data 
 Because the packet was marked as reliable, this means that Network allows the client to respond with an ACK (Positive Acknowledgement) or NAK (Negative Acknowledgement). At this stage in the connection, this is a vector for abuse because the client has not yet done anything to prove that we are communicating with them directly versus receiving UDP packets with spoofed IP headers. By sending a NAK with the maximum range, they force us to continuously send the Connection Request Accepted packet.
 
 
-## Effects
+## Effects {/* #effects */}
 
 This begs the question though: why would an attacker bother doing this? The two leading theories are UDP amplification, meaning the goal is to use Geyser instances as a means to attack other servers, or provider-based suspension, meaning the goal is to get the servers running Geyser instances suspended by their hosting provider.
 
 
-### UDP Amplification
+### UDP Amplification {/* #udp-amplification */}
 
 As explained earlier, UDP has no inbuilt handshake. This means that UDP allows for traffic to be sent to a given IP address without them acknowledging or accepting it. When the ratio of request size to response size is near one, this is largely a nonissue since an attacker gains very little by going through a third party to send the data. In this case, however, the attacker can send a very small amount of data (~52 bytes) and trigger a response of over 8000 134 byte packets. Because the connection sequence up to Connection Request Accepted is always the same and does not require the attacker to actually see the packets we respond with to respond correctly, the attacker can spoof the source IP header of the UDP packets it sends to the Geyser instance. This means that, because of this amplification vector, the Geyser instance can unwittingly be used to multiply the attacker's traffic by a theoretical maximum factor of 22,000. However, in practice, we saw that in the wild the actual multiplication factor was around 1000.
 
 
-### Provider-Based Suspension
+### Provider-Based Suspension {/* #provider-based-suspension */}
 
 It is also important to consider that servers are generally hosted not locally, but with hosting providers. Hosting providers have a legitimate business interest in preventing their network from being used for abuse, as failing to do so could result in other hosting providers and ISPs blocking their traffic altogether. As a result, many hosting providers employ mechanisms to detect unusual traffic from their servers and will “black hole” traffic to and from servers on their network emitting such traffic. This means that if an attacker wishes to take down a particular server, rather than overwhelm it with a traditional denial of service attack, they can simply make it appear as though the server itself is trying to engage in a denial of service attack. This will result in outbound traffic from the server being dropped by the provider, effectively having the same effect. We saw this occur, for example, with some Geyser services hosted on Hetzer as shown by the below MTR.
 
@@ -185,12 +186,12 @@ HOST: MS.local                                             	Loss%   Snt   Last  
 *MTR (My Traceroute) shows the path packets take to a given Geyser server. In the 10th and 12th hop, we can see that the packet is being routed to the hostname blocked.hetzner.com, implying traffic to the server is being null-routed.*
 
 
-## Mitigation
+## Mitigation {/* #mitigation */}
 
 Multiple forms of mitigation for this bug, as well as preventive measures to guard against future attacks have been introduced into Geyser and its upstream networking library. These include proper reliability handling during the early RakNet connection, early cookie verification, and rate limiting.
 
 
-### Proper Reliability Handling in Early RakNet Connection
+### Proper Reliability Handling in Early RakNet Connection {/* #proper-reliability-handling-in-early-raknet-connection */}
 
 The principal mitigation was changing the reliability type of the abused packet to unreliable. This means that the server will no longer respond to NAK requests for it, effectively leading to the attackers requests going unanswered. The packet capture below is taken from an instance with the reliability type of Connection Request Accepted changed to unreliable. We can see that the attacker simply continues to increment their packet range requested by NAK, but no response is provided.
 
@@ -199,7 +200,7 @@ The principal mitigation was changing the reliability type of the abused packet 
 | *Wireshark packet capture of a Geyser instance under attack with a build mitigating the original attack vector. The attacker is seen sending NAK packets with a sequence range of as high as 40,959. However, since the packet was not sent as reliable, there is nothing for the Geyser instance to send in response.* |
 
 
-### Early Cookie Verification
+### Early Cookie Verification {/* #early-cookie-verification */}
 
 The underlying issue that allows for UDP amplification attacks is a lack of verification at an early stage of the connection. The original RakNet protocol actually specifies an optional solution for this. For context, RakNet was purchased by Oculus in 2014, and open sourced. Given the acquisition of Oculus by Facebook, the code for the original implementation is now archived by them. While Mojang’s implementation of RakNet has some differences from the original, it does share many of the same features. In the packet Open Connection Reply 1, the original specification refers to a boolean HasSecurity, followed by a four byte cookie if the boolean is true.
 
@@ -210,7 +211,7 @@ The underlying issue that allows for UDP amplification attacks is a lack of veri
 It turns out that if a cookie is supplied by the Bedrock server in Open Connection Reply 1, the Bedrock client will reply with the same cookie. This allows us to effectively verify that the IP of the Bedrock client is not being spoofed by the third packet. Were the IP of the Bedrock client being spoofed, the packet containing the cookie would be sent to the victim’s IP and be unknown to the attacker. If the attacker sends back an incorrect cookie, the connection can be terminated at that point.
 
 
-### Rate Limiting
+### Rate Limiting {/* #rate-limiting */}
 
 In addition, Cloudburst Network also implemented three main rate limits to prevent further potential abuse of the protocol. These are summarized in the table below.
 
@@ -232,11 +233,11 @@ advanced.bedrock:
 *Geyser configuration using a URL pointing a new-line separated text file containing allowed IPs for haproxy-protocol usage.*
 
 
-## Long Term Impact
+## Long Term Impact {/* #long-term-impact */}
 
 It is extremely important that all those running vulnerable instances of Geyser update as soon as possible. Failure to do so may result in your Geyser instance being used to harm others via UDP denial of service amplification. We continue to see this issue being exploited in the wild as of the writing of this post, and see no reason that will stop in the foreseeable future. The number of unpatched instances will likely decrease over time as Bedrock updates force server owners to update in order to support players on the latest Bedrock version.
 
 
-## Acknowledgements 
+## Acknowledgements {/* #acknowledgements */}
 
 We thank the community for their patience as we addressed this issue, all those who responsibly disclosed this issue to us, the developers at Cloudburst and Geyser that worked to mitigate the issue, the server hosts that took an active role in ensuring instances on their hosting services were patched as soon as possible, all donors for their financial support of Geyser, and Cubecraft for their continued financial and operational support of the project.

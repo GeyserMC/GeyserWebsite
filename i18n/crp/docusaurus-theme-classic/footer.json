@@ -1,0 +1,50 @@
+{
+  "link.title.Wiki": {
+    "message": "crwdns39774:0crwdne39774:0",
+    "description": "The title of the footer links column with title=Wiki in the footer"
+  },
+  "link.title.Downloads": {
+    "message": "crwdns39776:0crwdne39776:0",
+    "description": "The title of the footer links column with title=Downloads in the footer"
+  },
+  "link.title.Community": {
+    "message": "crwdns39778:0crwdne39778:0",
+    "description": "The title of the footer links column with title=Community in the footer"
+  },
+  "link.title.More": {
+    "message": "crwdns39780:0crwdne39780:0",
+    "description": "The title of the footer links column with title=More in the footer"
+  },
+  "link.item.label.REST APIs": {
+    "message": "crwdns39782:0crwdne39782:0",
+    "description": "The label of footer link with label=REST APIs linking to wiki/api/api.geysermc.org/global-api"
+  },
+  "link.item.label.Other": {
+    "message": "crwdns39784:0crwdne39784:0",
+    "description": "The label of footer link with label=Other linking to download?project=other-projects"
+  },
+  "link.item.label.Blog": {
+    "message": "crwdns39786:0crwdne39786:0",
+    "description": "The label of footer link with label=Blog linking to blog"
+  },
+  "link.item.label.Donate": {
+    "message": "crwdns39788:0crwdne39788:0",
+    "description": "The label of footer link with label=Donate linking to https://opencollective.com/geysermc"
+  },
+  "link.item.label.Global Linking": {
+    "message": "crwdns39790:0crwdne39790:0",
+    "description": "The label of footer link with label=Global Linking linking to https://link.geysermc.org/"
+  },
+  "link.item.label.Privacy Policy": {
+    "message": "crwdns39792:0crwdne39792:0",
+    "description": "The label of footer link with label=Privacy Policy linking to https://ziax.com/terms/privacy-policy/"
+  },
+  "copyright": {
+    "message": "crwdns39794:0crwdne39794:0",
+    "description": "The footer copyright"
+  },
+  "logo.alt": {
+    "message": "crwdns39796:0crwdne39796:0",
+    "description": "The alt text of footer logo"
+  }
+}

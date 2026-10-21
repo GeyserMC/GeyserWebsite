@@ -1,9 +1,12 @@
 ---
 title: Features
-description: Learn about the features of Floodgate 2.0, including the whitelist command and skin uploading.
+description: >-
+  Learn about the features of Floodgate 2.0, including the whitelist command and
+  skin uploading.
+crowdin_page_id: 92f27f70-d154-493d-ad49-adc7e35e6953
 ---
 
-## Whitelist command {#whitelist-command}
+## Whitelist command {/* #whitelist-command */}
 
 Floodgate 2.0 has a whitelist command, `fwhitelist`, that should be used for adding or removing Floodgate players to whitelist.json. The username prefix doesn't need to be included.
 `fwhitelist add Tim203`
@@ -13,7 +16,7 @@ You can also specify a UUID: `fwhitelist add 00000000-0000-0000-0009-01f64f65c7c
 
 The permission node is `floodgate.command.fwhitelist`.
 
-## What is skin uploading? {#what-is-skin-uploading}
+## What is skin uploading? {/* #what-is-skin-uploading */}
 Skins of Bedrock player should be visible to Java players on servers with Floodgate 2.0 installed.  
 If they aren't, it's most likely that the skin uploading queue has grown too large and can take a while to upload your skin.
 

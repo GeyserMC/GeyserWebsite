@@ -1,6 +1,7 @@
 ---
 title: Getting Started with the API
-description: 'A primer on how to use the Geyser and Floodgate APIs.'
+description: A primer on how to use the Geyser and Floodgate APIs.
+crowdin_page_id: 688d71d9-4619-4d95-a498-fdcf443bc267
 ---
 
 To start, add the Open Collaboration repository to your project:
@@ -23,7 +24,7 @@ repositories {
 }
 ```
 
-## Using Geyser {#using-geyser}
+## Using Geyser {/* #using-geyser */}
 
 Add Geyser's API codebase as a dependency:
 
@@ -32,7 +33,7 @@ Add Geyser's API codebase as a dependency:
 <dependency>
     <groupId>org.geysermc.geyser</groupId>
     <artifactId>api</artifactId>
-    <version>2.10.0-SNAPSHOT</version>
+    <version>2.11.2-SNAPSHOT</version>
     <scope>provided</scope>
 </dependency>
 ```
@@ -40,7 +41,7 @@ Add Geyser's API codebase as a dependency:
 **Gradle**
 ```groovy
 dependencies {
-    compileOnly('org.geysermc.geyser:api:2.10.0-SNAPSHOT')
+    compileOnly('org.geysermc.geyser:api:2.11.2-SNAPSHOT')
 }
 ```
 
@@ -56,7 +57,7 @@ GeyserConnection connection = GeyserApi.api().connectionByUuid(uuid);
 
 For more information on the Geyser API, see [here](/wiki/geyser/api/).
 
-## Using Floodgate {#using-floodgate}
+## Using Floodgate {/* #using-floodgate */}
 This page has a very simple primer for the Floodgate API. For a full breakdown, see [here](/wiki/floodgate/api/).
 
 Add Floodgate's API as a dependency:

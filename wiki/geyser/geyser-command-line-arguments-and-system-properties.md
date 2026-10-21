@@ -1,6 +1,9 @@
 ---
 title: Geyser Command Line Arguments and System Properties
-description: Geyser offers a few command line arguments/system properties to allow you to configure Geyser without editing the config files.
+description: >-
+  Geyser offers a few command line arguments/system properties to allow you to
+  configure Geyser without editing the config files.
+crowdin_page_id: 20df42ef-b997-4185-9408-f1188333b504
 ---
 
 # Geyser Command Line Arguments and System Properties
@@ -8,7 +11,7 @@ description: Geyser offers a few command line arguments/system properties to all
 Geyser offers a few command line arguments/system properties to allow you to configure Geyser without editing the config files.
 Additionally, you can suppress some warnings that may be printed to the console.
 
-## Configuration system properties {#configuration-system-properties}
+## Configuration system properties {/* #configuration-system-properties */}
 
 You can set Geyser to automatically bind to a specific address and port by using the following command line arguments.   
 This is primarily aimed at server hosting providers to automatically configure servers for users.
@@ -23,16 +26,48 @@ The Geyser specific properties are prioritized over the plugin properties!
   - ```-1``` means UDP is not supported and will forcibly stop Geyser.
   - ```server``` means to match the port of the TCP server.
   - any other number means to use that specific port
+  - This sets the Bedrock `port`, used as the RakNet port, the built-in signaling (TCP) port, and/or the NetherNet (WebRTC) port.
+    With `server`, the signaling port is the Java server's port, so built-in signaling cannot run and Geyser uses external signaling instead, unless `-DgeyserSignalingPort` sets a separate port.
 
 - ```-DgeyserUdpAddress=server``` or ```-DpluginUdpAddress=server```
   - ```server``` means to match the bind address of the TCP server
   - any other string will be used as-is for the bind address.
+  - This address is also used for built-in signaling and NetherNet. NetherNet does not work on a loopback address such as `127.0.0.1`.
+
+- `-DgeyserTransport=nethernet`
+  - One of: `nethernet`, `both` (NetherNet and RakNet), or `raknet`. Overrides `transport` in the `bedrock` section.
+  - With `both`, RakNet and NetherNet each need their own UDP port, so also set `-DgeyserWebrtcPort` (or `-DgeyserRaknetPort`).
+
+- `-DgeyserSignalingMode=builtin`
+  - One of: `builtin` (Geyser runs signaling itself, over TCP), `nxs` (an external signaling service, Warden by default), or `hybrid` (both). Overrides `mode` in the `signaling` section.
+  - If the built-in signaling port is the Java server's port, Geyser uses external signaling instead.
+
+- `-DgeyserWebrtcPort=19133`
+  - The UDP port NetherNet (WebRTC) connections use. Overrides `webrtc-port`.
+  - When not set, and the transport is `nethernet`, the NetherNet port follows `-DgeyserUdpPort`. With `both`, RakNet keeps that port, so this has to be set to a different port.
+
+- `-DgeyserSignalingPort=19134`
+  - The TCP port built-in signaling (HTTP, or HTTPS if configured) listens on.
+  - Use this to give signaling its own TCP port, for example when the Bedrock port is the Java server's port.
+  - When not set, built-in signaling uses the Bedrock port (`-DgeyserUdpPort`).
+
+- `-DgeyserAdvertiseAddresses=203.0.113.5,198.51.100.7`
+  - A comma-separated list of public addresses that built-in signaling tells players to connect to, for servers behind a NAT or in a container without a public address. Without a port, the NetherNet (WebRTC) port is used; add one (e.g. `203.0.113.5:19133`) if players reach it on a different port number. Port forwarding is not set up for you.
+  - Overrides `advertise-addresses` in the `builtin` part of the `signaling` section. For external signaling, use `advertise-addresses` in the `nxs` section of the config.
+
+
+
+No longer relevant with Nethernet, and due for removal:
 
 - ```-DgeyserBroadcastPort=19132```
-    - This can be used in cases where the port Geyser runs on does not match the port players use to connect to (e.g. due to port forwarding routings).
-    - When not set or set to 0, it defaults to the same port that Geyser runs on
+  - This can be used in cases where the port Geyser runs on does not match the port players use to connect to (e.g. due to port forwarding routings).
+  - When not set, it defaults to the same port that Geyser runs on.
+  - This system property is RakNet only, and will be removed once RakNet is no longer supported by any version supported by Geyser
 
-## Disabling warnings and advanced configuration {#disabling-warnings-and-advanced-configuration}
+- `-DgeyserRaknetPort=19132`
+  - The UDP port RakNet listens on. Defaults to the Bedrock `port` (or `-DgeyserUdpPort`), which stays the port players connect with.
+
+## Disabling warnings and advanced configuration {/* #disabling-warnings-and-advanced-configuration */}
 You may disable some warnings that may be printed to the console by using the following command line arguments. The values shown are the defaults used by Geyser, unless otherwise noted.
 
 :::caution
@@ -71,17 +106,17 @@ Disabling Geyser warnings from being logged will not fix the real issue! Only di
 - `-DGeyser.RakSendCookie=true`
   - Allows you to disable sending and validation of a cookie challenge in [Open Connection Reply 1](https://wiki.vg/Raknet_Protocol#Open_Connection_Reply_1) packet. This should not be set to `false` unless Geyser is running behind a reverse proxy that is also sending a challenge to prevent IP spoofing.
 
-## Geyser-Standalone Specific Options {#geyser-standalone-specific-options}
+## Geyser-Standalone Specific Options {/* #geyser-standalone-specific-options */}
 
-### `--config [file]` {#--config-file}
+### `--config [file]` {/* #--config-file */}
 - **Alias: `-c`**
 - Points to an alternative config file to use.
 
-### `--gui` / `--nogui` {#--gui----nogui}
+### `--gui` / `--nogui` {/* #--gui----nogui */}
 - **Alias: `gui` / `nogui`**:
 - Forces GUI or non-GUI usage, depending on context.
 
-## Overriding specific config values {#overriding-specific-config-values}
+## Overriding specific config values {/* #overriding-specific-config-values */}
 Overriding a standard config option (e.g. `command-suggestions`):
 
 `--command-suggestions=false`

@@ -1,16 +1,19 @@
 ---
-title: "Bedrock Early Packet Handling DoS Attack Summary and Response"
-slug: "early-packet-handling-attack"
+title: Bedrock Early Packet Handling DoS Attack Summary and Response
+slug: early-packet-handling-attack
 authors: Kas-tle
 hide_table_of_contents: false
-description: "A summary of how we addressed a series of exploits targeting Geyser's early handling of Bedrock game packets"
+description: >-
+  A summary of how we addressed a series of exploits targeting Geyser's early
+  handling of Bedrock game packets
+crowdin_page_id: 7573bcfd-c352-458c-b052-c4d74568453c
 ---
 
 Back in July, we received reports of multiple Geyser instances experiencing targeted Denial of Service (DoS) attacks exhibiting similar characteristics. Out of an abundance of caution, we delayed making this post to ensure that users had adequate time to upgrade. The bugs that allowed for this string of attacks were patched on Geyser builds numbered 897 and later. In the unlikely event you are still running an outdated build of Geyser from many months ago, you should update immediately by downloading the latest build from [https://geysermc.org/download](https://geysermc.org/download). The original [security advisory](https://github.com/GeyserMC/Geyser/security/advisories/GHSA-m2q6-2hwr-643w) for this vulnerability was published on the [GeyserMC/Geyser](https://github.com/GeyserMC/Geyser) repository. This response will detail the timeline, attack vectors, how they were patched, and additional measures we took to prevent future attacks.
 
-<!-- truncate -->
+{/* truncate */}
 
-## Timeline (UTC)
+## Timeline (UTC) {/* #timeline-utc */}
 
 - **July 29th, 9:40PM:** Server being attacked privately reports the issue to Geyser and shares logs  
 - **July 29th, 11:45PM:** Preemptive patch is released to limit the number of authenticated connections per address  
@@ -22,7 +25,7 @@ Back in July, we received reports of multiple Geyser instances experiencing targ
 - **July 30th, 10:45PM:** Third patch is released updating the upstream Bedrock protocol library and ensuring Bedrock connections that cause exceptions are closed immediately  
 - **July 31st, 11:24PM:** An @everyone ping is made in the Geyser Discord advising users to update their Geyser instances, and the initial security advisory is published to GitHub.
 
-## Initial Disclosure
+## Initial Disclosure {/* #initial-disclosure */}
 
 Use of this attack was first privately reported to us by multiple larger servers using Geyser. We were provided server logs showing a single user appearing to be authenticated multiple times. The logs generally took a form of:
 
@@ -49,7 +52,7 @@ Use of this attack was first privately reported to us by multiple larger servers
 
 Based on the content of these logs, we initially suspected that packets in the early phase of the Bedrock connection were being exploited. However, we were not yet sure of what specific packets the attacker was sending. Based on these logs, we released a preemptive patch to ensure that the number of authenticated users from a single IP address at any given time was limited. This alone, however, would prove to be insufficient to mitigate the attack.
 
-## Game Packet and Code Analysis of the First Attack Vector
+## Game Packet and Code Analysis of the First Attack Vector {/* #game-packet-and-code-analysis-of-the-first-attack-vector */}
 
 Understanding this attack requires a basic understanding of the general Bedrock login process. This is detailed below:
 
@@ -238,7 +241,7 @@ Notably, this allows for multiple downstream sessions (representing Geyser's con
 
 ![chart_05 Multiple Sessions Class Diagram](/img/blog/2025-11-30-early-packet-handling-attack/chart_05.svg#gh-light-mode-only)![chart_05 Multiple Sessions Class Diagram](/img/blog/2025-11-30-early-packet-handling-attack/chart_05_dark.svg#gh-dark-mode-only)
 
-## Code Analysis of the Second Attack Vector
+## Code Analysis of the Second Attack Vector {/* #code-analysis-of-the-second-attack-vector */}
 
 While we thought we had addressed the root issue and provided the affected users with a patch for testing, we quickly received logs that indicated otherwise:
 
@@ -346,7 +349,7 @@ public class BedrockServerSession extends BedrockSession {
 
 This allows an attacker that should have been disconnected to continue to send malicous packets that lead to expensive deserialization logic. The result is another potential denial of service (DoS) attack vector.
 
-## Patch and Mitigation
+## Patch and Mitigation {/* #patch-and-mitigation */}
 
 We mitigated the first attack vector by ensuring that the Bedrock client can only signal completion of resource pack sending once per session. This was done by modifying the `UpstreamPacketHandler` to check if the `finishedResourcePackSending` flag is already set before proceeding with authentication logic:
 
@@ -463,10 +466,10 @@ public class InvalidPacketHandler extends ChannelInboundHandlerAdapter {
 }
 ```
 
-## Long Term Impact
+## Long Term Impact {/* #long-term-impact */}
 
 All users of Geyser running outdated builds should update as soon as possible to ensure they are not vulnerable to the attacks described in this post. During the process of investigating this attack, we were made aware of multiple servers being exploited, meaning this is being exploited in the wild. Unlike the previous RakNet amplification attack, this attack is limited in scope to the selected Geyser instance. We expect the number of unpatched instances to decrease over time as Bedrock updates require server owners to update their Geyser instances. As of November 2025, we have not received any recent reports of Geyser instances being targeted by this attack vector, indicating that most instances have been patched. 
 
-## Acknowledgements
+## Acknowledgements {/* #acknowledgements */}
 
 We thank the community for their patience as we addressed this issue, the server owners who responsibly disclosed this issue to us, the developers at Cloudburst and Geyser that worked to mitigate the issue, all donors for their financial support of Geyser, and Cubecraft and Open Collaboration for their continued financial and operational support of the project.

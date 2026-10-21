@@ -1,0 +1,30 @@
+{
+  "version.label": {
+    "message": "Next",
+    "description": "The label for version current"
+  },
+  "sidebar.geyserSidebar.category.Setup": {
+    "message": "Setup",
+    "description": "The label for category 'Setup' in sidebar 'geyserSidebar'"
+  },
+  "sidebar.geyserSidebar.category.Common Issues": {
+    "message": "Common Issues",
+    "description": "The label for category 'Common Issues' in sidebar 'geyserSidebar'"
+  },
+  "sidebar.geyserSidebar.category.Configuring Geyser": {
+    "message": "Configuring Geyser",
+    "description": "The label for category 'Configuring Geyser' in sidebar 'geyserSidebar'"
+  },
+  "sidebar.geyserSidebar.category.FAQ": {
+    "message": "FAQ",
+    "description": "The label for category 'FAQ' in sidebar 'geyserSidebar'"
+  },
+  "sidebar.geyserSidebar.category.Custom Content": {
+    "message": "Custom Content",
+    "description": "The label for category 'Custom Content' in sidebar 'geyserSidebar'"
+  },
+  "sidebar.geyserSidebar.category.Geyser API": {
+    "message": "Geyser API",
+    "description": "The label for category 'Geyser API' in sidebar 'geyserSidebar'"
+  }
+}
