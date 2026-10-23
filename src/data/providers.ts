@@ -124,6 +124,7 @@ export const providersData: HostingProvider[] = [
         url: 'https://astrolnodes.net/',
         updated: '2026-10-23',
         links: {
+            article: 'https://astrolnodes.net/en/kb/servidores-minecraft/crossplay-java-y-bedrock',
             support: 'https://astrolnodes.net/en/kb',
             discord: 'https://discord.gg/4CkBtDpTYq'
         },
