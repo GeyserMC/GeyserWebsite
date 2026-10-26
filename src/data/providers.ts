@@ -87,8 +87,12 @@ export const providersData: HostingProvider[] = [
     {
         name: 'Akliz',
         url: 'https://www.akliz.net/',
-        updated: '2025-03-22',
-        config: { udp: ports.assign, confirmed: false }
+        updated: '2026-10-21',
+        links: {
+            article: "https://help.akliz.net/docs/setup-geyser-on-a-spigot-server",
+            discord: "https://www.akliz.net/discord"
+        },
+        config: { udp: ports.assign }
     },
     {
         name: 'Apex Hosting',
