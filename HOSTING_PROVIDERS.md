@@ -52,6 +52,7 @@ strings at the top of `providers.ts` wherever they fit, and to write their own t
 | Geyser is installed through your plugin or mod list                 | `install: customInstallLocations.plugin_list`                     |
 | Geyser is installed and configured on every server                  | `install: infos.installed_by_default`                             |
 | An "Enable Bedrock crossplay?" option when changing server software | `install: customInstallLocations.enable_bedrock_crossplay_option` |
+| A "Bedrock crossplay" toggle in the Settings tab of your panel      | `install: customInstallLocations.settings_tab_bedrock_crossplay`  |
 | Players use a different address than the Java server's              | `config.notes: [javaAddressInstruction]`                          |
 | You only serve one region                                           | `notices: { info: onlyServesRegion('Australia') }`                |
 
