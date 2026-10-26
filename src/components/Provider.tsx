@@ -33,8 +33,7 @@ const notListedPorts: Record<'allocated' | 'javaOnly', HostingProvider['config']
                 id: 'providers.provider.not_listed.allocate_port',
                 message: "Allocate a port in your server panel, open for both TCP and UDP."
             })
-        },
-        builtin_signaling: 'same_as_udp'
+        }
     },
     // Only the Java server port: gameplay shares it over UDP, and players find the server through external signaling
     javaOnly: {
@@ -72,7 +71,7 @@ const notListedVariants = [
 const selfHosted: HostingProvider = {
     name: 'Self-hosted',
     url: null,
-    config: { udp: 19132, builtin_signaling: 'same_as_udp' }
+    config: { udp: 19132 }
 }
 
 // Open Collaboration tiers that are highlighted in the setup guide, highest first
@@ -200,11 +199,12 @@ const signalingSetup = (provider: HostingProvider) => {
         return { builtin: false, external: true, separateTcp: false, bedrockPort: config.port };
     }
     const { udp, builtin_signaling, external_signaling } = config;
-    const builtin = builtin_signaling !== undefined;
+    // Built-in signaling cannot share the Java server's TCP port
+    const builtin = builtin_signaling !== false && udp !== 'java';
     const external = external_signaling !== false;
     // The TCP port built-in signaling uses is the Bedrock `port`, so it is also the port players connect with.
     // Without built-in signaling, `port` is only used as the UDP port.
-    const separateTcp = builtin && builtin_signaling !== 'same_as_udp';
+    const separateTcp = builtin && builtin_signaling !== undefined;
     const bedrockPort: PortSource = separateTcp ? builtin_signaling as PortSource : udp;
     return { builtin, external, separateTcp, bedrockPort };
 }

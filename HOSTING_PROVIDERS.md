@@ -132,8 +132,7 @@ A host whose customers add a port in the panel, open for TCP and UDP:
                 id: 'providers.provider.example_host.port',
                 message: "Open an additional port in the Network tab of your panel."
             })
-        },
-        builtin_signaling: 'same_as_udp'
+        }
     }
 },
 ```
@@ -163,7 +162,6 @@ A host where customers ask support for a port, and only get one with a dedicated
     updated: '2026-10-16',
     config: {
         udp: ports.askHost,
-        builtin_signaling: 'same_as_udp',
         notes: [otherInstructions.dedicatedIp]
     }
 },

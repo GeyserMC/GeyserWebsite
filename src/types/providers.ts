@@ -6,10 +6,11 @@ export type ManualConfig = {
     preconfigured?: false;
     // The UDP port NetherNet (WebRTC) traffic uses. This is required for any NetherNet connection.
     udp: PortSource;
-    // The TCP port Geyser can run built-in signaling on. Omit if the host does not give out a TCP port that is free
-    // for Geyser; players then connect through an external signaling service instead.
-    // This cannot be the Java port. Use 'same_as_udp' when the UDP port above is also open on TCP (e.g. Pterodactyl allocations).
-    builtin_signaling?: Exclude<PortSource, 'java'> | 'same_as_udp';
+    // The TCP port Geyser runs built-in signaling on. Omit when the UDP port above is also open on TCP (e.g. Pterodactyl allocations).
+    // Set a port only if the host hands out TCP and UDP separately; it cannot be the Java port.
+    // Set false if the host does not give out a TCP port that is free for Geyser; players then connect through an external signaling service instead.
+    // Ignored when `udp` is 'java', since built-in signaling cannot share the Java server's TCP port.
+    builtin_signaling?: false | Exclude<PortSource, 'java'>;
     // External signaling (NXS). Geyser uses Warden (https://warden.cloud) by default.
     // Set an object if the host runs its own NXS-compatible signaling service, or false if the host blocks external signaling.
     external_signaling?: false | {

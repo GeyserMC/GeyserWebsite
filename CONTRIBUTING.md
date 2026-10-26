@@ -35,7 +35,7 @@ Ports (`udp` and `builtin_signaling`) can be:
 - a number, e.g. `19132`, if it is always the same,
 - `{ obtain: translate({...}) }` with how to get one, e.g. "Open an allocation in the Network tab.". The guide adds which config option to set it as.
 
-Prefer a single port: use `builtin_signaling: 'same_as_udp'` when the UDP port is also open on TCP (e.g. Pterodactyl allocations), so users only need one port. Only give `builtin_signaling` its own port if the host really hands out TCP and UDP separately. Leave `builtin_signaling` out if your servers only support external signaling, and set `external_signaling` if you run your own signaling service (or `false` if external signaling is blocked).
+Prefer a single port: by default, built-in signaling uses the UDP port over TCP, which works when the port is open for both (e.g. Pterodactyl allocations), so users only need one port. Only give `builtin_signaling` its own port if the host really hands out TCP and UDP separately. Set `builtin_signaling: false` if your servers only support external signaling, and set `external_signaling` if you run your own signaling service (or `false` if external signaling is blocked).
 
 Anything else users need to change in the config, such as which Bedrock address to use, goes in `config.notes`, which are shown below the generated config.
 
@@ -55,8 +55,7 @@ If the host has not confirmed these details yet, set `config.confirmed: false`, 
 +                 id: 'providers.provider.example_hosting_provider.port',
 +                 message: "Open an additional port in the Network tab."
 +             })
-+         },
-+         builtin_signaling: 'same_as_udp'
++         }
 +     }
 + },
 ```
