@@ -68,6 +68,10 @@ const customInstallLocations = {
     enable_bedrock_crossplay_option: translate({
         id: 'providers.config.templates.install_location.enable_bedrock_crossplay',
         message: "Select the 'Enable Bedrock crossplay?' option when changing your server software to automatically install and configure Geyser and Floodgate."
+    }),
+    settings_tab_bedrock_crossplay: translate({
+        id: 'providers.config.templates.install_location.settings_tab_bedrock_crossplay',
+        message: "In the Settings tab of the server panel, turn on 'Bedrock crossplay' and restart the server."
     })
 }
 
@@ -745,6 +749,18 @@ export const providersData: HostingProvider[] = [
                 message: "If you did not order the server from the [cross-platform servers page](https://piglinhost.com/minecraft-java-hosting.html), contact the support for help with Geyser setup."
             })
         }
+    },
+    {
+        name: 'Pixly',
+        url: 'https://pixly.gg/',
+        updated: '2026-10-20',
+        links: {
+            article: 'https://pixly.gg/blog/java-bedrock-crossplay-geyser-floodgate/',
+            discord: 'https://discord.gg/pixly'
+        },
+        install: customInstallLocations.settings_tab_bedrock_crossplay,
+        config: { preconfigured: true, port: 19132 },
+        proxies_banned: true
     },
     {
         name: 'PlanetNode',
