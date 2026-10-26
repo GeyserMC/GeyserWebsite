@@ -122,13 +122,17 @@ export const providersData: HostingProvider[] = [
     {
         name: 'Astrol Nodes',
         url: 'https://astrolnodes.net/',
-        updated: '2026-10-16',
+        updated: '2026-10-23',
         links: {
+            article: 'https://astrolnodes.net/en/kb/servidores-minecraft/crossplay-java-y-bedrock',
             support: 'https://astrolnodes.net/en/kb',
             discord: 'https://discord.gg/4CkBtDpTYq'
         },
-        install: customInstallLocations.plugin_list,
-        config: { udp: 'java', confirmed: false }
+        install: translate({
+            id: 'providers.provider.astrol_nodes.install',
+            message: "Open the Crossplay page of your server in the panel and click 'Enable crossplay'. The server restarts with Geyser and Floodgate installed and configured, and the page shows the address and port Bedrock players use."
+        }),
+        config: { preconfigured: true, port: ports.fromHost }
     },
     {
         name: 'Aternos',
