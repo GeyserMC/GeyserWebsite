@@ -131,8 +131,10 @@ Note that NXS does not support live forwarding of the MOTD and player count. Ins
 
 ## HAProxy Support {/* #haproxy-support */}
 
-HAProxy headers are currently supported for RakNet and for built-in signaling, but not yet for NetherNet gameplay over 
-WebRTC. This feature will be added soon.
+~~HAProxy headers are currently supported for RakNet and for built-in signaling, but not yet for NetherNet gameplay over 
+WebRTC. This feature will be added soon.~~
+Update 26.10.2026: As of Geyser build 1272, Geyser supports HAProxy headers for NetherNet gameplay over WebRTC. Note that 
+unlike RakNet HAProxy support, you must configure trusted HAProxy speaking IPs in the config.
 
 ## Further Reading {/* #further-reading */}
 - [Geyser setup guide](/wiki/geyser/setup/): setup steps, including notes for individual hosts
