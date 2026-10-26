@@ -240,10 +240,9 @@ Geyser writes the generated visuals to `cache/custom_biomes.mcpack` in its confi
 definition per biome and, when needed, fog, atmosphere and water settings. The pack is registered with low priority, so
 a resource pack you add yourself takes precedence over it. Its manifest declares a minimum engine version of `1.26.0`.
 
-A registered mapping can still fall back to the vanilla biome during a session. Bedrock's biome definition list holds at
-most 1,024 unique names and tags, vanilla ones included, so servers with very many custom biomes and tags can run out.
-A biome is also not applied when a later backend server sends it with a different climate than the one already sent to
-the client. Geyser logs a warning when mappings could not be applied to a player.
+A registered mapping can still fall back to the vanilla biome during a session: a biome is not applied when a later
+backend server sends it with a different climate than the one already sent to the client. Geyser logs a warning when
+mappings could not be applied to a player.
 
 ## Vibrant Visuals
 
