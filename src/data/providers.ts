@@ -888,9 +888,12 @@ export const providersData: HostingProvider[] = [
         url: 'https://shockbyte.com/',
         updated: '2024-12-23',
         links: {
-            article: 'https://shockbyte.com/billing/knowledgebase/173/Introduction-to-GeyserMCorDragonProxy-How-GeyserMC-Works.html'
+            article: 'https://shockbyte.com/help/knowledgebase/articles/how-to-set-up-crossplay-using-geysermc-on-your-minecraft-server'
         },
-        config: { udp: ports.newPort, confirmed: false }
+        config: { preconfigured: true, port: { obtain: translate({
+            id: 'providers.provider.shockbyte.port.obtain',
+            message: "You can find it in the `Ports & Network` tab of your control panel, or in your console when the server starts."
+        }) } }
     },
     {
         name: 'SimpleGameHosting',
