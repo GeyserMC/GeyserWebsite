@@ -69,7 +69,8 @@ const sidebars: SidebarsConfig = {
                 id: 'geyser/common-issues'
             },
             items: [
-                'geyser/fixing-unable-to-connect-to-world'
+                'geyser/fixing-unable-to-connect-to-world',
+                'geyser/nethernet-common-issues'
             ]
         },
         {
