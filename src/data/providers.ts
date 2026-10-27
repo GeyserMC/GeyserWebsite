@@ -220,11 +220,15 @@ export const providersData: HostingProvider[] = [
     {
         name: 'BisectHosting',
         url: 'https://www.bisecthosting.com/',
-        updated: '2026-03-03',
+        updated: '2026-10-27',
         links: {
-            article: 'https://www.bisecthosting.com/clients/index.php?rp=/knowledgebase/193/How-to-install-Geyser-and-Floodgate-on-a-Minecraft-Java-server.html'
+            article: 'https://help.bisecthosting.com/hc/en-us/articles/40526648951707-How-to-Install-Geyser-and-FloodGate-on-a-Minecraft-Server'
         },
-        config: { udp: ports.allocated, confirmed: false },
+        config: { preconfigured: true, port: 19132 },
+        install: translate({
+            id: 'providers.config.bisecthosting.install',
+            message: "Install Geyser by heading to the Startup tab and turn on `Enable Geyser`. Keeping this option enabled will keep Geyser auto-updated."
+        }),
         notices: {
             warn: translate({
                 id: 'providers.provider.bisecthosting.warn',
