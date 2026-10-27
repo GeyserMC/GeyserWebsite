@@ -252,7 +252,7 @@
     "message": "crwdns39270:0crwdne39270:0"
   },
   "mdx.setup.unconfirmed_reach_out_update": {
-    "message": "crwdns39272:0{name}crwdnd39272:0{discord}crwdne39272:0"
+    "message": "crwdns39816:0{name}crwdnd39816:0{discord}crwdnd39816:0{blog}crwdne39816:0"
   },
   "mdx.setup.try_not_listed": {
     "message": "crwdns39274:0{notListed}crwdnd39274:0{warden}crwdne39274:0"

@@ -220,24 +220,29 @@ export const providersData: HostingProvider[] = [
     {
         name: 'BisectHosting',
         url: 'https://www.bisecthosting.com/',
-        updated: '2026-03-03',
+        updated: '2026-10-27',
         links: {
-            article: 'https://www.bisecthosting.com/clients/index.php?rp=/knowledgebase/193/How-to-install-Geyser-and-Floodgate-on-a-Minecraft-Java-server.html'
+            article: 'https://help.bisecthosting.com/hc/en-us/articles/40526648951707-How-to-Install-Geyser-and-FloodGate-on-a-Minecraft-Server'
         },
-        config: { udp: ports.allocated, confirmed: false },
-        notices: {
-            warn: translate({
-                id: 'providers.provider.bisecthosting.warn',
-                message: "If you cannot connect after following these instructions, contact Bisect Support, as they reportedly have UDP disabled on some nodes."
-            })
-        }
+        config: { preconfigured: true, port: {obtain: (ports.fromHost as { obtain: string }).obtain + " " + translate({
+            id: 'providers.config.bisecthosting.port',
+            message: "On a dedicated IP plan, you can allocate and use 19132 instead."
+        })}},
+        install: translate({
+            id: 'providers.config.bisecthosting.install',
+            message: "Install Geyser by heading to the Startup tab and turn on `Enable Geyser`. Keeping this option enabled will keep Geyser auto-updated."
+        })
     },
     {
         name: 'Bloom.Host',
         url: 'https://www.bloom.host/',
         updated: '2026-05-25',
-        links: { article: 'https://docs.bloom.host/multiplatform/geysermc' },
-        config: { udp: ports.assign, confirmed: false }
+        links: { article: 'https://bloom-host-feature-ports-and.bloomdocs.pages.dev/multiplatform/geysermc' },
+        config: { udp: ports.assign },
+        extra_step: translate({
+            id: 'providers.config.bloomhost.extra_step',
+            message: "Route players through TLS for a HTTPS setup, see [their guide](https://bloom-host-feature-ports-and.bloomdocs.pages.dev/ports-and-connections#players-through-the-tls-proxy) for more details on how."
+        })
     },
     {
         name: 'CloudNord',
