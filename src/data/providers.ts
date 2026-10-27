@@ -224,7 +224,7 @@ export const providersData: HostingProvider[] = [
         links: {
             article: 'https://help.bisecthosting.com/hc/en-us/articles/40526648951707-How-to-Install-Geyser-and-FloodGate-on-a-Minecraft-Server'
         },
-        config: { preconfigured: true, port: {obtain: ports.fromHost.obtain + " " + translate({
+        config: { preconfigured: true, port: {obtain: (ports.fromHost as { obtain: string }).obtain + " " + translate({
             id: 'providers.config.bisecthosting.port',
             message: "On a dedicated IP plan, you can allocate and use 19132 instead."
         })}},
