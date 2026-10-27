@@ -236,7 +236,7 @@ export const providersData: HostingProvider[] = [
     {
         name: 'Bloom.Host',
         url: 'https://www.bloom.host/',
-        updated: '2026-05-25',
+        updated: '2026-10-27',
         links: { article: 'https://docs.bloom.host/nethernet#geysermc' },
         config: { udp: ports.assign },
         extra_step: translate({
