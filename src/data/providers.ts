@@ -237,8 +237,12 @@ export const providersData: HostingProvider[] = [
         name: 'Bloom.Host',
         url: 'https://www.bloom.host/',
         updated: '2026-05-25',
-        links: { article: 'https://docs.bloom.host/multiplatform/geysermc' },
-        config: { udp: ports.assign, confirmed: false }
+        links: { article: 'https://bloom-host-feature-ports-and.bloomdocs.pages.dev/multiplatform/geysermc' },
+        config: { udp: ports.assign },
+        extra_step: translate({
+            id: 'providers.config.bloomhost.extra_step',
+            message: "Route players through TLS for a HTTPS setup, see [their guide](https://bloom-host-feature-ports-and.bloomdocs.pages.dev/ports-and-connections#players-through-the-tls-proxy) for more details on how."
+        })
     },
     {
         name: 'CloudNord',
