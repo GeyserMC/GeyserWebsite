@@ -100,13 +100,13 @@ export const providersData: HostingProvider[] = [
         },
         install: translate({
             id: 'providers.provider.anvil_mc.install',
-            message: "In the Anvil-MC app, open your server's settings, go to the Network section and turn on 'Bedrock Support'. Geyser and Floodgate are installed and configured on the next server start. If automatic setup every fails, open your server's file explorer and upload the Geyser JAR file in the mods / plugins folder."
+            message: "In the Network section of your server's settings, turn on 'Bedrock Support' and restart the server."
         }),
         config: { preconfigured: true, port: ports.fromHost },
         // Bedrock players use a different address than Java players
         connect: translate({
             id: 'providers.provider.anvil_mc.connect',
-            message: "In Minecraft: Bedrock Edition, go to Play, then Servers, and select Add Server. Enter the address and port shown next to 'BEDROCK IP' on your server in the Anvil-MC app. This is a different address from the Java server's."
+            message: "Use the address and port shown next to 'BEDROCK IP' in the Anvil-MC app, not the Java address."
         })
     },
     {
