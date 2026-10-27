@@ -224,17 +224,14 @@ export const providersData: HostingProvider[] = [
         links: {
             article: 'https://help.bisecthosting.com/hc/en-us/articles/40526648951707-How-to-Install-Geyser-and-FloodGate-on-a-Minecraft-Server'
         },
-        config: { preconfigured: true, port: 19132 },
+        config: { preconfigured: true, port: {obtain: ports.fromHost.obtain + " " + translate({
+            id: 'providers.config.bisecthosting.port',
+            message: "On a dedicated IP plan, you can allocate and use 19132 instead."
+        })}},
         install: translate({
             id: 'providers.config.bisecthosting.install',
             message: "Install Geyser by heading to the Startup tab and turn on `Enable Geyser`. Keeping this option enabled will keep Geyser auto-updated."
-        }),
-        notices: {
-            warn: translate({
-                id: 'providers.provider.bisecthosting.warn',
-                message: "If you cannot connect after following these instructions, contact Bisect Support, as they reportedly have UDP disabled on some nodes."
-            })
-        }
+        })
     },
     {
         name: 'Bloom.Host',
