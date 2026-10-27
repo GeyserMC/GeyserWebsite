@@ -89,6 +89,23 @@ const onlyServesRegion = (region: string) => translate({
 
 export const providersData: HostingProvider[] = [
     {
+        name: '4Netplayers',
+        url: 'https://www.4netplayers.com/',
+        updated: '2026-10-27',
+        links: {
+            support: 'https://www.4netplayers.com/support/'
+        },
+        config: { preconfigured: true, port: ports.fromHost },
+        extra_step: translate({
+            id: 'providers.provider.4netplayers.extra_step',
+            message: "If your server was created before 27 October 2026, stop and start it once in the server panel so it gets its Bedrock port."
+        }),
+        connect: translate({
+            id: 'providers.provider.4netplayers.connect',
+            message: "Use the server IP and the port shown as 'Bedrockport' in the server panel, not the Java port."
+        })
+    },
+    {
         name: 'Akliz',
         url: 'https://www.akliz.net/',
         updated: '2026-10-21',
