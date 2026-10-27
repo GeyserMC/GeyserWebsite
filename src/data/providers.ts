@@ -932,6 +932,22 @@ export const providersData: HostingProvider[] = [
         notices: { info: onlyServesRegion('Australia') }
     },
     {
+        name: 'SwiftServers',
+        url: 'https://swiftservers.org/',
+        updated: '2026-10-27',
+        links: {
+            article: 'https://docs.swiftservers.org/getting-started/join-your-server/',
+            discord: 'https://swiftservers.org/discord'
+        },
+        install: infos.installed_by_default,
+        // Geyser and Floodgate run on the network proxy; Bedrock players are sent to the server by the address they join with
+        config: { preconfigured: true, port: 19132 },
+        connect: translate({
+            id: 'providers.provider.swiftservers.connect',
+            message: "Connect directly via `[servername].swiftservers.org` on port `19132`, or connect via `play.swiftservers.org` and do `/join [servername]`."
+        })
+    },
+    {
         name: 'The Minecraft Hosting',
         url: 'https://theminecrafthosting.com/',
         updated: '2024-12-23',
