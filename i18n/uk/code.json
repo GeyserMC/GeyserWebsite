@@ -252,7 +252,7 @@
     "message": "Warning"
   },
   "mdx.setup.unconfirmed_reach_out_update": {
-    "message": "These instructions have not been checked for NetherNet yet. If Bedrock players can't join, reach out to {name} to get instructions on how to use Geyser, and let us know on {discord} so we can update this guide."
+    "message": "These instructions have not been checked for NetherNet yet. If Bedrock players can't join, reach out to {name} to get instructions on how to use Geyser, and let us know on {discord} so we can update this guide. Please see our {blog} for more information."
   },
   "mdx.setup.try_not_listed": {
     "message": "If your host cannot give you a separate port, follow the {notListed} instead. Players then join through {warden}, an external signaling service."

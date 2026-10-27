@@ -302,8 +302,8 @@ export const MDXTranslatable = {
         unconfirmed_title: () => <Translate id="mdx.setup.unconfirmed_title">Not checked for NetherNet yet</Translate>,
         warning_title: () => <Translate id="mdx.setup.warning_title">Warning</Translate>,
         unconfirmed: ({ name }: { name: string }) => (
-            <Translate id="mdx.setup.unconfirmed_reach_out_update" values={{ name, discord: <Link to="https://discord.gg/geysermc">Discord</Link> }}>
-                {"These instructions have not been checked for NetherNet yet. If Bedrock players can't join, reach out to {name} to get instructions on how to use Geyser, and let us know on {discord} so we can update this guide."}
+            <Translate id="mdx.setup.unconfirmed_reach_out_update" values={{ name, discord: <Link to="https://discord.gg/geysermc">Discord</Link>, blog: <a href="/blog/preparing-for-nethernet"><Translate id="mdx.setup.blog_post">blog post</Translate></a>  }}>
+                {"These instructions have not been checked for NetherNet yet. If Bedrock players can't join, reach out to {name} to get instructions on how to use Geyser, and let us know on {discord} so we can update this guide. Please see our {blog} for more information."}
             </Translate>
         ),
         try_not_listed: ({ link }: { link: string }) => (
