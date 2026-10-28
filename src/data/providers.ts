@@ -537,10 +537,10 @@ export const providersData: HostingProvider[] = [
     {
         name: 'Lilypad',
         url: 'https://lilypad.gg',
-        updated: '2026-07-10',
+        updated: '2026-10-28',
         links: { article: "https://lilypad.gg/bedrock", discord: "https://lilypad.gg/discord" },
         install: customInstallLocations.enable_bedrock_crossplay_option,
-        config: { preconfigured: true, port: ports.fromHost, confirmed: false }
+        config: { preconfigured: true, port: ports.fromHost }
     },
     {
         name: 'MC-HOST24.de',
@@ -795,13 +795,13 @@ export const providersData: HostingProvider[] = [
     {
         name: 'Play Hosting',
         url: 'https://play.hosting',
-        updated: '2026-07-10',
+        updated: '2026-10-28',
         links: {
             article: 'https://help.play.hosting/minecraft/crossplay',
             discord: 'https://discord.com/invite/PmXc62p4PN'
         },
         install: customInstallLocations.enable_bedrock_crossplay_option,
-        config: { preconfigured: true, port: ports.fromHost, confirmed: false }
+        config: { preconfigured: true, port: 19132 }
     },
     {
         name: 'PUBCS',
