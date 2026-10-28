@@ -196,3 +196,17 @@ Code 83 indicates that a connection was successfully made to the signalling serv
 - Is the WebRTC port forwarded for **UDP**?
 - Is the WebRTC accessible on your local network?
   - This does not apply to servers from hosting providers
+
+### 95 {/* #code-webrtc-timeout */}
+Code 95 indicates a WebRTC connection was made, but was unable to complete in a certain time frame.
+
+**Troubleshooting steps**:
+- Check if there are any firewall rules that would prevent the connection from working correctly
+
+### 48, 49, 90 {/* #code-bad-packet */}
+These codes are sent when a bad or invalid packet is sent to your client.
+
+**Troubleshooting steps**:
+- Ensure the tool you're using to join your server is up to date
+  - MCCompanion, MCXboxBroadcast, BedrockTogether and GeyserConnect to name a few
+- Ensure you're using the latest build of Geyser
