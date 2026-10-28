@@ -69,10 +69,6 @@ const customInstallLocations = {
         id: 'providers.config.templates.install_location.enable_bedrock_crossplay',
         message: "Select the 'Enable Bedrock crossplay?' option when changing your server software to automatically install and configure Geyser and Floodgate."
     }),
-    software_tab_bedrock_crossplay: translate({
-        id: 'providers.config.templates.install_location.software_tab_bedrock_crossplay',
-        message: "Open the Software tab, turn on 'Enable Bedrock crossplay', then start or restart your server. The panel automatically installs and configures Geyser and Floodgate."
-    }),
     settings_tab_bedrock_crossplay: translate({
         id: 'providers.config.templates.install_location.settings_tab_bedrock_crossplay',
         message: "In the Settings tab of the server panel, turn on 'Bedrock crossplay' and restart the server."
@@ -543,7 +539,7 @@ export const providersData: HostingProvider[] = [
         url: 'https://lilypad.gg',
         updated: '2026-10-28',
         links: { article: "https://lilypad.gg/bedrock", discord: "https://lilypad.gg/discord" },
-        install: customInstallLocations.software_tab_bedrock_crossplay,
+        install: customInstallLocations.enable_bedrock_crossplay_option,
         config: { preconfigured: true, port: ports.fromHost }
     },
     {
@@ -804,7 +800,7 @@ export const providersData: HostingProvider[] = [
             article: 'https://help.play.hosting/minecraft/crossplay',
             discord: 'https://discord.com/invite/PmXc62p4PN'
         },
-        install: customInstallLocations.software_tab_bedrock_crossplay,
+        install: customInstallLocations.enable_bedrock_crossplay_option,
         config: { preconfigured: true, port: 19132 }
     },
     {
