@@ -114,10 +114,8 @@ export const MDXTranslatable = {
             </Translate>
         ),
         connect_tcp_udp: () => (
-            <Translate id="mdx.setup.connect_tcp_udp" values={{
-                webrtcPort: code('webrtc-port')
-            }}>
-                {"The Geyser port has to be forwarded for both TCP and UDP. Before NetherNet, forwarding UDP was enough. Now, players use TCP to find your server and UDP to play on it, so without TCP your server will not show up. If you use the \"NetherNet and RakNet\" option, also forward the {webrtcPort} for UDP."}
+            <Translate id="mdx.setup.connect_tcp_udp">
+                {"The Geyser port has to be forwarded for both TCP and UDP. Before NetherNet, forwarding UDP was enough. Now, players use TCP to find your server and UDP to play on it, so without TCP your server will not show up."}
             </Translate>
         ),
         connect_options: () => <Translate id="mdx.setup.connect_options">You have two options:</Translate>,
@@ -261,32 +259,12 @@ export const MDXTranslatable = {
         ),
         transport_nethernet_explainer: () => (
             <Translate id="mdx.setup.transport_nethernet_simple">
-                NetherNet is supported fully by 26.50+. If you'd like to also have working MOTD and player count for older versions, you will need to set up both NetherNet and Raknet.
-            </Translate>
-        ),
-        transport_both_explainer: () => (
-            <Translate id="mdx.setup.transport_both_compat">
-                Also accepts RakNet, for additional compatibility: some Bedrock versions, such as 26.40, fetch the server's MOTD and player count over RakNet. This option needs a separate UDP port for NetherNet.
+                NetherNet is supported fully by 26.50+. Connecting will still work on 26.40+.
             </Translate>
         ),
         placeholder: () => <Translate id="mdx.setup.placeholder_word">Replace this</Translate>,
         replace_with: () => <Translate id="mdx.setup.replace_with_simple">With this</Translate>,
         placeholder_java_port: () => <Translate id="mdx.setup.placeholder_java_port">The port of the Java server.</Translate>,
-        placeholder_java_port_udp: () => (
-            <Translate id="mdx.setup.placeholder_java_port_udp" values={{ port: <InlineCode>port</InlineCode> }}>
-                {"A UDP port for NetherNet, other than {port}. This can be the Java server's port: the Java server only uses it over TCP, so Geyser can use it over UDP. Any other available UDP port works too."}
-            </Translate>
-        ),
-        placeholder_second_available_port: () => (
-            <Translate id="mdx.setup.placeholder_second_available_port" values={{ port: <InlineCode>port</InlineCode> }}>
-                {"An available UDP port for NetherNet, other than {port}. Open it for UDP."}
-            </Translate>
-        ),
-        raknet_on_port: () => (
-            <Translate id="mdx.setup.raknet_on_port" values={{ port: <InlineCode>port</InlineCode> }}>
-                {"RakNet uses {port} over UDP, so that port has to be open for UDP as well."}
-            </Translate>
-        ),
 
         summary_nethernet_reported: () => <Translate id="mdx.setup.summary.nethernet_reported_generic">Reported to work with NetherNet</Translate>,
         summary_supporter_configures: ({ name }: { name: string }) => (

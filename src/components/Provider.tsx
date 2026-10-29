@@ -209,8 +209,6 @@ const signalingSetup = (provider: HostingProvider) => {
     return { builtin, external, separateTcp, bedrockPort };
 }
 
-type Transport = 'nethernet' | 'both';
-
 type ConfigNote = {
     placeholder?: string; // shown in the placeholder column; notes without one are shown below the table
     text: React.ReactNode;
@@ -219,7 +217,7 @@ type ConfigNote = {
 /**
  * Builds the `bedrock` section of the Geyser config for a provider, and the notes explaining its placeholders.
  */
-const buildConfig = (provider: HostingProvider, transport: Transport, selfHost: boolean) => {
+const buildConfig = (provider: HostingProvider, selfHost: boolean) => {
     const { config } = provider;
     if (isPreconfigured(config)) {
         throw new Error(`${provider.name} is preconfigured, so it has no config to build`);
@@ -253,20 +251,9 @@ const buildConfig = (provider: HostingProvider, transport: Transport, selfHost: 
 
     if (separateTcp) {
         lines.push(`  webrtc-port: ${portValue(udp, 'UDP_PORT')}`);
-        if (transport === 'both') {
-            notes.push({ text: <MDXTranslatable.setup.raknet_on_port /> });
-        }
-    } else if (transport === 'both' && !selfHost) {
-        // RakNet stays on `port`. The Java server only uses its port over TCP, so NetherNet can use it over UDP
-        // without the user having to get another port.
-        lines.push('  webrtc-port: UDP_PORT');
-        notes.push({ placeholder: 'UDP_PORT', text: <MDXTranslatable.setup.placeholder_java_port_udp /> });
-    } else if (transport === 'both') {
-        lines.push('  webrtc-port: UDP_PORT');
-        notes.push({ placeholder: 'UDP_PORT', text: <MDXTranslatable.setup.placeholder_second_available_port /> });
     }
 
-    lines.push(`  transport: ${transport}`);
+    lines.push('  transport: nethernet');
 
     // Built-in signaling is the default, so the signaling section only needs changes for hosts that confirmed something else.
     // Sharing the Java server's port always ends up on external signaling, so say so instead of relying on Geyser's fallback.
@@ -288,18 +275,15 @@ const buildConfig = (provider: HostingProvider, transport: Transport, selfHost: 
     return { yaml: lines.join('\n'), notes };
 }
 
-const ConfigSnippet = ({ provider, transport, configLocation, selfHost, explain = true }: { provider: HostingProvider, transport: Transport, configLocation: string, selfHost: boolean, explain?: boolean }) => {
-    const { yaml, notes } = buildConfig(provider, transport, selfHost);
+const ConfigSnippet = ({ provider, configLocation, selfHost }: { provider: HostingProvider, configLocation: string, selfHost: boolean }) => {
+    const { yaml, notes } = buildConfig(provider, selfHost);
     const placeholders = notes.filter(note => note.placeholder);
     const others = notes.filter(note => !note.placeholder);
     return (
         <>
-            {explain && (
-                <p className={styles.transportExplainer}>
-                    {transport === 'nethernet' && <MDXTranslatable.setup.transport_nethernet_explainer />}
-                    {transport === 'both' && <MDXTranslatable.setup.transport_both_explainer />}
-                </p>
-            )}
+            <p className={styles.transportExplainer}>
+                <MDXTranslatable.setup.transport_nethernet_explainer />
+            </p>
             <CodeBlock language="yaml" title={configLocation}>{yaml}</CodeBlock>
             {placeholders.length > 0 && (
                 <table className={styles.placeholders}>
@@ -503,30 +487,13 @@ export const Step = ({ title, id, children }: { title: React.ReactNode, id: stri
 );
 
 /**
- * The config changes for a server, with a tab for NetherNet only and one that also accepts RakNet.
+ * The config changes for a server.
  */
-const ConfigTabs = ({ provider, configLocation, selfHost = false, standalone = false }: { provider: HostingProvider, configLocation: string, selfHost?: boolean, standalone?: boolean }) => {
-    // With only the Java server's port, there is no second UDP port for RakNet, so only NetherNet is possible
-    if (!isPreconfigured(provider.config) && provider.config.udp === 'java') {
-        return (
-            <>
-                <p><MDXTranslatable.setup.open_config_match configLocation={configLocation} /></p>
-                <ConfigSnippet provider={provider} transport="nethernet" configLocation={configLocation} selfHost={selfHost} explain={false} />
-                <p>{standalone ? <MDXTranslatable.setup.restart_geyser /> : <MDXTranslatable.setup.restart_server />}</p>
-            </>
-        );
-    }
+const ConfigStep = ({ provider, configLocation, selfHost = false, standalone = false }: { provider: HostingProvider, configLocation: string, selfHost?: boolean, standalone?: boolean }) => {
     return (
         <>
             <p><MDXTranslatable.setup.open_config_match configLocation={configLocation} /></p>
-            <Tabs groupId="geyser-transport">
-                <TabItem value="nethernet" label={translate({ id: 'mdx.setup.transport_nethernet_tab', message: 'NetherNet' })} default>
-                    <ConfigSnippet provider={provider} transport="nethernet" configLocation={configLocation} selfHost={selfHost} />
-                </TabItem>
-                <TabItem value="both" label={translate({ id: 'mdx.setup.transport_both_tab', message: 'NetherNet and RakNet' })}>
-                    <ConfigSnippet provider={provider} transport="both" configLocation={configLocation} selfHost={selfHost} />
-                </TabItem>
-            </Tabs>
+                <ConfigSnippet provider={provider} configLocation={configLocation} selfHost={selfHost} />
             <p>{standalone ? <MDXTranslatable.setup.restart_geyser /> : <MDXTranslatable.setup.restart_server />}</p>
         </>
     );
@@ -534,7 +501,7 @@ const ConfigTabs = ({ provider, configLocation, selfHost = false, standalone = f
 
 // The config step for self-hosted servers, for use in the self-hosting pages
 export const SelfHostConfig = ({ configLocation, standalone }: { configLocation: string, standalone?: boolean }) => (
-    <ConfigTabs provider={selfHosted} configLocation={configLocation} selfHost standalone={standalone} />
+    <ConfigStep provider={selfHosted} configLocation={configLocation} selfHost standalone={standalone} />
 );
 
 const ConnectStep = ({ provider }: { provider: HostingProvider }) => (
@@ -601,14 +568,14 @@ export const ProviderGeyserSetup: React.FC<ProviderGeyserSetupProps> = ({ jarNam
                         <Tabs groupId="not-listed-ports" queryString="ports">
                             {notListedVariants.map((variant, i) => (
                                 <TabItem key={variant.value} value={variant.value} label={variant.label} default={i === 0}>
-                                    <ConfigTabs provider={variant.provider} configLocation={configLocation} />
+                                    <ConfigStep provider={variant.provider} configLocation={configLocation} />
                                 </TabItem>
                             ))}
                         </Tabs>
                     ) : provider.config.preconfigured ? (
                         <p><MDXTranslatable.setup.preconfigured name={provider.name} /></p>
                     ) : (
-                        <ConfigTabs provider={provider} configLocation={configLocation} />
+                        <ConfigStep provider={provider} configLocation={configLocation} />
                     )}
                 </Step>
 
