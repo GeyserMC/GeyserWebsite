@@ -54,14 +54,6 @@ If you need help with the migration, please join our [Discord](https://discord.g
 - A Geyser dump (get it by running `/geyser dump` in the server console)
 - A description of the issues you are seeing
 
-## Using NetherNet and RakNet Together {/* #using-nethernet-and-raknet-together */}
-
-If some of your players are still on versions older than 26.40, you can also set `transport` to `both`. Geyser then accepts NetherNet and RakNet side by side. 
-However, the two transport modes cannot run on the same UDP port, so in this mode you also need to set `webrtc-port` to a separate UDP port for 
-NetherNet and open it. Once 26.60 is out and everyone has updated, you can switch to `nethernet` and close the old RakNet port.
-
-Note: 26.30 support will be removed once we add support for 26.60, so if you have players on old versions, ask them to update!
-
 ## HTTPS and the Trust Prompt {/* #https-and-the-trust-prompt */}
 
 Built-in signaling uses plain HTTP by default. While this works, players see a "trust on first use" prompt the first time they join your server.
