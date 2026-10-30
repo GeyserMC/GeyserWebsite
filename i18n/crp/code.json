@@ -90,7 +90,7 @@
     "message": "crwdns39162:0crwdne39162:0"
   },
   "mdx.setup.connect_tcp_udp": {
-    "message": "crwdns39164:0{webrtcPort}crwdne39164:0"
+    "message": "crwdns39818:0crwdne39818:0"
   },
   "mdx.setup.connect_options": {
     "message": "crwdns39166:0crwdne39166:0"
@@ -204,10 +204,7 @@
     "message": "crwdns39238:0{name}crwdne39238:0"
   },
   "mdx.setup.transport_nethernet_simple": {
-    "message": "crwdns39240:0crwdne39240:0"
-  },
-  "mdx.setup.transport_both_compat": {
-    "message": "crwdns39242:0crwdne39242:0"
+    "message": "crwdns39820:0crwdne39820:0"
   },
   "mdx.setup.placeholder_word": {
     "message": "crwdns39244:0crwdne39244:0"
@@ -217,15 +214,6 @@
   },
   "mdx.setup.placeholder_java_port": {
     "message": "crwdns39248:0crwdne39248:0"
-  },
-  "mdx.setup.placeholder_java_port_udp": {
-    "message": "crwdns39250:0{port}crwdne39250:0"
-  },
-  "mdx.setup.placeholder_second_available_port": {
-    "message": "crwdns39252:0{port}crwdne39252:0"
-  },
-  "mdx.setup.raknet_on_port": {
-    "message": "crwdns39254:0{port}crwdne39254:0"
   },
   "mdx.setup.summary.nethernet_reported_generic": {
     "message": "crwdns39256:0crwdne39256:0"
@@ -316,12 +304,6 @@
   },
   "mdx.setup.connect.port": {
     "message": "crwdns39314:0crwdne39314:0"
-  },
-  "mdx.setup.transport_nethernet_tab": {
-    "message": "crwdns39316:0crwdne39316:0"
-  },
-  "mdx.setup.transport_both_tab": {
-    "message": "crwdns39318:0crwdne39318:0"
   },
   "providers.ports.assign": {
     "message": "crwdns39320:0crwdne39320:0"
