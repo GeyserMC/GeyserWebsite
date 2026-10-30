@@ -416,6 +416,18 @@ export const providersData: HostingProvider[] = [
         config: { udp: ports.newPort, confirmed: false }
     },
     {
+        name: 'Flux',
+        url: 'https://runonflux.com/games/minecraft',
+        updated: '2026-10-16',
+        links: {
+            article: 'https://runonflux.com/games/minecraft/java-vs-bedrock',
+            support: 'https://runonflux.com/games/minecraft/support',
+            discord: 'https://discord.gg/runonflux'
+        },
+        install: customInstallLocations.plugin_list,
+        config: { preconfigured: true, port: ports.fromHost }
+    },
+    {
         name: 'FREAKHOSTING',
         url: 'https://freakhosting.com/',
         updated: '2024-12-23',
