@@ -378,7 +378,7 @@ export const providersData: HostingProvider[] = [
         },
         install: translate({
             id: 'providers.provider.flux.install',
-            message: "Install Geyser from the Mods tab of your server dashboard and restart the server. Servers created before 16 October 2026 first apply the 'Bedrock crossplay port' update in Deployment Settings."
+            message: "Install Geyser from the Mods tab of your server dashboard and restart the server."
         }),
         config: { preconfigured: true, port: ports.fromHost }
     },
