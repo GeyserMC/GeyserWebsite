@@ -376,10 +376,7 @@ export const providersData: HostingProvider[] = [
             support: 'https://runonflux.com/games/minecraft/support',
             discord: 'https://discord.gg/runonflux'
         },
-        install: translate({
-            id: 'providers.provider.flux.install',
-            message: "Install Geyser from the Mods tab of your server dashboard and restart the server."
-        }),
+        install: customInstallLocations.plugin_list,
         config: { preconfigured: true, port: ports.fromHost }
     },
     {

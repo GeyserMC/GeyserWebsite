@@ -401,9 +401,6 @@
   "providers.provider.elfidc.custom": {
     "message": "When placing an order, choose Paper/Spigot + Geyser, which will automatically install the Geyser plugin."
   },
-  "providers.provider.flux.install": {
-    "message": "Install Geyser from the Mods tab of your server dashboard and restart the server."
-  },
   "providers.provider.gportal.description": {
     "message": "Pick a port based on your query port. Scheme: Query port: xxx65. The ports from xxx66 to xxx70 are available. For example, if your query port is 12365, then Geyser can only run under the port range 12366-12370."
   },
