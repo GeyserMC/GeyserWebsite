@@ -89,6 +89,15 @@ const onlyServesRegion = (region: string) => translate({
 
 export const providersData: HostingProvider[] = [
     {
+        name: '4Netplayers',
+        url: 'https://www.4netplayers.com/',
+        updated: '2026-10-30',
+        links: {
+            support: 'https://www.4netplayers.com/support/'
+        },
+        config: { preconfigured: true, port: ports.fromHost }
+    },
+    {
         name: 'Akliz',
         url: 'https://www.akliz.net/',
         updated: '2026-10-21',
