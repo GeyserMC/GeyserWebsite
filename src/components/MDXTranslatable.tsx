@@ -130,10 +130,9 @@ export const MDXTranslatable = {
         connect_playit: () => (
             <Translate id="mdx.setup.connect_playit" values={{
                 playit: bold('playit.gg'),
-                guide: <Link to='/wiki/geyser/playit-gg'><Translate id="mdx.setup.connect_playit.guide">playit.gg Setup</Translate></Link>,
-                status: <Link to='https://status.playit.gg/3/adding-nethernet-support'><Translate id="mdx.setup.connect_playit.status">NetherNet support on playit.gg</Translate></Link>
+                guide: <Link to='https://playit.gg/support/use-geyser-with-playit/'><Translate id="mdx.setup.connect_playit.guide">playit.gg Setup</Translate></Link>,
             }}>
-                {"{playit}: if you cannot open a port, or do not want to expose your home IP address, playit.gg can create a tunnel for you. See {guide}. That guide was written for RakNet. For NetherNet, see {status}. Ngrok does not work, since it does not support UDP."}
+                {"{playit}: if you cannot open a port, or do not want to expose your home IP address, playit.gg can create a tunnel for you. See {guide}. Ngrok does not work, since it does not support UDP."}
             </Translate>
         ),
         https_step_title: () => <Translate id="mdx.setup.https_step_title">Recommended: Set up HTTPS for signaling</Translate>,
