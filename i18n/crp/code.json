@@ -105,13 +105,10 @@
     "message": "crwdns39172:0crwdne39172:0"
   },
   "mdx.setup.connect_playit": {
-    "message": "crwdns39174:0{playit}crwdnd39174:0{guide}crwdnd39174:0{status}crwdne39174:0"
+    "message": "crwdns39824:0{playit}crwdnd39824:0{guide}crwdne39824:0"
   },
   "mdx.setup.connect_playit.guide": {
     "message": "crwdns39176:0crwdne39176:0"
-  },
-  "mdx.setup.connect_playit.status": {
-    "message": "crwdns39178:0crwdne39178:0"
   },
   "mdx.setup.https_step_title": {
     "message": "crwdns39180:0crwdne39180:0"

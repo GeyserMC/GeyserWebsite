@@ -13,8 +13,10 @@ crwdns38908:0[crwdnd38908:0](/wiki/geyser/setup)crwdne38908:0
 
 :::
 
-:::info crwdns38910:0crwdne38910:0
+:::info
+
 crwdns38912:0`webrtc-port`crwdnd38912:0[crwdnd38912:0](https://warden.cloud)crwdne38912:0
+
 :::
 
 ## crwdns38914:0crwdne38914:0 {/* #port-forwarding-on-linuxwindowsmacos */}
@@ -23,7 +25,7 @@ crwdns38916:0[crwdnd38916:0](https://www.howtogeek.com/66214/how-to-forward-port
 
 :::info
 
-crwdns38918:0[crwdnd38918:0](/wiki/geyser/playit-gg/)crwdne38918:0
+crwdns39822:0[crwdnd39822:0](https://playit.gg/support/use-geyser-with-playit/)crwdne39822:0
 
 :::
 

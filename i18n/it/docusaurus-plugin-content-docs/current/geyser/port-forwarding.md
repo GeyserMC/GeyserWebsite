@@ -14,10 +14,12 @@ If you are using a Minecraft server hosting provider (e.g. Aternos, or Nodecraft
 
 :::
 
-:::info Ports that need to be opened
+:::info
+
 With NetherNet, the Geyser port (by default 19132) has to be open for **both TCP and UDP**: players find the server over TCP (signaling), and play on it over UDP.
 If you use the "NetherNet and RakNet" option, also open the `webrtc-port` for UDP.
 With external signaling, such as [Warden](https://warden.cloud), only UDP for WebRTC is needed.
+
 :::
 
 ## Port forwarding on Linux/Windows/macOS {/* #port-forwarding-on-linuxwindowsmacos */}
@@ -32,7 +34,7 @@ Do note: if you do not have a static IP address, your IP address may change over
 
 Some ISPs (Internet Service Providers) block certain ports, or don't allow you to open ports (e.g. by using CGNAT, which doesn't allow you to open a port with a dynamic IP).
 Other ISPs may require you to pay extra for a static IP address.\
-As an alternative to port forwarding, you can use [playit.gg](/wiki/geyser/playit-gg/) to create a tunnel.
+As an alternative to port forwarding, you can use [playit.gg](https://playit.gg/support/use-geyser-with-playit/) to create a tunnel.
 
 :::
 
