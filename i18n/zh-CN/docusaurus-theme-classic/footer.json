@@ -1,0 +1,50 @@
+{
+  "link.title.Wiki": {
+    "message": "Wiki",
+    "description": "The title of the footer links column with title=Wiki in the footer"
+  },
+  "link.title.Downloads": {
+    "message": "Downloads",
+    "description": "The title of the footer links column with title=Downloads in the footer"
+  },
+  "link.title.Community": {
+    "message": "Community",
+    "description": "The title of the footer links column with title=Community in the footer"
+  },
+  "link.title.More": {
+    "message": "More",
+    "description": "The title of the footer links column with title=More in the footer"
+  },
+  "link.item.label.REST APIs": {
+    "message": "REST APIs",
+    "description": "The label of footer link with label=REST APIs linking to wiki/api/api.geysermc.org/global-api"
+  },
+  "link.item.label.Other": {
+    "message": "Other",
+    "description": "The label of footer link with label=Other linking to download?project=other-projects"
+  },
+  "link.item.label.Blog": {
+    "message": "Blog",
+    "description": "The label of footer link with label=Blog linking to blog"
+  },
+  "link.item.label.Donate": {
+    "message": "Donate",
+    "description": "The label of footer link with label=Donate linking to https://opencollective.com/geysermc"
+  },
+  "link.item.label.Global Linking": {
+    "message": "Global Linking",
+    "description": "The label of footer link with label=Global Linking linking to https://link.geysermc.org/"
+  },
+  "link.item.label.Privacy Policy": {
+    "message": "Privacy Policy",
+    "description": "The label of footer link with label=Privacy Policy linking to https://ziax.com/terms/privacy-policy/"
+  },
+  "copyright": {
+    "message": "Copyright © 2026 GeyserMC. Built with Docusaurus.<br>This website is not an official Minecraft website and is not associated with Mojang Studios or Microsoft. All product and company names are trademarks or registered trademarks of their respective holders. Use of these names does not imply any affiliation or endorsement by them.",
+    "description": "The footer copyright"
+  },
+  "logo.alt": {
+    "message": "GeyserMC logo",
+    "description": "The alt text of footer logo"
+  }
+}

@@ -1,0 +1,1 @@
+{"parameters":[{"description":"Number between 1 - page limit. Defaults to 1","example":1,"in":"path","name":"page","required":true,"schema":{"type":"string"}}]}

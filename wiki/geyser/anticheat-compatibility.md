@@ -1,6 +1,9 @@
 ---
 title: Anticheat Compatibility
-description: A list of community compiled list of Anticheats and their compatibility with Geyser.
+description: >-
+  A list of community compiled list of Anticheats and their compatibility with
+  Geyser.
+crowdin_page_id: 9c8e7b0f-1b55-438e-b52f-0f13a26697b6
 ---
 
 :::caution
@@ -10,11 +13,12 @@ This is a community-compiled list and does not indicate any endorsement from Gey
 
 :::
 
-### AntiCheat compatibility reports {#anticheat-compatibility-reports}
+### AntiCheat compatibility reports {/* #anticheat-compatibility-reports */}
 
 Full Compatibility (Checks Bedrock Players Accurately)
 
 - [Boar](https://modrinth.com/plugin/boar) - Last checked on 13th March 2026
+- [Penguin](https://builtbybit.com/resources/penguin-bedrock-geyser-anti-cheat.118006/) (Paid) - Last checked on 10th August 2026
 - [Themis](https://www.spigotmc.org/resources/90766/) - Last checked on 11th July 2024
 
 Partially Compatible (Does not Check/Ignores Bedrock Players)

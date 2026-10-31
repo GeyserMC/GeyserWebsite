@@ -1,0 +1,102 @@
+.intro,
+.notes,
+.empty {
+    max-width: 48rem;
+    margin: 2rem auto;
+}
+
+.empty {
+    text-align: center;
+    color: var(--ifm-color-emphasis-700);
+}
+
+.tier {
+    margin: 2.5rem 0;
+
+    h2 {
+        text-align: center;
+    }
+}
+
+// Flex rather than grid, so a row that is not full stays centered
+.grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1.5rem;
+
+    > .card {
+        flex: 0 1 18rem;
+    }
+}
+
+.goldGrid > .card {
+    flex-basis: 26rem;
+}
+
+.card {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    padding: 1.5rem;
+    border: 1px solid var(--ifm-color-emphasis-300);
+    border-radius: var(--ifm-card-border-radius, 0.5rem);
+    background: var(--ifm-card-background-color);
+    text-align: center;
+
+    h3 {
+        margin: 0;
+    }
+}
+
+.gold {
+    border: 2px solid #d4af37;
+    padding: 2rem;
+
+    .logoPlate {
+        height: 7rem;
+    }
+}
+
+.silver {
+    border-color: #a8a9ad;
+}
+
+// Logos sit on a dark plate in both themes, so light and dark artwork both stay readable
+.logoPlate {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 5.5rem;
+    padding: 1rem;
+    border-radius: 0.375rem;
+    background-color: #1b1b1d;
+}
+
+.logo {
+    max-height: 100%;
+    max-width: 100%;
+    object-fit: contain;
+}
+
+.description {
+    flex-grow: 1;
+
+    p:last-child {
+        margin-bottom: 0;
+    }
+}
+
+// Both buttons share one row: they split the width evenly, with less padding than usual so they fit narrow cards.
+// Long translations wrap inside the button instead of pushing it onto a new line.
+.links {
+    display: flex;
+    gap: 0.5rem;
+
+    > :global(.button) {
+        flex: 1 1 0;
+        min-width: 0;
+        padding-inline: 0.75rem;
+        white-space: normal;
+    }
+}

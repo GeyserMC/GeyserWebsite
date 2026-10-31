@@ -1,6 +1,9 @@
 ---
 title: Custom Blocks
-description: Geysers allows custom blocks to be mapped to Vanilla Java blockstates or modded blocks to allow custom block models.
+description: >-
+  Geysers allows custom blocks to be mapped to Vanilla Java blockstates or
+  modded blocks to allow custom block models.
+crowdin_page_id: 44954bd0-b952-447f-bf94-088e679a2d0f
 ---
 
 To setup custom blocks in geyser, you have to choose how you are going to register your blocks. The easiest is [using a json file](#json-mappings) but you can also [use a Geyser extension](#geyser-extensions).
@@ -12,7 +15,7 @@ Geyser does not convert resource packs from Java Edition, and also does not gene
 However, you can use automatic tools such as [Rainbow](/wiki/other/rainbow/) to make converting content simpler.
 :::
 
-## Enabling custom blocks {#enabling-custom-blocks}
+## Enabling custom blocks {/* #enabling-custom-blocks */}
 
 Before beginning, ensure that `gameplay.enable-custom-content` is set to `true` in your `config.yml` file.
 
@@ -25,13 +28,13 @@ Before beginning, ensure that `gameplay.enable-custom-content` is set to `true` 
 enable-custom-content: true
 ```
 
-## JSON mappings {#json-mappings}
+## JSON mappings {/* #json-mappings */}
 
 The JSON mappings use a similar structure to that of behavior packs registering blocks. The equivalent components are listed in the [Minecraft: Bedrock Edition Creator Documentation](https://learn.microsoft.com/en-us/minecraft/creator/reference/content/blockreference/examples/blockcomponents/blockcomponentslist).
 
 Custom mappings files that register blocks or items should be placed in the `custom_mappings` folder. This folder is created when you start your server. It is located in the same folder as the `Geyser-Standalone.jar` file for standalone and inside your Geyser data folder for a plugin. If you do not have this folder, ensure you are on the latest version of Geyser.
 
-### Example mappings file {#example-mappings-file}
+### Example mappings file {/* #example-mappings-file */}
 
 ```json
 {
@@ -84,7 +87,7 @@ Custom mappings files that register blocks or items should be placed in the `cus
 }
 ```
 
-### Schema {#schema}
+### Schema {/* #schema */}
 
 The following details the schema for the mappings file. Only the `name` field is strictly required. All other fields are optional.
 
@@ -302,7 +305,7 @@ The following details the schema for the mappings file. Only the `name` field is
 
 </div>
 
-## Geyser extensions {#geyser-extensions}
+## Geyser extensions {/* #geyser-extensions */}
 
 In this example, we will create a custom block that overrides the vanilla redstone dot. This block will be placed on top of a block and will emit a visible redstone signal when powered.
 

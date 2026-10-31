@@ -1,6 +1,7 @@
 ---
 title: Custom Content
 description: How to use custom content (requiring resource packs) with Geyser.
+crowdin_page_id: 13c1e818-62db-4e39-9791-f865cabae693
 ---
 
 Geyser supports mapping various custom additions to the game via resource packs and mappings, such as custom items, blocks, and skulls. See:
@@ -16,7 +17,7 @@ Geyser does not convert resource packs from Java Edition automatically.
 However, you can use automatic tools such as [Rainbow](/wiki/other/rainbow/) or [Thunder](/wiki/other/thunder) to make converting custom content simpler.
 :::
 
-## JSON mappings {#json-mappings}
+## JSON mappings {/* #json-mappings */}
 
 Various custom additions to the game will require writing custom JSON mappings for Geyser. These mappings are placed
 within the `custom_mappings` folder in Geyser's config directory. To enable the usage of custom JSON mappings, ensure

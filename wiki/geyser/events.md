@@ -1,6 +1,10 @@
 ---
 title: Geyser Events
-description: Geyser has a powerful event system that allows you to listen to events that are sent by Geyser. Events are at the heart of Geyser Extensions, and can be used by plugins and mods as well.
+description: >-
+  Geyser has a powerful event system that allows you to listen to events that
+  are sent by Geyser. Events are at the heart of Geyser Extensions, and can be
+  used by plugins and mods as well.
+crowdin_page_id: 77de57f3-e693-49a4-af6a-215f6ee6d42a
 ---
 
 # Geyser Events
@@ -8,7 +12,7 @@ Geyser has a powerful event system that allows you to listen to events that are 
 
 Full documentation can be found [here](https://github.com/GeyserMC/Geyser/tree/master/api/src/main/java/org/geysermc/geyser/api/event).
 
-## Event Categories {#event-categories}
+## Event Categories {/* #event-categories */}
 To use events in a Spigot/Paper plugin or a Fabric mod, you need to register the Geyser Event Bus as a listener and then subscribe to the events you want to listen to.
 Extensions can use the @Subscribe annotation.
 
@@ -22,7 +26,7 @@ Events are categorized into the following categories:
 
 To see all the events in the respective categories, click on the links above.
 
-## Usage Examples: {#usage-examples}
+## Usage Examples: {/* #usage-examples */}
 
 Each method that you want to subscribe to an event needs to be annotated with the @Subscribe annotation (from the GeyserMC events package).
 ```java
@@ -93,7 +97,7 @@ public class ExampleMod implements ModInitializer, EventRegistrar {
 
 Therefore, we register it in the server starting event provided by the Fabric API.
 
-## Event Priority {#event-priority}
+## Event Priority {/* #event-priority */}
 Events can have a priority, which is used to determine the order in which the listeners are called. The default priority is NORMAL.
 To (optionally) set the priority of your event listener, you can add the priority to the `@Subscribe` annotation:
 ```java

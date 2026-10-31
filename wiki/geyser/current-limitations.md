@@ -1,6 +1,7 @@
 ---
 title: Current Limitations
 description: Current known limitations of Geyser.
+crowdin_page_id: f58bc543-fe55-45d5-a896-d2651c1f2827
 ---
 
 # Current Limitations
@@ -8,7 +9,7 @@ description: Current known limitations of Geyser.
 With Geyser being a protocol translator between two different games with two different codebases, there are a handful of limitations that Geyser is unfortunately unable to handle. 
 Despite Minecraft Bedrock and Java being quite close in comparison, there are some vast differences in many areas.
 
-## Unfixable {#unfixable}
+## Unfixable {/* #unfixable */}
 
 The following things cannot be fixed without changes to Bedrock or the Java protocol in general. As of now, they are not fixable in Geyser.
 
@@ -37,7 +38,7 @@ The following things cannot be fixed without changes to Bedrock or the Java prot
 - Showing non-vanilla enchantment levels, such as "Silk Touch 2" ([GeyserMC/Geyser#5252](https://github.com/GeyserMC/Geyser/issues/5252))
 - Test instance blocks are not available in Bedrock ([GeyserMC/Geyser#6164](https://github.com/GeyserMC/Geyser/issues/6164))
 
-## Fixed with the included GeyserIntegratedPack {#fixed-with-geyserintegratedpack}
+## Fixed with the included GeyserIntegratedPack {/* #fixed-with-geyserintegratedpack */}
 
 The following changes **are supported** with the included GeyserIntegratedPack, which is a Bedrock resource pack to add features Bedrock doesn't natively support:
 - Custom armor stand poses
@@ -49,7 +50,7 @@ The following changes **are supported** with the included GeyserIntegratedPack, 
 - Scoreboard width that matches Java
 - Inventory UI changes to match Java
 
-## Fixable with Hurricane {#fixable-with-hurricane}
+## Fixable with Hurricane {/* #fixable-with-hurricane */}
 
 The following issues can be worked around with the [Hurricane](/wiki/other/hurricane) plugin/mod. However, these involve Java server
 modifications.

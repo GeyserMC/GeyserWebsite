@@ -1,6 +1,6 @@
 import React from 'react';
 
-export const Columns = ({ children }) => {
+export const Columns = ({ children }: { children: React.ReactNode }) => {
     return <div className="columns">{children}</div>;
 };
 

@@ -1,6 +1,9 @@
 ---
 title: Common Issues
-description: Common issues that people may encounter with Geyser and potential fixes for them.
+description: >-
+  Common issues that people may encounter with Geyser and potential fixes for
+  them.
+crowdin_page_id: 301468c5-271b-4c31-b7a3-35fa55db0bf2
 ---
 
 # Common Issues
@@ -16,12 +19,12 @@ For Floodgate issues see: [Floodgate: Known Issues/Caveats](/wiki/floodgate/issu
 * If you don't use a reverse proxy such as TCPShield make sure that `advanced.java.use-haproxy-protocol` is set to false.
 To fix "Unable to connect to world" with no console errors, see [here](/wiki/geyser/fixing-unable-to-connect-to-world/).
 
-## If the server doesn't show up in the friends list {#if-the-server-doesnt-show-up-in-the-friends-list}
+## If the server doesn't show up in the friends list {/* #if-the-server-doesnt-show-up-in-the-friends-list */}
 
-* *If using Windows 10, iOS, or Android*: try adding the server to the Servers list in-game.
-* *If using Xbox One*: try connecting with [BedrockConnect](/wiki/geyser/using-geyser-with-consoles/).
-* *If using PS4*: [try using a LAN proxy.](/wiki/geyser/using-geyser-with-consoles#playstation-4)
-* *If using Nintendo Switch*: there is currently no way for local servers to show up in the Friends tab, but you can still connect using [BedrockConnect](/wiki/geyser/using-geyser-with-consoles/).
+- *If using Windows 10, iOS, or Android*: try adding the server to the Servers list in-game.
+- *If using Xbox One*: try connecting with [BedrockConnect](/wiki/geyser/using-geyser-with-consoles/).
+- *If using PS4*: [try using a LAN proxy.](/wiki/geyser/using-geyser-with-consoles#playstation-4)
+- *If using Nintendo Switch*: there is currently no way for local servers to show up in the Friends tab, but you can still connect using [BedrockConnect](/wiki/geyser/using-geyser-with-consoles/).
 
 *If the Geyser instance is locally hosted:* try using `localhost` or `0.0.0.0` as the IP address.
 *If that doesn't work, or your Geyser instance is on another computer in the network*: use your **local** IPv4 address.
@@ -32,14 +35,14 @@ See [here](/wiki/geyser/fixing-unable-to-connect-to-world/) for fixing "Unable t
 
 :::
 
-### `java.net.BindException: Address already in use: bind` on startup. {#javanetbindexception-address-already-in-use-bind-on-startup}
+### `java.net.BindException: Address already in use: bind` on startup. {/* #javanetbindexception-address-already-in-use-bind-on-startup */}
 This means something (likely another instance of Geyser) is running on the port you have specified in the config. Please make sure you close all applications running on this port. If you don't recall opening anything, usually restarting your computer fixes this.
 
-### [...]` has been compiled by a more recent version of the Java Runtime (class file version 65.0)` {#-has-been-compiled-by-a-more-recent-version-of-the-java-runtime}
+### [...]` has been compiled by a more recent version of the Java Runtime (class file version 65.0)` {/* #-has-been-compiled-by-a-more-recent-version-of-the-java-runtime */}
 
 See this link for updating to Java 21: https://docs.papermc.io/misc/java-install.
 
-### Hosting provider will not immediately open up UDP. {#hosting-provider-will-not-immediately-open-up-udp}
+### Hosting provider will not immediately open up UDP. {/* #hosting-provider-will-not-immediately-open-up-udp */}
 
 These steps only apply for the standalone version of Geyser.
 This usually has something to do on your host's end. Most commonly, it's because they do not open up ports over the UDP protocol, which is what Minecraft: Bedrock Edition uses, opposed to Minecraft: Java Edition using TCP. 
@@ -59,7 +62,7 @@ This option will most likely not help if you are getting "Unable to Connect to W
 
 ***If you are using a plugin version:*** in your Geyser config, set your remote address to `127.0.0.1`. If that does not work, check your startup log for a message about Docker, and use that address in the remote address
 
-### Cannot reply to EncryptionRequestPacket without profile and access token {#cannot-reply-to-encryptionrequestpacket-without-profile-and-access-token}
+### Cannot reply to EncryptionRequestPacket without profile and access token {/* #cannot-reply-to-encryptionrequestpacket-without-profile-and-access-token */}
 
 There are two causes of this message:
 
@@ -71,19 +74,19 @@ This message can occur with a Floodgate setup. Usually, it means that a misconfi
 
 If you have your configuration set up like this, put simply, it won't work. If authentication for the Java server is set to online, it is expected Geyser is configured the same way. The server requires a valid Minecraft: Java Edition account, and if you aren't logging into one with Geyser, then you will be unable to join the server. If your configuration is set up properly and you're still getting this issue, it could be that your credentials are invalid.
 
-### Connection Refused: \<INSERT IP AND/OR DOMAIN\> {#connection-refused-insert-ip-andor-domain}
+### Connection Refused: [INSERT IP AND/OR DOMAIN] {/* #connection-refused-insert-ip-andor-domain */}
 
 Connection Refused usually means that a Java server could not be found on that port, or the server denied access to the connection on a network level. 
 The latter can happen with anti-DDOS plugins such as TCPShield, but otherwise ensure that the server you're trying to connect to is spelled correctly in the config, is up and is port forwarded correctly.
 
-### Floodgate Misconfiguration {#floodgate-misconfiguration}
+### Floodgate Misconfiguration {/* #floodgate-misconfiguration */}
 See [this page](/wiki/floodgate/setup/) for more information.
 
-### Missing profile key. This server requires secure profiles. {#missing-profile-key-this-server-requires-secure-profiles}
+### Missing profile key. This server requires secure profiles. {/* #missing-profile-key-this-server-requires-secure-profiles */}
 
 See [this page](/wiki/geyser/secure-chat/).
 
-### Mojang Resetting Account Credentials {#mojang-resetting-account-credentials}
+### Mojang Resetting Account Credentials {/* #mojang-resetting-account-credentials */}
 This is unfortunately something we have no control over, and is most likely the case when you're running Geyser as a plugin on a server host or joining a friend far away from your location. If you're running Geyser locally, this should not happen to you, but what we recommend for servers is a plugin we make called [Floodgate](https://github.com/GeyserMC/Floodgate), which allows for Bedrock clients to join your server without needing a Java Edition account. Take a look [here](/wiki/floodgate) for more information.
 
 # "Invalid IP address!" from Bedrock
@@ -105,7 +108,7 @@ The server is too new or Geyser is outdated. Make sure you're on the latest Geys
 
 # Outdated server! I'm still on 1.x.x
 
-Update the server or ask them to install [ViaVersion](https://viaversion.com/). You can also try [VIAaaS](https://github.com/ViaVersion/VIAaaS) (ViaVersion as a Service).
+Update the server or ask them to install [ViaVersion](https://viaversion.com/viaversion). You can also try [VIAaaS](https://github.com/ViaVersion/VIAaaS) (ViaVersion as a Service).
 
 # Only for BungeeCord with floodgate
 
@@ -118,6 +121,6 @@ If you use floodgate ensure that it is installed on all of your Spigot backend s
 
 And so on.
 
-* Please also make sure that you have the same `key.pem` and `config.yml` on all of your servers.
+- Please also make sure that you have the same `key.pem` and `config.yml` on all of your servers.
 
 If your players can't connect from the lobby to another backend server, check console.

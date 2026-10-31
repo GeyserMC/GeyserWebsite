@@ -1,13 +1,16 @@
 ---
 title: Hurricane
-description: Hurricane is a Paper / Spigot plugin and Fabric / NeoForge mod that fixes some bugs that otherwise cannot be fixed without server-side modification.
+description: >-
+  Hurricane is a Paper / Spigot plugin and Fabric / NeoForge mod that fixes some
+  bugs that otherwise cannot be fixed without server-side modification.
+crowdin_page_id: c397583f-9720-4a6f-9ce5-e151600d8196
 ---
 
 # Hurricane
 
 Hurricane is a Paper/Spigot plugin, and Fabric mod (unofficial port), that fixes some bugs that otherwise cannot be fixed without server modification. 
 
-## Fixes {#fixes}
+## Fixes {/* #fixes */}
 Issues with each workaround are listed in the Hurricane config. **Please take your time to read them as the workarounds in this plugin can be used for exploitative purposes.**
 
 - Bamboo and dripstone collision (by setting them to no server-side collision)
@@ -16,10 +19,10 @@ Supported Versions:
 - Spigot/Paper: 1.14 - 1.21.8
 - Fabric: 1.21 - 1.21.4
 
-## Download {#download}
+## Download {/* #download */}
 - Spigot/Paper: [GeyserMC downloads page](/download/?project=other-projects&hurricane=expanded)
 - Fabric/NeoForge: [Modrinth](https://modrinth.com/mod/hurricane/versions)
 
-## Source {#source}
+## Source {/* #source */}
 - Main: [GeyserMC/Hurricane](https://github.com/GeyserMC/Hurricane)
 - Unofficial mod fork: [onebeastchris/Hurricane-Modded](https://github.com/onebeastchris/Hurricane-Modded)

@@ -1,6 +1,9 @@
 ---
 title: GeyserIntegratedPack
-description: GeyserIntegratedPack is a Bedrock resource pack that fixes parity issues with Geyser to bring Bedrock Edition in line with Java Edition.
+description: >-
+  GeyserIntegratedPack is a Bedrock resource pack that fixes parity issues with
+  Geyser to bring Bedrock Edition in line with Java Edition.
+crowdin_page_id: 6fa53f1f-ce87-4a0e-9a57-df4ce90b0023
 ---
 
 :::info
@@ -29,7 +32,7 @@ A resource pack allows various features and bug fixes to be implemented in Bedro
 A more complete list can be found on the integrated pack's [README](https://github.com/GeyserMC/GeyserIntegratedPack/blob/master/README.md). 
 Implementation details for those interested in how features are added can be found [here](https://github.com/GeyserMC/GeyserIntegratedPack/blob/master/developer_documentation.md).
 
-## Migration from GeyserOptionalPack {#migration}
+## Migration from GeyserOptionalPack {/* #migration */}
 
 Users previously using the GeyserOptionalPack should remove it to allow Geyser to serve the GeyserIntegratedPack instead.
 This change has one main benefit: automatic updates, and it is a preparation for advanced features that are tied-in to Geyser (such 
@@ -37,13 +40,13 @@ as a proper Java-style attack indicator!).
 
 You can also disable the GeyserIntegratedPack in Geyser's config if you do not wish to have these changes applied.
 
-### What changed?
+### What changed? {/* #what-changed */}
 - The resource pack uuid and version have been changed
 - The GeyserIntegratedPack is being sent with a lower priority in the clients resource pack stack (the order in which 
 resource packs are applied), so manual overrides are possible
 - With Geyser including the pack, you no longer need to worry about updating the pack yourself!
 
-### How to migrate?
+### How to migrate? {/* #how-to-migrate */}
 
 If you previously downloaded the GeyserOptionalPack from Geyser's download page, you can simply remove it from Geyser's
 `packs` folder and let Geyser apply the GeyserIntegratedPack - and you're done!
@@ -57,7 +60,7 @@ Users utilizing the UrlPackCodec should also serve the GeyserIntegratedPack inst
 Geyser will still perform checks to ensure the "manually" included version isn't outdated, so we recommend to regularly poll 
 Geyser's downloads API for pack updates.
 
-## Resource pack conflicts {#resource-pack-conflicts}
+## Resource pack conflicts {/* #resource-pack-conflicts */}
 
 If your current server resource pack contains any entity definitions that overlap with Geyser's changes (found [here](https://github.com/GeyserMC/GeyserIntegratedPack/tree/master/src/main/resources/integratedpack/entity) 
 and [here](https://github.com/GeyserMC/GeyserIntegratedPack/tree/master/src/main/resources/patches/entity)),
