@@ -1,0 +1,212 @@
+---
+title: Common Nethernet Issues
+description: Common issues and solutions for problems related to Nethernet.
+crowdin_page_id: d307e0dc-bb8c-4026-89ef-f4d36046a55d
+---
+
+## Disconnected with Nethernet, Door or similar {/* #disconnected-with-error-code */}
+
+When joining your server, you may encounter the error code `Nethernet` or `Door`. If this is the case, you can use the other error code hidden away in order to help debug the issue further.
+
+The following screen is found by clicking `More details` on a disconnect screen.
+
+![More details bedrock disconnect screen](/img/wiki/nethernet/error-code.png)
+
+1. The error code, in this case, `Nethernet`
+2. The point of interest, this shows the real disconnect reason
+3. The numeric error code to lookup
+
+## Codes {/* #codes */}
+
+Below is a list of codes which bedrock uses, if you cannot find your code, please check expand the following table and look for the code, we've only added more detail to the common error codes.
+
+<details>
+<summary><h2>All error codes</h2></summary>
+These codes were taken from https://github.com/CloudburstMC/Network/blob/6dd2b71f88aec49bf7b25c31c148aee8dec137f0/docs/nethernet/client-disconnect-reasons.md
+
+| #   | Client Reason                                 | Codeword   | Theme             |
+|-----|-----------------------------------------------|------------|-------------------|
+| 0   | Unknown                                       | Creeper    | UnknownFailReason |
+| 1   | CantConnectNoInternet                         | NetherNet  | Networking        |
+| 2   | NoPermissions                                 | Spyglass   | Permissions       |
+| 3   | UnrecoverableError                            | Chest      | Storage           |
+| 4   | ThirdPartyBlocked                             | Fox        | OneOff            |
+| 5   | ThirdPartyNoInternet                          | NetherNet  | Networking        |
+| 6   | ThirdPartyBadIP                               | Squid      | OneOff            |
+| 7   | ThirdPartyNoServerOrServerLocked              | Silverfish | OneOff            |
+| 8   | VersionMismatch                               | Chain      | VersionMismatch   |
+| 9   | SkinIssue                                     | Armor      | Skins             |
+| 10  | InviteSessionNotFound                         | NetherNet  | Networking        |
+| 11  | EduLevelSettingsMissing                       | Gold       | Education         |
+| 12  | LocalServerNotFound                           | Panda      | OneOff            |
+| 13  | LegacyDisconnect                              | NetherNet  | Networking        |
+| 14  | INTERNAL_UserLeaveGameAttempted               | Terracotta | fallback          |
+| 15  | PlatformLockedSkinsError                      | Armor      | Skins             |
+| 16  | RealmsWorldUnassigned                         | Arrow      | MinecraftOnline   |
+| 17  | RealmsServerCantConnect                       | Arrow      | MinecraftOnline   |
+| 18  | RealmsServerHidden                            | Arrow      | MinecraftOnline   |
+| 19  | RealmsServerDisabledBeta                      | Arrow      | MinecraftOnline   |
+| 20  | RealmsServerDisabled                          | Arrow      | MinecraftOnline   |
+| 21  | CrossPlatformDisabled                         | Spyglass   | Permissions       |
+| 22  | TESTONLY_CantConnect                          | Terracotta | fallback          |
+| 23  | SessionNotFound                               | Goat       | OneOff            |
+| 24  | ClientSettingsIncompatibleWithServer          | Terracotta | fallback          |
+| 25  | ServerFull                                    | Hopper     | OneOff            |
+| 26  | InvalidPlatformSkin                           | Armor      | Skins             |
+| 27  | EditionVersionMismatch                        | Chain      | VersionMismatch   |
+| 28  | EditionMismatch                               | Chain      | VersionMismatch   |
+| 29  | LevelNewerThanExeVersion                      | Breeze     | OneOff            |
+| 30  | INTERNAL_NoFailOccurred                       | Terracotta | fallback          |
+| 31  | BannedSkin                                    | Armor      | Skins             |
+| 32  | Timeout                                       | Kelp       | OneOff            |
+| 33  | ServerNotFound                                | Clay       | OneOff            |
+| 34  | OutdatedServer                                | Chain      | VersionMismatch   |
+| 35  | OutdatedClient                                | Chain      | VersionMismatch   |
+| 36  | NoPremiumPlatform                             | Terracotta | fallback          |
+| 37  | MultiplayerDisabled                           | Spyglass   | Permissions       |
+| 38  | NoWiFi                                        | NetherNet  | Networking        |
+| 39  | WorldCorruption                               | Chest      | Storage           |
+| 40  | NoReason                                      | Creeper    | UnknownFailReason |
+| 41  | Disconnected                                  | Bat        | OneOff            |
+| 42  | InvalidPlayer                                 | Guardian   | Authentication    |
+| 43  | LoggedInOtherLocation                         | Guardian   | Authentication    |
+| 44  | ServerIdConflict                              | Blaze      | OneOffGeneral     |
+| 45  | NotAllowed                                    | Spyglass   | Permissions       |
+| 46  | NotAuthenticated                              | Guardian   | Authentication    |
+| 47  | InvalidTenant                                 | Gold       | Education         |
+| 48  | UnknownPacket                                 | Block      | Packet            |
+| 49  | UnexpectedPacket                              | Block      | Packet            |
+| 50  | InvalidCommandRequestPacket                   | Block      | Packet            |
+| 51  | HostSuspended                                 | Boat       | GameSetupShutdown |
+| 52  | LoginPacketNoRequest                          | Guardian   | Authentication    |
+| 53  | LoginPacketNoCert                             | Guardian   | Authentication    |
+| 54  | MissingClient                                 | Snowball   | OneOff            |
+| 55  | Kicked                                        | Evoker     | Kicked            |
+| 56  | KickedForExploit                              | Evoker     | Kicked            |
+| 57  | KickedForIdle                                 | Evoker     | Kicked            |
+| 58  | ResourcePackProblem                           | Rabbit     | ResourcePack      |
+| 59  | IncompatiblePack                              | Rabbit     | ResourcePack      |
+| 60  | OutOfStorage                                  | Chest      | Storage           |
+| 61  | InvalidLevel                                  | Boat       | GameSetupShutdown |
+| 62  | DisconnectPacket                              | Terracotta | fallback          |
+| 63  | BlockMismatch                                 | Boat       | GameSetupShutdown |
+| 64  | InvalidHeights                                | Lead       | OneOff            |
+| 65  | InvalidWidths                                 | Ladder     | OneOff            |
+| 66  | ConnectionLost                                | Terracotta | OneOff            |
+| 67  | ZombieConnection                              | Terracotta | fallback          |
+| 68  | Shutdown                                      | Cobweb     | OneOffGeneral     |
+| 69  | ReasonNotSet                                  | Terracotta | fallback          |
+| 70  | LoadingStateTimeout                           | Boat       | GameSetupShutdown |
+| 71  | ResourcePackLoadingFailed                     | Rabbit     | ResourcePack      |
+| 72  | SearchingForSessionLoadingScreenFailed        | Compass    | OneOffGeneral     |
+| 73  | NetherNetProtocolVersion                      | NetherNet  | Networking        |
+| 74  | SubsystemStatusError                          | Echo Shard | OneOffGeneral     |
+| 75  | EmptyAuthFromDiscovery                        | Guardian   | Authentication    |
+| 76  | EmptyUrlFromDiscovery                         | TNT        | OneOff            |
+| 77  | ExpiredAuthFromDiscovery                      | Guardian   | Authentication    |
+| 78  | UnknownSignalServiceSignInFailure             | Door       | Signaling         |
+| 79  | XBLJoinLobbyFailure                           | Boat       | GameSetupShutdown |
+| 80  | UnspecifiedClientInstanceDisconnection        | Feather    | OneOff            |
+| 81  | NetherNetSessionNotFound                      | NetherNet  | Networking        |
+| 82  | NetherNetCreatePeerConnection                 | NetherNet  | Networking        |
+| 83  | NetherNetICE                                  | Door       | Signaling         |
+| 84  | NetherNetConnectRequest                       | NetherNet  | Networking        |
+| 85  | NetherNetConnectResponse                      | NetherNet  | Networking        |
+| 86  | NetherNetNegotiationTimeout                   | Door       | Signaling         |
+| 87  | NetherNetInactivityTimeout                    | NetherNet  | Networking        |
+| 88  | StaleConnectionBeingReplaced                  | NetherNet  | Networking        |
+| 89  | RealmsSessionNotFound                         | Terracotta | fallback          |
+| 90  | BadPacket                                     | Block      | Packet            |
+| 91  | NetherNetFailedToCreateOffer                  | NetherNet  | Networking        |
+| 92  | NetherNetFailedToCreateAnswer                 | NetherNet  | Networking        |
+| 93  | NetherNetFailedToSetLocalDescription          | NetherNet  | Networking        |
+| 94  | NetherNetFailedToSetRemoteDescription         | NetherNet  | Networking        |
+| 95  | NetherNetNegotiationTimeoutWaitingForResponse | NetherNet  | Networking        |
+| 96  | NetherNetNegotiationTimeoutWaitingForAccept   | NetherNet  | Networking        |
+| 97  | NetherNetIncomingConnectionIgnored            | NetherNet  | Networking        |
+| 98  | NetherNetSignalingParsingFailure              | Door       | Signaling         |
+| 99  | NetherNetSignalingUnknownError                | Door       | Signaling         |
+| 100 | NetherNetSignalingUnicastDeliveryFailed       | Door       | Signaling         |
+| 101 | NetherNetSignalingBroadcastDeliveryFailed     | Door       | Signaling         |
+| 102 | NetherNetSignalingGenericDeliveryFailed       | Door       | Signaling         |
+| 103 | EditorMismatchEditorWorld                     | Emerald    | Editor            |
+| 104 | EditorMismatchVanillaWorld                    | Emerald    | Editor            |
+| 105 | WorldTransferNotPrimaryClient                 | Block      | Packet            |
+| 106 | INTERNAL_RequestServerShutdown                | Terracotta | fallback          |
+| 107 | ClientGameSetupCancelled                      | Boat       | GameSetupShutdown |
+| 108 | ClientGameSetupFailed                         | Boat       | GameSetupShutdown |
+| 109 | NoVenue                                       | Terracotta | fallback          |
+| 110 | NetherNetSignalingSigninFailed                | Door       | Signaling         |
+| 111 | SessionAccessDenied                           | Guardian   | Authentication    |
+| 112 | ServiceSigninIssue                            | Guardian   | Authentication    |
+| 113 | NetherNetNoSignalingChannel                   | Door       | Signaling         |
+| 114 | NetherNetNotLoggedIn                          | NetherNet  | Networking        |
+| 115 | NetherNetClientSignalingError                 | Door       | Signaling         |
+| 116 | SubClientLoginDisabled                        | Coal       | OneOff            |
+| 117 | DeepLinkTryingToOpenDemoWorldWhileSignedIn    | Honeycomb  | OneOff            |
+| 118 | AsyncJoinTaskDenied                           | Arrow      | MinecraftOnline   |
+| 119 | RealmsTimelineRequired                        | Arrow      | MinecraftOnline   |
+| 120 | GuestWithoutHost                              | Bamboo     | OneOff            |
+| 121 | FailedToJoinExperience                        | Terracotta | OneOff            |
+| 122 | NetherNetDataChannelClosed                    | NetherNet  | Networking        |
+| 123 | DiscoveryEnvironmentMismatch                  | Guardian   | Authentication    |
+| 124 | HostWithoutKeys                               | Guardian   | Authentication    |
+| 125 | HostSignedOut                                 | Terracotta | OneOff            |
+| 126 | ScriptWatchdogException                       | Terracotta | OneOff            |
+| 127 | ScriptMemoryLimitExceeded                     | Terracotta | OneOff            |
+| 128 | StorageLowDuringGameplay                      | Chest      | Storage           |
+| 129 | StorageFullDuringGameplay                     | Chest      | Storage           |
+| 130 | LevelStorageCorruption                        | Chest      | Storage           |
+| 131 | EditionMismatchVanillaToEdu                   | Chain      | VersionMismatch   |
+| 132 | EditionMismatchEduToVanilla                   | Chain      | VersionMismatch   |
+| 133 | EditorMismatchEditorToVanilla                 | Emerald    | Editor            |
+| 134 | EditorMismatchVanillaToEditor                 | Emerald    | Editor            |
+| 135 | DenyListed                                    | Spyglass   | Permissions       |
+| 136 | NonceMissing                                  | Spyglass   | Permissions       |
+| 137 | NonceNotFound                                 | Spyglass   | Permissions       |
+| 138 | NonceExpired                                  | Spyglass   | Permissions       |
+| 139 | NonceNotValid                                 | Spyglass   | Permissions       |
+| 140 | HostDisconnected                              | Goat       | OneOff            |
+| 141 | EditorJoinIntentPolicyFailure                 | Emerald    | Editor            |
+| 142 | NetherNetIdentityNotAllowed                   | Door       | Signaling         |
+| 143 | InvalidName                                   | Guardian   | Authentication    |
+| 144 | ExpiredToken                                  | Guardian   | Authentication    |
+| 145 | HostAcceptsNoTypeOfAuth                       | Boat       | GameSetupShutdown |
+| 146 | NotAuthenticatedFastFail                      | Guardian   | Authentication    |
+| 147 | EditorNotAllowed                              | Emerald    | Editor            |
+| 148 | MissingStructureData                          | Boat       | GameSetupShutdown |
+| 149 | UnsupportedTransport                          | Terracotta | fallback          |
+</details>
+
+### 13, 149 {/* #code-signalling-failed */}
+These codes mean `LegacyDisconnect` or `UnsupportedTransport` respectively, this typically happens when the game failed to connect to the signalling server. (Code 13 means it also attempted to connect via Raknet which also failed.)
+
+**Troubleshooting steps**:
+- Is the signalling server accessible?
+  - Attempt to connect to it with your web browser, go to `http://yourserverip:yourport/v1/join` and see what it says
+- Is both the signalling server port (TCP) **and** the WebRTC port (UDP) forwarded?
+
+### 1, 38 {/* #code-no-internet */}
+Code 1 and 38 typically indicate you have no internet connection, please make sure you are connected to the internet and try again.
+
+### 83 {/* #code-webrtc-failed */}
+Code 83 indicates that a connection was successfully made to the signalling server, but bedrock failed to connect to the address given, usually your server address with the WebRTC port specified.
+
+**Troubleshooting steps**:
+- Is the WebRTC port forwarded for **UDP**?
+- Is the WebRTC accessible on your local network?
+  - This does not apply to servers from hosting providers
+
+### 95 {/* #code-webrtc-timeout */}
+Code 95 indicates a WebRTC connection was made, but was unable to complete in a certain time frame.
+
+**Troubleshooting steps**:
+- Check if there are any firewall rules that would prevent the connection from working correctly
+
+### 48, 49, 90 {/* #code-bad-packet */}
+These codes are sent when a bad or invalid packet is sent to your client.
+
+**Troubleshooting steps**:
+- Ensure the tool you're using to join your server is up to date
+  - MCCompanion, MCXboxBroadcast, BedrockTogether and GeyserConnect to name a few
+- Ensure you're using the latest build of Geyser
