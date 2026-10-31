@@ -981,6 +981,22 @@ export const providersData: HostingProvider[] = [
         config: { udp: ports.newPort, confirmed: false }
     },
     {
+        name: 'TrueTick',
+        url: 'https://truetick.gg/',
+        updated: '2026-10-31',
+        links: {
+            article: 'https://truetick.gg/help/connect-and-share#bedrock-crossplay'
+        },
+        install: customInstallLocations.settings_tab_bedrock_crossplay,
+        config: { preconfigured: true, port: ports.fromHost },
+        notices: {
+            info: translate({
+                id: 'providers.provider.truetick.info',
+                message: "Bedrock crossplay is available on Paper and Purpur servers on the flat plan."
+            })
+        }
+    },
+    {
         name: 'UltraServers',
         url: 'https://ultraservers.com/',
         updated: '2026-07-10',
