@@ -256,14 +256,27 @@ export const providersData: HostingProvider[] = [
     {
         name: 'CloudNord',
         url: 'https://cloudnord.net/',
-        updated: '2026-07-10',
-        links: { support: "https://cloudnord.net/submitticket.php", discord: 'https://cloudnord.net/discord' },
+        updated: '2026-10-20',
+        links: {
+            article: 'https://cloudnord.net/knowledgebase/79/Bedrock-players-and-NetherNet-Minecraft-Bedrock-26-60.html',
+            support: 'https://cloudnord.net/tickets/create',
+            discord: 'https://cloudnord.net/discord'
+        },
         install: customInstallLocations.plugin_list,
-        config: { udp: ports.assign, confirmed: false },
+        config: {
+            udp: ports.assign,
+            builtin_signaling: 'same_as_udp',
+            notes: [
+                translate({
+                    id: 'providers.provider.cloud_nord.config.advertise_addresses_signaling',
+                    message: "Servers run in containers, so also set `advertise-addresses` under `signaling` in the `bedrock` section to your server's IP address, as shown in the Network tab."
+                })
+            ]
+        },
         notices: {
             info: translate({
-                id: 'providers.provider.cloud_nord.description',
-                message: "Servers from the [Crossplay Server](https://cloudnord.net/minecraftcrossplay-server-hosting/) hosting section do not need further configuration."
+                id: 'providers.provider.cloud_nord.nethernet_info',
+                message: "Minecraft Crossplay servers, and servers that already had Geyser installed before NetherNet, are configured for NetherNet automatically: players connect with the Bedrock port shown on the server's page in the client area."
             })
         }
     },
