@@ -810,8 +810,11 @@ export const providersData: HostingProvider[] = [
     {
         name: 'PlanetNode',
         url: 'https://planetnode.net',
-        updated: '2024-12-23',
-        config: { udp: ports.newPort, confirmed: false }
+        updated: '2026-11-01',
+        links: {
+            support: 'https://planetnode.net/help'
+        },
+        config: { preconfigured: true, port: ports.fromHost }
     },
     {
         name: 'Play Hosting',
