@@ -70,5 +70,10 @@
     "engines": {
         "node": ">=22.0"
     },
+    "dependenciesMeta": {
+        "postman-code-generators@2.1.1": {
+            "built": false
+        }
+    },
     "packageManager": "yarn@4.18.1"
 }
