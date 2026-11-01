@@ -22,9 +22,7 @@ To fix "Unable to connect to world" with no console errors, see [here](/wiki/gey
 ## If the server doesn't show up in the friends list {/* #if-the-server-doesnt-show-up-in-the-friends-list */}
 
 - *If using Windows 10, iOS, or Android*: try adding the server to the Servers list in-game.
-- *If using Xbox One*: try connecting with [BedrockConnect](/wiki/geyser/using-geyser-with-consoles/).
-- *If using PS4*: [try using a LAN proxy.](/wiki/geyser/using-geyser-with-consoles#playstation-4)
-- *If using Nintendo Switch*: there is currently no way for local servers to show up in the Friends tab, but you can still connect using [BedrockConnect](/wiki/geyser/using-geyser-with-consoles/).
+- *If using a console* (Xbox One, PS4, or Nintendo Switch): see [Using Geyser with Consoles](/wiki/geyser/using-geyser-with-consoles/) for how to connect.
 
 *If the Geyser instance is locally hosted:* try using `localhost` or `0.0.0.0` as the IP address.
 *If that doesn't work, or your Geyser instance is on another computer in the network*: use your **local** IPv4 address.
