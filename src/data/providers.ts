@@ -219,10 +219,6 @@ export const providersData: HostingProvider[] = [
             message: "In the hosting panel, go to install new engine > Ready-made solutions and select Geyser. This installs Paper and Geyser and configures it for you, without needing extra ports."
         }),
         config: { preconfigured: true, port: 19132 },
-        connect: translate({
-            id: 'providers.provider.bedrockhost.connect',
-            message: "Players connect with the same address they use for the Java server, which ends with `.bhsv.pl` (e.g. `s1234.bhsv.pl`), and default port `19132`.\n\nMake sure that you are using the `bhsv.pl` ending address (some servers are auto-migrated to this format during Geyser's install)."
-        })
     },
     {
         name: 'Birdflop',
