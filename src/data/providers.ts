@@ -216,7 +216,7 @@ export const providersData: HostingProvider[] = [
         },
         install: translate({
             id: 'providers.provider.bedrockhost.install',
-            message: "In the hosting panel, go to install new engine > Ready-made solutions and select Geyser. This installs Paper and Geyser and configures it for you, without needing extra ports."
+            message: "In the hosting panel, go to install new engine > Ready-made solutions and select Geyser."
         }),
         config: { preconfigured: true, port: 19132 },
     },
