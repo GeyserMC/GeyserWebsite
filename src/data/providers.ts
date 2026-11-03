@@ -209,16 +209,16 @@ export const providersData: HostingProvider[] = [
     {
         name: 'BedrockHost',
         url: 'https://bedrockhost.pl/',
-        updated: '2026-07-10',
+        updated: '2026-11-02',
         links: {
             article: 'https://bedrockhost.pl/w/geyser-czyli-serwer-minecraft-java-i-bedrock-w-jednym',
             support: 'https://bedrockhost.pl/kontakt'
         },
         install: translate({
             id: 'providers.provider.bedrockhost.install',
-            message: "In the hosting panel, go to install new engine > Ready-made solutions and select Geyser. This installs Paper and Geyser."
+            message: "In the hosting panel, go to install new engine > Ready-made solutions and select Geyser."
         }),
-        config: { udp: ports.newPort, confirmed: false }
+        config: { preconfigured: true, port: 19132 },
     },
     {
         name: 'Birdflop',
