@@ -956,6 +956,19 @@ export const providersData: HostingProvider[] = [
         notices: { info: onlyServesRegion('Australia') }
     },
     {
+        name: 'Survival Servers',
+        url: 'https://www.survivalservers.com/',
+        updated: '2026-11-06',
+        links: {
+            support: 'https://www.survivalservers.com/support/'
+        },
+        install: translate({
+            id: 'providers.provider.survival_servers.install',
+            message: "Open Quarry on your server's page in the control panel, go to the Access tab, switch Crossplay on, and restart the server."
+        }),
+        config: { preconfigured: true, port: ports.fromHost }
+    },
+    {
         name: 'SwiftServers',
         url: 'https://swiftservers.org/',
         updated: '2026-10-27',
