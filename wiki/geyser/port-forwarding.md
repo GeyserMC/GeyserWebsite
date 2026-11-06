@@ -14,7 +14,7 @@ If you are using a Minecraft server hosting provider (e.g. Aternos, or Nodecraft
 
 :::
 
-:::info 
+:::info[Ports that need to be opened]
 
 With NetherNet, the Geyser port (by default 19132) has to be open for **both TCP and UDP**: players find the server over TCP (signaling), and play on it over UDP.
 If you use the "NetherNet and RakNet" option, also open the `webrtc-port` for UDP.
