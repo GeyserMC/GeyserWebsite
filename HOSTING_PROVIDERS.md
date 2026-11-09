@@ -51,6 +51,7 @@ strings at the top of `providers.ts` wherever they fit, and to write their own t
 | You use the same port for every server                              | a number, e.g. `port: 19132`                                      |
 | Geyser is installed through your plugin or mod list                 | `install: customInstallLocations.plugin_list`                     |
 | Geyser is installed and configured on every server                  | `install: infos.installed_by_default`                             |
+| Your existing servers are moved to NetherNet for your customers     | `notices: { info: infos.auto_migrated_to_nethernet }`             |
 | An "Enable Bedrock crossplay?" option when changing server software | `install: customInstallLocations.enable_bedrock_crossplay_option` |
 | A "Bedrock crossplay" toggle in the Settings tab of your panel      | `install: customInstallLocations.settings_tab_bedrock_crossplay`  |
 | Players use a different address than the Java server's              | `config.notes: [javaAddressInstruction]`                          |
