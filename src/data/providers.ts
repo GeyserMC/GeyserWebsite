@@ -79,6 +79,10 @@ const infos = {
     installed_by_default: translate({
         id: 'providers.config.templates.info.geyser_installed_by_default',
         message: "Geyser is installed and configured on all servers by default."
+    }),
+    auto_migrated_to_nethernet: translate({
+        id: 'providers.config.templates.info.auto_migrated_to_nethernet',
+        message: "Existing servers are automatically migrated to NetherNet."
     })
 }
 
@@ -256,16 +260,15 @@ export const providersData: HostingProvider[] = [
     {
         name: 'CloudNord',
         url: 'https://cloudnord.net/',
-        updated: '2026-07-10',
-        links: { support: "https://cloudnord.net/submitticket.php", discord: 'https://cloudnord.net/discord' },
+        updated: '2026-11-09',
+        links: {
+            article: 'https://cloudnord.net/knowledgebase/79/Bedrock-players-and-NetherNet-Minecraft-Bedrock-26-60.html',
+            support: 'https://cloudnord.net/contact',
+            discord: 'https://cloudnord.net/discord'
+        },
         install: customInstallLocations.plugin_list,
-        config: { udp: ports.assign, confirmed: false },
-        notices: {
-            info: translate({
-                id: 'providers.provider.cloud_nord.description',
-                message: "Servers from the [Crossplay Server](https://cloudnord.net/minecraftcrossplay-server-hosting/) hosting section do not need further configuration."
-            })
-        }
+        config: { udp: ports.assign },
+        notices: { info: infos.auto_migrated_to_nethernet }
     },
     {
         name: 'Clovux',
