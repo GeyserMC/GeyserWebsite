@@ -901,14 +901,22 @@ export const providersData: HostingProvider[] = [
     {
         name: 'ServerPrism',
         url: 'https://serverprism.com/',
-        updated: '2026-07-10',
+        updated: '2026-11-09',
         links: {
             article: 'https://serverprism.com/docs/minecraft/crossplay-getting-started',
-            support: 'https://serverprism.com/tickets/create',
+            support: 'https://serverprism.com/contact',
             discord: 'https://serverprism.com/discord'
         },
-        install: customInstallLocations.plugin_list,
-        config: { udp: ports.newPort, confirmed: false }
+        install: translate({
+            id: 'providers.provider.server_prism.install',
+            message: "Order a Minecraft Crossplay server, or switch your server to Minecraft Crossplay in the Change Runtime tab of the dashboard."
+        }),
+        config: { preconfigured: true, port: ports.fromHost },
+        // Java addresses can be SRV-only subdomains, which Bedrock cannot use
+        connect: translate({
+            id: 'providers.provider.server_prism.connect',
+            message: "Use the Server Address and Port shown under 'Bedrock / Console (crossplay)' in the Overview tab of your server in the dashboard."
+        })
     },
     {
         name: 'Shockbyte',
