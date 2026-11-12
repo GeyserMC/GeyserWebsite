@@ -46,12 +46,12 @@ export const SetupGuide = () => {
                                 <TabItem value='neoforge' label={<PlatformIcon img={NeoForgeIcon} text={<MDXTranslatable.setup.neoforge/>} />}>
                                     <HostedGuide platform="neoforge" />
                                 </TabItem>
-                                {!provider.proxies_banned && (
+                                {!provider.proxies_unsupported && (
                                     <TabItem value='velocity' label={<PlatformIcon img={VelocityIcon} text={<MDXTranslatable.setup.velocity/>} />}>
                                         <HostedGuide platform="velocity" />
                                     </TabItem>
                                 )}
-                                {!provider.proxies_banned && (
+                                {!provider.proxies_unsupported && (
                                     <TabItem value='bungeecord' label={<PlatformIcon img={BungeeCordIcon} text={<MDXTranslatable.setup.bungeecord/>} />}>
                                         <HostedGuide platform="bungeecord" />
                                     </TabItem>
