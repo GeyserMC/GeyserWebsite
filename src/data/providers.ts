@@ -194,7 +194,7 @@ export const providersData: HostingProvider[] = [
                 message: "Aternos automatically installs the latest version of Geyser and Floodgate, but does not auto update it. To update, reinstall the plugin (no need to uninstall Geyser/deleting the plugin files)."
             })
         },
-        proxies_banned: true
+        proxies_unsupported: true
     },
     {
         name: 'AxentHost',
@@ -808,7 +808,7 @@ export const providersData: HostingProvider[] = [
         },
         install: customInstallLocations.settings_tab_bedrock_crossplay,
         config: { preconfigured: true, port: 19132 },
-        proxies_banned: true
+        proxies_unsupported: true
     },
     {
         name: 'PlanetNode',
