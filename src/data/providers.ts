@@ -393,6 +393,30 @@ export const providersData: HostingProvider[] = [
         }
     },
     {
+        name: 'Eytak',
+        url: 'https://eytak.com/minecraft',
+        updated: '2026-11-12',
+        links: {
+            article: 'https://eytak.com/minecraft/crossplay',
+            support: 'https://eytak.com/contact',
+            discord: 'https://discord.gg/eytak'
+        },
+        install: translate({
+            id: 'providers.provider.eytak.install',
+            message: "In the Extra ports section of your server in the Eytak panel, turn on 'Bedrock support'. Geyser runs on Eytak's side, so do not install the Geyser plugin yourself."
+        }),
+        // Geyser runs at the node edge with transport=both: RakNet on UDP 19132,
+        // NetherNet with built-in signaling on TCP 19132 and WebRTC on UDP 19133.
+        config: { preconfigured: true, port: 19132 },
+        notices: {
+            info: translate({
+                id: 'providers.provider.eytak.info',
+                message: "Bedrock support works on Paper, Purpur and Spigot servers. Floodgate is installed on your server when you turn it on."
+            })
+        },
+        proxies_banned: true
+    },
+    {
         name: 'FadeHost',
         url: 'https://fadehost.com/',
         updated: '2024-12-23',
