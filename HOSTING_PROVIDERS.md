@@ -93,7 +93,7 @@ The setup guide shows an entry in this order:
 | `connect`                       | Step 4, instead of the generated connect instructions. Only set this if players connect differently, e.g. through a lobby with `/join` |
 | `notices.info` / `notices.warn` | Notes next to the guide                                                                                                                |
 | `notices.unsupported`           | Replaces the guide, for hosts Geyser does not work on                                                                                  |
-| `proxies_banned`                | Hides the Velocity, BungeeCord, Standalone and ViaProxy guides                                                                         |
+| `proxies_unsupported`           | Hides the Velocity, BungeeCord, Standalone and ViaProxy guides                                                                         |
 
 Set `updated` to the date you add or change the entry, as `'YYYY-MM-DD'`. The guide shows it as "Instructions last updated on".
 
