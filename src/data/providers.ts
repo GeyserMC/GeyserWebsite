@@ -414,7 +414,7 @@ export const providersData: HostingProvider[] = [
                 message: "Bedrock support works on Paper, Purpur and Spigot servers. Floodgate is installed on your server when you turn it on."
             })
         },
-        proxies_banned: true
+        proxies_unsupported: true
     },
     {
         name: 'FadeHost',
