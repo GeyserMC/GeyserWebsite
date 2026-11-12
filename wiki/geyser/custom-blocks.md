@@ -160,6 +160,14 @@ The following details the schema for the mappings file. Only the `name` field is
                                                 - Type: `boolean`
                                                     - Default: none
                                                     - Description: Whether the bone is visible.
+                                - `culling`:
+                                    - Type: `string`
+                                        - Default: none
+                                        - Description: The identifier of the block culling rules to use, defined in a resource pack's `block_culling` folder. See the [Bedrock Wiki](https://wiki.bedrock.dev/blocks/block-culling) for more information.
+                                - `culling_layer`:
+                                    - Type: `string`
+                                        - Default: none
+                                        - Description: The culling layer, used by block culling rules with the `same_culling_layer` condition.
                     - `light_emission`:
                         - Type: `integer`
                             - Range: `0` to `15`
@@ -192,6 +200,18 @@ The following details the schema for the mappings file. Only the `name` field is
                                                 - Type: `boolean`
                                                     - Default: `false`
                                                     - Description: Whether ambient occlusion is enabled for the block.
+                                            - `isotropic`:
+                                                - Type: `boolean`
+                                                    - Default: `false`
+                                                    - Description: Whether the block is isotropic, meaning the UVs of its faces are randomly rotated based on the block's position.
+                                            - `texture_variation`:
+                                                - Type: `boolean`
+                                                    - Default: `false`
+                                                    - Description: Whether the block's texture can use texture variations.
+                                            - `alpha_masked_tint`:
+                                                - Type: `boolean`
+                                                    - Default: `false`
+                                                    - Description: Whether the block's tint is masked by its texture's alpha.
                     - `place_air`:
                         - Type: `boolean`
                             - Default: `true`
