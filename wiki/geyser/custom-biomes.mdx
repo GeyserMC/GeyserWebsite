@@ -7,7 +7,7 @@ import Tabs from "@theme/Tabs";
 import TabItem from "@theme/TabItem";
 
 Minecraft: Java Edition servers can add biomes through datapacks and mods. Bedrock Edition does not know these biomes,
-so by default Geyser shows them as a vanilla biome that fits the dimension, with vanilla colors and fog.
+so without a custom biome Geyser shows them as a vanilla biome that fits the dimension, with vanilla colors and fog.
 
 A custom biome mapping gives a Java biome a Bedrock biome of its own. The colors, fog and ambient particles for it are
 supplied through JSON mappings or the Geyser API, and Geyser generates a resource pack from those values and sends it to
@@ -25,9 +25,15 @@ Custom biomes only take effect on servers that have the Java biome in their regi
 does not know is not applied on that server. The generated resource pack still contains every registered appearance.
 :::
 
+:::info
+On Fabric and NeoForge, Geyser registers the biomes of the server's datapacks and mods by itself when it starts, with
+the colors and fog from each biome's own data. A mapping for such a biome replaces what Geyser read for it, so it has to
+list every value the biome should have.
+:::
+
 :::warning
-Geyser does not read biomes out of datapacks or mods automatically. Every custom biome has to be mapped, either in a
-JSON mappings file or through the Geyser API.
+On every other platform, Geyser cannot see the server's biomes before a player joins. Every custom biome has to be
+mapped there, either in a JSON mappings file or through the Geyser API.
 :::
 
 ## Mapping a biome
@@ -203,16 +209,14 @@ The first registration wins and later ones are rejected.
 <details>
     <summary>Providing the visuals yourself</summary>
     Instead of having Geyser generate the visuals, a mappings file can name a resource pack that already contains
-    them. Set `mapping_options.biomes.pack_uuid` to the `header.uuid` of that pack's manifest, and add the pack to
+    them. Set `mappings_options.pack_uuid` to the `header.uuid` of that pack's manifest, and add the pack to
     Geyser as described on the [resource packs](/wiki/geyser/packs) page. This applies to every biome in that file.
 
     ```json
     {
       "format_version": 1,
-      "mapping_options": {
-        "biomes": {
-          "pack_uuid": "8caa1b2a-0b23-4d55-9b46-8a3c2d9f0e11"
-        }
+      "mappings_options": {
+        "pack_uuid": "8caa1b2a-0b23-4d55-9b46-8a3c2d9f0e11"
       },
       "biomes": {
         "my_datapack:crystal_caves": {
@@ -247,7 +251,7 @@ mappings could not be applied to a player.
 ## Vibrant Visuals
 
 The generated resource pack works with both the classic renderer and Vibrant Visuals, but the two renderers do not use
-every value the same way. As of Bedrock 1.26.44, Vibrant Visuals:
+every value the same way. As of Bedrock 1.26.52, Vibrant Visuals:
 
 - uses the sky color as the daytime zenith tint; the horizon and the vanilla night colors remain,
 - mixes the water surface color into the water rather than applying it directly, so the rendered color can differ,
