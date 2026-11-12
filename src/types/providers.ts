@@ -58,5 +58,5 @@ export type HostingProvider = {
         warn?: string; // shaming server hosting providers with issues.
         unsupported?: string; // If set, Geyser does not work on this host, and this is the reason.
     };
-    proxies_banned?: boolean; // If the provider does not allow proxies, we hide proxy setup instructions (e.g. Aternos)
+    proxies_unsupported?: boolean; // If the provider does not allow proxies, we hide proxy setup instructions (e.g. Aternos)
 }
