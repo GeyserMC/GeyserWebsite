@@ -288,6 +288,19 @@ html[data-theme='dark'] {
     }
 }
 
+.host-select input[type='search'] {
+    font-family: var(--ifm-font-family-base);
+    padding: 11px;
+    margin-bottom: 10px;
+    width: 99.5%;
+    height: 50px;
+    border: 1px solid var(--ifm-tabs-color-active);
+    border-radius: var(--ifm-global-radius);
+    background-color: var(--ifm-background-color);
+    font-size: 16px;
+    color: var(--ifm-font-color-base);
+}
+
 .inner {
     overflow: hidden;
     transition: height 0.3s ease-out;

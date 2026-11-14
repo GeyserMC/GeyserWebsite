@@ -109,8 +109,15 @@ export const ProviderSelector = ({ setProvider }: ProviderSelectorProps) => {
     const providers: HostingProvider[] = [notListed, ...openCollaborationProviders, ...otherProviders];
 
     const [selectedProvider, setSelectedProvider] = useState<HostingProvider | null>(null);
+    const [search, setSearch] = useState('');
     const history = useHistory();
     const location = useLocation();
+    const matchesSearch = (provider: HostingProvider) =>
+        provider.name.toLowerCase().includes(search.trim().toLowerCase()) ||
+        provider.name === selectedProvider?.name;
+    const filteredOpenCollaborationProviders = openCollaborationProviders.filter(matchesSearch);
+    const filteredOtherProviders = otherProviders.filter(matchesSearch);
+    const showNotListed = matchesSearch(notListed);
 
     const select = (name: string) => {
         const provider = providers.find(p => p.name.toLowerCase() === name.toLowerCase()) ?? null;
@@ -173,17 +180,33 @@ export const ProviderSelector = ({ setProvider }: ProviderSelectorProps) => {
 
     return (
         <div className="host-select">
+            <label>
+                <Translate id="components.provider.search" description="Label for the hosting provider search field">Search providers</Translate>
+                <input
+                    type="search"
+                    value={search}
+                    onChange={event => setSearch(event.target.value)}
+                    aria-label={translate({ id: 'components.provider.search', message: 'Search providers' })}
+                />
+            </label>
             <select value={selectedProvider?.name ?? 'none'} onChange={event => selectAndLink(event.target.value)}>
                 <option value="none">Select a provider</option>
-                {option(notListed)}
-                {openCollaborationProviders.length > 0 && (
+                {showNotListed && option(notListed)}
+                {filteredOpenCollaborationProviders.length > 0 && (
                     <optgroup label={translate({ id: 'components.provider.open_collaboration_group', message: "Hosts that support Geyser's development" })}>
-                        {openCollaborationProviders.map(option)}
+                        {filteredOpenCollaborationProviders.map(option)}
                     </optgroup>
                 )}
-                <optgroup label={translate({ id: 'components.provider.other_group', message: 'Other providers' })}>
-                    {otherProviders.map(option)}
-                </optgroup>
+                {filteredOtherProviders.length > 0 && (
+                    <optgroup label={translate({ id: 'components.provider.other_group', message: 'Other providers' })}>
+                        {filteredOtherProviders.map(option)}
+                    </optgroup>
+                )}
+                {!showNotListed && filteredOpenCollaborationProviders.length === 0 && filteredOtherProviders.length === 0 && (
+                    <option disabled>
+                        <Translate id="components.provider.no_search_results" description="Message shown when provider search has no matches">No providers found</Translate>
+                    </option>
+                )}
             </select>
         </div>
     );

@@ -275,6 +275,12 @@
   "components.provider.other_group": {
     "message": "Other providers"
   },
+  "components.provider.search": {
+    "message": "Search providers"
+  },
+  "components.provider.no_search_results": {
+    "message": "No providers found"
+  },
   "mdx.setup.connect.port_java": {
     "message": "Your Java server's port"
   },
