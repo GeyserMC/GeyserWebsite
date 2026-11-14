@@ -281,6 +281,12 @@
   "components.provider.other_group": {
     "message": "Other providers"
   },
+  "components.provider.search": {
+    "message": "Search providers"
+  },
+  "components.provider.no_search_results": {
+    "message": "No providers found"
+  },
   "providers.provider.not_listed.java_only_connect": {
     "message": "Players do not connect with the Java server's address. After Geyser starts, it shows the address and port to use in the console, provided by the external signaling service ({warden} by default). Share these with your players."
   },
