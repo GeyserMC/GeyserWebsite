@@ -334,7 +334,9 @@ html[data-theme='dark'] {
 }
 
 .host-select-group {
-    padding: 8px 12px 4px;
+    margin: 0 12px;
+    padding: 8px 0 4px;
+    border-bottom: 1px solid var(--ifm-horizontal-line-color);
     font-size: 13px;
     font-weight: var(--ifm-font-weight-bold);
     color: var(--ifm-color-emphasis-700);
