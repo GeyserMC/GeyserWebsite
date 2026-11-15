@@ -83,7 +83,7 @@ export const isHighlighted = (provider: HostingProvider) =>
     provider.open_collaboration?.tier ? highlightedTiers.includes(provider.open_collaboration.tier) : false;
 
 const byName = (a: HostingProvider, b: HostingProvider) => a.name.localeCompare(b.name);
-const providerSearch = new uFuzzy({ intraMode: 2 });
+const providerSearch = new uFuzzy({ intraMode: 1 });
 const byTierThenName = (a: HostingProvider, b: HostingProvider) => {
     const tierA = a.open_collaboration?.tier;
     const tierB = b.open_collaboration?.tier;
