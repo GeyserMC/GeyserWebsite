@@ -1,6 +1,7 @@
 import type { GeyserConfig, HostingProvider, OpenCollaborationTier, PortSource } from "@site/src/types/providers";
 import React, { createContext, useContext, useEffect, useRef, useState } from 'react';
 import Translate, { translate } from "@docusaurus/Translate";
+import uFuzzy from '@leeoniya/ufuzzy';
 import { providersData } from "../data/providers";
 import Admonition from '@theme/Admonition';
 import { MDXTranslatable } from "./MDXTranslatable";
@@ -82,6 +83,7 @@ export const isHighlighted = (provider: HostingProvider) =>
     provider.open_collaboration?.tier ? highlightedTiers.includes(provider.open_collaboration.tier) : false;
 
 const byName = (a: HostingProvider, b: HostingProvider) => a.name.localeCompare(b.name);
+const providerSearch = new uFuzzy({ intraMode: 1 });
 const byTierThenName = (a: HostingProvider, b: HostingProvider) => {
     const tierA = a.open_collaboration?.tier;
     const tierB = b.open_collaboration?.tier;
@@ -109,8 +111,49 @@ export const ProviderSelector = ({ setProvider }: ProviderSelectorProps) => {
     const providers: HostingProvider[] = [notListed, ...openCollaborationProviders, ...otherProviders];
 
     const [selectedProvider, setSelectedProvider] = useState<HostingProvider | null>(null);
+    const [open, setOpen] = useState(false);
+    const [search, setSearch] = useState('');
+    const [activeIndex, setActiveIndex] = useState(0);
     const history = useHistory();
     const location = useLocation();
+    const container = useRef<HTMLDivElement>(null);
+    const searchInput = useRef<HTMLInputElement>(null);
+    const activeOption = useRef<HTMLLIElement>(null);
+
+    const normalizeName = (name: string) => name.toLowerCase().replace(/\s/g, '');
+    const query = normalizeName(search);
+    const matchingProviders = (providerList: HostingProvider[]) => {
+        if (!query) {
+            return providerList;
+        }
+        const names = providerList.map(provider => normalizeName(provider.name));
+        const [indices, info, order] = providerSearch.search(names, query);
+        if (!indices) {
+            return [];
+        }
+        if (!info || !order) {
+            return indices.map(index => providerList[index]);
+        }
+        return order.map(index => providerList[info.idx[index]]);
+    };
+    const matchingGroups = [
+        { key: 'not_listed', label: null, providers: matchingProviders([notListed]) },
+        {
+            key: 'open_collaboration',
+            label: translate({ id: 'components.provider.open_collaboration_group', message: "Hosts that support Geyser's development" }),
+            providers: matchingProviders(openCollaborationProviders)
+        },
+        {
+            key: 'other',
+            label: translate({ id: 'components.provider.other_group', message: 'Other providers' }),
+            providers: matchingProviders(otherProviders)
+        }
+    ].filter(group => group.providers.length > 0);
+    const groups = matchingGroups.length === 0
+        ? [{ key: 'not_listed', label: null, providers: [notListed] }]
+        : matchingGroups;
+    // Flat list, so the keyboard can move through the groups
+    const visibleProviders = groups.flatMap(group => group.providers);
 
     const select = (name: string) => {
         const provider = providers.find(p => p.name.toLowerCase() === name.toLowerCase()) ?? null;
@@ -142,7 +185,54 @@ export const ProviderSelector = ({ setProvider }: ProviderSelectorProps) => {
 
     const selectAndLink = (name: string) => {
         select(name);
-        linkProvider(name === 'none' ? null : name);
+        linkProvider(name);
+        close();
+    }
+
+    const close = () => {
+        setOpen(false);
+        setSearch('');
+    }
+
+    useEffect(() => {
+        if (!open) {
+            return;
+        }
+        searchInput.current?.focus();
+        const closeOnOutsideClick = (event: MouseEvent) => {
+            if (!container.current?.contains(event.target as Node)) {
+                close();
+            }
+        };
+        document.addEventListener('mousedown', closeOnOutsideClick);
+        return () => document.removeEventListener('mousedown', closeOnOutsideClick);
+    }, [open]);
+
+    useEffect(() => {
+        setActiveIndex(0);
+    }, [search]);
+
+    useEffect(() => {
+        activeOption.current?.scrollIntoView?.({ block: 'nearest' });
+    }, [activeIndex, open]);
+
+    const onSearchKeyDown = (event: React.KeyboardEvent) => {
+        if (event.key === 'ArrowDown') {
+            event.preventDefault();
+            setActiveIndex(index => Math.min(index + 1, visibleProviders.length - 1));
+        } else if (event.key === 'ArrowUp') {
+            event.preventDefault();
+            setActiveIndex(index => Math.max(index - 1, 0));
+        } else if (event.key === 'Enter') {
+            event.preventDefault();
+            const provider = visibleProviders[activeIndex];
+            if (provider) {
+                selectAndLink(provider.name);
+            }
+        } else if (event.key === 'Escape') {
+            event.preventDefault();
+            close();
+        }
     }
 
     useEffect(() => {
@@ -165,26 +255,57 @@ export const ProviderSelector = ({ setProvider }: ProviderSelectorProps) => {
         }
     }, [location.search]);
 
-    const option = (provider: HostingProvider) => (
-        <option key={provider.name} value={provider.name}>
-            {provider.name}
-        </option>
-    );
+    const searchLabel = translate({ id: 'components.provider.search', message: 'Search providers' });
 
     return (
-        <div className="host-select">
-            <select value={selectedProvider?.name ?? 'none'} onChange={event => selectAndLink(event.target.value)}>
-                <option value="none">Select a provider</option>
-                {option(notListed)}
-                {openCollaborationProviders.length > 0 && (
-                    <optgroup label={translate({ id: 'components.provider.open_collaboration_group', message: "Hosts that support Geyser's development" })}>
-                        {openCollaborationProviders.map(option)}
-                    </optgroup>
-                )}
-                <optgroup label={translate({ id: 'components.provider.other_group', message: 'Other providers' })}>
-                    {otherProviders.map(option)}
-                </optgroup>
-            </select>
+        <div className="host-select" ref={container}>
+            <button
+                type="button"
+                className="host-select-trigger"
+                aria-haspopup="listbox"
+                aria-expanded={open}
+                onClick={() => open ? close() : setOpen(true)}
+            >
+                <span>{selectedProvider?.name ?? 'Select a provider'}</span>
+                <span className="host-select-caret" aria-hidden="true" />
+            </button>
+            {open && (
+                <div className="host-select-panel">
+                    <input
+                        ref={searchInput}
+                        type="search"
+                        className="host-select-search"
+                        value={search}
+                        placeholder={searchLabel}
+                        aria-label={searchLabel}
+                        onChange={event => setSearch(event.target.value)}
+                        onKeyDown={onSearchKeyDown}
+                    />
+                    <ul className="host-select-list" role="listbox" aria-label="Select a provider">
+                        {groups.map(group => (
+                            <React.Fragment key={group.key}>
+                                {group.label && <li className="host-select-group" role="presentation">{group.label}</li>}
+                                {group.providers.map(provider => {
+                                    const active = visibleProviders[activeIndex] === provider;
+                                    return (
+                                        <li
+                                            key={provider.name}
+                                            ref={active ? activeOption : undefined}
+                                            role="option"
+                                            aria-selected={provider.name === selectedProvider?.name}
+                                            className={clsx('host-select-option', active && 'host-select-option-active')}
+                                            onMouseEnter={() => setActiveIndex(visibleProviders.indexOf(provider))}
+                                            onClick={() => selectAndLink(provider.name)}
+                                        >
+                                            {provider.name}
+                                        </li>
+                                    );
+                                })}
+                            </React.Fragment>
+                        ))}
+                    </ul>
+                </div>
+            )}
         </div>
     );
 }
