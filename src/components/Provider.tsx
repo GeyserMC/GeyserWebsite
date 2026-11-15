@@ -1,6 +1,7 @@
 import type { GeyserConfig, HostingProvider, OpenCollaborationTier, PortSource } from "@site/src/types/providers";
 import React, { createContext, useContext, useEffect, useRef, useState } from 'react';
 import Translate, { translate } from "@docusaurus/Translate";
+import uFuzzy from '@leeoniya/ufuzzy';
 import { providersData } from "../data/providers";
 import Admonition from '@theme/Admonition';
 import { MDXTranslatable } from "./MDXTranslatable";
@@ -82,6 +83,7 @@ export const isHighlighted = (provider: HostingProvider) =>
     provider.open_collaboration?.tier ? highlightedTiers.includes(provider.open_collaboration.tier) : false;
 
 const byName = (a: HostingProvider, b: HostingProvider) => a.name.localeCompare(b.name);
+const providerSearch = new uFuzzy({ intraMode: 1 });
 const byTierThenName = (a: HostingProvider, b: HostingProvider) => {
     const tierA = a.open_collaboration?.tier;
     const tierB = b.open_collaboration?.tier;
@@ -118,21 +120,38 @@ export const ProviderSelector = ({ setProvider }: ProviderSelectorProps) => {
     const searchInput = useRef<HTMLInputElement>(null);
     const activeOption = useRef<HTMLLIElement>(null);
 
-    const query = search.trim().toLowerCase();
-    const matches = (provider: HostingProvider) => provider.name.toLowerCase().includes(query);
-    const groups = [
-        { key: 'not_listed', label: null, providers: [notListed].filter(matches) },
+    const normalizeName = (name: string) => name.toLowerCase().replace(/\s/g, '');
+    const query = normalizeName(search);
+    const matchingProviders = (providerList: HostingProvider[]) => {
+        if (!query) {
+            return providerList;
+        }
+        const names = providerList.map(provider => normalizeName(provider.name));
+        const [indices, info, order] = providerSearch.search(names, query);
+        if (!indices) {
+            return [];
+        }
+        if (!info || !order) {
+            return indices.map(index => providerList[index]);
+        }
+        return order.map(index => providerList[info.idx[index]]);
+    };
+    const matchingGroups = [
+        { key: 'not_listed', label: null, providers: matchingProviders([notListed]) },
         {
             key: 'open_collaboration',
             label: translate({ id: 'components.provider.open_collaboration_group', message: "Hosts that support Geyser's development" }),
-            providers: openCollaborationProviders.filter(matches)
+            providers: matchingProviders(openCollaborationProviders)
         },
         {
             key: 'other',
             label: translate({ id: 'components.provider.other_group', message: 'Other providers' }),
-            providers: otherProviders.filter(matches)
+            providers: matchingProviders(otherProviders)
         }
     ].filter(group => group.providers.length > 0);
+    const groups = matchingGroups.length === 0
+        ? [{ key: 'not_listed', label: null, providers: [notListed] }]
+        : matchingGroups;
     // Flat list, so the keyboard can move through the groups
     const visibleProviders = groups.flatMap(group => group.providers);
 
@@ -284,11 +303,6 @@ export const ProviderSelector = ({ setProvider }: ProviderSelectorProps) => {
                                 })}
                             </React.Fragment>
                         ))}
-                        {visibleProviders.length === 0 && (
-                            <li className="host-select-empty" role="presentation">
-                                <Translate id="components.provider.no_search_results" description="Message shown when provider search has no matches">No providers found</Translate>
-                            </li>
-                        )}
                     </ul>
                 </div>
             )}

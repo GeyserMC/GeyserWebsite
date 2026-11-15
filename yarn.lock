@@ -5016,6 +5016,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@leeoniya/ufuzzy@npm:1.0.19":
+  version: 1.0.19
+  resolution: "@leeoniya/ufuzzy@npm:1.0.19"
+  checksum: 10c0/a8d36a2672565d92a3ff41dff335b02bc3ee8c27974e7f680da9e19457702e8b39b0132ad5c480ee064acc9871f590672e23533c492ea68b20a0fb4c32a116c6
+  languageName: node
+  linkType: hard
+
 "@leichtgewicht/ip-codec@npm:^2.0.1":
   version: 2.0.5
   resolution: "@leichtgewicht/ip-codec@npm:2.0.5"
@@ -11492,6 +11499,7 @@ __metadata:
     "@fortawesome/free-solid-svg-icons": "npm:7.3.1"
     "@fortawesome/react-fontawesome": "npm:3.5.0"
     "@kas-tle/docusaurus-og": "github:Kas-tle/docusaurus-og#baf5ffe3e73e9da92d8970fba93af7a4f1d8b8e8"
+    "@leeoniya/ufuzzy": "npm:1.0.19"
     "@mdx-js/react": "npm:3.0.0"
     "@types/adm-zip": "npm:0.6.0"
     adm-zip: "npm:0.6.1"
