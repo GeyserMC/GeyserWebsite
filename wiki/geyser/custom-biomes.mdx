@@ -26,14 +26,15 @@ does not know is not applied on that server. The generated resource pack still c
 :::
 
 :::info
-On Fabric and NeoForge, Geyser registers the biomes of the server's datapacks and mods by itself when it starts, with
-the colors and fog from each biome's own data. A mapping for such a biome replaces what Geyser read for it, so it has to
-list every value the biome should have.
+On Fabric, NeoForge and Paper, Geyser registers the biomes of the server's datapacks, mods and plugins by itself when it
+starts, with the colors and fog from each biome's own data. On Paper, this needs the server to run the newest Java
+version that Geyser supports. A mapping for such a biome replaces what Geyser read for it, so it has to list every value
+the biome should have.
 :::
 
 :::warning
-On every other platform, Geyser cannot see the server's biomes before a player joins. Every custom biome has to be
-mapped there, either in a JSON mappings file or through the Geyser API.
+On every other platform, and on Paper servers running an older version, Geyser cannot see the server's biomes before a
+player joins. Every custom biome has to be mapped there, either in a JSON mappings file or through the Geyser API.
 :::
 
 ## Mapping a biome
@@ -46,7 +47,8 @@ mapped there, either in a JSON mappings file or through the Geyser API.
         to its definition.
 
         A definition has up to three parts. `effects` and `attributes` use the same keys and color formats as a Java
-        biome definition, so the values listed below can be copied over from the datapack. Any other keys in them are
+        biome definition, so the values listed below can be copied over from the datapack. As on Java, the `minecraft:`
+        namespace can be left out of attribute names, so `visual/sky_color` works too. Any other keys in them are
         ignored. The optional `geyser` object holds what Bedrock needs on top of that.
 
         Example `biome_mappings.json`:
@@ -110,19 +112,20 @@ mapped there, either in a JSON mappings file or through the Geyser API.
         Java's array form is not accepted. Attributes written in Java's object form, with `argument` and `modifier`, are
         skipped, as they have no fixed value to translate.
 
-        If only one of `water_fog_color` and `water_fog_end_distance` is set, the other uses the vanilla Bedrock default
-        fog: `#44AFF5`, fully opaque at 60 blocks.
+        If only one of `water_fog_color` and `water_fog_end_distance` is set, the other uses Java's default, like it
+        would in a datapack: `#050533`, fully opaque at 96 blocks.
 
         A biome with an invalid value is logged and skipped; the other biomes in the file still load. Leave optional
         keys out rather than setting them to `null`.
 
-        When `geyser.bedrock_identifier` is not set, the Java identifier is reused if it is valid as a Bedrock identifier,
-        otherwise Geyser derives a `geyser:auto_` identifier from it. Bedrock identifiers may only contain lowercase
-        letters, digits, `.`, `_` and `-` in the namespace and the path, so a Java identifier such as
-        `my_datapack:cave/crystal_caves` gets a derived one. The `minecraft` namespace and the `geyser:auto_` prefix
-        cannot be used for identifiers you set yourself, and an identifier without a namespace, such as `crystal_caves`,
-        becomes `geyser_custom:crystal_caves`. Set the identifier yourself when a resource pack of your own needs to
-        refer to the biome by name.
+        When `geyser.bedrock_identifier` is not set, the Java identifier is reused if it is also a valid custom Bedrock
+        identifier. Otherwise Geyser derives one: `geyser:auto_` followed by the first 32 hexadecimal digits of the
+        SHA-256 hash of the full Java identifier. Bedrock identifiers may only contain lowercase letters, digits, `.`,
+        `_` and `-` in the namespace and the path, so a Java identifier such as `my_datapack:cave/crystal_caves` gets a
+        derived one. The `minecraft` namespace and the `geyser:auto_` prefix are reserved, so a Java biome in the
+        `minecraft` namespace gets a derived identifier too, and neither can be used for identifiers you set yourself.
+        An identifier without a namespace, such as `crystal_caves`, becomes `geyser_custom:crystal_caves`. Set the
+        identifier yourself when a resource pack of your own needs to refer to the biome by name.
 
         Bedrock's data-driven content, such as spawn rules, matches biomes with the `has_biome_tag` filter. The tags in
         `geyser.tags` are passed through to the Bedrock biome. A tag may contain lowercase letters, digits, `.` and `_`,
@@ -137,7 +140,9 @@ mapped there, either in a JSON mappings file or through the Geyser API.
     <TabItem value="api" label="Geyser API">
         Custom biomes are registered in the `GeyserDefineCustomBiomesEvent`, which is fired once on Geyser's startup
         after the JSON mappings have been loaded. Definitions are created with `CustomBiomeDefinition.builder(Identifier)`,
-        which takes the Bedrock identifier of the biome, and registered for the identifier of a Java biome.
+        which takes the Bedrock identifier of the biome, and registered for the identifier of a Java biome. To let
+        Geyser pick the Bedrock identifier instead, like for a JSON mapping without `geyser.bedrock_identifier`, use
+        `CustomBiomeDefinition.derivedBuilder(Identifier)` with the Java identifier.
 
         ```java
         @Subscribe
@@ -166,14 +171,14 @@ mapped there, either in a JSON mappings file or through the Geyser API.
         throws an `IllegalArgumentException`, so leave `appearance(...)` out for a biome that your own resource pack
         styles. The definition still maps the Java biome to the Bedrock one.
 
-        Identifiers passed to the builder must be fully namespaced: `Identifier.of("crystal_caves")` is in the
-        `minecraft` namespace, which is rejected. Invalid identifiers, tags and values are rejected when the definition
-        or appearance is built.
+        Identifiers passed to `builder(Identifier)` must be fully namespaced: `Identifier.of("crystal_caves")` is in
+        the `minecraft` namespace, which is rejected. Invalid identifiers, tags and values throw an
+        `IllegalArgumentException` as soon as they are passed to a builder.
 
-        Registering after the event has been fired, or with a definition that was not created through
-        `CustomBiomeDefinition.builder(...)`, throws a `CustomBiomeDefinitionRegisterException`, as does reusing a Java
-        biome or a Bedrock identifier that is already registered. The map returned by `customBiomeDefinitions()` lists
-        what is already registered, including the biomes from JSON mappings.
+        Registering after the event has been fired, or with a definition that was not created through one of these
+        builders, throws a `CustomBiomeDefinitionRegisterException`, as does reusing a Java biome or a Bedrock identifier
+        that is already registered. The map returned by `customBiomeDefinitions()` lists what is already registered,
+        including the biomes from JSON mappings.
     </TabItem>
 </Tabs>
 
@@ -251,7 +256,7 @@ mappings could not be applied to a player.
 ## Vibrant Visuals
 
 The generated resource pack works with both the classic renderer and Vibrant Visuals, but the two renderers do not use
-every value the same way. As of Bedrock 1.26.52, Vibrant Visuals:
+every value the same way. As of Bedrock 1.26.63, Vibrant Visuals:
 
 - uses the sky color as the daytime zenith tint; the horizon and the vanilla night colors remain,
 - mixes the water surface color into the water rather than applying it directly, so the rendered color can differ,
