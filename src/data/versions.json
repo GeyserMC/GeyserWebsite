@@ -1,6 +1,6 @@
 {
     "bedrock": {
-        "supported": "26.40-26.65",
+        "supported": "26.40-26.66",
         "latest": {
             "id": 2225,
             "name": "26.66"
