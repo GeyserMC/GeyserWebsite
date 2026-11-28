@@ -17,6 +17,7 @@ This is a community-compiled list and does not indicate any endorsement from Gey
 
 Full Compatibility (Checks Bedrock Players Accurately)
 
+- [Flint](https://builtbybit.com/resources/flint-bedrock-anticheat.116689/) (Paid) - last checked on 27th November 2026
 - [Boar](https://modrinth.com/plugin/boar) - Last checked on 13th March 2026
 - [Penguin](https://builtbybit.com/resources/penguin-bedrock-geyser-anti-cheat.118006/) (Paid) - Last checked on 10th August 2026
 - [Themis](https://www.spigotmc.org/resources/90766/) - Last checked on 11th July 2024
